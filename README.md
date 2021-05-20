@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://i.imgur.com/vyXUpga.png" width="600">
+  <img src="https://i.imgur.com/K3xz0Gf.png" width="600">
    <b>
-    <center> <h1>Insight-cv: A toolkit for scientific image analysis</h1> </center>
+    <center> <h1>insight-cv: A toolkit for scientific image analysis</h1> </center>
    </b>
 </p>
 
