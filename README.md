@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/K3xz0Gf.png" width="600">
+  <img src="https://imgur.com/kc7aE7z" width="600">
    <b>
     <center> <h1>scivision: A toolkit for scientific image analysis</h1> </center>
    </b>
