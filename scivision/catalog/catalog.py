@@ -36,7 +36,6 @@ class BaseCatalog(abc.ABC):
     def keys(self) -> List[str]:
         raise NotImplementedError
 
-    @property
     @abc.abstractmethod
     def values(self, key: str) -> List[str]:
         raise NotImplementedError
