@@ -9,3 +9,5 @@ dependencies:
   - pandas
   - fsspec
   - pyyaml
+  - requests
+  - aiohttp
