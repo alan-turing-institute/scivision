@@ -63,8 +63,8 @@ def load_pretrained_model(
             install_str = install_str[:-4]
 
         raise Exception(
-            "Package does not exist. Try installing it with: "
-            f"`!pip install -e git+{install_str}@main`"
+            "Package does not exist. Try installing it with: \n"
+            f"`!pip install -e git+{install_str}@main#egg={config['import']}`"
         )
 
     return PretrainedModel(config)
