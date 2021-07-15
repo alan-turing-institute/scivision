@@ -7,3 +7,7 @@ dependencies:
   - numpy
   - scipy
   - pandas
+  - fsspec
+  - pyyaml
+  - requests
+  - aiohttp
