@@ -1,0 +1,13 @@
+name: scivision
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - fsspec
+  - pyyaml
+  - requests
+  - aiohttp
