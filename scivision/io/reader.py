@@ -30,7 +30,6 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
 
 def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
     """Parse the `scivision` config file."""
-
     # check that this is a path to a yaml file
     if not path.endswith((".yml", ".yaml",)):
         raise ValueError(f"Invalid configuration filename: {path}")
@@ -64,7 +63,7 @@ def load_pretrained_model(
         The filename, path or URL of a pretrained model description.
     branch : str, default = main
         Specify the name of a github branch if loading from github.
-    allow_install : bool
+    allow_install : bool, default = False
         Allow installation of remote package via pip.
 
     Returns
