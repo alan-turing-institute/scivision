@@ -1198,5 +1198,18 @@
     "tags":[
       "help-needed"
     ]
+  },
+  "entry-100":{
+    "task":"object-detection",
+    "domain":"computer-vision",
+    "datasource":"http://www.naturkrauter.net/image/net-250x250.png",
+    "model":"https://github.com/quantumjot/scivision-test-plugin",
+    "github_branch":"master",
+    "language":"Python3",
+    "scivision_yaml_filename": ".scivision-config_imagenet.yaml",
+    "institution":"alan-turing-institute",
+    "tags":[
+      "help-needed"
+    ]
   }
 }

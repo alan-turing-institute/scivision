@@ -24,7 +24,12 @@ def _parse_config(path: os.PathLike) -> dict:
 
 
 def load_pretrained_model(
-    path: os.PathLike, allow_install: bool = False, *args, **kwargs
+    path: os.PathLike,
+    branch: str = 'main',
+    config_filename: str = SCIVISION_YAML_CONFIG,
+    allow_install: bool = False,
+    *args,
+    **kwargs
 ) -> PretrainedModel:
     """Load a pre-trained model.
 
@@ -45,8 +50,8 @@ def load_pretrained_model(
     # NOTE(arl): this assumes we're grabbing a model from github, but it should
     # also work with a local config file with a reference to a github repo
     config_url = urljoin(
-        f"https://raw.githubusercontent.com/{path}/main/",
-        SCIVISION_YAML_CONFIG,
+        f"https://raw.githubusercontent.com/{path}/{branch}/",
+        config_filename,
     )
 
     config = _parse_config(config_url)
