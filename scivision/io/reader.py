@@ -24,7 +24,12 @@ def _parse_config(path: os.PathLike) -> dict:
 
 
 def load_pretrained_model(
-    path: os.PathLike, branch: str = 'main', allow_install: bool = False, *args, **kwargs
+    path: os.PathLike, 
+    branch: str = 'main', 
+    config_filename: str = SCIVISION_YAML_CONFIG,
+    allow_install: bool = False, 
+    *args, 
+    **kwargs
 ) -> PretrainedModel:
     """Load a pre-trained model.
 
