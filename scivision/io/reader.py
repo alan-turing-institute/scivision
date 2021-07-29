@@ -46,7 +46,7 @@ def load_pretrained_model(
     # also work with a local config file with a reference to a github repo
     config_url = urljoin(
         f"https://raw.githubusercontent.com/{path}/{branch}/",
-        SCIVISION_YAML_CONFIG,
+        config_filename,
     )
 
     config = _parse_config(config_url)
