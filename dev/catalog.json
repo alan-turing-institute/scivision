@@ -1,38 +1,38 @@
 {
   "entry-0":{
-    "task":"segmentation",
-    "domain":"electron-microscopy",
-    "datasource":"https://www.ebi.ac.uk/empiar/entry/10589/",
-    "model":"github.com/scivision-hq/cv-algortithm",
-    "github_branch":"dev",
+    "task":["object detection", "segmentation"],
+    "domain":["microtomography", "optical-microscopy"],
+    "datasource":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+    "model":"https://github.com/stardist/stardist",
+    "github_branch":"tree/master/models/examples/3D_demo",
     "language":"Python3",
-    "institution":"scivision-hq",
+    "institution":"epfl",
     "tags":[
-      "help-needed"
+      "help-needed", "3D", "plant-phenotyping", "cell"
     ]
   },
   "entry-1":{
     "task":"classification",
-    "domain":"earth-observation",
-    "datasource":"local_file.tif",
-    "model":"github.com/scivision-hq/cv-algortithm",
-    "github_branch":"master",
-    "language":"R",
+    "domain":"multispectral",
+    "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+    "model":"https://github.com/daQuincy/Kaggle-Plant-Seedlings-Classification",
+    "github_branch":"03_resnet.ipynb",
+    "language":"jupyter-notebook",
     "institution":"scivision-hq",
     "tags":[
-      "help-needed"
+      "help-needed", "2D", "plant-phenotyping"
     ]
   },
   "entry-2":{
-    "task":"classification",
-    "domain":"electron-microscopy",
-    "datasource":"empiar-10340",
-    "model":"github.com/fake-corp/cv-algortithm",
-    "github_branch":"dev",
-    "language":"Python3",
-    "institution":"fake-corp",
+    "task":"object-detection",
+    "domain":"remote-sensing",
+    "datasource":"http://robotics.ethz.ch/~asl-datasets/2018-weedMap-dataset-release/2018-weedMap-dataset-release.zip",
+    "model":"https://github.com/dronemapper-io/CropAnalysis",
+    "github_branch":"DroneMapper_Crop_Analysis.ipynb",
+    "language":"jupyter-notebook",
+    "institution":"dronemapper",
     "tags":[
-      "help-needed"
+      "help-needed", "2D", "crop-counting"
     ]
   },
   "entry-3":{
