@@ -4,7 +4,7 @@
     "domain":["microtomography", "optical-microscopy"],
     "datasource":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
     "model":"https://github.com/stardist/stardist",
-    "github_branch":"tree/master/models/examples/3D_demo",
+    "github_branch":"master",
     "language":"Python3",
     "institution":"epfl",
     "tags":[
@@ -12,27 +12,27 @@
     ]
   },
   "entry-1":{
-    "task":"classification",
-    "domain":"multispectral",
+    "task":["segementation", "thresholding", "object-detection"],
+    "domain":["multispectral", "hyperspectral"],
     "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
-    "model":"https://github.com/daQuincy/Kaggle-Plant-Seedlings-Classification",
-    "github_branch":"03_resnet.ipynb",
-    "language":"jupyter-notebook",
-    "institution":"scivision-hq",
+    "model":"https://github.com/danforthcenter/plantcv",
+    "github_branch":"master",
+    "language":"Python3",
+    "institution":"danforthcenter",
     "tags":[
       "help-needed", "2D", "plant-phenotyping"
     ]
   },
   "entry-2":{
-    "task":"object-detection",
-    "domain":"remote-sensing",
-    "datasource":"http://robotics.ethz.ch/~asl-datasets/2018-weedMap-dataset-release/2018-weedMap-dataset-release.zip",
-    "model":"https://github.com/dronemapper-io/CropAnalysis",
-    "github_branch":"DroneMapper_Crop_Analysis.ipynb",
-    "language":"jupyter-notebook",
-    "institution":"dronemapper",
+    "task":"segmentation",
+    "domain":"multispectral",
+    "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+    "model":"https://github.com/MarniTausen/Greenotyper",
+    "github_branch":"master",
+    "language":"Python3",
+    "institution":"MarniTausen",
     "tags":[
-      "help-needed", "2D", "crop-counting"
+      "help-needed", "2D", "plant-phenotyping"
     ]
   },
   "entry-3":{
