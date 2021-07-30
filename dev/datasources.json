@@ -1,0 +1,29 @@
+{
+  "data-000":{
+    "task":["object detection", "segmentation"],
+    "domain":["microtomography", "optical-microscopy"],
+    "datasource":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+    "institution":"epfl",
+    "tags":[
+      "help-needed", "3D", "plant-phenotyping", "cell"
+    ]
+  },
+  "data-001":{
+    "task":["segementation", "thresholding", "object-detection"],
+    "domain":["multispectral", "hyperspectral"],
+    "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+    "institution":"danforthcenter",
+    "tags":[
+      "help-needed", "2D", "plant-phenotyping"
+    ]
+  },
+  "data-002":{
+    "task":"segmentation",
+    "domain":"multispectral",
+    "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+    "institution":"MarniTausen",
+    "tags":[
+      "help-needed", "2D", "plant-phenotyping"
+    ]
+  }
+}
