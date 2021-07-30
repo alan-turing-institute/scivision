@@ -18,8 +18,8 @@ def package_from_config(config: dict) -> str:
     install_str = config["url"]
     if install_str.endswith(".git"):
         install_str = install_str[:-4]
-    # NOTE(arl): provide support for other branches
-    return f"git+{install_str}@main#egg={config['import']}"
+    install_branch = config.get("github_branch", "main")
+    return f"git+{install_str}@{install_branch}#egg={config['import']}"
 
 
 def _install(package):
