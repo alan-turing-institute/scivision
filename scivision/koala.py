@@ -12,7 +12,7 @@ stream = io.StringIO()
 if not logger.handlers:
     # configure stream handler
     log_fmt = logging.Formatter(
-        "KOALA [%(levelname)s][%(asctime)s] %(message)s",
+        "\U0001f428 [%(levelname)s][%(asctime)s] %(message)s",
         datefmt="%Y/%m/%d %I:%M:%S %p",
     )
     console_handler = logging.StreamHandler(stream)
