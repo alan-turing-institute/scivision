@@ -1,0 +1,34 @@
+{
+  "model-000":{
+    "task":["object detection", "segmentation"],
+    "model":"https://github.com/stardist/stardist",
+    "github_branch":"master",
+    "language":"Python3",
+    "institution":"epfl",
+    "tags": ["dummy"]
+  },
+  "model-001":{
+    "task":["segementation", "thresholding", "object-detection"],
+    "model":"https://github.com/danforthcenter/plantcv",
+    "github_branch":"master",
+    "language":"Python3",
+    "institution":"danforthcenter",
+    "tags": ["dummy"]
+  },
+  "model-002":{
+    "task":"segmentation",
+    "model":"https://github.com/MarniTausen/Greenotyper",
+    "github_branch":"master",
+    "language":"Python3",
+    "institution":"MarniTausen",
+    "tags": ["dummy"]
+  },
+  "model-003":{
+    "task":"segmentation",
+    "model":"github.com/alan-turing-institute/cv-algortithm",
+    "github_branch":"master",
+    "language":"Python3",
+    "institution":"alan-turing-institute",
+    "tags": ["dummy"]
+  }
+}
