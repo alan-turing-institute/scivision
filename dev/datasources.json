@@ -15,7 +15,7 @@
     "domain":["multispectral", "hyperspectral"],
     "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
     "format":"jpg",
-    "labels":"yes"
+    "labels":"yes",
     "institution":"Aarhus University",
     "tags":[
       "help-needed", "2D", "plant-phenotyping", "agriculture", "climate-change-and-agriculture"
