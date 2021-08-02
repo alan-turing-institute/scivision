@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 import fsspec
 import yaml
 
+from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel
 
@@ -48,6 +49,7 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
     return config
 
 
+@koala
 def load_pretrained_model(
     path: os.PathLike,
     branch: str = "main",

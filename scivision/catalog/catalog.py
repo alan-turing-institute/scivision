@@ -3,6 +3,8 @@ from typing import Dict, List
 
 import pandas as pd
 
+from ..koala import koala
+
 # catalog URI, this is just a local file at the moment
 CATALOG_URI = "./dev/catalog.json"
 
@@ -69,6 +71,7 @@ class PandasCatalog(BaseCatalog):
 _catalog = PandasCatalog()
 
 
+@koala
 def query(query: Dict[str, str]) -> list:
     """Search the catalog using the query.
 
@@ -87,9 +90,11 @@ def query(query: Dict[str, str]) -> list:
     return result
 
 
+@koala
 def keys() -> List[str]:
     return _catalog.keys
 
 
+@koala
 def values(key: str) -> List[str]:
     return _catalog.values(key)
