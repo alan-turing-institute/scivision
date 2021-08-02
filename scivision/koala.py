@@ -40,10 +40,12 @@ def koala(fn: Callable) -> Callable:
     @wraps(fn)
     def wrapped_fn(*args, **kwargs):
 
-        # TODO(arl): store the arguments and output of the function
+        # we can also log the signature and kwargs provided
+        signature = inspect.signature(fn)
         logger.info(
             f"Call='{fn.__name__}', module='{inspect.getmodule(fn).__name__}'"
-            # f", kwargs='{', '.join(kwargs.keys())}'"
+            f", signature={signature}"
+            f", kwargs_given='{', '.join(kwargs.keys())}'"
         )
 
         # now call the function, but log any exceptions
