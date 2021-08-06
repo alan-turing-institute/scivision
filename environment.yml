@@ -11,3 +11,5 @@ dependencies:
   - pyyaml
   - requests
   - aiohttp
+  - intake
+  - intake-xarray
