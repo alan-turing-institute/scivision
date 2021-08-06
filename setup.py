@@ -13,7 +13,7 @@ setup(
     version="0.0.1",
     description="scivision",
     author="Scivision Community",
-    author_email="alowe@turing.ac.uk",
+    author_email="scivision@unknown.invalid",
     url="https://github.com/alan-turing-institute/scivision",
     packages=find_packages(),
     install_requires=requirements,
