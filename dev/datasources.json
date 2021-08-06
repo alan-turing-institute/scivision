@@ -1,0 +1,24 @@
+{
+  "data-000":{
+    "task":["object detection", "segmentation"],
+    "domain":["optical-microscopy"],
+    "datasource":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+    "format":"tif",
+    "labels":"yes",
+    "institution":"epfl",
+    "tags":[
+      "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
+    ]
+  },
+  "data-001":{
+    "task":["segementation", "thresholding", "object-detection"],
+    "domain":["multispectral", "hyperspectral"],
+    "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+    "format":"jpg",
+    "labels":"yes",
+    "institution":"Aarhus University",
+    "tags":[
+      "help-needed", "2D", "plant-phenotyping", "agriculture", "climate-change-and-agriculture"
+    ]
+  }
+}
