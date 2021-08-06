@@ -6,8 +6,5 @@ Development files, not for final distribution.
 
 ### Example binder notebooks
 
-Example catalog:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alan-turing-institute/scivision/main?filepath=query_scivision_catalog.ipynb)
-
-Example loading model:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alan-turing-institute/scivision/main??filepath=load_scivision_model_from_github.ipynb)
+Load a pretrained ImageNet model from a github repo into scivision:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alan-turing-institute/scivision/main?filepath=pretrained_imagenet_scivision_example.ipynb)
