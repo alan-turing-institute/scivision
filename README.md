@@ -5,6 +5,8 @@
    </b>
 </p>
 
+[![scivision](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg)](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml) [![Documentation Status](https://readthedocs.org/projects/scivision/badge/?version=latest)](https://scivision.readthedocs.io/en/latest/?badge=latest)
+
 ## Mission statement 
 `scivision` aims to be a well-documented and generalisable python framework for applying computer vision methods to a wide range of scientific imagery.
 
