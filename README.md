@@ -18,6 +18,9 @@ This tool aims to foster collaboration between **data owners** and **developers*
 ## Installation
 `scivision` is compatible with **Python version 3.7+**
 
-To install `scivision` with `pip`: `pip install scivision`
+To install `scivision` with `pip`: 
+```
+pip install scivision
+```
 
 See the [PyPI project page](https://pypi.org/project/scivision/) for more details
