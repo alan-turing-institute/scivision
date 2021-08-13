@@ -24,7 +24,7 @@
   "data-002":{
     "task":["classification"],
     "domain":["oceanography"],
-    "datasource":"https://github.com/scotthosking/intake-plankton",
+    "datasource":"https://github.com/scotthosking/intake-plankton/blob/main/plktn.yaml",
     "format":"intake",
     "labels":"yes",
     "institution":"CEFAS",
