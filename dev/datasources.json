@@ -20,5 +20,16 @@
     "tags":[
       "help-needed", "2D", "plant-phenotyping", "agriculture", "climate-change-and-agriculture"
     ]
+  },
+  "data-002":{
+    "task":["classification"],
+    "domain":["oceanography"],
+    "datasource":"https://github.com/scotthosking/intake-plankton/blob/main/plktn.yaml",
+    "format":"intake",
+    "labels":"yes",
+    "institution":"CEFAS",
+    "tags":[
+      "help-needed", "2D" 
+    ]
   }
 }
