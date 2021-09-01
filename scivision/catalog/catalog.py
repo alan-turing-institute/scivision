@@ -12,7 +12,7 @@ CATALOG_URI = "./dev/catalog.json"
 def _validate_query(query: dict) -> dict:
     """Validate a query dictionary."""
     if not isinstance(query, dict):
-        raise TypeError("Query must me a dictionary.")
+        raise TypeError("Query must be a dictionary.")
     return query
 
 
