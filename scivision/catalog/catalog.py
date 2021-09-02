@@ -46,7 +46,7 @@ class BaseCatalog(abc.ABC):
 class PandasCatalog(BaseCatalog):
     def __init__(self):
         super().__init__()
-        self._database = pd.read_json(self.URI, orient="index", dtype="str")
+        self._database = pd.read_json(self.URI, orient="index")
 
     def _query(self, query: Dict[str, str]) -> list:
         """Query the Pandas dataframe."""
