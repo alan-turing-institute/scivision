@@ -1,25 +1,26 @@
 import abc
+from pathlib import Path
 from typing import Dict, List
 
 import pandas as pd
 
 from ..koala import koala
 
-# catalog URI, this is just a local file at the moment
-CATALOG_URI = "./dev/catalog.json"
+# catalog URI, which is just a local directory at the moment.  For a
+# PandasCatalogue, it should contain "datasources.json" and "models.json"
+CATALOG_URI = "./dev/"
 
 
 def _validate_query(query: dict) -> dict:
     """Validate a query dictionary."""
     if not isinstance(query, dict):
-        raise TypeError("Query must me a dictionary.")
+        raise TypeError("Query must be a dictionary.")
     return query
 
 
 class BaseCatalog(abc.ABC):
     def __init__(self):
         self._uri = CATALOG_URI
-        self._database = None
 
     @property
     def URI(self):
@@ -46,7 +47,25 @@ class BaseCatalog(abc.ABC):
 class PandasCatalog(BaseCatalog):
     def __init__(self):
         super().__init__()
-        self._database = pd.read_json(self.URI, orient="index")
+
+        datasources_uri = self.URI / Path("datasources.json")
+        models_uri = self.URI / Path("models.json")
+
+        datasources = pd.read_json(datasources_uri, orient="index")
+        models = pd.read_json(models_uri, orient="index")
+
+        self._models = models.explode("task").explode("data_format")
+        self._datasources = datasources.explode("task").explode("format")
+
+    @property
+    def _database(self) -> pd.DataFrame:
+        return self._models.merge(
+            self._datasources,
+            suffixes=("_model", "_data"),
+            how="inner",
+            left_on=["task", "data_format"],
+            right_on=["task", "format"],
+        )
 
     def _query(self, query: Dict[str, str]) -> list:
         """Query the Pandas dataframe."""

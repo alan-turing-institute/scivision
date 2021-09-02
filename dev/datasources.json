@@ -11,7 +11,7 @@
     ]
   },
   "data-001":{
-    "task":["segementation", "thresholding", "object-detection"],
+    "task":["segmentation", "thresholding", "object-detection"],
     "domain":["multispectral", "hyperspectral"],
     "datasource":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
     "format":"jpg",
