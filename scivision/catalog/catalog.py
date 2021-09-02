@@ -67,6 +67,7 @@ class PandasCatalog(BaseCatalog):
             right_on=["task", "format"],
         )
 
+
     def _query(self, query: Dict[str, str]) -> list:
         """Query the Pandas dataframe."""
         queries = [f"{k} == '{v}'" for k, v in query.items()]
