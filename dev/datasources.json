@@ -31,5 +31,16 @@
     "tags":[
       "help-needed", "2D" 
     ]
+  },
+  "data-003":{
+    "task":["object-detection"],
+    "domain":["computer-vision"],
+    "datasource":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cutest_Koala.jpg/262px-Cutest_Koala.jpg",
+    "format":"jpg",
+    "labels":"yes",
+    "institution":"Wikipedia by Erik Veland",
+    "tags":[
+      "demo"
+    ]
   }
 }
