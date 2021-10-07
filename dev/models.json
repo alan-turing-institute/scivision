@@ -1,6 +1,6 @@
 {
   "model-000":{
-    "task":["object detection", "segmentation"],
+    "task":["object-detection", "segmentation"],
     "model":"https://github.com/stardist/stardist",
     "github_branch":"master",
     "language":"Python3",
@@ -40,6 +40,17 @@
     "data_format":"tif",
     "pretrained":"yes",
     "labels_required":"yes",
+    "institution":"alan-turing-institute",
+    "tags": ["dummy"]
+  },
+    "model-004":{
+    "task":"object-detection",
+    "model":"https://github.com/quantumjot/scivision-test-plugin",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"jpg",
+    "pretrained":"yes",
+    "labels_required":"no",
     "institution":"alan-turing-institute",
     "tags": ["dummy"]
   }
