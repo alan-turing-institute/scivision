@@ -20,9 +20,6 @@ jobs:
     - name: Run Flake8
       run: |
         flake8
-    - name: Run JSON validation script
-      run: |
-        python ./dev/validate_catalogs.py
     - name: Run tests
       run: |
         pip install -e .
