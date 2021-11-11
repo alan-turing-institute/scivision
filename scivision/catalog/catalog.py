@@ -7,10 +7,6 @@ import pandas as pd
 
 from ..koala import koala
 
-# catalog URI, which is just a local directory at the moment.  For a
-# PandasCatalogue, it should contain "datasources.json" and "models.json"
-CATALOG_URI = "./dev/"
-
 
 def _validate_query(query: dict) -> dict:
     """Validate a query dictionary."""
@@ -20,8 +16,6 @@ def _validate_query(query: dict) -> dict:
 
 
 class BaseCatalog(abc.ABC):
-    def __init__(self):
-        self._uri = CATALOG_URI
 
     @property
     def URI(self):
@@ -48,9 +42,6 @@ class BaseCatalog(abc.ABC):
 class PandasCatalog(BaseCatalog):
     def __init__(self):
         super().__init__()
-
-        # datasources_uri = self.URI / Path("datasources.json")
-        # models_uri = self.URI / Path("models.json")
 
         datasources_uri = pkgutil.get_data(__name__, "data/datasources.json")
         models_uri = pkgutil.get_data(__name__, "data/models.json")
