@@ -1,5 +1,6 @@
 import abc
 from pathlib import Path
+import pkgutil
 from typing import Dict, List
 
 import pandas as pd
@@ -48,8 +49,11 @@ class PandasCatalog(BaseCatalog):
     def __init__(self):
         super().__init__()
 
-        datasources_uri = self.URI / Path("datasources.json")
-        models_uri = self.URI / Path("models.json")
+        # datasources_uri = self.URI / Path("datasources.json")
+        # models_uri = self.URI / Path("models.json")
+
+        datasources_uri = pkgutil.get_data(__name__, "data/datasources.json")
+        models_uri = pkgutil.get_data(__name__, "data/models.json")
 
         datasources = pd.read_json(datasources_uri, orient="index")
         models = pd.read_json(models_uri, orient="index")
