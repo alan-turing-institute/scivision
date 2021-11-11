@@ -1,0 +1,57 @@
+{
+  "model-000":{
+    "task":["object-detection", "segmentation"],
+    "model":"https://github.com/stardist/stardist",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"tif",
+    "pretrained":"yes",
+    "labels_required":"yes",
+    "institution":"epfl",
+    "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
+  },
+  "model-001":{
+    "task":["segmentation", "thresholding", "object-detection"],
+    "model":"https://github.com/danforthcenter/plantcv",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":["jpg","png","tif","img","vis","nir","psii","envi"],
+    "pretrained":"yes",
+    "labels_required":"yes",
+    "institution":"danforthcenter",
+    "tags": ["2D", "hyperspectral", "multispectral", "near-infrared","infrared","plant-phenotyping", "climate-change-and-agriculture"]
+  },
+  "model-002":{
+    "task":"segmentation",
+    "model":"https://github.com/MarniTausen/Greenotyper",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":["jpg","png","tif","img"],
+    "pretrained":"yes",
+    "labels_required":"yes",
+    "institution":"MarniTausen",
+    "tags": ["2D", "multispectral", "plant-phenotyping", "climate-change-and-agriculture"]
+  },
+  "model-003":{
+    "task":"segmentation",
+    "model":"github.com/alan-turing-institute/cv-algortithm",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"tif",
+    "pretrained":"yes",
+    "labels_required":"yes",
+    "institution":"alan-turing-institute",
+    "tags": ["dummy"]
+  },
+    "model-004":{
+    "task":"object-detection",
+    "model":"https://github.com/quantumjot/scivision-test-plugin",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"jpg",
+    "pretrained":"yes",
+    "labels_required":"no",
+    "institution":"alan-turing-institute",
+    "tags": ["dummy"]
+  }
+}
