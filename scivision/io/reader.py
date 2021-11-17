@@ -4,6 +4,13 @@ from urllib.parse import urlparse
 import fsspec
 import yaml
 
+import intake
+import intake_xarray
+# import xarray as xr
+import requests
+import yaml
+from intake.catalog.local import YAMLFileCatalog
+
 from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel
@@ -44,7 +51,7 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
         config = yaml.safe_load(stream)
 
     # make sure we at least have an input to the function
-    assert "X" in config["prediction_fn"]["args"].keys()
+    # assert "X" in config["prediction_fn"]["args"].keys()
 
     return config
 
@@ -81,3 +88,20 @@ def load_pretrained_model(
     install_package(config, allow_install=allow_install)
 
     return PretrainedModel(config)
+
+
+def load_dataset(
+    path: os.PathLike,
+    branch: str = "main"
+) -> intake.catalog.local.YAMLFileCatalog:
+    """Load a dataset from the path specified in scivision.yml."""
+    # parse the config file
+    # path = path + 'scivision.yml' #TODO: change _parse_config
+    config = _parse_url(path, branch=branch)
+    r = requests.get(config)
+    yaml_config = yaml.load(r.content, Loader=yaml.Loader)
+    yamlcatalog = YAMLFileCatalog(path='', autoreload=False)
+    yamlcatalog.from_dict(yaml_config)
+    return yamlcatalog
+    # print(config)
+    # return intake.open_catalog(r.content)
