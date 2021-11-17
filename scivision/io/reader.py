@@ -91,6 +91,8 @@ def load_pretrained_model(
 
 
 def load_dataset(
+    #TODO allow to load a local yaml OR GitHub yaml
+    #TODO use saving the yaml to a local tmp file
     path: os.PathLike,
     branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
