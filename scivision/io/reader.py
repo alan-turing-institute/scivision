@@ -52,7 +52,7 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
         config = yaml.safe_load(stream)
 
     # make sure we at least have an input to the function
-    # assert "X" in config["prediction_fn"]["args"].keys()
+    assert "X" in config["prediction_fn"]["args"].keys()
 
     return config
 
