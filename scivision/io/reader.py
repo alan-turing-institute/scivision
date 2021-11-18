@@ -37,14 +37,19 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
 
 
 def _parse_config(path: os.PathLike, branch: str = "main", model_config=True) -> dict:
-    """Parse the `scivision` config file."""
-    # check that this is a path to a yaml file
-    if not path.endswith((".yml", ".yaml",)):
-        raise ValueError(f"Invalid configuration filename: {path}")
+    """Parse the scivision.yml file.
+    Will also accept differently named yaml if a full path provided or local file.
+    """
 
     if _is_url(path):
         path = _parse_url(path, branch)
 
+    # check that this is a path to a yaml file
+    # if not, assume it is a repo containing "scivision.yml"
+    if not path.endswith((".yml", ".yaml",)):
+        path = path + "scivision.yml"
+
+    # This will throw an error if the path does not exist
     file = fsspec.open(path)
     with file as config_file:
         stream = config_file.read()
