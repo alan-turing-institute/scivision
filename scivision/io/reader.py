@@ -101,8 +101,6 @@ def load_dataset(
     branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
     """Load a dataset from the path specified in scivision.yml."""
-    # parse the config file
-    # path = path + 'scivision.yml' #TODO: change _parse_config
     config = _parse_config(path, branch=branch, model_config=False)
     tempdir = tempfile.mkdtemp()
     with open(tempdir + '/scivision.yml', 'w') as file:
