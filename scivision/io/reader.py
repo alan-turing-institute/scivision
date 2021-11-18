@@ -7,6 +7,7 @@ import yaml
 import intake
 import intake_xarray
 # import xarray as xr
+import tempfile
 import requests
 import yaml
 from intake.catalog.local import YAMLFileCatalog
@@ -92,7 +93,6 @@ def load_pretrained_model(
 
 def load_dataset(
     #TODO allow to load a local yaml OR GitHub yaml
-    #TODO use saving the yaml to a local tmp file
     path: os.PathLike,
     branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
@@ -103,6 +103,7 @@ def load_dataset(
     config = _parse_url(path, branch=branch)
     r = requests.get(config)
     yaml_config = yaml.load(r.content, Loader=yaml.Loader)
-    with open('scivision.yaml', 'w') as file:
+    tempdir = tempfile.mkdtemp()
+    with open(tempdir + '/scivision.yml', 'w') as file:
         yaml.dump(yaml_config, file)
-    return intake.open_catalog('scivision.yaml')
+    return intake.open_catalog(tempdir + '/scivision.yml')
