@@ -1,0 +1,18 @@
+sources:
+  plankton_single:
+      description: Load a single labeled images from CEFAS zooplankton dataset
+      origin:
+      driver: intake_xarray.image.ImageSource
+      parameters:
+        kind:
+          description: which species to collect
+          type: str
+          default: Bivalvia-Larvae
+        id:
+          description: which filename
+          type: str
+          default: Pia1.2017-10-03.1726+N00296780_hc
+      args:
+        urlpath: './data/cefas-plankton-dsg-challenge/combined/images/{{kind}}/{{id}}.tif'
+        storage_options: {'anon': True}
+        exif_tags: True
