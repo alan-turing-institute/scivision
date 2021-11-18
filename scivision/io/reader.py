@@ -43,7 +43,7 @@ def _parse_config(path: os.PathLike, branch: str = "main", model_config=True) ->
         raise ValueError(f"Invalid configuration filename: {path}")
 
     if _is_url(path):
-        path = _parse_url(path)
+        path = _parse_url(path, branch)
 
     file = fsspec.open(path)
     with file as config_file:
@@ -92,7 +92,6 @@ def load_pretrained_model(
 
 
 def load_dataset(
-    #TODO allow to load a local yaml OR GitHub yaml
     path: os.PathLike,
     branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
