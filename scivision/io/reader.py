@@ -37,8 +37,8 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
 
 
 def _parse_config(path: os.PathLike, branch: str = "main", model_config=True) -> dict:
-    """Parse the scivision.yml file.
-    Will also accept differently named yaml if a full path provided or local file.
+    """Parse the scivision.yml file from a GitHub repository.
+    Will also accept differently named yaml if a full path provided or a local file.
     """
 
     if _is_url(path):
@@ -100,7 +100,20 @@ def load_dataset(
     path: os.PathLike,
     branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
-    """Load a dataset from the path specified in scivision.yml."""
+    """Load a pre-trained model.
+
+    Parameters
+    ----------
+    path : PathLike
+        The filename, path or URL of an intake catalog, which links to a dataset.
+    branch : str, default = main
+        Specify the name of a github branch if loading from github.
+
+    Returns
+    -------
+    intake.catalog.local.YAMLFileCatalog
+        The intake catalog object from which an xarray dataset can be created.
+    """
     config = _parse_config(path, branch=branch, model_config=False)
     tempdir = tempfile.mkdtemp()
     with open(tempdir + '/scivision.yml', 'w') as file:
