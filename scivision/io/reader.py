@@ -8,7 +8,6 @@ import intake
 import intake_xarray
 # import xarray as xr
 import tempfile
-import requests
 import yaml
 from intake.catalog.local import YAMLFileCatalog
 
@@ -37,7 +36,7 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     return parsed.geturl()
 
 
-def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
+def _parse_config(path: os.PathLike, branch: str = "main", model_config=True) -> dict:
     """Parse the `scivision` config file."""
     # check that this is a path to a yaml file
     if not path.endswith((".yml", ".yaml",)):
@@ -51,8 +50,9 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
         stream = config_file.read()
         config = yaml.safe_load(stream)
 
-    # make sure we at least have an input to the function
-    assert "X" in config["prediction_fn"]["args"].keys()
+    # make sure a model at least has an input to the function
+    if model_config:
+        assert "X" in config["prediction_fn"]["args"].keys()
 
     return config
 
@@ -99,11 +99,8 @@ def load_dataset(
     """Load a dataset from the path specified in scivision.yml."""
     # parse the config file
     # path = path + 'scivision.yml' #TODO: change _parse_config
-    # check whether scivision.yml or scivision.yaml exists and throw an error if not
-    config = _parse_url(path, branch=branch)
-    r = requests.get(config)
-    yaml_config = yaml.load(r.content, Loader=yaml.Loader)
+    config = _parse_config(path, branch=branch, model_config=False)
     tempdir = tempfile.mkdtemp()
     with open(tempdir + '/scivision.yml', 'w') as file:
-        yaml.dump(yaml_config, file)
+        yaml.dump(config, file)
     return intake.open_catalog(tempdir + '/scivision.yml')
