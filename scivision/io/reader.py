@@ -99,11 +99,10 @@ def load_dataset(
     """Load a dataset from the path specified in scivision.yml."""
     # parse the config file
     # path = path + 'scivision.yml' #TODO: change _parse_config
+    # check whether scivision.yml or scivision.yaml exists and throw an error if not
     config = _parse_url(path, branch=branch)
     r = requests.get(config)
     yaml_config = yaml.load(r.content, Loader=yaml.Loader)
-    yamlcatalog = YAMLFileCatalog(path='', autoreload=False)
-    yamlcatalog.from_dict(yaml_config)
-    return yamlcatalog
-    # print(config)
-    # return intake.open_catalog(r.content)
+    with open('scivision.yaml', 'w') as file:
+        yaml.dump(yaml_config, file)
+    return intake.open_catalog('scivision.yaml')
