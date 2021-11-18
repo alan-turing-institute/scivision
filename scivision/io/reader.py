@@ -10,8 +10,6 @@ from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel
 
-SCIVISION_YAML_CONFIG = ".scivision-config.yaml"
-
 
 def _is_url(path: os.PathLike) -> bool:
     return urlparse(path).scheme in ("http", "https",)
