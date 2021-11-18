@@ -2,14 +2,9 @@ import os
 from urllib.parse import urlparse
 
 import fsspec
-import yaml
-
 import intake
-import intake_xarray
-# import xarray as xr
 import tempfile
 import yaml
-from intake.catalog.local import YAMLFileCatalog
 
 from ..koala import koala
 from .installer import install_package
