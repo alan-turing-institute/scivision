@@ -91,7 +91,7 @@ def load_dataset(
     path: os.PathLike,
     branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
-    """Load a pre-trained model.
+    """Load a dataset.
 
     Parameters
     ----------
