@@ -3,7 +3,6 @@ from urllib.parse import urlparse
 
 import fsspec
 import intake
-import tempfile
 import yaml
 
 from ..koala import koala
@@ -29,7 +28,7 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     return parsed.geturl()
 
 
-def _parse_config(path: os.PathLike, branch: str = "main", model_config: bool = True) -> dict:
+def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
     """Parse the scivision.yml file from a GitHub repository.
     Will also accept differently named yaml if a full path provided or a local file.
     """
@@ -49,8 +48,7 @@ def _parse_config(path: os.PathLike, branch: str = "main", model_config: bool = 
         config = yaml.safe_load(stream)
 
     # make sure a model at least has an input to the function
-    if model_config:
-        assert "X" in config["prediction_fn"]["args"].keys()
+    assert "X" in config["prediction_fn"]["args"].keys()
 
     return config
 
@@ -107,8 +105,11 @@ def load_dataset(
     intake.catalog.local.YAMLFileCatalog
         The intake catalog object from which an xarray dataset can be created.
     """
-    config = _parse_config(path, branch=branch, model_config=False)
-    tempdir = tempfile.mkdtemp()
-    with open(tempdir + '/scivision.yml', 'w') as file:
-        yaml.dump(config, file)
-    return intake.open_catalog(tempdir + '/scivision.yml')
+    if _is_url(path):
+        path = _parse_url(path, branch)
+
+    # check that this is a path to a yaml file
+    # if not, assume it is a repo containing "scivision.yml"
+    if not path.endswith((".yml", ".yaml",)):
+        path = path + "scivision.yml"
+    return intake.open_catalog(path)
