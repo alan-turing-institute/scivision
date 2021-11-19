@@ -1,7 +1,9 @@
 from scivision.io import load_dataset, load_pretrained_model, wrapper
 import intake
 
-#TODO: make the tests rely on specific commits from the example urls
+# TODO: make the tests rely on specific commits from the example urls
+
+
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
     assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton')) == intake.catalog.local.YAMLFileCatalog
@@ -19,5 +21,5 @@ def test_load_dataset_local():
 
 def test_load_pretrained_model():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
-    #TODO: add tests for the methods in wrapper.py and installer.py
+    # TODO: add tests for the methods in wrapper.py and installer.py
     assert type(load_pretrained_model('https://github.com/quantumjot/scivision-test-plugin/.scivision-config_imagenet.yaml')) == wrapper.PretrainedModel

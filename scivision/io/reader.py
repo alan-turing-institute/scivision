@@ -26,8 +26,8 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
     parsed = parsed._replace(path=new_path)
     return parsed.geturl()
-    
-    
+
+
 def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
     """Parse the scivision.yml file from a GitHub repository.
     Will also accept differently named yaml if a full path provided or a local file.
@@ -75,7 +75,7 @@ def load_pretrained_model(
     with file as config_file:
         stream = config_file.read()
         config = yaml.safe_load(stream)
-    
+
     # make sure a model at least has an input to the function
     assert "X" in config["prediction_fn"]["args"].keys()
 
@@ -103,7 +103,7 @@ def load_dataset(
     intake.catalog.local.YAMLFileCatalog
         The intake catalog object from which an xarray dataset can be created.
     """
-    
+
     path = _parse_config(path, branch)
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
