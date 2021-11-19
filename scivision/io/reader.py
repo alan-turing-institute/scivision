@@ -28,7 +28,7 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     return parsed.geturl()
     
     
-def _parse_path(path: os.PathLike, branch: str = "main") -> dict:
+def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
     """Parse the scivision.yml file from a GitHub repository.
     Will also accept differently named yaml if a full path provided or a local file.
     """
@@ -41,21 +41,6 @@ def _parse_path(path: os.PathLike, branch: str = "main") -> dict:
     if not path.endswith((".yml", ".yaml",)):
         path = path + "scivision.yml"
     return path
-
-
-def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
-    """Parse the scivision.yml file from a GitHub repository.
-    Will also accept differently named yaml if a full path provided or a local file.
-    """
-    
-    path = _parse_path(path, branch)
-    # fsspec will throw an error if the path does not exist
-    file = fsspec.open(path)
-    with file as config_file:
-        stream = config_file.read()
-        config = yaml.safe_load(stream)
-
-    return config
 
 
 @koala
@@ -83,8 +68,13 @@ def load_pretrained_model(
         The instantiated pre-trained model.
     """
 
-    # parse the config file
-    config = _parse_config(path, branch=branch)
+    path = _parse_config(path, branch)
+    # fsspec will throw an error if the path does not exist
+    file = fsspec.open(path)
+    # parse the config file:
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
     
     # make sure a model at least has an input to the function
     assert "X" in config["prediction_fn"]["args"].keys()
@@ -114,7 +104,7 @@ def load_dataset(
         The intake catalog object from which an xarray dataset can be created.
     """
     
-    path = _parse_path(path, branch)
+    path = _parse_config(path, branch)
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
     return intake.open_catalog(path)
