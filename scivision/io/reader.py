@@ -47,9 +47,6 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
         stream = config_file.read()
         config = yaml.safe_load(stream)
 
-    # make sure a model at least has an input to the function
-    assert "X" in config["prediction_fn"]["args"].keys()
-
     return config
 
 
@@ -80,6 +77,9 @@ def load_pretrained_model(
 
     # parse the config file
     config = _parse_config(path, branch=branch)
+    
+    # make sure a model at least has an input to the function
+    assert "X" in config["prediction_fn"]["args"].keys()
 
     # try to install the package if necessary
     install_package(config, allow_install=allow_install)
