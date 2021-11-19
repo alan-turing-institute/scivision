@@ -26,9 +26,9 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
     parsed = parsed._replace(path=new_path)
     return parsed.geturl()
-
-
-def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
+    
+    
+def _parse_path(path: os.PathLike, branch: str = "main") -> dict:
     """Parse the scivision.yml file from a GitHub repository.
     Will also accept differently named yaml if a full path provided or a local file.
     """
@@ -40,8 +40,16 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
     # if not, assume it is a repo containing "scivision.yml"
     if not path.endswith((".yml", ".yaml",)):
         path = path + "scivision.yml"
+    return path
 
-    # This will throw an error if the path does not exist
+
+def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
+    """Parse the scivision.yml file from a GitHub repository.
+    Will also accept differently named yaml if a full path provided or a local file.
+    """
+    
+    path = _parse_path(path, branch)
+    # fsspec will throw an error if the path does not exist
     file = fsspec.open(path)
     with file as config_file:
         stream = config_file.read()
@@ -105,15 +113,8 @@ def load_dataset(
     intake.catalog.local.YAMLFileCatalog
         The intake catalog object from which an xarray dataset can be created.
     """
-    if _is_url(path):
-        path = _parse_url(path, branch)
-
-    # check that this is a path to a yaml file
-    # if not, assume it is a repo containing "scivision.yml"
-    if not path.endswith((".yml", ".yaml",)):
-        path = path + "scivision.yml"
-        
-    # This will throw an error if the path does not exist
-    file = fsspec.open(path)
-
+    
+    path = _parse_path(path, branch)
+    # fsspec will throw an error if the path does not exist
+    fsspec.open(path)
     return intake.open_catalog(path)
