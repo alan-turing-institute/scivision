@@ -2,13 +2,12 @@ import os
 from urllib.parse import urlparse
 
 import fsspec
+import intake
 import yaml
 
 from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel
-
-SCIVISION_YAML_CONFIG = ".scivision-config.yaml"
 
 
 def _is_url(path: os.PathLike) -> bool:
@@ -30,23 +29,18 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
 
 
 def _parse_config(path: os.PathLike, branch: str = "main") -> dict:
-    """Parse the `scivision` config file."""
-    # check that this is a path to a yaml file
-    if not path.endswith((".yml", ".yaml",)):
-        raise ValueError(f"Invalid configuration filename: {path}")
+    """Parse the scivision.yml file from a GitHub repository.
+    Will also accept differently named yaml if a full path provided or a local file.
+    """
 
     if _is_url(path):
-        path = _parse_url(path)
+        path = _parse_url(path, branch)
 
-    file = fsspec.open(path)
-    with file as config_file:
-        stream = config_file.read()
-        config = yaml.safe_load(stream)
-
-    # make sure we at least have an input to the function
-    assert "X" in config["prediction_fn"]["args"].keys()
-
-    return config
+    # check that this is a path to a yaml file
+    # if not, assume it is a repo containing "scivision.yml"
+    if not path.endswith((".yml", ".yaml",)):
+        path = path + "scivision.yml"
+    return path
 
 
 @koala
@@ -74,10 +68,43 @@ def load_pretrained_model(
         The instantiated pre-trained model.
     """
 
-    # parse the config file
-    config = _parse_config(path, branch=branch)
+    path = _parse_config(path, branch)
+    # fsspec will throw an error if the path does not exist
+    file = fsspec.open(path)
+    # parse the config file:
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
+
+    # make sure a model at least has an input to the function
+    assert "X" in config["prediction_fn"]["args"].keys()
 
     # try to install the package if necessary
     install_package(config, allow_install=allow_install)
 
     return PretrainedModel(config)
+
+
+def load_dataset(
+    path: os.PathLike,
+    branch: str = "main"
+) -> intake.catalog.local.YAMLFileCatalog:
+    """Load a dataset.
+
+    Parameters
+    ----------
+    path : PathLike
+        The filename, path or URL of an intake catalog, which links to a dataset.
+    branch : str, default = main
+        Specify the name of a github branch if loading from github.
+
+    Returns
+    -------
+    intake.catalog.local.YAMLFileCatalog
+        The intake catalog object from which an xarray dataset can be created.
+    """
+
+    path = _parse_config(path, branch)
+    # fsspec will throw an error if the path does not exist
+    fsspec.open(path)
+    return intake.open_catalog(path)
