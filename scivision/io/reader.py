@@ -112,4 +112,10 @@ def load_dataset(
     # if not, assume it is a repo containing "scivision.yml"
     if not path.endswith((".yml", ".yaml",)):
         path = path + "scivision.yml"
+        
+    # This will throw an error if the path does not exist
+    file = fsspec.open(path)
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
     return intake.open_catalog(path)
