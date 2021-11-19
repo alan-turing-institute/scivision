@@ -29,7 +29,7 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     return parsed.geturl()
 
 
-def _parse_config(path: os.PathLike, branch: str = "main", model_config=True) -> dict:
+def _parse_config(path: os.PathLike, branch: str = "main", model_config: bool = True) -> dict:
     """Parse the scivision.yml file from a GitHub repository.
     Will also accept differently named yaml if a full path provided or a local file.
     """
