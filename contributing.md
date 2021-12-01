@@ -42,7 +42,7 @@ Please open a GitHub issue to suggest a new feature, contribute code, or let us 
 ---
 
 This project is maintained by a team of researchers at The Alan Turing Institute.
-For any organisation related queries or concerns, you can directly reach out to the project team by emailing [xx](mailto:xx@turing.ac.uk).
+For any organisation related queries or concerns, you can directly reach out to the project team by emailing [the Scivison maintainers](mailto:scivision@turing.ac.uk).
 
 ♻️ License
 ---
