@@ -10,10 +10,10 @@ with open("requirements.txt") as f:
 
 setup(
     name="scivision",
-    version="0.0.1",
+    version="0.1.0",
     description="scivision",
-    author="Scivision Community",
-    author_email="scivision@unknown.invalid",
+    author="The Alan Turing Institute",
+    author_email="scivision@turing.ac.uk",
     url="https://github.com/alan-turing-institute/scivision",
     packages=find_packages(),
     install_requires=requirements,
