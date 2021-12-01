@@ -15,7 +15,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="scivision",
-    version="0.1.0",
+    version="0.1.1",
     description="scivision",
     author="The Alan Turing Institute",
     author_email="scivision@turing.ac.uk",
