@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 
+# read the contents of your README file
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+
 requirements = []
 with open("requirements.txt") as f:
     for line in f:
@@ -10,13 +15,15 @@ with open("requirements.txt") as f:
 
 setup(
     name="scivision",
-    version="0.0.1",
+    version="0.1.1",
     description="scivision",
-    author="Scivision Community",
+    author="The Alan Turing Institute",
     author_email="scivision@turing.ac.uk",
     url="https://github.com/alan-turing-institute/scivision",
     packages=find_packages(),
     install_requires=requirements,
     python_requires=">=3.7",
     include_package_data=True,
+    long_description=long_description,
+    long_description_content_type='text/markdown',
 )
