@@ -57,3 +57,8 @@ def test_load_multiple_models():
     model1, model2 = load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=True)
     assert type(model1) == wrapper.PretrainedModel
     assert type(model2) == wrapper.PretrainedModel
+    
+    
+def test_load_first_model_from_config_with_multiple():
+    """Test that scivision loads a single a model from a config with multiple models when not told to load multiple."""
+    assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=False)) == wrapper.PretrainedModel
