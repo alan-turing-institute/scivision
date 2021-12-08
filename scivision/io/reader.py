@@ -111,12 +111,12 @@ def load_pretrained_model(
                         break
                 # Check that a model of name "model" in scivision.yml config
                 if "model" not in config:
-                    raise ValueError("model name does not exist")
+                    raise ValueError("model of name " + model + " not found in config yaml")
             config_list.append(config)
     else:
         # Check that a model of name "model" in scivision.yml config
-        if model != "default":
-            raise ValueError("model name does not exist")
+        if model != "default" and config["model"] != model:
+            raise ValueError("model of name " + model + " not found in config yaml")
         config_list.append(config)
     loaded_models = []
     for config in config_list:
