@@ -9,6 +9,8 @@ from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel
 
+import warnings
+
 
 def _is_url(path: os.PathLike) -> bool:
     return urlparse(path).scheme in ("http", "https",)
@@ -114,6 +116,8 @@ def load_pretrained_model(
                     raise ValueError("model of name " + model + " not found in config yaml")
             config_list.append(config)
     else:
+        if load_multiple:
+            warnings.warn("Only one model found in config yaml, will load that one...")
         # Check that a model of name "model" in scivision.yml config
         if model != "default" and config["model"] != model:
             raise ValueError("model of name " + model + " not found in config yaml")
