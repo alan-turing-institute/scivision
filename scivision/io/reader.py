@@ -74,8 +74,7 @@ def load_pretrained_model(
     # parse the config file:
     with file as config_file:
         stream = config_file.read()
-        config = yaml.safe_load(stream)
-
+        config = yaml.load(stream) # yaml.safe_load doesn't like a list of models
     # make sure a model at least has an input to the function
     assert "X" in config["prediction_fn"]["args"].keys()
 
