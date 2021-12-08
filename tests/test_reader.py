@@ -16,7 +16,7 @@ def test_load_dataset_branch_and_diff_file_name():
 
 def test_load_dataset_local():
     """Test that an intake catalog is generated from a local yml works."""
-    assert type(load_dataset('tests/test_scivision.yml')) == intake.catalog.local.YAMLFileCatalog
+    assert type(load_dataset('tests/test_dataset_scivision.yml')) == intake.catalog.local.YAMLFileCatalog
 
 
 def test_load_pretrained_model():
