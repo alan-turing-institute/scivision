@@ -110,9 +110,13 @@ def load_pretrained_model(
                         config["prediction_fn"] = model_dict["prediction_fn"]
                         break
                 # Check that a model of name "model" in scivision.yml config
-                assert "model" in config
+                if "model" not in config:
+                    raise ValueError("model name does not exist")
             config_list.append(config)
     else:
+        # Check that a model of name "model" in scivision.yml config
+        if model != "default":
+            raise ValueError("model name does not exist")
         config_list.append(config)
     loaded_models = []
     for config in config_list:
