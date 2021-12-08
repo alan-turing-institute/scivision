@@ -82,7 +82,7 @@ def load_pretrained_model(
     # parse the config file:
     with file as config_file:
         stream = config_file.read()
-        config = yaml.load(stream) # yaml.safe_load doesn't like a list of models
+        config = yaml.safe_load(stream)
     # Create a list that will contain one or multiple model configs
     config_list = []
     if "models" in config:
