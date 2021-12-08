@@ -31,6 +31,10 @@ def test_load_pretrained_model_local():
     """Test that scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
     assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True)) == wrapper.PretrainedModel
     
+def test_load_named_pretrained_model_local():
+    """Test that scivision can load a specific model from the given scivision.yml."""
+    assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='ImageNetModel')) == wrapper.PretrainedModel
+    
 def test_load_multiple_models():
     """Test that scivision can load multiple pretrained models from the same GitHub repo."""
     model1, model2 = load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=True)
