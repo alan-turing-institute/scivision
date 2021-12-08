@@ -19,7 +19,11 @@ def test_load_dataset_local():
     assert type(load_dataset('tests/test_dataset_scivision.yml')) == intake.catalog.local.YAMLFileCatalog
 
 
-def test_load_pretrained_model():
+def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
     # TODO: add tests for the methods in wrapper.py and installer.py
     assert type(load_pretrained_model('https://github.com/quantumjot/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True)) == wrapper.PretrainedModel
+
+def test_load_pretrained_model_local():
+    """Test that scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
+    assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True)) == wrapper.PretrainedModel
