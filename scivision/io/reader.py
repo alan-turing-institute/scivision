@@ -48,6 +48,7 @@ def load_pretrained_model(
     path: os.PathLike,
     branch: str = "main",
     allow_install: bool = False,
+    model = "default",
     *args,
     **kwargs,
 ) -> PretrainedModel:
@@ -77,9 +78,10 @@ def load_pretrained_model(
         config = yaml.load(stream) # yaml.safe_load doesn't like a list of models
     if 'models' in config:
         # Choose the first model in the list by default
-        config['model'] = config['models'][0]['model']
-        config['args'] = config['models'][0]['args']
-        config['prediction_fn'] = config['models'][0]['prediction_fn']
+        if model == "default":
+            config['model'] = config['models'][0]['model']
+            config['args'] = config['models'][0]['args']
+            config['prediction_fn'] = config['models'][0]['prediction_fn']
     # make sure a model at least has an input to the function
     assert "X" in config["prediction_fn"]["args"].keys()
 
