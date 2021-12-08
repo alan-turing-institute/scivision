@@ -37,6 +37,7 @@ def test_load_pretrained_model_local():
 def test_load_named_pretrained_model_local():
     """Test that scivision can load a specific model from the given scivision.yml."""
     assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='ImageNetModel')) == wrapper.PretrainedModel
+    assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model='ImageNetModel')) == wrapper.PretrainedModel
 
 
 def test_load_wrong_model_name_raises_value_error():
