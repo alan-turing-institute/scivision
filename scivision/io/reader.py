@@ -82,6 +82,14 @@ def load_pretrained_model(
             config["model"] = config["models"][0]["model"]
             config["args"] = config["models"][0]["args"]
             config["prediction_fn"] = config["models"][0]["prediction_fn"]
+        # Choose the named model:
+        else:
+            for model_dict in config["models"]:
+                if model_dict["model"] == model:
+                    config["model"] = model_dict["model"]
+                    config["args"] = model_dict["args"]
+                    config["prediction_fn"] = model_dict["prediction_fn"]
+                    break
     # make sure a model at least has an input to the function
     assert "X" in config["prediction_fn"]["args"].keys()
 
