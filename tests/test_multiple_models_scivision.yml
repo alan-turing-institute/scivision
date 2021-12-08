@@ -1,0 +1,20 @@
+name: test
+url: https://github.com/edwardchalstrey1/scivision-test-plugin.git
+import: scivision_test_plugin
+models:
+  - model: ImageNetModel
+    args:
+        model_name: resnet18
+    prediction_fn:
+        call: predict
+        args:
+            X: image
+        kwargs: None
+  - model: DummyModel
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
+        kwargs:
+            - sigma

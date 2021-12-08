@@ -110,7 +110,10 @@ def load_pretrained_model(
                         config["prediction_fn"] = model_dict["prediction_fn"]
                         break
             config_list.append(config)
+    else:
+        config_list.append(config)
     loaded_models = []
+    # print(config_list)
     for config in config_list:
         # make sure a model at least has an input to the function
         assert "X" in config["prediction_fn"]["args"].keys()
