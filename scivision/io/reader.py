@@ -48,7 +48,7 @@ def load_pretrained_model(
     path: os.PathLike,
     branch: str = "main",
     allow_install: bool = False,
-    model = "default",
+    model: str = "default",
     *args,
     **kwargs,
 ) -> PretrainedModel:
@@ -62,6 +62,8 @@ def load_pretrained_model(
         Specify the name of a github branch if loading from github.
     allow_install : bool, default = False
         Allow installation of remote package via pip.
+    model : str, default = default
+        Specify the name of the model if there is > 1.
 
     Returns
     -------
