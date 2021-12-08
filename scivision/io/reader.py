@@ -49,6 +49,7 @@ def load_pretrained_model(
     branch: str = "main",
     allow_install: bool = False,
     model: str = "default",
+    load_multiple: bool = False,
     *args,
     **kwargs,
 ) -> PretrainedModel:
@@ -64,6 +65,8 @@ def load_pretrained_model(
         Allow installation of remote package via pip.
     model : str, default = default
         Specify the name of the model if there is > 1.
+    load_multiple : bool, default = False
+        Modifies the return to be a list of scivision.PretrainedModel's.
 
     Returns
     -------
@@ -78,27 +81,47 @@ def load_pretrained_model(
     with file as config_file:
         stream = config_file.read()
         config = yaml.load(stream) # yaml.safe_load doesn't like a list of models
+    # Create a list that will contain one or multiple model configs
+    config_list = []
     if "models" in config:
-        # Choose the first model in the list by default
-        if model == "default":
-            config["model"] = config["models"][0]["model"]
-            config["args"] = config["models"][0]["args"]
-            config["prediction_fn"] = config["models"][0]["prediction_fn"]
-        # Choose the named model:
-        else:
+        if load_multiple:
+            # Create a config for each model
             for model_dict in config["models"]:
-                if model_dict["model"] == model:
-                    config["model"] = model_dict["model"]
-                    config["args"] = model_dict["args"]
-                    config["prediction_fn"] = model_dict["prediction_fn"]
-                    break
-    # make sure a model at least has an input to the function
-    assert "X" in config["prediction_fn"]["args"].keys()
+                new_config = {}
+                new_config["name"] = config["name"]
+                new_config["url"] = config["url"]
+                new_config["import"] = config["import"]
+                new_config["model"] = model_dict["model"]
+                new_config["args"] = model_dict["args"]
+                new_config["prediction_fn"] = model_dict["prediction_fn"]
+                config_list.append(new_config)
+        else:
+            # Choose the first model in the list by default
+            if model == "default":
+                config["model"] = config["models"][0]["model"]
+                config["args"] = config["models"][0]["args"]
+                config["prediction_fn"] = config["models"][0]["prediction_fn"]
+            # Choose the named model:
+            else:
+                for model_dict in config["models"]:
+                    if model_dict["model"] == model:
+                        config["model"] = model_dict["model"]
+                        config["args"] = model_dict["args"]
+                        config["prediction_fn"] = model_dict["prediction_fn"]
+                        break
+            config_list.append(config)
+    loaded_models = []
+    for config in config_list:
+        # make sure a model at least has an input to the function
+        assert "X" in config["prediction_fn"]["args"].keys()
 
-    # try to install the package if necessary
-    install_package(config, allow_install=allow_install)
+        # try to install the package if necessary
+        install_package(config, allow_install=allow_install)
 
-    return PretrainedModel(config)
+        loaded_models.append(PretrainedModel(config))
+    if len(loaded_models) == 1:
+        return loaded_models[0]
+    return loaded_models
 
 
 def load_dataset(
