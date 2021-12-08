@@ -109,6 +109,8 @@ def load_pretrained_model(
                         config["args"] = model_dict["args"]
                         config["prediction_fn"] = model_dict["prediction_fn"]
                         break
+                # Check that a model of name "model" in scivision.yml config
+                assert "model" in config
             config_list.append(config)
     else:
         config_list.append(config)
