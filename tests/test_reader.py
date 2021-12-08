@@ -28,23 +28,28 @@ def test_load_pretrained_model_remote():
     # TODO: add tests for the methods in wrapper.py and installer.py
     assert type(load_pretrained_model('https://github.com/quantumjot/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True)) == wrapper.PretrainedModel
 
+
 def test_load_pretrained_model_local():
     """Test that scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
     assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True)) == wrapper.PretrainedModel
     
+
 def test_load_named_pretrained_model_local():
     """Test that scivision can load a specific model from the given scivision.yml."""
     assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='ImageNetModel')) == wrapper.PretrainedModel
+
 
 def test_load_wrong_model_name_raises_value_error():
     """Test that a value error is raised when a model name is specified that doesn't match the model in the config."""
     with pytest.raises(ValueError):
         load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='FakeModel')
+
         
 def test_load_wrong_model_name_raises_value_error_config_has_multiple_models():
     """Test that a value error is raised when a model name is specified that doesn't match one of the models in the config."""
     with pytest.raises(ValueError):
         load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model='FakeModel')
+
 
 def test_load_multiple_models():
     """Test that scivision can load multiple pretrained models from the same GitHub repo."""
