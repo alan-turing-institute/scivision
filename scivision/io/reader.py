@@ -138,9 +138,10 @@ def load_pretrained_model(
         install_package(config, allow_install=allow_install)
 
         loaded_models.append(PretrainedModel(config))
-    if len(loaded_models) == 1:
-        return loaded_models[0]
-    return loaded_models
+    if load_multiple:
+        return loaded_models
+    # By default, return a single PretrainedModel
+    return loaded_models[0]
 
 
 def load_dataset(
