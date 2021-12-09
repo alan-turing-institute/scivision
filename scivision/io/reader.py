@@ -45,8 +45,22 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> str:
     return path
 
 
-def _get_model_configs(full_config, load_multiple, model):
+def _get_model_configs(full_config: dict, load_multiple: bool = False, model: str = "default"):
     """Get one config per model from a multi-model config.
+    
+    Parameters
+    ----------
+    full_config : dict
+        Dictionary of a scivision.yml config loaded from yaml.
+    load_multiple : bool, default = False
+        Modifies the return to be a list of scivision.PretrainedModel's.
+    model : str, default = default
+        Specify the name of a model to get the config for.
+
+    Returns
+    -------
+    List of dictionaries
+        One dictionary per config model.
     """
     # Create a list that will contain one or multiple model configs
     config_list = []
