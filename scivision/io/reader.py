@@ -43,6 +43,41 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> str:
     if not path.endswith((".yml", ".yaml",)):
         path = path + "scivision.yml"
     return path
+    
+def _get_model_configs(full_config, load_multiple, model):
+    """Get one config per model from a multi-model config.
+    """
+    config_list = []
+    if load_multiple:
+        # Create a config for each model
+        for model_dict in full_config["models"]:
+            new_config = {}
+            new_config["name"] = full_config["name"]
+            new_config["url"] = full_config["url"]
+            new_config["import"] = full_config["import"]
+            new_config["model"] = model_dict["model"]
+            new_config["args"] = model_dict["args"]
+            new_config["prediction_fn"] = model_dict["prediction_fn"]
+            config_list.append(new_config)
+    else:
+        # Choose the first model in the list by default
+        if model == "default":
+            full_config["model"] = full_config["models"][0]["model"]
+            full_config["args"] = full_config["models"][0]["args"]
+            full_config["prediction_fn"] = full_config["models"][0]["prediction_fn"]
+        # Choose the named model:
+        else:
+            for model_dict in full_config["models"]:
+                if model_dict["model"] == model:
+                    full_config["model"] = model_dict["model"]
+                    full_config["args"] = model_dict["args"]
+                    full_config["prediction_fn"] = model_dict["prediction_fn"]
+                    break
+            # Check that a model of name "model" in scivision.yml config
+            if "model" not in full_config:
+                raise ValueError("model of name " + model + " not found in config yaml")
+        config_list.append(full_config)
+    return config_list
 
 
 @koala
@@ -85,37 +120,9 @@ def load_pretrained_model(
         config = yaml.safe_load(stream)
     # Create a list that will contain one or multiple model configs
     config_list = []
-    if "models" in config:
-        if load_multiple:
-            # Create a config for each model
-            for model_dict in config["models"]:
-                new_config = {}
-                new_config["name"] = config["name"]
-                new_config["url"] = config["url"]
-                new_config["import"] = config["import"]
-                new_config["model"] = model_dict["model"]
-                new_config["args"] = model_dict["args"]
-                new_config["prediction_fn"] = model_dict["prediction_fn"]
-                config_list.append(new_config)
-        else:
-            # Choose the first model in the list by default
-            if model == "default":
-                config["model"] = config["models"][0]["model"]
-                config["args"] = config["models"][0]["args"]
-                config["prediction_fn"] = config["models"][0]["prediction_fn"]
-            # Choose the named model:
-            else:
-                for model_dict in config["models"]:
-                    if model_dict["model"] == model:
-                        config["model"] = model_dict["model"]
-                        config["args"] = model_dict["args"]
-                        config["prediction_fn"] = model_dict["prediction_fn"]
-                        break
-                # Check that a model of name "model" in scivision.yml config
-                if "model" not in config:
-                    raise ValueError("model of name " + model + " not found in config yaml")
-            config_list.append(config)
-    else:
+    if "models" in config: # if there are multiple models specified in the config yml
+        config_list = _get_model_configs(config, load_multiple, model)
+    else: # if there is a single model specified in the config yml
         if load_multiple:
             warnings.warn("Only one model found in config yaml, will load that one...")
         # Check that a model of name "model" in scivision.yml config
