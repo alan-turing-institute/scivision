@@ -1,6 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../")
 from scivision.io import load_dataset, load_pretrained_model, wrapper
 import intake
 import pytest
