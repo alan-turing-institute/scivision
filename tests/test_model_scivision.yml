@@ -1,0 +1,11 @@
+name: test
+url: https://github.com/quantumjot/scivision-test-plugin.git
+import: scivision_test_plugin
+model: ImageNetModel
+args:
+    model_name: resnet18
+prediction_fn:
+    call: predict
+    args:
+        X: image
+    kwargs: None
