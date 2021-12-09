@@ -47,7 +47,7 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> str:
 
 def _get_model_configs(full_config: dict, load_multiple: bool = False, model: str = "default"):
     """Get one config per model from a multi-model config.
-    
+
     Parameters
     ----------
     full_config : dict
@@ -64,7 +64,7 @@ def _get_model_configs(full_config: dict, load_multiple: bool = False, model: st
     """
     # Create a list that will contain one or multiple model configs
     config_list = []
-    if "models" in full_config: # if there are multiple models specified in the config yml
+    if "models" in full_config:  # if there are multiple models specified in the config yml
         if load_multiple:
             # Create a config for each model
             for model_dict in full_config["models"]:
@@ -94,7 +94,7 @@ def _get_model_configs(full_config: dict, load_multiple: bool = False, model: st
                 if "model" not in full_config:
                     raise ValueError("model of name " + model + " not found in config yaml")
             config_list.append(full_config)
-    else: # if there is a single model specified in the config yml
+    else:  # if there is a single model specified in the config yml
         if load_multiple:
             warnings.warn("Only one model found in config yaml, will load that one...")
         # Check that a model of name "model" in scivision.yml config

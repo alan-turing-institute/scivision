@@ -29,7 +29,7 @@ def test_load_pretrained_model_remote():
 def test_load_pretrained_model_local():
     """Test that scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
     assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True)) == wrapper.PretrainedModel
-    
+
 
 def test_load_named_pretrained_model_local():
     """Test that scivision can load a specific model from the given scivision.yml."""
@@ -42,7 +42,7 @@ def test_load_wrong_model_name_raises_value_error():
     with pytest.raises(ValueError):
         load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='FakeModel')
 
-        
+
 def test_load_wrong_model_name_raises_value_error_config_has_multiple_models():
     """Test that a value error is raised when a model name is specified that doesn't match one of the models in the config."""
     with pytest.raises(ValueError):
@@ -54,8 +54,8 @@ def test_load_multiple_models():
     model1, model2 = load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=True)
     assert type(model1) == wrapper.PretrainedModel
     assert type(model2) == wrapper.PretrainedModel
-    
-    
+
+
 def test_load_first_model_from_config_with_multiple():
     """Test that scivision loads a single a model from a config with multiple models when not told to load multiple."""
     assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=False)) == wrapper.PretrainedModel
