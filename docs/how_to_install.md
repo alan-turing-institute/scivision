@@ -1,8 +1,8 @@
 How to install
 ==============
 
-This is a Python package, so you can install it with pip.
+Scivision is a Python package. You can install the latest version from [PyPi](https://pypi.org/project/scivision/) with pip:
 
 ````bash
-    pip install -U .
+    pip install scivision
 ````
