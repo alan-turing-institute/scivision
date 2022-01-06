@@ -1,4 +1,4 @@
-from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url
+from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url, _parse_config
 import intake
 import pytest
 
@@ -24,6 +24,15 @@ def test_parse_url_branch():
     path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/' + branch + '/tests/test_reader.py'
     assert _parse_url(path, branch=branch) == raw
+    
+def test_parse_config():
+    """Test that scivision.yml config urls are correctly parsed."""
+    repo_path = 'https://github.com/edwardchalstrey1/scivision-test-plugin'
+    default_yml = 'https://raw.githubusercontent.com/edwardchalstrey1/scivision-test-plugin/main/scivision.yml'
+    named_file_path = 'https://github.com/edwardchalstrey1/scivision-test-plugin/blob/main/.scivision-config_imagenet.yaml'
+    named_yml = 'https://raw.githubusercontent.com/edwardchalstrey1/scivision-test-plugin/main/.scivision-config_imagenet.yaml'
+    assert _parse_config(repo_path) == default_yml
+    assert _parse_config(named_file_path) == named_yml
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
