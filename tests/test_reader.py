@@ -1,9 +1,21 @@
-from scivision.io import load_dataset, load_pretrained_model, wrapper
+from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url
 import intake
 import pytest
 
 # TODO: make the tests rely on specific commits from the example urls
 
+
+def test_parse_url():
+    """Test that GitHub urls are correctly converted to raw."""
+    path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
+    raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
+    assert _parse_url(path) == raw
+    
+# def test_parse_url():
+#     """Test that a GitHub is correctly converted to raw."""
+#     path = 'https://github.com/alan-turing-institute/scivision/blob/main/tests/test_reader.py'
+#     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
+#     assert _parse_url(path) == raw
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
