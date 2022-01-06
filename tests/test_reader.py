@@ -16,6 +16,14 @@ def test_parse_url_blob():
     path = 'https://github.com/alan-turing-institute/scivision/blob/main/tests/test_reader.py'
     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
     assert _parse_url(path) == raw
+    
+def test_parse_url_branch():
+    """Test that GitHub urls are correctly converted to raw when a branch is specified."""
+    # note: test-branch does not exist
+    branch = 'test-branch'
+    path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
+    raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/' + branch + '/tests/test_reader.py'
+    assert _parse_url(path, branch=branch) == raw
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
