@@ -11,11 +11,11 @@ def test_parse_url():
     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
     assert _parse_url(path) == raw
     
-# def test_parse_url():
-#     """Test that a GitHub is correctly converted to raw."""
-#     path = 'https://github.com/alan-turing-institute/scivision/blob/main/tests/test_reader.py'
-#     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
-#     assert _parse_url(path) == raw
+def test_parse_url_blob():
+    """Test that GitHub urls directly copied from a browser are correctly converted to raw."""
+    path = 'https://github.com/alan-turing-institute/scivision/blob/main/tests/test_reader.py'
+    raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
+    assert _parse_url(path) == raw
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""

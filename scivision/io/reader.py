@@ -25,6 +25,11 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     # construct the new github path
     parsed = parsed._replace(netloc="raw.githubusercontent.com")
     split = list(filter(None, parsed.path.split("/")))
+    # Remove blob and the branch name when included
+    if 'blob' in split:
+        split.remove('blob')
+    if branch in split:
+        split.remove(branch)
     new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
     parsed = parsed._replace(path=new_path)
     return parsed.geturl()
