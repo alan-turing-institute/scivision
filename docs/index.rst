@@ -4,7 +4,7 @@
 scivision: A toolkit for scientific image analysis
 ===================================================
 
-Scivision has its documentation hosted on Read the Docs.
+scivision has its documentation hosted on Read the Docs.
 
 .. image:: https://i.imgur.com/kc7aE7z.png
     :alt: oplab_pipeline logo
