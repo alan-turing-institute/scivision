@@ -51,7 +51,7 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> str:
 
 
 def _get_model_configs(full_config: dict, load_multiple: bool = False, model: str = "default"):
-    """Get one config per model from a multi-model config.
+    """Get one config per model from a multi-model config (see tests/test_multiple_models_scivision.yml).
 
     Parameters
     ----------
@@ -147,6 +147,7 @@ def load_pretrained_model(
     with file as config_file:
         stream = config_file.read()
         config = yaml.safe_load(stream)
+    print(config)
     config_list = _get_model_configs(config, load_multiple, model)
     loaded_models = []
     for config in config_list:

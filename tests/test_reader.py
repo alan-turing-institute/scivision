@@ -1,6 +1,8 @@
-from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url, _parse_config
+from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url, _parse_config, _get_model_configs
 import intake
 import pytest
+import fsspec
+import yaml
 
 # TODO: make the tests rely on specific commits from the example urls
 
@@ -48,6 +50,19 @@ def test_load_dataset_local():
     """Test that an intake catalog is generated from a local yml works."""
     assert type(load_dataset('tests/test_dataset_scivision.yml')) == intake.catalog.local.YAMLFileCatalog
 
+
+def test_get_model_configs():
+    """Test that a config with multiple models is split into separate configs."""
+    path = _parse_config('tests/test_multiple_models_scivision.yml')
+    file = fsspec.open(path)
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
+    config_list = _get_model_configs(config, load_multiple=True)
+    for config in config_list:
+        assert 'name' in config
+        assert 'model' in config
+    
 
 def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
