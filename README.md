@@ -34,3 +34,33 @@ This tool aims to foster collaboration between **data owners** and **developers*
 * Evolving with a focus on the needs and priorities of both developers and users
 * Creating and maintaining a community of interdisciplinary contributors
 * Providing a bridge between different data scales and formats
+
+Table of contents
+-----------------
+
+- [Installation and setup](#installation)
+
+## Installation
+
+1. **install scivision via [PyPi](https://pypi.org/project/scivision/)**: which tends to be the most user-friendly option:
+
+    ```bash
+    pip install scivision
+    ```
+
+    * We have provided some [Jupyter Notebooks to show how different components in scivision can be run]((./examples)). 
+
+2. **install scivision from the source code**:
+
+    * Clone scivision source code:
+
+    ```bash
+    git clone https://github.com/alan-turing-institute/scivision.git 
+    ```
+
+    * Install scivision and its dependencies:
+
+    ```bash
+    cd /path/to/my/scivision
+    pip install -v -e .
+    ```
