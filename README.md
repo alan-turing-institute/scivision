@@ -48,7 +48,7 @@ Table of contents
     pip install scivision
     ```
 
-    * We have provided some [Jupyter Notebooks to show how different components in scivision can be run]((./examples)). 
+    * We have provided [Jupyter Notebooks to show how different components in scivision can be run]((./examples)). 
 
 2. **install scivision from the source code**:
 
