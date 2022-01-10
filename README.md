@@ -50,6 +50,12 @@ Table of contents
 
     * We have provided [Jupyter Notebooks to show how different components in scivision can be run]((./examples)). 
 
+    You can install `Jupyter` by:
+
+    ```bash
+    pip install jupyter
+    ```
+
 2. **install scivision from the source code**:
 
     * Clone scivision source code:
