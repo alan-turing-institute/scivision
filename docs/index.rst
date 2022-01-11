@@ -27,6 +27,8 @@ User's Guide
    :maxdepth: 2
 
    how_to_install
+   contributing
+   release_process
 
 API Reference
 -------------
