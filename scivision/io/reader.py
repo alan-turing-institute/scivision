@@ -24,7 +24,7 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
 
     parsed = urlparse(path)
 
-    if not parsed.netloc in ["github.com"]:
+    if parsed.netloc not in ["github.com"]:
         return parsed.geturl()
 
     if parsed.netloc == "github.com": 
@@ -196,4 +196,7 @@ def load_dataset(
     path = _parse_config(path, branch)
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
-    return intake.open_catalog(path)
+
+    intake_cat = intake.open_catalog(path)
+
+    return intake_cat 
