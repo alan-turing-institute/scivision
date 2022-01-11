@@ -43,7 +43,7 @@ Please open a GitHub issue to suggest a new feature, contribute code, or let us 
     - All of the automated tests should pass
     - It should add tests of any new functionality
   - A code review can be requested at any time
-  - Pull requests are [squash merged]() to `main`
+  - Pull requests are [squash merged](https://github.blog/2016-04-01-squash-your-commits/) to `main`
 
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
