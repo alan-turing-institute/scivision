@@ -16,7 +16,10 @@ import warnings
 
 
 def _is_url(path: os.PathLike) -> bool:
-    return urlparse(path).scheme in ("http", "https",)
+    return urlparse(path).scheme in (
+        "http",
+        "https",
+    )
 
 
 def _parse_url(path: os.PathLike, branch: str = "main"):
@@ -27,16 +30,16 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
     if parsed.netloc not in ["github.com"]:
         return parsed.geturl()
 
-    if parsed.netloc == "github.com": 
+    if parsed.netloc == "github.com":
         # construct the new github path
         parsed = parsed._replace(netloc="raw.githubusercontent.com")
         split = list(filter(None, parsed.path.split("/")))
         if branch not in split:
             new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
         else:
-            if split[-3] == 'blob': 
+            if split[-3] == "blob":
                 del split[-3]
-            new_path = "/".join(split) 
+            new_path = "/".join(split)
 
         parsed = parsed._replace(path=new_path)
         return parsed.geturl()
@@ -54,12 +57,19 @@ def _parse_config(path: os.PathLike, branch: str = "main") -> str:
 
     # check that this is a path to a yaml file
     # if not, assume it is a repo containing "scivision.yml"
-    if not path.endswith((".yml", ".yaml",)):
+    if not path.endswith(
+        (
+            ".yml",
+            ".yaml",
+        )
+    ):
         path = path + "scivision.yml"
     return path
 
 
-def _get_model_configs(full_config: dict, load_multiple: bool = False, model: str = "default"):
+def _get_model_configs(
+    full_config: dict, load_multiple: bool = False, model: str = "default"
+):
     """Get one config per model from a multi-model config.
 
     Parameters
@@ -78,7 +88,9 @@ def _get_model_configs(full_config: dict, load_multiple: bool = False, model: st
     """
     # Create a list that will contain one or multiple model configs
     config_list = []
-    if "models" in full_config:  # if there are multiple models specified in the config yml
+    if (
+        "models" in full_config
+    ):  # if there are multiple models specified in the config yml
         if load_multiple:
             # Create a config for each model
             for model_dict in full_config["models"]:
@@ -106,13 +118,17 @@ def _get_model_configs(full_config: dict, load_multiple: bool = False, model: st
                         break
                 # Check that a model of name "model" in scivision.yml config
                 if "model" not in full_config:
-                    raise ValueError("model of name " + model + " not found in config yaml")
+                    raise ValueError(
+                        "model of name " + model + " not found in config yaml"
+                    )
             config_list.append(full_config)
     else:  # if there is a single model specified in the config yml
         if load_multiple:
-            warnings.warn("Only one model found in config yaml " 
-                          "(i.e., no 'models' section in the config file), "
-                          "will load that one...")
+            warnings.warn(
+                "Only one model found in config yaml "
+                "(i.e., no 'models' section in the config file), "
+                "will load that one..."
+            )
         # Check that a model of name "model" in scivision.yml config
         if model != "default" and full_config["model"] != model:
             raise ValueError("model of name " + model + " not found in config yaml")
@@ -175,8 +191,7 @@ def load_pretrained_model(
 
 
 def load_dataset(
-    path: os.PathLike,
-    branch: str = "main"
+    path: os.PathLike, branch: str = "main"
 ) -> intake.catalog.local.YAMLFileCatalog:
     """Load a dataset.
 
@@ -199,4 +214,4 @@ def load_dataset(
 
     intake_cat = intake.open_catalog(path)
 
-    return intake_cat 
+    return intake_cat
