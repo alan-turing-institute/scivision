@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 import os
 from urllib.parse import urlparse
 
@@ -18,16 +21,27 @@ def _is_url(path: os.PathLike) -> bool:
 
 def _parse_url(path: os.PathLike, branch: str = "main"):
     """Parse a URL and convert to a raw github url if necessary."""
+
     parsed = urlparse(path)
-    if not parsed.netloc == "github.com":
+
+    if not parsed.netloc in ["github.com"]:
         return parsed.geturl()
 
-    # construct the new github path
-    parsed = parsed._replace(netloc="raw.githubusercontent.com")
-    split = list(filter(None, parsed.path.split("/")))
-    new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
-    parsed = parsed._replace(path=new_path)
-    return parsed.geturl()
+    if parsed.netloc == "github.com": 
+        # construct the new github path
+        parsed = parsed._replace(netloc="raw.githubusercontent.com")
+        split = list(filter(None, parsed.path.split("/")))
+        if branch not in split:
+            new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
+        else:
+            if split[-3] == 'blob': 
+                del split[-3]
+            new_path = "/".join(split) 
+
+        parsed = parsed._replace(path=new_path)
+        return parsed.geturl()
+    else:
+        raise NotImplementedError
 
 
 def _parse_config(path: os.PathLike, branch: str = "main") -> str:
@@ -96,7 +110,9 @@ def _get_model_configs(full_config: dict, load_multiple: bool = False, model: st
             config_list.append(full_config)
     else:  # if there is a single model specified in the config yml
         if load_multiple:
-            warnings.warn("Only one model found in config yaml, will load that one...")
+            warnings.warn("Only one model found in config yaml " 
+                          "(i.e., no 'models' section in the config file), "
+                          "will load that one...")
         # Check that a model of name "model" in scivision.yml config
         if model != "default" and full_config["model"] != model:
             raise ValueError("model of name " + model + " not found in config yaml")
