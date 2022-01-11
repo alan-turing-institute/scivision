@@ -48,20 +48,6 @@ Please open a GitHub issue to suggest a new feature, contribute code, or let us 
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 
-### Releases
-
-This section is for developers making a release: Most contributors
-should instead read the notes on opening a Pull Request above.
-
-We periodically make releases of the software on [PyPI](https://pypi.org/project/scivision/).
-
-To make a new release:
-  - Make a new branch the release (e.g. named `release/1.1.0`). Usually this will be branch off the current `main`.
-  - Make sure that the version number is bumped in `setup.py`
-  - When ready, request a review and merge into main
-  - Make a GitHub [release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) (which will also make a tag)
-  - (add/link to PyPI instructions here)
-
 📫 Contact
 ---
 
