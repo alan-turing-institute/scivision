@@ -39,6 +39,7 @@ Table of contents
 -----------------
 
 - [Installation and setup](#installation)
+- [How to contribute?](./contributing.md)
 
 ## Installation
 
