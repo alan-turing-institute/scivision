@@ -173,7 +173,6 @@ def load_pretrained_model(
     with file as config_file:
         stream = config_file.read()
         config = yaml.safe_load(stream)
-    print(config)
     config_list = _get_model_configs(config, load_multiple, model)
     loaded_models = []
     for config in config_list:
