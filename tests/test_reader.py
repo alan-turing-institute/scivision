@@ -66,8 +66,8 @@ def test_get_model_configs():
 
 def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
-    # TODO: add tests for the methods in wrapper.py and installer.py
-    assert type(load_pretrained_model('https://github.com/quantumjot/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True)) == wrapper.PretrainedModel
+    # TODO: Update this test to choose a specific commit once scivision handles that
+    assert type(load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True)) == wrapper.PretrainedModel
 
 
 def test_load_pretrained_model_local():
