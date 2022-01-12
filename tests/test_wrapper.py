@@ -13,6 +13,7 @@ with file as config_file:
 IMAGENET_MODEL = PretrainedModel(IMAGENET_MODEL_CONFIG)
 KOALA = 'tests/koala.jpeg'
 
+
 def test_pretrained_model():
     """Check that a pretrained model object can be created from config"""
     assert type(IMAGENET_MODEL) == PretrainedModel
