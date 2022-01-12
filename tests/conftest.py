@@ -8,19 +8,19 @@ import pytest
 file = fsspec.open('tests/test_model_scivision.yml')
 with file as config_file:
     stream = config_file.read()
-    IMAGENET_MODEL_CONFIG = yaml.safe_load(stream)
-IMAGENET_MODEL = PretrainedModel(IMAGENET_MODEL_CONFIG)
+    imagenet_model_config = yaml.safe_load(stream)
+imagenet_model = PretrainedModel(imagenet_model_config)
 # install_package(IMAGENET_MODEL_CONFIG, allow_install=True)
-KOALA = 'tests/koala.jpeg'
+koala = 'tests/koala.jpeg'
 
 @pytest.fixture(scope='session', autouse=True)
-def imagenet_model_config(request):
-    return IMAGENET_MODEL_CONFIG
+def IMAGENET_MODEL_CONFIG(request):
+    return imagenet_model_config
     
 @pytest.fixture(scope='session', autouse=True)
-def imagenet_model(request):
-    return IMAGENET_MODEL
+def IMAGENET_MODEL(request):
+    return imagenet_model
     
 @pytest.fixture(scope='session', autouse=True)
-def koala(request):
-    return KOALA
+def KOALA(request):
+    return koala
