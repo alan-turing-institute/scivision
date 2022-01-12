@@ -12,6 +12,12 @@ with file as config_file:
     imagenet_model_config = yaml.safe_load(stream)
 
 
+# Assign the model config to global var
+@pytest.fixture(scope='session', autouse=True)
+def IMAGENET_MODEL_CONFIG(request):
+    return imagenet_model_config
+
+
 # Create the model
 @pytest.fixture(scope='session', autouse=True)
 def IMAGENET_MODEL(request):
