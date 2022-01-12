@@ -29,10 +29,10 @@ def test_parse_url_branch():
     
 def test_parse_config():
     """Test that scivision.yml config urls are correctly parsed."""
-    repo_path = 'https://github.com/edwardchalstrey1/scivision-test-plugin'
-    default_yml = 'https://raw.githubusercontent.com/edwardchalstrey1/scivision-test-plugin/main/scivision.yml'
-    named_file_path = 'https://github.com/edwardchalstrey1/scivision-test-plugin/blob/main/.scivision-config_imagenet.yaml'
-    named_yml = 'https://raw.githubusercontent.com/edwardchalstrey1/scivision-test-plugin/main/.scivision-config_imagenet.yaml'
+    repo_path = 'https://github.com/exampleuser/scivision-model-repo'
+    default_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/scivision.yml'
+    named_file_path = 'https://github.com/exampleuser/scivision-model-repo/blob/main/.scivision-config_file.yaml'
+    named_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/.scivision-config_file.yaml'
     assert _parse_config(repo_path) == default_yml
     assert _parse_config(named_file_path) == named_yml
 
