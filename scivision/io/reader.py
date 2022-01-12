@@ -37,9 +37,8 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
         if branch not in split:
             new_path = "/".join(split[:2]) + f"/{branch}/" + "/".join(split[2:])
         else:
-            if split[-3] == "blob":
-                del split[-3]
             new_path = "/".join(split)
+        new_path = new_path.replace("/blob", "")
 
         parsed = parsed._replace(path=new_path)
         return parsed.geturl()

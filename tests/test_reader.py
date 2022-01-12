@@ -1,18 +1,54 @@
-from scivision.io import load_dataset, load_pretrained_model, wrapper
+from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url, _parse_config, _get_model_configs
 import intake
 import pytest
+import fsspec
+import yaml
 
-# TODO: make the tests rely on specific commits from the example urls
+
+def test_parse_url():
+    """Test that GitHub urls are correctly converted to raw."""
+    path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
+    raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
+    assert _parse_url(path) == raw
+
+
+def test_parse_url_blob():
+    """Test that GitHub urls directly copied from a browser are correctly converted to raw."""
+    path = 'https://github.com/alan-turing-institute/scivision/blob/main/tests/test_reader.py'
+    raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
+    assert _parse_url(path) == raw
+
+
+def test_parse_url_branch():
+    """Test that GitHub urls are correctly converted to raw when a branch is specified."""
+    # note: test-branch does not exist
+    branch = 'test-branch'
+    path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
+    raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/' + branch + '/tests/test_reader.py'
+    assert _parse_url(path, branch=branch) == raw
+
+
+def test_parse_config():
+    """Test that scivision.yml config urls are correctly parsed."""
+    # note: exampleuser/scivision-model-repo does not exist
+    repo_path = 'https://github.com/exampleuser/scivision-model-repo'
+    default_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/scivision.yml'
+    named_file_path = 'https://github.com/exampleuser/scivision-model-repo/blob/main/.scivision-config_file.yaml'
+    named_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/.scivision-config_file.yaml'
+    assert _parse_config(repo_path) == default_yml
+    assert _parse_config(named_file_path) == named_yml
 
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
-    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton')) == intake.catalog.local.YAMLFileCatalog
+    commit_hash = '8e4f0ca852723b224025e0577cb333a101dbe51e'
+    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton', branch=commit_hash)) == intake.catalog.local.YAMLFileCatalog
 
 
 def test_load_dataset_branch_and_diff_file_name():
     """Test that an intake catalog is generated when specifying a branch AND that a custom file name."""
-    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch='diff-name-yml')) == intake.catalog.local.YAMLFileCatalog
+    branch = 'diff-name-yml'
+    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch=branch)) == intake.catalog.local.YAMLFileCatalog
 
 
 def test_load_dataset_local():
@@ -20,10 +56,23 @@ def test_load_dataset_local():
     assert type(load_dataset('tests/test_dataset_scivision.yml')) == intake.catalog.local.YAMLFileCatalog
 
 
+def test_get_model_configs():
+    """Test that a config with multiple models is split into separate configs."""
+    path = _parse_config('tests/test_multiple_models_scivision.yml')
+    file = fsspec.open(path)
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
+    config_list = _get_model_configs(config, load_multiple=True)
+    for config in config_list:
+        assert 'name' in config
+        assert 'model' in config
+
+
 def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
-    # TODO: add tests for the methods in wrapper.py and installer.py
-    assert type(load_pretrained_model('https://github.com/quantumjot/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True)) == wrapper.PretrainedModel
+    commit_hash = '77bbe037234d11538e46c3ced3d2a5f9294c8468'
+    assert type(load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True, branch=commit_hash)) == wrapper.PretrainedModel
 
 
 def test_load_pretrained_model_local():
