@@ -29,6 +29,7 @@ def test_parse_url_branch():
     
 def test_parse_config():
     """Test that scivision.yml config urls are correctly parsed."""
+    # note: exampleuser/scivision-model-repo does not exist
     repo_path = 'https://github.com/exampleuser/scivision-model-repo'
     default_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/scivision.yml'
     named_file_path = 'https://github.com/exampleuser/scivision-model-repo/blob/main/.scivision-config_file.yaml'
