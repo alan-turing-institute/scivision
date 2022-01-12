@@ -1,5 +1,5 @@
-from scivision.io.installer import install_package
-from scivision.io.wrapper import PretrainedModel
+from scivision.io import install_package
+from scivision.io import PretrainedModel
 
 import fsspec
 import yaml
