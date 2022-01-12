@@ -5,19 +5,20 @@ import fsspec
 import yaml
 
 
-
 def test_parse_url():
     """Test that GitHub urls are correctly converted to raw."""
     path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
     assert _parse_url(path) == raw
-    
+
+
 def test_parse_url_blob():
     """Test that GitHub urls directly copied from a browser are correctly converted to raw."""
     path = 'https://github.com/alan-turing-institute/scivision/blob/main/tests/test_reader.py'
     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/tests/test_reader.py'
     assert _parse_url(path) == raw
-    
+
+
 def test_parse_url_branch():
     """Test that GitHub urls are correctly converted to raw when a branch is specified."""
     # note: test-branch does not exist
@@ -25,7 +26,8 @@ def test_parse_url_branch():
     path = 'https://github.com/alan-turing-institute/scivision/tests/test_reader.py'
     raw = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/' + branch + '/tests/test_reader.py'
     assert _parse_url(path, branch=branch) == raw
-    
+
+
 def test_parse_config():
     """Test that scivision.yml config urls are correctly parsed."""
     # note: exampleuser/scivision-model-repo does not exist
@@ -35,6 +37,7 @@ def test_parse_config():
     named_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/.scivision-config_file.yaml'
     assert _parse_config(repo_path) == default_yml
     assert _parse_config(named_file_path) == named_yml
+
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
@@ -64,7 +67,7 @@ def test_get_model_configs():
     for config in config_list:
         assert 'name' in config
         assert 'model' in config
-    
+
 
 def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
