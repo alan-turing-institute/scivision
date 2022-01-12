@@ -4,7 +4,6 @@ import pytest
 import fsspec
 import yaml
 
-# TODO: make the tests rely on specific commits from the example urls
 
 
 def test_parse_url():
@@ -38,15 +37,15 @@ def test_parse_config():
     assert _parse_config(named_file_path) == named_yml
 
 def test_load_dataset_remote():
-    # TODO: Update this test to choose a specific commit once scivision handles that
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
-    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton')) == intake.catalog.local.YAMLFileCatalog
+    commit_hash = '8e4f0ca852723b224025e0577cb333a101dbe51e'
+    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton', branch=commit_hash)) == intake.catalog.local.YAMLFileCatalog
 
 
 def test_load_dataset_branch_and_diff_file_name():
-    # TODO: Update this test to choose a specific commit once scivision handles that
     """Test that an intake catalog is generated when specifying a branch AND that a custom file name."""
-    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch='diff-name-yml')) == intake.catalog.local.YAMLFileCatalog
+    branch = 'diff-name-yml'
+    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch=branch)) == intake.catalog.local.YAMLFileCatalog
 
 
 def test_load_dataset_local():
