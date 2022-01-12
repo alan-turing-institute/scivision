@@ -37,11 +37,13 @@ def test_parse_config():
     assert _parse_config(named_file_path) == named_yml
 
 def test_load_dataset_remote():
+    # TODO: Update this test to choose a specific commit once scivision handles that
     """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
     assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton')) == intake.catalog.local.YAMLFileCatalog
 
 
 def test_load_dataset_branch_and_diff_file_name():
+    # TODO: Update this test to choose a specific commit once scivision handles that
     """Test that an intake catalog is generated when specifying a branch AND that a custom file name."""
     assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch='diff-name-yml')) == intake.catalog.local.YAMLFileCatalog
 
