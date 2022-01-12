@@ -1,6 +1,6 @@
 {
   "data-000":{
-    "task":["object detection", "segmentation"],
+    "task":["object-detection", "segmentation"],
     "domain":["optical-microscopy"],
     "datasource":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
     "format":"tif",
