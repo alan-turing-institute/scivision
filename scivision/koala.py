@@ -1,8 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 import inspect
 import io
 import logging
 from functools import wraps
 from typing import Callable
+
 
 KOALA_LOGGING_LEVEL = logging.DEBUG
 
