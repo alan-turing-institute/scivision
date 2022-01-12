@@ -4,15 +4,23 @@ import fsspec
 import yaml
 import pytest
 
-# @pytest.fixture(scope='session', autouse=True)
-# def GLOBALS(request):
-def GLOBALS():
-    globals = {}
-    file = fsspec.open('tests/test_model_scivision.yml')
-    with file as config_file:
-        stream = config_file.read()
-        globals['IMAGENET_MODEL_CONFIG'] = yaml.safe_load(stream)
-    globals['IMAGENET_MODEL'] = PretrainedModel(globals['IMAGENET_MODEL_CONFIG'])
-    # install_package(IMAGENET_MODEL_CONFIG, allow_install=True)
-    globals['KOALA'] = 'tests/koala.jpeg'
-    return globals
+
+file = fsspec.open('tests/test_model_scivision.yml')
+with file as config_file:
+    stream = config_file.read()
+    IMAGENET_MODEL_CONFIG = yaml.safe_load(stream)
+IMAGENET_MODEL = PretrainedModel(IMAGENET_MODEL_CONFIG)
+# install_package(IMAGENET_MODEL_CONFIG, allow_install=True)
+KOALA = 'tests/koala.jpeg'
+
+@pytest.fixture(scope='session', autouse=True)
+def imagenet_model_config(request):
+    return IMAGENET_MODEL_CONFIG
+    
+@pytest.fixture(scope='session', autouse=True)
+def imagenet_model(request):
+    return IMAGENET_MODEL
+    
+@pytest.fixture(scope='session', autouse=True)
+def koala(request):
+    return KOALA
