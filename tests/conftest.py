@@ -5,18 +5,17 @@ import yaml
 import pytest
 
 
-file = fsspec.open('tests/test_model_scivision.yml')
-with file as config_file:
-    stream = config_file.read()
-    imagenet_model_config = yaml.safe_load(stream)
-imagenet_model = PretrainedModel(imagenet_model_config)
-# install_package(IMAGENET_MODEL_CONFIG, allow_install=True)
-koala = 'tests/koala.jpeg'
-    
+# Set up some global vars for tests    
 @pytest.fixture(scope='session', autouse=True)
 def IMAGENET_MODEL(request):
-    return imagenet_model
+    file = fsspec.open('tests/test_model_scivision.yml')
+    with file as config_file:
+        stream = config_file.read()
+        imagenet_model_config = yaml.safe_load(stream)
+    return PretrainedModel(imagenet_model_config)
     
 @pytest.fixture(scope='session', autouse=True)
 def KOALA(request):
-    return koala
+    return 'tests/koala.jpeg'
+    
+# install_package(IMAGENET_MODEL_CONFIG, allow_install=True)
