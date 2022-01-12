@@ -19,8 +19,8 @@ def test_pretrained_model():
 
 
 def test_pretrained_model_predict():
-    """Check that a pretrained model's predict function works as expected"""
+    """Check that an example pretrained model's predict function returns expected value"""
     image = resize(imread(KOALA), (224, 224), preserve_range=True, anti_aliasing=True)
-    y = IMAGENET_MODEL.predict(image)
-    _, image_class, class_confidence = decode_predictions(y, top=1)[0][0]
+    prediction = IMAGENET_MODEL.predict(image)
+    _, image_class, class_confidence = decode_predictions(prediction, top=1)[0][0]
     assert image_class == 'koala'
