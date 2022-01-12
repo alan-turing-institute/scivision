@@ -12,10 +12,6 @@ with file as config_file:
 imagenet_model = PretrainedModel(imagenet_model_config)
 # install_package(IMAGENET_MODEL_CONFIG, allow_install=True)
 koala = 'tests/koala.jpeg'
-
-@pytest.fixture(scope='session', autouse=True)
-def IMAGENET_MODEL_CONFIG(request):
-    return imagenet_model_config
     
 @pytest.fixture(scope='session', autouse=True)
 def IMAGENET_MODEL(request):
