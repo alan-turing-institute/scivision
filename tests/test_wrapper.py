@@ -1,4 +1,4 @@
-from scivision.io.wrapper import PretrainedModel
+from scivision.io import PretrainedModel
 from skimage.io import imread
 from skimage.transform import resize
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
