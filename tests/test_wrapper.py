@@ -1,17 +1,14 @@
 from scivision.io.wrapper import PretrainedModel
+# from scivision.io.installer import install_package
 from skimage.io import imread
 from skimage.transform import resize
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
+from tests import conftest
 
-import fsspec
-import yaml
-
-file = fsspec.open('tests/test_model_scivision.yml')
-with file as config_file:
-    stream = config_file.read()
-    IMAGENET_MODEL_CONFIG = yaml.safe_load(stream)
-IMAGENET_MODEL = PretrainedModel(IMAGENET_MODEL_CONFIG)
-KOALA = 'tests/koala.jpeg'
+globals = conftest.GLOBALS()
+IMAGENET_MODEL_CONFIG = globals['IMAGENET_MODEL_CONFIG']
+KOALA = globals['KOALA']
+IMAGENET_MODEL = globals['IMAGENET_MODEL']
 
 
 def test_pretrained_model():
