@@ -69,8 +69,8 @@ def test_get_model_configs():
 
 def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
-    # TODO: Update this test to choose a specific commit once scivision handles that
-    assert type(load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True)) == wrapper.PretrainedModel
+    commit_hash = '77bbe037234d11538e46c3ced3d2a5f9294c8468'
+    assert type(load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True, branch=commit_hash)) == wrapper.PretrainedModel
 
 
 def test_load_pretrained_model_local():
