@@ -44,7 +44,7 @@ Table of contents
 
 ## Installation
 
-1. **install scivision via [PyPi](https://pypi.org/project/scivision/)**: which tends to be the most user-friendly option:
+1. **Install scivision via [PyPi](https://pypi.org/project/scivision/)**: which tends to be the most user-friendly option:
 
     ```bash
     pip install scivision
@@ -58,7 +58,7 @@ Table of contents
     pip install jupyter
     ```
 
-2. **install scivision from the source code**:
+2. **Install scivision from the source code**:
 
     * Clone scivision source code:
 
@@ -91,3 +91,5 @@ Developers can build and view the docs locally by doing the following:
 #### Update the API documentation
 1. Edit (or add) to the docstring of the function in question
 2. Ensure that the module containing that function has been added to `docs/api.rst`
+
+### 
