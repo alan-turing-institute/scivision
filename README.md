@@ -87,3 +87,7 @@ Developers can build and view the docs locally by doing the following:
 #### Then with scivision repo cloned
 1. In the top dir: `sphinx-build -b html docs/ build/`
 2. Open `build/index.html` in a browser
+
+#### Update the API documentation
+1. Edit (or add) to the docstring of the function in question
+2. Ensure that the module containing that function has been added to `docs/api.rst`
