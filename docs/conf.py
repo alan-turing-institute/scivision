@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 project = "scivision"
 copyright = "2021, Alan Turing Institute"
-author = "Alan R Lowe, Alejandro Coca, Scott Hosking, Evangeline Corcoran, Beatriz Costa, Aida Mehonic, Miquel Massot"  # noqa
+author = "Alan R Lowe, Alejandro Coca, Scott Hosking, Evangeline Corcoran, Beatriz Costa, Aida Mehonic, Miquel Massot, Ed Chalstrey, Oliver Strickson, Kasra Hosseini"  # noqa
 
 
 # -- General configuration ---------------------------------------------------
