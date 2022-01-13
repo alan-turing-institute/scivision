@@ -40,6 +40,7 @@ Table of contents
 
 - [Installation and setup](#installation)
 - [How to contribute?](./contributing.md)
+- [Documentation](#documentation)
 
 ## Installation
 
@@ -71,3 +72,18 @@ Table of contents
     cd /path/to/my/scivision
     pip install -v -e .
     ```
+
+## Documentation
+
+Documentation is available at https://scivision.readthedocs.io/en/latest/
+
+Developers can build and view the docs locally by doing the following:
+
+#### Install requirements:
+1. `pip install sphinx`
+2. `pip install sphinx_rtd_theme`
+3. `pip install recommonmark`
+
+#### Then with scivision repo cloned
+1. In the top dir: `sphinx-build -b html docs/ build/`
+2. Open `build/index.html` in a browser
