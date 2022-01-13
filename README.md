@@ -77,19 +77,28 @@ Table of contents
 
 Documentation is available at https://scivision.readthedocs.io/en/latest/
 
-Developers can build and view the docs locally by doing the following:
+Developers can build and view the docs by doing the following:
 
-#### Install requirements:
-1. `pip install sphinx`
-2. `pip install sphinx_rtd_theme`
-3. `pip install recommonmark`
+1. **Install requirements**:
+  
+  ```bash
+  pip install sphinx
+  pip install sphinx_rtd_theme
+  pip install recommonmark
+  ```
 
-#### Then with scivision repo cloned
-1. In the top dir: `sphinx-build -b html docs/ build/`
-2. Open `build/index.html` in a browser
+2. **Build the docs**:
+  * In the top dir:
+  ```bash
+  sphinx-build -b html docs/ build/
+  ```
+  * The HTML will  be created in `build/`
 
-#### Update the API documentation
-1. Edit (or add) to the docstring of the function in question
-2. Ensure that the module containing that function has been added to `docs/api.rst`
+3. **Update the API documentation**:
+  * Edit (or add) to the docstring of the function in question
+  * Ensure that the module containing that function has been added to `docs/api.rst`
+  * Open `build/index.html` in a browser to view edits
+4. **Push the updates to the readthedocs site**:
+  * Create a pull request with your changes
+  * Upon merge to `main`, log into the https://readthedocs.org/projects/scivision/ dashboard as a maintainer and click `Builds->Build Version`
 
-### 
