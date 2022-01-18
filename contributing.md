@@ -31,12 +31,22 @@ Please open a GitHub issue to suggest a new feature, contribute code, or let us 
 🛠 I am ready to contribute 
 ---
 
-- For open tasks in this repository, please see the [Issues section](https://github.com/alan-turing-institute/scivision/issues).
-- Raise mistakes, errors or missing information on this repository by opening a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls)
+- For open tasks in this repository, please see the open [Issues](https://github.com/alan-turing-institute/scivision/issues).
+
+- To contribute to this repository (including bugfixes and new code features, as well as documentation, fixes to typos, broken links), open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
+
+- Our basic workflow is [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).  In particular:
+  - The branch `main` always contain the latest working version of the package.
+  - Pull Requests should normally have `main` as their base branch (this is the default).
+  - A Pull Request doesn't have to represent finished work. Pull Requests are welcome at an early stage of work on a contribution, so others can watch or give feedback, or as a place to discuss the work in progress---you can always add more commits to the same branch later, and they will be included too. If it is not ready to merge, include "WIP" (Work in Progress) in the subject line, or select "Create Draft Pull Request" when opening it.
+  - For a Pull Request to be ready to merge:
+    - All of the automated tests should pass
+    - It should add tests of any new functionality
+  - A code review can be requested at any time
+  - Pull requests are [squash merged](https://github.blog/2016-04-01-squash-your-commits/) to `main`
+
+- More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
-  - Submit trivial fixes (for example, a typo, a broken link or an obvious error)
-  - Start work on a contribution that is already listed as an issue or something you’ve already discussed
-  - A Pull Request doesn’t have to represent finished work. It’s usually better to open a Pull Request early on, so others can watch or give feedback on your progress. Just mark it as a “WIP” (Work in Progress) in the subject line. You can always add more commits later.
 
 📫 Contact
 ---
