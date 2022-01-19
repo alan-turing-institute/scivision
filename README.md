@@ -11,7 +11,7 @@
     <a href="https://pypi.org/project/scivision/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/scivision">
     </a>
-    <a href="https://mybinder.org/v2/gh/alan-turing-institute/scivision/HEAD">
+    <a href="https://mybinder.org/v2/gh/alan-turing-institute/scivision/main?labpath=examples%2Fpretrained_imagenet_scivision_example.ipynb">
         <img alt="Binder" src="https://mybinder.org/badge_logo.svg">
     </a>
     <a href="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml">
