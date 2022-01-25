@@ -52,7 +52,7 @@ Table of contents
     pip install scivision
     ```
 
-    * Explore the [examples folder]((./examples)) which contains Jupyter Notebooks showing how different components in scivision can be run. 
+    * Explore the [examples folder](./examples) which contains Jupyter Notebooks showing how different components in scivision can be run. 
 
     You can install `Jupyter` by:
 
