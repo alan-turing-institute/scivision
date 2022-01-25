@@ -87,6 +87,7 @@ Developers can build and view the docs by doing the following:
   pip install sphinx
   pip install sphinx_rtd_theme
   pip install recommonmark
+  pip install m2r2
   ```
 
 2. **Build the docs**:
