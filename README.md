@@ -84,7 +84,7 @@ Developers can build and view the docs by doing the following:
 1. **Install requirements**:
   
   ```bash
-  pip install -r readthedocs_requirements.txt
+  pip install -r docs/requirements.txt
   ```
 
 2. **Build the docs**:
