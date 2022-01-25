@@ -84,9 +84,7 @@ Developers can build and view the docs by doing the following:
 1. **Install requirements**:
   
   ```bash
-  pip install sphinx
-  pip install sphinx_rtd_theme
-  pip install recommonmark
+  pip install -r docs/requirements.txt
   ```
 
 2. **Build the docs**:

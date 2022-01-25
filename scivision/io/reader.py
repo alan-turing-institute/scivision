@@ -204,7 +204,7 @@ def load_dataset(
     Returns
     -------
     intake.catalog.local.YAMLFileCatalog
-        The intake catalog object from which an xarray dataset can be created.
+        An intake catalog object representing the loaded dataset (see `intake.readthedocs <https://intake.readthedocs.io/en/latest/api_user.html?highlight=catalog.local.YAMLFileCatalog#intake.catalog.local.YAMLFileCatalog>`_).
     """
 
     path = _parse_config(path, branch)
