@@ -19,3 +19,23 @@ def test_add_dataset():
     assert "labels" in datasources[entry_name]
     assert "institution" in datasources[entry_name]
     assert "tags" in datasources[entry_name]
+    
+    
+def test_add_dataset_multiple():
+    """Test that multiple datasets can be added to the locally stored scivision dataset catalog when provided."""
+    test_entry = 'tests/catalog_data_multiple_entries.json'
+    add_dataset(test_entry)
+    with open(test_entry) as file:
+        entry = json.load(file)
+    entries = list(entry.keys())
+    with open('scivision/catalog/data/datasources.json') as file:
+        datasources = json.load(file)
+    for entry_name in entries:
+        assert entry_name in datasources
+        assert "task" in datasources[entry_name]
+        assert "domain" in datasources[entry_name]
+        assert "datasource" in datasources[entry_name]
+        assert "format" in datasources[entry_name]
+        assert "labels" in datasources[entry_name]
+        assert "institution" in datasources[entry_name]
+        assert "tags" in datasources[entry_name]
