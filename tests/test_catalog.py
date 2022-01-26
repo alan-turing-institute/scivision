@@ -2,10 +2,13 @@ from scivision.catalog import add_dataset, add_model
 import json
 
 
+DATA_CATALOG = 'scivision/catalog/data/datasources.json'
+
+
 def test_add_dataset():
     """Test that a new dataset can be added to the locally stored scivision dataset catalog."""
     test_entry = 'tests/catalog_data_entry.json'
-    add_dataset(test_entry)
+    add_dataset(test_entry, DATA_CATALOG)
     with open(test_entry) as file:
         entry = json.load(file)
     entry_name = list(entry.keys())[0]
@@ -24,7 +27,7 @@ def test_add_dataset():
 def test_add_dataset_multiple():
     """Test that multiple datasets can be added to the locally stored scivision dataset catalog when provided."""
     test_entry = 'tests/catalog_data_multiple_entries.json'
-    add_dataset(test_entry)
+    add_dataset(test_entry, DATA_CATALOG)
     with open(test_entry) as file:
         entry = json.load(file)
     entries = list(entry.keys())
