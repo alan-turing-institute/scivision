@@ -102,7 +102,7 @@ def add_dataset(dataset: str, catalog: str) -> None:
         catalog_dict = json.load(file)
     catalog_dict = catalog_dict | entry # Note: Python 3.9+ only
     with open(catalog, 'w') as datasources:
-        json.dump(catalog_dict, datasources)
+        json.dump(catalog_dict, datasources, sort_keys=True, indent=4)
 
 
 def add_model(entry):
