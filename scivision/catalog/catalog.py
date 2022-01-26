@@ -83,3 +83,11 @@ def keys() -> List[str]:
 @koala
 def values(key: str) -> List[str]:
     return _catalog.values(key)
+    
+    
+def add_dataset(entry):
+    return 1
+
+
+def add_model(entry):
+    return 1
