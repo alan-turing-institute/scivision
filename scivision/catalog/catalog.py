@@ -5,6 +5,7 @@ import pkgutil
 from typing import Dict, List
 
 import pandas as pd
+import json
 
 from .base_catalog import BaseCatalog
 from ..koala import koala
@@ -85,8 +86,23 @@ def values(key: str) -> List[str]:
     return _catalog.values(key)
     
     
-def add_dataset(entry):
-    return 1
+def add_dataset(dataset: str, catalog: str) -> None:
+    """Add a new dataset entry to the dataset catalog.
+    
+    Parameters
+    ----------
+    dataset : str
+        A path to the json file specifying the dataset to be added to the catalog.
+    catalog : str
+        A path to the json file containing the scivision dataset catalog.
+    """
+    with open(dataset) as file:
+        entry = json.load(file)
+    with open(catalog) as file:
+        catalog_dict = json.load(file)
+    catalog_dict = catalog_dict | entry # Note: Python 3.9+ only
+    with open(catalog, 'w') as datasources:
+        json.dump(catalog_dict, datasources)
 
 
 def add_model(entry):
