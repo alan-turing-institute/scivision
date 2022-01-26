@@ -86,6 +86,25 @@ def values(key: str) -> List[str]:
     return _catalog.values(key)
     
     
+def _update_catalog(entry: str, catalog: str) -> None:
+    """Add a new entry to a catalog.
+    
+    Parameters
+    ----------
+    entry : str
+        A path to the json file specifying the entry to be added to the catalog.
+    catalog : str
+        A path to the json file containing the scivision catalog.
+    """
+    with open(entry) as file:
+        entry_dict = json.load(file)
+    with open(catalog) as file:
+        catalog_dict = json.load(file)
+    catalog_dict = catalog_dict | entry_dict # Note: Python 3.9+ only
+    with open(catalog, 'w') as datasources:
+        json.dump(catalog_dict, datasources, sort_keys=True, indent=4)
+    
+    
 def add_dataset(dataset: str, catalog: str) -> None:
     """Add a new dataset entry to the dataset catalog.
     
@@ -96,13 +115,7 @@ def add_dataset(dataset: str, catalog: str) -> None:
     catalog : str
         A path to the json file containing the scivision dataset catalog.
     """
-    with open(dataset) as file:
-        entry = json.load(file)
-    with open(catalog) as file:
-        catalog_dict = json.load(file)
-    catalog_dict = catalog_dict | entry # Note: Python 3.9+ only
-    with open(catalog, 'w') as datasources:
-        json.dump(catalog_dict, datasources, sort_keys=True, indent=4)
+    _update_catalog(dataset, catalog)
 
 
 def add_model(entry):
