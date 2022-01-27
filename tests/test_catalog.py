@@ -9,14 +9,16 @@ def test_add_dataset(DATA_CATALOG_PATH, DATA_CATALOG):
     with open(test_entry_path) as file:
         entry = json.load(file)
     entry_name = list(entry.keys())[0]
-    assert entry_name in DATA_CATALOG
-    assert "task" in DATA_CATALOG[entry_name]
-    assert "domain" in DATA_CATALOG[entry_name]
-    assert "datasource" in DATA_CATALOG[entry_name]
-    assert "format" in DATA_CATALOG[entry_name]
-    assert "labels" in DATA_CATALOG[entry_name]
-    assert "institution" in DATA_CATALOG[entry_name]
-    assert "tags" in DATA_CATALOG[entry_name]
+    with open(DATA_CATALOG_PATH) as file:
+        updated_data_catalog = json.load(file)
+    assert entry_name in updated_data_catalog
+    assert "task" in updated_data_catalog[entry_name]
+    assert "domain" in updated_data_catalog[entry_name]
+    assert "datasource" in updated_data_catalog[entry_name]
+    assert "format" in updated_data_catalog[entry_name]
+    assert "labels" in updated_data_catalog[entry_name]
+    assert "institution" in updated_data_catalog[entry_name]
+    assert "tags" in updated_data_catalog[entry_name]
     
     
 def test_add_dataset_multiple(DATA_CATALOG_PATH, DATA_CATALOG):
@@ -26,15 +28,17 @@ def test_add_dataset_multiple(DATA_CATALOG_PATH, DATA_CATALOG):
     with open(test_entry_path) as file:
         entry = json.load(file)
     entries = list(entry.keys())
+    with open(DATA_CATALOG_PATH) as file:
+        updated_data_catalog = json.load(file)
     for entry_name in entries:
-        assert entry_name in DATA_CATALOG
-        assert "task" in DATA_CATALOG[entry_name]
-        assert "domain" in DATA_CATALOG[entry_name]
-        assert "datasource" in DATA_CATALOG[entry_name]
-        assert "format" in DATA_CATALOG[entry_name]
-        assert "labels" in DATA_CATALOG[entry_name]
-        assert "institution" in DATA_CATALOG[entry_name]
-        assert "tags" in DATA_CATALOG[entry_name]
+        assert entry_name in updated_data_catalog
+        assert "task" in updated_data_catalog[entry_name]
+        assert "domain" in updated_data_catalog[entry_name]
+        assert "datasource" in updated_data_catalog[entry_name]
+        assert "format" in updated_data_catalog[entry_name]
+        assert "labels" in updated_data_catalog[entry_name]
+        assert "institution" in updated_data_catalog[entry_name]
+        assert "tags" in updated_data_catalog[entry_name]
         
         
 # def test_add_dataset_entry_exists():
@@ -48,13 +52,15 @@ def test_add_model(MODEL_CATALOG_PATH, MODEL_CATALOG):
     with open(test_entry_path) as file:
         entry = json.load(file)
     entry_name = list(entry.keys())[0]
-    assert entry_name in MODEL_CATALOG
-    assert "task" in MODEL_CATALOG[entry_name]
-    assert "model" in MODEL_CATALOG[entry_name]
-    assert "github_branch" in MODEL_CATALOG[entry_name]
-    assert "language" in MODEL_CATALOG[entry_name]
-    assert "data_format" in MODEL_CATALOG[entry_name]
-    assert "pretrained" in MODEL_CATALOG[entry_name]
-    assert "labels_required" in MODEL_CATALOG[entry_name]
-    assert "institution" in MODEL_CATALOG[entry_name]
-    assert "tags" in MODEL_CATALOG[entry_name]
+    with open(MODEL_CATALOG_PATH) as file:
+        updated_model_catalog = json.load(file)
+    assert entry_name in updated_model_catalog
+    assert "task" in updated_model_catalog[entry_name]
+    assert "model" in updated_model_catalog[entry_name]
+    assert "github_branch" in updated_model_catalog[entry_name]
+    assert "language" in updated_model_catalog[entry_name]
+    assert "data_format" in updated_model_catalog[entry_name]
+    assert "pretrained" in updated_model_catalog[entry_name]
+    assert "labels_required" in updated_model_catalog[entry_name]
+    assert "institution" in updated_model_catalog[entry_name]
+    assert "tags" in updated_model_catalog[entry_name]
