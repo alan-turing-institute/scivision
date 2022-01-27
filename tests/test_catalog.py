@@ -1,8 +1,9 @@
 from scivision.catalog import add_dataset, add_model
 import json
+from pytest import raises
 
 
-def test_add_dataset(DATA_CATALOG_PATH, DATA_CATALOG):
+def test_add_dataset(DATA_CATALOG_PATH):
     """Test that a new dataset can be added to the scivision dataset catalog."""
     test_entry_path = 'tests/catalog_data_entry.json'
     add_dataset(test_entry_path, DATA_CATALOG_PATH)
@@ -21,7 +22,7 @@ def test_add_dataset(DATA_CATALOG_PATH, DATA_CATALOG):
     assert "tags" in updated_data_catalog[entry_name]
     
     
-def test_add_dataset_multiple(DATA_CATALOG_PATH, DATA_CATALOG):
+def test_add_dataset_multiple(DATA_CATALOG_PATH):
     """Test that multiple datasets can be added to the scivision dataset catalog when provided."""
     test_entry_path = 'tests/catalog_data_multiple_entries.json'
     add_dataset(test_entry_path, DATA_CATALOG_PATH)
@@ -39,13 +40,9 @@ def test_add_dataset_multiple(DATA_CATALOG_PATH, DATA_CATALOG):
         assert "labels" in updated_data_catalog[entry_name]
         assert "institution" in updated_data_catalog[entry_name]
         assert "tags" in updated_data_catalog[entry_name]
-        
-        
-# def test_add_dataset_entry_exists():
-#     """Test that a new dataset is not added to the scivision dataset catalog if an entry with the same name exists."""
-    # TODO: instead, have it so that the datasets are named however people like for now
+
     
-def test_add_model(MODEL_CATALOG_PATH, MODEL_CATALOG):
+def test_add_model(MODEL_CATALOG_PATH):
     """Test that a new model can be added to the scivision model catalog."""
     test_entry_path = 'tests/catalog_model_entry.json'
     add_model(test_entry_path, MODEL_CATALOG_PATH)
