@@ -4,6 +4,7 @@ from scivision.io import PretrainedModel
 import fsspec
 import yaml
 import pytest
+import json
 
 # Set up some global vars for tests that require an example model
 file = fsspec.open('tests/test_model_scivision.yml')
@@ -35,29 +36,30 @@ install_package(imagenet_model_config, allow_install=True)
 
 
 # Path to data catalog
+data_catalog_path = 'tests/test_catalog/datasources.json'
 @pytest.fixture(scope='session', autouse=True)
-def DATA_CATALOG(request):
-    return 'tests/test_catalog/datasources.json'
+def DATA_CATALOG_PATH(request):
+    return data_catalog_path
 
 
 # Path to model catalog
+model_catalog_path = 'tests/test_catalog/models.json'
+@pytest.fixture(scope='session', autouse=True)
+def MODEL_CATALOG_PATH(request):
+    return model_catalog_path
+
+
+# Loaded data catalog
+@pytest.fixture(scope='session', autouse=True)
+def DATA_CATALOG(request):
+    with open(data_catalog_path) as file:
+        data_catalog = json.load(file)
+    return data_catalog
+
+
+# Loaded model catalog
 @pytest.fixture(scope='session', autouse=True)
 def MODEL_CATALOG(request):
-    return 'tests/test_catalog/models.json'
-
-
-# def pytest_sessionstart(session):
-#     """
-#     Called after the Session object has been created and
-#     before performing collection and entering the run test loop.
-#     """
-#     # Load the unmodified data catalog
-#     with open(DATA_CATALOG) as file:
-#         datasources = json.load(file)
-# 
-# 
-# def pytest_sessionfinish(session, exitstatus):
-#     """
-#     Called after whole test run finished, right before
-#     returning the exit status to the system.
-#     """
+    with open(model_catalog_path) as file:
+        model_catalog = json.load(file)
+    return model_catalog
