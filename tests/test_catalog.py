@@ -2,8 +2,8 @@ from scivision.catalog import add_dataset, add_model
 import json
 
 
-DATA_CATALOG = 'scivision/catalog/data/datasources.json'
-MODEL_CATALOG = 'scivision/catalog/data/models.json'
+DATA_CATALOG = 'tests/test_catalog/datasources.json'
+MODEL_CATALOG = 'tests/test_catalog/models.json'
 
 
 def test_add_dataset():
@@ -13,7 +13,7 @@ def test_add_dataset():
     with open(test_entry) as file:
         entry = json.load(file)
     entry_name = list(entry.keys())[0]
-    with open('scivision/catalog/data/datasources.json') as file:
+    with open(DATA_CATALOG) as file:
         datasources = json.load(file)
     assert entry_name in datasources
     assert "task" in datasources[entry_name]
@@ -32,7 +32,7 @@ def test_add_dataset_multiple():
     with open(test_entry) as file:
         entry = json.load(file)
     entries = list(entry.keys())
-    with open('scivision/catalog/data/datasources.json') as file:
+    with open(DATA_CATALOG) as file:
         datasources = json.load(file)
     for entry_name in entries:
         assert entry_name in datasources
@@ -56,7 +56,7 @@ def test_add_model():
     with open(test_entry) as file:
         entry = json.load(file)
     entry_name = list(entry.keys())[0]
-    with open('scivision/catalog/data/models.json') as file:
+    with open(MODEL_CATALOG) as file:
         models = json.load(file)
     assert entry_name in models
     assert "task" in models[entry_name]
