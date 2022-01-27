@@ -84,11 +84,11 @@ def keys() -> List[str]:
 @koala
 def values(key: str) -> List[str]:
     return _catalog.values(key)
-    
-    
+
+
 def _update_catalog(entry: str, catalog: str) -> None:
     """Add a new entry to a catalog.
-    
+
     Parameters
     ----------
     entry : str
@@ -103,14 +103,14 @@ def _update_catalog(entry: str, catalog: str) -> None:
     for key in entry_dict.keys():
         if key in catalog_dict:
             raise KeyError('Entry named: "' + key + '" already in catalog')
-    catalog_dict = catalog_dict | entry_dict # Note: Python 3.9+ only
+    catalog_dict = catalog_dict | entry_dict  # Note: Python 3.9+ only
     with open(catalog, 'w') as old_catalog:
         json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
-    
-    
+
+
 def add_dataset(dataset: str, catalog: str) -> None:
     """Add a new dataset entry to the dataset catalog.
-    
+
     Parameters
     ----------
     dataset : str
@@ -123,7 +123,7 @@ def add_dataset(dataset: str, catalog: str) -> None:
 
 def add_model(model: str, catalog: str) -> None:
     """Add a new model entry to the model catalog.
-    
+
     Parameters
     ----------
     model : str

@@ -37,6 +37,8 @@ install_package(imagenet_model_config, allow_install=True)
 
 # Path to data catalog
 data_catalog_path = 'tests/test_catalog/datasources.json'
+
+
 @pytest.fixture(scope='session', autouse=True)
 def DATA_CATALOG_PATH(request):
     return data_catalog_path
@@ -44,6 +46,8 @@ def DATA_CATALOG_PATH(request):
 
 # Path to model catalog
 model_catalog_path = 'tests/test_catalog/models.json'
+
+
 @pytest.fixture(scope='session', autouse=True)
 def MODEL_CATALOG_PATH(request):
     return model_catalog_path
@@ -52,6 +56,8 @@ def MODEL_CATALOG_PATH(request):
 # Loaded data catalog
 with open(data_catalog_path) as file:
     data_catalog = json.load(file)
+
+
 @pytest.fixture(scope='session', autouse=True)
 def DATA_CATALOG(request):
     return data_catalog
@@ -60,11 +66,13 @@ def DATA_CATALOG(request):
 # Loaded model catalog
 with open(model_catalog_path) as file:
     model_catalog = json.load(file)
+
+
 @pytest.fixture(scope='session', autouse=True)
 def MODEL_CATALOG(request):
     return model_catalog
-    
-    
+
+
 def pytest_sessionfinish(session, exitstatus):
     """
     Called after whole test run finished, right before
@@ -75,4 +83,3 @@ def pytest_sessionfinish(session, exitstatus):
         json.dump(data_catalog, catalog, sort_keys=True, indent=4)
     with open(model_catalog_path, 'w') as catalog:
         json.dump(model_catalog, catalog, sort_keys=True, indent=4)
-    
