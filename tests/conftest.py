@@ -50,16 +50,29 @@ def MODEL_CATALOG_PATH(request):
 
 
 # Loaded data catalog
+with open(data_catalog_path) as file:
+    data_catalog = json.load(file)
 @pytest.fixture(scope='session', autouse=True)
 def DATA_CATALOG(request):
-    with open(data_catalog_path) as file:
-        data_catalog = json.load(file)
     return data_catalog
 
 
 # Loaded model catalog
+with open(model_catalog_path) as file:
+    model_catalog = json.load(file)
 @pytest.fixture(scope='session', autouse=True)
 def MODEL_CATALOG(request):
-    with open(model_catalog_path) as file:
-        model_catalog = json.load(file)
     return model_catalog
+    
+    
+def pytest_sessionfinish(session, exitstatus):
+    """
+    Called after whole test run finished, right before
+    returning the exit status to the system.
+    Restores catalog test files overwritten by add_dataset and add_model.
+    """
+    with open(data_catalog_path, 'w') as catalog:
+        json.dump(data_catalog, catalog, sort_keys=True, indent=4)
+    with open(model_catalog_path, 'w') as catalog:
+        json.dump(model_catalog, catalog, sort_keys=True, indent=4)
+    
