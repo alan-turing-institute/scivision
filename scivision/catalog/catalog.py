@@ -100,6 +100,9 @@ def _update_catalog(entry: str, catalog: str) -> None:
         entry_dict = json.load(file)
     with open(catalog) as file:
         catalog_dict = json.load(file)
+    for key in entry_dict.keys():
+        if key in catalog_dict:
+            raise KeyError('Entry named: "' + key + '" already in catalog')
     catalog_dict = catalog_dict | entry_dict # Note: Python 3.9+ only
     with open(catalog, 'w') as old_catalog:
         json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
