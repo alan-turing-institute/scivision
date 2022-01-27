@@ -32,3 +32,32 @@ def KOALA(request):
 
 # Install the model package so it can be used in tests
 install_package(imagenet_model_config, allow_install=True)
+
+
+# Path to data catalog
+@pytest.fixture(scope='session', autouse=True)
+def DATA_CATALOG(request):
+    return 'tests/test_catalog/datasources.json'
+
+
+# Path to model catalog
+@pytest.fixture(scope='session', autouse=True)
+def MODEL_CATALOG(request):
+    return 'tests/test_catalog/models.json'
+
+
+# def pytest_sessionstart(session):
+#     """
+#     Called after the Session object has been created and
+#     before performing collection and entering the run test loop.
+#     """
+#     # Load the unmodified data catalog
+#     with open(DATA_CATALOG) as file:
+#         datasources = json.load(file)
+# 
+# 
+# def pytest_sessionfinish(session, exitstatus):
+#     """
+#     Called after whole test run finished, right before
+#     returning the exit status to the system.
+#     """

@@ -2,11 +2,7 @@ from scivision.catalog import add_dataset, add_model
 import json
 
 
-DATA_CATALOG = 'tests/test_catalog/datasources.json'
-MODEL_CATALOG = 'tests/test_catalog/models.json'
-
-
-def test_add_dataset():
+def test_add_dataset(DATA_CATALOG):
     """Test that a new dataset can be added to the scivision dataset catalog."""
     test_entry = 'tests/catalog_data_entry.json'
     add_dataset(test_entry, DATA_CATALOG)
@@ -25,7 +21,7 @@ def test_add_dataset():
     assert "tags" in datasources[entry_name]
     
     
-def test_add_dataset_multiple():
+def test_add_dataset_multiple(DATA_CATALOG):
     """Test that multiple datasets can be added to the scivision dataset catalog when provided."""
     test_entry = 'tests/catalog_data_multiple_entries.json'
     add_dataset(test_entry, DATA_CATALOG)
@@ -49,7 +45,7 @@ def test_add_dataset_multiple():
 #     """Test that a new dataset is not added to the scivision dataset catalog if an entry with the same name exists."""
     # TODO: instead, have it so that the datasets are named however people like for now
     
-def test_add_model():
+def test_add_model(MODEL_CATALOG):
     """Test that a new model can be added to the scivision model catalog."""
     test_entry = 'tests/catalog_model_entry.json'
     add_model(test_entry, MODEL_CATALOG)
@@ -68,7 +64,3 @@ def test_add_model():
     assert "labels_required" in models[entry_name]
     assert "institution" in models[entry_name]
     assert "tags" in models[entry_name]
-    
-    
-# def test_add_model_installs():
-#     """Test that a model can be added to the catalog and is installable"""
