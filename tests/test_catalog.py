@@ -5,7 +5,7 @@ from pytest import raises
 
 def test_add_dataset(DATA_CATALOG_PATH):
     """Test that a new dataset can be added to the scivision dataset catalog."""
-    test_entry_path = 'tests/catalog_data_entry.json'
+    test_entry_path = 'tests/test_catalog/catalog_data_entry.json'
     add_dataset(test_entry_path, DATA_CATALOG_PATH)
     with open(test_entry_path) as file:
         entry = json.load(file)
@@ -24,7 +24,7 @@ def test_add_dataset(DATA_CATALOG_PATH):
 
 def test_add_dataset_multiple(DATA_CATALOG_PATH):
     """Test that multiple datasets can be added to the scivision dataset catalog when provided."""
-    test_entry_path = 'tests/catalog_data_multiple_entries.json'
+    test_entry_path = 'tests/test_catalog/catalog_data_multiple_entries.json'
     add_dataset(test_entry_path, DATA_CATALOG_PATH)
     with open(test_entry_path) as file:
         entry = json.load(file)
@@ -44,14 +44,14 @@ def test_add_dataset_multiple(DATA_CATALOG_PATH):
 
 def test_add_dataset_existing_key_entry_thows_error(DATA_CATALOG_PATH):
     """Test that a new dataset is not added to the scivision dataset catalog if an entry with the same name exists."""
-    test_entry_path = 'tests/catalog_data_entry_exists.json'
+    test_entry_path = 'tests/test_catalog/catalog_data_entry_exists.json'
     with raises(KeyError):
         add_dataset(test_entry_path, DATA_CATALOG_PATH)
 
 
 def test_add_model(MODEL_CATALOG_PATH):
     """Test that a new model can be added to the scivision model catalog."""
-    test_entry_path = 'tests/catalog_model_entry.json'
+    test_entry_path = 'tests/test_catalog/catalog_model_entry.json'
     add_model(test_entry_path, MODEL_CATALOG_PATH)
     with open(test_entry_path) as file:
         entry = json.load(file)
