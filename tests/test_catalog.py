@@ -3,6 +3,7 @@ import json
 
 
 DATA_CATALOG = 'scivision/catalog/data/datasources.json'
+MODEL_CATALOG = 'scivision/catalog/data/models.json'
 
 
 def test_add_dataset():
@@ -48,3 +49,26 @@ def test_add_dataset_multiple():
 #     """Test that a new dataset is not added to the scivision dataset catalog if an entry with the same name exists."""
     # TODO: instead, have it so that the datasets are named however people like for now
     
+def test_add_model():
+    """Test that a new model can be added to the scivision model catalog."""
+    test_entry = 'tests/catalog_model_entry.json'
+    add_model(test_entry, MODEL_CATALOG)
+    with open(test_entry) as file:
+        entry = json.load(file)
+    entry_name = list(entry.keys())[0]
+    with open('scivision/catalog/data/models.json') as file:
+        models = json.load(file)
+    assert entry_name in models
+    assert "task" in models[entry_name]
+    assert "model" in models[entry_name]
+    assert "github_branch" in models[entry_name]
+    assert "language" in models[entry_name]
+    assert "data_format" in models[entry_name]
+    assert "pretrained" in models[entry_name]
+    assert "labels_required" in models[entry_name]
+    assert "institution" in models[entry_name]
+    assert "tags" in models[entry_name]
+    
+    
+# def test_add_model_installs():
+#     """Test that a model can be added to the catalog and is installable"""
