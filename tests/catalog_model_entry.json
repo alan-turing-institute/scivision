@@ -1,0 +1,13 @@
+{
+  "Turing test plugin":{
+    "task":"object-detection",
+    "model":"https://github.com/alan-turing-institute/scivision-test-plugin",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"jpg",
+    "pretrained":"yes",
+    "labels_required":"no",
+    "institution":"alan-turing-institute",
+    "tags": ["dummy"]
+    }
+}
