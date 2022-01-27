@@ -118,5 +118,14 @@ def add_dataset(dataset: str, catalog: str) -> None:
     _update_catalog(dataset, catalog)
 
 
-def add_model(entry):
-    return 1
+def add_model(model: str, catalog: str) -> None:
+    """Add a new model entry to the model catalog.
+    
+    Parameters
+    ----------
+    model : str
+        A path to the json file specifying the model to be added to the catalog.
+    catalog : str
+        A path to the json file containing the scivision model catalog.
+    """
+    _update_catalog(model, catalog)
