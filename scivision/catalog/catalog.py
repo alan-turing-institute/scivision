@@ -101,8 +101,8 @@ def _update_catalog(entry: str, catalog: str) -> None:
     with open(catalog) as file:
         catalog_dict = json.load(file)
     catalog_dict = catalog_dict | entry_dict # Note: Python 3.9+ only
-    with open(catalog, 'w') as datasources:
-        json.dump(catalog_dict, datasources, sort_keys=True, indent=4)
+    with open(catalog, 'w') as old_catalog:
+        json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
     
     
 def add_dataset(dataset: str, catalog: str) -> None:
