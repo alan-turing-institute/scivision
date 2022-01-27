@@ -40,6 +40,13 @@ def test_add_dataset_multiple(DATA_CATALOG_PATH):
         assert "labels" in updated_data_catalog[entry_name]
         assert "institution" in updated_data_catalog[entry_name]
         assert "tags" in updated_data_catalog[entry_name]
+        
+        
+def test_add_dataset_existing_key_entry_thows_error(DATA_CATALOG_PATH):
+    """Test that a new dataset is not added to the scivision dataset catalog if an entry with the same name exists."""
+    test_entry_path = 'tests/catalog_data_entry_exists.json'
+    with raises(KeyError):
+        add_dataset(test_entry_path, DATA_CATALOG_PATH)
 
     
 def test_add_model(MODEL_CATALOG_PATH):
