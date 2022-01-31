@@ -5,6 +5,10 @@ from github import Github
 import json
 
 
+# TODO: function that gets the json catalogs from github main branch
+# def _get_catalog():
+
+
 def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
     """Add a new entry to a catalog.
 
@@ -15,6 +19,10 @@ def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
     catalog : str
         A path to the json file containing the scivision catalog.
     """
+    
+    # TODO - when updating the online catalog:
+    # if submit:
+    #   catalog_dict = _get_catalog()
     with open(entry) as file:
         entry_dict = json.load(file)
     with open(catalog) as file:
