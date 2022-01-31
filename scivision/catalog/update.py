@@ -27,8 +27,12 @@ def _update_catalog(entry: str, catalog: str) -> None:
         json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
         
         
-def _launch_pull_request(catalog):
-    """Sends a pull request to the scivision-catalog repo, adding to the scivision catalog files
+def _launch_pull_request(catalog: str) -> None:
+    """Sends a pull request to the scivision-catalog repo, adding to the scivision catalog.
+    Parameters
+    ----------
+    catalog : str
+        A path to the json file containing the updated catalog.
     """
     if 'datasources.json' in catalog:
         catalog_name = 'datasources'
