@@ -20,11 +20,10 @@ class PandasCatalog(BaseCatalog):
         try:  # TODO: remove this temp fix and test PandasCatalog
             datasources = pd.read_json(datasources_uri, orient="index")
             models = pd.read_json(models_uri, orient="index")
+            self._models = models.explode("task").explode("data_format")
+            self._datasources = datasources.explode("task").explode("format")
         except TypeError:
             pass
-
-        self._models = models.explode("task").explode("data_format")
-        self._datasources = datasources.explode("task").explode("format")
 
     @property
     def _database(self) -> pd.DataFrame:
