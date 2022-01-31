@@ -17,8 +17,11 @@ class PandasCatalog(BaseCatalog):
         datasources_uri = pkgutil.get_data(__name__, "data/datasources.json")
         models_uri = pkgutil.get_data(__name__, "data/models.json")
 
-        datasources = pd.read_json(datasources_uri, orient="index")
-        models = pd.read_json(models_uri, orient="index")
+        try:  # TODO: remove this temp fix and test PandasCatalog
+            datasources = pd.read_json(datasources_uri, orient="index")
+            models = pd.read_json(models_uri, orient="index")
+        except TypeError:
+            pass
 
         self._models = models.explode("task").explode("data_format")
         self._datasources = datasources.explode("task").explode("format")
