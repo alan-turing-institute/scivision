@@ -5,7 +5,7 @@ from github import Github
 import json
 
 
-def _update_catalog(entry: str, catalog: str) -> None:
+def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
     """Add a new entry to a catalog.
 
     Parameters
@@ -25,6 +25,8 @@ def _update_catalog(entry: str, catalog: str) -> None:
     catalog_dict = catalog_dict | entry_dict  # Note: Python 3.9+ only
     with open(catalog, 'w') as old_catalog:
         json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
+    if submit:
+        _launch_pull_request(catalog)
         
         
 def _launch_pull_request(catalog: str) -> None:
@@ -66,7 +68,7 @@ def _launch_pull_request(catalog: str) -> None:
     repo.create_pull(title=desc, body=body, head=target_branch, base="main")
 
 
-def add_dataset(dataset: str, catalog: str) -> None:
+def add_dataset(dataset: str, catalog: str, submit: bool = True) -> None:
     """Add a new dataset entry to the dataset catalog.
 
     Parameters
@@ -76,10 +78,10 @@ def add_dataset(dataset: str, catalog: str) -> None:
     catalog : str
         A path to the json file containing the scivision dataset catalog.
     """
-    _update_catalog(dataset, catalog)
+    _update_catalog(dataset, catalog, submit=submit)
 
 
-def add_model(model: str, catalog: str) -> None:
+def add_model(model: str, catalog: str, submit: bool = True) -> None:
     """Add a new model entry to the model catalog.
 
     Parameters
@@ -89,4 +91,4 @@ def add_model(model: str, catalog: str) -> None:
     catalog : str
         A path to the json file containing the scivision model catalog.
     """
-    _update_catalog(model, catalog)
+    _update_catalog(model, catalog, submit=submit)
