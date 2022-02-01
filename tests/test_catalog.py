@@ -75,6 +75,13 @@ def test_add_dataset_existing_key_entry_thows_error(DATA_CATALOG_PATH):
     test_entry_path = 'tests/test_catalog/catalog_data_entry_exists.json'
     with raises(KeyError):
         add_dataset(test_entry_path, DATA_CATALOG_PATH, submit=False)
+        
+        
+def test_add_dataset_no_catalog_thows_error():
+    """Test that a new dataset is not added to the scivision dataset catalog if an entry with the same name exists."""
+    test_entry_path = 'tests/test_catalog/catalog_data_entry.json'
+    with raises(RuntimeError):
+        add_dataset(test_entry_path, submit=False)
 
 
 def test_add_model(MODEL_CATALOG_PATH):

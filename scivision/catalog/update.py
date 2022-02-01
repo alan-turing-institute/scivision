@@ -27,7 +27,7 @@ def _get_catalog(type: str = 'data'):
     return catalog_dict
     
 
-def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
+def _update_catalog(entry: str, catalog: str = 'default', submit: bool = True) -> None:
     """Add a new entry to a catalog.
 
     Parameters
@@ -39,6 +39,10 @@ def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
     submit : bool
         When True, updates the scivision catalog on GitHub. When False, expects a path to a catalog file.
     """
+    # Throw an error if the user doesn't submit to the online catalog but also doesn't provide a path to a loal file
+    if not submit and catalog == 'default':
+        raise RuntimeError('Scivision catalog to modify not provided')
+    
     # Get a dict for the new catalog entry
     with open(entry) as file:
         entry_dict = json.load(file)
@@ -105,7 +109,7 @@ def _launch_pull_request(catalog: str) -> None:
     repo.create_pull(title=desc, body=body, head=target_branch, base="main")
 
 
-def add_dataset(dataset: str, catalog: str, submit: bool = True) -> None:
+def add_dataset(dataset: str, catalog: str = 'default', submit: bool = True) -> None:
     """Add a new dataset entry to the dataset catalog.
 
     Parameters
@@ -115,10 +119,10 @@ def add_dataset(dataset: str, catalog: str, submit: bool = True) -> None:
     catalog : str
         A path to the json file containing the scivision dataset catalog.
     """
-    _update_catalog(dataset, catalog, submit=submit)
+    _update_catalog(dataset, catalog=catalog, submit=submit)
 
 
-def add_model(model: str, catalog: str, submit: bool = True) -> None:
+def add_model(model: str, catalog: str = 'default', submit: bool = True) -> None:
     """Add a new model entry to the model catalog.
 
     Parameters
@@ -128,4 +132,4 @@ def add_model(model: str, catalog: str, submit: bool = True) -> None:
     catalog : str
         A path to the json file containing the scivision model catalog.
     """
-    _update_catalog(model, catalog, submit=submit)
+    _update_catalog(model, catalog=catalog, submit=submit)
