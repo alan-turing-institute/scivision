@@ -142,7 +142,7 @@ def add_model(model: str, catalog: str = 'github') -> None:
         
     # Get a dict of the full catalog
     if catalog == 'github':
-        catalog_dict = _get_catalog()
+        catalog_dict = _get_catalog(type = 'model')
     else:
         with open(catalog) as file:
             catalog_dict = json.load(file)
