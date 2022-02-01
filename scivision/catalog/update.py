@@ -27,7 +27,7 @@ def _get_catalog(type: str = 'data'):
     return catalog_dict
     
 
-def _update_catalog(entry: str, catalog_dict: dict) -> dict:
+def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github') -> dict:
     """Add a new entry to a catalog.
 
     Parameters
@@ -36,11 +36,9 @@ def _update_catalog(entry: str, catalog_dict: dict) -> dict:
         A path to the json file specifying the entry to be added to the catalog.
     catalog_dict : dict
         A dict containing the scivision catalog.
-    
-    Returns
-    -------
-    catalog_dict : dict
-        The scivision catalog  as a dictionary, updated with the new entry.
+    catalog : str
+        A path to the json file containing the scivision model catalog.
+        When 'github', updates the scivision catalog on GitHub.
     """
     
     # Get a dict for the new catalog entry
@@ -53,9 +51,15 @@ def _update_catalog(entry: str, catalog_dict: dict) -> dict:
             raise KeyError('Entry named: "' + key + '" already in catalog')
             
     # Add the new entry to the catalog dict
-    catalog_dict = catalog_dict | entry_dict  # Note: Python 3.9+ only
+    updated_catalog_dict = catalog_dict | entry_dict  # Note: Python 3.9+ only
     
-    return catalog_dict
+    # Save the modified catalog to github or to file
+    if catalog == 'github':
+        catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
+        _launch_pull_request(catalog_json_string)
+    else:
+        with open(catalog, 'w') as old_catalog:
+            json.dump(updated_catalog_dict, old_catalog, sort_keys=True, indent=4)
 
 
 def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
@@ -111,21 +115,13 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
         
     # Get a dict of the full catalog
     if catalog == 'github':
-        catalog_dict = _get_catalog()
+        catalog_dict = _get_catalog(type = 'data')
     else:
         with open(catalog) as file:
             catalog_dict = json.load(file)
     
-    # Update catalog in memory
-    updated_catalog_dict = _update_catalog(dataset, catalog_dict)
-    
-    # Save the modified catalog
-    if catalog == 'github':
-        catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
-        _launch_pull_request(catalog_json_string)
-    else:
-        with open(catalog, 'w') as old_catalog:
-            json.dump(updated_catalog_dict, old_catalog, sort_keys=True, indent=4)
+    # Add the new dataset entry to the catalog
+    _update_catalog(dataset, catalog_dict, catalog=catalog)
 
 
 def add_model(model: str, catalog: str = 'github') -> None:
@@ -147,13 +143,5 @@ def add_model(model: str, catalog: str = 'github') -> None:
         with open(catalog) as file:
             catalog_dict = json.load(file)
 
-    # Update catalog in memory
-    updated_catalog_dict = _update_catalog(model, catalog_dict)
-    
-    # Save the modified catalog
-    if catalog == 'github':
-        catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
-        _launch_pull_request(catalog_json_string)
-    else:
-        with open(catalog, 'w') as old_catalog:
-            json.dump(updated_catalog_dict, old_catalog, sort_keys=True, indent=4)
+    # Add the new model entry to the catalog
+    _update_catalog(model, catalog_dict, catalog=catalog)
