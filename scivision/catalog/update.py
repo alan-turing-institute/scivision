@@ -121,7 +121,7 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
     
     # Save the modified catalog
     if catalog == 'github':
-        catalog_json_string = json.dumps(updated_catalog_dict)
+        catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
         _launch_pull_request(catalog_json_string)
     else:
         with open(catalog, 'w') as old_catalog:
@@ -152,7 +152,7 @@ def add_model(model: str, catalog: str = 'github') -> None:
     
     # Save the modified catalog
     if catalog == 'github':
-        catalog_json_string = json.dumps(updated_catalog_dict)
+        catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
         _launch_pull_request(catalog_json_string)
     else:
         with open(catalog, 'w') as old_catalog:
