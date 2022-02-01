@@ -15,8 +15,8 @@ def test_get_catalog_data():
     assert "labels" in catalog_dict[first_key]
     assert "institution" in catalog_dict[first_key]
     assert "tags" in catalog_dict[first_key]
-    
-    
+
+
 def test_get_catalog_model():
     """Test that the scivision model catalog can be retirived from GitHub and that at least one entry has required fields"""
     url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/models.json'

@@ -8,7 +8,7 @@ import requests
 
 def _get_catalog(url: str):
     """Load the Scivision catalog from GitHub.
-    
+
     Parameters
     ----------
     url : str
@@ -22,7 +22,7 @@ def _get_catalog(url: str):
     resp = requests.get(url)
     catalog_dict = json.loads(resp.text)
     return catalog_dict
-    
+
 
 def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github', type: str = 'data') -> dict:
     """Add a new entry to a catalog.
@@ -39,19 +39,19 @@ def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github', typ
     type : str
         A string that instructs which catalog to update, 'dataset' by default, can be changed to 'model'
     """
-    
+
     # Get a dict for the new catalog entry
     with open(entry) as file:
         entry_dict = json.load(file)
-    
+
     # Check that an entry of this name doesn't already exist in the catalog
     for key in entry_dict.keys():
         if key in catalog_dict:
             raise KeyError('Entry named: "' + key + '" already in catalog')
-            
+
     # Add the new entry to the catalog dict
     updated_catalog_dict = catalog_dict | entry_dict  # Note: Python 3.9+ only
-    
+
     # Save the modified catalog to github or to file
     if catalog == 'github':
         catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
@@ -75,20 +75,20 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     elif type == 'model':
         catalog_name = 'models'
     catalog_file = catalog_name + ".json"
-    
+
     # Configure PyGitHub
     print('Paste your GitHub access token:')
     token = input()
     g = Github(token)
     repo = g.get_repo("alan-turing-institute/scivision-catalog")
-    
+
     # Create new branch in the scivision-catalog repo
     print('In four words or fewer, describe your addition to the scivision catalog:')
     desc = input()
     target_branch = desc.replace(' ', '-')
     main_branch = repo.get_branch('main')
     repo.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
-    
+
     # Create a commit
     contents = repo.get_contents(catalog_file, ref=target_branch)
     repo.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
@@ -119,7 +119,7 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
     else:
         with open(catalog) as file:
             catalog_dict = json.load(file)
-    
+
     # Add the new dataset entry to the catalog
     _update_catalog(dataset, catalog_dict, catalog=catalog, type='data')
 
