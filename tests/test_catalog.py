@@ -5,7 +5,8 @@ from pytest import raises
 
 def test_get_catalog_data():
     """Test that the scivision data catalog can be retirived from GitHub and that at least one entry has required fields"""
-    catalog_dict = _get_catalog()
+    url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/datasources.json'
+    catalog_dict = _get_catalog(url)
     first_key = list(catalog_dict.keys())[0]
     assert "task" in catalog_dict[first_key]
     assert "domain" in catalog_dict[first_key]
@@ -18,7 +19,8 @@ def test_get_catalog_data():
     
 def test_get_catalog_model():
     """Test that the scivision model catalog can be retirived from GitHub and that at least one entry has required fields"""
-    catalog_dict = _get_catalog(type='model')
+    url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/models.json'
+    catalog_dict = _get_catalog(url)
     first_key = list(catalog_dict.keys())[0]
     assert "task" in catalog_dict[first_key]
     assert "model" in catalog_dict[first_key]

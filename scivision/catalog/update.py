@@ -6,22 +6,19 @@ import json
 import requests
 
 
-def _get_catalog(type: str = 'data'):
+def _get_catalog(url: str):
     """Load the Scivision catalog from GitHub.
     
     Parameters
     ----------
-    type : str
-        A string that instructs which catalog to load, 'dataset' by default, can be changed to 'model'
+    url : str
+        A github raw url pointing to the scivision catalog file.
 
     Returns
     -------
     catalog_dict : dict
         Dictionary version of scivision catalog.
     """
-    url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/datasources.json'
-    if type == 'model':
-        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/models.json'
     resp = requests.get(url)
     catalog_dict = json.loads(resp.text)
     return catalog_dict
@@ -112,10 +109,11 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
         A path to the json file containing the scivision dataset catalog.
         When 'github', updates the scivision catalog on GitHub.
     """
-        
+
     # Get a dict of the full catalog
     if catalog == 'github':
-        catalog_dict = _get_catalog(type = 'data')
+        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/datasources.json'
+        catalog_dict = _get_catalog(url)
     else:
         with open(catalog) as file:
             catalog_dict = json.load(file)
@@ -135,10 +133,11 @@ def add_model(model: str, catalog: str = 'github') -> None:
         A path to the json file containing the scivision model catalog.
         When 'github', updates the scivision catalog on GitHub.
     """
-        
+
     # Get a dict of the full catalog
     if catalog == 'github':
-        catalog_dict = _get_catalog(type = 'model')
+        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/models.json'
+        catalog_dict = _get_catalog(url)
     else:
         with open(catalog) as file:
             catalog_dict = json.load(file)
