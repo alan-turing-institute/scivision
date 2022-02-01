@@ -36,25 +36,36 @@ def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
         A path to the json file specifying the entry to be added to the catalog.
     catalog : str
         A path to the json file containing the scivision catalog.
+    submit : bool
+        When True, updates the scivision catalog on GitHub. When False, expects a path to a catalog file.
     """
-    
-    # TODO - when updating the online catalog:
-    # if submit:
-    #   catalog_dict = _get_catalog()
+    # Get a dict for the new catalog entry
     with open(entry) as file:
         entry_dict = json.load(file)
-    with open(catalog) as file:
-        catalog_dict = json.load(file)
+        
+    # Get a dict of the full catalog
+    if submit:
+        catalog_dict = _get_catalog()
+    else:
+        with open(catalog) as file:
+            catalog_dict = json.load(file)
+    
+    # Check that an entry of this name doesn't already exist in the catalog
     for key in entry_dict.keys():
         if key in catalog_dict:
             raise KeyError('Entry named: "' + key + '" already in catalog')
+            
+    # Add the new entry to the catalog dict
     catalog_dict = catalog_dict | entry_dict  # Note: Python 3.9+ only
-    with open(catalog, 'w') as old_catalog:
-        json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
+    
+    # Save the modified catalog
     if submit:
         _launch_pull_request(catalog)
-        
-        
+    else:
+        with open(catalog, 'w') as old_catalog:
+            json.dump(catalog_dict, old_catalog, sort_keys=True, indent=4)
+
+
 def _launch_pull_request(catalog: str) -> None:
     """Sends a pull request to the scivision-catalog repo, adding to the scivision catalog.
     Parameters
