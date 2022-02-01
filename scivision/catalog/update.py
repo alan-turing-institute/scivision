@@ -3,11 +3,29 @@
 
 from github import Github
 import json
+import requests
 
 
-# TODO: function that gets the json catalogs from github main branch
-# def _get_catalog():
+def _get_catalog(type: str = 'data'):
+    """Load the Scivision catalog from GitHub.
+    
+    Parameters
+    ----------
+    type : str
+        A string that instructs which catalog to load, 'dataset' by default, can be changed to 'model'
 
+    Returns
+    -------
+    catalog_dict : dict
+        Dictionary version of scivision catalog.
+    """
+    url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/datasources.json'
+    if type == 'model':
+        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/models.json'
+    resp = requests.get(url)
+    catalog_dict = json.loads(resp.text)
+    return catalog_dict
+    
 
 def _update_catalog(entry: str, catalog: str, submit: bool = True) -> None:
     """Add a new entry to a catalog.

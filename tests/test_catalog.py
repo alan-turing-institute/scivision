@@ -1,7 +1,19 @@
-from scivision.catalog import add_dataset, add_model
+from scivision.catalog import add_dataset, add_model, _get_catalog
 import json
 from pytest import raises
 
+
+def test_get_catalog_data():
+    """Test that the scivision data catalog can be retirived from GitHub and that at least one entry has required fields"""
+    catalog_dict = _get_catalog()
+    first_key = list(catalog_dict.keys())[0]
+    assert "task" in catalog_dict[first_key]
+    assert "domain" in catalog_dict[first_key]
+    assert "datasource" in catalog_dict[first_key]
+    assert "format" in catalog_dict[first_key]
+    assert "labels" in catalog_dict[first_key]
+    assert "institution" in catalog_dict[first_key]
+    assert "tags" in catalog_dict[first_key]
 
 def test_add_dataset(DATA_CATALOG_PATH):
     """Test that a new dataset can be added to the scivision dataset catalog."""
