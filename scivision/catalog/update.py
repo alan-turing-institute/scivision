@@ -24,7 +24,7 @@ def _get_catalog(url: str):
     return catalog_dict
     
 
-def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github') -> dict:
+def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github', type: str = 'data') -> dict:
     """Add a new entry to a catalog.
 
     Parameters
@@ -36,6 +36,8 @@ def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github') -> 
     catalog : str
         A path to the json file containing the scivision model catalog.
         When 'github', updates the scivision catalog on GitHub.
+    type : str
+        A string that instructs which catalog to update, 'dataset' by default, can be changed to 'model'
     """
     
     # Get a dict for the new catalog entry
@@ -53,7 +55,7 @@ def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github') -> 
     # Save the modified catalog to github or to file
     if catalog == 'github':
         catalog_json_string = json.dumps(updated_catalog_dict, sort_keys=True, indent=4)
-        _launch_pull_request(catalog_json_string)
+        _launch_pull_request(catalog_json_string, type=type)
     else:
         with open(catalog, 'w') as old_catalog:
             json.dump(updated_catalog_dict, old_catalog, sort_keys=True, indent=4)
@@ -66,7 +68,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     catalog_json : str
         A string containing an updated scivision catalog in json format.
     type : str
-        A string that instructs which catalog to load, 'dataset' by default, can be changed to 'model'
+        A string that instructs which catalog to update, 'dataset' by default, can be changed to 'model'
     """
     if type == 'data':
         catalog_name = 'datasources'
@@ -119,7 +121,7 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
             catalog_dict = json.load(file)
     
     # Add the new dataset entry to the catalog
-    _update_catalog(dataset, catalog_dict, catalog=catalog)
+    _update_catalog(dataset, catalog_dict, catalog=catalog, type='data')
 
 
 def add_model(model: str, catalog: str = 'github') -> None:
@@ -143,4 +145,4 @@ def add_model(model: str, catalog: str = 'github') -> None:
             catalog_dict = json.load(file)
 
     # Add the new model entry to the catalog
-    _update_catalog(model, catalog_dict, catalog=catalog)
+    _update_catalog(model, catalog_dict, catalog=catalog, type='model')
