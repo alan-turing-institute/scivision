@@ -58,12 +58,12 @@ def _update_catalog(entry: str, catalog_dict: dict) -> dict:
     return catalog_dict
 
 
-def _launch_pull_request(catalog_dict: dict, type: str = 'data') -> None:
+def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     """Sends a pull request to the scivision-catalog repo, adding to the scivision catalog.
     Parameters
     ----------
-    catalog_dict : dict
-        A dict containing the scivision catalog.
+    catalog_json : str
+        A string containing an updated scivision catalog in json format.
     type : str
         A string that instructs which catalog to load, 'dataset' by default, can be changed to 'model'
     """
@@ -88,9 +88,7 @@ def _launch_pull_request(catalog_dict: dict, type: str = 'data') -> None:
     
     # Create a commit
     contents = repo.get_contents(catalog_file, ref=target_branch)
-    with open(catalog, 'r') as file:
-        catalog_string = file.read()
-    repo.update_file(contents.path, desc, catalog_string, contents.sha, branch=target_branch)
+    repo.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
 
     # Create a PR
     body = '# Add an entry to the scivision ' + catalog_name + ' catalog'
@@ -123,7 +121,8 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
     
     # Save the modified catalog
     if catalog == 'github':
-        _launch_pull_request(updated_catalog_dict)
+        catalog_json_string = json.dumps(updated_catalog_dict)
+        _launch_pull_request(catalog_json_string)
     else:
         with open(catalog, 'w') as old_catalog:
             json.dump(updated_catalog_dict, old_catalog, sort_keys=True, indent=4)
@@ -153,7 +152,8 @@ def add_model(model: str, catalog: str = 'github') -> None:
     
     # Save the modified catalog
     if catalog == 'github':
-        _launch_pull_request(updated_catalog_dict)
+        catalog_json_string = json.dumps(updated_catalog_dict)
+        _launch_pull_request(catalog_json_string)
     else:
         with open(catalog, 'w') as old_catalog:
             json.dump(updated_catalog_dict, old_catalog, sort_keys=True, indent=4)
