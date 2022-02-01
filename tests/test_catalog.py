@@ -14,6 +14,22 @@ def test_get_catalog_data():
     assert "labels" in catalog_dict[first_key]
     assert "institution" in catalog_dict[first_key]
     assert "tags" in catalog_dict[first_key]
+    
+    
+def test_get_catalog_model():
+    """Test that the scivision model catalog can be retirived from GitHub and that at least one entry has required fields"""
+    catalog_dict = _get_catalog(type='model')
+    first_key = list(catalog_dict.keys())[0]
+    assert "task" in catalog_dict[first_key]
+    assert "model" in catalog_dict[first_key]
+    assert "github_branch" in catalog_dict[first_key]
+    assert "language" in catalog_dict[first_key]
+    assert "data_format" in catalog_dict[first_key]
+    assert "pretrained" in catalog_dict[first_key]
+    assert "labels_required" in catalog_dict[first_key]
+    assert "institution" in catalog_dict[first_key]
+    assert "tags" in catalog_dict[first_key]
+
 
 def test_add_dataset(DATA_CATALOG_PATH):
     """Test that a new dataset can be added to the scivision dataset catalog."""
