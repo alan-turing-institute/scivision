@@ -105,7 +105,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     base64_bytes = base64.b64encode(message_bytes)
     base64_message = base64_bytes.decode('ascii')
 
-    # Create a PR
+    # Create a PR from your forked branch to the main branch of the original repo
     body = 'Add an entry to the scivision ' + type + ' catalog: '
     body += desc
     headers = {'Authorization': 'Basic ' + base64_message}
