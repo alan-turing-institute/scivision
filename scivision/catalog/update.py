@@ -109,9 +109,8 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     body = '# Add an entry to the scivision ' + catalog_name + ' catalog'
     body += '\n'
     body += desc
-    # TODO: include body in PR
     headers = {'Authorization': 'Basic ' + base64_message}
-    data = '{"head":"' + g.get_user().login + ':' + target_branch + '","base":"main", "title":"' + desc + '"}'
+    data = '{"head":"' + g.get_user().login + ':' + target_branch + '","base":"main", "title":"' + desc + '", "body":"' + body + '"}'
     requests.post('https://api.github.com/repos/' + catalog_repo + '/pulls', data=data, headers=headers)
 
 
