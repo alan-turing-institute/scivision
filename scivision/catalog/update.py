@@ -106,8 +106,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     base64_message = base64_bytes.decode('ascii')
 
     # Create a PR
-    body = '# Add an entry to the scivision ' + catalog_name + ' catalog'
-    body += '\n'
+    body = 'Add an entry to the scivision ' + type + ' catalog: '
     body += desc
     headers = {'Authorization': 'Basic ' + base64_message}
     data = '{"head":"' + g.get_user().login + ':' + target_branch + '","base":"main", "title":"' + desc + '", "body":"' + body + '"}'
