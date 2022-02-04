@@ -81,23 +81,28 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     token = input()
     g = Github(token)
     repo = g.get_repo("alan-turing-institute/scivision-catalog")
+    
+    # Create a fork of the scivision-catalog repo
+    github_user = g.get_user()
+    myfork = github_user.create_fork(repo)
 
     # Create new branch in the scivision-catalog repo
     print('In four words or fewer, describe your addition to the scivision catalog:')
     desc = input()
     target_branch = desc.replace(' ', '-')
-    main_branch = repo.get_branch('main')
-    repo.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
+    main_branch = myfork.get_branch('main')
+    myfork.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
 
     # Create a commit
-    contents = repo.get_contents(catalog_file, ref=target_branch)
-    repo.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
+    contents = myfork.get_contents(catalog_file, ref=target_branch)
+    myfork.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
 
     # Create a PR
     body = '# Add an entry to the scivision ' + catalog_name + ' catalog'
     body += '\n'
     body += desc
     repo.create_pull(title=desc, body=body, head=target_branch, base="main")
+    # repo.create_pull(title=desc, body=body, head=target_branch, base='edwardchalstrey1/scivision-catalog:main')
 
 
 def add_dataset(dataset: str, catalog: str = 'github') -> None:
