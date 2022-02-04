@@ -79,8 +79,13 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     catalog_file = catalog_name + ".json"
 
     # Configure PyGitHub
-    print('Paste your GitHub access token:')
+    print('Provide your GitHub access token (or hit enter to use default):')
     token = input()
+    # if the user does not enter a token, use a default
+    # this is the token of a GH account called scivisioncontributor
+    # this account can fork and PR the catalog on the user's behalf
+    if token == "":
+        token = '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'
     g = Github(token)
     repo = g.get_repo(catalog_repo)
 
