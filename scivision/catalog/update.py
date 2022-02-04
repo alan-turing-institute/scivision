@@ -4,6 +4,7 @@
 from github import Github
 import json
 import requests
+import base64
 
 
 def _get_catalog(url: str):
@@ -70,6 +71,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     type : str
         A string that instructs which catalog to update, 'dataset' by default, can be changed to 'model'
     """
+    catalog_repo = 'alan-turing-institute/scivision-catalog'
     if type == 'data':
         catalog_name = 'datasources'
     elif type == 'model':
@@ -80,29 +82,41 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     print('Paste your GitHub access token:')
     token = input()
     g = Github(token)
-    repo = g.get_repo("alan-turing-institute/scivision-catalog")
+    repo = g.get_repo(catalog_repo)
     
     # Create a fork of the scivision-catalog repo
-    github_user = g.get_user()
-    myfork = github_user.create_fork(repo)
+    # github_user = g.get_user()
+    # myfork = github_user.create_fork(repo)
 
     # Create new branch in the scivision-catalog repo
     print('In four words or fewer, describe your addition to the scivision catalog:')
     desc = input()
     target_branch = desc.replace(' ', '-')
-    main_branch = myfork.get_branch('main')
-    myfork.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
+    main_branch = repo.get_branch('main')
+    repo.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
+    # main_branch = myfork.get_branch('main')
+    # myfork.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
 
     # Create a commit
-    contents = myfork.get_contents(catalog_file, ref=target_branch)
-    myfork.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
+    contents = repo.get_contents(catalog_file, ref=target_branch)
+    repo.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
+    # contents = myfork.get_contents(catalog_file, ref=target_branch)
+    # myfork.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
+    
+    # Get base64 token
+    message = g.get_user().login + ':' + token
+    message_bytes = message.encode('ascii')
+    base64_bytes = base64.b64encode(message_bytes)
+    base64_message = base64_bytes.decode('ascii')
 
     # Create a PR
     body = '# Add an entry to the scivision ' + catalog_name + ' catalog'
     body += '\n'
     body += desc
-    repo.create_pull(title=desc, body=body, head=target_branch, base="main")
-    # repo.create_pull(title=desc, body=body, head=target_branch, base='edwardchalstrey1/scivision-catalog:main')
+    # repo.create_pull(title=desc, body=body, head=target_branch, base="main")
+    headers = {'Authorization': 'Basic ' + base64_message}
+    data = '{"head":"' + target_branch + '","base":"main", "title":"' + desc + '"}'
+    requests.post('https://api.github.com/repos/' + catalog_repo + '/pulls', data=data, headers=headers)
 
 
 def add_dataset(dataset: str, catalog: str = 'github') -> None:
