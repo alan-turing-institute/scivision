@@ -88,18 +88,18 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     github_user = g.get_user()
     myfork = github_user.create_fork(repo)
 
-    # Create new branch in the scivision-catalog repo
+    # Create new branch in your fork
     print('In four words or fewer, describe your addition to the scivision catalog:')
     desc = input()
     target_branch = desc.replace(' ', '-')
     main_branch = myfork.get_branch('main')
     myfork.create_git_ref(ref='refs/heads/' + target_branch, sha=main_branch.commit.sha)
 
-    # Create a commit
+    # Create a commit which adds the new version of the updated catalog
     contents = myfork.get_contents(catalog_file, ref=target_branch)
     myfork.update_file(contents.path, desc, catalog_json, contents.sha, branch=target_branch)
     
-    # Get base64 token
+    # Get base64 message based on GitHub token needed for PR
     message = g.get_user().login + ':' + token
     message_bytes = message.encode('ascii')
     base64_bytes = base64.b64encode(message_bytes)
