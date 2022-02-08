@@ -85,7 +85,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     # this is the token of a GH account called scivisioncontributor
     # this account can fork and PR the catalog on the user's behalf
     if token == "":
-        token = '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'
+        token = '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'
     g = Github(token)
     repo = g.get_repo(catalog_repo)
 
