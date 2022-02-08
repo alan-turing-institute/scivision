@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import abc
 import pkgutil
 import pandas as pd
 import os
 from pathlib import Path
-from typing import Dict, List, Optional
-from pydantic import BaseModel
+from typing import Dict, List, Optional, FrozenSet, Tuple
+from pydantic import BaseModel, AnyUrl
 from enum import Enum
 
-from .base_catalog import BaseCatalog
 from ..koala import koala
 
 
@@ -20,56 +20,88 @@ class TaskEnum(str, Enum):
     thresholding = "thresholding"
 
 
-class ModelCatalogEntry(BaseModel, extra="forbid"):
+class CatalogModelEntry(BaseModel, extra="forbid"):
     name: str
     description: Optional[str]
-    tasks: List[TaskEnum]
-    url: str
-    pkg_url: str
+    tasks: Tuple[TaskEnum, ...]
+    url: AnyUrl
+    pkg_url: AnyUrl
     format: str
     pretrained: bool
     labels_required: bool
-    language: Optional[str]
     institution: Optional[str]
-    tags: List[str]
+    tags: Tuple[str, ...]
 
 
-class ModelCatalog(BaseModel, extra="forbid"):
+class CatalogModels(BaseModel, extra="forbid"):
     catalog_type: str = "scivision model catalog"
     name: str
-    entries: List[ModelCatalogEntry]
+    entries: Tuple[CatalogModelEntry, ...]
 
 
-class DataCatalogEntry(BaseModel, extra="forbid"):
+class CatalogDatasourceEntry(BaseModel, extra="forbid"):
     name: str
     description: Optional[str]
-    tasks: List[TaskEnum]
-    domains: List[str]
+    tasks: Tuple[TaskEnum, ...]
+    domains: Tuple[str, ...]
     url: str
     format: str
     labels: bool
     institution: Optional[str]
-    tags: List[str]
+    tags: Tuple[str, ...]
 
 
-class DataCatalog(BaseModel, extra="forbid"):
+class CatalogDatasources(BaseModel, extra="forbid"):
     catalog_type: str = "scivision datasource catalog"
     name: str
-    entries: List[DataCatalogEntry]
+    entries: Tuple[CatalogDatasourceEntry, ...]
+
+
+class BaseCatalog(abc.ABC):
+    @abc.abstractmethod
+    def query(self, query: Dict[str, str]) -> list:
+        """Search the catalog using the query.
+
+        Parameters
+        ----------
+        query : dict
+        A dictionary describing the search query as key value pairs.
+
+        Returns
+        -------
+        result : list
+        A list of catalog entries matching the search requirements.
+        """
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def keys(self) -> List[str]:
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def values(self, key: str) -> List[str]:
+        raise NotImplementedError
 
 
 class PandasCatalog(BaseCatalog):
-    def __init__(self):
+    def __init__(self, datasource_catalog=None, model_catalog=None):
         super().__init__()
 
-        datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
-        models_raw = pkgutil.get_data(__name__, "data/models.json")
+        if datasource_catalog is None:
+            datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
+        else:
+            datasources_raw = Path(datasource_catalog).read_text()
 
-        datasources_cat = DataCatalog.parse_raw(datasources_raw)
-        models_cat = ModelCatalog.parse_raw(models_raw)
+        if model_catalog is None:
+            models_raw = pkgutil.get_data(__name__, "data/models.json")
+        else:
+            models_raw = Path(model_catalog).read_text()
 
-        datasources = pd.DataFrame([ent.dict() for ent in datasources_cat.entries])
-        models = pd.DataFrame([ent.dict() for ent in models_cat.entries])
+        cat_datasources = CatalogDatasources.parse_raw(datasources_raw)
+        cat_models = CatalogModels.parse_raw(models_raw)
+
+        datasources = pd.DataFrame([ent.dict() for ent in cat_datasources.entries])
+        models = pd.DataFrame([ent.dict() for ent in cat_models.entries])
 
         self._models = models.explode("tasks").explode("format")
         self._datasources = datasources.explode("tasks").explode("format")
@@ -84,53 +116,25 @@ class PandasCatalog(BaseCatalog):
             right_on=["tasks", "format"],
         )
 
-    def _query(self, query: Dict[str, str]) -> list:
+    def models() ->
+    
+    def query(self, query: Dict[str, str]) -> list:
         """Query the Pandas dataframe."""
         queries = [f"{k} == '{v}'" for k, v in query.items()]
         query_str = " & ".join(queries)
         result = self._database.query(query_str)
         return result.to_dict("records")
 
-    @property
     def keys(self) -> List[str]:
         """Return the query keys."""
         return self._database.columns.tolist()
 
     def values(self, key: str) -> List[str]:
         """Return the unique values for a query key."""
-        if key not in self.keys:
+        if key not in self.keys():
             raise ValueError(f"Key {key} not found.")
         values = self._database[key].tolist()
         return list(set(values))
 
 
-_catalog = PandasCatalog()
-
-
-@koala
-def query(query: Dict[str, str]) -> list:
-    """Search the catalog using the query.
-
-    Parameters
-    ----------
-    query : dict
-        A dictionary describing the search query as key value pairs.
-
-    Returns
-    -------
-    result : list
-        A list of catalog entries matching the search requirements.
-    """
-
-    result = _catalog.query(query)
-    return result
-
-
-@koala
-def keys() -> List[str]:
-    return _catalog.keys
-
-
-@koala
-def values(key: str) -> List[str]:
-    return _catalog.values(key)
+default_catalog = PandasCatalog()
