@@ -14,6 +14,7 @@ dependencies:
   - intake
   - intake-xarray
   - pytorch
+  - torchvision
   - pip:
       - rasterio
       - pycurl
