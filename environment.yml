@@ -13,3 +13,8 @@ dependencies:
   - aiohttp
   - intake
   - intake-xarray
+  - pytorch==1.8.0
+  - torchvision==0.9.0
+  - opencv
+  - pip:
+    - git+https://github.com/ESM-VFC/intake_zenodo_fetcher.git
