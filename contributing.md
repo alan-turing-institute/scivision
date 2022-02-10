@@ -52,16 +52,14 @@ To get started, please take a look at our currently open [issues](https://github
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
   
-:gift: Adding to the scivision catalog
+:gift: Extending the scivision catalog
 ---
 
 You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#how-to-contribute)).
 
-Create a new branch and make one or both of the following changes, then launch a pull request for your additions to be reviewed:
+##### Adding the pre-trained model
 
-#### Add a new model
-
-Add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry:
+On a new branch of the scivision repository, add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry. After you are done, create a pull request with the changes.
 
 ```
   "model-XXX":{
@@ -79,9 +77,12 @@ Add metadata for your computer vision model to the end of `models.json`, with th
   }
 ```
 
-#### Add a new dataset
+##### TODO: Preparing a scivision model repository
+For a guide on how the model GitHub repository linked to by the `"model"` key of your catalog entry should look, see [this guide]...
 
-Add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry:
+##### Adding a new dataset to the catalog
+
+On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
 
 ```
   "data-XXX":{
@@ -96,6 +97,9 @@ Add your dataset to the end of `datasources.json`, with the following format, in
     ]
   }
  ```
+ 
+ ##### TODO: Preparing a scivision data repository
+ For a guide on how the data repository linked to by the `"datasource"` key of your catalog entry should look, see [this guide]...
 
 📫 Contact
 ---
