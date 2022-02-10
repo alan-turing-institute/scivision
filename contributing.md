@@ -2,8 +2,6 @@
 
 Thank you for taking the time to contribute to this project. 🎉
 
-Before making a contribution, please take a look at our [Code of Conduct](./CODE_OF_CONDUCT.md).
-
 :book: Contents
 ---
 
