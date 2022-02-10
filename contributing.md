@@ -5,12 +5,12 @@ Thank you for taking the time to contribute to this project. 🎉
 :book: Contents
 ---
 
-- :sunglasses: [Who should contribute](#who-should-contribute)
-- 🤔 [What to contribute](#what-to-contibute)
-- 🛠 [How to contribute](#how-to-contribute)
-- :gift: [Extending the scivision catalog](#extending-the-scivision-catalog)
-- 📫 [Contact](#contact)
-- ♻️ [License](#license)
+- :sunglasses: [Who should contribute](#sunglasses-who-should-contribute)
+- 🤔 [What to contribute](#-what-to-contribute)
+- 🛠 [How to contribute](#-how-to-contribute)
+- :gift: [Extending the scivision catalog](#gift-extending-the-scivision-catalog)
+- 📫 [Contact](#-contact)
+- ♻️ [License](#%EF%B8%8F-license)
 
 :sunglasses: Who should contribute
 ---
@@ -23,7 +23,7 @@ In particular we'd like to encourage contributions from the following people:
 2. **Data providers** from diverse scientific fields
 3. **Programmers** interested in improving the scivision package
 
-Members of the first two groups should pay particular attention to the [extending the scivision catalog](#extending-the-scivision-catalog) section of this guide.
+Members of the first two groups should pay particular attention to the [extending the scivision catalog](#gift-extending-the-scivision-catalog) section of this guide.
 
 🤔 What to contribute
 ---
@@ -53,7 +53,7 @@ To get started, please take a look at our currently open [issues](https://github
 :gift: Extending the scivision catalog
 ---
 
-You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#how-to-contribute)).
+You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#-how-to-contribute)).
 
 ##### Adding the pre-trained model
 
