@@ -17,7 +17,7 @@ class PandasCatalog(BaseCatalog):
         datasources_uri = pkgutil.get_data(__name__, "data/datasources.json")
         models_uri = pkgutil.get_data(__name__, "data/models.json")
 
-        try:  # TODO: remove this temp fix and test PandasCatalog
+        try:
             datasources = pd.read_json(datasources_uri, orient="index")
             models = pd.read_json(models_uri, orient="index")
             self._models = models.explode("task").explode("data_format")
