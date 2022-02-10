@@ -65,7 +65,7 @@ def _update_catalog(entry: str, catalog_dict: dict, catalog: str = 'github', typ
 
 
 def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
-    """Sends a pull request to the scivision-catalog repo, adding to the scivision catalog.
+    """Sends a pull request to the scivision repo, adding to the scivision catalog.
     Parameters
     ----------
     catalog_json : str
@@ -74,7 +74,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
         A string that instructs which catalog to update, 'dataset' by default, can be changed to 'model'
     """
     # Catalog details
-    catalog_repo = 'alan-turing-institute/scivision-catalog'
+    catalog_repo = 'alan-turing-institute/scivision'
     if type == 'data':
         catalog_name = 'datasources'
     elif type == 'model':
@@ -88,7 +88,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     g = Github(token)
     repo = g.get_repo(catalog_repo)
 
-    # Create a fork of the scivision-catalog repo
+    # Create a fork of the scivision repo
     print('Creating a fork of ' + catalog_repo + ' containing your update(s)')
     github_user = g.get_user()
     myfork = github_user.create_fork(repo)
@@ -137,7 +137,7 @@ def add_dataset(dataset: str, catalog: str = 'local') -> None:
 
     # Get a dict of the full catalog
     if catalog == 'github':
-        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/datasources.json'
+        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/scivision/catalog/data/datasources.json'
         catalog_dict = _get_catalog(url)
     else:
         with open(catalog) as file:
@@ -164,7 +164,7 @@ def add_model(model: str, catalog: str = 'local') -> None:
 
     # Get a dict of the full catalog
     if catalog == 'github':
-        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision-catalog/main/models.json'
+        url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/main/scivision/catalog/data/models.json'
         catalog_dict = _get_catalog(url)
     else:
         with open(catalog) as file:
