@@ -5,6 +5,7 @@ from github import Github
 import json
 import requests
 import base64
+import pkg_resources
 
 
 def _get_catalog(url: str):
@@ -112,7 +113,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     requests.post('https://api.github.com/repos/' + catalog_repo + '/pulls', data=data, headers=headers)
 
 
-def add_dataset(dataset: str, catalog: str = 'github') -> None:
+def add_dataset(dataset: str, catalog: str = 'local') -> None:
     """Add a new dataset entry to the dataset catalog.
 
     Parameters
@@ -122,7 +123,10 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
     catalog : str
         A path to the json file containing the scivision dataset catalog.
         When 'github', updates the scivision catalog on GitHub.
+        When 'local', updates the scivision catalog in source code.
     """
+    if catalog == 'local':
+        catalog = pkg_resources.resource_filename('scivision', 'catalog/data/datasources.json')
 
     # Get a dict of the full catalog
     if catalog == 'github':
@@ -136,7 +140,7 @@ def add_dataset(dataset: str, catalog: str = 'github') -> None:
     _update_catalog(dataset, catalog_dict, catalog=catalog, type='data')
 
 
-def add_model(model: str, catalog: str = 'github') -> None:
+def add_model(model: str, catalog: str = 'local') -> None:
     """Add a new model entry to the model catalog.
 
     Parameters
@@ -146,7 +150,10 @@ def add_model(model: str, catalog: str = 'github') -> None:
     catalog : str
         A path to the json file containing the scivision model catalog.
         When 'github', updates the scivision catalog on GitHub.
+        When 'local', updates the scivision catalog in source code.
     """
+    if catalog == 'local':
+        catalog = pkg_resources.resource_filename('scivision', 'catalog/data/models.json')
 
     # Get a dict of the full catalog
     if catalog == 'github':
