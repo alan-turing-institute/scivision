@@ -72,12 +72,14 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     type : str
         A string that instructs which catalog to update, 'dataset' by default, can be changed to 'model'
     """
+    # Catalog details
     catalog_repo = 'alan-turing-institute/scivision-catalog'
     if type == 'data':
         catalog_name = 'datasources'
     elif type == 'model':
         catalog_name = 'models'
     catalog_file = catalog_name + ".json"
+    print('Launching a pull request to ' + catalog_repo)
 
     # Configure PyGitHub
     print('Provide your GitHub access token:')
@@ -86,6 +88,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     repo = g.get_repo(catalog_repo)
 
     # Create a fork of the scivision-catalog repo
+    print('Creating a fork of ' + catalog_repo + ' containing your update(s)')
     github_user = g.get_user()
     myfork = github_user.create_fork(repo)
 
@@ -107,11 +110,13 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     base64_message = base64_bytes.decode('ascii')
 
     # Create a PR from your forked branch to the main branch of the original repo
+    print('Creating a pull request of your fork back to ' + catalog_repo)
     body = 'Add an entry to the scivision ' + type + ' catalog: '
     body += desc
     headers = {'Authorization': 'Basic ' + base64_message}
     data = '{"head":"' + g.get_user().login + ':' + target_branch + '","base":"main", "title":"' + desc + '", "body":"' + body + '"}'
     requests.post('https://api.github.com/repos/' + catalog_repo + '/pulls', data=data, headers=headers)
+    print('View your PR at github.com/' + catalog_repo + '/pulls')
 
 
 def add_dataset(dataset: str, catalog: str = 'local') -> None:
