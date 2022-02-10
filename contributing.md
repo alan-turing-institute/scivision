@@ -12,7 +12,7 @@ Whatever is your availability, there is a way to contribute to this GitHub repos
 👋 I'm busy, I only have 5 minutes
 ---
 
-Look through our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing discussion by commenting.
+Look through our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing [discussion](https://github.com/alan-turing-institute/scivision/discussions) by commenting.
 You can also share this repository with someone who might be interested to get involved.
 
 ⏳ I've got 15 minutes - tell me what I should do
