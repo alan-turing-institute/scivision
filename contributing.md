@@ -55,7 +55,7 @@ To get started, please take a look at our currently open [issues](https://github
 :gift: Adding to the scivision catalog
 ---
 
-You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [I am ready to contribute](#i-am-ready-to-contribute)).
+You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#how-to-contribute)).
 
 Create a new branch and make one or both of the following changes, then launch a pull request for your additions to be reviewed:
 
