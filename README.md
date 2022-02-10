@@ -20,6 +20,9 @@
     <a href="https://scivision.readthedocs.io/en/latest/?badge=latest">
         <img alt="Documentation Status" src="https://readthedocs.org/projects/scivision/badge/?version=latest">
     </a>
+    <a href="https://github.com/alan-turing-institute/scivision/discussions">
+       <img alt="Discuss on GitHub Discussions" src="https://img.shields.io/badge/GitHub-Discussions-yellow?logo=GitHub">
+    </a>
     <a href="https://github.com/alan-turing-institute/scivision/blob/main/LICENSE">
         <img alt="License" src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg">
     </a>
@@ -39,7 +42,7 @@ Table of contents
 -----------------
 
 - [Installation and setup](#installation)
-- [How to contribute?](./contributing.md)
+- [How to contribute?](#contributing)
 - [Documentation](#documentation)
 - [Releases](#releases)
 - [Maintainers](#maintainers)
@@ -74,6 +77,12 @@ Table of contents
     cd /path/to/my/scivision
     pip install -v -e .
     ```
+
+## Contributing
+
+See the [Contributing Guide](./contributing.md).
+
+You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues).
 
 ## Documentation
 
