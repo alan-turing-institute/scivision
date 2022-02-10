@@ -81,12 +81,6 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     # Configure PyGitHub
     print('Provide your GitHub access token (or hit enter to use default):')
     token = input()
-    # if the user does not enter a token, use a default
-    # this is the token of a GH account called scivisioncontributor
-    # this account can fork and PR the catalog on the user's behalf
-    if token == "":
-        token = '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'
-    g = Github(token)
     repo = g.get_repo(catalog_repo)
 
     # Create a fork of the scivision-catalog repo
