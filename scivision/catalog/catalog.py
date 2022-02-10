@@ -31,7 +31,7 @@ class PandasCatalog(BaseCatalog):
             self._datasources,
             suffixes=("_model", "_data"),
             how="inner",
-            left_on=["task", "data_format"],  # TODO: change model and data catalogs so that differently named keys  "data_format" and "format" are standardised
+            left_on=["task", "data_format"],
             right_on=["task", "format"],
         )
 
