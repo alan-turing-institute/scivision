@@ -6,6 +6,7 @@ import json
 import requests
 import base64
 import pkg_resources
+import warnings
 
 
 def _get_catalog(url: str):
@@ -171,3 +172,29 @@ def add_model(model: str, catalog: str = 'local') -> None:
 
     # Add the new model entry to the catalog
     _update_catalog(model, catalog_dict, catalog=catalog, type='model')
+    
+    
+def pull_catalogs(branch='main'):
+    """Get the most recent scivision catalogs from GitHub.
+    
+    Parameters
+    ----------
+    branch : str
+        GitHub branch to pull catalogs from.
+    
+    """
+    warnings.warn('Pulling catalogs from GitHub could result in breaking changes if catalog schema has been updated.')
+    
+    # Get the catalogs from GitHub
+    data_catalog_url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/' + branch + '/scivision/catalog/data/datasources.json'
+    model_catalog_url = 'https://raw.githubusercontent.com/alan-turing-institute/scivision/' + branch + '/scivision/catalog/data/models.json'
+    data_catalog = _get_catalog(data_catalog_url)
+    model_catalog = _get_catalog(model_catalog_url)
+    
+    # Update the local package catalogs
+    local_data = pkg_resources.resource_filename('scivision', 'catalog/data/datasources.json')
+    local_models = pkg_resources.resource_filename('scivision', 'catalog/data/models.json')
+    with open(local_data, 'w') as file:
+        json.dump(data_catalog, file, sort_keys=True, indent=4)
+    with open(local_models, 'w') as file:
+        json.dump(model_catalog, file, sort_keys=True, indent=4)
