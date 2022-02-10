@@ -47,6 +47,51 @@ Please open a GitHub issue to suggest a new feature, contribute code, or let us 
 
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
+  
+:gift: Contributing to the scivision catalog
+---
+
+You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [I am ready to contribute](#i-am-ready-to-contribute)).
+
+Create a new branch and make one or both of the following changes, then launch a pull request for your additions to be reviewed:
+
+#### Add a new model
+
+Add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry:
+
+```
+  "model-XXX":{
+    "task":"segmentation",
+    "model":"https://github.com/alan-turing-institute/my-model",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"tif",
+    "pretrained":"yes",
+    "labels_required":"yes",
+    "institution":"alan-turing-institute",
+    "tags":[
+      "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
+    ]
+  }
+```
+
+#### Add a new dataset
+
+Add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry:
+
+```
+  "data-XXX":{
+    "task":["object-detection", "segmentation"],
+    "domain":["optical-microscopy"],
+    "datasource":"https://github.com/my_datasource/releases/download/0.3.0/demo.zip",
+    "format":"tif",
+    "labels":"yes",
+    "institution":"alan-turing-institute",
+    "tags":[
+      "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
+    ]
+  }
+ ```
 
 📫 Contact
 ---
