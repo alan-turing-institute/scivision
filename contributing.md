@@ -15,12 +15,6 @@ Whatever is your availability, there is a way to contribute to this GitHub repos
 Look through our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing [discussion](https://github.com/alan-turing-institute/scivision/discussions) by commenting.
 You can also share this repository with someone who might be interested to get involved.
 
-⏳ I've got 15 minutes - tell me what I should do
----
-
-You can read the [README](https://github.com/alan-turing-institute/scivision/blob/main/README.md) file to find details and next milestones in the project.
-You can also read different [issues](https://github.com/alan-turing-institute/scivision/issues) in this repository and comment where you would like to be involved.
-
 🎉 It's my life's mission to help scientists make the most of AI capabilities such as computer vision  
 ---
 
