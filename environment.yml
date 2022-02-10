@@ -13,3 +13,4 @@ dependencies:
   - aiohttp
   - intake
   - intake-xarray
+  - PyGitHub

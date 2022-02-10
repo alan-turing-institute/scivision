@@ -1,0 +1,25 @@
+{
+  "Phytoplankton":{
+    "task":["object-detection"],
+    "domain":["computer-vision"],
+    "datasource":"https://en.wikipedia.org/wiki/Phytoplankton#/media/File:Mixed_phytoplankton_community_2.png",
+    "format":"png",
+    "labels":"yes",
+    "institution":"Wikipedia",
+    "tags":[
+      "test",
+      "animal"
+    ]
+  },
+  "Plankton":{
+    "task":["classification"],
+    "domain":["oceanography"],
+    "datasource":"https://en.wikipedia.org/wiki/Plankton#/media/File:Marine_microplankton.jpg",
+    "format":"jpg",
+    "labels":"yes",
+    "institution":"Wikipedia",
+    "tags":[
+      "help-needed", "2D", "animal"
+    ]
+  }
+}

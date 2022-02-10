@@ -1,0 +1,14 @@
+{
+  "Dropbear":{
+    "task":["object-detection"],
+    "domain":["computer-vision"],
+    "datasource":"https://en.wikipedia.org/wiki/Drop_bear#/media/File:Dropbear.jpg",
+    "format":"jpg",
+    "labels":"yes",
+    "institution":"Wikipedia",
+    "tags":[
+      "test",
+      "animal"
+    ]
+  }
+}

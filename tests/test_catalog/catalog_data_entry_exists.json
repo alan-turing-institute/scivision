@@ -1,0 +1,23 @@
+{
+  "data-000": {
+      "datasource": "https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+      "domain": [
+          "optical-microscopy"
+      ],
+      "format": "tif",
+      "institution": "epfl",
+      "labels": "yes",
+      "tags": [
+          "help-needed",
+          "3D",
+          "cell",
+          "cell-counting",
+          "biology",
+          "biomedical-science"
+      ],
+      "task": [
+          "object-detection",
+          "segmentation"
+      ]
+  }
+}
