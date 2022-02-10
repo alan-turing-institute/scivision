@@ -1,27 +1,43 @@
-# How to contribute to scivision
+# Contributing to scivision
 
 Thank you for taking the time to contribute to this project. 🎉
+
+Before making a contribution, please take a look at our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 :book: Contents
 ---
 
-- 🛠 [Contribution process](#contribution-process)
-- :gift: [Adding to the scivision catalog](#contribution-process)
+- :sunglasses: [Who should contribute](#who-should-contribute)
+- 🤔 [What to contribute](#what-to-contibute)
+- 🛠 [How to contribute](#how-to-contribute)
+- :gift: [Extending the scivision catalog](#extending-the-scivision-catalog)
 - 📫 [Contact](#contact)
 - ♻️ [License](#license)
 
-This project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project. Before contributing, check out our [Code of Conduct](./CODE_OF_CONDUCT.md).
-
-We encourage you to review the code as we collaboratively develop it and get involved where you can, sharing your feedback on the scope of scivision, the proposed features, the datasets and the use cases.
-
-Take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing [discussion](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
-
-🛠 Contribution process
+:sunglasses: Who should contribute
 ---
 
-- For open tasks in this repository, please see the open [Issues](https://github.com/alan-turing-institute/scivision/issues).
+The scivision project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project.
 
-- To contribute to this repository (including bugfixes and new code features, as well as documentation, fixes to typos, broken links), open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
+In particular we'd like to encourage contributions from the following people:
+
+1. **Model developers** of computer vision models
+2. **Data providers** from diverse scientific fields
+3. **Programmers** interested in improving the scivision package
+
+Members of the first two groups should pay particular attention to the [extending the scivision catalog](#extending-the-scivision-catalog) section of this guide.
+
+🤔 What to contribute
+---
+
+We encourage people to submit bug-fixes, new code features and documentation improvements (including fixing any typos and broken links).
+
+To get started, please take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) and participate in ongoing [discussions](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
+
+🛠 How to contribute
+---
+
+- To contribute to this repository, open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
 
 - Our basic workflow is [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).  In particular:
   - The branch `main` always contain the latest working version of the package.
