@@ -80,7 +80,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     catalog_file = catalog_name + ".json"
 
     # Configure PyGitHub
-    print('Provide your GitHub access token (or hit enter to use default):')
+    print('Provide your GitHub access token:')
     token = input()
     g = Github(token)
     repo = g.get_repo(catalog_repo)
