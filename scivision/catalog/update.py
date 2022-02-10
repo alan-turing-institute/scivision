@@ -82,6 +82,7 @@ def _launch_pull_request(catalog_json: str, type: str = 'data') -> None:
     # Configure PyGitHub
     print('Provide your GitHub access token (or hit enter to use default):')
     token = input()
+    g = Github(token)
     repo = g.get_repo(catalog_repo)
 
     # Create a fork of the scivision-catalog repo
