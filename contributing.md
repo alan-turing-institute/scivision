@@ -2,27 +2,14 @@
 
 Thank you for taking the time to contribute to this project. 🎉
 
-This project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project.
-You can suggest features to include in scivision, report mistakes/bugs, create Pull Requests to fix an error, offer resources or help develop or review new pieces of code.
+This project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project. Before contributing, check out our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-We have a [Code of Conduct](./CODE_OF_CONDUCT.md) that applies to all the activities related to this project.
+We encourage you to review the code as we collaboratively develop it and get involved where you can, sharing your feedback on the scope of scivision, the proposed features, the datasets and the use cases.
 
-Whatever is your availability, there is a way to contribute to this GitHub repository.
+Take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing [discussion](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
 
-👋 I'm busy, I only have 5 minutes
----
 
-Look through our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing [discussion](https://github.com/alan-turing-institute/scivision/discussions) by commenting.
-You can also share this repository with someone who might be interested to get involved.
-
-🎉 It's my life's mission to help scientists make the most of AI capabilities such as computer vision  
----
-
-Please share your feedback on the scope of scivision, the proposed features, the datasets and the use cases. 
-You are encouraged to review the code as we collaboratively develop it and get involved where you can.
-Please open a GitHub issue to suggest a new feature, contribute code, or let us know about errors/bugs.
-
-🛠 I am ready to contribute 
+🛠 Contribution process
 ---
 
 - For open tasks in this repository, please see the open [Issues](https://github.com/alan-turing-institute/scivision/issues).
