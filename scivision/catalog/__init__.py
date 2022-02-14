@@ -4,7 +4,6 @@ from .catalog import (
     CatalogModels,
     CatalogDatasourceEntry,
     CatalogDatasources,
-    BaseCatalog,
     PandasCatalog,
     default_catalog,
 )
