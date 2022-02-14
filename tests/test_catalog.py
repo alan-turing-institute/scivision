@@ -1,5 +1,3 @@
-import pandas as pd
-
 from scivision.catalog import PandasCatalog
 
 
