@@ -47,7 +47,7 @@
             "tags": ["dummy"]
         },
         {
-            "name":"model-004",
+            "name":"scivision-test-plugin",
             "tasks":["object-detection"],
             "url":"https://github.com/quantumjot/scivision-test-plugin",
             "pkg_url":"git+https://github.com/quantumjot/scivision-test-plugin.git@master",
