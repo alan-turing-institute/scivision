@@ -1,0 +1,17 @@
+{
+    "catalog_type":"scivision model catalog",
+    "name": "default",
+    "entries":[
+        {
+            "name":"model-000",
+            "tasks":["object-detection", "segmentation"],
+            "url":"https://github.com/stardist/stardist",
+            "pkg_url":"git+https://github.com/stardist/stardist.git@main",
+            "format":"image",
+            "pretrained":"yes",
+            "labels_required":"yes",
+            "institution":"epfl",
+            "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
+        }
+    ]
+}
