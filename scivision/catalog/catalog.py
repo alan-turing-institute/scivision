@@ -145,6 +145,10 @@ class PandasCatalog:
     # Similar to _compatible_models, but for datasources.  Can't
     # cleanly combine these two functions, due to the asymmetry
     # between a model's 'labels_required', and datasource 'labels'.
+    # In particular, a model that doesn't require labels can still use
+    # a datasource that provides them (if they are otherwise
+    # compatible), but not vice versa.  For this reason, the distinct
+    # names 'labels' and 'labels_required' are used.
     def _compatible_datasources(self, model) -> pd.DataFrame:
         datasources_compatible_format = self._datasources[
             self._datasources.format == model["format"]
