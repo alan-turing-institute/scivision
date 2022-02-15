@@ -5,8 +5,7 @@
       {
          "name":"example-datasource-1",
          "tasks":[
-            "object-detection",
-            "segmentation"
+            "object-detection"
          ],
          "url":"https://example.com/example-datasource-1",
          "domains":[],
@@ -17,7 +16,6 @@
       {
          "name":"example-datasource-2",
          "tasks":[
-            "object-detection",
             "segmentation"
          ],
          "url":"https://example.com/example-datasource-2",
