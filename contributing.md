@@ -67,6 +67,9 @@ To get started, please take a look at our currently open [issues](https://github
 
 You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#-how-to-contribute)).
 
+#### TODO: Preparing a scivision model repository:
+For a guide on how the model GitHub repository linked to by the `"model"` key of your catalog entry should look, see [this guide]...
+
 #### Adding a new model to the catalog:
 
 On a new branch of the scivision repository, add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry. After you are done, create a pull request with the changes.
@@ -87,8 +90,8 @@ On a new branch of the scivision repository, add metadata for your computer visi
   }
 ```
 
-#### TODO: Preparing a scivision model repository:
-For a guide on how the model GitHub repository linked to by the `"model"` key of your catalog entry should look, see [this guide]...
+#### TODO: Preparing a scivision data repository:
+For a guide on how the data repository linked to by the `"datasource"` key of your catalog entry should look, see [this guide]...
 
 #### Adding a new dataset to the catalog:
 
@@ -107,9 +110,6 @@ On a new branch of the scivision repository, add your dataset to the end of `dat
     ]
   }
  ```
- 
- #### TODO: Preparing a scivision data repository:
- For a guide on how the data repository linked to by the `"datasource"` key of your catalog entry should look, see [this guide]...
 
 📫 Contact
 ---
