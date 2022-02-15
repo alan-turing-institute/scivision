@@ -28,7 +28,19 @@ Members of the first two groups should pay particular attention to the [extendin
 🤔 What to contribute
 ---
 
-We encourage people to submit bug-fixes, new code features and documentation improvements (including fixing any typos and broken links).
+#### 1) Catalog contributions
+
+We call upon the developers of computer vision **models** to make a submission to the scivision catalog. Submitting your model will allow scivision users to query the catalog for datasets on which your model can be run, or to find your model based on their own dataset submission.
+
+Similarly, we call upon data providers from diverse scientific fields to consider submitting open **datasets** to the catalog.
+
+Models and datasets from the catalog are matched based on the model task, data format and other labels.
+
+To understand how to submit a catalog entry (model or dataset), see: [Extending the scivision catalog](#gift-extending-the-scivision-catalog).
+
+#### 2) Code improvements
+
+We encourage programmers interested in the scivision package to submit bug-fixes, new code features and documentation improvements (including fixing any typos and broken links).
 
 To get started, please take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) and participate in ongoing [discussions](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
 
