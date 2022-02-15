@@ -67,10 +67,15 @@ To get started, please take a look at our currently open [issues](https://github
 
 You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#-how-to-contribute)).
 
-#### TODO: Preparing a scivision model repository:
-For a guide on how the model GitHub repository linked to by the `"model"` key of your catalog entry should look, see [this guide]...
+#### TODO: Preparing a model for inclusion in the catalog:
 
-#### Adding a new model to the catalog:
+In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per [THIS TEMPLATE].
+
+This will enable you load your model via the scivision API and run it on matching datasets present in the catalog. For an example demonstrating this functionality [TODO: CLICK HERE].
+
+#### Submitting your model to the catalog:
+
+Once you have prepared a model for inclusion in the catalog, you can submit it via the following steps. Once your model submission is accepted, it will become available to other users of scivision.
 
 On a new branch of the scivision repository, add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry. After you are done, create a pull request with the changes.
 
@@ -90,10 +95,15 @@ On a new branch of the scivision repository, add metadata for your computer visi
   }
 ```
 
-#### TODO: Preparing a scivision data repository:
-For a guide on how the data repository linked to by the `"datasource"` key of your catalog entry should look, see [this guide]...
+#### TODO: Preparing a dataset for inclusion in the catalog:
+
+In order to submit a dataset to the scivision catalog, you must first set a GitHub repository containing important metadata as per [THIS TEMPLATE].
+
+This will enable you load your dataset via the scivision API and run matching models from catalog on it. For an example demonstrating this functionality [TODO: CLICK HERE].
 
 #### Adding a new dataset to the catalog:
+
+Once you have prepared a dataset for inclusion in the catalog, you can submit it via the following steps. Once your submission is accepted, the dataset will become available to other users of scivision.
 
 On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
 
