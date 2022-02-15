@@ -1,17 +1,26 @@
 {
     "catalog_type":"scivision model catalog",
-    "name": "default",
+    "name": "test",
     "entries":[
         {
-            "name":"model-000",
-            "tasks":["object-detection", "segmentation"],
-            "url":"https://github.com/stardist/stardist",
-            "pkg_url":"git+https://github.com/stardist/stardist.git@main",
+            "name":"example-model-1",
+            "tasks":["object-detection"],
+            "url":"https://example.com/example-model-1",
+            "pkg_url":"example-model-1",
             "format":"image",
             "pretrained":"yes",
             "labels_required":"yes",
-            "institution":"epfl",
-            "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
+            "tags": []
+        },
+        {
+            "name":"example-model-2",
+            "tasks":["object-detection", "segmentation"],
+            "url":"https://example.com/example-model-2",
+            "pkg_url":"example-model-2",
+            "format":"image",
+            "pretrained":"yes",
+            "labels_required":"no",
+            "tags": []
         }
     ]
 }

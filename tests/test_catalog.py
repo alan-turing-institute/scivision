@@ -23,10 +23,10 @@ class TestPandasCatalogInit:
         cat = PandasCatalog(
             "tests/test_datasource_catalog.json", "tests/test_model_catalog.json"
         )
-        assert len(cat.models == 1)
-        assert len(cat.datasources == 1)
-        assert cat.models.iloc[0]["name"] == "model-000"
-        assert cat.datasources.iloc[0]["name"] == "data-000"
+        assert len(cat.models == 2)
+        assert len(cat.datasources == 2)
+        assert cat.models.iloc[0]["name"] == "example-model-1"
+        assert cat.datasources.iloc[0]["name"] == "example-datasource-1"
 
     def test_init_bad(self):
         """Check that an exception is raised when the json does not conform to
@@ -52,7 +52,7 @@ class TestPandasCatalogInit:
         # Then used to initialize the catalog
         cat = PandasCatalog(datasources, models)
 
-        assert len(cat.models == 1)
-        assert len(cat.datasources == 1)
-        assert cat.models.iloc[0]["name"] == "model-000"
-        assert cat.datasources.iloc[0]["name"] == "data-000"
+        assert len(cat.models == 2)
+        assert len(cat.datasources == 2)
+        assert cat.models.iloc[0]["name"] == "example-model-1"
+        assert cat.datasources.iloc[0]["name"] == "example-datasource-1"

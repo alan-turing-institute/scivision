@@ -1,28 +1,30 @@
 {
    "catalog_type":"scivision datasource catalog",
-   "name":"default",
+   "name":"test",
    "entries":[
       {
-         "name":"data-000",
+         "name":"example-datasource-1",
          "tasks":[
             "object-detection",
             "segmentation"
          ],
-         "domains":[
-            "optical-microscopy"
-         ],
-         "url":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+         "url":"https://example.com/example-datasource-1",
+         "domains":[],
          "format":"image",
          "labels":"yes",
-         "institution":"epfl",
-         "tags":[
-            "help-needed",
-            "3D",
-            "cell",
-            "cell-counting",
-            "biology",
-            "biomedical-science"
-         ]
+         "tags":[]
+      },
+      {
+         "name":"example-datasource-2",
+         "tasks":[
+            "object-detection",
+            "segmentation"
+         ],
+         "url":"https://example.com/example-datasource-2",
+         "domains":[],
+         "format":"image",
+         "labels":"no",
+         "tags":[]
       }
    ]
 }
