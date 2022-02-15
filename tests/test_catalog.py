@@ -56,3 +56,35 @@ class TestPandasCatalogInit:
         assert len(cat.datasources == 2)
         assert cat.models.iloc[0]["name"] == "example-model-1"
         assert cat.datasources.iloc[0]["name"] == "example-datasource-1"
+
+
+class TestCompatible:
+    """Checks that compatible models and datasources in a catalog can be
+    correctly identified"""
+
+    @pytest.fixture
+    def cat(self):
+        return PandasCatalog(
+            datasources="tests/test_datasource_catalog.json",
+            models="tests/test_model_catalog.json",
+        )
+
+    def test_compatible_models_named(self, cat):
+        assert len(cat.compatible_models("example-datasource-1")) == 2
+        assert len(cat.compatible_models("example-datasource-2")) == 1
+
+    def test_compatible_datasources_named(self, cat):
+        assert len(cat.compatible_datasources("example-model-1")) == 1
+        assert len(cat.compatible_datasources("example-model-2")) == 2
+
+    def test_compatible_models_dict(self, cat):
+        compat = cat.compatible_models(
+            {"labels": False, "tasks": ["object-detection"], "format": "image"}
+        )
+        assert len(compat) == 1 and compat["name"].item() == "example-model-2"
+
+    def test_compatible_datasources_dict(self, cat):
+        compat = cat.compatible_datasources(
+            {"labels_required": False, "tasks": ["object-detection"], "format": "image"}
+        )
+        assert len(compat) == 1 and compat["name"].item() == "example-datasource-1"
