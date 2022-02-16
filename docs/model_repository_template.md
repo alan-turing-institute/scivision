@@ -37,7 +37,32 @@ exampleuser/comp_vis
     |   ...
 ```
 
+## Model config file
 
+The content of `scivision-model.yml` should look something like this:
+
+```yaml
+name: test
+url: https://github.com/exampleuser/comp_vis.git
+import: comp_vis
+models:
+  - model: ImageNetModel
+    args:
+        model_name: resnet18
+    prediction_fn:
+        call: predict
+        args:
+            X: image
+        kwargs: None
+  - model: DummyModel
+    args: None
+    prediction_fn:
+        call: predict
+        args:
+            X: image
+        kwargs:
+            - sigma
+```
 
 
 
