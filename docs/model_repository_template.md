@@ -15,6 +15,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 ## 📚 Contents
 
 - Model repo structure
+- Choosing a Licence for your model
 - Model config file
 - Model adapter code
      - TODO: make the like test  plugin first
