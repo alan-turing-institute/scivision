@@ -1,39 +1,53 @@
-# How to contribute?
+# Contributing to scivision
 
 Thank you for taking the time to contribute to this project. 🎉
 
-This project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project.
-You can suggest features to include in scivision, report mistakes/bugs, create Pull Requests to fix an error, offer resources or help develop or review new pieces of code.
-
-We have a [Code of Conduct](./CODE_OF_CONDUCT.md) that applies to all the activities related to this project.
-
-Whatever is your availability, there is a way to contribute to this GitHub repository.
-
-👋 I'm busy, I only have 5 minutes
+:book: Contents
 ---
 
-Look through our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) to troubleshoot an issue or participate in an ongoing discussion by commenting.
-You can also share this repository with someone who might be interested to get involved.
+- :sunglasses: [Who should contribute](#sunglasses-who-should-contribute)
+- 🤔 [What to contribute](#-what-to-contribute)
+- 🛠 [How to contribute](#-how-to-contribute)
+- :gift: [Extending the scivision catalog](#gift-extending-the-scivision-catalog)
+- 📫 [Contact](#-contact)
+- ♻️ [License](#%EF%B8%8F-license)
 
-⏳ I've got 15 minutes - tell me what I should do
+:sunglasses: Who should contribute
 ---
 
-You can read the [README](https://github.com/alan-turing-institute/scivision/blob/main/README.md) file to find details and next milestones in the project.
-You can also read different [issues](https://github.com/alan-turing-institute/scivision/issues) in this repository and comment where you would like to be involved.
+The scivision project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project.
 
-🎉 It's my life's mission to help scientists make the most of AI capabilities such as computer vision  
+In particular we'd like to encourage contributions from the following people:
+
+1. **Model developers** of computer vision models
+2. **Data providers** from diverse scientific fields
+3. **Programmers** interested in improving the scivision package
+
+Members of the first two groups should pay particular attention to the [extending the scivision catalog](#gift-extending-the-scivision-catalog) section of this guide.
+
+🤔 What to contribute
 ---
 
-Please share your feedback on the scope of scivision, the proposed features, the datasets and the use cases. 
-You are encouraged to review the code as we collaboratively develop it and get involved where you can.
-Please open a GitHub issue to suggest a new feature, contribute code, or let us know about errors/bugs.
+#### 1) Catalog contributions
 
-🛠 I am ready to contribute 
+We call upon the developers of computer vision **models** to make a submission to the scivision catalog. Submitting your model will allow scivision users to query the catalog for datasets on which your model can be run, or to find your model based on their own dataset submission.
+
+Similarly, we call upon data providers from diverse scientific fields to consider submitting open **datasets** to the catalog.
+
+Models and datasets from the catalog are matched based on the model task, data format and other labels.
+
+To understand how to submit a catalog entry (model or dataset), see: [Extending the scivision catalog](#gift-extending-the-scivision-catalog).
+
+#### 2) Code improvements
+
+We encourage programmers interested in the scivision package to submit bug-fixes, new code features and documentation improvements (including fixing any typos and broken links).
+
+To get started, please take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) and participate in ongoing [discussions](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
+
+🛠 How to contribute
 ---
 
-- For open tasks in this repository, please see the open [Issues](https://github.com/alan-turing-institute/scivision/issues).
-
-- To contribute to this repository (including bugfixes and new code features, as well as documentation, fixes to typos, broken links), open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
+- To contribute to this repository, open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
 
 - Our basic workflow is [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).  In particular:
   - The branch `main` always contain the latest working version of the package.
@@ -47,6 +61,65 @@ Please open a GitHub issue to suggest a new feature, contribute code, or let us 
 
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
+  
+:gift: Extending the scivision catalog
+---
+
+You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#-how-to-contribute)).
+
+#### TODO: Preparing a model for inclusion in the catalog:
+
+In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per [this template](docs/model_repository_template.md).
+
+This will enable you load your model via the scivision API and run it on matching datasets present in the catalog. For an example demonstrating this functionality [TODO: CLICK HERE].
+
+#### Submitting your model to the catalog:
+
+Once you have prepared a model for inclusion in the catalog, you can submit it via the following steps. Once your model submission is accepted, it will become available to other users of scivision.
+
+On a new branch of the scivision repository, add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry. After you are done, create a pull request with the changes.
+
+```
+  "model-XXX":{
+    "task":"segmentation",
+    "model":"https://github.com/alan-turing-institute/my-model",
+    "github_branch":"master",
+    "language":"Python3",
+    "data_format":"tif",
+    "pretrained":"yes",
+    "labels_required":"yes",
+    "institution":"alan-turing-institute",
+    "tags":[
+      "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
+    ]
+  }
+```
+
+#### TODO: Preparing a dataset for inclusion in the catalog:
+
+In order to submit a dataset to the scivision catalog, you must first set a GitHub repository containing important metadata as per [this template](docs/data_repository_template.md).
+
+This will enable you load your dataset via the scivision API and run matching models from catalog on it. For an example demonstrating this functionality [TODO: CLICK HERE].
+
+#### Adding a new dataset to the catalog:
+
+Once you have prepared a dataset for inclusion in the catalog, you can submit it via the following steps. Once your submission is accepted, the dataset will become available to other users of scivision.
+
+On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
+
+```
+  "data-XXX":{
+    "task":["object-detection", "segmentation"],
+    "domain":["optical-microscopy"],
+    "datasource":"https://github.com/my_datasource/releases/download/0.3.0/demo.zip",
+    "format":"tif",
+    "labels":"yes",
+    "institution":"alan-turing-institute",
+    "tags":[
+      "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
+    ]
+  }
+ ```
 
 📫 Contact
 ---
