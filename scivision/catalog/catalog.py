@@ -16,6 +16,7 @@ class TaskEnum(str, Enum):
     object_detection = "object-detection"
     segmentation = "segmentation"
     thresholding = "thresholding"
+    other = "other"
 
 
 class CatalogModelEntry(BaseModel, extra="forbid"):
