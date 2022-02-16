@@ -8,8 +8,8 @@
             "url":"https://example.com/example-model-1",
             "pkg_url":"example-model-1",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"yes",
+            "pretrained":true,
+            "labels_required":true,
             "tags": []
         },
         {
@@ -18,8 +18,8 @@
             "url":"https://example.com/example-model-2",
             "pkg_url":"example-model-2",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"no",
+            "pretrained":true,
+            "labels_required":false,
             "tags": []
         }
     ]

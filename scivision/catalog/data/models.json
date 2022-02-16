@@ -8,8 +8,8 @@
             "url":"https://github.com/stardist/stardist",
             "pkg_url":"git+https://github.com/stardist/stardist.git@main",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"yes",
+            "pretrained":true,
+            "labels_required":true,
             "institution":"epfl",
             "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
         },
@@ -19,8 +19,8 @@
             "url":"https://github.com/danforthcenter/plantcv",
             "pkg_url":"git+https://github.com/danforthcenter/plantcv@master",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"yes",
+            "pretrained":true,
+            "labels_required":true,
             "institution":"danforthcenter",
             "tags": ["2D", "hyperspectral", "multispectral", "near-infrared","infrared","plant-phenotyping", "climate-change-and-agriculture"]
         },
@@ -30,8 +30,8 @@
             "url":"https://github.com/MarniTausen/Greenotyper",
             "pkg_url":"git+https://github.com/MarniTausen/Greenotyper@master",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"yes",
+            "pretrained":true,
+            "labels_required":true,
             "institution":"MarniTausen",
             "tags": ["2D", "multispectral", "plant-phenotyping", "climate-change-and-agriculture"]
         },
@@ -41,8 +41,8 @@
             "url":"https://github.com/alan-turing-institute/cv-algortithm",
             "pkg_url":"git+https://github.com/alan-turing-institute/cv-algortithm@master",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"yes",
+            "pretrained":true,
+            "labels_required":true,
             "institution":"alan-turing-institute",
             "tags": ["dummy"]
         },
@@ -52,8 +52,8 @@
             "url":"https://github.com/quantumjot/scivision-test-plugin",
             "pkg_url":"git+https://github.com/quantumjot/scivision-test-plugin.git@master",
             "format":"image",
-            "pretrained":"yes",
-            "labels_required":"no",
+            "pretrained":true,
+            "labels_required":false,
             "institution":"alan-turing-institute",
             "tags": ["dummy"]
         }
