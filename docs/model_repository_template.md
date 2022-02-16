@@ -14,7 +14,28 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 ## 📚 Contents
 
-- 
+- Model repo structure
+- Model config file
+- How to set up the model repo
+
+## Model repo structure
+
+```
+exampleuser/comp_vis
+│   README
+│   LICENSE
+│   scivision-model.yml
+|   setup.py
+|   requirements.txt
+└───comp_vis
+│   │   models.py
+│   │   __init__.py
+│
+└───tests
+    │   test_modelA.py
+    │   test_modelB.py
+    |   ...
+```
 
 
 
