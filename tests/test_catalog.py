@@ -23,10 +23,14 @@ class TestPandasCatalogInit:
         cat = PandasCatalog(
             "tests/test_datasource_catalog.json", "tests/test_model_catalog.json"
         )
-        assert len(cat.models == 2)
-        assert len(cat.datasources == 2)
-        assert cat.models.iloc[0]["name"] == "example-model-1"
-        assert cat.datasources.iloc[0]["name"] == "example-datasource-1"
+
+        models = cat.models.to_dataframe()
+        datasources = cat.datasources.to_dataframe()
+
+        assert len(models == 2)
+        assert len(datasources == 2)
+        assert models.iloc[0]["name"] == "example-model-1"
+        assert datasources.iloc[0]["name"] == "example-datasource-1"
 
     def test_init_bad(self):
         """Check that an exception is raised when the json does not conform to
@@ -52,10 +56,13 @@ class TestPandasCatalogInit:
         # Then used to initialize the catalog
         cat = PandasCatalog(datasources, models)
 
-        assert len(cat.models == 2)
-        assert len(cat.datasources == 2)
-        assert cat.models.iloc[0]["name"] == "example-model-1"
-        assert cat.datasources.iloc[0]["name"] == "example-datasource-1"
+        models = cat.models.to_dataframe()
+        datasources = cat.datasources.to_dataframe()
+
+        assert len(models == 2)
+        assert len(datasources == 2)
+        assert models.iloc[0]["name"] == "example-model-1"
+        assert datasources.iloc[0]["name"] == "example-datasource-1"
 
 
 class TestCompatible:
@@ -70,21 +77,21 @@ class TestCompatible:
         )
 
     def test_compatible_models_named(self, cat):
-        assert len(cat.compatible_models("example-datasource-1")) == 2
-        assert len(cat.compatible_models("example-datasource-2")) == 1
+        assert len(cat.compatible_models("example-datasource-1").to_dataframe()) == 2
+        assert len(cat.compatible_models("example-datasource-2").to_dataframe()) == 1
 
     def test_compatible_datasources_named(self, cat):
-        assert len(cat.compatible_datasources("example-model-1")) == 1
-        assert len(cat.compatible_datasources("example-model-2")) == 2
+        assert len(cat.compatible_datasources("example-model-1").to_dataframe()) == 1
+        assert len(cat.compatible_datasources("example-model-2").to_dataframe()) == 2
 
     def test_compatible_models_dict(self, cat):
         compat = cat.compatible_models(
             {"labels": False, "tasks": ["object-detection"], "format": "image"}
-        )
+        ).to_dataframe()
         assert len(compat) == 1 and compat["name"].item() == "example-model-2"
 
     def test_compatible_datasources_dict(self, cat):
         compat = cat.compatible_datasources(
             {"labels_required": False, "tasks": ["object-detection"], "format": "image"}
-        )
+        ).to_dataframe()
         assert len(compat) == 1 and compat["name"].item() == "example-datasource-1"

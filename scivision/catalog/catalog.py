@@ -4,8 +4,9 @@
 import pkgutil
 import pandas as pd
 import os
+from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Optional, Union, Tuple
+from typing import Any, Dict, Optional, Tuple, Union
 from pydantic import BaseModel, AnyUrl, FileUrl
 from enum import Enum
 
@@ -96,6 +97,23 @@ def _coerce_models_catalog(
         raise TypeError("Cannot load datasource from unsupported type")
 
 
+class QueryResult(ABC):
+    @abstractmethod
+    def to_dataframe(self) -> pd.DataFrame:
+        ...
+
+    def to_dict(self) -> Dict[str, Any]:
+        return self.to_dataframe().to_dict(orient="records")
+
+
+class PandasQueryResult(QueryResult):
+    def __init__(self, result: pd.DataFrame):
+        self._result = result
+
+    def to_dataframe(self) -> pd.DataFrame:
+        return self._result
+
+
 class PandasCatalog:
     def __init__(self, datasources=None, models=None):
         super().__init__()
@@ -115,14 +133,14 @@ class PandasCatalog:
             self._models = pd.DataFrame([ent.dict() for ent in models_cat.entries])
 
     @property
-    def models(self) -> pd.DataFrame:
-        return self._models
+    def models(self) -> PandasQueryResult:
+        return PandasQueryResult(self._models)
 
     @property
-    def datasources(self) -> pd.DataFrame:
-        return self._datasources
+    def datasources(self) -> PandasQueryResult:
+        return PandasQueryResult(self._datasources)
 
-    def _compatible_models(self, datasource) -> pd.DataFrame:
+    def _compatible_models(self, datasource) -> PandasQueryResult:
         models_compatible_format = self._models[
             self._models.format == datasource["format"]
         ]
@@ -138,9 +156,11 @@ class PandasCatalog:
             .merge(datasource_tasks, on="tasks", suffixes=("_model", "_datasource"),)
             .name.drop_duplicates()
         )
-        return models_compatible_format_labels[
+        result_df = models_compatible_format_labels[
             models_compatible_format_labels.name.isin(models_compatible_tasks)
         ]
+
+        return PandasQueryResult(result_df)
 
     # Similar to _compatible_models, but for datasources.  Can't
     # cleanly combine these two functions, due to the asymmetry
@@ -149,7 +169,7 @@ class PandasCatalog:
     # a datasource that provides them (if they are otherwise
     # compatible), but not vice versa.  For this reason, the distinct
     # names 'labels' and 'labels_required' are used.
-    def _compatible_datasources(self, model) -> pd.DataFrame:
+    def _compatible_datasources(self, model) -> PandasQueryResult:
         datasources_compatible_format = self._datasources[
             self._datasources.format == model["format"]
         ]
@@ -165,13 +185,14 @@ class PandasCatalog:
             .merge(model_tasks, on="tasks", suffixes=("_model", "_datasource"),)
             .name.drop_duplicates()
         )
-        return datasources_compatible_format_labels[
+        result_df = datasources_compatible_format_labels[
             datasources_compatible_format_labels.name.isin(datasources_compatible_tasks)
         ]
 
-    def compatible_models(self, datasource) -> pd.DataFrame:
-        """
-        Return all models that are compatible with datasource
+        return PandasQueryResult(result_df)
+
+    def compatible_models(self, datasource) -> PandasQueryResult:
+        """Return all models that are compatible with datasource
 
         Parameters
         ----------
@@ -184,9 +205,10 @@ class PandasCatalog:
 
         Returns
         -------
-        result: pd.Dataframe
+        result: QueryResult
 
-        A dataframe containing the models compatible with the given datasource
+        A QueryResult instance containing the models compatible with the
+        given datasource (convertible to a dict or pd.DataFrame).
         """
         if isinstance(datasource, str):
             return self._compatible_models(
@@ -195,7 +217,7 @@ class PandasCatalog:
         else:
             return self._compatible_models(datasource)
 
-    def compatible_datasources(self, model) -> pd.DataFrame:
+    def compatible_datasources(self, model) -> PandasQueryResult:
         """
         Return all models that are compatible with datasource
 
@@ -210,9 +232,9 @@ class PandasCatalog:
 
         Returns
         -------
-        result: pd.Dataframe
+        result: QueryResult
 
-        A dataframe containing the datasources compatible with the given model
+        A QueryResult instance containing the datasources compatible with the given model (
         """
         if isinstance(model, str):
             return self._compatible_datasources(
