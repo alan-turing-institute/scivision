@@ -2,7 +2,7 @@ import pytest
 import scivision.catalog
 from pydantic import ValidationError
 from pathlib import Path
-from scivision.catalog import PandasCatalog
+from scivision.catalog import PandasCatalog, CatalogModels
 
 
 class TestPandasCatalogInit:
@@ -95,3 +95,24 @@ class TestCompatible:
             {"labels_required": False, "tasks": ["object-detection"], "format": "image"}
         ).to_dataframe()
         assert len(compat) == 1 and compat["name"].item() == "example-datasource-1"
+
+
+def test_query_to_catalog_entry():
+    """Check that a pair of CatalogModels/CatalogDatasources can be
+    converted to a PandasCatalog and back
+    """
+
+    datasources_cat_expected = scivision.catalog.CatalogDatasources.parse_raw(
+        Path("tests/test_datasource_catalog.json").read_text()
+    )
+    models_cat_expected = scivision.catalog.CatalogModels.parse_raw(
+        Path("tests/test_model_catalog.json").read_text()
+    )
+    cat = PandasCatalog(datasources_cat_expected, models_cat_expected)
+
+    models_cat_actual = CatalogModels(
+        entries=cat.models.to_dict(),
+        catalog_type=models_cat_expected.catalog_type,
+        name=models_cat_expected.name,
+    )
+    assert models_cat_actual == models_cat_expected
