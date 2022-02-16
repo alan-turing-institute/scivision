@@ -86,7 +86,7 @@ class TestCompatible:
 
     def test_compatible_models_dict(self, cat):
         compat = cat.compatible_models(
-            {"labels": False, "tasks": ["object-detection"], "format": "image"}
+            {"labels_provided": False, "tasks": ["object-detection"], "format": "image"}
         ).to_dataframe()
         assert len(compat) == 1 and compat["name"].item() == "example-model-2"
 

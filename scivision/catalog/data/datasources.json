@@ -13,7 +13,7 @@
          ],
          "url":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
          "format":"image",
-         "labels":"yes",
+         "labels_provided":"yes",
          "institution":"epfl",
          "tags":[
             "help-needed",
@@ -37,7 +37,7 @@
          ],
          "url":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
          "format":"image",
-         "labels":"yes",
+         "labels_provided":"yes",
          "institution":"Aarhus University",
          "tags":[
             "help-needed",
@@ -57,7 +57,7 @@
          ],
          "url":"https://github.com/scotthosking/intake-plankton/blob/main/plktn.yaml",
          "format":"image",
-         "labels":"yes",
+         "labels_provided":"yes",
          "institution":"CEFAS",
          "tags":[
             "help-needed",
@@ -75,7 +75,7 @@
          ],
          "url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cutest_Koala.jpg/262px-Cutest_Koala.jpg",
          "format":"image",
-         "labels":"yes",
+         "labels_provided":"yes",
          "institution":"Wikipedia by Erik Veland",
          "tags":[
             "demo"

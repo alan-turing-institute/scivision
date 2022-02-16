@@ -47,7 +47,7 @@ class CatalogDatasourceEntry(BaseModel, extra="forbid"):
     domains: Tuple[str, ...]
     url: Union[AnyUrl, FileUrl]
     format: str
-    labels: bool
+    labels_provided: bool
     institution: Optional[str]
     tags: Tuple[str, ...]
 
@@ -146,7 +146,7 @@ class PandasCatalog:
         ]
 
         models_compatible_format_labels = models_compatible_format[
-            datasource["labels"] | ~models_compatible_format.labels_required
+            datasource["labels_provided"] | ~models_compatible_format.labels_required
         ]
 
         datasource_tasks = pd.DataFrame(datasource["tasks"], columns=["tasks"])
@@ -164,18 +164,18 @@ class PandasCatalog:
 
     # Similar to _compatible_models, but for datasources.  Can't
     # cleanly combine these two functions, due to the asymmetry
-    # between a model's 'labels_required', and datasource 'labels'.
+    # between a model's 'labels_required', and datasource 'labels_provided'.
     # In particular, a model that doesn't require labels can still use
     # a datasource that provides them (if they are otherwise
     # compatible), but not vice versa.  For this reason, the distinct
-    # names 'labels' and 'labels_required' are used.
+    # names 'labels_provided' and 'labels_required' are used.
     def _compatible_datasources(self, model) -> PandasQueryResult:
         datasources_compatible_format = self._datasources[
             self._datasources.format == model["format"]
         ]
 
         datasources_compatible_format_labels = datasources_compatible_format[
-            datasources_compatible_format.labels | ~model["labels_required"]
+            datasources_compatible_format.labels_provided | ~model["labels_required"]
         ]
 
         model_tasks = pd.DataFrame(model["tasks"], columns=["tasks"])
@@ -198,10 +198,12 @@ class PandasCatalog:
         ----------
         datasource : str or dict-like
 
-        Any dictionary-like (including CatalogDatasourceEntry)
-        that has keys 'format', 'tasks' and 'labels', representing these properties of the datasource.
+        Any dictionary-like (including CatalogDatasourceEntry) that
+        has keys 'format', 'tasks' and 'labels_provided', representing
+        these properties of the datasource.
 
-        If a string is passed, this is used to look up the datasource (in `self._datasources`).
+        If a string is passed, this is used to look up the datasource
+        (in `self._datasources`).
 
         Returns
         -------
@@ -209,6 +211,7 @@ class PandasCatalog:
 
         A QueryResult instance containing the models compatible with the
         given datasource (convertible to a dict or pd.DataFrame).
+
         """
         if isinstance(datasource, str):
             return self._compatible_models(
@@ -218,15 +221,15 @@ class PandasCatalog:
             return self._compatible_models(datasource)
 
     def compatible_datasources(self, model) -> PandasQueryResult:
-        """
-        Return all models that are compatible with datasource
+        """Return all models that are compatible with datasource
 
         Parameters
         ----------
         model : str or dict-like
 
-        Any dictionary-like (including CatalogModelEntry)
-        that has keys 'format', 'tasks' and 'labels_required', representing these properties of the model.
+        Any dictionary-like (including CatalogModelEntry) that has
+        keys 'format', 'tasks' and 'labels_required', representing
+        these properties of the model.
 
         If a string is passed, this is used to look up the model (in `self._models`).
 
@@ -235,6 +238,7 @@ class PandasCatalog:
         result: QueryResult
 
         A QueryResult instance containing the datasources compatible with the given model (
+
         """
         if isinstance(model, str):
             return self._compatible_datasources(

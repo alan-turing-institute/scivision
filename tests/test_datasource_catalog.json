@@ -10,7 +10,7 @@
          "url":"https://example.com/example-datasource-1",
          "domains":[],
          "format":"image",
-         "labels":"yes",
+         "labels_provided":"yes",
          "tags":[]
       },
       {
@@ -21,7 +21,7 @@
          "url":"https://example.com/example-datasource-2",
          "domains":[],
          "format":"image",
-         "labels":"no",
+         "labels_provided":"no",
          "tags":[]
       }
    ]
