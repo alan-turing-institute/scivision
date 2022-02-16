@@ -40,8 +40,8 @@ exampleuser/comp_vis
 │   │  test_modelB.py
 │   │    ...
 └───example_data
-    │   test_modelA.py
-    │   test_modelB.py
+    │   data_1.csv
+    │   data_2.csv
     │   ...
 ```
 
