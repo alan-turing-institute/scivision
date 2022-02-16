@@ -1,57 +1,61 @@
 {
-  "model-000":{
-    "task":["object-detection", "segmentation"],
-    "model":"https://github.com/stardist/stardist",
-    "github_branch":"master",
-    "language":"Python3",
-    "data_format":"tif",
-    "pretrained":"yes",
-    "labels_required":"yes",
-    "institution":"epfl",
-    "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
-  },
-  "model-001":{
-    "task":["segmentation", "thresholding", "object-detection"],
-    "model":"https://github.com/danforthcenter/plantcv",
-    "github_branch":"master",
-    "language":"Python3",
-    "data_format":["jpg","png","tif","img","vis","nir","psii","envi"],
-    "pretrained":"yes",
-    "labels_required":"yes",
-    "institution":"danforthcenter",
-    "tags": ["2D", "hyperspectral", "multispectral", "near-infrared","infrared","plant-phenotyping", "climate-change-and-agriculture"]
-  },
-  "model-002":{
-    "task":"segmentation",
-    "model":"https://github.com/MarniTausen/Greenotyper",
-    "github_branch":"master",
-    "language":"Python3",
-    "data_format":["jpg","png","tif","img"],
-    "pretrained":"yes",
-    "labels_required":"yes",
-    "institution":"MarniTausen",
-    "tags": ["2D", "multispectral", "plant-phenotyping", "climate-change-and-agriculture"]
-  },
-  "model-003":{
-    "task":"segmentation",
-    "model":"github.com/alan-turing-institute/cv-algortithm",
-    "github_branch":"master",
-    "language":"Python3",
-    "data_format":"tif",
-    "pretrained":"yes",
-    "labels_required":"yes",
-    "institution":"alan-turing-institute",
-    "tags": ["dummy"]
-  },
-    "model-004":{
-    "task":"object-detection",
-    "model":"https://github.com/quantumjot/scivision-test-plugin",
-    "github_branch":"master",
-    "language":"Python3",
-    "data_format":"jpg",
-    "pretrained":"yes",
-    "labels_required":"no",
-    "institution":"alan-turing-institute",
-    "tags": ["dummy"]
-  }
+    "catalog_type":"scivision model catalog",
+    "name": "default",
+    "entries":[
+        {
+            "name":"model-000",
+            "tasks":["object-detection", "segmentation"],
+            "url":"https://github.com/stardist/stardist",
+            "pkg_url":"git+https://github.com/stardist/stardist.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":"epfl",
+            "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
+        },
+        {
+            "name":"model-001",
+            "tasks":["segmentation", "thresholding", "object-detection"],
+            "url":"https://github.com/danforthcenter/plantcv",
+            "pkg_url":"git+https://github.com/danforthcenter/plantcv@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":"danforthcenter",
+            "tags": ["2D", "hyperspectral", "multispectral", "near-infrared","infrared","plant-phenotyping", "climate-change-and-agriculture"]
+        },
+        {
+            "name":"model-002",
+            "tasks":["segmentation"],
+            "url":"https://github.com/MarniTausen/Greenotyper",
+            "pkg_url":"git+https://github.com/MarniTausen/Greenotyper@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":"MarniTausen",
+            "tags": ["2D", "multispectral", "plant-phenotyping", "climate-change-and-agriculture"]
+        },
+        {
+            "name":"model-003",
+            "tasks":["segmentation"],
+            "url":"https://github.com/alan-turing-institute/cv-algortithm",
+            "pkg_url":"git+https://github.com/alan-turing-institute/cv-algortithm@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":"alan-turing-institute",
+            "tags": ["dummy"]
+        },
+        {
+            "name":"scivision-test-plugin",
+            "tasks":["object-detection"],
+            "url":"https://github.com/quantumjot/scivision-test-plugin",
+            "pkg_url":"git+https://github.com/quantumjot/scivision-test-plugin.git@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":"alan-turing-institute",
+            "tags": ["dummy"]
+        }
+    ]
 }
