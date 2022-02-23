@@ -80,14 +80,15 @@ Once you have prepared a model for inclusion in the catalog, you can submit it v
 On a new branch of the scivision repository, add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry. After you are done, create a pull request with the changes.
 
 ```
-  "model-XXX":{
-    "task":"segmentation",
-    "model":"https://github.com/alan-turing-institute/my-model",
-    "github_branch":"master",
-    "language":"Python3",
-    "data_format":"tif",
-    "pretrained":"yes",
-    "labels_required":"yes",
+  {
+    "name":"Short name for this model"
+    "description":"Longer, optional, description of this model"
+    "tasks":["segmentation"],
+    "url":"https://github.com/alan-turing-institute/my-model",
+    "pkg_url":"git+https://github.com/alan-turing-institute/my-model@master",
+    "format":"image",
+    "pretrained":true,
+    "labels_required":true,
     "institution":"alan-turing-institute",
     "tags":[
       "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
@@ -108,12 +109,14 @@ Once you have prepared a dataset for inclusion in the catalog, you can submit it
 On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
 
 ```
-  "data-XXX":{
-    "task":["object-detection", "segmentation"],
-    "domain":["optical-microscopy"],
-    "datasource":"https://github.com/my_datasource/releases/download/0.3.0/demo.zip",
-    "format":"tif",
-    "labels":"yes",
+  {
+    "name":"Short name for this datasource"
+    "description": "Longer, optional, description of this datasource"
+    "tasks":["object-detection", "segmentation"],
+    "domains":["optical-microscopy"],
+    "url":"https://github.com/my_datasource/releases/download/0.3.0/demo.zip",
+    "format":"image",
+    "labels_provided":"yes",
     "institution":"alan-turing-institute",
     "tags":[
       "help-needed", "3D", "cell", "cell-counting", "biology", "biomedical-science" 
