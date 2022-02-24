@@ -56,6 +56,18 @@
             "labels_required":false,
             "institution":"alan-turing-institute",
             "tags": ["dummy"]
+        },
+        {
+            "name":"mapreader-plant"
+            "description":"automated detection of plant patches in images of individual plants for the extraction of data on phenotypic traits"
+            "tasks":["object-detection"],
+            "url":"https://github.com/alan-turing-institute/mapreader-plant-scivision",
+            "pkg_url":"git+https://github.com/alan-turing-institute/mapreader-plant-scivision@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":"alan-turing-institute",
+            "tags":["2D", "plant", "phenotype", "rgb", "biology", "agriculture"]
         }
     ]
 }
