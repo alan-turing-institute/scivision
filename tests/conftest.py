@@ -27,7 +27,7 @@ def IMAGENET_MODEL(request):
 # The dataset to run model on
 @pytest.fixture(scope='session', autouse=True)
 def KOALA(request):
-    return 'tests/koala.jpeg'
+    return 'tests/img/koala.jpeg'
 
 
 # Install the model package so it can be used in tests

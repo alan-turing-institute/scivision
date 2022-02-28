@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 
 import fsspec
 import intake
+import requests
 import yaml
 from intake_zenodo_fetcher import download_zenodo_files_for_entry
 
@@ -215,8 +216,11 @@ def load_dataset(
     intake_cat = intake.open_catalog(path)
     
     # download files used by intake if from Zenodo
-    with open(path, 'r') as stream:
-        loaded_yaml = yaml.safe_load(stream)
+    if 'http' in path:  # remote
+        loaded_yaml = yaml.safe_load(requests.get(path).content)
+    else:  # local
+        with open(path, 'r') as stream:
+            loaded_yaml = yaml.safe_load(stream)
     for name, data in loaded_yaml['sources'].items():
         if 'metadata' in data and 'zenodo_doi' in data['metadata']:
             download_zenodo_files_for_entry(

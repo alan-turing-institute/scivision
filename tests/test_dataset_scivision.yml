@@ -4,4 +4,4 @@ sources:
       origin: 
       driver: intake_xarray.image.ImageSource
       args:
-        urlpath: ["img/koala.jpeg", "img/plankton.jpeg"]
+        urlpath: ["tests/img/koala.jpeg", "tests/img/plankton.jpeg"]
