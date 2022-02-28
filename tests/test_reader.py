@@ -52,8 +52,10 @@ def test_load_dataset_branch_and_diff_file_name():
 
 
 def test_load_dataset_local():
-    """Test that an intake catalog is generated from a local yml works."""
-    assert type(load_dataset('tests/test_dataset_scivision.yml')) == intake.catalog.local.YAMLFileCatalog
+    """Test that an intake catalog is generated from a local yml and can be converted to xarry."""
+    cat = load_dataset('tests/test_dataset_scivision.yml')
+    assert type(cat) == intake.catalog.local.YAMLFileCatalog
+    assert type(cat.to_dask()) == xarray.core.dataarray.DataArray
 
 
 def test_get_model_configs():
