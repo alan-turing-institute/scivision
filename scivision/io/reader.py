@@ -214,7 +214,7 @@ def load_dataset(
     fsspec.open(path)
 
     intake_cat = intake.open_catalog(path)
-    
+
     # download files used by intake if from Zenodo
     if 'http' in path:  # remote
         loaded_yaml = yaml.safe_load(requests.get(path).content)
