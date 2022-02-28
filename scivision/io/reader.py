@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 import fsspec
 import intake
 import yaml
+from intake_zenodo_fetcher import download_zenodo_files_for_entry
 
 from ..koala import koala
 from .installer import install_package
@@ -212,5 +213,15 @@ def load_dataset(
     fsspec.open(path)
 
     intake_cat = intake.open_catalog(path)
+    
+    # download files used by intake if from Zenodo
+    with open(path, 'r') as stream:
+        loaded_yaml = yaml.safe_load(stream)
+    for name, data in loaded_yaml['sources'].items():
+        if 'metadata' in data and 'zenodo_doi' in data['metadata']:
+            download_zenodo_files_for_entry(
+                intake_cat[name],
+                force_download=True
+            )
 
     return intake_cat
