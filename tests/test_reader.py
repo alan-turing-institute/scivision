@@ -57,6 +57,13 @@ def test_load_dataset_local():
     cat = load_dataset('tests/test_dataset_scivision.yml')
     assert type(cat) == intake.catalog.local.YAMLFileCatalog
     assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
+    
+    
+def test_load_dataset_zenodo():
+    """Test that an intake catalog is generated from a yml that points to zenodo as the data source (urlpath)."""
+    cat = load_dataset('tests/test_dataset_zenodo_scivision.yml')
+    assert type(cat) == intake.catalog.local.YAMLFileCatalog
+    assert type(cat.plankton().to_dask()) == xarray.core.dataarray.DataArray
 
 
 def test_get_model_configs():

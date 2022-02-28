@@ -1,0 +1,8 @@
+sources:
+  plankton:
+      description: Load example images of plankton from COPEPEDIA public dataset
+      driver: intake_xarray.image.ImageSource
+      metadata:
+        zenodo_doi: "10.5281/zenodo.6143547"
+      args:
+        urlpath: "{{ CATALOG_DIR }}/img/zenodo/copepod_1.tif"
