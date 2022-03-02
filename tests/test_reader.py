@@ -57,8 +57,8 @@ def test_load_dataset_local():
     cat = load_dataset('tests/test_dataset_scivision.yml')
     assert type(cat) == intake.catalog.local.YAMLFileCatalog
     assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
-    
-    
+
+
 def test_load_dataset_local_zip():
     """Test that an intake catalog is generated from a local yml which loads from a zip file and can be converted to xarray."""
     cat = load_dataset('tests/test_dataset_scivision_zip.yml')

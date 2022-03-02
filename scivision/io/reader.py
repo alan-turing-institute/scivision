@@ -6,7 +6,6 @@ from urllib.parse import urlparse
 
 import fsspec
 import intake
-import requests
 import yaml
 
 from ..koala import koala
@@ -211,7 +210,7 @@ def load_dataset(
     path = _parse_config(path, branch)
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
-    
+
     intake_cat = intake.open_catalog(path)
 
     return intake_cat
