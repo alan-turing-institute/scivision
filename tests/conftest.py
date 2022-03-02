@@ -4,7 +4,6 @@ from scivision.io import PretrainedModel
 import fsspec
 import yaml
 import pytest
-import subprocess
 
 # Set up some global vars for tests that require an example model
 file = fsspec.open('tests/test_model_scivision.yml')
@@ -33,8 +32,3 @@ def KOALA(request):
 
 # Install the model package so it can be used in tests
 install_package(imagenet_model_config, allow_install=True)
-
-
-# delete files downloaded during testing
-def pytest_sessionfinish(session, exitstatus):
-    subprocess.run(["rm", "-r", "tests/img/zenodo"])
