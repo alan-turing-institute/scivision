@@ -4,4 +4,4 @@ sources:
       origin: 
       driver: intake_xarray.image.ImageSource
       args:
-        urlpath: ["tests/img/*"]
+        urlpath: ["zip://*.tif::tests/img/images.zip"]
