@@ -213,19 +213,4 @@ def load_dataset(
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
 
-    intake_cat = intake.open_catalog(path)
-
-    # download files used by intake if from Zenodo
-    if 'http' in path:  # remote
-        loaded_yaml = yaml.safe_load(requests.get(path).content)
-    else:  # local
-        with open(path, 'r') as stream:
-            loaded_yaml = yaml.safe_load(stream)
-    for name, data in loaded_yaml['sources'].items():
-        if 'metadata' in data and 'zenodo_doi' in data['metadata']:
-            download_zenodo_files_for_entry(
-                intake_cat[name],
-                force_download=True
-            )
-
-    return intake_cat
+    return intake.open_catalog(path)
