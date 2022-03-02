@@ -8,7 +8,6 @@ import fsspec
 import intake
 import requests
 import yaml
-from intake_zenodo_fetcher import download_zenodo_files_for_entry
 
 from ..koala import koala
 from .installer import install_package
@@ -212,5 +211,7 @@ def load_dataset(
     path = _parse_config(path, branch)
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
+    
+    intake_cat = intake.open_catalog(path)
 
-    return intake.open_catalog(path)
+    return intake_cat
