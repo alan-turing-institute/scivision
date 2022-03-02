@@ -67,8 +67,8 @@ def test_load_dataset_local_zip():
 
 
 def test_load_dataset_remote_zip():
-    """Test that an intake catalog is generated from a remote yml (zenodo) which loads from a zip file and can be converted to xarray.."""
-    cat = load_dataset('tests/test_dataset_remote_scivision.yml')
+    """Test that an intake catalog is generated from a remote yml (zenodo) which loads from a zip file and can be converted to xarray."""
+    cat = load_dataset('tests/test_dataset_remote_zip_scivision.yml')
     assert type(cat) == intake.catalog.local.YAMLFileCatalog
     assert type(cat.plankton().to_dask()) == xarray.core.dataarray.DataArray
 
