@@ -68,6 +68,18 @@
             "labels_required":false,
             "institution":"alan-turing-institute",
             "tags":["2D", "plant", "phenotype", "rgb", "biology", "agriculture"]
+        },
+        {
+            "name":"resnet50-plantkton",
+            "description":"automated classification of plankton images collected by RV Cefas Endeavour Plankton Imager in three clases: copepod, non-copepod and detritus",
+            "tasks":["classification"],
+            "url":"https://github.com/alan-turing-institute/plankton-cefas-scivision",
+            "pkg_url":"git+https://github.com/alan-turing-institute/plankton-cefas-scivision@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute", "cefas", "plankton-analytics-ltd"],
+            "tags": ["2D", "plankton", "ecology", "environmental-science"]
         }
     ]
 }
