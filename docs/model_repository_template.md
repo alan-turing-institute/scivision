@@ -19,6 +19,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
   - Installability with pip
   - Tests
   - Data
+- Example model repos
 
 ## Model repo structure
 
@@ -132,7 +133,7 @@ We recommend that models repos submitted to the scivision catalog are thoroughly
 
 ### Data
 
-
+### Example model repos
 
 
 
