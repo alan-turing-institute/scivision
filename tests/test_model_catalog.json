@@ -1,0 +1,26 @@
+{
+    "catalog_type":"scivision model catalog",
+    "name": "test",
+    "entries":[
+        {
+            "name":"example-model-1",
+            "tasks":["object-detection"],
+            "url":"https://example.com/example-model-1",
+            "pkg_url":"example-model-1",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "tags": []
+        },
+        {
+            "name":"example-model-2",
+            "tasks":["object-detection", "segmentation"],
+            "url":"https://example.com/example-model-2",
+            "pkg_url":"example-model-2",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "tags": []
+        }
+    ]
+}

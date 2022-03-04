@@ -1,0 +1,28 @@
+{
+   "catalog_type":"scivision datasource catalog",
+   "name":"test",
+   "entries":[
+      {
+         "name":"example-datasource-1",
+         "tasks":[
+            "object-detection"
+         ],
+         "url":"https://example.com/example-datasource-1",
+         "domains":[],
+         "format":"image",
+         "labels_provided":true,
+         "tags":[]
+      },
+      {
+         "name":"example-datasource-2",
+         "tasks":[
+            "segmentation"
+         ],
+         "url":"https://example.com/example-datasource-2",
+         "domains":[],
+         "format":"image",
+         "labels_provided":false,
+         "tags":[]
+      }
+   ]
+}
