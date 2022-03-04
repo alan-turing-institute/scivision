@@ -1,7 +1,7 @@
 sources:
-  test_images:
+  plankton:
       description: Load example images
       origin: 
       driver: intake_xarray.image.ImageSource
       args:
-        urlpath: ["tests/img/*.jpeg"]
+        urlpath: ["zip://*.tif::https://zenodo.org/record/6143685/files/images.zip"]
