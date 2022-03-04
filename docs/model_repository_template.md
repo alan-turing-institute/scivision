@@ -27,6 +27,8 @@ The model repo should be roughly structured like so, where `exampleuser` is the 
 
 <!-- TODO: update so that there are two levels of "essential", level 1 being catalog inclusion and level 2 being working with `load_pretrained_model` -->
 
+<!-- TODO: OR restructure the sections to be 1) compatible with the scivision catalog & 2) compatible with scivision API -->
+
 ```
 exampleuser/comp_vis
 │   README           *
@@ -59,7 +61,13 @@ The essential components of a scivision model repository include everything that
 
 ### 🟢 Model code
 
-- the model code, or a script that imports the model from elsewhere
+It's common in Python packages to house the core package  code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#-model-repo-structure) above (i.e. `comp_vis/comp_vis/model.py`). However, as you'll see in the following section on the scivision model config, it is not essential to conform to this naming convention.
+
+What is required, is a script called `model.py` to be stored in a child directory of the model repo. This script  must either contain the model itself (i.e. both training and running the model), or import a pre-trained model from elsewhere.
+
+If you wish the model to be compatible with the scivision API, include a class within this script, which contains a prediction function that can be used to run the model on data.
+
+For examples, check out the [example model repos](#%EF%B8%8F-example-model-repos) section.
 
 ### 🖋️ Model config file
 
