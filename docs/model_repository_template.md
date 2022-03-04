@@ -17,8 +17,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 - Model repo structure
 - Choosing a Licence for your model
 - Model config file
-- Model adapter code
-     - TODO: make the like test  plugin first
+<!-- - Model adapter code (TODO: for a later version of scivision)-->
 - How to set up the model repo
 
 ## Model repo structure
@@ -48,10 +47,10 @@ exampleuser/comp_vis
 
 ## Model config file
 
-The content of `.scivision/model.yml` should look something like this:
+The default name for the config file included in your repo should be `model.yml`, and should be kept in the `.scivision` directory. It should look something like this:
 
 ```yaml
-name: test
+name: comp_vis_models
 url: https://github.com/exampleuser/comp_vis.git
 import: comp_vis
 models:
