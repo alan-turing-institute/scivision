@@ -14,7 +14,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
   - Model config
   <!-- - Model adapter code (TODO: for a later version of scivision)-->
   - Installation documentation
-  - Licence
+  - Software licence
 - Non-essential repo components
   - Installability with pip
   - Tests
@@ -89,9 +89,9 @@ models:
 
 A `README`, which includes detailed instructions on how the model can be installed. Without this, your model(s) will not be accepted for inclusion in the scivision catalog.
 
-### License
+### Software licence
 
-A `LICENSE` for the model code stored in the repository.
+You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com
 
 ## Non-essential repo components
 
