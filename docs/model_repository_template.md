@@ -27,9 +27,10 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 exampleuser/comp_vis
 │   README
 │   LICENSE
-│   scivision-model.yml
 │   setup.py
 │   requirements.txt
+└───.scivision
+│   │   model.yml
 └───comp_vis
 │   │   models.py
 │   │   utils.py # e.g. class names
@@ -47,7 +48,7 @@ exampleuser/comp_vis
 
 ## Model config file
 
-The content of `scivision-model.yml` should look something like this:
+The content of `.scivision/model.yml` should look something like this:
 
 ```yaml
 name: test
