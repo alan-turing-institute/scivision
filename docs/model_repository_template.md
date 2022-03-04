@@ -23,7 +23,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 ## Model repo structure
 
-The model repo should be roughly structured like so, with essential components marked by an asterisk (*):
+The model repo should be roughly structured like so, where `exampleuser` is the GitHub user and `comp_vis` is the name of the repo that user has created, containing the model(s). The essential components for the repo are marked by an asterisk (*):
 
 ```
 exampleuser/comp_vis
