@@ -18,7 +18,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 - Non-essential repo components
   - Installability with pip
   - Tests
-  - Data
+  - Example data
 - Example model repos
 
 ## Model repo structure
@@ -131,9 +131,13 @@ Effective testing of code is vitally important to ensure the reliability of soft
 
 We recommend that models repos submitted to the scivision catalog are thoroughly tested. For more information of testing for research code, check out [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html) online handbook.
 
-### Data
+### Example data
 
-### Example model repos
+We recommend including a directory with a small amount of test image data, in a format that can be used by the model(s) in the repo. This will be useful for scivision users who wish to try running your model(s).
+
+You could for example, include in the repo `README` some example code showing how to run your model(s) on the test data, or indeed a Jupyter notebook with this code that can be easily run.
+
+## Example model repos
 
 
 
