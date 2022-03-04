@@ -8,20 +8,20 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 ## 📚 Contents
 
-- Model repo structure
-- Essential repo components
-  - Model code
-  - Model config
+- 🧱 [Model repo structure](#-model-repo-structure)
+- 📁 [Essential repo components](#-eessential-repo-components)
+  - 🟢 [Model code](#-model-code)
+  - 🖋️ [Model config file](#-model-config-file)
   <!-- - Model adapter code (TODO: for a later version of scivision)-->
-  - Installation documentation
-  - Software licence
-- Non-essential repo components
-  - Installability with pip
-  - Tests
-  - Example data
-- Example model repos
+  - 📄 [Installation documentation](#-installation-documentation)
+  - 📜 [Software licence](#-software-licence)
+- 🗂️ [Non-essential repo components](#-non-essential-repo components)
+  - 🐍 [Installability with pip](#-installability-with-pip)
+  - 🧪 [Tests](#-tests)
+  - 📊 [Example data](#-example-data)
+- 🗃️ [Example model repos](#-example-model-repos)
 
-## Model repo structure
+## 🧱 Model repo structure
 
 The model repo should be roughly structured like so, where `exampleuser` is the GitHub user and `comp_vis` is the name of the repo that user has created, containing the model(s). The essential components for the repo are marked by an asterisk (*):
 
@@ -51,15 +51,15 @@ exampleuser/comp_vis
     │   ...
 ```
 
-## Essential repo components
+## 📁 Essential repo components
 
 The essential components of a scivision model repository include everything that is required to set up your model repository so it is suitable for inclusion in the scivision catalog.
 
-### Model code
+### 🟢 Model code
 
 - the model code, or a script that imports the model from elsewhere
 
-### Model config file
+### 🖋️ Model config file
 
 The default name for the config file included in your repo should be `model.yml`, and should be kept in the `.scivision` directory. It should look something like this:
 
@@ -86,19 +86,19 @@ models:
             - sigma
 ```
 
-### Installation documentation
+### 📄 Installation documentation
 
 A `README`, which includes detailed instructions on how the model can be installed. Without this, your model(s) will not be accepted for inclusion in the scivision catalog.
 
-### Software licence
+### 📜 Software licence
 
 You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com
 
-## Non-essential repo components
+## 🗂️ Non-essential repo components
 
 Non-essential components of the scivision model repository include:
 
-### Installability with pip
+### 🐍 Installability with pip
 
 You can include a `setup.py` to enable the model to be installed via pip. For an explanation of how this works,  see this [packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata) for Python. By additionally including a `requirements.txt` with the required packages for your model, you can make it so these are installed along with the model code. Here is an example `setup.py` taken from [alan-turing-institute/plankton-cefas-scivision](https://github.com/alan-turing-institute/plankton-cefas-scivision):
 
@@ -125,19 +125,19 @@ setup(
 
 In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
 
-### Tests
+### 🧪 Tests
 
 Effective testing of code is vitally important to ensure the reliability of software, and in the context of scientific research code, the reproducibility analyses and results.
 
 We recommend that models repos submitted to the scivision catalog are thoroughly tested. For more information of testing for research code, check out [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html) online handbook.
 
-### Example data
+### 📊 Example data
 
 We recommend including a directory with a small amount of test image data, in a format that can be used by the model(s) in the repo. This will be useful for scivision users who wish to try running your model(s).
 
 You could for example, include in the repo `README` some example code showing how to run your model(s) on the test data, or indeed a Jupyter notebook with this code that can be easily run.
 
-## Example model repos
+## 🗃️ Example model repos
 
 
 
