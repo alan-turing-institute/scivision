@@ -28,7 +28,7 @@ class CatalogModelEntry(BaseModel, extra="forbid"):
     format: str
     pretrained: bool
     labels_required: bool
-    institution: Optional[str]
+    institution: Optional[Tuple[str, ...]]
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):

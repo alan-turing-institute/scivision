@@ -10,7 +10,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":true,
-            "institution":"epfl",
+            "institution":["epfl"],
             "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
         },
         {
@@ -21,7 +21,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":true,
-            "institution":"danforthcenter",
+            "institution":["danforthcenter"],
             "tags": ["2D", "hyperspectral", "multispectral", "near-infrared","infrared","plant-phenotyping", "climate-change-and-agriculture"]
         },
         {
@@ -32,7 +32,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":true,
-            "institution":"MarniTausen",
+            "institution":["MarniTausen"],
             "tags": ["2D", "multispectral", "plant-phenotyping", "climate-change-and-agriculture"]
         },
         {
@@ -43,7 +43,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":true,
-            "institution":"alan-turing-institute",
+            "institution":["alan-turing-institute"],
             "tags": ["dummy"]
         },
         {
@@ -54,7 +54,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":false,
-            "institution":"alan-turing-institute",
+            "institution":["alan-turing-institute"],
             "tags": ["dummy"]
         },
         {
@@ -66,7 +66,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":false,
-            "institution":"alan-turing-institute",
+            "institution":["alan-turing-institute"],
             "tags":["2D", "plant", "phenotype", "rgb", "biology", "agriculture"]
         },
         {
