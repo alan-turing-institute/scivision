@@ -99,8 +99,30 @@ Non-essential components of the scivision model repository include:
 
 ### Installability with pip
 
-- `setup.py` to enable the model to be installed via pip. In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
-- `utils.py` # e.g. class names
+You can include a `setup.py` to enable the model to be installed via pip. For an explanation of how this works,  see this [packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata) for Python. By additionally including a `requirements.txt` with the required packages for your model, you can make it so these are installed along with the model code. Here is an example `setup.py` taken from [alan-turing-institute/plankton-cefas-scivision](https://github.com/alan-turing-institute/plankton-cefas-scivision):
+
+```python
+from setuptools import find_packages, setup
+
+requirements = []
+with open("requirements.txt") as f:
+    for line in f:
+        stripped = line.split("#")[0].strip()
+        if len(stripped) > 0:
+            requirements.append(stripped)
+
+setup(
+    name="resnet50_cefas",
+    version="0.0.1",
+    description="scivision plugin, using CEFAS DSG Plankton ResNet50 model",
+    url="https://github.com/alan-turing-institute/plankton-cefas-scivision",
+    packages=find_packages(),
+    install_requires=requirements,
+    python_requires=">=3.7",
+)
+```
+
+In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
 
 ### Tests
 
