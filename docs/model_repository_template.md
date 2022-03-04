@@ -9,14 +9,16 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 ## 📚 Contents
 
 - Model repo structure
-     - Model code
-     - Scivision Config
-     - README
-     - LICENSE
-
-- Model config file
-<!-- - Model adapter code (TODO: for a later version of scivision)-->
-- Choosing a Licence for your model
+- Essential repo components
+  - Model code
+  - Model config
+  <!-- - Model adapter code (TODO: for a later version of scivision)-->
+  - Installation documentation
+  - Licence
+- Non-essential repo components
+  - Installability with pip
+  - Tests
+  - Data
 
 ## Model repo structure
 
@@ -48,19 +50,15 @@ exampleuser/comp_vis
     │   ...
 ```
 
-The essential components of a scivision model repository include:
+## Essential repo components
 
-- A `README`, which includes detailed instructions on how the model can be installed. Without this, your model(s) will not be accepted for inclusion in the scivision catalog. 
-- A `LICENSE` for the model code stored in the repository (see [Choosing a Licence for your model]())
-- The `model.yml` configuration file
+The essential components of a scivision model repository include everything that is required to set up your model repository so it is suitable for inclusion in the scivision catalog.
 
-Non-essential components of the scivision model repository include:
+### Model code
 
-- `setup.py` to enable the model to be installed via pip. In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
 - the model code, or a script that imports the model from elsewhere
-- `utils.py` # e.g. class names
 
-## Model config file
+### Model config file
 
 The default name for the config file included in your repo should be `model.yml`, and should be kept in the `.scivision` directory. It should look something like this:
 
@@ -86,6 +84,29 @@ models:
         kwargs:
             - sigma
 ```
+
+### Installation documentation
+
+A `README`, which includes detailed instructions on how the model can be installed. Without this, your model(s) will not be accepted for inclusion in the scivision catalog.
+
+### License
+
+A `LICENSE` for the model code stored in the repository.
+
+## Non-essential repo components
+
+Non-essential components of the scivision model repository include:
+
+### Installability with pip
+
+- `setup.py` to enable the model to be installed via pip. In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
+- `utils.py` # e.g. class names
+
+### Tests
+
+### Data
+
+
 
 
 
