@@ -31,7 +31,7 @@ def test_parse_url_branch():
 
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision-data.yml file in an example GitHub repo."""
-    commit_hash = 'ec4f0cf2734aff7aa28324ea9911e359ed0db727'
+    commit_hash = '473a7fd02f4cdd2dd261208a791c7da76cd413a0'
     assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton', branch=commit_hash)) == intake.catalog.local.YAMLFileCatalog
 
 
