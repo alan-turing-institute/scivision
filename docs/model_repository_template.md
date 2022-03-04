@@ -9,17 +9,17 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 ## 📚 Contents
 
 - 🧱 [Model repo structure](#-model-repo-structure)
-- 📁 [Essential repo components](#-eessential-repo-components)
+- 📁 [Essential repo components](#-essential-repo-components)
   - 🟢 [Model code](#-model-code)
-  - 🖋️ [Model config file](#-model-config-file)
+  - 🖋️ [Model config file](#%EF%B8%8F-model-config-file)
   <!-- - Model adapter code (TODO: for a later version of scivision)-->
   - 📄 [Installation documentation](#-installation-documentation)
   - 📜 [Software licence](#-software-licence)
-- 🗂️ [Non-essential repo components](#-non-essential-repo components)
+- 🗂️ [Non-essential repo components](#%EF%B8%8F-non-essential-repo-components)
   - 🐍 [Installability with pip](#-installability-with-pip)
   - 🧪 [Tests](#-tests)
   - 📊 [Example data](#-example-data)
-- 🗃️ [Example model repos](#-example-model-repos)
+- 🗃️ [Example model repos](#%EF%B8%8F-example-model-repos)
 
 ## 🧱 Model repo structure
 
