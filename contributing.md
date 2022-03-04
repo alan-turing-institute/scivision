@@ -2,17 +2,17 @@
 
 Thank you for taking the time to contribute to this project. 🎉
 
-:book: Contents
+📙 Contents
 ---
 
-- :sunglasses: [Who should contribute](#sunglasses-who-should-contribute)
+- 😎 [Who should contribute](#-who-should-contribute)
 - 🤔 [What to contribute](#-what-to-contribute)
 - 🛠 [How to contribute](#-how-to-contribute)
-- :gift: [Extending the scivision catalog](#gift-extending-the-scivision-catalog)
+- 🎁 [Extending the scivision catalog](#-extending-the-scivision-catalog)
 - 📫 [Contact](#-contact)
 - ♻️ [License](#%EF%B8%8F-license)
 
-:sunglasses: Who should contribute
+😎 Who should contribute
 ---
 
 The scivision project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project.
@@ -62,7 +62,7 @@ To get started, please take a look at our currently open [issues](https://github
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
   
-:gift: Extending the scivision catalog
+🎁 Extending the scivision catalog
 ---
 
 You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#-how-to-contribute)).
