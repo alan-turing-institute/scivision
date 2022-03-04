@@ -1,6 +1,6 @@
 # Scivision model repository template
 
-In order for `scivision` to be able to load and run a computer vision (CV) model, a GitHub repository containing configuration for the model must first be created.
+In order for `scivision` to be able to load and run a computer vision (CV) model, a GitHub repository containing configuration for one or more models must first be created.
 
 This guide explains how to set up a GitHub repository for your CV model(s) compatible with scivision.
 
@@ -9,28 +9,32 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 ## 📚 Contents
 
 - Model repo structure
-- Choosing a Licence for your model
+     - Model code
+     - Scivision Config
+     - README
+     - LICENSE
+
 - Model config file
 <!-- - Model adapter code (TODO: for a later version of scivision)-->
-- How to set up the model repo
+- Choosing a Licence for your model
 
 ## Model repo structure
 
-The model repo should be structured like so:
+The model repo should be roughly structured like so, with essential components marked by an asterisk (*):
 
 ```
 exampleuser/comp_vis
-│   README
-│   LICENSE
+│   README           *
+│   LICENSE          *
 │   setup.py
 │   requirements.txt
 │   
 └───.scivision
-│   │   model.yml
+│   │   model.yml    *
 │   
 └───comp_vis
-│   │   models.py
-│   │   utils.py # e.g. class names
+│   │   model.py     *
+│   │   utils.py
 │   │   __init__.py
 │   
 └───tests
@@ -44,11 +48,17 @@ exampleuser/comp_vis
     │   ...
 ```
 
-The components here :
+The essential components of a scivision model repository include:
 
--  `scivision-model.yml` configuration file
-- `setup.py` to enable the model to be installed via pip
+- A `README`, which includes detailed instructions on how the model can be installed. Without this, your model(s) will not be accepted for inclusion in the scivision catalog. 
+- A `LICENSE` for the model code stored in the repository (see [Choosing a Licence for your model]())
+- The `model.yml` configuration file
+
+Non-essential components of the scivision model repository include:
+
+- `setup.py` to enable the model to be installed via pip. In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
 - the model code, or a script that imports the model from elsewhere
+- `utils.py` # e.g. class names
 
 ## Model config file
 
