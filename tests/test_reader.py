@@ -1,4 +1,4 @@
-from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url, _parse_config, _get_model_configs
+from scivision.io import load_dataset, load_pretrained_model, wrapper, _parse_url, _get_model_configs
 import intake
 import pytest
 import fsspec
@@ -29,20 +29,9 @@ def test_parse_url_branch():
     assert _parse_url(path, branch=branch) == raw
 
 
-def test_parse_config():
-    """Test that scivision.yml config urls are correctly parsed."""
-    # note: exampleuser/scivision-model-repo does not exist
-    repo_path = 'https://github.com/exampleuser/scivision-model-repo'
-    default_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/scivision.yml'
-    named_file_path = 'https://github.com/exampleuser/scivision-model-repo/blob/main/.scivision-config_file.yaml'
-    named_yml = 'https://raw.githubusercontent.com/exampleuser/scivision-model-repo/main/.scivision-config_file.yaml'
-    assert _parse_config(repo_path) == default_yml
-    assert _parse_config(named_file_path) == named_yml
-
-
 def test_load_dataset_remote():
-    """Test that an intake catalog is generated from scivision.yml file in an example GitHub repo."""
-    commit_hash = '8e4f0ca852723b224025e0577cb333a101dbe51e'
+    """Test that an intake catalog is generated from scivision-data.yml file in an example GitHub repo."""
+    commit_hash = '473a7fd02f4cdd2dd261208a791c7da76cd413a0'
     assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton', branch=commit_hash)) == intake.catalog.local.YAMLFileCatalog
 
 
@@ -75,7 +64,7 @@ def test_load_dataset_remote_zip():
 
 def test_get_model_configs():
     """Test that a config with multiple models is split into separate configs."""
-    path = _parse_config('tests/test_multiple_models_scivision.yml')
+    path = 'tests/test_multiple_models_scivision.yml'
     file = fsspec.open(path)
     with file as config_file:
         stream = config_file.read()

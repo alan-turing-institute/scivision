@@ -46,26 +46,6 @@ def _parse_url(path: os.PathLike, branch: str = "main"):
         raise NotImplementedError
 
 
-def _parse_config(path: os.PathLike, branch: str = "main") -> str:
-    """Parse the scivision.yml file from a GitHub repository.
-    Will also accept differently named yaml if a full path provided or a local file.
-    """
-
-    if _is_url(path):
-        path = _parse_url(path, branch)
-
-    # check that this is a path to a yaml file
-    # if not, assume it is a repo containing "scivision.yml"
-    if not path.endswith(
-        (
-            ".yml",
-            ".yaml",
-        )
-    ):
-        path = path + "scivision.yml"
-    return path
-
-
 def _get_model_configs(
     full_config: dict, load_multiple: bool = False, model: str = "default"
 ):
@@ -74,7 +54,7 @@ def _get_model_configs(
     Parameters
     ----------
     full_config : dict
-        Dictionary of a scivision.yml config loaded from yaml.
+        Dictionary of a .scivision/model.yml config loaded from yaml.
     load_multiple : bool, default = False
         Modifies the return to be a list of scivision.PretrainedModel's.
     model : str, default = default
@@ -115,7 +95,7 @@ def _get_model_configs(
                         full_config["args"] = model_dict["args"]
                         full_config["prediction_fn"] = model_dict["prediction_fn"]
                         break
-                # Check that a model of name "model" in scivision.yml config
+                # Check that a model of name "model" in .scivision/model.yml config
                 if "model" not in full_config:
                     raise ValueError(
                         "model of name " + model + " not found in config yaml"
@@ -128,7 +108,7 @@ def _get_model_configs(
                 "(i.e., no 'models' section in the config file), "
                 "will load that one..."
             )
-        # Check that a model of name "model" in scivision.yml config
+        # Check that a model of name "model" in .scivision/model.yml config
         if model != "default" and full_config["model"] != model:
             raise ValueError("model of name " + model + " not found in config yaml")
         config_list.append(full_config)
@@ -166,7 +146,17 @@ def load_pretrained_model(
         The instantiated pre-trained model.
     """
 
-    path = _parse_config(path, branch)
+    if _is_url(path):
+        path = _parse_url(path, branch)
+    # check that this is a path to a yaml file
+    # if not, assume it is a repo containing ".scivision/model.yml"
+    if not path.endswith(
+        (
+            ".yml",
+            ".yaml",
+        )
+    ):
+        path = path + ".scivision/model.yml"
     # fsspec will throw an error if the path does not exist
     file = fsspec.open(path)
     # parse the config file:
@@ -207,7 +197,17 @@ def load_dataset(
         An intake catalog object representing the loaded dataset (see `intake.readthedocs <https://intake.readthedocs.io/en/latest/api_user.html?highlight=catalog.local.YAMLFileCatalog#intake.catalog.local.YAMLFileCatalog>`_).
     """
 
-    path = _parse_config(path, branch)
+    if _is_url(path):
+        path = _parse_url(path, branch)
+    # check that this is a path to a yaml file
+    # if not, assume it is a repo containing ".scivision/data.yml"
+    if not path.endswith(
+        (
+            ".yml",
+            ".yaml",
+        )
+    ):
+        path = path + ".scivision/data.yml"
     # fsspec will throw an error if the path does not exist
     fsspec.open(path)
 
