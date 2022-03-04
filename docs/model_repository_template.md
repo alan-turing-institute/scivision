@@ -126,6 +126,10 @@ In scivision, once your model(s) have been included in the scivision catalog, pi
 
 ### Tests
 
+Effective testing of code is vitally important to ensure the reliability of software, and in the context of scientific research code, the reproducibility analyses and results.
+
+We recommend that models repos submitted to the scivision catalog are thoroughly tested. For more information of testing for research code, check out [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html) online handbook.
+
 ### Data
 
 
