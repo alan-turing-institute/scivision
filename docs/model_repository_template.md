@@ -25,6 +25,8 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 The model repo should be roughly structured like so, where `exampleuser` is the GitHub user and `comp_vis` is the name of the repo that user has created, containing the model(s). The essential components for the repo are marked by an asterisk (*):
 
+<!-- TODO: update so that there are two levels of "essential", level 1 being catalog inclusion and level 2 being working with `load_pretrained_model` -->
+
 ```
 exampleuser/comp_vis
 │   README           *
@@ -61,30 +63,36 @@ The essential components of a scivision model repository include everything that
 
 ### 🖋️ Model config file
 
-The default name for the config file included in your repo should be `model.yml`, and should be kept in the `.scivision` directory. It should look something like this:
+The default name for the config file included in your repo should be `model.yml`, and should be kept in the `.scivision` directory. Take a look at this config from one of our example model repositories: [alan-turing-institute/plankton-cefas-scivision](https://github.com/alan-turing-institute/plankton-cefas-scivision):
 
 ```yaml
-name: comp_vis_models
-url: https://github.com/exampleuser/comp_vis.git
-import: comp_vis
-models:
-  - model: ImageNetModel
+name: resnet50_cefas_model
+url: https://github.com/alan-turing-institute/plankton-cefas-scivision
+import: resnet50_cefas
+model: resnet50
+args:
+    label_level: label3_detritus
+prediction_fn:
+    call: predict_batch
     args:
-        model_name: resnet18
-    prediction_fn:
-        call: predict
-        args:
-            X: image
-        kwargs: None
-  - model: DummyModel
-    args: None
-    prediction_fn:
-        call: predict
-        args:
-            X: image
-        kwargs:
-            - sigma
+        X: image
+    kwargs:
+        batch_size: 3
 ```
+
+What do the fields of this `model.yml` config refer to?
+
+- `name`: arbitrary name for the specified model(s)
+- `url`: points to the repo url
+- `import`: the folder containing the model code
+- `model`: the name of the model class specified in "model.py" (within the "import" folder)
+- `args`: key/value pairs for any arguments of the model class
+- `prediction_fn`:
+  - `call`: the name of the model class' prediction function
+  - `args`: key/value pairs for any arguments of the prediction function
+  - `kwargs`: key/value pairs for any key word arguments of the prediction function
+
+It's also possible to specify multiple models from the same model repository. For an example config that demonstrates this, see [scivision-test-plugin/.scivision/model.yml](https://github.com/alan-turing-institute/scivision-test-plugin/blob/main/.scivision/model.yml).
 
 ### 📄 Installation documentation
 
