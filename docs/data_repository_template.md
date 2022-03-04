@@ -1,0 +1,1 @@
+scivision uses intake catalogs for data config files.You can provide an intake catalog to the load_dataset function. Here is an example. You can also store this file in a repo, by default at .scivision/data.yml, which load_dataset will recognnise.
