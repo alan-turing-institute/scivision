@@ -155,5 +155,15 @@ You could for example, include in the repo `README` some example code showing ho
 
 ## 🗃️ Example model repos
 
+Here are some example repositories that are set up to work with scivision as per this guide.
 
+### [Scivision test plugin](https://github.com/alan-turing-institute/scivision-test-plugin)
+
+A simple test repository that demonstrates how to set up two models for use with scivision.
+
+### [CEFAS Plankton resnet50 model](https://github.com/alan-turing-institute/plankton-cefas-scivision)
+
+A repository containing a pretrained ResNet-50 model for classification of plankton and example data.
+
+Note: the data is included as an intake catalog; see the [scivision data template](data_repository_template.md) for more information.
 
