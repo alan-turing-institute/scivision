@@ -1,8 +1,17 @@
 # Scivision data repository template
 
+In order for `scivision` to be able to load a dataset and run a computer vision (CV) model on it, a GitHub repository containing configuration for one or more datasets must first be created.
 
+This guide explains how to set up a GitHub repository for your datasets compatible with scivision.
 
-## Data repository structure
+This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your data repo as per this guide.
+
+## 📚 Contents
+
+- 🧱 [Data repo structure](#-data-repo-structure)
+- 🖋️ [Data config file](#%EF%B8%8F-data-config-file)
+
+## 🧱 Data repo structure
 
 You can also store this file in a repo, by default at .scivision/data.yml, which load_dataset will recognnise.
 
@@ -15,7 +24,7 @@ exampleuser/data_repo
 │   │   data.yml     
 ```
 
-## Data config file
+## 🖋️ Data config file
 
 The `scivision` python API relies upon another open source python tool called `intake` for loading datasets. We recommend creating a YAML format "intake catalog" (config file), to enable scivision users who discover your dataset to easily load it via the API.
 
