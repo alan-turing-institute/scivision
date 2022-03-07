@@ -55,7 +55,7 @@ In order to fully understand how this `data.yml` has been configured, you should
 - `urlpath`: a path to the data itself; in this example, we point to a Zenodo repository and load all the `.tif` files from the compressed zip file stored there
 
 
-The scivision API can accept a path to a locally stored data config file or a the GitHub repository containing it as specified in this guide. See the [load_dataset](https://scivision.readthedocs.io/en/latest/api.html#scivision.io.reader.load_dataset) function in the API docs.
+The scivision API can accept a path to a locally stored data config file, or the GitHub repository containing it as specified in this guide. See the [load_dataset](https://scivision.readthedocs.io/en/latest/api.html#scivision.io.reader.load_dataset) function in the API docs.
 
 ### 📄 Documentation
 
