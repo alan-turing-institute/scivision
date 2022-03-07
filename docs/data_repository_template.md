@@ -10,6 +10,8 @@ This is also a pre-requisite for adding the dataset to the scivision "catalog", 
 
 - 🧱 [Data repo structure](#-data-repo-structure)
 - 🖋️ [Data config file](#%EF%B8%8F-data-config-file)
+- 📄 [Documentation](#-documentation)
+- 📜 [Software licence](#-software-licence)
 
 ## 🧱 Data repo structure
 
@@ -54,3 +56,11 @@ In order to fully understand how this `data.yml` has been configured, you should
 
 
 The scivision API can accept a path to a locally stored data config file or a the GitHub repository containing it as specified in this guide. See the [load_dataset](https://scivision.readthedocs.io/en/latest/api.html#scivision.io.reader.load_dataset) function in the API docs.
+
+### 📄 Documentation
+
+A `README`, which includes helpful information on the dataset and its origin should be included. Without this, your dataset may not be accepted for inclusion in the scivision catalog.
+
+### 📜 Data licence
+
+You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
