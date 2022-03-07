@@ -15,7 +15,7 @@ This is also a pre-requisite for adding the dataset to the scivision "catalog", 
 
 ## 🧱 Data repo structure
 
-You can also store this file in a repo, by default at .scivision/data.yml, which load_dataset will recognnise.
+We recommend to set up a data repo for scivision with the following structure, with the default name for the config file that the scivision API will recognise being `.scivision/data.yml`:
 
 ```
 exampleuser/data_repo
