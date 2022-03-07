@@ -26,10 +26,6 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 The model repo should be roughly structured like so, where `exampleuser` is the GitHub user and `comp_vis` is the name of the repo that user has created, containing the model(s). The essential components for the repo are marked by an asterisk (*):
 
-<!-- TODO: update so that there are two levels of "essential", level 1 being catalog inclusion and level 2 being working with `load_pretrained_model` -->
-
-<!-- TODO: OR restructure the sections to be 1) compatible with the scivision catalog & 2) compatible with scivision API -->
-
 ```
 exampleuser/comp_vis
 │   README           *
