@@ -1,42 +1,51 @@
-# Release Process
+Developers can build and view the docs by doing the following:
 
-This section is for maintainers making a release: Most contributors will not need to do this.
+1. **Install requirements**:
+  
+  ```bash
+  pip install -r docs/requirements.txt
+  ```
 
-If you wish to become a maintainer (see the list of current maintainers [on pypi](https://pypi.org/project/scivision/)) send an email to [scivision@turing.ac.uk](mailto:scivision@turing.ac.uk).
+2. **Build the docs**:
+  * In the top dir:
+  ```bash
+  sphinx-build -b html docs/ build/
+  ```
+  * The HTML will  be created in `build/`
 
-We periodically make releases of the software on [PyPI](https://pypi.org/project/scivision/).
+3. **Update the API documentation**:
+  * Edit (or add) to the docstring of the function in question
+  * Ensure that the module containing that function has been added to `docs/api.rst`
+  * Open `build/index.html` in a browser to view edits
+4. **Push the updates to the readthedocs site**:
+  * Create a pull request with your changes
+  * Upon merge to `main`, log into the https://readthedocs.org/projects/scivision/ dashboard as a maintainer and click `Builds->Build Version`
 
-To make a new release:
+## Releases
 
-1. Make a new branch for the release (e.g. named `release/1.1.0`). Usually this will be branch off the current `main`.
+Developers can release a new version of `scivision` with the following steps:
 
-1. Add a commit to this branch that increments the `version` in `setup.py` and any other metadata that differs for the new release.
+1. **Increment the `version` in `setup.py` and any other metadata that differs for the new release**:
+2. **Make sure you have a working python 3 installation**
+    * Check your version with:
+    ```bash
+    python --version
+    ```
+3. **Install these packages if you don't have them**:
+   ```bash
+   pip install build twine
+   ```
+4. **Build the release**:
+   ```bash
+   python -m build
+   ```
+5. **Upload the release**:
+   ```bash
+   python -m twine upload dist/*
+   ```
+    * Provide your pypi username and password
+6. **Commit changes to `setup.py` pull request to `main` branch**
 
-1. Open a PR and request a review to start the discussion of the proposed release.
-  - It could be that the only change from `main` is the one incrementing the version number.
+## Maintainers
 
-1. Merge to `main` when ready.
-
-1. Make a GitHub [release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) (which will also make a tag)
-
-1. Add the release to PyPI:
-
-  1. Make sure you have a working python 3 installation.
-      - Check you version with:
-      ```
-      python --version
-      ```
-  1. Install these packages if you don't have them:
-     ```
-     pip install build twine
-     ```
-  1. Build the release:
-     ```
-     python -m build
-     ```
-  1. Upload the release:
-     ```
-     python -m twine upload dist/*
-     ```
-      - Provide your pypi username and password
-
+If you are new to the `scivision` project and wish to become a maintainer for either the PyPi release or the  readthedocs documentation, send an email to scivision@turing.ac.uk
