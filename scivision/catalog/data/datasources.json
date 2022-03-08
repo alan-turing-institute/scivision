@@ -93,7 +93,7 @@
          "url":"https://raw.githubusercontent.com/alan-turing-institute/plankton-cefas-scivision/test_data_catalog/scivision.yml",
          "format":"image",
          "labels_provided":true,
-         "institution":"Centre for Environment, Fisheries and Aquaculture Science (CEFAS)",
+         "institution":["Centre for Environment, Fisheries and Aquaculture Science (CEFAS)"],
          "tags":[
             "2D",
             "plankton",
