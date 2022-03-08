@@ -2,12 +2,19 @@
 
 Thank you for taking the time to contribute to this project. 🎉
 
-📚 Contents
+📙 Contents
 ---
-.. toctree::
-   :maxdepth: 2
-   
-   contributing
+
+- :ref:`my-reference-label`
+
+
+<!-- - 🤔 [What to contribute](#-what-to-contribute)
+- 🛠 [How to contribute](#-how-to-contribute)
+- 🎁 [Extending the scivision catalog](#-extending-the-scivision-catalog)
+- 📫 [Contact](#-contact)
+- ♻️ [License](#%EF%B8%8F-license) -->
+
+.. _my-reference-label:
 
 😎 Who should contribute
 ---
