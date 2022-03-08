@@ -80,6 +80,26 @@
          "tags":[
             "demo"
          ]
+      },
+      {
+         "name":"data-004",
+         "description":"Sample dataset of Plankton required to demonstrate the Rapid Identification of Plankton using Machine Learning Project undertaken by CEFAS, The Alan Turing Institute and Plankton Analytics Ltd",
+         "tasks":[
+            "classification"
+         ],
+         "domains":[
+            "computer-vision"
+         ],
+         "url":"https://raw.githubusercontent.com/alan-turing-institute/plankton-cefas-scivision/test_data_catalog/scivision.yml",
+         "format":"image",
+         "labels_provided":true,
+         "institution":"Centre for Environment, Fisheries and Aquaculture Science (CEFAS)",
+         "tags":[
+            "2D",
+            "plankton",
+            "ecology",
+            "environmental-science"
+         ]
       }
    ]
 }
