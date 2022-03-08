@@ -1,0 +1,1 @@
+.. mdinclude:: data_repository_template.md
