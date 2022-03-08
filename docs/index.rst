@@ -28,7 +28,7 @@ User's Guide
 
    how_to_install
    contributing
-   release_process
+   maintainers
 
 API Reference
 -------------
