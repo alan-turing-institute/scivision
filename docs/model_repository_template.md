@@ -13,7 +13,7 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
   - 📄 [Installation documentation](#-installation-documentation)
   - 📜 [Software licence](#-software-licence)
 - ✨ [Requirements for the scivision API](#-requirements-for-the-scivision-api)
-  - 🏗️ [Model code](#-model-code)
+  - 🏗️ [Model code](#%EF%B8%8F-model-code)
   - 🖋️ [Model config file](#%EF%B8%8F-model-config-file)
   - 🐍 [Installability with pip](#-installability-with-pip)
   <!-- - Model adapter code (TODO: for a later version of scivision)-->
