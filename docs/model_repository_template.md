@@ -1,6 +1,6 @@
 # Scivision model repository template
 
-In order for `scivision` to be able to load and run a computer vision (CV) model, a GitHub repository containing configuration for one or more models must first be created.
+In order for the `scivision` Python API to be able to load and run a computer vision (CV) model, a GitHub repository containing configuration for one or more models must first be created.
 
 This guide explains how to set up a GitHub repository for your CV model(s) compatible with scivision.
 
