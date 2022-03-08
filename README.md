@@ -80,9 +80,9 @@ Table of contents
 
 ## Contributing
 
-See the [Contributing Guide](./contributing.md).
+See the [Contributing Guide](./contributing.md), which contains information on how to set up and contribute computer vision models and scientific image datasets to the scivision catalog, and make them available via the scivision python API, as well as modify the source code.
 
-You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues).
+You may also consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues).
 
 ## Documentation
 
