@@ -1,27 +1,13 @@
-Developers can build and view the docs by doing the following:
+# Maintainers
 
-1. **Install requirements**:
-  
-  ```bash
-  pip install -r docs/requirements.txt
-  ```
+This document is intended for maintainers of the scivision project and includes the following how to's:
 
-2. **Build the docs**:
-  * In the top dir:
-  ```bash
-  sphinx-build -b html docs/ build/
-  ```
-  * The HTML will  be created in `build/`
+1. [Releasing a new version of the Python package](#python-package-releases)
+2. [Building the scivision documentation](#build-scivision-documentation)
 
-3. **Update the API documentation**:
-  * Edit (or add) to the docstring of the function in question
-  * Ensure that the module containing that function has been added to `docs/api.rst`
-  * Open `build/index.html` in a browser to view edits
-4. **Push the updates to the readthedocs site**:
-  * Create a pull request with your changes
-  * Upon merge to `main`, log into the https://readthedocs.org/projects/scivision/ dashboard as a maintainer and click `Builds->Build Version`
+If you are new to the `scivision` project and wish to become a maintainer for either the `PyPi` release or the  `readthedocs` documentation, send an email to scivision@turing.ac.uk
 
-## Releases
+## Python package releases
 
 Developers can release a new version of `scivision` with the following steps:
 
@@ -46,6 +32,27 @@ Developers can release a new version of `scivision` with the following steps:
     * Provide your pypi username and password
 6. **Commit changes to `setup.py` pull request to `main` branch**
 
-## Maintainers
+## Build scivision documentation
 
-If you are new to the `scivision` project and wish to become a maintainer for either the PyPi release or the  readthedocs documentation, send an email to scivision@turing.ac.uk
+Maintainers can build and view the docs by doing the following:
+
+1. **Install requirements**:
+  
+  ```bash
+  pip install -r docs/requirements.txt
+  ```
+
+2. **Build the docs**:
+  * In the top dir:
+  ```bash
+  sphinx-build -b html docs/ build/
+  ```
+  * The HTML will  be created in `build/`
+
+3. **Update the API documentation**:
+  * Edit (or add) to the docstring of the function in question
+  * Ensure that the module containing that function has been added to `docs/api.rst`
+  * Open `build/index.html` in a browser to view edits
+4. **Push the updates to the readthedocs site**:
+  * Create a pull request with your changes
+  * Upon merge to `main`, log into the https://readthedocs.org/projects/scivision/ dashboard as a maintainer and click `Builds->Build Version`
