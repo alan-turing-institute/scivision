@@ -9,6 +9,8 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 ## 📚 Contents
 .. toctree::
    :maxdepth: 2
+   
+   model_repository_template
 
 ## 🧱 Model repo structure
 

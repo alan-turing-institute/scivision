@@ -10,6 +10,8 @@ This is also a pre-requisite for adding the dataset to the scivision "catalog", 
 .. toctree::
    :maxdepth: 2
 
+   data_repository_template
+
 ## 🧱 Data repo structure
 
 We recommend to set up a data repo for scivision with the following structure, with the default name for the config file that the scivision API will recognise being `.scivision/data.yml`:

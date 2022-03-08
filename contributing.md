@@ -6,6 +6,8 @@ Thank you for taking the time to contribute to this project. 🎉
 ---
 .. toctree::
    :maxdepth: 2
+   
+   contributing
 
 😎 Who should contribute
 ---
