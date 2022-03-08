@@ -77,7 +77,7 @@ You can add models or datasets to the scivision catalog via the GitHub workflow 
 
 #### Preparing a model for inclusion in the catalog:
 
-In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per [this template](docs/model_repository_template.md).
+In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per the :ref:`model-repo-template`.
 
 This will enable you load your model via the scivision API and run it on matching datasets present in the catalog.
 
@@ -108,7 +108,7 @@ After you are done, create a pull request with the changes. A scivision maintain
 
 #### Preparing a dataset for inclusion in the catalog:
 
-In order to submit a dataset to the scivision catalog, you must first set up a GitHub repository containing important metadata as per [this template](docs/data_repository_template.md).
+In order to submit a dataset to the scivision catalog, you must first set up a GitHub repository containing important metadata as per the :ref:`data-repo-template`.
 
 This will enable you load your dataset via the scivision API and run matching models from catalog on it.
 

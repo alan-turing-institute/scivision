@@ -1,3 +1,5 @@
+.. _data-repo-template:
+
 # Scivision data repository template
 
 In order for `scivision` to be able to load a dataset and run a computer vision (CV) model on it, a GitHub repository containing configuration for one or more datasets must first be created.
