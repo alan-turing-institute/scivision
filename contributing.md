@@ -2,7 +2,7 @@
 
 Thank you for taking the time to contribute to this project. 🎉
 
-📙 Contents
+📚 Contents
 ---
 
 - :ref:`who-should-contribute`
