@@ -41,10 +41,10 @@ This tool aims to foster collaboration between **data owners** and **developers*
 📗 Table of contents
 -----------------
 
-- 🐨 [Installation and setup](#installation)
-- 🤔 [How to contribute?](#contributing)
-- 📚 [Documentation](#documentation)
-- 🔧 [Maintainer documentation](#maintainer-documentation)
+- 🐨 [Installation and setup](#-installation)
+- 🤔 [How to contribute?](#-contributing)
+- 📚 [Documentation](#-documentation)
+- 🔧 [Maintainer documentation](#-maintainer-documentation)
 
 ## 🐨 Installation
 
