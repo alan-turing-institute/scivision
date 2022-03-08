@@ -38,15 +38,15 @@ This tool aims to foster collaboration between **data owners** and **developers*
 * Creating and maintaining a community of interdisciplinary contributors
 * Providing a bridge between different data scales and formats
 
-Table of contents
+📗 Table of contents
 -----------------
 
-- [Installation and setup](#installation)
-- [How to contribute?](#contributing)
-- [Documentation](#documentation)
-- [Maintainer documentation](#maintainer-documentation)
+- 🐨 [Installation and setup](#installation)
+- 🤔 [How to contribute?](#contributing)
+- 📚 [Documentation](#documentation)
+- 🔧 [Maintainer documentation](#maintainer-documentation)
 
-## Installation
+## 🐨 Installation
 
 1. **Install scivision via [PyPi](https://pypi.org/project/scivision/)**: which tends to be the most user-friendly option:
 
@@ -77,16 +77,16 @@ Table of contents
     pip install -v -e .
     ```
 
-## Contributing
+## 🤔 Contributing
 
 See the [Contributing Guide](./contributing.md).
 
 You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues).
 
-## Documentation
+## 📚 Documentation
 
 User documentation for scivision is available at our [readthedocs](https://scivision.readthedocs.io/en/latest/) website.
 
-## Maintainer documentation
+## 🔧 Maintainer documentation
 
 See our maintainer documentation [here](docs/maintainer_docs.md), which explain how to update the scivision package and documentation.
