@@ -7,10 +7,14 @@ This guide explains how to set up a GitHub repository for your datasets compatib
 This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your data repo as per this guide.
 
 ## 📚 Contents
-.. toctree::
-   :maxdepth: 2
 
-   data_repository_template
+- :ref:`data-repo-structure`
+- :ref:`data-config-file`
+- :ref:`documentation`
+- :ref:`data-license`
+- :ref:`example-data-repos`
+
+.. _data-repo-structure:
 
 ## 🧱 Data repo structure
 
@@ -24,6 +28,8 @@ exampleuser/data_repo
 └───.scivision
 │   │   data.yml     
 ```
+
+.. _data-config-file:
 
 ## 🖋️ Data config file
 
@@ -56,12 +62,18 @@ In order to fully understand how this `data.yml` has been configured, you should
 
 The scivision API can accept a path to a locally stored data config file, or the GitHub repository containing it as specified in this guide. See the [load_dataset](https://scivision.readthedocs.io/en/latest/api.html#scivision.io.reader.load_dataset) function in the API docs.
 
+.. _documentation:
+
 ## 📄 Documentation
 
 A `README`, which includes helpful information on the dataset and its origin should be included. Without this, your dataset may not be accepted for inclusion in the scivision catalog.
 
+.. _data-license:
+
 ## 📜 Data licence
 
 You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
+
+.. _example-data-repos:
 
 ## 🗃️ Example data repos
