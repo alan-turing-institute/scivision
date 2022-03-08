@@ -85,7 +85,7 @@ You may consider starting or joining in with a [discussion](https://github.com/a
 
 ## 📚 Documentation
 
-User documentation for scivision is available at our [readthedocs](https://scivision.readthedocs.io/en/latest/) website.
+Documentation for scivision is available at our [readthedocs](https://scivision.readthedocs.io/en/latest/) website.
 
 ## 🔧 Maintainer documentation
 
