@@ -7,12 +7,8 @@ This guide explains how to set up a GitHub repository for your datasets compatib
 This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your data repo as per this guide.
 
 ## 📚 Contents
-
-- 🧱 [Data repo structure](#-data-repo-structure)
-- 🖋️ [Data config file](#%EF%B8%8F-data-config-file)
-- 📄 [Documentation](#-documentation)
-- 📜 [Software licence](#-software-licence)
-- 🗃️ [Example data repos](#%EF%B8%8F-example-data-repos)
+.. toctree::
+   :maxdepth: 2
 
 ## 🧱 Data repo structure
 

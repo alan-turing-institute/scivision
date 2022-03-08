@@ -7,20 +7,8 @@ This guide explains how to set up a GitHub repository for your CV model(s) compa
 This is also a pre-requisite for adding the model to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your model as per this guide.
 
 ## 📚 Contents
-
-- 🧱 [Model repo structure](#-model-repo-structure)
-- 📁 [Requirements for the scivision catalog](#-requirements-for-the-scivision-catalog)
-  - 📄 [Installation documentation](#-installation-documentation)
-  - 📜 [Software licence](#-software-licence)
-- ✨ [Requirements for the scivision API](#-requirements-for-the-scivision-api)
-  - 🏗️ [Model code](#%EF%B8%8F-model-code)
-  - 🖋️ [Model config file](#%EF%B8%8F-model-config-file)
-  - 🐍 [Installability with pip](#-installability-with-pip)
-  <!-- - Model adapter code (TODO: for a later version of scivision)-->
-- 🗂️ [Additional recommended components](#%EF%B8%8F-additional-recommended-components)
-  - 🧪 [Tests](#-tests)
-  - 📊 [Example data](#-example-data)
-- 🗃️ [Example model repos](#%EF%B8%8F-example-model-repos)
+.. toctree::
+   :maxdepth: 2
 
 ## 🧱 Model repo structure
 

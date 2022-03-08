@@ -2,15 +2,10 @@
 
 Thank you for taking the time to contribute to this project. 🎉
 
-📙 Contents
+📚 Contents
 ---
-
-- 😎 [Who should contribute](#-who-should-contribute)
-- 🤔 [What to contribute](#-what-to-contribute)
-- 🛠 [How to contribute](#-how-to-contribute)
-- 🎁 [Extending the scivision catalog](#-extending-the-scivision-catalog)
-- 📫 [Contact](#-contact)
-- ♻️ [License](#%EF%B8%8F-license)
+.. toctree::
+   :maxdepth: 2
 
 😎 Who should contribute
 ---
