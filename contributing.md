@@ -13,6 +13,7 @@ Thank you for taking the time to contribute to this project. 🎉
 - :ref:`license`
 
 .. _who-should-contribute:
+
 😎 Who should contribute
 ---
 
@@ -26,7 +27,8 @@ In particular we'd like to encourage contributions from the following people:
 
 Members of the first two groups should pay particular attention to the [extending the scivision catalog](#gift-extending-the-scivision-catalog) section of this guide.
 
-.. _what-to-contribute
+.. _what-to-contribute:
+
 🤔 What to contribute
 ---
 
@@ -46,7 +48,8 @@ We encourage programmers interested in the scivision package to submit bug-fixes
 
 To get started, please take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) and participate in ongoing [discussions](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
 
-.. _how-to-contribute
+.. _how-to-contribute:
+
 🛠 How to contribute
 ---
 
@@ -65,7 +68,8 @@ To get started, please take a look at our currently open [issues](https://github
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 
-.. _extending-the-scivision-catalog
+.. _extending-the-scivision-catalog:
+
 🎁 Extending the scivision catalog
 ---
 
@@ -134,14 +138,16 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
  
  After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
 
-.. _contact
+.. _contact:
+
 📫 Contact
 ---
 
 This project is maintained by a team of researchers at The Alan Turing Institute.
 For any organisation related queries or concerns, you can directly reach out to the project team by emailing [the Scivison maintainers](mailto:scivision@turing.ac.uk).
 
-.. _licence
+.. _licence:
+
 ♻️ License
 ---
 
