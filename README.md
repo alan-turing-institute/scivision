@@ -79,7 +79,7 @@ This tool aims to foster collaboration between **data owners** and **developers*
 
 ## 🤔 Contributing
 
-See the [Contributing Guide](./contributing.md).
+See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html).
 
 You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues).
 
