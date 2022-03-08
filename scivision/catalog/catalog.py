@@ -49,7 +49,7 @@ class CatalogDatasourceEntry(BaseModel, extra="forbid"):
     url: Union[AnyUrl, FileUrl]
     format: str
     labels_provided: bool
-    institution: Optional[str]
+    institution: Optional[Tuple[str, ...]]
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):
