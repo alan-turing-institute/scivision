@@ -24,21 +24,22 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 ## 🧱 Model repo structure
 
-The model repo should be roughly structured like so, where `exampleuser` is the GitHub user and `comp_vis` is the name of the repo that user has created, containing the model(s). The essential components for the repo are marked by an asterisk (*):
+The model repo should be roughly structured as in the diagram below, where `exampleuser` is the GitHub user and `comp_vis` is the name of the repo that user has created, containing the model(s).
+
+The essential components required for the model repo to be added to the scivision catalog are marked by an asterisk (`*`) and the requirements for the model(s) to be load-able via the scivision API are marked with two asterisks (`**`):
 
 ```
 exampleuser/comp_vis
 │   README           *
 │   LICENSE          *
-│   setup.py
+│   setup.py         **
 │   requirements.txt
 │   
 └───.scivision
-│   │   model.yml    *
+│   │   model.yml    **
 │   
 └───comp_vis
-│   │   model.py     *
-│   │   utils.py
+│   │   model.py     **
 │   │   __init__.py
 │   
 └───tests
