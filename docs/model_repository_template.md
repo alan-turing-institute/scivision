@@ -150,11 +150,11 @@ In scivision, once your model(s) have been included in the scivision catalog, pi
 
 ## 🗂️ Additional recommended components
 
-Non-essential components of the scivision model repository include:
+Some other components of a scivision model repository that we recommend, but which are not essential requirements for either the scivision catalog or API, include **tests** for your model code and **example data** for it to run on.
 
 ### 🧪 Tests
 
-Effective testing of code is vitally important to ensure the reliability of software, and in the context of scientific research code, the reproducibility analyses and results.
+Effective testing of code is vitally important to ensure the reliability of software, and in the context of scientific research code, the reproducibility of analyses and results.
 
 We recommend that models repos submitted to the scivision catalog are thoroughly tested. For more information of testing for research code, check out [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/testing.html) online handbook.
 
@@ -162,7 +162,7 @@ We recommend that models repos submitted to the scivision catalog are thoroughly
 
 We recommend including a directory with a small amount of test image data, in a format that can be used by the model(s) in the repo. This will be useful for scivision users who wish to try running your model(s).
 
-You could for example, include in the repo `README` some example code showing how to run your model(s) on the test data, or indeed a Jupyter notebook with this code that can be easily run.
+You could for example, include in the repo `README` some example code showing how to run your model(s) on the test data, or indeed a Jupyter notebook that does this, which can be easily run by anyone who comes across the repo.
 
 ## 🗃️ Example model repos
 
@@ -176,5 +176,5 @@ A simple test repository that demonstrates how to set up two models for use with
 
 A repository containing a pretrained ResNet-50 model for classification of plankton and example data.
 
-Note: the data is included as an intake catalog; see the [scivision data template](data_repository_template.md) for more information.
+Note: the example data is included as an intake catalog; see the [scivision data repo template](data_repository_template.md) for more information.
 
