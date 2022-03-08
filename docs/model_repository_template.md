@@ -116,11 +116,6 @@ It's also possible to specify multiple models from the same model repository. Fo
 
 You can include a `setup.py` to enable the model(s) to be installed via pip, which is neccessary for the scivision API to be able to load the model(s). For an explanation of how this works, see this [packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata) for Python. By additionally including a `requirements.txt` with the required packages for your model, you can make it so these are installed along with the model code.
 
-<details>
-<summary>
-Click here for an example.
-</summary><p></p>
-
 This example `setup.py` is taken from [alan-turing-institute/plankton-cefas-scivision](https://github.com/alan-turing-institute/plankton-cefas-scivision):
 
 ```python
@@ -143,8 +138,6 @@ setup(
     python_requires=">=3.7",
 )
 ```
-
-</details><p></p>
 
 In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the [API docs](https://scivision.readthedocs.io/en/latest/api.html) for details.
 
