@@ -44,7 +44,7 @@ Table of contents
 - [Installation and setup](#installation)
 - [How to contribute?](#contributing)
 - [Documentation](#documentation)
-- [Releases](#release-process)
+- [Maintainer documentation](#maintainer-documentation)
 
 ## Installation
 
@@ -85,8 +85,8 @@ You may consider starting or joining in with a [discussion](https://github.com/a
 
 ## Documentation
 
-Documentation is available at https://scivision.readthedocs.io/en/latest/
+User documentation for scivision is available at our [readthedocs](https://scivision.readthedocs.io/en/latest/) website.
 
-## Release process
+## Maintainer documentation
 
-See our release process in [here](docs/release_process.md).
+See our maintainer documentation [here](docs/maintainer_docs.md), which explain how to update the scivision package and documentation.
