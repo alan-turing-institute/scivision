@@ -89,4 +89,4 @@ User documentation for scivision is available at our [readthedocs](https://scivi
 
 ## 🔧 Maintainer documentation
 
-See our maintainer documentation [here](docs/maintainers.md), which explains how to update the scivision package and documentation.
+See our maintainer documentation [here](docs/maintainers.md), which explains how to update the scivision PyPI package and documentation.
