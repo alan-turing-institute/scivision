@@ -10,7 +10,7 @@ Thank you for taking the time to contribute to this project. 🎉
 - :ref:`how-to-contribute`
 - :ref:`extending-the-scivision-catalog`
 - :ref:`contact`
-- :ref:`license`
+- :ref:`licence-header`
 
 .. _who-should-contribute:
 
@@ -146,7 +146,7 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
 This project is maintained by a team of researchers at The Alan Turing Institute.
 For any organisation related queries or concerns, you can directly reach out to the project team by emailing [the Scivison maintainers](mailto:scivision@turing.ac.uk).
 
-.. _licence:
+.. _licence-header:
 
 ♻️ License
 ---
