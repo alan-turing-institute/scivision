@@ -10,10 +10,10 @@ This is also a pre-requisite for adding the model to the scivision "catalog", en
 
 - 🧱 [Model repo structure](#-model-repo-structure)
 - 📁 [Requirements for the scivision catalog](#-requirements-for-the-scivision-catalog)
-  - 🟢 [Model code](#-model-code)
   - 📄 [Installation documentation](#-installation-documentation)
   - 📜 [Software licence](#-software-licence)
 - ✨ [Requirements for the scivision API](#-requirements-for-the-scivision-api)
+  - 🏗️ [Model code](#-model-code)
   - 🖋️ [Model config file](#%EF%B8%8F-model-config-file)
   - 🐍 [Installability with pip](#-installability-with-pip)
   <!-- - Model adapter code (TODO: for a later version of scivision)-->
@@ -55,17 +55,7 @@ exampleuser/comp_vis
 
 ## 📁 Requirements for the scivision catalog
 
-The essential components of a scivision model repository include everything that is required to set up your model repository so it is suitable for inclusion in the scivision catalog.
-
-### 🟢 Model code
-
-It's common in Python packages to house the core package  code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#-model-repo-structure) above (i.e. `comp_vis/comp_vis/model.py`). However, as you'll see in the following section on the scivision model config, it is not essential to conform to this naming convention.
-
-What is required, is a script called `model.py` to be stored in a child directory of the model repo. This script  must either contain the model itself (i.e. both training and running the model), or import a pre-trained model from elsewhere.
-
-If you wish the model to be compatible with the scivision API, include a class within this script, which contains a prediction function that can be used to run the model on data.
-
-For examples, check out the [example model repos](#%EF%B8%8F-example-model-repos) section.
+The essential components of a scivision model repo include everything required for it to be added to the scivision catalog.
 
 ### 📄 Installation documentation
 
@@ -76,6 +66,18 @@ A `README`, which includes detailed instructions on how the model can be install
 You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-software.html) in The Turing Way online handbook.
 
 ## ✨ Requirements for the scivision API
+
+It's common in Python packages to house the core package  code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#-model-repo-structure) diagram above (i.e. `comp_vis/comp_vis`). 
+
+For your model(s) to be loadable by the scivision API, we additionally insist that you include a `model.py` in this child directory and set up a `model.yml` config file in a directory called `/.scivision`.
+
+### 🏗️ Model code
+
+The script called `model.py` must either contain the model itself (i.e. code that both trains and runs the model), or import a pre-trained model from elsewhere.
+
+If you wish the model to be compatible with the scivision API, include a class within this script, which contains a prediction function that can be used to run the model on data. You can include multiple classes for different models.
+
+For examples, check out the [example model repos](#%EF%B8%8F-example-model-repos) section.
 
 ### 🖋️ Model config file
 
