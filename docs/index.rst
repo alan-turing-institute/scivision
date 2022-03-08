@@ -28,7 +28,6 @@ User's Guide
 
    how_to_install
    contributing
-   maintainers
 
 API Reference
 -------------
