@@ -1,6 +1,6 @@
 # Maintainers
 
-This document is intended for maintainers of the scivision project and includes the following how to's:
+This document is intended for maintainers of the scivision project and includes the following how-tos:
 
 1. [Releasing a new version of the Python package](#python-package-releases)
 2. [Building the scivision documentation](#build-scivision-documentation)
