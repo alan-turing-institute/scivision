@@ -28,6 +28,8 @@ User's Guide
 
    how_to_install
    contributing
+   model_repository_template
+   data_repository_template
    release_process
 
 API Reference

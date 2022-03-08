@@ -1,1 +1,0 @@
-.. mdinclude:: model_repository_template.md
