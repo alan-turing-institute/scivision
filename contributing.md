@@ -77,7 +77,7 @@ This will enable you load your model via the scivision API and run it on matchin
 
 Once you have prepared a model for inclusion in the catalog, you can submit it via the following steps. Once your model submission is accepted, it will become available to other users of scivision.
 
-On a new branch of the scivision repository, add metadata for your computer vision model to the end of `models.json`, with the following format, incrementing the model number by one from the most recent entry. After you are done, create a pull request with the changes.
+Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add metadata for your computer vision model to the end of `models.json` found in (`scivision/scivision/catalog/data/`), with the following format, under `"entries"`.
 
 ```
   {
@@ -96,9 +96,11 @@ On a new branch of the scivision repository, add metadata for your computer visi
   }
 ```
 
+After you are done, create a pull request with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
+
 #### Preparing a dataset for inclusion in the catalog:
 
-In order to submit a dataset to the scivision catalog, you must first set a GitHub repository containing important metadata as per [this template](docs/data_repository_template.md).
+In order to submit a dataset to the scivision catalog, you must first set up a GitHub repository containing important metadata as per [this template](docs/data_repository_template.md).
 
 This will enable you load your dataset via the scivision API and run matching models from catalog on it.
 
@@ -107,6 +109,8 @@ This will enable you load your dataset via the scivision API and run matching mo
 Once you have prepared a dataset for inclusion in the catalog, you can submit it via the following steps. Once your submission is accepted, the dataset will become available to other users of scivision.
 
 On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
+
+Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add your dataset to the end of `datasources.json` (found in `scivision/scivision/catalog/data/`), with the following format, under `"entries"`.
 
 ```
   {
@@ -123,6 +127,8 @@ On a new branch of the scivision repository, add your dataset to the end of `dat
     ]
   }
  ```
+ 
+ After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
 
 📫 Contact
 ---
