@@ -25,7 +25,7 @@ In particular we'd like to encourage contributions from the following people:
 2. **Data providers** from diverse scientific fields
 3. **Programmers** interested in improving the scivision package
 
-Members of the first two groups should pay particular attention to the [extending the scivision catalog](#gift-extending-the-scivision-catalog) section of this guide.
+Members of the first two groups should pay particular attention to the :ref:`extending-the-scivision-catalog` section of this guide.
 
 .. _what-to-contribute:
 
@@ -40,7 +40,7 @@ Similarly, we call upon data providers from diverse scientific fields to conside
 
 Models and datasets from the catalog are matched based on the model task, data format and other labels.
 
-To understand how to submit a catalog entry (model or dataset), see: [Extending the scivision catalog](#gift-extending-the-scivision-catalog).
+To understand how to submit a catalog entry (model or dataset), see: :ref:`extending-the-scivision-catalog`.
 
 #### 2) Code improvements
 
@@ -73,7 +73,7 @@ To get started, please take a look at our currently open [issues](https://github
 🎁 Extending the scivision catalog
 ---
 
-You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see [How to contribute](#-how-to-contribute)).
+You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see :ref:`how-to-contribute`).
 
 #### Preparing a model for inclusion in the catalog:
 
