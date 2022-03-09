@@ -20,6 +20,13 @@ class TaskEnum(str, Enum):
 
 
 class CatalogModelEntry(BaseModel, extra="forbid"):
+    # tasks, institution and tags are Tuples (rather than Lists) so
+    # that they are immutable - Tuple is being used as an immutable
+    # sequence here. This means that these fields are hashable, which
+    # can be more convenient when included in a dataframe
+    # (e.g. unique()). Could consider using a Frozenset for these
+    # fields instead, since duplicates and ordering should not be
+    # significant.
     name: str
     description: Optional[str]
     tasks: Tuple[TaskEnum, ...]
@@ -28,7 +35,7 @@ class CatalogModelEntry(BaseModel, extra="forbid"):
     format: str
     pretrained: bool
     labels_required: bool
-    institution: Optional[str]
+    institution: Tuple[str, ...] = ()
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):
@@ -38,18 +45,20 @@ class CatalogModelEntry(BaseModel, extra="forbid"):
 class CatalogModels(BaseModel, extra="forbid"):
     catalog_type: str = "scivision model catalog"
     name: str
+    # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogModelEntry, ...]
 
 
 class CatalogDatasourceEntry(BaseModel, extra="forbid"):
     name: str
     description: Optional[str]
+    # Tuple: see comment on CatalogModelEntry
     tasks: Tuple[TaskEnum, ...]
     domains: Tuple[str, ...]
     url: Union[AnyUrl, FileUrl]
     format: str
     labels_provided: bool
-    institution: Optional[str]
+    institution: Tuple[str, ...] = ()
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):
@@ -59,6 +68,7 @@ class CatalogDatasourceEntry(BaseModel, extra="forbid"):
 class CatalogDatasources(BaseModel, extra="forbid"):
     catalog_type: str = "scivision datasource catalog"
     name: str
+    # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogDatasourceEntry, ...]
 
 
