@@ -197,3 +197,7 @@ A repository containing a pretrained ResNet-50 model for classification of plank
 
 Note: the example data is included as an intake catalog; see the [scivision data repo template](data_repository_template.md) for more information.
 
+### [Classification of plant patches/images using MapReader](https://github.com/alan-turing-institute/mapreader-plant-scivision)
+
+A repository that adapts the MapReader model to classification of plant patches. Example data included.
+
