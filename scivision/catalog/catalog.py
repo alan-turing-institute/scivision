@@ -28,7 +28,7 @@ class CatalogModelEntry(BaseModel, extra="forbid"):
     format: str
     pretrained: bool
     labels_required: bool
-    institution: Tuple[str, ...]
+    institution: Tuple[str, ...] = ()
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):
@@ -49,7 +49,7 @@ class CatalogDatasourceEntry(BaseModel, extra="forbid"):
     url: Union[AnyUrl, FileUrl]
     format: str
     labels_provided: bool
-    institution: Tuple[str, ...]
+    institution: Tuple[str, ...] = ()
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):
