@@ -44,7 +44,6 @@ This tool aims to foster collaboration between **data owners** and **developers*
 - 🐨 [Installation and setup](#-installation)
 - 🤔 [How to contribute?](#-contributing)
 - 📚 [Documentation](#-documentation)
-- 🔧 [Maintainer documentation](#-maintainer-documentation)
 
 ## 🐨 Installation
 
@@ -79,14 +78,12 @@ This tool aims to foster collaboration between **data owners** and **developers*
 
 ## 🤔 Contributing
 
-See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html).
+See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html).
 
-You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues).
+You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues) in this GitHub repo.
 
 ## 📚 Documentation
 
-Documentation for scivision is available at our [readthedocs](https://scivision.readthedocs.io/en/latest/) website.
+In in addition to the Contributing Guide, the [readthedocs](https://scivision.readthedocs.io/en/latest/) website contains information about using the scivision python package API and updating the scivision catalog.
 
-## 🔧 Maintainer documentation
-
-See our maintainer documentation [here](docs/maintainers.md), which explains how to update the scivision PyPI package and documentation.
+It also includes our maintainer documentation, which explains how to update the scivision package on PyPI and update the documentation.
