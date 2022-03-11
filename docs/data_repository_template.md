@@ -72,7 +72,7 @@ A `README`, which includes helpful information on the dataset and its origin sho
 
 .. _data-license:
 
-## 📜 Data licence
+## 📜 Data license
 
 You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
 
