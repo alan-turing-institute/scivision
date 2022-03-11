@@ -31,6 +31,7 @@ User's Guide
    model_repository_template
    data_repository_template
    release_process
+   maintainers
 
 API Reference
 -------------
