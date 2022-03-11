@@ -1,85 +1,262 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 import pkgutil
-from typing import Dict, List
-
 import pandas as pd
+import os
+from abc import ABC, abstractmethod
+from pathlib import Path
+from typing import Any, Dict, Optional, Tuple, Union
+from pydantic import BaseModel, AnyUrl, FileUrl
+from enum import Enum
 
-from .base_catalog import BaseCatalog
-from ..koala import koala
+
+class TaskEnum(str, Enum):
+    classificiation = "classification"
+    object_detection = "object-detection"
+    segmentation = "segmentation"
+    thresholding = "thresholding"
+    other = "other"
 
 
-class PandasCatalog(BaseCatalog):
-    def __init__(self):
+class CatalogModelEntry(BaseModel, extra="forbid"):
+    # tasks, institution and tags are Tuples (rather than Lists) so
+    # that they are immutable - Tuple is being used as an immutable
+    # sequence here. This means that these fields are hashable, which
+    # can be more convenient when included in a dataframe
+    # (e.g. unique()). Could consider using a Frozenset for these
+    # fields instead, since duplicates and ordering should not be
+    # significant.
+    name: str
+    description: Optional[str]
+    tasks: Tuple[TaskEnum, ...]
+    url: Union[AnyUrl, FileUrl]
+    pkg_url: str  # may be a PyPI package name (not an AnyUrl)
+    format: str
+    pretrained: bool
+    labels_required: bool
+    institution: Tuple[str, ...] = ()
+    tags: Tuple[str, ...]
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+
+class CatalogModels(BaseModel, extra="forbid"):
+    catalog_type: str = "scivision model catalog"
+    name: str
+    # Tuple: see comment on CatalogModelEntry
+    entries: Tuple[CatalogModelEntry, ...]
+
+
+class CatalogDatasourceEntry(BaseModel, extra="forbid"):
+    name: str
+    description: Optional[str]
+    # Tuple: see comment on CatalogModelEntry
+    tasks: Tuple[TaskEnum, ...]
+    domains: Tuple[str, ...]
+    url: Union[AnyUrl, FileUrl]
+    format: str
+    labels_provided: bool
+    institution: Tuple[str, ...] = ()
+    tags: Tuple[str, ...]
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+
+class CatalogDatasources(BaseModel, extra="forbid"):
+    catalog_type: str = "scivision datasource catalog"
+    name: str
+    # Tuple: see comment on CatalogModelEntry
+    entries: Tuple[CatalogDatasourceEntry, ...]
+
+
+def _coerce_datasources_catalog(
+    datasources: Union[CatalogDatasources, os.PathLike, None]
+) -> CatalogDatasources:
+    """Returns a CatalogDatasources determined from the argument: either
+    the one passed, or one loaded from a file
+    """
+    if isinstance(datasources, CatalogDatasources):
+        return datasources
+    elif isinstance(datasources, (bytes, str, os.PathLike)):
+        datasources_raw = Path(datasources).read_text()
+        return CatalogDatasources.parse_raw(datasources_raw)
+    elif datasources is None:
+        datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
+        return CatalogDatasources.parse_raw(datasources_raw)
+    else:
+        raise TypeError("Cannot load datasource from unsupported type")
+
+
+def _coerce_models_catalog(
+    models: Union[CatalogModels, os.PathLike, None]
+) -> CatalogModels:
+    """Returns a CatalogModels determined from the argument: either the
+    one passed, or one loaded from a file
+    """
+    if isinstance(models, CatalogModels):
+        return models
+    elif isinstance(models, (bytes, str, os.PathLike)):
+        models_raw = Path(models).read_text()
+        return CatalogModels.parse_raw(models_raw)
+    elif models is None:
+        models_raw = pkgutil.get_data(__name__, "data/models.json")
+        return CatalogModels.parse_raw(models_raw)
+    else:
+        raise TypeError("Cannot load datasource from unsupported type")
+
+
+class QueryResult(ABC):
+    @abstractmethod
+    def to_dataframe(self) -> pd.DataFrame:
+        ...
+
+    def to_dict(self) -> Dict[str, Any]:
+        return self.to_dataframe().to_dict(orient="records")
+
+
+class PandasQueryResult(QueryResult):
+    def __init__(self, result: pd.DataFrame):
+        self._result = result
+
+    def to_dataframe(self) -> pd.DataFrame:
+        return self._result
+
+
+class PandasCatalog:
+    def __init__(self, datasources=None, models=None):
         super().__init__()
 
-        datasources_uri = pkgutil.get_data(__name__, "data/datasources.json")
-        models_uri = pkgutil.get_data(__name__, "data/models.json")
+        if isinstance(datasources, pd.DataFrame):
+            self._datasources = datasources
+        else:
+            datasources_cat = _coerce_datasources_catalog(datasources)
+            self._datasources = pd.DataFrame(
+                [ent.dict() for ent in datasources_cat.entries]
+            )
 
-        datasources = pd.read_json(datasources_uri, orient="index")
-        models = pd.read_json(models_uri, orient="index")
-
-        self._models = models.explode("task").explode("data_format")
-        self._datasources = datasources.explode("task").explode("format")
+        if isinstance(models, pd.DataFrame):
+            self._models = models
+        else:
+            models_cat = _coerce_models_catalog(models)
+            self._models = pd.DataFrame([ent.dict() for ent in models_cat.entries])
 
     @property
-    def _database(self) -> pd.DataFrame:
-        return self._models.merge(
-            self._datasources,
-            suffixes=("_model", "_data"),
-            how="inner",
-            left_on=["task", "data_format"],
-            right_on=["task", "format"],
+    def models(self) -> PandasQueryResult:
+        return PandasQueryResult(self._models)
+
+    @property
+    def datasources(self) -> PandasQueryResult:
+        return PandasQueryResult(self._datasources)
+
+    def _compatible_models(self, datasource) -> PandasQueryResult:
+        models_compatible_format = self._models[
+            self._models.format == datasource["format"]
+        ]
+
+        models_compatible_format_labels = models_compatible_format[
+            datasource["labels_provided"] | ~models_compatible_format.labels_required
+        ]
+
+        datasource_tasks = pd.DataFrame(datasource["tasks"], columns=["tasks"])
+        models_compatible_tasks = (
+            self._models[["name", "tasks"]]
+            .explode("tasks")
+            .merge(datasource_tasks, on="tasks", suffixes=("_model", "_datasource"),)
+            .name.drop_duplicates()
         )
+        result_df = models_compatible_format_labels[
+            models_compatible_format_labels.name.isin(models_compatible_tasks)
+        ]
 
-    def _query(self, query: Dict[str, str]) -> list:
-        """Query the Pandas dataframe."""
-        queries = [f"{k} == '{v}'" for k, v in query.items()]
-        query_str = " & ".join(queries)
-        result = self._database.query(query_str)
-        return result.to_dict("records")
+        return PandasQueryResult(result_df)
 
-    @property
-    def keys(self) -> List[str]:
-        """Return the query keys."""
-        return self._database.columns.tolist()
+    # Similar to _compatible_models, but for datasources.  Can't
+    # cleanly combine these two functions, due to the asymmetry
+    # between a model's 'labels_required', and datasource 'labels_provided'.
+    # In particular, a model that doesn't require labels can still use
+    # a datasource that provides them (if they are otherwise
+    # compatible), but not vice versa.  For this reason, the distinct
+    # names 'labels_provided' and 'labels_required' are used.
+    def _compatible_datasources(self, model) -> PandasQueryResult:
+        datasources_compatible_format = self._datasources[
+            self._datasources.format == model["format"]
+        ]
 
-    def values(self, key: str) -> List[str]:
-        """Return the unique values for a query key."""
-        if key not in self.keys:
-            raise ValueError(f"Key {key} not found.")
-        values = self._database[key].tolist()
-        return list(set(values))
+        datasources_compatible_format_labels = datasources_compatible_format[
+            datasources_compatible_format.labels_provided | ~model["labels_required"]
+        ]
+
+        model_tasks = pd.DataFrame(model["tasks"], columns=["tasks"])
+        datasources_compatible_tasks = (
+            self._datasources[["name", "tasks"]]
+            .explode("tasks")
+            .merge(model_tasks, on="tasks", suffixes=("_model", "_datasource"),)
+            .name.drop_duplicates()
+        )
+        result_df = datasources_compatible_format_labels[
+            datasources_compatible_format_labels.name.isin(datasources_compatible_tasks)
+        ]
+
+        return PandasQueryResult(result_df)
+
+    def compatible_models(self, datasource) -> PandasQueryResult:
+        """Return all models that are compatible with datasource
+
+        Parameters
+        ----------
+        datasource : str or dict-like
+
+        Any dictionary-like (including CatalogDatasourceEntry) that
+        has keys 'format', 'tasks' and 'labels_provided', representing
+        these properties of the datasource.
+
+        If a string is passed, this is used to look up the datasource
+        (in `self._datasources`).
+
+        Returns
+        -------
+        result: QueryResult
+
+        A QueryResult instance containing the models compatible with the
+        given datasource (convertible to a dict or pd.DataFrame).
+
+        """
+        if isinstance(datasource, str):
+            return self._compatible_models(
+                self._datasources.set_index("name").loc[datasource]
+            )
+        else:
+            return self._compatible_models(datasource)
+
+    def compatible_datasources(self, model) -> PandasQueryResult:
+        """Return all models that are compatible with datasource
+
+        Parameters
+        ----------
+        model : str or dict-like
+
+        Any dictionary-like (including CatalogModelEntry) that has
+        keys 'format', 'tasks' and 'labels_required', representing
+        these properties of the model.
+
+        If a string is passed, this is used to look up the model (in `self._models`).
+
+        Returns
+        -------
+        result: QueryResult
+
+        A QueryResult instance containing the datasources compatible with the given model (
+
+        """
+        if isinstance(model, str):
+            return self._compatible_datasources(
+                self._models.set_index("name").loc[model]
+            )
+        else:
+            return self._compatible_datasources(model)
 
 
-_catalog = PandasCatalog()
-
-
-@koala
-def query(query: Dict[str, str]) -> list:
-    """Search the catalog using the query.
-
-    Parameters
-    ----------
-    query : dict
-        A dictionary describing the search query as key value pairs.
-
-    Returns
-    -------
-    result : list
-        A list of catalog entries matching the search requirements.
-    """
-
-    result = _catalog.query(query)
-    return result
-
-
-@koala
-def keys() -> List[str]:
-    return _catalog.keys
-
-
-@koala
-def values(key: str) -> List[str]:
-    return _catalog.values(key)
+default_catalog = PandasCatalog()
