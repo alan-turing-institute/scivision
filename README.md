@@ -78,7 +78,7 @@ This tool aims to foster collaboration between **data owners** and **developers*
 
 ## 🤔 Contributing
 
-See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html).
+See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html), which contains information on how to set up and contribute computer vision models and scientific image datasets to the scivision catalog, and make them available via the scivision python API, as well as modify the source code.
 
 You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues) in this GitHub repo.
 
