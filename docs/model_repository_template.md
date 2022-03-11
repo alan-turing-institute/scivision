@@ -201,3 +201,7 @@ Note: the example data is included as an intake catalog; see the [scivision data
 
 A repository that adapts the MapReader model to classification of plant patches. Example data included.
 
+### [ODIN](https://github.com/alan-turing-institute/odin)
+
+Object Detection in Images with Noise (ODIN).
+
