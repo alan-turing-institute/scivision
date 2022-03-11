@@ -1,11 +1,15 @@
+.. _maintainers:
+
 # Maintainers
 
 This document is intended for maintainers of the scivision project and includes the following how-tos:
 
-1. [Releasing a new version of the Python package](#python-package-releases)
-2. [Building the scivision documentation](#build-scivision-documentation)
+1. :ref:`releasing`
+2. :ref:`building`
 
 If you are new to the `scivision` project and wish to become a maintainer for either the `PyPi` release or the  `readthedocs` documentation, send an email to scivision@turing.ac.uk
+
+.. _releasing:
 
 ## Python package releases
 
@@ -31,6 +35,8 @@ Developers can release a new version of `scivision` with the following steps:
    ```
     * Provide your pypi username and password
 6. **Commit changes to `setup.py` pull request to `main` branch**
+
+.. _building:
 
 ## Build scivision documentation
 
