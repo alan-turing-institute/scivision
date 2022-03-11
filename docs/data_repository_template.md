@@ -14,7 +14,7 @@ This is also a pre-requisite for adding the dataset to the scivision "catalog", 
 - :ref:`data-config-file`
 - :ref:`documentation`
 - :ref:`data-license`
-- :ref:`example-data-repos`
+<!-- - :ref:`example-data-repos` -->
 
 .. _data-repo-structure:
 
@@ -76,6 +76,6 @@ A `README`, which includes helpful information on the dataset and its origin sho
 
 You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
 
-.. _example-data-repos:
+<!-- .. _example-data-repos:
 
-## 🗃️ Example data repos
+## 🗃️ Example data repos -->
