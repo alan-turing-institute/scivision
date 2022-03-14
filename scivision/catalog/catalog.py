@@ -208,20 +208,17 @@ class PandasCatalog:
         Parameters
         ----------
         datasource : str or dict-like
-
-        Any dictionary-like (including CatalogDatasourceEntry) that
-        has keys 'format', 'tasks' and 'labels_provided', representing
-        these properties of the datasource.
-
-        If a string is passed, this is used to look up the datasource
-        (in `self._datasources`).
+            Any dictionary-like (including CatalogDatasourceEntry) that
+            has keys 'format', 'tasks' and 'labels_provided', representing
+            these properties of the datasource.
+            If a string is passed, this is used to look up the datasource
+            (in `self._datasources`).
 
         Returns
         -------
         result: QueryResult
-
-        A QueryResult instance containing the models compatible with the
-        given datasource (convertible to a dict or pd.DataFrame).
+            A QueryResult instance containing the models compatible with the
+            given datasource (convertible to a dict or pd.DataFrame).
 
         """
         if isinstance(datasource, str):
@@ -232,23 +229,21 @@ class PandasCatalog:
             return self._compatible_models(datasource)
 
     def compatible_datasources(self, model) -> PandasQueryResult:
-        """Return all models that are compatible with datasource
+        """Return all datasources that are compatible with model
 
         Parameters
         ----------
         model : str or dict-like
-
-        Any dictionary-like (including CatalogModelEntry) that has
-        keys 'format', 'tasks' and 'labels_required', representing
-        these properties of the model.
-
-        If a string is passed, this is used to look up the model (in `self._models`).
+            Any dictionary-like (including CatalogModelEntry) that has
+            keys 'format', 'tasks' and 'labels_required', representing
+            these properties of the model.
+            If a string is passed, this is used to look up the model (in `self._models`).
 
         Returns
         -------
         result: QueryResult
-
-        A QueryResult instance containing the datasources compatible with the given model (
+            A QueryResult instance containing the datasources compatible with
+            the given model (convertible to a dict or pd.DataFrame).
 
         """
         if isinstance(model, str):
