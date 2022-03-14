@@ -229,7 +229,7 @@ class PandasCatalog:
             return self._compatible_models(datasource)
 
     def compatible_datasources(self, model) -> PandasQueryResult:
-        """Return all models that are compatible with datasource
+        """Return all datasources that are compatible with model
 
         Parameters
         ----------
