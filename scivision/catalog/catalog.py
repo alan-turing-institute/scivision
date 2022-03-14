@@ -242,7 +242,8 @@ class PandasCatalog:
         Returns
         -------
         result: QueryResult
-            A QueryResult instance containing the datasources compatible with the given model (
+            A QueryResult instance containing the datasources compatible with
+            the given model (convertible to a dict or pd.DataFrame).
 
         """
         if isinstance(model, str):
