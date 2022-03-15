@@ -44,7 +44,7 @@ This tool aims to foster collaboration between **data owners** and **developers*
 - 🐨 [Installation and setup](#-installation)
 - 🤔 [How to contribute?](#-contributing)
 - 📚 [Documentation](#-documentation)
-- 📒 [Demo notebook](#-notebook)
+- 📒 [Demo notebook](#-demo-notebook)
 
 ## 🐨 Installation
 
