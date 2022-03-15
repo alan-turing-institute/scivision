@@ -1,5 +1,5 @@
 name: test
-url: https://github.com/quantumjot/scivision-test-plugin.git
+url: https://github.com/alan-turing-institute/scivision-test-plugin.git
 import: scivision_test_plugin
 model: ImageNetModel
 args:
