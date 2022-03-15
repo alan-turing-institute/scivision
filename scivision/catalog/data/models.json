@@ -80,6 +80,18 @@
             "labels_required":false,
             "institution":["alan-turing-institute", "cefas", "plankton-analytics-ltd"],
             "tags": ["2D", "plankton", "ecology", "environmental-science"]
+        },
+        {
+            "name":"vegde-detector",
+            "description":"automated detection of coastal vegetation edges in remote sensing imagery",
+            "tasks":["segmentation"],
+            "url":"https://github.com/MartinSJRogers/VEdge_Detector",
+            "pkg_url":"git+https://github.com/MartinSJRogers/VEdge_Detector@scivision",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["cambridge-university", "birkbeck-university"],
+            "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
         }
     ]
 }
