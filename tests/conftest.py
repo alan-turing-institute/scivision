@@ -10,23 +10,12 @@ file = fsspec.open('tests/test_model_scivision.yml')
 with file as config_file:
     stream = config_file.read()
     imagenet_model_config = yaml.safe_load(stream)
-    
-file = fsspec.open('tests/test_model_scivision_alt.yml')
-with file as config_file:
-    stream = config_file.read()
-    imagenet_model_config_alt = yaml.safe_load(stream)
 
 
 # Assign the model config to global var
 @pytest.fixture(scope='session', autouse=True)
 def IMAGENET_MODEL_CONFIG(request):
     return imagenet_model_config
-    
-    
-# Assign the alternative model config to global var
-@pytest.fixture(scope='session', autouse=True)
-def IMAGENET_MODEL_CONFIG_ALT(request):
-    return imagenet_model_config_alt
 
 
 # Create the model
