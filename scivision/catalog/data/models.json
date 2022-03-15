@@ -49,8 +49,8 @@
         {
             "name":"scivision-test-plugin",
             "tasks":["object-detection"],
-            "url":"https://github.com/quantumjot/scivision-test-plugin",
-            "pkg_url":"git+https://github.com/quantumjot/scivision-test-plugin.git@master",
+            "url":"https://github.com/alan-turing-institute/scivision-test-plugin",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision-test-plugin.git@master",
             "format":"image",
             "pretrained":true,
             "labels_required":false,

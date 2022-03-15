@@ -73,7 +73,7 @@
          "domains":[
             "computer-vision"
          ],
-         "url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cutest_Koala.jpg/262px-Cutest_Koala.jpg",
+         "url":"https://github.com/alan-turing-institute/scivision-test-data",
          "format":"image",
          "labels_provided":true,
          "institution":["Wikipedia by Erik Veland"],
