@@ -170,7 +170,7 @@ def load_pretrained_model(
         assert "X" in config["prediction_fn"]["args"].keys()
 
         # try to install the package if necessary
-        install_package(config, allow_install=allow_install)
+        install_package(config, allow_install=allow_install, branch=branch)
 
         loaded_models.append(PretrainedModel(config))
     if load_multiple:

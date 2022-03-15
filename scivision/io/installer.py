@@ -30,13 +30,13 @@ def _install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 
-def install_package(config: dict, allow_install: bool = False):
+def install_package(config: dict, allow_install: bool = False, branch: str = "main"):
     """Install the python package if it doesn't exist."""
 
     # now check to see whether the package exists
     if not _package_exists(config):
 
-        package = package_from_config(config)
+        package = package_from_config(config, branch)
 
         if allow_install:
             _install(package)
