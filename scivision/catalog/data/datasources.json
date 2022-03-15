@@ -110,7 +110,7 @@
          "domains":[
             "computer-vision", "earth-observation", "ecology"
          ],
-         "url":"https://raw.githubusercontent.com/MartinSJRogers/VEdge_Detector/scivision/.scivision/data.yml",
+         "url":"https://github.com/MartinSJRogers/VEdge_Detector",
          "format":"image",
          "labels_provided":false,
          "institution":["Cambridge University"],
