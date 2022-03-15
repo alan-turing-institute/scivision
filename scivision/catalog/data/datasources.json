@@ -100,6 +100,27 @@
             "ecology",
             "environmental-science"
          ]
+      },
+      {
+         "name":"data-005",
+         "description":"Sample dataset of satellite imagery required to demonstrate the VEdge detector authored by Rogers et al. (2021)",
+         "tasks":[
+            "classification", "segmentation"
+         ],
+         "domains":[
+            "computer-vision", "earth-observation", "ecology"
+         ],
+         "url":"https://raw.githubusercontent.com/MartinSJRogers/VEdge_Detector/scivision/.scivision/data.yml",
+         "format":"image",
+         "labels_provided":false,
+         "institution":["Cambridge University"],
+         "tags":[
+            "2D",
+            "satellite",
+            "remote-sensing",
+            "ecology",
+            "environmental-science"
+         ]
       }
    ]
 }
