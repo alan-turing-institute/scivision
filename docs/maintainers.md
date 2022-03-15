@@ -11,7 +11,7 @@ If you are new to the `scivision` project and wish to become a maintainer for ei
 
 .. _releasing:
 
-## Python package releases
+## 🐍 Python package releases
 
 Developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can release a new version of the package with the following steps:
 
@@ -42,7 +42,7 @@ Developers of `scivision` with maintainer access to https://github.com/alan-turi
 
 .. _building:
 
-## Build scivision documentation
+## 📓 Build scivision documentation
 
 Maintainers of this `readthedocs` site can build and view the docs by doing the following:
 
