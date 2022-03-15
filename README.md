@@ -11,7 +11,7 @@
     <a href="https://pypi.org/project/scivision/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/scivision">
     </a>
-    <a href="https://mybinder.org/v2/gh/alan-turing-institute/scivision/0.1.2?labpath=pretrained_imagenet_scivision_example.ipynb">
+    <a href="https://mybinder.org/v2/gh/alan-turing-institute/scivision/0.1.2?labpath=scivision-core-functionality.ipynb">
         <img alt="Binder" src="https://mybinder.org/badge_logo.svg">
     </a>
     <a href="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml">
@@ -44,6 +44,7 @@ This tool aims to foster collaboration between **data owners** and **developers*
 - 🐨 [Installation and setup](#-installation)
 - 🤔 [How to contribute?](#-contributing)
 - 📚 [Documentation](#-documentation)
+- 📒 [Demo notebook](#-notebook)
 
 ## 🐨 Installation
 
@@ -87,3 +88,10 @@ You may consider starting or joining in with a [discussion](https://github.com/a
 In in addition to the Contributing Guide, the [readthedocs](https://scivision.readthedocs.io/en/latest/) website contains information about using the scivision python package API and updating the scivision catalog.
 
 It also includes our maintainer documentation, which explains how to update the scivision package on PyPI and update the documentation.
+
+## 📒 Demo notebook
+
+To understand how scivision works, we recommend reading the documentation linked above, but you can also view an interactive demonstration here:
+<a href="https://mybinder.org/v2/gh/alan-turing-institute/scivision/0.1.2?labpath=scivision-core-functionality.ipynb">
+    <img alt="Binder" src="https://mybinder.org/badge_logo.svg">
+</a>
