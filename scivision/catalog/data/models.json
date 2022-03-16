@@ -82,7 +82,7 @@
             "tags": ["2D", "plankton", "ecology", "environmental-science"]
         },
         {
-            "name":"vegde-detector",
+            "name":"vedge-detector",
             "description":"automated detection of coastal vegetation edges in remote sensing imagery",
             "tasks":["segmentation"],
             "url":"https://github.com/MartinSJRogers/VEdge_Detector_scivision",
