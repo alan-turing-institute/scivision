@@ -32,10 +32,10 @@ Developers of `scivision` with maintainer access to https://github.com/alan-turi
    ```bash
    python -m build
    ```
-5. Upload the release:
+5. Upload the release, substituring `<version>` with the new version number:
 
    ```bash
-   python -m twine upload dist/*
+   python -m twine upload dist/<version>*
    ```
     * Note: You'll need to provide your PyPi username and password
 6. Commit changes to `setup.py` pull request to the `main` branch of https://github.com/alan-turing-institute/scivision
