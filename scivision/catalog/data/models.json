@@ -49,8 +49,8 @@
         {
             "name":"scivision-test-plugin",
             "tasks":["object-detection"],
-            "url":"https://github.com/quantumjot/scivision-test-plugin",
-            "pkg_url":"git+https://github.com/quantumjot/scivision-test-plugin.git@master",
+            "url":"https://github.com/alan-turing-institute/scivision-test-plugin",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision-test-plugin.git@master",
             "format":"image",
             "pretrained":true,
             "labels_required":false,
@@ -80,6 +80,18 @@
             "labels_required":false,
             "institution":["alan-turing-institute", "cefas", "plankton-analytics-ltd"],
             "tags": ["2D", "plankton", "ecology", "environmental-science"]
+        },
+        {
+            "name":"vedge-detector",
+            "description":"automated detection of coastal vegetation edges in remote sensing imagery",
+            "tasks":["segmentation"],
+            "url":"https://github.com/MartinSJRogers/VEdge_Detector_scivision",
+            "pkg_url":"git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["cambridge-university", "birkbeck-university"],
+            "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
         }
     ]
 }

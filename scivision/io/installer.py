@@ -16,12 +16,12 @@ def _package_exists(config: dict) -> bool:
     return True
 
 
-def package_from_config(config: dict) -> str:
+def package_from_config(config: dict, branch: str = "main") -> str:
     """Given a config return the pip install string."""
     install_str = config["url"]
     if install_str.endswith(".git"):
         install_str = install_str[:-4]
-    install_branch = config.get("github_branch", "main")
+    install_branch = config.get("github_branch", branch)
     return f"git+{install_str}@{install_branch}#egg={config['import']}"
 
 
@@ -30,13 +30,13 @@ def _install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 
-def install_package(config: dict, allow_install: bool = False):
+def install_package(config: dict, allow_install: bool = False, branch: str = "main"):
     """Install the python package if it doesn't exist."""
 
     # now check to see whether the package exists
     if not _package_exists(config):
 
-        package = package_from_config(config)
+        package = package_from_config(config, branch)
 
         if allow_install:
             _install(package)

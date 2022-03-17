@@ -73,7 +73,7 @@
          "domains":[
             "computer-vision"
          ],
-         "url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cutest_Koala.jpg/262px-Cutest_Koala.jpg",
+         "url":"https://github.com/alan-turing-institute/scivision-test-data",
          "format":"image",
          "labels_provided":true,
          "institution":["Wikipedia by Erik Veland"],
@@ -97,6 +97,27 @@
          "tags":[
             "2D",
             "plankton",
+            "ecology",
+            "environmental-science"
+         ]
+      },
+      {
+         "name":"data-005",
+         "description":"Sample dataset of satellite imagery required to demonstrate the VEdge detector authored by Rogers et al. (2021)",
+         "tasks":[
+            "classification", "segmentation"
+         ],
+         "domains":[
+            "computer-vision", "earth-observation", "ecology"
+         ],
+         "url":"https://github.com/MartinSJRogers/VEdge_Detector_scivision",
+         "format":"image",
+         "labels_provided":false,
+         "institution":["Cambridge University"],
+         "tags":[
+            "2D",
+            "satellite",
+            "remote-sensing",
             "ecology",
             "environmental-science"
          ]

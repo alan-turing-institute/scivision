@@ -11,11 +11,11 @@ If you are new to the `scivision` project and wish to become a maintainer for ei
 
 .. _releasing:
 
-## Python package releases
+## 🐍 Python package releases
 
 Developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can release a new version of the package with the following steps:
 
-1. Increment the `version` in `setup.py` and any other metadata that differs for the new release.
+1. On a new branch of the `scivision` repo, increment the `version` in `setup.py` and any other metadata that differs for the new release.
 
 2. Make sure you have a working python 3 installation. Check your version with:
     
@@ -32,17 +32,17 @@ Developers of `scivision` with maintainer access to https://github.com/alan-turi
    ```bash
    python -m build
    ```
-5. Upload the release:
+5. Upload the release, substituting `<version>` with the new version number:
 
    ```bash
-   python -m twine upload dist/*
+   python -m twine upload dist/<version>*
    ```
     * Note: You'll need to provide your PyPi username and password
-6. Commit changes to `setup.py` pull request to the `main` branch of https://github.com/alan-turing-institute/scivision
+6. Commit changes to `setup.py` and pull request to the `main` branch of https://github.com/alan-turing-institute/scivision
 
 .. _building:
 
-## Build scivision documentation
+## 📓 Build scivision documentation
 
 Maintainers of this `readthedocs` site can build and view the docs by doing the following:
 
