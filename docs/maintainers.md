@@ -32,7 +32,7 @@ Developers of `scivision` with maintainer access to https://github.com/alan-turi
    ```bash
    python -m build
    ```
-5. Upload the release, substituring `<version>` with the new version number:
+5. Upload the release, substituting `<version>` with the new version number:
 
    ```bash
    python -m twine upload dist/<version>*
