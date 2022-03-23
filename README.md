@@ -14,6 +14,9 @@
     <a href="https://mybinder.org/v2/gh/alan-turing-institute/scivision/HEAD?labpath=examples%2Fscivision-core-functionality.ipynb">
         <img alt="Binder" src="https://mybinder.org/badge_logo.svg">
     </a>
+    <a href="https://github.com/scivision-gallery">
+        <img alt="Scivision Gallery" src=https://img.shields.io/badge/Scivision-Gallery-pink?logo=GitHub">
+    </a>
     <a href="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml">
         <img alt="Continuous integration badge" src="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg">
     </a>
