@@ -55,13 +55,6 @@ def test_load_dataset_local_zip():
     assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
 
 
-def test_load_dataset_remote_zip():
-    """Test that an intake catalog is generated from a remote yml (zenodo) which loads from a zip file and can be converted to xarray."""
-    cat = load_dataset('tests/test_dataset_remote_zip_scivision.yml')
-    assert type(cat) == intake.catalog.local.YAMLFileCatalog
-    assert type(cat.plankton().to_dask()) == xarray.core.dataarray.DataArray
-
-
 def test_get_model_configs():
     """Test that a config with multiple models is split into separate configs."""
     path = 'tests/test_multiple_models_scivision.yml'
