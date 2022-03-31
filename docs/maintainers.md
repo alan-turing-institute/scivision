@@ -7,13 +7,30 @@ This document is intended for maintainers of the scivision project and includes 
 1. :ref:`releasing`
 2. :ref:`building`
 
-If you are new to the `scivision` project and wish to become a maintainer for either the `PyPi` release or the  `readthedocs` documentation, send an email to scivision@turing.ac.uk
+If you are new to the `scivision` project and wish to become a maintainer for either the `PyPI` release or the  `readthedocs` documentation, send an email to scivision@turing.ac.uk
 
 .. _releasing:
 
 ## 🐍 Python package releases
 
-Developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can release a new version of the package with the following steps:
+A new release of the scivision package will be uploaded to PyPI each time a tagged commit is pushed to the main branch of the [scivision GitHub repo](https://github.com/alan-turing-institute/scivision). In order to trigger this automated process, do the following:
+
+1. On a new branch of the `scivision` repo containing your changes to be included in the release, tag the latest commit like so (where `<tag_name>` is an appropriate version number - see [PyPI](https://pypi.org/project/scivision/)):
+    
+    ```bash
+    git tag <tag_name> <commit_sha>
+    ```
+
+2. Push both the changes on the branch and the tags to GitHub:
+    
+    ```bash
+    git push --tags
+    git push   # or however you would usually push a branch
+    ```
+
+3. Create a pull request. Upon merge to the `main` branch, the new release should be uploaded.
+
+Alternatively, developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can manually release a new version of the package with the following steps:
 
 1. On a new branch of the `scivision` repo, increment the `version` in `setup.py` and any other metadata that differs for the new release.
 
@@ -37,7 +54,7 @@ Developers of `scivision` with maintainer access to https://github.com/alan-turi
    ```bash
    python -m twine upload dist/<version>*
    ```
-    * Note: You'll need to provide your PyPi username and password
+    * Note: You'll need to provide your PyPI username and password
 6. Commit changes to `setup.py` and pull request to the `main` branch of https://github.com/alan-turing-institute/scivision
 
 .. _building:
