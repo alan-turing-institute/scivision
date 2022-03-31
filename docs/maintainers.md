@@ -13,6 +13,22 @@ If you are new to the `scivision` project and wish to become a maintainer for ei
 
 ## 🐍 Python package releases
 
+A new release of the scivision package will be uploaded to PyPi each time a tagged commit is pushed to the main branch of the [scivision GitHub repo](https://github.com/alan-turing-institute/scivision). In order to trigger this automated process, do the following:
+
+1. On a new branch of the `scivision` repo containing your changes to be included in the release, tag the latest commit like so (where `<tag_name>` is an appropriate version number - see [PyPI](https://pypi.org/project/scivision/)):
+    
+    ```bash
+    git tag <tag_name> <commit_sha>
+    ```
+
+2. Push the branch to GitHub:
+    
+    ```bash
+    git push --tags
+    ```
+
+3. Create a pull request. Upon merge to the `main` branch, the new release should be uploaded.
+
 Developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can release a new version of the package with the following steps:
 
 1. On a new branch of the `scivision` repo, increment the `version` in `setup.py` and any other metadata that differs for the new release.
