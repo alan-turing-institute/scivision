@@ -21,10 +21,11 @@ A new release of the scivision package will be uploaded to PyPI each time a tagg
     git tag <tag_name> <commit_sha>
     ```
 
-2. Push the branch to GitHub:
+2. Push both the changes on the branch and the tags to GitHub:
     
     ```bash
     git push --tags
+    git push   # or however you would usually push a branch
     ```
 
 3. Create a pull request. Upon merge to the `main` branch, the new release should be uploaded.
