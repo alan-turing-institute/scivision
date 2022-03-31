@@ -17,7 +17,7 @@ A new release of the scivision package will be uploaded to PyPI each time a tagg
 
 1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `setup.py` and any other metadata that differs for the new release.
 
-2. Create a pull request. Upon merge to the `main` branch, make a note of the most recent commit hash (this will be the squash commit from your PR).
+2. Create a pull request. After merge to the `main` branch, make a note of the most recent commit hash on `main` (this will be the squash commit from your PR).
 
 3. Tag the commit like so, where `<tag_name>` is the new version number you added to `setup.py` and `<commit_sha>` is the latest commit on the main branch:
     
