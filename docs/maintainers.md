@@ -29,7 +29,7 @@ A new release of the scivision package will be uploaded to PyPi each time a tagg
 
 3. Create a pull request. Upon merge to the `main` branch, the new release should be uploaded.
 
-Developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can release a new version of the package with the following steps:
+Developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can manually release a new version of the package with the following steps:
 
 1. On a new branch of the `scivision` repo, increment the `version` in `setup.py` and any other metadata that differs for the new release.
 
