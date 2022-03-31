@@ -15,24 +15,27 @@ If you are new to the `scivision` project and wish to become a maintainer for ei
 
 A new release of the scivision package will be uploaded to PyPI each time a tagged commit is pushed to the main branch of the [scivision GitHub repo](https://github.com/alan-turing-institute/scivision). In order to trigger this automated process, do the following:
 
-1. On a new branch of the `scivision` repo containing your changes to be included in the release, tag the latest commit like so (where `<tag_name>` is an appropriate version number - see [PyPI](https://pypi.org/project/scivision/)):
+1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `setup.py` and any other metadata that differs for the new release.
+
+2. Create a pull request. After merge to the `main` branch, make a note of the most recent commit hash on `main` (this will be the squash commit from your PR).
+
+3. Tag the commit like so, where `<tag_name>` is the new version number you added to `setup.py` and `<commit_sha>` is the latest commit on the main branch:
     
     ```bash
+    git checkout main
+    git pull
     git tag <tag_name> <commit_sha>
     ```
 
-2. Push both the changes on the branch and the tags to GitHub:
+4. Push the new tag to GitHub, triggering the package to build and push to PyPI:
     
     ```bash
     git push --tags
-    git push   # or however you would usually push a branch
     ```
-
-3. Create a pull request. Upon merge to the `main` branch, the new release should be uploaded.
 
 Alternatively, developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can manually release a new version of the package with the following steps:
 
-1. On a new branch of the `scivision` repo, increment the `version` in `setup.py` and any other metadata that differs for the new release.
+1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `setup.py` and any other metadata that differs for the new release.
 
 2. Make sure you have a working python 3 installation. Check your version with:
     
