@@ -10,9 +10,7 @@ Scivision has its documentation hosted on Read the Docs.
     :alt: oplab_pipeline logo
     :align: center
 
-The `scivision` project aims to be a well-documented and generalisable framework for applying computer vision methods to a wide range of scientific image data.
-
-In particular, it aims to connect **computer vision model developers** to **data providers** from diverse scientific fields.
+The `scivision` project aims to connect **computer vision model developers** to **image data providers** from diverse scientific fields.
 
 It's core features are:
 
