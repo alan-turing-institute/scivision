@@ -1,4 +1,4 @@
-User guide
+👩‍💻 User guide
 ==========
 
 📚 **Contents:**
@@ -8,7 +8,7 @@ User guide
 
 .. _install:
 
-How to install
+⬇️ Installation
 --------------
 
 Scivision is a Python package. You can install the latest version from [PyPi](https://pypi.org/project/scivision/) with pip:
@@ -19,5 +19,5 @@ Scivision is a Python package. You can install the latest version from [PyPi](ht
 
 .. _getting_started:
 
-Getting started
+🧪 Getting started
 ---------------

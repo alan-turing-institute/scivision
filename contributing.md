@@ -1,4 +1,4 @@
-# Contributing to scivision
+# 🎉 Contributing to scivision
 
 Thank you for taking the time to contribute to the scivision project. 🎉
 

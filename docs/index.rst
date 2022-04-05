@@ -26,8 +26,8 @@ Furthermore, there are notebook examples (including binder links) available from
 
 The GitHub repository for the scivision code base can be found at: https://github.com/alan-turing-institute/scivision
 
-Contents
---------
+📚 Contents
+-----------
 
 .. toctree::
    :maxdepth: 2

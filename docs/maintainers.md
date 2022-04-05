@@ -1,6 +1,6 @@
 .. _maintainers:
 
-# Maintainers
+# 🤓 Maintainers
 
 This document is intended for maintainers of the scivision project and includes the following how-tos:
 
