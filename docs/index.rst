@@ -39,15 +39,8 @@ The GitHub repository for the scivision code base can be found at: https://githu
    maintainers
    api
 
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-Motivation
-----------
+📷 Motivation
+-------------
 
 The scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>`_. It aims to become an open source software community that achieves the following:
 
@@ -67,3 +60,10 @@ For any organisation related queries or concerns, you can directly reach out to 
 ----------
 
 You can read about the license `here <https://github.com/alan-turing-institute/scivision/blob/main/LICENSE>`_.
+
+📋 Indices and tables
+---------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
