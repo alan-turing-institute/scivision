@@ -24,6 +24,8 @@ To understand how scivision works, we recommend reading this readthedocs documen
 
 Furthermore, there are notebook examples (including binder links) available from some of the research projects using scivision available at: https://github.com/scivision-gallery
 
+The GitHub repository for the scivision code base can be found at: https://github.com/alan-turing-institute/scivision
+
 Contents
 --------
 
