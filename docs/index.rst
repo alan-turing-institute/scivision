@@ -47,7 +47,7 @@ Indices and tables
 Motivation
 ----------
 
-The scivision project was conceived at [The Alan Turing Institute](turing.ac.uk). It aims to become an open source software community that achieves the following:
+The scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>`_. It aims to become an open source software community that achieves the following:
 
 - Empowering scientific domain experts to easily access and integrate the latest computer vision tools
 - Enabling algorithm developers to distribute their tools to users across scientific fields
