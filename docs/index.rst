@@ -1,8 +1,8 @@
 .. oplab_pipeline documentation master file, created by
    sphinx-quickstart on Thu May  7 19:32:18 2020.
 
-scivision: A toolkit for scientific image analysis
-===================================================
+*scivision*: A toolkit for scientific image analysis
+======================================================
 
 Scivision has its documentation hosted on Read the Docs.
 
@@ -25,7 +25,8 @@ To understand how scivision works, we recommend reading this readthedocs documen
 Furthermore, there are notebook examples (including binder links) available from some of the research projects using scivision available at: https://github.com/scivision-gallery
 
 Contents
-------------
+--------
+
 .. toctree::
    :maxdepth: 2
 
@@ -37,8 +38,19 @@ Contents
    api
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+Motivation
+----------
+
+The scivision project was conceived at [The Alan Turing Institute](turing.ac.uk). It aims to become an open source software community that achieves the following:
+
+- Empowering scientific domain experts to easily access and integrate the latest computer vision tools
+- Enabling algorithm developers to distribute their tools to users across scientific fields
+- Evolving with a focus on the needs and priorities of both developers and users
+- Creating and maintaining a community of interdisciplinary contributors
+- Providing a bridge between different data scales and formats
