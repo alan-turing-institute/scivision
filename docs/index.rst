@@ -26,7 +26,7 @@ To understand how scivision works, we recommend reading this readthedocs documen
 
 Furthermore, there are notebook examples (including binder links) available from some of the research projects using scivision available at: https://github.com/scivision-gallery
 
-User's Guide
+Contents
 ------------
 .. toctree::
    :maxdepth: 2
