@@ -32,14 +32,14 @@
     <br/>
 </p>
 
-`scivision` aims to be a well-documented and generalisable Python framework for applying computer vision methods to a wide range of scientific imagery.
+The `scivision` project aims to connect **computer vision model developers** to **image data providers** from diverse scientific fields.
 
-This tool aims to foster collaboration between **data owners** and **developers** by:
-* Empowering scientific domain experts to easily access and integrate the latest CV tools
-* Enabling algorithm developers to distribute their tools to users across scientific fields
-* Evolving with a focus on the needs and priorities of both developers and users
-* Creating and maintaining a community of interdisciplinary contributors
-* Providing a bridge between different data scales and formats
+It's core features are:
+
+1. The scivision **[catalog](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data)**, a database of models and datasets which can be matched on key features
+2. The scivision **[API](https://scivision.readthedocs.io/en/latest/api.html)**, which can be used to load and run datasets and models in a Python environment, as well as search the catalog
+
+To understand how scivision works, we recommend reading the [documentation](#documentation).
 
 📗 Table of contents
 -----------------
