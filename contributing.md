@@ -2,8 +2,7 @@
 
 Thank you for taking the time to contribute to the scivision project. 🎉
 
-📚 Contents
----
+📚 **Contents:**
 
 - :ref:`who-should-contribute`
 - :ref:`what-to-contribute`

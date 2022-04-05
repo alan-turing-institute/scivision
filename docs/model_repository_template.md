@@ -8,7 +8,7 @@ This guide explains how to set up a GitHub repository for your CV model(s) compa
 
 This is also a pre-requisite for adding the model to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your model as per this guide.
 
-## 📚 Contents
+📚 **Contents:**
 
 - :ref:`model-repo-structure`
 - :ref:`catalog`
