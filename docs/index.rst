@@ -31,7 +31,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   how_to_install
+   user_guide
    contributing
    model_repository_template
    data_repository_template
