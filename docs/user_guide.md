@@ -7,6 +7,7 @@
 
 - :ref:`install`
 - :ref:`getting_started`
+- :ref:`catalog-section`
 
 .. _install:
 
@@ -35,7 +36,7 @@ A Jupyter notebook demonstrating this functionality can be found [on GitHub](htt
    
 In brief, the notebook demonstrates the aforementioned five lines of code like so:
 
-1. Loading a pretrained (ImageNet) model, which was previously added to the scivision catalog with the name "scivision-test-plugin" (as per :ref:`extending-the-scivision-catalog`)
+1. Loading a pretrained (ImageNet) model, which was previously added to the scivision catalog with the name "scivision-test-plugin"
     `model = load_pretrained_model('/path/to/model/repo')`
 2. Using the "default" scivision catalog to find a matching dataset, which the loaded model can be run on
     `default_catalog.compatible_datasources(<model name>)`
@@ -46,6 +47,20 @@ In brief, the notebook demonstrates the aforementioned five lines of code like s
 
 If you counted just 4 lines of code there, well spotted! The fifth would be `default_catalog.compatible_models(<dataset name>)` which works in the same way as `compatible_datasources`, just reversed. See :ref:`api-docs` for more details.
 
+.. _catalog-section:
 
+📖 Catalog of models and datasets
+------------------------------
+
+The models and datasets you find when searching the "default" scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data).
+
+To understand how these external sources are configured for compatibility with scivision, consult the following sections of this documentation:
+
+- :ref:`model-repo-template`
+- :ref:`data-repo-template`
+
+To understand how to contribute new models and data sources to the scivision catalog, check out:
+
+- :ref:`extending-the-scivision-catalog`
 
     
