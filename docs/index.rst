@@ -33,11 +33,11 @@ The GitHub repository for the scivision code base can be found at: https://githu
    :maxdepth: 2
 
    user_guide
+   api
    contributing
    model_repository_template
    data_repository_template
    maintainers
-   api
 
 📷 Motivation
 -------------
