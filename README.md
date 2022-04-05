@@ -36,7 +36,7 @@ The `scivision` project aims to connect **computer vision model developers** to 
 
 It's core features are:
 
-1. The scivision **[catalog](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data)**, a database of models and datasets which can be matched on key features
+1. The scivision **[catalog](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data)**, a repository of models and datasets which can be matched on key features
 2. The scivision **[API](https://scivision.readthedocs.io/en/latest/api.html)**, which can be used to load and run datasets and models in a Python environment, as well as search the catalog
 
 To understand how scivision works, we recommend reading the [documentation](#documentation).

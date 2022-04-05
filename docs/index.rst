@@ -14,8 +14,8 @@ The `scivision` project aims to connect **computer vision model developers** to 
 
 It's core features are:
 
-1. The scivision **catalog**, a database of models and datasets which can be matched on key features
-2. The scivision :ref:`api-docs`, which can be used to load and run datasets and models in a Python environment, as well as search the catalog
+1. The scivision **catalog**, a repository of models and datasets which can be matched on key features
+2. The scivision **API**, which can be used to load and run datasets and models in a Python environment, as well as search the catalog
 
 To understand how scivision works, we recommend reading this readthedocs documentation, but you can also view an interactive demonstration here:
 
