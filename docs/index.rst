@@ -56,3 +56,14 @@ The scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>
 - Evolving with a focus on the needs and priorities of both developers and users
 - Creating and maintaining a community of interdisciplinary contributors
 - Providing a bridge between different data scales and formats
+
+📫 Contact
+----------
+
+This project is maintained by a team of researchers at The Alan Turing Institute.
+For any organisation related queries or concerns, you can directly reach out to the project team by emailing `the Scivison maintainers <mailto:scivision@turing.ac.uk>`_.
+
+♻️ License
+----------
+
+You can read about the license `here <https://github.com/alan-turing-institute/scivision/blob/main/LICENSE>`_.
