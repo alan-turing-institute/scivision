@@ -44,13 +44,11 @@ This Scivision documentation is hosted on `Read the Docs <https://scivision.read
 📷 Background
 -------------
 
-The scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>`_. It aims to become an open source software community that achieves the following:
+The Scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>`_, as an open software community that:
 
-- Empowering scientific domain experts to easily access and integrate the latest computer vision tools
-- Enabling algorithm developers to distribute their tools to users across scientific fields
-- Evolving with a focus on the needs and priorities of both developers and users
-- Creating and maintaining a community of interdisciplinary contributors
-- Providing a bridge between different data scales and formats
+- Empowers scientific domain experts to easily access and integrate the latest computer vision tools
+- Provides a bridge between computer vision algorithms and datasets from different academic disciplines
+- Enables algorithm developers and data providers to distribute their methods and datasets
 
 📫 Contact
 ----------
