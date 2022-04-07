@@ -53,8 +53,9 @@ The Scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>
 📫 Contact
 ----------
 
-This project is maintained by a team of researchers at The Alan Turing Institute.
-For any organisation related queries or concerns, you can directly reach out to the project team by emailing `the Scivison maintainers <mailto:scivision@turing.ac.uk>`_.
+Consider starting a `GitHub discussion <https://github.com/alan-turing-institute/scivision/discussions>`_ or opening an `issue <https://github.com/alan-turing-institute/scivision/issues/new/choose>`_.
+
+To contact the project team directly, email `the Scivison maintainers <mailto:scivision@turing.ac.uk>`_.
 
 ♻️ License
 ----------
