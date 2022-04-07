@@ -41,7 +41,7 @@ This Scivision documentation is hosted on `Read the Docs <https://scivision.read
    data_repository_template
    maintainers
 
-📷 Motivation
+📷 Background
 -------------
 
 The scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>`_. It aims to become an open source software community that achieves the following:
