@@ -60,7 +60,7 @@ To contact the project team directly, email `the Scivison maintainers <mailto:sc
 ♻️ License
 ----------
 
-You can read about the license `here <https://github.com/alan-turing-institute/scivision/blob/main/LICENSE>`_.
+The Scivision software is released under a `BSD Licence <https://github.com/alan-turing-institute/scivision/blob/main/LICENSE>`_.
 
 📋 Indices and tables
 ---------------------
