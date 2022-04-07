@@ -1,7 +1,7 @@
 .. oplab_pipeline documentation master file, created by
    sphinx-quickstart on Thu May  7 19:32:18 2020.
 
-*scivision*: A toolkit for scientific image analysis
+*Scivision*: A toolkit for scientific image analysis
 ======================================================
 
 Scivision has its documentation hosted on Read the Docs.
