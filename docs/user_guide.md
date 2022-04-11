@@ -25,7 +25,7 @@ Scivision is a Python package. You can install the latest version from [PyPi](ht
 🧪 Getting started
 ---------------
 
-The creators of scivision envisioned it as enabling users to quickly run several lines of Python code to either find computer vision models that can be run on their scientific image dataset(s), or find datasets that their models can be run on.
+Scivision enables users to quickly find computer vision models that can be run on matching scientific image dataset(s), or find datasets that models can be run on. This can be achieved by running several lines of Python code.
 
 The core functionality of the Python package API is documented in the :ref:`api-docs` documentation and a Jupyter notebook demonstrating it can be found [on GitHub](https://github.com/alan-turing-institute/scivision/blob/main/examples/scivision-core-functionality.ipynb) and can be interactively run via clicking the following link to Binder:
 
