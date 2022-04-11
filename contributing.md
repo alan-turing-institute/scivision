@@ -1,9 +1,8 @@
-# Contributing to scivision
+# 🎉 Contributing to scivision
 
 Thank you for taking the time to contribute to the scivision project. 🎉
 
-📚 Contents
----
+📚 **Contents:**
 
 - :ref:`who-should-contribute`
 - :ref:`what-to-contribute`
@@ -137,18 +136,3 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
  ```
  
  After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
-
-.. _contact:
-
-📫 Contact
----
-
-This project is maintained by a team of researchers at The Alan Turing Institute.
-For any organisation related queries or concerns, you can directly reach out to the project team by emailing [the Scivison maintainers](mailto:scivision@turing.ac.uk).
-
-.. _licence-header:
-
-♻️ License
----
-
-You can read about the license [here](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE).
