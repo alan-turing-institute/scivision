@@ -43,8 +43,6 @@ In brief, the notebook demonstrates the aforementioned five lines of code like s
 4. Running the model on the data, performing simple model inference
     `model.predict(<loaded data>)`
 
-If you counted just 4 lines of code there, well spotted! The fifth would be `default_catalog.compatible_models(<dataset name>)` which works in the same way as `compatible_datasources`, just reversed. See :ref:`api-docs` for more details.
-
 .. _catalog-section:
 
 📖 Catalog of models and datasets
