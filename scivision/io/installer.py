@@ -30,9 +30,10 @@ def _install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
     
     
-def _uninstall(package):
-    """Install a package using pip."""
-    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", package])
+def _uninstall(github_url):
+    """Uninstall a package using pip."""
+    package_name = github_url.split('/')[-1]
+    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", package_name])
 
 
 def install_package(config: dict, allow_install: bool = False, branch: str = "main"):
@@ -40,7 +41,7 @@ def install_package(config: dict, allow_install: bool = False, branch: str = "ma
     package = package_from_config(config, branch)
     if _package_exists(config):  # only reinstall if allow_install is True
         if allow_install:
-            _uninstall(package)
+            _uninstall(config['url'])
             _install(package)
     else:
         if allow_install:
