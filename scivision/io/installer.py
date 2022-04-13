@@ -28,16 +28,21 @@ def package_from_config(config: dict, branch: str = "main") -> str:
 def _install(package):
     """Install a package using pip."""
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    
+    
+def _uninstall(package):
+    """Install a package using pip."""
+    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", package])
 
 
 def install_package(config: dict, allow_install: bool = False, branch: str = "main"):
     """Install the python package if it doesn't exist."""
-
-    # now check to see whether the package exists
-    if not _package_exists(config):
-
-        package = package_from_config(config, branch)
-
+    package = package_from_config(config, branch)
+    if _package_exists(config):  # only reinstall if allow_install is True
+        if allow_install:
+            _uninstall(package)
+            _install(package)
+    else:
         if allow_install:
             _install(package)
         else:
