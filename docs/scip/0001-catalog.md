@@ -1,11 +1,14 @@
----
-slug: 1
-title: 1/Catalog
-status: raw
-editor: ots22
----
+# 1/Catalog
 
-# Catalog
+## Metadata
+
+Editor:
+  ots22
+
+Status (raw | draft | stable | deprecated | retired):
+  raw
+
+## Description
 
 A _scivision catalog_ is a collection of metadata about (pre-trained) computer vision models and image datasests.  This document describes the JSON representation of the catalog. 
 

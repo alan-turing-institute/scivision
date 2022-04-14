@@ -1,11 +1,15 @@
-Scivision Improvement Proposals (SCIPs)
-=======================================
+About Scivision Improvement Proposals (SCIPs)
+=============================================
+
+What is a SCIP?
+---------------
 
 A SCIP, or *Scivision Improvement Proposal*, is a document describing a *standard* for the project: either one that has been accepted and adopted, or that has been suggested.  It is similar to an RFC (Request for Comments) used in other projects, or a PEP (Python Enhancement Proposal) in the Python ecosystem.  A SCIP could describe:
-  - software architecture
-  - an interface or API that the software exposes
-  - a file format
-  - a process or way of working together.
+
+    * software architecture
+    * an interface or API that the software exposes
+    * a file format
+    * a process or way of working together.
 
 SCIPs that have been adopted (whose *status* is 'stable') complement the project documentation, where relevant SCIPs can be linked and referenced.  Unlike the documentation, they are intended as *normative specifications*, and can be used by implementors to understand the intended behaviour of the system.
 
@@ -31,7 +35,7 @@ We use the `Consensus Oriented Specification System <https://rfc.unprotocols.org
 In summary, the steps to follow, from proposal to adoption, are listed below. Feel free to ask on the `discussions board <https://github.com/alan-turing-institute/scivision/discussions>`_ if you need any help with any part of this process.
 
  #. Fork/clone this repository
- #. Copy the `template SCIP <scip/0000-template.md>`_ to a file in `docs/scip <./docs/scip>`_ (using the next available number for the filename: something like ``0123-short-name.md``)
+ #. Copy the template from ``docs/scip/0000-template.md`` to a new file in ``docs/scip`` (relative to the project root).  Use the next available number for the filename, for example ``0123-short-name.md``
  #. Add your GitHub username to the ``editor`` field (or the username of whoever has agreed to be the editor)
  #. Give it a short, descriptive title, and optionally add any draft text to the relevant sections of the document
  #. Open a pull request into this repository
@@ -40,4 +44,5 @@ In summary, the steps to follow, from proposal to adoption, are listed below. Fe
  #. Consider `discussing <https://github.com/alan-turing-institute/scivision/discussions>`_ the proposal with the community, and requesting feedback or edits from  others as pull requests into this repository
  #. When it is ready for work to begin on an implementation, change (via pull request) the status to ``draft``
  #. Once there is broad agreement that it should be adopted (and a working implementation, for code changes), change the status to ``stable``.
+
      * Substantial edits should not be made to SCIPs whose status is ``stable``.  Instead, create a new one as a replacement (using this process), perhaps copying and modifying any relevant text, and eventually deprecating/retiring the original.

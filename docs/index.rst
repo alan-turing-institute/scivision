@@ -39,9 +39,9 @@ This Scivision documentation is hosted on `Read the Docs <https://scivision.read
    user_guide
    api
    contributing
-   scips
    model_repository_template
    data_repository_template
+   scip_index
    maintainers
 
 📷 Background
