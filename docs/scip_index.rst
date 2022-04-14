@@ -1,5 +1,5 @@
 🦘 SCIPI: The Scivision Improvement Proposal Index
-===============================================
+==================================================
 
 .. toctree::
    :maxdepth: 2
