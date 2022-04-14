@@ -14,43 +14,50 @@ Thank you for taking the time to contribute to the scivision project. 🎉
 😎 Who should contribute
 ---
 
-The scivision project is being developed openly and invites contributions from anyone with prior experience in computer vision or scientific disciplines represented in the project.
+The scivision project is being developed openly and invites contributions from anyone interested in computer vision or scientific data, who agrees with the goal of making models and datasets more accessible and discoverable across disciplines!
 
-In particular we'd like to encourage contributions from the following people:
+The following contributions are particularly welcome:
 
-1. **Model developers** of computer vision models
-2. **Data providers** from diverse scientific fields
-3. **Programmers** interested in improving the scivision package
-
-Members of the first two groups should pay particular attention to the :ref:`extending-the-scivision-catalog` section of this guide.
+* **Computer vision models** for the model catalog, whether new or existing
+* **Data sources** for the data catalog, from the sciences or humanities
+* New features or other code improvements to the scivision package itself
+* Bug reports
 
 .. _what-to-contribute:
 
 🤔 What to contribute
 ---
 
-#### 1) Catalog contributions
+#### Catalog contributions
 
-We call upon the developers of computer vision **models** to make a submission to the scivision catalog. Submitting your model will allow scivision users to query the catalog for datasets on which your model can be run, or to find your model based on their own dataset submission.
+Submit a model or dataset to the catalog so that they are discoverable by other scivision users when querying the catalog.
 
-Similarly, we call upon data providers from diverse scientific fields to consider submitting open **datasets** to the catalog.
+See :ref:`extending-the-scivision-catalog`.
 
-Models and datasets from the catalog are matched based on the model task, data format and other labels.
+#### Bug reports
 
-To understand how to submit a catalog entry (model or dataset), see: :ref:`extending-the-scivision-catalog`.
+First, please check the [open issues](https://github.com/alan-turing-institute/scivision/issues) in case the bug has already been reported.
 
-#### 2) Code improvements
+If not, then [open a new issue here](https://github.com/alan-turing-institute/scivision/issues/new/choose).
 
-We encourage programmers interested in the scivision package to submit bug-fixes, new code features and documentation improvements (including fixing any typos and broken links).
+#### Code and documentation contributions
 
-To get started, please take a look at our currently open [issues](https://github.com/alan-turing-institute/scivision/issues) and participate in ongoing [discussions](https://github.com/alan-turing-institute/scivision/discussions) by commenting. Feel free to open a new issue to suggest a feature, or let us know about any bugs you encounter.
+Additional features, code quality improvements, issues, typos, documentation improvements are all welcome.
+
+To get started:
+ * Consider starting a [discussion](https://github.com/alan-turing-institute/scivision/discussions), to get feedback on your idea, or participating in an ongoing one
+ * Look for any relevant [issues](https://github.com/alan-turing-institute/scivision/issues).
+
+Pull requests are welcome: see :ref:`how-to-contribute` which describes our workflow.
+
+For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scips`.  Feel free to ask for advice about this in an issue/discussion.
 
 .. _how-to-contribute:
 
-🛠 How to contribute
+🛠 How to contribute changes to this repository
 ---
 
-- To contribute to this repository, open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
+- Open a [Pull Request](https://github.com/alan-turing-institute/scivision/pulls).
 
 - Our basic workflow is [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).  In particular:
   - The branch `main` always contain the latest working version of the package.
@@ -70,15 +77,15 @@ To get started, please take a look at our currently open [issues](https://github
 🎁 Extending the scivision catalog
 ---
 
-You can add models or datasets to the scivision catalog via the GitHub workflow discussed in this guide (see :ref:`how-to-contribute`).
+You can add models or datasets to the scivision catalog via the GitHub workflow described above.
 
-#### Preparing a model for inclusion in the catalog:
+#### Preparing a model for inclusion in the catalog
 
 In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per the :ref:`model-repo-template`.
 
 This will enable you load your model via the scivision API and run it on matching datasets present in the catalog.
 
-#### Submitting your model to the catalog:
+#### Submitting your model to the catalog
 
 Once you have prepared a model for inclusion in the catalog, you can submit it via the following steps. Once your model submission is accepted, it will become available to other users of scivision.
 
@@ -103,13 +110,13 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
 
 After you are done, create a pull request with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
 
-#### Preparing a dataset for inclusion in the catalog:
+#### Preparing a dataset for inclusion in the catalog
 
 In order to submit a dataset to the scivision catalog, you must first set up a GitHub repository containing important metadata as per the :ref:`data-repo-template`.
 
 This will enable you load your dataset via the scivision API and run matching models from catalog on it.
 
-#### Adding a new dataset to the catalog:
+#### Adding a new dataset to the catalog
 
 Once you have prepared a dataset for inclusion in the catalog, you can submit it via the following steps. Once your submission is accepted, the dataset will become available to other users of scivision.
 

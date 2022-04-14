@@ -1,3 +1,5 @@
+.. _about-scips:
+
 About Scivision Improvement Proposals (SCIPs)
 =============================================
 
