@@ -8,8 +8,6 @@ Thank you for taking the time to contribute to the scivision project. 🎉
 - :ref:`what-to-contribute`
 - :ref:`how-to-contribute`
 - :ref:`extending-the-scivision-catalog`
-- :ref:`contact`
-- :ref:`licence-header`
 
 .. _who-should-contribute:
 
