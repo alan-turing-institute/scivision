@@ -1,4 +1,4 @@
-SCIPI: The Scivision Improvement Proposal Index
+🦘 SCIPI: The Scivision Improvement Proposal Index
 ===============================================
 
 .. toctree::
