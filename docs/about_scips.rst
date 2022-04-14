@@ -4,14 +4,14 @@ About Scivision Improvement Proposals (SCIPs)
 What is a SCIP?
 ---------------
 
-A SCIP, or *Scivision Improvement Proposal*, is a document describing a *standard* for the project: either one that has been accepted and adopted, or that has been suggested.  It is similar to an RFC (Request for Comments) used in other projects, or a PEP (Python Enhancement Proposal) in the Python ecosystem.  A SCIP could describe:
+A SCIP, or *Scivision Improvement Proposal*, is a document describing a standard for the project: either one that has been accepted and adopted, or that has been suggested.  It is similar to an RFC (Request for Comments) used in other projects, or a PEP (Python Enhancement Proposal) in the Python ecosystem.  A SCIP could describe:
 
     * software architecture
     * an interface or API that the software exposes
     * a file format
     * a process or way of working together.
 
-SCIPs that have been adopted (whose *status* is 'stable') complement the project documentation, where relevant SCIPs can be linked and referenced.  Unlike the documentation, they are intended as *normative specifications*, and can be used by implementors to understand the intended behaviour of the system.
+SCIPs that have been adopted (whose *status* is 'stable') complement the project documentation, where relevant SCIPs can be linked and referenced.  Unlike the documentation, they are intended as specifications, and can be used by implementors to understand the intended behaviour of the system.
 
 When should a SCIP be used?
 ---------------------------
