@@ -41,26 +41,29 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
    - Search engine for datasets and models
    - Stop "reinventing the wheel" in image data science
 
-### How should the scivision python package (API interface) look?
+### Scivision python package and catalog features
 
 - Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
+    - Could we use [wrattler](https://www.turing.ac.uk/research/publications/wrattler-reproducible-live-and-polyglot-notebooks) to have different model environments in same notebook?
+- Ability to train and fine tune models
+    - a `.fit()` function like in `sklrearn`?
 - 3rd party models [#121](https://github.com/alan-turing-institute/scivision/discussions/121)
 - Languages [#90](https://github.com/alan-turing-institute/scivision/issues/90)
 - Adapter code/plugins [#168](https://github.com/alan-turing-institute/scivision/discussions/168)
-
-### How should the scivision catalog work?
-
+- Algorithm adaptation/ development (e.g. SOAP /ACE) 
+- Shape features plugin
 - Permanent IDs [#181](https://github.com/alan-turing-institute/scivision/discussions/181)
 - Model licenses [#169](https://github.com/alan-turing-institute/scivision/discussions/169)
    - If we target the scientific community, which licenses will scivision include/avoid in the public catalog? See for instance the choose of an appropiate license in [the awesome manifesto](https://github.com/Open-Environmental-Science/awesome-open-hydrology/blob/master/awesome.md#choose-an-appropriate-license). Note the proposed license screening only seems valid for the public catalog.
 - Measuring model quality [#162](https://github.com/alan-turing-institute/scivision/discussions/162)
+    - Testing/metrics for models being submitted (or at least a check that they run)
 - Load-ability via API [#149](https://github.com/alan-turing-institute/scivision/discussions/149)
 - Dataset hosting [#146](https://github.com/alan-turing-institute/scivision/discussions/146)
 - Supported data types, intake exclusivity?
 - How should the schema look? [#110](https://github.com/alan-turing-institute/scivision/issues/110) 
 - Should we replace the catalog with a SQL db and where/how is it stored?
 - Expand upon the scivision catalog submission guidance
-- Testing/metrics for models being submitted (or at least a check that they run)
+- Retain the catalog entries all being runnable with `load_pretrained_model()` function since non-programmer scientists value everything easily runnable
 
 ### Scaling up scivision uses
 
