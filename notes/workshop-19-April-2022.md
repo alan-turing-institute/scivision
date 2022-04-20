@@ -39,12 +39,6 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
          - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
          - Search engine for datasets and models
          - Stop "reinventing the wheel" in image data science
-         
-- How should the scivision python package (API interface) look?
-     - Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
-     - 3rd party models [#121](https://github.com/alan-turing-institute/scivision/discussions/121)
-     - Languages [#90](https://github.com/alan-turing-institute/scivision/issues/90)
-     - Adapter code/plugins [#168](https://github.com/alan-turing-institute/scivision/discussions/168)
 - How should the scivision catalog work?
      - Permanent IDs [#181](https://github.com/alan-turing-institute/scivision/discussions/181)
      - Model licenses [#169](https://github.com/alan-turing-institute/scivision/discussions/169)
@@ -86,3 +80,9 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
                  - The GitHub action for rendering only works with conda environments. We need a more generalisable solution e.g. [repo2docker action](https://github.com/jupyterhub/repo2docker-action) to render other settings e.g. poetry, requirements.txt.
                  
 ## Not discussed
+
+- How should the scivision python package (API interface) look?
+     - Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
+     - 3rd party models [#121](https://github.com/alan-turing-institute/scivision/discussions/121)
+     - Languages [#90](https://github.com/alan-turing-institute/scivision/issues/90)
+     - Adapter code/plugins [#168](https://github.com/alan-turing-institute/scivision/discussions/168)
