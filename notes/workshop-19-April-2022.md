@@ -102,20 +102,21 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Run a catalog contributions workshop, with Turing community or at a conference, or as a DSG?
 - Code of Conduct - especially enforcement if anything goes wrong
 - Project governance and decision-making
-- Improvements of the Scivision Gallery
-   - Can we display scivision notebooks within a jupyter book (scivision-book)?
-       - Why?
-           - Not all visitors will spend time to navigate each repository and inspect which is the notebook file. In addition, some outputs cells will look better in a rendered version e.g. xarray.dataset info or interactive plots e.g. hvplot
-       - How?
-           - Feasible according to a WIP feature of the Environmental Data Science book which uses GitHub actions to automatically render notebooks and update them within a jupyter book. See an example [here](https://environmental-ds-book.github.io/EnvDSBookv2/welcome.html)
-           - Notebooks are hosted in separate repositories in the [EnvDS organisation](https://github.com/Environmental-DS-Book/EnvDSBookv2) similar to the scivision gallery.
-       - Next steps
-           - The GitHub action for rendering only works with conda environments. We need a more generalisable solution e.g. [repo2docker action](https://github.com/jupyterhub/repo2docker-action) to render other settings e.g. poetry, requirements.txt.
 - Turing Easter egg - scivision task used for coffee machine!
 - Reach out to people doing PhD projects on computer vision (e.g. Turing enrichment students)
+- Create tutorial videos to supplement the documentation
+- Can we convert the scivision gallery to a jupyter book (e.g. called scivision-book)?
+    - Why?
+        - Not all visitors will spend time to navigate each repository and inspect which is the notebook file. In addition, some outputs cells will look better in a rendered version e.g. xarray.dataset info or interactive plots e.g. hvplot
+    - How?
+        - Feasible according to a WIP feature of the Environmental Data Science book which uses GitHub actions to automatically render notebooks and update them within a jupyter book. See an example [here](https://environmental-ds-book.github.io/EnvDSBookv2/welcome.html)
+        - Notebooks are hosted in separate repositories in the [EnvDS organisation](https://github.com/Environmental-DS-Book/EnvDSBookv2) similar to the scivision gallery.
+    - Next steps
+        - The GitHub action for rendering only works with conda environments. We need a more generalisable solution e.g. [repo2docker action](https://github.com/jupyterhub/repo2docker-action) to render other settings e.g. poetry, requirements.txt.
 
 ### Administrative
 
 - Organise community calls when community is larger
 - Design SCIPI - Scivision Improvement Proposal Index - how to design system as a community
 - Recruit code of conduct chair for scivision
+- Can additional REG time be got for adding other projects to the scivision catalog?
