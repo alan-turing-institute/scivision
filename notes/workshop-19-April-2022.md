@@ -32,8 +32,11 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
  - "By scientists for scientists"
  - For scientists **starting off** their journey using algorithms on imagery
+     - Scivision can be used at different levels of complexity, without throwing low/no exp programming scientists in at the deep end, but helping them make the transition to an informed user of CV tools
+     - For the casual user, a lot of detail is hidden, by design
  - Inspiration from https://huggingface.co/ but research focussed
  - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
+ - A **sharing tool** for models or datasets that come from scientific research projects
  - Search engine/indexing for datasets and models
  - Stop "reinventing the wheel" in image data science
  - Easy way for scientists with image data to find CV algorithms based on what other scientists have done in the same field OR with matching metadata from other fields
