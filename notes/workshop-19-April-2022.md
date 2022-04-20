@@ -30,8 +30,16 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 - What is scivision?
      - Scope [#168](https://github.com/alan-turing-institute/scivision/discussions/168) & [#131](https://github.com/alan-turing-institute/scivision/issues/131)
+         -  Could include curated datasets for benchmarking of new algorithms
      - USP [#196](https://github.com/alan-turing-institute/scivision/discussions/196)
          - a community-driven platform for connecting and accelerating the discovery and reusability of scientific image datasets and CV models.
+         - Easy way for scientists with image data to find CV algorithms based on what other scientists have done in the same field OR with matching metadata from other fields
+         - "By scientists for scientists"
+         - Inspiration from https://huggingface.co/ but research focussed
+         - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
+         - Search engine for datasets and models
+         - Stop "reinventing the wheel" in image data science
+         
 - How should the scivision python package (API interface) look?
      - Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
      - 3rd party models [#121](https://github.com/alan-turing-institute/scivision/discussions/121)
