@@ -28,23 +28,22 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 # Discussions:
 
-### What is scivision?
+### What is scivision's "USP"?
 
-- Scope [#168](https://github.com/alan-turing-institute/scivision/discussions/168) & [#131](https://github.com/alan-turing-institute/scivision/issues/131)
-   -  Could include curated datasets for benchmarking of new algorithms
-- USP [#196](https://github.com/alan-turing-institute/scivision/discussions/196)
-   - "By scientists for scientists"
-   - For scientists **starting off** their journey using algorithms on imagery
-   - Inspiration from https://huggingface.co/ but research focussed
-   - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
-   - Search engine/indexing for datasets and models
-   - Stop "reinventing the wheel" in image data science
-   - Easy way for scientists with image data to find CV algorithms based on what other scientists have done in the same field OR with matching metadata from other fields
-   - a community-driven platform for connecting and accelerating the discovery and reusability of scientific image datasets and CV models.
+ - "By scientists for scientists"
+ - For scientists **starting off** their journey using algorithms on imagery
+ - Inspiration from https://huggingface.co/ but research focussed
+ - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
+ - Search engine/indexing for datasets and models
+ - Stop "reinventing the wheel" in image data science
+ - Easy way for scientists with image data to find CV algorithms based on what other scientists have done in the same field OR with matching metadata from other fields
+ - a community-driven platform for connecting and accelerating the discovery and reusability of scientific image datasets and CV models.
+ - Could include curated datasets for benchmarking of new CV algorithms
+ - Older discussions of scope: [#168](https://github.com/alan-turing-institute/scivision/discussions/168) & [#196](https://github.com/alan-turing-institute/scivision/discussions/196)
 
 ### Scivision python package and catalog features
 
-- Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
+- Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159) & [#131](https://github.com/alan-turing-institute/scivision/issues/131)
     - Could we use [wrattler](https://www.turing.ac.uk/research/publications/wrattler-reproducible-live-and-polyglot-notebooks) to have different model environments in same notebook?
 - Ability to train and fine tune models
     - a `.fit()` function like in `sklrearn`?
