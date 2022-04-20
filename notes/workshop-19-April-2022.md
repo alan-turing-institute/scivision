@@ -23,6 +23,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
     - CEFAS
     - USotom
     - NOC
+8. ASG (AI for Science & Government) stories to be written (internal Turing institute goal)
 
 ## Discussed
 
