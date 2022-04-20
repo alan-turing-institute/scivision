@@ -5,7 +5,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - [Miro Board/Digital Whiteboard](https://miro.com/welcomeonboard/UDBQRXlmTnFMZWZpNjZaczhCTG5JWU1yRlBMMGRsUHdvVmp6YnpjQVNtbVhnaUVLY3p0bmVkbEI3ZEZpTW5HanwzNDU4NzY0NTIzNTA5NDI3MDA3?share_link_id=934751878977)
 - [Hackmd](https://hackmd.io/4LMa96ZlQAKJ7g_RuAT52w?both)
 
-## Core phase 2 goals
+# Core phase 2 goals:
 
 1. Clearly state the scivision USP on readthedocs & GitHub
 1. Create a website that enables scivision users to search the catalog based on flowchart selections
@@ -26,7 +26,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
     - NOC
 8. ASG (AI for Science & Government) stories to be written (internal Turing institute goal)
 
-## Discussed
+# Discussions:
 
 ### What is scivision?
 
@@ -40,6 +40,13 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
    - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
    - Search engine for datasets and models
    - Stop "reinventing the wheel" in image data science
+
+### How should the scivision python package (API interface) look?
+
+- Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
+- 3rd party models [#121](https://github.com/alan-turing-institute/scivision/discussions/121)
+- Languages [#90](https://github.com/alan-turing-institute/scivision/issues/90)
+- Adapter code/plugins [#168](https://github.com/alan-turing-institute/scivision/discussions/168)
 
 ### How should the scivision catalog work?
 
@@ -85,12 +92,3 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
            - Notebooks are hosted in separate repositories in the [EnvDS organisation](https://github.com/Environmental-DS-Book/EnvDSBookv2) similar to the scivision gallery.
        - Next steps
            - The GitHub action for rendering only works with conda environments. We need a more generalisable solution e.g. [repo2docker action](https://github.com/jupyterhub/repo2docker-action) to render other settings e.g. poetry, requirements.txt.
-                 
-## Not discussed
-
-### How should the scivision python package (API interface) look?
-
-- Model dependencies [#159](https://github.com/alan-turing-institute/scivision/discussions/159)
-- 3rd party models [#121](https://github.com/alan-turing-institute/scivision/discussions/121)
-- Languages [#90](https://github.com/alan-turing-institute/scivision/issues/90)
-- Adapter code/plugins [#168](https://github.com/alan-turing-institute/scivision/discussions/168)
