@@ -7,7 +7,24 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 ## Core phase 2 goals
 
-## Discussions
+1. Create a website that enables scivision users to search the catalog based on flowchart selections
+    - Flowchart selection constructs a new JSON entry to the catalog and uses the scivision package to find compatible datasources/models
+2. Get 10+ new scivision users
+    - Turing Project adjacent collaborators
+    - Interest groups
+    - AIUK workshop participants
+3. Get 1+ new dataset contributor to scivision and 1+ new model contributor to scivision
+4. Organise focus groups to achieve the above (new users and contributor(s))
+5. Maximise the number of "easy win" scivision catalog entries for both datasets and models
+    - Make various model packages/frameworks easily loadable via scivision
+    - Make various online data sources easily loadable via scivision
+6. Update scivision docs to include a visual gallery page for existing project examples
+7. Gather 3+ user testimonials for scivision e.g. 
+    - CEFAS
+    - USotom
+    - NOC
+
+## Discussed
 
 - What is scivision?
      - Scope [#168](https://github.com/alan-turing-institute/scivision/discussions/168) & [#131](https://github.com/alan-turing-institute/scivision/issues/131)
@@ -57,3 +74,5 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
                  - Notebooks are hosted in separate repositories in the [EnvDS organisation](https://github.com/Environmental-DS-Book/EnvDSBookv2) similar to the scivision gallery.
              - Next steps
                  - The GitHub action for rendering only works with conda environments. We need a more generalisable solution e.g. [repo2docker action](https://github.com/jupyterhub/repo2docker-action) to render other settings e.g. poetry, requirements.txt.
+                 
+## Not discussed
