@@ -5,7 +5,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - [Miro Board/Digital Whiteboard](https://miro.com/welcomeonboard/UDBQRXlmTnFMZWZpNjZaczhCTG5JWU1yRlBMMGRsUHdvVmp6YnpjQVNtbVhnaUVLY3p0bmVkbEI3ZEZpTW5HanwzNDU4NzY0NTIzNTA5NDI3MDA3?share_link_id=934751878977)
 - [Hackmd](https://hackmd.io/4LMa96ZlQAKJ7g_RuAT52w?both)
 
-# Core phase 2 goals:
+# Core phase 2 goals
 
 1. Clearly state the scivision USP on readthedocs & GitHub
 1. Create a website that enables scivision users to search the catalog based on flowchart selections
@@ -79,7 +79,11 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 ### UI
 
-- scivision as a web tool, similar to [huggingface.co](https://huggingface.co/) ?
+- Scivision as a web tool, similar to [huggingface.co](https://huggingface.co/) ?
+- System to enable manual annotation?
+    - Fork [mapreader](https://www.researchgate.net/publication/356663348_MapReader_A_Computer_Vision_Pipeline_for_the_Semantic_Exploration_of_Maps_at_Scale) to get annotation tool as part of scivision?
+- Flowchart tool (see [core phase 2 goals](#core-phase-2-goals))
+- Use [napari](https://napari.org/) for browsing, annotating, and analyzing large multi-dimensional images
 
 ### Attracting a user/contributor base
 
