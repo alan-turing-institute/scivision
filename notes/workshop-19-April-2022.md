@@ -33,13 +33,14 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Scope [#168](https://github.com/alan-turing-institute/scivision/discussions/168) & [#131](https://github.com/alan-turing-institute/scivision/issues/131)
    -  Could include curated datasets for benchmarking of new algorithms
 - USP [#196](https://github.com/alan-turing-institute/scivision/discussions/196)
-   - a community-driven platform for connecting and accelerating the discovery and reusability of scientific image datasets and CV models.
-   - Easy way for scientists with image data to find CV algorithms based on what other scientists have done in the same field OR with matching metadata from other fields
    - "By scientists for scientists"
+   - For scientists **starting off** their journey using algorithms on imagery
    - Inspiration from https://huggingface.co/ but research focussed
    - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
    - Search engine/indexing for datasets and models
    - Stop "reinventing the wheel" in image data science
+   - Easy way for scientists with image data to find CV algorithms based on what other scientists have done in the same field OR with matching metadata from other fields
+   - a community-driven platform for connecting and accelerating the discovery and reusability of scientific image datasets and CV models.
 
 ### Scivision python package and catalog features
 
