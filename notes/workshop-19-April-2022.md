@@ -38,7 +38,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
    - "By scientists for scientists"
    - Inspiration from https://huggingface.co/ but research focussed
    - Usable as a **demo tool**: easy integration with notebooks and few lines of code; simplicity
-   - Search engine for datasets and models
+   - Search engine/indexing for datasets and models
    - Stop "reinventing the wheel" in image data science
 
 ### Scivision python package and catalog features
@@ -64,6 +64,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Should we replace the catalog with a SQL db and where/how is it stored?
 - Expand upon the scivision catalog submission guidance
 - Retain the catalog entries all being runnable with `load_pretrained_model()` function since non-programmer scientists value everything easily runnable
+- Continue to evolve the catalog schema over time
 
 ### Scaling up scivision uses
 
