@@ -100,10 +100,9 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Other Turing projects? e.g. MapReader
 - Turing Interest Groups, e.g. Living Systems (applications to Phenotyping)
 - Run a catalog contributions workshop, with Turing community or at a conference, or as a DSG?
-- Code of Conduct - especially enforcement if anything goes wrong
-- Project governance and decision-making
 - Turing Easter egg - scivision task used for coffee machine!
 - Reach out to people doing PhD projects on computer vision (e.g. Turing enrichment students)
+- Reach out to some zero-coding ability scientists after the UI is built
 - Create tutorial videos to supplement the documentation
 - Can we convert the scivision gallery to a jupyter book (e.g. called scivision-book)?
     - Why?
@@ -119,4 +118,6 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Organise community calls when community is larger
 - Design SCIPI - Scivision Improvement Proposal Index - how to design system as a community
 - Recruit code of conduct chair for scivision
+    - Write Code of Conduct - do enforcement if anything goes wrong
+    - Project governance and decision-making
 - Can additional REG time be got for adding other projects to the scivision catalog?
