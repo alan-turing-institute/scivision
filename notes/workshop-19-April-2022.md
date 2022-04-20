@@ -70,7 +70,12 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Discussions around using scivision with HPC
 - Containers [#125](https://github.com/alan-turing-institute/scivision/discussions/125) (relevant to the API and catalog too)
 - Large dataset handling [#91](https://github.com/alan-turing-institute/scivision/issues/91)
-- Using Turing's hub23 platform Jupyterhub, with scivision as a major project justification for this: can we have high resource notebook environments where users can "try out" models and datasets from the catalog
+- Hosting scivision workflows that involve lots of data or require more **compute power** (e.g. gallery examples):
+    - Using Turing's hub23 platform Jupyterhub, with scivision as a major project justification for this: can we have high resource notebook environments where users can "try out" models and datasets from the catalog
+    - Alternatively, use Ray : 
+    https://docs.ray.io/en/latest/index.html
+- Multiprocessing for model inference (CPU)
+- Think about considerations around GPU vs CPU models
 
 ### UI
 
