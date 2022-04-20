@@ -45,9 +45,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 - Permanent IDs [#181](https://github.com/alan-turing-institute/scivision/discussions/181)
 - Model licenses [#169](https://github.com/alan-turing-institute/scivision/discussions/169)
-   - if we target the scientific community, which licenses will scivision include/avoid in the public catalog?
-       - See for instance the choose of an appropiate license in [the awesome manifesto](https://github.com/Open-Environmental-Science/awesome-open-hydrology/blob/master/awesome.md#choose-an-appropriate-license)
-       - Note the proposed license screening only seems valid for the public catalog.
+   - If we target the scientific community, which licenses will scivision include/avoid in the public catalog? See for instance the choose of an appropiate license in [the awesome manifesto](https://github.com/Open-Environmental-Science/awesome-open-hydrology/blob/master/awesome.md#choose-an-appropriate-license). Note the proposed license screening only seems valid for the public catalog.
 - Measuring model quality [#162](https://github.com/alan-turing-institute/scivision/discussions/162)
 - Load-ability via API [#149](https://github.com/alan-turing-institute/scivision/discussions/149)
 - Dataset hosting [#146](https://github.com/alan-turing-institute/scivision/discussions/146)
