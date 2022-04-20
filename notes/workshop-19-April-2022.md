@@ -9,7 +9,6 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 1. Clearly state the scivision USP on readthedocs & GitHub
 1. Create a website that enables scivision users to search the catalog based on flowchart selections
-    - Flowchart selection constructs a new JSON entry to the catalog and uses the scivision package to find compatible datasources/models
 2. Get 10+ new scivision users
     - Turing Project adjacent collaborators
     - Interest groups
@@ -86,7 +85,11 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 - Scivision as a web tool, similar to [huggingface.co](https://huggingface.co/) ?
 - System to enable manual annotation?
     - Fork [mapreader](https://www.researchgate.net/publication/356663348_MapReader_A_Computer_Vision_Pipeline_for_the_Semantic_Exploration_of_Maps_at_Scale) to get annotation tool as part of scivision?
-- Flowchart tool (see [core phase 2 goals](#core-phase-2-goals))
+- Create a website that enables scivision users to search the catalog based on flowchart selections
+    - Flowchart selection constructs a new JSON entry to the catalog and uses the scivision package to find compatible datasources/models
+    - Advanced version of this flowchart tool to involve getting users to select the "binary mask" that most closely represents their data (or this could perhaps be automated)
+    - ^ use a distance metric or similarity shape descriptors
+    - Via the flowchart tool/website, the catalog can be searched with just metadata, in advance of there being an actual new model or dataset to submit to the catalog. Perhaps it should be possible to upload a test image?
 - Use [napari](https://napari.org/) for browsing, annotating, and analyzing large multi-dimensional images
 
 ### Attracting a user/contributor base
