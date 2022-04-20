@@ -7,6 +7,8 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 # Core phase 2 goals
 
+[GitHub Milestone](https://github.com/alan-turing-institute/scivision/milestone/3)
+
 1. Clearly state the scivision USP on readthedocs & GitHub
 1. Create a website that enables scivision users to search the catalog based on flowchart selections
 2. Get 10+ new scivision users
