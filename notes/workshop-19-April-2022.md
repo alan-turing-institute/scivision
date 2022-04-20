@@ -105,3 +105,11 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
            - Notebooks are hosted in separate repositories in the [EnvDS organisation](https://github.com/Environmental-DS-Book/EnvDSBookv2) similar to the scivision gallery.
        - Next steps
            - The GitHub action for rendering only works with conda environments. We need a more generalisable solution e.g. [repo2docker action](https://github.com/jupyterhub/repo2docker-action) to render other settings e.g. poetry, requirements.txt.
+- Turing Easter egg - scivision task used for coffee machine!
+- Reach out to people doing PhD projects on computer vision (e.g. Turing enrichment students)
+
+### Administrative
+
+- Organise community calls when community is larger
+- Design SCIPI - Scivision Improvement Proposal Index - how to design system as a community
+- Recruit code of conduct chair for scivision
