@@ -82,7 +82,6 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
 
 ### UI
 
-- Scivision as a web tool, similar to [huggingface.co](https://huggingface.co/) ?
 - System to enable manual annotation?
     - Fork [mapreader](https://www.researchgate.net/publication/356663348_MapReader_A_Computer_Vision_Pipeline_for_the_Semantic_Exploration_of_Maps_at_Scale) to get annotation tool as part of scivision?
 - Create a website that enables scivision users to search the catalog based on flowchart selections
@@ -90,6 +89,7 @@ Here I summarise the outcome of a full day workshop that took place at The Alan 
     - Advanced version of this flowchart tool to involve getting users to select the "binary mask" that most closely represents their data (or this could perhaps be automated)
     - ^ use a distance metric or similarity shape descriptors
     - Via the flowchart tool/website, the catalog can be searched with just metadata, in advance of there being an actual new model or dataset to submit to the catalog. Perhaps it should be possible to upload a test image?
+- Perhaps later on to make Scivision a more complex web tool, similar to [huggingface.co](https://huggingface.co/) or [imjoy](https://imjoy.io/#/)
 - Use [napari](https://napari.org/) for browsing, annotating, and analyzing large multi-dimensional images
 
 ### Attracting a user/contributor base
