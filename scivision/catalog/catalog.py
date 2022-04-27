@@ -115,8 +115,7 @@ class CatalogDatasourceEntry(
     labels_provided: bool = Field(
         False,
         title="Labels provided",
-        description="Does the dataset contain 'labels'? This can make it "
-        "suitable for training or validation",
+        description="Is this a labelled dataset? This can make it suitable for training or validation",
     )
     domains: Tuple[str, ...] = Field(
         None,
