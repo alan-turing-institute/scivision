@@ -18,6 +18,6 @@ ReactDOM.render(
         schema: schema,
         uiSchema: { "ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } } },
         onSubmit: (input) =>
-            download("example.json", JSON.stringify(input.formData, null, 4)),
+            download("one-datasource.json", JSON.stringify(input.formData, null, 4)),
     }),
     document.getElementById("app"));
