@@ -121,7 +121,7 @@ class CatalogDatasourceEntry(
     domains: Tuple[str, ...] = Field(
         None,
         title="Domain areas",
-        description="Which domain area or areas is this datasource from? (One per item)",
+        description="Which domain area or areas is this datasource from? (One per item, no duplicates)",
         # Note: using uniqueItems (used for the json schema) rather
         # than unique_items (which is not possible to enforce on a
         # Tuple).  Could use a set/frozenset instead, or a tuple
