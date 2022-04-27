@@ -252,7 +252,11 @@ class PandasCatalog:
         models_compatible_tasks = (
             self._models[["name", "tasks"]]
             .explode("tasks")
-            .merge(datasource_tasks, on="tasks", suffixes=("_model", "_datasource"),)
+            .merge(
+                datasource_tasks,
+                on="tasks",
+                suffixes=("_model", "_datasource"),
+            )
             .name.drop_duplicates()
         )
         result_df = models_compatible_format_labels[
@@ -281,7 +285,11 @@ class PandasCatalog:
         datasources_compatible_tasks = (
             self._datasources[["name", "tasks"]]
             .explode("tasks")
-            .merge(model_tasks, on="tasks", suffixes=("_model", "_datasource"),)
+            .merge(
+                model_tasks,
+                on="tasks",
+                suffixes=("_model", "_datasource"),
+            )
             .name.drop_duplicates()
         )
         result_df = datasources_compatible_format_labels[
