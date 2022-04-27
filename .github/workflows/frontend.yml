@@ -1,0 +1,43 @@
+name: Build frontend
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name:
+        Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+        pip install scikit-image
+        pip install tensorflow
+        pip install xarray
+    - name: Run Flake8
+      run: |
+        flake8
+
+    - name: Generate json schema
+      run: |
+        pip install -e .
+        cd frontend
+        python genschema.py
+        test -e datasource_schema.js
+
+  build-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: frontend
+          message: Deploy to gh-pages
+          clean: true
