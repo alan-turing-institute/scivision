@@ -93,7 +93,7 @@ class CatalogModels(BaseModel, extra="forbid"):
 
 
 class CatalogDatasourceEntry(
-    BaseModel, extra="forbid", title="A datasource catalog entry"
+    BaseModel, extra="forbid", title="Datasource catalog entry"
 ):
     name: str = Field(
         ...,
