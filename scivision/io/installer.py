@@ -27,7 +27,7 @@ def package_from_config(config: dict, branch: str = "main") -> str:
 
 def _install(package):
     """Install a package using pip."""
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--force-reinstall", "--no-cache-dir", package])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--force-reinstall", "--no-cache-dir", "--ignore-installed", package])
 
 
 # def _uninstall(github_url):
