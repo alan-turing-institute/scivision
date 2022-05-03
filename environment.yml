@@ -1,6 +1,7 @@
 name: scivision
 channels:
   - conda-forge
+  - anaconda
 dependencies:
   - python=3.9
   - matplotlib
@@ -13,3 +14,7 @@ dependencies:
   - aiohttp
   - intake
   - intake-xarray
+  - jupyter
+  - pip
+  - pip:
+    - scivision
