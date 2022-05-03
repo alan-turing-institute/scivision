@@ -92,6 +92,17 @@
             "labels_required":false,
             "institution":["cambridge-university", "birkbeck-university"],
             "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
+        },
+        {
+            "name":"scivision_classifier",
+            "tasks":["classification"],
+            "url":"https://github.com/alan-turing-institute/scivision_classifier",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags": ["classification", "2D", "image"]
         }
     ]
 }
