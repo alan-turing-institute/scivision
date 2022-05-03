@@ -32,7 +32,9 @@ def _install(package):
 
 def _reinstall(package):
     """Reinstall a package using pip."""
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--force-reinstall", "--no-cache-dir", "--ignore-installed", "--no-deps", package])
+    subprocess.check_call([sys.executable, "-m", "pip", "install",
+                           "--force-reinstall", "--no-cache-dir",
+                           "--ignore-installed", "--no-deps", package])
 
 
 def install_package(config: dict, allow_install: bool = False, branch: str = "main"):
