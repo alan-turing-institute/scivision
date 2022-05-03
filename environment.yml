@@ -15,6 +15,3 @@ dependencies:
   - intake
   - intake-xarray
   - jupyter
-  - pip
-  - pip:
-    - scivision
