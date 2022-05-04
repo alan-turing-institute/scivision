@@ -68,7 +68,8 @@
          "name":"data-003",
          "description":"Koala",
          "tasks":[
-            "object-detection"
+            "object-detection",
+            "classification"
          ],
          "domains":[
             "computer-vision"
