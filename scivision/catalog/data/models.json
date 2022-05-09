@@ -103,6 +103,17 @@
             "labels_required":false,
             "institution":["alan-turing-institute"],
             "tags": ["classification", "2D", "image"]
+        },
+        {
+            "name":"scivision_huggingface",
+            "tasks":["classification"],
+            "url":"https://github.com/alan-turing-institute/scivision_huggingface",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags": ["classification", "2D", "image"]
         }
     ]
 }
