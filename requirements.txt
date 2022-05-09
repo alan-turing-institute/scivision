@@ -10,3 +10,4 @@ intake
 intake-xarray
 pydantic
 git+https://github.com/ots22/intake-xarray@feature/exif
+exifread
