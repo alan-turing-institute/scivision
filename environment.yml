@@ -4,14 +4,7 @@ channels:
   - anaconda
 dependencies:
   - python=3.9
-  - matplotlib
-  - numpy
-  - scipy
-  - pandas
-  - fsspec
-  - pyyaml
-  - requests
-  - aiohttp
-  - intake
-  - intake-xarray
   - jupyter
+  - pip
+  - pip:
+    - -r requirements.txt
