@@ -9,4 +9,3 @@ dependencies:
   - pip:
     - -r requirements.txt
     - git+https://github.com/ots22/intake-xarray@feature/exif
-    - scivision
