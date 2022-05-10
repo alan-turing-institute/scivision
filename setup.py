@@ -13,9 +13,13 @@ with open("requirements.txt") as f:
         if len(stripped) > 0:
             requirements.append(stripped)
 
+requirements.append(
+    'intake-xarray @ git+https://github.com/ots22/intake-xarray@feature/exif',
+)
+
 setup(
     name="scivision",
-    version="0.2.5",
+    version="0.2.6",
     description="scivision",
     author="The Alan Turing Institute",
     author_email="scivision@turing.ac.uk",

@@ -9,3 +9,4 @@ aiohttp
 intake
 intake-xarray
 pydantic
+exifread
