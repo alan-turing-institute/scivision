@@ -17,21 +17,9 @@ A new release of the scivision package will be uploaded to PyPI each time a tagg
 
 1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `setup.py` and any other metadata that differs for the new release.
 
-2. Create a pull request. After merge to the `main` branch, make a note of the most recent commit hash on `main` (this will be the squash commit from your PR).
+2. Create a pull request and merge to the `main` branch.
 
-3. Tag the commit like so, where `<tag_name>` is the new version number you added to `setup.py` and `<commit_sha>` is the latest commit on the main branch:
-    
-    ```bash
-    git checkout main
-    git pull
-    git tag <tag_name> <commit_sha>
-    ```
-
-4. Push the new tag to GitHub, triggering the package to build and push to PyPI:
-    
-    ```bash
-    git push --tags
-    ```
+3. At the main repo page on GitHub, click the following `Releases -> Draft a new release`. Click `Choose a tag` and create a new tag named as the `version` number. Fill in the descriptive fields and publish the release. After a few moments, the new version should show up at https://pypi.org/project/scivision/
 
 Alternatively, developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can manually release a new version of the package with the following steps:
 
