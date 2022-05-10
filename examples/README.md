@@ -7,7 +7,6 @@ To run any of the notebooks in this directory locally, do the following, from th
 
 1. Create the environment for the notebooks: `conda env create -f environment.yml`
 2. Activate it: `conda activate scivision`
-3. Install scivision: `pip install -v -e .`
-4. Open the notebook in `/examples` with `jupyter notebook`
+3. Open the notebook in `/examples` with `jupyter notebook`
 
 **Visit the [Scivision Gallery](https://github.com/scivision-gallery) to see more examples and use-cases.**
