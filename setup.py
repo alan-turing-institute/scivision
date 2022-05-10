@@ -12,7 +12,7 @@ with open("requirements.txt") as f:
         stripped = line.split("#")[0].strip()
         if len(stripped) > 0:
             requirements.append(stripped)
-            
+    
 requirements.append(
     'intake-xarray @ git+https://github.com/ots22/intake-xarray@feature/exif',
 )
