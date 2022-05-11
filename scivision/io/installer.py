@@ -47,6 +47,8 @@ def install_package(
     exists = _package_exists(config)
 
     if allow_install == "force" or (allow_install and not exists):
+        # if a package is not already installed, there is little harm
+        # to passing the extra arguments, so these cases are combined
         _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
     elif not exists:
         raise Exception(
