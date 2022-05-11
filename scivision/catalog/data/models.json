@@ -94,7 +94,7 @@
             "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
         },
         {
-            "name":"scivision_classifier",
+            "name":"image-classifiers",
             "tasks":["classification"],
             "url":"https://github.com/alan-turing-institute/scivision_classifier",
             "pkg_url":"git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
@@ -105,7 +105,7 @@
             "tags": ["classification", "2D", "image"]
         },
         {
-            "name":"scivision_huggingface",
+            "name":"huggingface-classifiers",
             "tasks":["classification"],
             "url":"https://github.com/alan-turing-institute/scivision_huggingface",
             "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
