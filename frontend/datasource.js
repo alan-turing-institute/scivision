@@ -20,4 +20,4 @@ ReactDOM.render(
         onSubmit: (input) =>
             download("one-datasource.json", JSON.stringify(input.formData, null, 4)),
     }),
-    document.getElementById("app"));
+    document.getElementById("datasource-form"));
