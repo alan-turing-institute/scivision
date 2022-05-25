@@ -1,7 +1,8 @@
 ## Examples
 
-This directory contains:
-  - [scivision-core-functionality.ipynb](./scivision-core-functionality.ipynb): a notebook demonstrating essential Scivision functionality
+This directory contains the following example notebooks:
+  - #1 How to use scivision: a notebook demonstrating essential scivision functionality, with image classification models
+  - #2 Image segmentation with scivision
   
 To run any of the notebooks in this directory locally, do the following, from the top level of this repo:
 
