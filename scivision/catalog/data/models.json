@@ -125,6 +125,17 @@
             "labels_required":false,
             "institution":["alan-turing-institute"],
             "tags": []
+        },
+        {
+            "name":"huggingface-object-detection",
+            "tasks":["object-detection"],
+            "url":"https://github.com/alan-turing-institute/scivision_huggingface_objectdetection",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface_objectdetection.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags": []
         }
     ]
 }
