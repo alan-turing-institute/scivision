@@ -112,7 +112,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":false,
-            "institution":["alan-turing-institute"],
+            "institution":["alan-turing-institute", "huggingface"],
             "tags": ["classification", "2D", "image"]
         },
         {
@@ -123,7 +123,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":false,
-            "institution":["alan-turing-institute"],
+            "institution":["alan-turing-institute", "huggingface"],
             "tags": []
         },
         {
@@ -134,7 +134,7 @@
             "format":"image",
             "pretrained":true,
             "labels_required":false,
-            "institution":["alan-turing-institute"],
+            "institution":["alan-turing-institute", "huggingface"],
             "tags": []
         }
     ]
