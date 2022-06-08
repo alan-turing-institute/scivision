@@ -23,9 +23,9 @@ def predplot(image: np.ndarray,
         raise NotImplementedError("Visualisation for model predictions other than object detection have not been developed yet")
     
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
-    num_boxes = len(bounding_boxes)
+    num_boxes = len(predictions)
     index = 0
-    for bounding_box in bounding_boxes:
+    for bounding_box in predictions:
         box = bounding_box["box"]
         bounded_image = _draw_bounding_box(pillow_image, bounding_box["score"], bounding_box["label"],\
             box["xmin"], box["ymin"], box["xmax"], box["ymax"], index, num_boxes)
