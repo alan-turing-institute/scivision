@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from matplotlib.pyplot import imshow
+import numpy as np
 from PIL import Image, ImageDraw
 
 def _draw_bounding_box(im, score, label, xmin, ymin, xmax, ymax, index, num_boxes):
