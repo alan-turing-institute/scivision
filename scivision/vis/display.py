@@ -14,7 +14,7 @@ def _draw_bounding_box(im, score, label, xmin, ymin, xmax, ymax, index, num_boxe
 
 
 def predplot(image: np.ndarray,
-             predictions: Any,
+             predictions: list,
              task: str = "object detection") -> matplotlib.image.AxesImage:
     """Plot an image loaded via scivison with predictions
     from a scivision model"""
