@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from matplotlib.image import AxesImage
+from matplotlib.colors import rgb2hex
 import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
@@ -11,8 +12,9 @@ import os.path
 def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, index, num_boxes, font):
     """Draw a bounding boxes for object detection."""
     im_with_rectangle = ImageDraw.Draw(im)  
-    im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = "orange", width = 2, radius = 10)
-    im_with_rectangle.text((xmin+5, ymin+5), str(index), fill="blue", stroke_fill = "red", font=font)
+    color = rgb2hex((0.0, 1.0, 0.0))
+    im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = color, width = 2, radius = 10)
+    # im_with_rectangle.text((xmax-xmin, ymax-ymin), str(index), fill="blue", stroke_fill = "red", font=font)
     return im
 
 
