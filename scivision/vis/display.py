@@ -12,7 +12,7 @@ def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, index, num_boxes, font
     """Draw a bounding boxes for object detection."""
     im_with_rectangle = ImageDraw.Draw(im)  
     im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = "red", width = 5, radius = 10)
-    im_with_rectangle.text((xmin+35, ymin-25), str(index), fill="white", stroke_fill = "red", font=font)
+    im_with_rectangle.text((xmin+5, ymin-5), str(index), fill="white", stroke_fill = "red", font=font)
     return im
 
 
@@ -26,7 +26,7 @@ def predplot(image: np.ndarray,
     
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
     font_path = os.path.abspath(os.path.dirname(__file__)) + '/fonts/arial.ttf'
-    font = ImageFont.truetype(font_path, 40)
+    font = ImageFont.truetype(font_path, 20)
     num_boxes = len(predictions)
     index = 1
     for bounding_box in predictions:
