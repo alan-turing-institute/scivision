@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os.path
 
 
-def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, index, num_boxes, font, color_rgb):
+def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, color_rgb):
     """Draw a bounding boxes for object detection."""
     im_with_rectangle = ImageDraw.Draw(im)  
     color_hex = rgb2hex(color_rgb)
@@ -35,15 +35,15 @@ def predplot(image: np.ndarray,
     # generate visually distinct colours for each bounding box
     colors = distinctipy.get_colors(num_boxes)
 
-    index = 1
+    index = 0
     for bounding_box in predictions:
         box = bounding_box["box"]
         bounded_image = _draw_bounding_box(pillow_image,
                                            bounding_box["score"],
                                            box["xmin"], box["ymin"],
                                            box["xmax"], box["ymax"],
-                                           index, num_boxes, font,
-                                           colors[index-1])
+                                           num_boxes, font,
+                                           colors[index])
         index += 1
 
     display(bounded_image)
@@ -52,3 +52,4 @@ def predplot(image: np.ndarray,
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions.index += 1
     print(object_predictions[['label', 'score']])
+    # ax2.table(cellText=object_predictions.values, rowLabels=object_predictions.index, bbox=bbox, colLabels=object_predictions.columns)
