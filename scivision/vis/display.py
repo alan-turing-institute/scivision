@@ -41,4 +41,4 @@ def predplot(image: np.ndarray,
     # print pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions.index += 1
-    print(object_predictions)
+    print(object_predictions[['label', 'score']])
