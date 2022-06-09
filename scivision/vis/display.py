@@ -50,11 +50,9 @@ def predplot(image: np.ndarray,
 
     display(bounded_image)
 
-    # print pandas df table relating to the objects shown in image
+    # return colored pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions['bbox'] = object_predictions.index
     def get_col(s):
         return ['background-color: ' + hex_colors[s.bbox]]*3
-    object_predictions.style.apply(get_col, axis=1)
-    display(object_predictions[['label', 'score']])
-    # display(object_predictions)
+    return object_predictions.style.apply(get_col, axis=1)
