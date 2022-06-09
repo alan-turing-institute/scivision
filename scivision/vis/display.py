@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-from matplotlib.pyplot import imshow
 from matplotlib.image import AxesImage
 import numpy as np
 import pandas as pd
@@ -36,7 +35,7 @@ def predplot(image: np.ndarray,
             box["xmin"], box["ymin"], box["xmax"], box["ymax"], index, num_boxes, font)
         index += 1
 
-    imshow(bounded_image)
+    display(bounded_image)
     
     # print pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
