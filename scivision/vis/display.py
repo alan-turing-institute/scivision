@@ -10,17 +10,19 @@ from PIL import Image, ImageDraw, ImageFont
 import os.path
 
 
-def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_color, label):
+def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_color, label, label_nums):
     """Draw a bounding boxes for object detection."""
     im_with_rectangle = ImageDraw.Draw(im)  
     im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = hex_color, width = 2, radius = 10)
-    # im_with_rectangle.text((xmin+3, ymin+1), label, fill=hex_color, font = font)
+    if label_nums:
+        im_with_rectangle.text((xmin+3, ymin+1), label, fill=hex_color, font = font)
     return im
 
 
 def predplot(image: np.ndarray,
              predictions: list,
-             task: str = "object detection") -> AxesImage:
+             task: str = "object detection",
+             label_nums: bool = False) -> AxesImage:
     """Plot an image loaded via scivison with predictions
     from a scivision model"""
     if task != "object detection":
@@ -49,7 +51,8 @@ def predplot(image: np.ndarray,
                                            box["xmax"], box["ymax"],
                                            num_boxes, font,
                                            hex_colors[index],
-                                           str(index))
+                                           str(index),
+                                           label_nums)
         index += 1
 
     display(bounded_image)
