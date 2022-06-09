@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-from distinctipy import distinctipy
+from distinctipy.distinctipy import get_colors, get_text_color
 from matplotlib.image import AxesImage
 from matplotlib.colors import rgb2hex
 import numpy as np
@@ -32,7 +32,7 @@ def predplot(image: np.ndarray,
 
     num_boxes = len(predictions)
     # generate visually distinct colours for each bounding box
-    rgb_colors = distinctipy.get_colors(num_boxes)
+    rgb_colors = get_colors(num_boxes)
     hex_colors = []
     for color in rgb_colors:
         hex_colors.append(rgb2hex(color))
