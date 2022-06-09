@@ -10,11 +10,10 @@ from PIL import Image, ImageDraw, ImageFont
 import os.path
 
 
-def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, color_rgb):
+def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_color):
     """Draw a bounding boxes for object detection."""
     im_with_rectangle = ImageDraw.Draw(im)  
-    color_hex = rgb2hex(color_rgb)
-    im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = color_hex, width = 2, radius = 10)
+    im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = hex_color, width = 2, radius = 10)
     return im
 
 
@@ -33,7 +32,10 @@ def predplot(image: np.ndarray,
 
     num_boxes = len(predictions)
     # generate visually distinct colours for each bounding box
-    colors = distinctipy.get_colors(num_boxes)
+    rgb_colors = distinctipy.get_colors(num_boxes)
+    hex_colors = []
+    for color in rgb_colors:
+        hex_colors.append(rgb2hex(color))
 
     index = 0
     for bounding_box in predictions:
@@ -43,13 +45,16 @@ def predplot(image: np.ndarray,
                                            box["xmin"], box["ymin"],
                                            box["xmax"], box["ymax"],
                                            num_boxes, font,
-                                           colors[index])
+                                           hex_colors[index])
         index += 1
 
     display(bounded_image)
 
     # print pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
-    object_predictions.index += 1
-    print(object_predictions[['label', 'score']])
-    # ax2.table(cellText=object_predictions.values, rowLabels=object_predictions.index, bbox=bbox, colLabels=object_predictions.columns)
+    object_predictions['bbox'] = object_predictions.index
+    def get_col(s):
+        return ['background-color: ' + hex_colors[s.bbox]]*3
+    object_predictions.style.apply(get_col, axis=1)
+    display(object_predictions[['label', 'score']])
+    # display(object_predictions)
