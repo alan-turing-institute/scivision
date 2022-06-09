@@ -10,10 +10,11 @@ from PIL import Image, ImageDraw, ImageFont
 import os.path
 
 
-def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_color):
+def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_color, label):
     """Draw a bounding boxes for object detection."""
     im_with_rectangle = ImageDraw.Draw(im)  
     im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = hex_color, width = 2, radius = 10)
+    # im_with_rectangle.text((xmin+3, ymin+1), label, fill=hex_color, font = font)
     return im
 
 
@@ -28,11 +29,11 @@ def predplot(image: np.ndarray,
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
 
     font_path = os.path.abspath(os.path.dirname(__file__)) + '/fonts/arial.ttf'
-    font = ImageFont.truetype(font_path, 20)
+    font = ImageFont.truetype(font_path, 15)
 
     num_boxes = len(predictions)
     # generate visually distinct colours for each bounding box
-    rgb_colors = get_colors(num_boxes)
+    rgb_colors = get_colors(num_boxes, colorblind_type="Deuteranomaly")
     hex_colors = []
     text_hex_colors = []
     for color in rgb_colors:
@@ -47,7 +48,8 @@ def predplot(image: np.ndarray,
                                            box["xmin"], box["ymin"],
                                            box["xmax"], box["ymax"],
                                            num_boxes, font,
-                                           hex_colors[index])
+                                           hex_colors[index],
+                                           str(index))
         index += 1
 
     display(bounded_image)
