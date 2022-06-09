@@ -34,8 +34,10 @@ def predplot(image: np.ndarray,
     # generate visually distinct colours for each bounding box
     rgb_colors = get_colors(num_boxes)
     hex_colors = []
+    text_hex_colors = []
     for color in rgb_colors:
         hex_colors.append(rgb2hex(color))
+        text_hex_colors.append(rgb2hex(get_text_color(color)))
 
     index = 0
     for bounding_box in predictions:
@@ -54,5 +56,5 @@ def predplot(image: np.ndarray,
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions['bbox'] = object_predictions.index
     def get_col(s):
-        return ['background-color: ' + hex_colors[s.bbox]]*3
+        return ['background-color: ' + hex_colors[s.bbox] + '; color: ' + text_hex_colors[s.bbox]]*3
     return object_predictions.style.apply(get_col, axis=1)
