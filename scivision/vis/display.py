@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from IPython.display import display
 from distinctipy.distinctipy import get_colors, get_text_color
 from matplotlib.image import AxesImage
 from matplotlib.colors import rgb2hex
