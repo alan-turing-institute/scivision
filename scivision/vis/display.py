@@ -11,15 +11,6 @@ from PIL import Image, ImageDraw, ImageFont
 import os.path
 
 
-def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_color, label, label_nums):
-    """Draw a bounding boxes for object detection."""
-    im_with_rectangle = ImageDraw.Draw(im)  
-    im_with_rectangle.rounded_rectangle((xmin, ymin, xmax, ymax), outline = hex_color, width = 2, radius = 10)
-    if label_nums:
-        im_with_rectangle.text((xmin+3, ymin+1), label, fill=hex_color, font = font)
-    return im
-
-
 def display_objects(image: np.ndarray,
                     predictions: list,
                     label_nums: bool = False) -> AxesImage:
@@ -62,17 +53,14 @@ def display_objects(image: np.ndarray,
     index = 0
     for bounding_box in predictions:
         box = bounding_box["box"]
-        bounded_image = _draw_bounding_box(pillow_image,
-                                           bounding_box["score"],
-                                           box["xmin"], box["ymin"],
-                                           box["xmax"], box["ymax"],
-                                           num_boxes, font,
-                                           hex_colors[index],
-                                           str(index),
-                                           label_nums)
+        im_with_rectangle = ImageDraw.Draw(pillow_image)  
+        im_with_rectangle.rounded_rectangle((box["xmin"], box["ymin"], box["xmax"], box["ymax"]),
+        outline = hex_colors[index], width = 2, radius = 10)
+        if label_nums:
+            im_with_rectangle.text((box["xmin"]+3, box["ymin"]+1), str(index), fill=hex_colors[index], font=font)
         index += 1
 
-    display(bounded_image)
+    display(pillow_image)
 
     # return colored pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
