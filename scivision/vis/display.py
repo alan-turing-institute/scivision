@@ -59,10 +59,14 @@ def display_objects(image: np.ndarray,
     for bounding_box in predictions:
         box = bounding_box["box"]
         im_with_rectangle = ImageDraw.Draw(pillow_image)  
-        im_with_rectangle.rounded_rectangle((box["xmin"], box["ymin"], box["xmax"], box["ymax"]),
-        outline = hex_colors[index], width = 2, radius = 10)
+        im_with_rectangle.rounded_rectangle((box["xmin"], box["ymin"],
+                                             box["xmax"], box["ymax"]),
+                                             outline=hex_colors[index],
+                                             width=2, radius=10)
         if label_nums:
-            im_with_rectangle.text((box["xmin"]+3, box["ymin"]+1), str(index), fill=hex_colors[index], font=font)
+            im_with_rectangle.text((box["xmin"]+3, box["ymin"]+1),
+                                    str(index), fill=hex_colors[index],
+                                    font=font)
         index += 1
     display(pillow_image)
 
@@ -70,5 +74,7 @@ def display_objects(image: np.ndarray,
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions['bbox'] = object_predictions.index
     def get_col(s):
-        return ['background-color: ' + hex_colors[s.bbox] + '; color: ' + text_hex_colors[s.bbox]]*3
+        """Func to color pandas df"""
+        return ['background-color: ' + hex_colors[s.bbox] +
+                '; color: ' + text_hex_colors[s.bbox]]*3
     return object_predictions.style.apply(get_col, axis=1)
