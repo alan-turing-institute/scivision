@@ -36,20 +36,25 @@ def display_objects(image: np.ndarray,
     The input image with colored bounding boxes and an accompanying pandas
     dataframe legend showing corresponding labels and scores for each object.
     """
+    # Convert image to RGB
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
-
+    
+    # Load font needed for numbering of bounding boxes and set size
     font_path = os.path.abspath(os.path.dirname(__file__)) + '/fonts/arial.ttf'
     font = ImageFont.truetype(font_path, 15)
 
-    num_boxes = len(predictions)
-    # generate visually distinct colours for each bounding box
-    rgb_colors = get_colors(num_boxes, colorblind_type="Deuteranomaly")
+    # Generate visually distinct colors for each object bounding box
+    # We want a list of hexadecimal colors to use, and distinctipy can also
+    # give us a matching list of the most appropriate text colors
+    # for these colors (black or white)
+    rgb_colors = get_colors(len(predictions), colorblind_type="Deuteranomaly")
     hex_colors = []
     text_hex_colors = []
     for color in rgb_colors:
         hex_colors.append(rgb2hex(color))
         text_hex_colors.append(rgb2hex(get_text_color(color)))
-
+    
+    # Place the object bounding boxes onto the image and use IPython to display
     index = 0
     for bounding_box in predictions:
         box = bounding_box["box"]
@@ -59,10 +64,9 @@ def display_objects(image: np.ndarray,
         if label_nums:
             im_with_rectangle.text((box["xmin"]+3, box["ymin"]+1), str(index), fill=hex_colors[index], font=font)
         index += 1
-
     display(pillow_image)
 
-    # return colored pandas df table relating to the objects shown in image
+    # Return a colored pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions['bbox'] = object_predictions.index
     def get_col(s):
