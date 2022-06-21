@@ -30,7 +30,7 @@ def display_objects(image: np.ndarray,
         which denote the boundaries of each box (detected object).
     label_nums : bool = False
         When True, bounding boxes are numbered in addition to being colored.
-        
+
     Returns
     -------
     The input image with colored bounding boxes and an accompanying pandas
@@ -38,7 +38,7 @@ def display_objects(image: np.ndarray,
     """
     # Convert image to RGB
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
-    
+
     # Load font needed for numbering of bounding boxes and set size
     font_path = os.path.abspath(os.path.dirname(__file__)) + '/fonts/arial.ttf'
     font = ImageFont.truetype(font_path, 15)
@@ -53,28 +53,31 @@ def display_objects(image: np.ndarray,
     for color in rgb_colors:
         hex_colors.append(rgb2hex(color))
         text_hex_colors.append(rgb2hex(get_text_color(color)))
-    
+
     # Place the object bounding boxes onto the image and use IPython to display
     index = 0
     for bounding_box in predictions:
         box = bounding_box["box"]
-        im_with_rectangle = ImageDraw.Draw(pillow_image)  
+        im_with_rectangle = ImageDraw.Draw(pillow_image)
         im_with_rectangle.rounded_rectangle((box["xmin"], box["ymin"],
                                              box["xmax"], box["ymax"]),
-                                             outline=hex_colors[index],
-                                             width=2, radius=10)
+                                            outline=hex_colors[index],
+                                            width=2, radius=10)
         if label_nums:
-            im_with_rectangle.text((box["xmin"]+3, box["ymin"]+1),
-                                    str(index), fill=hex_colors[index],
-                                    font=font)
+            im_with_rectangle.text((box["xmin"] + 3, box["ymin"] + 1),
+                                   str(index), fill=hex_colors[index],
+                                   font=font)
         index += 1
     display(pillow_image)
 
     # Return a colored pandas df table relating to the objects shown in image
     object_predictions = pd.DataFrame(predictions).drop('box', 1)
     object_predictions['bbox'] = object_predictions.index
+
     def get_col(s):
         """Func to color pandas df"""
-        return ['background-color: ' + hex_colors[s.bbox] +
-                '; color: ' + text_hex_colors[s.bbox]]*3
+        col = 'background-color: ' + hex_colors[s.bbox]
+        col += '; color: ' + text_hex_colors[s.bbox]
+        return [col] * 3
+
     return object_predictions.style.apply(get_col, axis=1)
