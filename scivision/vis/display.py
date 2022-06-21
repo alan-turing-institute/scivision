@@ -20,11 +20,11 @@ def _draw_bounding_box(im, score, xmin, ymin, xmax, ymax, num_boxes, font, hex_c
     return im
 
 
-def predplot(image: np.ndarray,
-             predictions: list,
-             task: str = "object detection",
-             label_nums: bool = False) -> AxesImage:
-    """Plot an image loaded via scivison with predictions from a scivision model.
+def display_objects(image: np.ndarray,
+                    predictions: list,
+                    label_nums: bool = False) -> AxesImage:
+    """Display an image with colored bounding boxes for objects identified by a
+    scivision object detection model.
 
     Parameters
     ----------
@@ -45,9 +45,6 @@ def predplot(image: np.ndarray,
     The input image with colored bounding boxes and an accompanying pandas
     dataframe legend showing corresponding labels and scores for each object.
     """
-    if task != "object detection":
-        raise NotImplementedError("Visualisation for model predictions other than object detection have not been developed yet")
-
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
 
     font_path = os.path.abspath(os.path.dirname(__file__)) + '/fonts/arial.ttf'
