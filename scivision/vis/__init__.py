@@ -1,1 +1,1 @@
-from .display import predplot
+from .display import display_objects
