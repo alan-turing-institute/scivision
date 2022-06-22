@@ -10,3 +10,6 @@ This part of the documentation covers all the interfaces of scivision.
    
 .. autoclass:: scivision.catalog.catalog.PandasCatalog
    :members:
+   
+.. autoclass:: scivision.vis.display.display_objects
+   :members:
