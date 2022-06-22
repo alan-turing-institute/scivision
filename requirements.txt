@@ -11,3 +11,4 @@ intake-xarray
 pydantic
 exifread
 distinctipy
+ipython
