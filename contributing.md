@@ -8,7 +8,7 @@ Thank you for taking the time to contribute to the scivision project. 🎉
 - :ref:`what-to-contribute`
 - :ref:`how-to-contribute`
 - :ref:`extending-the-scivision-catalog`
-- :ref:`licence-header`
+- 🖊️ [License](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
 
 .. _who-should-contribute:
 
