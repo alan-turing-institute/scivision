@@ -36,16 +36,22 @@ function DataSourceForm() {
     return (<Form onSubmit={
                       (input) => {
                           download("one-datasource.json", JSON.stringify(input.formData, null, 4));
+                          // datasources.entries.push(input.formData)
                       }
-                  }
-                uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
-                schema={datasource_schema} />);
+                  } 
+                  uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
+                  schema={datasource_schema} />);
 }
 
 function ModelForm() {
-  return (<Form onSubmit={(input) => download("one-model.json", JSON.stringify(input.formData, null, 4))}
-                uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
-                schema={model_schema} />);
+    return (<Form onSubmit={
+                      (input) => {
+                          download("one-model.json", JSON.stringify(input.formData, null, 4))
+                          // models.entries.push(input.formData)
+                      }
+                  }
+                  uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
+                  schema={model_schema} />);
 }
 
 function AboutText() {
