@@ -1,0 +1,127 @@
+{
+   "catalog_type":"scivision datasource catalog",
+   "name":"default",
+   "entries":[
+      {
+         "name":"data-000",
+         "tasks":[
+            "object-detection",
+            "segmentation"
+         ],
+         "domains":[
+            "optical-microscopy"
+         ],
+         "url":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+         "format":"image",
+         "labels_provided":true,
+         "institution":["epfl"],
+         "tags":[
+            "help-needed",
+            "3D",
+            "cell",
+            "cell-counting",
+            "biology",
+            "biomedical-science"
+         ]
+      },
+      {
+         "name":"data-001",
+         "tasks":[
+            "segmentation",
+            "thresholding",
+            "object-detection"
+         ],
+         "domains":[
+            "multispectral",
+            "hyperspectral"
+         ],
+         "url":"https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+         "format":"image",
+         "labels_provided":true,
+         "institution":["Aarhus University"],
+         "tags":[
+            "help-needed",
+            "2D",
+            "plant-phenotyping",
+            "agriculture",
+            "climate-change-and-agriculture"
+         ]
+      },
+      {
+         "name":"data-002",
+         "tasks":[
+            "classification"
+         ],
+         "domains":[
+            "oceanography"
+         ],
+         "url":"https://github.com/scotthosking/intake-plankton/blob/main/plktn.yaml",
+         "format":"image",
+         "labels_provided":true,
+         "institution":["CEFAS"],
+         "tags":[
+            "help-needed",
+            "2D"
+         ]
+      },
+      {
+         "name":"data-003",
+         "description":"Koala",
+         "tasks":[
+            "object-detection",
+            "classification"
+         ],
+         "domains":[
+            "computer-vision"
+         ],
+         "url":"https://github.com/alan-turing-institute/scivision-test-data",
+         "format":"image",
+         "labels_provided":true,
+         "institution":["Wikipedia by Erik Veland"],
+         "tags":[
+            "demo"
+         ]
+      },
+      {
+         "name":"data-004",
+         "description":"Sample dataset of Plankton required to demonstrate the Rapid Identification of Plankton using Machine Learning Project undertaken by CEFAS, The Alan Turing Institute and Plankton Analytics Ltd",
+         "tasks":[
+            "classification"
+         ],
+         "domains":[
+            "computer-vision"
+         ],
+         "url":"https://raw.githubusercontent.com/alan-turing-institute/plankton-cefas-scivision/test_data_catalog/scivision.yml",
+         "format":"image",
+         "labels_provided":true,
+         "institution":["Centre for Environment, Fisheries and Aquaculture Science (CEFAS)"],
+         "tags":[
+            "2D",
+            "plankton",
+            "ecology",
+            "environmental-science"
+         ]
+      },
+      {
+         "name":"data-005",
+         "description":"Sample dataset of satellite imagery required to demonstrate the VEdge detector authored by Rogers et al. (2021)",
+         "tasks":[
+            "classification", "segmentation"
+         ],
+         "domains":[
+            "computer-vision", "earth-observation", "ecology"
+         ],
+         "url":"https://github.com/MartinSJRogers/VEdge_Detector_scivision",
+         "format":"image",
+         "labels_provided":false,
+         "institution":["Cambridge University"],
+         "tags":[
+            "2D",
+            "satellite",
+            "remote-sensing",
+            "ecology",
+            "environmental-science"
+         ]
+      }
+   ]
+}
