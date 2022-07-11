@@ -34,3 +34,4 @@ jobs:
         folder: frontend/build
         message: Deploy to gh-pages
         clean: true
+
