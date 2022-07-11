@@ -1,6 +1,8 @@
 name: Build frontend
 on:
-  push
+  push:
+    branches:
+      - frontend
 
 jobs:
   build:
