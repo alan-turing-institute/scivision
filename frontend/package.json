@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alan-turing-institute.github.io/scivision/",
   "dependencies": {
     "@rjsf/bootstrap-4": "^4.2.0",
     "@rjsf/core": "^4.2.0",
