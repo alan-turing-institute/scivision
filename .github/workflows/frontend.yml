@@ -22,6 +22,8 @@ jobs:
 
     - name: Build
       working-directory: frontend
+      env:
+        CI: ""
       run: npm run build
 
   deploy:
