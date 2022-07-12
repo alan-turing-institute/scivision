@@ -35,7 +35,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
-        folder: frontend/build
-        message: Deploy to gh-pages
+        folder: ../frontend/build
         clean: true
 
