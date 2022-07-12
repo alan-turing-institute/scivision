@@ -12,8 +12,7 @@ import Form from '@rjsf/bootstrap-4';
 import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
 
-import { Nav, NavDropdown, Navbar, Container, Alert } from "react-bootstrap";
-import SidebarMenu from 'react-bootstrap-sidebar-menu';
+import { Nav, Navbar } from "react-bootstrap";
 
 import datasources from './datasources.json';
 import models from './models.json';
