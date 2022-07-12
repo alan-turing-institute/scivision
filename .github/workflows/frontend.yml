@@ -24,7 +24,10 @@ jobs:
       working-directory: frontend
       env:
         CI: ""
-      run: npm run build
+      run: |
+        npm run build
+        pwd
+        ls
 
   deploy:
     runs-on: ubuntu-latest
