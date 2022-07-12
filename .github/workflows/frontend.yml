@@ -17,9 +17,11 @@ jobs:
         node-version: '16.15.1'
 
     - name: Install node packages
+      working-directory: frontend
       run: npm ci
 
     - name: Build
+      working-directory: frontend
       run: npm run build
 
   deploy:
