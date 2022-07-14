@@ -136,6 +136,17 @@
             "labels_required":false,
             "institution":["alan-turing-institute", "huggingface"],
             "tags": []
+        },
+        {
+            "name":"detectreeRGB-forest",
+            "tasks":["object-detection","segmentation"],
+            "url":"https://github.com/acocac/detectreeRGB-treecrown-scivision",
+            "pkg_url":"git+https://github.com/acocac/detectreeRGB-treecrown-scivision.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["cambridge-university"],
+            "tags": ["object-detection","segmentation", "2D", "image"]
         }
     ]
 }
