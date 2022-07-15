@@ -4,7 +4,6 @@
 import importlib
 import subprocess
 import sys
-from typing import Literal, Union
 
 
 def _package_exists(config: dict) -> bool:
@@ -39,7 +38,7 @@ def _install(package, pip_install_args=None):
 
 def install_package(
     config: dict,
-    allow_install: Union[bool, Literal["force"]] = False,
+    allow_install=False,  # allowed values: True, False, or the string "force"
     branch: str = "main",
 ):
     """Install the python package if it doesn't exist."""
