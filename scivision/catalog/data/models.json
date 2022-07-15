@@ -140,8 +140,8 @@
         {
             "name":"detectreeRGB-forest",
             "tasks":["object-detection","segmentation"],
-            "url":"https://github.com/acocac/detectreeRGB-treecrown-scivision",
-            "pkg_url":"git+https://github.com/acocac/detectreeRGB-treecrown-scivision.git@main",
+            "url":"https://github.com/shmh40/detectreeRGB-treecrown-scivision",
+            "pkg_url":"git+https://github.com/shmh40/detectreeRGB-treecrown-scivision.git@main",
             "format":"image",
             "pretrained":true,
             "labels_required":false,

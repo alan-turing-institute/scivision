@@ -132,7 +132,7 @@
          "domains":[
             "computer-vision", "earth-observation", "ecology"
          ],
-         "url":"https://github.com/acocac/detectreeRGB-treecrown-scivision",
+         "url":"https://github.com/shmh40/detectreeRGB-treecrown-scivision",
          "format":"image",
          "labels_provided":false,
          "institution":["Cambridge University"],
