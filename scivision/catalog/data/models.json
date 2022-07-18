@@ -146,7 +146,7 @@
             "pretrained":true,
             "labels_required":false,
             "institution":["cambridge-university"],
-            "tags": ["object-detection","segmentation", "2D", "image"]
+            "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
         }
     ]
 }
