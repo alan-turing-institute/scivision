@@ -7,8 +7,9 @@ import os
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
-from pydantic import BaseModel, AnyUrl, FileUrl
+from pydantic import BaseModel, AnyUrl, FileUrl, validator
 from enum import Enum
+from collections import Counter
 
 
 class TaskEnum(str, Enum):
@@ -48,6 +49,16 @@ class CatalogModels(BaseModel, extra="forbid"):
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogModelEntry, ...]
 
+    @validator("entries")
+    def name_unique_key(cls, entries):
+        name_counts = Counter([entry['name'] for entry in entries])
+        dups = [item for item, count in name_counts.items() if count > 1]
+
+        if dups:
+            raise ValueError(f"The 'name' field in the model catalog should be unique (duplicates: {dups})")
+
+        return entries
+
 
 class CatalogDatasourceEntry(BaseModel, extra="forbid"):
     name: str
@@ -70,6 +81,16 @@ class CatalogDatasources(BaseModel, extra="forbid"):
     name: str
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogDatasourceEntry, ...]
+
+    @validator("entries")
+    def name_unique_key(cls, entries):
+        name_counts = Counter([entry['name'] for entry in entries])
+        dups = [item for item, count in name_counts.items() if count > 1]
+
+        if dups:
+            raise ValueError(f"The 'name' field in the datasource catalog should be unique (duplicates: {dups})")
+
+        return entries
 
 
 def _coerce_datasources_catalog(
