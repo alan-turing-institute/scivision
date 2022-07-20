@@ -55,7 +55,7 @@ class CatalogModels(BaseModel, extra="forbid"):
         dups = [item for item, count in name_counts.items() if count > 1]
 
         if dups:
-            raise ValueError(f"The 'name' field in the catalog should be unique (duplicates: {dups})")
+            raise ValueError(f"The 'name' field in the model catalog should be unique (duplicates: {dups})")
 
         return entries
 
@@ -81,6 +81,16 @@ class CatalogDatasources(BaseModel, extra="forbid"):
     name: str
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogDatasourceEntry, ...]
+
+    @validator("entries")
+    def name_unique_key(cls, entries):
+        name_counts = Counter([entry['name'] for entry in entries])
+        dups = [item for item, count in name_counts.items() if count > 1]
+
+        if dups:
+            raise ValueError(f"The 'name' field in the datasource catalog should be unique (duplicates: {dups})")
+
+        return entries
 
 
 def _coerce_datasources_catalog(
