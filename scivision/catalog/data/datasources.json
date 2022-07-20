@@ -25,6 +25,28 @@
          ]
       },
       {
+         "name":"data-000",
+         "tasks":[
+            "object-detection",
+            "segmentation"
+         ],
+         "domains":[
+            "optical-microscopy"
+         ],
+         "url":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+         "format":"image",
+         "labels_provided":true,
+         "institution":["epfl"],
+         "tags":[
+            "help-needed",
+            "3D",
+            "cell",
+            "cell-counting",
+            "biology",
+            "biomedical-science"
+         ]
+      },
+      {
          "name":"data-001",
          "tasks":[
             "segmentation",
