@@ -55,7 +55,7 @@ class CatalogModels(BaseModel, extra="forbid"):
         dups = [item for item, count in name_counts.items() if count > 1]
 
         if dups:
-            raise ValueError(f"{The 'name' field in the catalog should be unique (duplicates: {dups})")
+            raise ValueError(f"The 'name' field in the catalog should be unique (duplicates: {dups})")
 
         return entries
 
