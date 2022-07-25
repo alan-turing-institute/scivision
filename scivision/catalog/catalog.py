@@ -7,7 +7,7 @@ import os
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, FrozenSet, Optional, Tuple, Union
-from pydantic import AnyUrl, BaseModel, Field, Schema, validator
+from pydantic import AnyUrl, BaseModel, Field, validator
 from enum import Enum
 from collections import Counter
 
@@ -87,7 +87,7 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
 
 
 class CatalogModels(BaseModel, extra="forbid"):
-    catalog_type: str = Schema("scivision model catalog", const=True)
+    catalog_type: str = "scivision model catalog"
     name: str
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogModelEntry, ...]
@@ -164,7 +164,7 @@ class CatalogDatasourceEntry(
 
 
 class CatalogDatasources(BaseModel, extra="forbid"):
-    catalog_type: str = Schema("scivision datasource catalog", const=True)
+    catalog_type: str = "scivision datasource catalog"
     name: str
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogDatasourceEntry, ...]
