@@ -94,7 +94,7 @@
             "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
         },
         {
-            "name":"scivision_classifier",
+            "name":"image-classifiers",
             "tasks":["classification"],
             "url":"https://github.com/alan-turing-institute/scivision_classifier",
             "pkg_url":"git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
@@ -105,15 +105,48 @@
             "tags": ["classification", "2D", "image"]
         },
         {
-            "name":"scivision_huggingface",
+            "name":"huggingface-classifiers",
             "tasks":["classification"],
             "url":"https://github.com/alan-turing-institute/scivision_huggingface",
             "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
             "format":"image",
             "pretrained":true,
             "labels_required":false,
-            "institution":["alan-turing-institute"],
+            "institution":["alan-turing-institute", "huggingface"],
             "tags": ["classification", "2D", "image"]
+        },
+        {
+            "name":"huggingface-segmentation",
+            "tasks":["segmentation"],
+            "url":"https://github.com/alan-turing-institute/scivision_huggingface_segmentation",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface_segmentation.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute", "huggingface"],
+            "tags": []
+        },
+        {
+            "name":"huggingface-object-detection",
+            "tasks":["object-detection"],
+            "url":"https://github.com/alan-turing-institute/scivision_huggingface_objectdetection",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface_objectdetection.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute", "huggingface"],
+            "tags": []
+        },
+        {
+            "name":"detectreeRGB-forest",
+            "tasks":["object-detection","segmentation"],
+            "url":"https://github.com/shmh40/detectreeRGB-treecrown-scivision",
+            "pkg_url":"git+https://github.com/shmh40/detectreeRGB-treecrown-scivision.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["cambridge-university"],
+            "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
         }
     ]
 }
