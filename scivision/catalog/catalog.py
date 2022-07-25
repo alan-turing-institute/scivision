@@ -6,8 +6,8 @@ import pandas as pd
 import os
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Union
-from pydantic import BaseModel, AnyUrl, Field, FileUrl, validator
+from typing import Any, Dict, FrozenSet, Optional, Tuple, Union
+from pydantic import AnyUrl, BaseModel, Field, Schema, validator
 from enum import Enum
 from collections import Counter
 
@@ -87,7 +87,7 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
 
 
 class CatalogModels(BaseModel, extra="forbid"):
-    catalog_type: Literal["scivision model catalog"]
+    catalog_type: str = Schema("scivision model catalog", const=True)
     name: str
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogModelEntry, ...]
@@ -164,7 +164,7 @@ class CatalogDatasourceEntry(
 
 
 class CatalogDatasources(BaseModel, extra="forbid"):
-    catalog_type: Literal["scivision datasource catalog"]
+    catalog_type: str = Schema("scivision datasource catalog", const=True)
     name: str
     # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogDatasourceEntry, ...]
