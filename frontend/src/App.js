@@ -18,7 +18,6 @@ import datasources from './datasources.json';
 import models from './models.json';
 import DataTable from 'react-data-table-component';
 
-import { Octokit, App } from "octokit";
 
 function download(filename, text) {
   var element = document.createElement('a');
