@@ -66,7 +66,7 @@ function GitHubConnect() {
         redirect_uri: 'https://alan-turing-institute.github.io/scivision'
     }).toString();
 
-    <a href={github_auth_url}>Connect to GitHub</a>
+    return (<a href={github_auth_url}>Connect to GitHub</a>);
 }
 
 function Datasources() {
