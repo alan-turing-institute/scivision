@@ -18,6 +18,8 @@ import datasources from './datasources.json';
 import models from './models.json';
 import DataTable from 'react-data-table-component';
 
+import { Octokit, App } from "octokit";
+
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -54,7 +56,18 @@ function ModelForm() {
 }
 
 function AboutText() {
-  return (<p>Add text here</p>);
+    return (<p>Add text here</p>);
+}
+
+function GitHubConnect() {
+
+    var github_auth_url = new URL('https://github.com/login/oauth/authorize')
+    github_auth_url.search = new URLSearchParams({
+        client_id: '13bcb3c2a2c31a9f6f02',
+        redirect_uri: 'https://alan-turing-institute.github.io/scivision'
+    }).toString()
+
+    <a href={github_auth_url}>Connect to GitHub</a>
 }
 
 function Datasources() {
@@ -133,7 +146,6 @@ function Models() {
     ];
 
     return <DataTable columns={columns} data={models.entries} title="Models" />;
-
 }
 
 function App() {
@@ -171,7 +183,12 @@ function App() {
                       <Routes>
                           <Route exact path="/" element={
                                      <div className="col-md-auto">
-                                         <AboutText/>
+                                         <AboutText />
+                                     </div>
+                                 } />
+                          <Route path="/gh-connect" element={
+                                     <div className="col-md-auto">
+                                         <GitHubConnect />
                                      </div>
                                  } />
                           <Route path="/datasources" element={
