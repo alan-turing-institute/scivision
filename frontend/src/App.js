@@ -61,11 +61,11 @@ function AboutText() {
 
 function GitHubConnect() {
 
-    var github_auth_url = new URL('https://github.com/login/oauth/authorize')
+    var github_auth_url = new URL('https://github.com/login/oauth/authorize');
     github_auth_url.search = new URLSearchParams({
         client_id: '13bcb3c2a2c31a9f6f02',
         redirect_uri: 'https://alan-turing-institute.github.io/scivision'
-    }).toString()
+    }).toString();
 
     <a href={github_auth_url}>Connect to GitHub</a>
 }
