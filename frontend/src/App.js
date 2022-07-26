@@ -146,7 +146,7 @@ function App() {
                   </Navbar.Brand>
               </Navbar>
               <div class="row px-4 mt-2">
-                  <Router basename={'/scivision'}>
+                  <Router basename={process.env.PUBLIC_URL}>
                       <Nav className="col-auto d-block sidebar">
                           <Nav.Item>
                               <Link to="">About</Link>
