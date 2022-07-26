@@ -163,7 +163,11 @@ function App() {
                           <Nav.Item>
                               <Link to="">About</Link>
                           </Nav.Item>
+                          <Nav.Item>
+                              <Link to="gh-connect">Connect GitHub account</Link>
+                          </Nav.Item>
                           <p />
+                          
                           <Nav.Item>
                               <Link to="datasources">Datasources</Link>
                           </Nav.Item>
