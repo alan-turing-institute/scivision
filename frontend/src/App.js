@@ -18,6 +18,8 @@ import datasources from './datasources.json';
 import models from './models.json';
 import DataTable from 'react-data-table-component';
 
+import crypto
+
 
 function download(filename, text) {
   var element = document.createElement('a');
@@ -60,10 +62,12 @@ function AboutText() {
 
 function GitHubConnect() {
 
+    const random_string = crypto.randomBytes(32).toString('base64');
     var github_auth_url = new URL('https://github.com/login/oauth/authorize');
     github_auth_url.search = new URLSearchParams({
         client_id: '13bcb3c2a2c31a9f6f02',
-        redirect_uri: 'https://alan-turing-institute.github.io/scivision'
+        redirect_uri: 'https://alan-turing-institute.github.io/scivision',
+        state: random_string
     }).toString();
 
     return (<a href={github_auth_url}>Connect to GitHub</a>);
