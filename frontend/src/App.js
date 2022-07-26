@@ -18,7 +18,7 @@ import datasources from './datasources.json';
 import models from './models.json';
 import DataTable from 'react-data-table-component';
 
-import crypto
+import crypto;
 
 
 function download(filename, text) {
