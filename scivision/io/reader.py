@@ -214,3 +214,27 @@ def load_dataset(
     intake_cat = intake.open_catalog(path)
 
     return intake_cat
+
+
+def load_stac_dataset(
+    path: os.PathLike,
+) -> intake_stac.catalog.StacCatalog:
+    """Load a dataset.
+
+    Parameters
+    ----------
+    path : PathLike
+        The catalog_url, which links to a stac catalog.
+
+    Returns
+    -------
+    intake_stac.catalog.StacCatalog
+        An intake stac catalog object representing the loaded dataset (see `intake.readthedocs <https://intake.readthedocs.io/en/latest/api_user.html?highlight=catalog.local.YAMLFileCatalog#intake.catalog.local.YAMLFileCatalog>`_).
+    """
+
+    if _is_url(path):
+        path = _parse_url(path)
+
+    intake_cat = intake.open_stac_catalog(path)
+
+    return intake_cat
