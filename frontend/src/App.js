@@ -281,7 +281,6 @@ function App() {
                     <Routes>
                         <Route exact path="/" element={
                                    <div className="col-md-auto">
-                                       <div>loc: {loc.pathname} </div>
                                        <AboutText gh_logged_in={gh_logged_in} />
                                    </div>
                                } />
