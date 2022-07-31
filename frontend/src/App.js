@@ -99,7 +99,7 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
             login_attempted.current = true;
             if (gh_code) {
                 (async () => {
-                    if (gh_logged_in) throw "Already logged in";
+                    if (gh_logged_in) throw "Already logged in to GitHub";
                     return get_github_token(gh_code);
                 })()
                     .then((tok) => {
@@ -124,21 +124,27 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
 }
 
 
-function GitHubConnect({ referrer }) {
-    const random_uuid = crypto.randomUUID();
-    var github_auth_url = new URL('https://github.com/login/oauth/authorize');
+function GitHubConnect({ referrer, gh_logged_in }) {
+    if (gh_logged_in) {
+        console.log("Already logged in to GitHub");
+        return <Navigate to={referrer} />;
+    } else {
+        //const random_uuid = crypto.randomUUID();
+        var github_auth_url = new URL('https://github.com/login/oauth/authorize');
 
-    const referrer_encoded = encodeURIComponent(encodeURIComponent(referrer));
+        const referrer_encoded = encodeURIComponent(encodeURIComponent(referrer));
 
-    github_auth_url.search = new URLSearchParams({
-        client_id: '13bcb3c2a2c31a9f6f02',
-        redirect_uri: 'https://alan-turing-institute.github.io/scivision/#/login/' + referrer_encoded,
-        state: random_uuid
-    }).toString();
+        github_auth_url.search = new URLSearchParams({
+            client_id: '13bcb3c2a2c31a9f6f02',
+            //redirect_uri: 'https://alan-turing-institute.github.io/scivision/#/login/' + referrer_encoded,
+            redirect_uri: 'http://localhost:3000/scivision/#/login/' + referrer_encoded,
+            // state: random_uuid
+        }).toString();
 
-    window.location = github_auth_url;
+        window.location = github_auth_url;
 
-    return (<div>Redirecting to GitHub</div>);
+        return (<div>Redirecting to GitHub</div>);
+    }
 }
 
 
@@ -222,11 +228,39 @@ function Models() {
 }
 
 
+function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
+
+    const loc = useLocation();
+
+    if (!gh_logged_in) {
+        return (
+            <a href="javascript:;"
+                   onClick={() => {
+                   GitHubConnect({
+                       referrer: loc.pathname,
+                       gh_logged_in: gh_logged_in
+                   });
+               }}>
+                Login with GitHub
+            </a>
+        );
+    } else {
+        return (
+            <a href="javascript:;"
+               onClick={() => {
+                   set_gh_logged_in(false);
+                   sessionStorage.removeItem(GH_TOKEN_KEY);
+               }}>
+                Logout
+            </a>
+        );
+    }
+}
+
+
 function App() {
     const gh_token = sessionStorage[GH_TOKEN_KEY];
     const [ gh_logged_in, set_gh_logged_in ] = useState(!!gh_token);
-
-    const loc = useLocation();
 
     return (
         <div className="app">
@@ -245,20 +279,8 @@ function App() {
                         <p />
 
                         <Nav.Item>
-                            <a href="javascript:;"
-                               onClick={() => { GitHubConnect({ referrer: loc.pathname }) }}
-                               className="link-primary">
-                                Login with GitHub
-                            </a>
-                            {
-                                (() => {
-                                    if (gh_logged_in) {
-                                        return (<div>logged in</div>)
-                                    } else {
-                                        return (<div>not logged in</div>)
-                                    }
-                                }) ()
-                            }
+                            <LoginStatusLink gh_logged_in={gh_logged_in}
+                                             set_gh_logged_in={set_gh_logged_in} />
                         </Nav.Item>
                         <p />
 
