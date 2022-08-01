@@ -107,7 +107,7 @@ If you feel able to, please contact [Dr Scott Hosking ](mailto:@turing.ac.uk).
 
 ### 3.2 Alternate contact points
 
-If you do not feel comfortable contacting , please report an incident to by email at [Sebastian Anhert](mailto:anhert@turing.ac.uk).
+If you do not feel comfortable contacting Dr Scott Hosking, please report an incident to by email at [Sebastian Anhert](mailto:anhert@turing.ac.uk).
 
 Alternatively, if you would like to contact someone outside of the core development team, please contact [Aida Mehonic](mailto:amehonic@turing.ac.uk).
 
