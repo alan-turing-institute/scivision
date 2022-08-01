@@ -26,6 +26,11 @@ import datasources from './datasources.json';
 import models from './models.json';
 import DataTable from 'react-data-table-component';
 
+import { Octokit } from "octokit";
+import { createPullRequest } from "octokit-plugin-create-pull-request";
+
+const OctokitPRPlugin = Octokit.plugin(createPullRequest);
+
 
 const GH_TOKEN_KEY = "gh_token";
 
@@ -41,6 +46,40 @@ function download(filename, text) {
   element.click();
 
   document.body.removeChild(element);
+}
+
+
+function TestPR() {
+    const octokit = new OctokitPRPlugin({
+        auth: sessionStorage[GH_TOKEN_KEY]
+    });
+
+    const update_attempted = useRef(false);
+
+    useEffect(() => {
+        if (!update_attempted.current) {
+            update_attempted.current = true;
+            octokit.createPullRequest({
+                owner: "alan-turing-institute",
+                repo: "scivision",
+                title: "test update catalog",
+                body: "",
+                base: "main",
+                head: "test-update-catalog",
+                update: false,
+                forceFork: false,
+                changes: [
+                    {
+                        files: {
+                            "scivision/catalog/data/datasources.json": "New catalog contents"
+                        },
+                        commit: "Test update catalog"
+                        
+                    }
+                ]
+            });
+        }
+    });
 }
 
 function DataSourceForm() {
@@ -228,10 +267,36 @@ function Models() {
 }
 
 
+function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
+    const octokit = new Octokit({ auth: sessionStorage[GH_TOKEN_KEY] });
+    const [ gh_username, set_gh_username ] = useState("...");
+    useEffect(() => {
+        (async () => {
+            const {
+                data: { login },
+            } = await octokit.rest.users.getAuthenticated();
+            set_gh_username(login);
+        })();
+    }, [gh_username]);
+
+    return (
+        <>
+            <div>Logged in as {gh_username}</div>
+            <a href="javascript:;"
+               onClick={() => {
+                   set_gh_logged_in(false);
+                   sessionStorage.removeItem(GH_TOKEN_KEY);
+               }}>
+                (logout)
+            </a>
+        </>
+    );
+}
+
+
 function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
-
     const loc = useLocation();
-
+    
     if (!gh_logged_in) {
         return (
             <a href="javascript:;"
@@ -245,16 +310,8 @@ function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
             </a>
         );
     } else {
-        return (
-            <a href="javascript:;"
-               onClick={() => {
-                   set_gh_logged_in(false);
-                   sessionStorage.removeItem(GH_TOKEN_KEY);
-               }}>
-                Logout
-            </a>
-        );
-    }
+        return (<LoginStatusLinkLoggedIn set_gh_logged_in={set_gh_logged_in} />);
+    }    
 }
 
 
@@ -336,6 +393,12 @@ function App() {
                                        <ModelForm />
                                    </div>
                                } />
+                        <Route path="/update" element={
+                                   <div className="col-auto">
+                                       <TestPR />
+                                   </div>
+                               } />
+                        
                     </Routes>
                 </div>
             </div>
