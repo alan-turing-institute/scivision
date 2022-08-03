@@ -177,6 +177,7 @@ function GitHubConnect({ referrer, gh_logged_in }) {
             client_id: '13bcb3c2a2c31a9f6f02',
             //redirect_uri: 'https://alan-turing-institute.github.io/scivision/#/login/' + referrer_encoded,
             redirect_uri: 'http://localhost:3000/scivision/#/login/' + referrer_encoded,
+            scope: "public_repo"
             // state: random_uuid
         }).toString();
 
