@@ -334,6 +334,9 @@ function App() {
                             <Link to="">About</Link>
                         </Nav.Item>
 
+                        <Nav.Item>
+                            <a href="https://scivision.readthedocs.io/en/latest/">Documentation</a>
+                        </Nav.Item>
                         <p />
 
                         <Nav.Item>
