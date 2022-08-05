@@ -12,7 +12,7 @@ import {
     useLocation
 } from "react-router-dom";
 
-import { withRouter } from "react-router";
+import { withRouter, useNavigate } from "react-router";
 
 import { React, useState, useEffect, useRef } from 'react';
 
@@ -21,6 +21,9 @@ import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
 
 import { Nav, Navbar } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 import datasources from './datasources.json';
 import models from './models.json';
@@ -83,14 +86,34 @@ function TestPR() {
 }
 
 function DataSourceForm() {
-    return (<Form onSubmit={
+    var pr_flag;
+    return (<div className="mb-5">
+                <Form onSubmit={
                       (input) => {
                           download("one-datasource.json", JSON.stringify(input.formData, null, 4));
+                          if (pr_flag) {
+                              console.log("opening pr");
+                          } else {
+                              console.log("downloading");
+                          }
                           // datasources.entries.push(input.formData)
                       }
                   }
-                  uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
-                  schema={datasource_schema} />);
+                  // uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
+                  schema={datasource_schema}>
+
+            <button type="submit"
+                    onClick={ () => pr_flag = true }
+                    className="btn btn-primary">
+                Open Pull Request on GitHub
+            </button>
+            <button type="submit"
+                    onClick={ () => pr_flag = false }
+                    className="btn btn-link">
+                Download entry data as json
+            </button>
+                </Form>
+                </div>);
 }
 
 function ModelForm() {
@@ -127,13 +150,17 @@ function AboutText() {
 function Login({ gh_logged_in, set_gh_logged_in }) {
     const login_attempted = useRef(false);
     const { referrer_encoded } = useParams();
-
+    const navigate = useNavigate();
+    
     const location = new URL(window.location);
     const query_params = location.searchParams;
 
     const gh_code = query_params.get('code');
 
+    const referrer = decodeURIComponent(referrer_encoded);
+    
     useEffect(() => {
+        
         if (!login_attempted.current) {
             login_attempted.current = true;
             if (gh_code) {
@@ -149,7 +176,8 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
                         console.log(`Could not log in to GitHub.  The reason was: ${e}`);
                     })
                     .finally(() => {
-                        window.location.search = "";
+                        // window.location.search = "";
+                        navigate(referrer);
                     });
             } else {
                 console.log("Missing 'code' query parameter");
@@ -157,10 +185,22 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
         }
     }, []);
 
-    const referrer = decodeURIComponent(referrer_encoded);
+    // return <Navigate to={referrer} />;
+    //<Modal show={true} animation={false} centered>
+    //<Modal.Header>
+    return ( <div>Logging in...&nbsp;&nbsp;
+                 <Spinner animation="border" role="status" size="sm"/>
+                 <Button variant="primary" onClick={ () => navigate(referrer) }>Abort</Button>
+             </div> );
 
-    return <Navigate to={referrer} />;
-}
+        //</Modal.Header>
+        //<Modal.Footer>
+
+// </div>
+        //</Modal.Footer>
+        //</Modal>
+
+        }
 
 
 function GitHubConnect({ referrer, gh_logged_in }) {
@@ -183,7 +223,7 @@ function GitHubConnect({ referrer, gh_logged_in }) {
 
         window.location = github_auth_url;
 
-        return (<div>Redirecting to GitHub</div>);
+        return (<div>Redirecting to GitHub...</div>);
     }
 }
 
