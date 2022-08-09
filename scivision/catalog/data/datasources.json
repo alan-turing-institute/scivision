@@ -165,6 +165,13 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "labels_provided": false,
+      "institution": [],
+      "tags": [],
+      "name": "test-datasource",
+      "description": "A test datasource"
     }
   ]
 }
