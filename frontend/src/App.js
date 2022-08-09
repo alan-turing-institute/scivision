@@ -128,7 +128,8 @@ function DataSourceForm() {
                           }
                       }
                   }
-                  schema={datasource_schema}>
+                  schema={datasource_schema}
+                  liveValidate>
 
                 <button type="submit"
                         onClick={ () => pr_flag = true }
@@ -152,7 +153,8 @@ function ModelForm() {
                       }
                   }
                   uiSchema={{"ui:options": { "submitButtonOptions": { "norender": false, "submitText": "Download" } }}}
-                  schema={model_schema} />);
+                  schema={model_schema}
+                  liveValidate/>);
 }
 
 
