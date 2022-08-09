@@ -116,7 +116,7 @@ function DataSourceForm() {
                                                   const content_str = Buffer.from(content, encoding);
                                                   let cat = JSON.parse(content_str);
                                                   cat.entries.push(entry);
-                                                  return JSON.stringify(cat, null, 4);
+                                                  return JSON.stringify(cat, null, 2);
                                               }
                                           },
                                           commit: `Create entry for ${entry.name} in the datasource catalog`
@@ -124,7 +124,7 @@ function DataSourceForm() {
                                   ]
                               });
                           } else {
-                              download("one-datasource.json", JSON.stringify(entry, null, 4));
+                              download("one-datasource.json", JSON.stringify(entry, null, 2));
                           }
                       }
                   }
@@ -148,7 +148,7 @@ function DataSourceForm() {
 function ModelForm() {
     return (<Form onSubmit={
                       (input) => {
-                          download("one-model.json", JSON.stringify(input.formData, null, 4))
+                          download("one-model.json", JSON.stringify(input.formData, null, 2))
                           // models.entries.push(input.formData)
                       }
                   }
