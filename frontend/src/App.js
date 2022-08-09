@@ -179,16 +179,16 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
     const login_attempted = useRef(false);
     const { referrer_encoded } = useParams();
     const navigate = useNavigate();
-    
+
     const location = new URL(window.location);
     const query_params = location.searchParams;
 
     const gh_code = query_params.get('code');
 
     const referrer = decodeURIComponent(referrer_encoded);
-    
+
     useEffect(() => {
-        
+
         if (!login_attempted.current) {
             login_attempted.current = true;
             if (gh_code) {
@@ -357,7 +357,7 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
 
 function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
     const loc = useLocation();
-    
+
     if (!gh_logged_in) {
         return (
             <a href="javascript:;"
@@ -372,7 +372,7 @@ function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
         );
     } else {
         return (<LoginStatusLinkLoggedIn set_gh_logged_in={set_gh_logged_in} />);
-    }    
+    }
 }
 
 
