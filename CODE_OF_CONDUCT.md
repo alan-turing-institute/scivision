@@ -39,8 +39,8 @@ To make clear what is expected, everyone participating in activities associated 
 This Code of Conduct applies to all spaces managed by the scivision project including, but not limited to, in-person focus groups and workshops, and communications online via GitHub.
 
 - Dr Scott Hosking  - is responsible for enforcing the Code of Conduct.
-He can be contacted by emailing [Scott Hosking](mailto:shosking@turing.ac.uk).
-You may contact [Sebastian Anhert](mailto:sanhert@turing.ac.uk), [Aida Mehonic](mailto:amehonic@turing.ac.uk) or [Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk) if you would prefer not to contact Dr Hosking.
+He can be contacted by emailing [Dr Scott Hosking](mailto:shosking@turing.ac.uk).
+You may also contact [Dr Sebastian Anhert](mailto:sanhert@turing.ac.uk), [Dr Alan Lowe](mailto:alowe@turing.ac.uk), [Dr Aida Mehonic](mailto:amehonic@turing.ac.uk) or [Dr Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk) if you would prefer not to contact Dr Hosking.
 
 Reports may be reviewed by other members of the core development team, unless there is a conflict of interest, and will be kept confidential.
 
@@ -107,9 +107,9 @@ If you feel able to, please contact [Dr Scott Hosking ](mailto:@turing.ac.uk).
 
 ### 3.2 Alternate contact points
 
-If you do not feel comfortable contacting , please report an incident to by email at [Sebastian Anhert](mailto:anhert@turing.ac.uk).
+If you do not feel comfortable contacting Dr Scott Hosking, please report an incident to [Dr Sebastian Anhert](mailto:sanhert@turing.ac.uk), [Dr Alan Lowe](mailto:alowe@turing.ac.uk) or to [Dr Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk).
 
-Alternatively, if you would like to contact someone outside of the core development team, please contact [Aida Mehonic](mailto:amehonic@turing.ac.uk).
+Alternatively, if you would like to contact someone outside of the core development team, please contact [Dr Aida Mehonic](mailto:amehonic@turing.ac.uk).
 
 ### 3.3 What to do if someone is in physical danger
 
