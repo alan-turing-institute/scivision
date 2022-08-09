@@ -213,22 +213,14 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
         }
     }, []);
 
-    // return <Navigate to={referrer} />;
-    //<Modal show={true} animation={false} centered>
-    //<Modal.Header>
-    return ( <div>Logging in...&nbsp;&nbsp;
-                 <Spinner animation="border" role="status" size="sm"/>
-                 <Button variant="primary" onClick={ () => navigate(referrer) }>Abort</Button>
-             </div> );
-
-        //</Modal.Header>
-        //<Modal.Footer>
-
-// </div>
-        //</Modal.Footer>
-        //</Modal>
-
-        }
+    return (
+        <div>
+            Logging in...&nbsp;&nbsp;
+            <p>Navigate away from this page to abort</p>
+            <p><Spinner animation="border" role="status" size="sm"/></p>
+        </div>
+    );
+}
 
 
 function GitHubConnect({ referrer, gh_logged_in }) {
