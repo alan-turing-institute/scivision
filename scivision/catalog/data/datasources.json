@@ -165,6 +165,20 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "tasks": [
+        "object-detection"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "multispectral"
+      ],
+      "institution": [],
+      "tags": [],
+      "name": "test-datasource",
+      "description": "A test datasource",
+      "url": "https://example.com"
     }
   ]
 }
