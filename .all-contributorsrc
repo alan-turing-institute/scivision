@@ -28,6 +28,18 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "miquelmassot",
+      "name": "Miquel Massot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1611148?v=4",
+      "profile": "https://miquelmassot.github.io/",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "plugin"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -35,5 +47,6 @@
   "projectOwner": "alan-turing-institute",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": false
+  "skipCi": false,
+  "contributorsSortAlphabetically": true
 }
