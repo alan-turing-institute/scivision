@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ots22",
+      "name": "ots22",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5434836?v=4",
+      "profile": "https://github.com/ots22",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "scivision",
+  "projectOwner": "alan-turing-institute",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": false
+}
