@@ -16,6 +16,18 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "evangeline-corcoran",
+      "name": "Evangeline Corcoran",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82043547?v=4",
+      "profile": "https://github.com/evangeline-corcoran",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
