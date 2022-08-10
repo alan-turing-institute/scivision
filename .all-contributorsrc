@@ -40,6 +40,19 @@
         "doc",
         "plugin"
       ]
+    },
+    {
+      "login": "mooniean",
+      "name": "Beatriz Costa Gomes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6002774?v=4",
+      "profile": "https://github.com/mooniean",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "design",
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,
