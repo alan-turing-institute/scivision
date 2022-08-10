@@ -53,6 +53,18 @@
         "design",
         "example"
       ]
+    },
+    {
+      "login": "acocac",
+      "name": "Alejandro ©",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13321552?v=4",
+      "profile": "https://github.com/acocac",
+      "contributions": [
+        "code",
+        "ideas",
+        "design",
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -34,7 +34,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -91,6 +91,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/acocac"><img src="https://avatars.githubusercontent.com/u/13321552?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alejandro ©</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=acocac" title="Code">💻</a> <a href="#ideas-acocac" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-acocac" title="Design">🎨</a> <a href="#example-acocac" title="Examples">💡</a></td>
     <td align="center"><a href="https://github.com/mooniean"><img src="https://avatars.githubusercontent.com/u/6002774?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Beatriz Costa Gomes</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=mooniean" title="Code">💻</a> <a href="#ideas-mooniean" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=mooniean" title="Documentation">📖</a> <a href="#design-mooniean" title="Design">🎨</a> <a href="#example-mooniean" title="Examples">💡</a></td>
     <td align="center"><a href="https://github.com/evangeline-corcoran"><img src="https://avatars.githubusercontent.com/u/82043547?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Evangeline Corcoran</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=evangeline-corcoran" title="Code">💻</a> <a href="#ideas-evangeline-corcoran" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=evangeline-corcoran" title="Documentation">📖</a> <a href="#infra-evangeline-corcoran" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://miquelmassot.github.io/"><img src="https://avatars.githubusercontent.com/u/1611148?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Miquel Massot</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=miquelmassot" title="Code">💻</a> <a href="#ideas-miquelmassot" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=miquelmassot" title="Documentation">📖</a> <a href="#plugin-miquelmassot" title="Plugin/utility libraries">🔌</a></td>
