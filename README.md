@@ -1,4 +1,7 @@
 <div align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
     <br>
     <p align="center">
     <img src="https://i.imgur.com/kc7aE7z.png" 
@@ -76,3 +79,23 @@ Scivision development happens in the [Scivision GitHub repo](https://github.com/
 See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html), which contains information on how to set up and contribute computer vision models and scientific image datasets to the scivision catalog, and make them available via the scivision python API, as well as modify the source code.
 
 You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues) in this GitHub repo.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/ots22"><img src="https://avatars.githubusercontent.com/u/5434836?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ots22</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=ots22" title="Code">💻</a> <a href="#ideas-ots22" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=ots22" title="Documentation">📖</a> <a href="#infra-ots22" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
