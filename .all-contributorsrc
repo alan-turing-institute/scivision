@@ -16,6 +16,18 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "miquelmassot",
+      "name": "Miquel Massot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1611148?v=4",
+      "profile": "https://miquelmassot.github.io/",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "plugin"
+      ]
     }
   ],
   "contributorsPerLine": 7,
