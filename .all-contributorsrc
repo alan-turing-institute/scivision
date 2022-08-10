@@ -18,6 +18,18 @@
       ]
     },
     {
+      "login": "evangeline-corcoran",
+      "name": "Evangeline Corcoran",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82043547?v=4",
+      "profile": "https://github.com/evangeline-corcoran",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    },
+    {
       "login": "miquelmassot",
       "name": "Miquel Massot",
       "avatar_url": "https://avatars.githubusercontent.com/u/1611148?v=4",
@@ -35,5 +47,6 @@
   "projectOwner": "alan-turing-institute",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": false
+  "skipCi": false,
+  "contributorsSortAlphabetically": true
 }
