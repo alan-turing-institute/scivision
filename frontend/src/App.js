@@ -35,8 +35,6 @@ import { Octokit } from "octokit";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
 
 const OctokitPRPlugin = Octokit.plugin(createPullRequest);
-
-
 const GH_TOKEN_KEY = "gh_token";
 
 
@@ -51,39 +49,6 @@ function download(filename, text) {
   element.click();
 
   document.body.removeChild(element);
-}
-
-
-function TestPR() {
-    const octokit = new OctokitPRPlugin({
-        auth: sessionStorage[GH_TOKEN_KEY]
-    });
-
-    const update_attempted = useRef(false);
-
-    useEffect(() => {
-        if (!update_attempted.current) {
-            update_attempted.current = true;
-            octokit.createPullRequest({
-                owner: "alan-turing-institute",
-                repo: "scivision",
-                title: "test update catalog",
-                body: "",
-                base: "main",
-                head: "test-update-catalog",
-                update: false,
-                forceFork: false,
-                changes: [
-                    {
-                        files: {
-                            "scivision/catalog/data/datasources.json": "New catalog contents"
-                        },
-                        commit: "Test update catalog"
-                    }
-                ]
-            });
-        }
-    });
 }
 
 
@@ -190,7 +155,6 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
     const referrer = decodeURIComponent(referrer_encoded);
 
     useEffect(() => {
-
         if (!login_attempted.current) {
             login_attempted.current = true;
             if (gh_code) {
