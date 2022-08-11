@@ -165,6 +165,25 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "jyt jyt"
+      ],
+      "institution": [
+        "Test University"
+      ],
+      "tags": [
+        "stuff"
+      ],
+      "name": "cool-data",
+      "description": "some very cool data",
+      "url": "https://www.test.com",
+      "format": "image"
     }
   ]
 }
