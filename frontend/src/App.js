@@ -36,7 +36,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
 
 const OctokitPRPlugin = Octokit.plugin(createPullRequest);
 const GH_TOKEN_KEY = "gh_token";
-
+const RANDOM_UUID_KEY = "random_uuid";
 
 function download(filename, text) {
   var element = document.createElement('a');
@@ -109,6 +109,7 @@ function DataSourceForm() {
             </Form>
         </div>);
 }
+
 
 function ModelForm() {
     let pr_flag;
@@ -198,6 +199,9 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
     const query_params = location.searchParams;
 
     const gh_code = query_params.get('code');
+    const gh_state = query_params.get('state');
+
+    const random_uuid = sessionStorage[RANDOM_UUID_KEY];
 
     const referrer = decodeURIComponent(referrer_encoded);
 
@@ -207,6 +211,7 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
             if (gh_code) {
                 (async () => {
                     if (gh_logged_in) throw "Already logged in to GitHub";
+                    if (gh_state != random_uuid) throw "OAuth state mismatch";
                     return get_github_token(gh_code);
                 })()
                     .then((tok) => {
@@ -233,19 +238,22 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
         <div>
             Logging in...&nbsp;&nbsp;
             <p>Navigate away from this page to abort</p>
-            <p><Spinner animation="border" role="status" size="sm"/></p>
+            <p />
+            <Spinner animation="border" role="status" size="sm"/>
         </div>
     );
 }
 
 
-function GitHubConnect({ referrer, gh_logged_in }) {
+function github_auth({ referrer, gh_logged_in }) {
     if (gh_logged_in) {
         console.log("Already logged in to GitHub");
         return <Navigate to={referrer} />;
     } else {
-        const random_uuid = crypto.randomUUID();
         var github_auth_url = new URL('https://github.com/login/oauth/authorize');
+
+        const random_uuid = crypto.randomUUID();
+        sessionStorage[RANDOM_UUID_KEY] = random_uuid;
 
         const referrer_encoded = encodeURIComponent(encodeURIComponent(referrer));
 
@@ -371,16 +379,16 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
 }
 
 
-function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
+function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
     const loc = useLocation();
 
     if (!gh_logged_in) {
         return (
             <a href="javascript:;"
                    onClick={() => {
-                   GitHubConnect({
+                   github_auth({
                        referrer: loc.pathname,
-                       gh_logged_in: gh_logged_in
+                       gh_logged_in: gh_logged_in,
                    });
                }}>
                 Login with GitHub
@@ -394,6 +402,7 @@ function LoginStatusLink({ gh_logged_in , set_gh_logged_in }) {
 
 function App() {
     const gh_token = sessionStorage[GH_TOKEN_KEY];
+    const random_uuid = sessionStorage[RANDOM_UUID_KEY];
     const [ gh_logged_in, set_gh_logged_in ] = useState(!!gh_token);
 
     return (
