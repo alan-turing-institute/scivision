@@ -170,6 +170,9 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
                         console.log(`Could not log in to GitHub.  The reason was: ${e}`);
                     })
                     .finally(() => {
+                        // Clearing the search parameters triggers a
+                        // reload, and then 'navigate' is never called.
+                        //
                         // window.location.search = "";
                         navigate(referrer);
                     });
