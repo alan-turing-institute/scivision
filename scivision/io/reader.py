@@ -214,3 +214,45 @@ def load_dataset(
     intake_cat = intake.open_catalog(path)
 
     return intake_cat
+    
+    
+def load_stac_dataset(
+    path: os.PathLike, branch: str = "main"
+) -> xarray.Dataset:
+    """Load a dataset from a stac data plugin.
+
+    Parameters
+    ----------
+    path : PathLike
+        The filename, path or URL of an intake catalog, which links to a dataset.
+    branch : str, default = main
+        Specify the name of a github branch if loading from github.
+    allow_install : bool, default = False
+        Allow installation of remote package via pip.
+
+    Returns
+    -------
+    xarray.Dataset
+        Lorem ipsum.
+    """
+
+    if _is_url(path):
+        path = _parse_url(path, branch)
+    # check that this is a path to a yaml file
+    # if not, assume it is a repo containing ".scivision/stac.yml"
+    if not path.endswith(
+        (
+            ".yml",
+            ".yaml",
+        )
+    ):
+        path = path + ".scivision/stac.yml"
+    # fsspec will throw an error if the path does not exist
+    file = fsspec.open(path)
+    # parse the config file:
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
+    # try to install the package if necessary
+    install_package(config, allow_install=allow_install, branch=branch)
+
