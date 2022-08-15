@@ -13,6 +13,7 @@ from .installer import install_package
 from .wrapper import PretrainedModel
 
 import warnings
+import xarray
 
 
 def _is_url(path: os.PathLike) -> bool:
