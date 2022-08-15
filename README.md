@@ -34,7 +34,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -101,6 +101,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://miquelmassot.github.io/"><img src="https://avatars.githubusercontent.com/u/1611148?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Miquel Massot</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=miquelmassot" title="Code">💻</a> <a href="#ideas-miquelmassot" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=miquelmassot" title="Documentation">📖</a> <a href="#plugin-miquelmassot" title="Plugin/utility libraries">🔌</a></td>
+    <td align="center"><a href="http://www.robblackwell.com"><img src="https://avatars.githubusercontent.com/u/41913?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Robert Blackwell</b></sub></a><br /><a href="#ideas-RobBlackwell" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://scotthosking.com"><img src="https://avatars.githubusercontent.com/u/10783052?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Scott Hosking</b></sub></a><br /><a href="#fundingFinding-scotthosking" title="Funding Finding">🔍</a> <a href="#ideas-scotthosking" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/ots22"><img src="https://avatars.githubusercontent.com/u/5434836?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ots22</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=ots22" title="Code">💻</a> <a href="#ideas-ots22" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=ots22" title="Documentation">📖</a> <a href="#infra-ots22" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
