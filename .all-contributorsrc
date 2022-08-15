@@ -130,6 +130,15 @@
         "ideas",
         "data"
       ]
+    },
+    {
+      "login": "RobBlackwell",
+      "name": "Robert Blackwell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41913?v=4",
+      "profile": "http://www.robblackwell.com",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
