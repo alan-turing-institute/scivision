@@ -218,7 +218,9 @@ def load_dataset(
     
     
 def load_stac_dataset(
-    path: os.PathLike, branch: str = "main"
+    path: os.PathLike,
+    branch: str = "main",
+    allow_install: bool = False
 ) -> xarray.Dataset:
     """Load a dataset from a stac data plugin.
 
