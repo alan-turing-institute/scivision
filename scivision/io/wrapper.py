@@ -35,9 +35,8 @@ class Datasource:
 
     def __init__(self, config: dict):
         self._config = config
-        # self._plumbing = AutoPlumber(config)
 
     def predict(self):
-        """Load images."""
-        data_package = importlib.import_module(self._config['model'])
-        return data_package.scivision_sentinel2_stac.predict()
+        """Load function that gets image dataset."""
+        data_module = importlib.import_module(self._config['model'])
+        return getattr(data_module, self._config['import'])
