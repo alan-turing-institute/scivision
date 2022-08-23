@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import numpy as np
+import importlib
 
 from .autoplumber import AutoPlumber
 
@@ -27,3 +28,16 @@ class PretrainedModel:
             f"  source='{self._config['url']}' \n"
             f"  pipe='{self._plumbing.pipe}' \n)"
         )
+
+
+class Datasource:
+    """A datasource, built using scivision configuration file."""
+
+    def __init__(self, config: dict):
+        self._config = config
+        # self._plumbing = AutoPlumber(config)
+
+    def predict(self):
+        """Load images."""
+        data_package = importlib.import_module(self._config['model'])
+        return data_package.scivision_sentinel2_stac.predict()

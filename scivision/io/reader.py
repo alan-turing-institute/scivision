@@ -11,6 +11,7 @@ import yaml
 from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel
+from .wrapper import Datasource
 
 import warnings
 import xarray
@@ -258,4 +259,6 @@ def load_stac_dataset(
         config = yaml.safe_load(stream)
     # try to install the package if necessary
     install_package(config, allow_install=allow_install, branch=branch)
+    
+    return Datasource(config)
 
