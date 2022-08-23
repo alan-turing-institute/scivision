@@ -36,7 +36,7 @@ class Datasource:
     def __init__(self, config: dict):
         self._config = config
 
-    def predict(self):
+    def load_data(self):
         """Load function that gets image dataset."""
         data_module = importlib.import_module(self._config['model'])
         data_class = getattr(data_module, self._config['import'])
