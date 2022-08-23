@@ -39,4 +39,6 @@ class Datasource:
     def predict(self):
         """Load function that gets image dataset."""
         data_module = importlib.import_module(self._config['model'])
-        return getattr(data_module, self._config['import'])
+        data_class = getattr(data_module, self._config['import'])
+        # self._config['prediction_fn']['call']
+        return data_class.predict()
