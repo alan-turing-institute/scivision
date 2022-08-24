@@ -34,7 +34,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -101,6 +101,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/JamesAliScott"><img src="https://avatars.githubusercontent.com/u/49982034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JamesAliScott</b></sub></a><br /><a href="#ideas-JamesAliScott" title="Ideas, Planning, & Feedback">🤔</a> <a href="#data-JamesAliScott" title="Data">🔣</a></td>
+    <td align="center"><a href="https://github.com/kasra-hosseini"><img src="https://avatars.githubusercontent.com/u/1899856?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kasra Hosseini</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=kasra-hosseini" title="Code">💻</a> <a href="#ideas-kasra-hosseini" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=kasra-hosseini" title="Documentation">📖</a> <a href="#infra-kasra-hosseini" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/MartinSJRogers"><img src="https://avatars.githubusercontent.com/u/43956226?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Rogers</b></sub></a><br /><a href="#data-martinsjrogers" title="Data">🔣</a> <a href="#example-martinsjrogers" title="Examples">💡</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=martinsjrogers" title="Code">💻</a> <a href="#ideas-martinsjrogers" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://miquelmassot.github.io/"><img src="https://avatars.githubusercontent.com/u/1611148?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Miquel Massot</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=miquelmassot" title="Code">💻</a> <a href="#ideas-miquelmassot" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=miquelmassot" title="Documentation">📖</a> <a href="#plugin-miquelmassot" title="Plugin/utility libraries">🔌</a></td>
     <td align="center"><a href="http://www.robblackwell.com"><img src="https://avatars.githubusercontent.com/u/41913?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Robert Blackwell</b></sub></a><br /><a href="#ideas-RobBlackwell" title="Ideas, Planning, & Feedback">🤔</a></td>
