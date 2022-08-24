@@ -67,7 +67,7 @@ function download(filename, text) {
 }
 
 
-function DataSourceForm() {
+function DataSourceForm({ gh_logged_in }) {
     let pr_flag;
     return (
         <div className="mb-5">
@@ -113,8 +113,9 @@ function DataSourceForm() {
 
                 <button type="submit"
                         onClick={ () => pr_flag = true }
-                        className="btn btn-primary">
-                    Open Pull Request on GitHub
+                        className="btn btn-primary"
+                        disabled={!gh_logged_in}>
+                    Open Pull Request on GitHub { gh_logged_in ? <></> : <>(login to enable)</> }
                 </button>
                 <button type="submit"
                         onClick={ () => pr_flag = false }
@@ -126,7 +127,7 @@ function DataSourceForm() {
 }
 
 
-function ModelForm() {
+function ModelForm({ gh_logged_in }) {
     let pr_flag;
     return (
         <div className="mb-5">
@@ -172,8 +173,9 @@ function ModelForm() {
 
                 <button type="submit"
                         onClick={ () => pr_flag = true }
-                        className="btn btn-primary">
-                    Open Pull Request on GitHub
+                        className="btn btn-primary"
+                        disabled={!gh_logged_in}>
+                    Open Pull Request on GitHub { gh_logged_in ? <></> : <>(login to enable)</> }
                 </button>
                 <button type="submit"
                         onClick={ () => pr_flag = false }
@@ -483,7 +485,7 @@ function App() {
                                } />
                         <Route path="/datasource" element={
                                    <div className="col-auto">
-                                       <DataSourceForm />
+                                       <DataSourceForm gh_logged_in={gh_logged_in} />
                                    </div>
                                }/>
                         <Route path="/models" element={
@@ -493,7 +495,7 @@ function App() {
                                } />
                         <Route path="/model" element={
                                    <div className="col-auto">
-                                       <ModelForm />
+                                       <ModelForm gh_logged_in={gh_logged_in} />
                                    </div>
                                } />
                     </Routes>
