@@ -34,6 +34,21 @@ import DataTable from 'react-data-table-component';
 import { Octokit } from "octokit";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
 
+const server_configs = {
+    development: {
+        uri: 'https://scivision-dev-gh-gatekeeper.azurewebsites.net/authenticate/',
+        client_id: 'b1f4db23eb46160d16b7',
+        redirect_uri: 'http://localhost:3000/scivision/#/login/'
+    },
+    production: {
+        uri: 'https://scivision-gh-gatekeeper.azurewebsites.net/authenticate/',
+        client_id: '13bcb3c2a2c31a9f6f02',
+        redirect_uri: 'https://alan-turing-institute.github.io/scivision/#/login/'
+    }
+}
+
+const server_config_selected = server_configs[process.env.NODE_ENV];
+
 const OctokitPRPlugin = Octokit.plugin(createPullRequest);
 const GH_TOKEN_KEY = "gh_token";
 const RANDOM_UUID_KEY = "random_uuid";
@@ -172,7 +187,7 @@ function ModelForm() {
 
 
 async function get_github_token(gh_code) {
-    const response = await fetch("https://scivision-gh-gatekeeper.azurewebsites.net/authenticate/" + gh_code);
+    const response = await fetch(server_config_selected.uri + gh_code);
     const json = await response.json();
     if (!json.token) {
         if (json.error) {
@@ -258,8 +273,8 @@ function github_auth({ referrer, gh_logged_in }) {
         const referrer_encoded = encodeURIComponent(encodeURIComponent(referrer));
 
         github_auth_url.search = new URLSearchParams({
-            client_id: '13bcb3c2a2c31a9f6f02',
-            redirect_uri: 'https://alan-turing-institute.github.io/scivision/#/login/' + referrer_encoded,
+            client_id: server_config_selected.client_id,
+            redirect_uri: server_config_selected.redirect_uri + referrer_encoded,
             scope: "public_repo",
             state: random_uuid,
         }).toString();
