@@ -38,7 +38,7 @@ class Datasource:
 
     def load_data(self):
         """Load function that gets image dataset."""
-        data_module = importlib.import_module(self._config['model'])
-        data_class = getattr(data_module, self._config['import'])
-        data_func = getattr(data_class, self._config['prediction_fn']['call'])
+        data_module = importlib.import_module(self._config['import'])
+        data_class = getattr(data_module, self._config['class'])
+        data_func = getattr(data_class, self._config['func']['call'])
         return data_func()
