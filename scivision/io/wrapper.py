@@ -4,7 +4,7 @@
 import numpy as np
 import importlib
 
-from .autoplumber import AutoPlumber
+from .autoplumber import AutoPlumber, DataPlumber
 
 
 class PretrainedModel:
@@ -35,10 +35,16 @@ class Datasource:
 
     def __init__(self, config: dict):
         self._config = config
+        self._plumbing = DataPlumber(config)
 
-    def load_data(self):
+    def load_data(self, X: np.ndarray, *args, **kwargs):
         """Load function that gets image dataset."""
-        data_module = importlib.import_module(self._config['import'])
-        data_class = getattr(data_module, self._config['class'])
-        data_func = getattr(data_class, self._config['func']['call'])
-        return data_func()
+        # note, we may need to pass other kwargs to the function here
+        return self._plumbing(X, **kwargs)
+
+    # def load_data(self):
+    #     """Load function that gets image dataset."""
+    #     data_module = importlib.import_module(self._config['import'])
+    #     data_class = getattr(data_module, self._config['class'])
+    #     data_func = getattr(data_class, self._config['func']['call'])
+    #     return data_func()
