@@ -112,18 +112,18 @@ class DataPlumber:
 
         # get the call signature
         self._data_func_signature = inspect.signature(self._fn)
-        data_func_input = config["func"]["args"]["X"]
-        try:
-            data_func_param = self._data_func_signature.parameters[data_func_input]
-        except KeyError:
-            raise KeyError(
-                f"Parameter `{data_func_input}` not found."
-                f"There was an error parsing the `.stac.yml` configuration file."
-            )
-
-        # this is a bit weird as we're determining our own signature, but...
-        X = inspect.signature(self).parameters["X"]
-        self._pipe = DataPipe(X, data_func_param)
+        # data_func_input = config["func"]["args"]["X"]
+        # try:
+        #     data_func_param = self._data_func_signature.parameters[data_func_input]
+        # except KeyError:
+        #     raise KeyError(
+        #         f"Parameter `{data_func_input}` not found."
+        #         f"There was an error parsing the `.stac.yml` configuration file."
+        #     )
+        # 
+        # # this is a bit weird as we're determining our own signature, but...
+        # X = inspect.signature(self).parameters["X"]
+        # self._pipe = DataPipe(X, data_func_param)
 
     @property
     def module(self):
@@ -133,16 +133,16 @@ class DataPlumber:
     # def model(self):
     #     return self._model
 
-    @property
-    def pipe(self):
-        return self._pipe
+    # @property
+    # def pipe(self):
+    #     return self._pipe
 
-    def __call__(self, X: np.ndarray, **kwargs):
+    def __call__(self, **kwargs):
         """Redirect the input X to the correct input of the data function."""
 
         # TODO(arl): this is where the actual piping needs to happen
         data_func_args = []
-        data_func_kwargs = {self.pipe.output.name: X}
+        data_func_kwargs = {}
 
         # optionally, we can also pass on other keyword arguments to the data_func
         data_func_kwargs.update(kwargs)

@@ -37,10 +37,10 @@ class Datasource:
         self._config = config
         self._plumbing = DataPlumber(config)
 
-    def load_data(self, X: np.ndarray, *args, **kwargs):
+    def load_data(self, *args, **kwargs):
         """Load function that gets image dataset."""
         # note, we may need to pass other kwargs to the function here
-        return self._plumbing(X, **kwargs)
+        return self._plumbing(**kwargs)
 
     # def load_data(self):
     #     """Load function that gets image dataset."""
