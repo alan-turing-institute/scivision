@@ -260,5 +260,5 @@ def load_stac_dataset(
     # try to install the package if necessary
     install_package(config, allow_install=allow_install, branch=branch)
     
-    return Datasource(config).load_data()
+    return Datasource(config)
 
