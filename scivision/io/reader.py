@@ -201,6 +201,7 @@ def load_dataset(
 
     if _is_url(path):
         path = _parse_url(path, branch)
+
     # check that this is a path to a yaml file
     # if not, assume it is a repo containing ".scivision/data.yml"
     if not path.endswith(
@@ -210,18 +211,25 @@ def load_dataset(
         )
     ):
         path = path + ".scivision/data.yml"
-    # fsspec will throw an error if the path does not exist
-    fsspec.open(path)
 
+    # fsspec will throw an error if the path does not exist
+    file = fsspec.open(path)
+
+    # parse the config file to see if it's a data plugin:
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
+    if "import" in config:
+        return load_data_from_plugin(config, branch)
+    
+    # if not a data plugin, assume an intake config
     intake_cat = intake.open_catalog(path)
 
     return intake_cat
     
     
 def load_data_from_plugin(
-    path: os.PathLike,
-    branch: str = "main",
-    allow_install: bool = False
+    config: dict, branch: str = "main"
 ) -> xarray.Dataset:
     """Load a dataset from a data plugin (python package).
 
@@ -240,25 +248,8 @@ def load_data_from_plugin(
         The dataset to be visualised, loaded via xarray.
     """
 
-    if _is_url(path):
-        path = _parse_url(path, branch)
-    # check that this is a path to a yaml file
-    # if not, assume it is a repo containing ".scivision/stac.yml"
-    if not path.endswith(
-        (
-            ".yml",
-            ".yaml",
-        )
-    ):
-        path = path + ".scivision/data.yml"
-    # fsspec will throw an error if the path does not exist
-    file = fsspec.open(path)
-    # parse the config file:
-    with file as config_file:
-        stream = config_file.read()
-        config = yaml.safe_load(stream)
-    # try to install the package if necessary
-    install_package(config, allow_install=allow_install, branch=branch)
+    # install the package
+    install_package(config, allow_install=True, branch=branch)
     
     return Datasource(config)
 
