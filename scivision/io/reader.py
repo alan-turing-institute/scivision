@@ -218,12 +218,12 @@ def load_dataset(
     return intake_cat
     
     
-def load_stac_dataset(
+def load_data_from_plugin(
     path: os.PathLike,
     branch: str = "main",
     allow_install: bool = False
 ) -> xarray.Dataset:
-    """Load a dataset from a stac data plugin.
+    """Load a dataset from a data plugin (python package).
 
     Parameters
     ----------
@@ -237,7 +237,7 @@ def load_stac_dataset(
     Returns
     -------
     xarray.Dataset
-        Lorem ipsum.
+        The dataset to be visualised, loaded via xarray.
     """
 
     if _is_url(path):
@@ -250,7 +250,7 @@ def load_stac_dataset(
             ".yaml",
         )
     ):
-        path = path + ".scivision/stac.yml"
+        path = path + ".scivision/data.yml"
     # fsspec will throw an error if the path does not exist
     file = fsspec.open(path)
     # parse the config file:
