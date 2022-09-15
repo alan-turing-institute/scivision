@@ -235,12 +235,10 @@ def load_data_from_plugin(
 
     Parameters
     ----------
-    path : PathLike
-        The filename, path or URL of an intake catalog, which links to a dataset.
+    config : dict
+        The loaded data.yml config.
     branch : str, default = main
         Specify the name of a github branch if loading from github.
-    allow_install : bool, default = False
-        Allow installation of remote package via pip.
 
     Returns
     -------
