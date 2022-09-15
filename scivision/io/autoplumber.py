@@ -94,17 +94,12 @@ class DataPlumber:
     """
 
     def __init__(self, config: dict):
-        
-        # data_module = importlib.import_module(self._config['import'])
-        # data_class = getattr(data_module, self._config['class'])
-        # data_func = getattr(data_class, self._config['func']['call'])
-        # return data_func()
 
         # import the module and get the data function
         self._module = importlib.import_module(config["import"])
         data_class = getattr(self._module, config['class'])
-        self._class = data_class()
-        self._fn = getattr(self._class, config['func']['call'])
+        # self._class = data_class()
+        self._fn = getattr(data_class, config['func']['call'])
 
         # self._fn = data_func()
 

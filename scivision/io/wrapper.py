@@ -41,10 +41,3 @@ class Datasource:
         """Load function that gets image dataset."""
         # note, we may need to pass other kwargs to the function here
         return self._plumbing(**kwargs)
-
-    # def load_data(self):
-    #     """Load function that gets image dataset."""
-    #     data_module = importlib.import_module(self._config['import'])
-    #     data_class = getattr(data_module, self._config['class'])
-    #     data_func = getattr(data_class, self._config['func']['call'])
-    #     return data_func()
