@@ -98,44 +98,17 @@ class DataPlumber:
         # import the module and get the data function
         self._module = importlib.import_module(config["import"])
         data_class = getattr(self._module, config['class'])
-        # self._class = data_class()
         self._fn = getattr(data_class, config['func']['call'])
 
-        # self._fn = data_func()
-
-        # self._fn = getattr(self._model, config["prediction_fn"]["call"])
-
-        # get the call signature
         self._data_func_signature = inspect.signature(self._fn)
-        # data_func_input = config["func"]["args"]["X"]
-        # try:
-        #     data_func_param = self._data_func_signature.parameters[data_func_input]
-        # except KeyError:
-        #     raise KeyError(
-        #         f"Parameter `{data_func_input}` not found."
-        #         f"There was an error parsing the `.stac.yml` configuration file."
-        #     )
-        # 
-        # # this is a bit weird as we're determining our own signature, but...
-        # X = inspect.signature(self).parameters["X"]
-        # self._pipe = DataPipe(X, data_func_param)
 
     @property
     def module(self):
         return self._module
 
-    # @property
-    # def model(self):
-    #     return self._model
-
-    # @property
-    # def pipe(self):
-    #     return self._pipe
-
     def __call__(self, **kwargs):
         """Redirect the input X to the correct input of the data function."""
 
-        # TODO(arl): this is where the actual piping needs to happen
         data_func_args = []
         data_func_kwargs = {}
 
