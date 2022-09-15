@@ -221,13 +221,13 @@ def load_dataset(
         config = yaml.safe_load(stream)
     if "import" in config:
         return load_data_from_plugin(config, branch)
-    
+
     # if not a data plugin, assume an intake config
     intake_cat = intake.open_catalog(path)
 
     return intake_cat
-    
-    
+
+
 def load_data_from_plugin(
     config: dict, branch: str = "main"
 ) -> xarray.Dataset:
@@ -248,6 +248,5 @@ def load_data_from_plugin(
 
     # install the package
     install_package(config, allow_install=True, branch=branch)
-    
-    return Datasource(config)
 
+    return Datasource(config)

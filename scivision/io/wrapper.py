@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 import numpy as np
-import importlib
 
 from .autoplumber import AutoPlumber, DataPlumber
 
