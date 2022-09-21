@@ -136,6 +136,7 @@ The Code of Conduct committee is:
 As the community grows, we will seek to build a larger committee including members outside of the core team.
 
 4.2 Urgent Situations: Acting Unilaterally
+
 If the incident involves physical danger, or involves a threat to anyone's safety (e.g. threats of violence), any member of the community may -- and should -- act unilaterally to protect the safety of any community member. This can include contacting law enforcement (or other local personnel) and speaking on behalf of the scivision team.
 
 If the act is ongoing, any community member may act immediately, before reaching consensus, to diffuse the situation. In ongoing situations, any member may at their discretion employ any of the tools available in this enforcement manual, including bans and blocks online, or removal from a physical space.
@@ -143,6 +144,7 @@ If the act is ongoing, any community member may act immediately, before reaching
 In situations where an individual community member acts unilaterally, they must inform Dr Scott Hosking as soon as possible, and report their actions for review within 24 hours.
 
 4.3 Less-Urgent Situations
+
 Upon receiving a report of an incident, the CoC committee will review the incident and determine, to the best of their ability:
 
 - whether this is an ongoing situation
@@ -150,11 +152,13 @@ Upon receiving a report of an incident, the CoC committee will review the incide
 - what happened
 - whether this event constitutes a Code of Conduct violation
 - who, if anyone, was the bad actor
+
 This information will be collected either in person or in writing. The CoC committee will provide a written summary of the information surrounding the incident. All participants will be anonymised in the summary report, referred to as "Community Member 1", "Community Member 2", or "Research Team Member 1". The "de-anonymising key" will be kept in a separate file and only accessed to link repeated reports against the same person over time.
 
 The CoC committee will aim to have a resolution agreed upon within one week. In the event that a resolution can't be determined in that time, a member of the CoC committee will respond to the reporter(s) with an update and projected timeline for resolution.
 
 4.4 Resolutions
+
 The CoC committee will seek to agree on a resolution by consensus of all members investigating the report in question. If the committee cannot reach consensus and deadlocks for over a week, Dr Hosking, as the Chair of the Code of Conduct committee, will break the tie. If Dr Hosking is unable to take part in the discussion due to a conflict of interest, Dr Aida Mehonic, as a non-core development member of the CoC committee, will make the decision.
 
 Possible responses may include:
@@ -171,9 +175,11 @@ Possible responses may include:
 - Once a resolution is agreed upon, but before it is enacted, a member of the CoC committee will contact the original reporter and any other affected parties and explain the proposed resolution. The CoC committee member will ask if this resolution is acceptable, and must note feedback for the record. However, the CoC committee is not required to act on this feedback.
 
 4.5 Conflicts of Interest
+
 In the event of any conflict of interest such that Dr Scott Hosking is not able to evaluate or enforce the reported violation, Dr Aida Mehonic will take his place.
 
 5 Acknowledgements
+
 This code is created by The Turing Way project, by adapting the Carpentries Code of Conduct with sections from the Alan Turing Institute Data Study Group Code of Conduct. Both are used under the creative commons attribution license. 
 
 The Carpentries Code of Conduct was adapted from guidelines written by the Django Project, which was itself based on the Ada Initiative template and the PyCon 2013 Procedure for Handling Harassment Incidents. Contributors to the the initial document are Adam Obeng, Aleksandra Pawlik, Bill Mills, Carol Willing, Erin Becker, Hilmar Lapp, Kara Woo, Karin Lagesen, Pauline Barmby, Sheila Miguez, Simon Waldman, and Tracy Teal. In 2018, the Code of Conduct was revised to add a summary, straightforward examples of both beneficial and unwanted behaviors, and evaluating intent. Reporting guidelines were also revised to include alternate contact points and a reporting form with the procedure was added. Contributors of these revised documents are Ethan White, Kari L. Jordan, Karin Lagesen, Malvika Sharan, Samantha Ahern, and Simon Waldman. Additional language was added by Otter Tech from the PyCon U.S. 2018 Code of Conduct (licensed CC BY 3.0).
