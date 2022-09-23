@@ -129,7 +129,7 @@ Enforcement of the Code of Conduct should be respectful and not include any hara
 The Code of Conduct committee is:
 
 - Dr Scott Hosking: shosking@turing.ac.uk
-- Dr Alan Lowe: alowe@sheffield.ac.uk
+- Dr Alan Lowe: alowe@turing.ac.uk
 - Dr Sebastian Anhert: sanhert@turing.ac.uk
 - Dr Bea Costa Gomes: bcostagomes@turing.ac.uk
 - Dr Aida Mehonic: amehonic@turing.ac.uk
