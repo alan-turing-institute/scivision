@@ -10,7 +10,7 @@ import yaml
 
 from ..koala import koala
 from .installer import install_package
-from .wrapper import PretrainedModel
+from .wrapper import PretrainedModel, Datasource
 from .wrapper import Datasource
 
 import warnings
