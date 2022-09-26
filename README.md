@@ -11,9 +11,6 @@
     <a href="https://pypi.org/project/scivision/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/scivision">
     </a>
-    <a href="https://mybinder.org/v2/gh/scivision-gallery/scivision_examples/d208ac0d452e139a90e66e3c3e96dac4ad0e26ce?urlpath=lab%2Ftree%2Fhow-to-use-scivision.ipynb">
-        <img alt="Binder" src="https://mybinder.org/badge_logo.svg">
-    </a>
     <a href="https://github.com/scivision-gallery">
         <img alt="Scivision Gallery" src="https://img.shields.io/badge/Scivision-Gallery-pink">
     </a>
