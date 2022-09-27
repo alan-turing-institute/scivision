@@ -1,0 +1,175 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ots22",
+      "name": "ots22",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5434836?v=4",
+      "profile": "https://github.com/ots22",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    },
+    {
+      "login": "evangeline-corcoran",
+      "name": "Evangeline Corcoran",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82043547?v=4",
+      "profile": "https://github.com/evangeline-corcoran",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    },
+    {
+      "login": "miquelmassot",
+      "name": "Miquel Massot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1611148?v=4",
+      "profile": "https://miquelmassot.github.io/",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "plugin"
+      ]
+    },
+    {
+      "login": "mooniean",
+      "name": "Beatriz Costa Gomes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6002774?v=4",
+      "profile": "https://github.com/mooniean",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "design",
+        "example"
+      ]
+    },
+    {
+      "login": "acocac",
+      "name": "Alejandro ©",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13321552?v=4",
+      "profile": "https://github.com/acocac",
+      "contributions": [
+        "code",
+        "ideas",
+        "design",
+        "example"
+      ]
+    },
+    {
+      "login": "scotthosking",
+      "name": "Scott Hosking",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10783052?v=4",
+      "profile": "https://scotthosking.com",
+      "contributions": [
+        "fundingFinding",
+        "ideas"
+      ]
+    },
+    {
+      "login": "edwardchalstrey1",
+      "name": "Ed Chalstrey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5486164?v=4",
+      "profile": "http://edchalstrey.com/",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    },
+    {
+      "login": "quantumjot",
+      "name": "Alan R Lowe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8217795?v=4",
+      "profile": "http://lowe.cs.ucl.ac.uk",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra",
+        "fundingFinding"
+      ]
+    },
+    {
+      "login": "AidaMehonic",
+      "name": "Aida Mehonic",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45169136?v=4",
+      "profile": "https://github.com/AidaMehonic",
+      "contributions": [
+        "eventOrganizing",
+        "doc",
+        "ideas"
+      ]
+    },
+    {
+      "login": "lupinthief",
+      "name": "Ben Evans",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3716248?v=4",
+      "profile": "https://github.com/lupinthief",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "JamesAliScott",
+      "name": "JamesAliScott",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49982034?v=4",
+      "profile": "https://github.com/JamesAliScott",
+      "contributions": [
+        "ideas",
+        "data"
+      ]
+    },
+    {
+      "login": "RobBlackwell",
+      "name": "Robert Blackwell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41913?v=4",
+      "profile": "http://www.robblackwell.com",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "martinsjrogers",
+      "name": "Martin Rogers",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43956226?v=4",
+      "profile": "https://github.com/MartinSJRogers",
+      "contributions": [
+        "data",
+        "example",
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "kasra-hosseini",
+      "name": "Kasra Hosseini",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1899856?v=4",
+      "profile": "https://github.com/kasra-hosseini",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "scivision",
+  "projectOwner": "alan-turing-institute",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": false,
+  "contributorsSortAlphabetically": true
+}

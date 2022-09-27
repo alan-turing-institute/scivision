@@ -48,7 +48,7 @@ class AutoPlumber:
             raise KeyError(
                 f"Parameter `{model_input}` not found in "
                 f"`{self._model.__class__.__name__}`. There was an error "
-                f"parsing the `.scivision-config.yaml` configuration file."
+                f"parsing the `.scivision/model.yml` configuration file."
             )
 
         # this is a bit weird as we're determining our own signature, but...
