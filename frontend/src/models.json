@@ -1,0 +1,119 @@
+{
+    "catalog_type":"scivision model catalog",
+    "name": "default",
+    "entries":[
+        {
+            "name":"model-000",
+            "tasks":["object-detection", "segmentation"],
+            "url":"https://github.com/stardist/stardist",
+            "pkg_url":"git+https://github.com/stardist/stardist.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":["epfl"],
+            "tags": ["2D", "3D", "optical-microscopy", "xray", "microtomography", "cell-counting", "plant-phenotyping", "climate-change-and-agriculture"]
+        },
+        {
+            "name":"model-001",
+            "tasks":["segmentation", "thresholding", "object-detection"],
+            "url":"https://github.com/danforthcenter/plantcv",
+            "pkg_url":"git+https://github.com/danforthcenter/plantcv@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":["danforthcenter"],
+            "tags": ["2D", "hyperspectral", "multispectral", "near-infrared","infrared","plant-phenotyping", "climate-change-and-agriculture"]
+        },
+        {
+            "name":"model-002",
+            "tasks":["segmentation"],
+            "url":"https://github.com/MarniTausen/Greenotyper",
+            "pkg_url":"git+https://github.com/MarniTausen/Greenotyper@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":["MarniTausen"],
+            "tags": ["2D", "multispectral", "plant-phenotyping", "climate-change-and-agriculture"]
+        },
+        {
+            "name":"model-003",
+            "tasks":["segmentation"],
+            "url":"https://github.com/alan-turing-institute/cv-algortithm",
+            "pkg_url":"git+https://github.com/alan-turing-institute/cv-algortithm@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":true,
+            "institution":["alan-turing-institute"],
+            "tags": ["dummy"]
+        },
+        {
+            "name":"scivision-test-plugin",
+            "tasks":["object-detection"],
+            "url":"https://github.com/alan-turing-institute/scivision-test-plugin",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision-test-plugin.git@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags": ["dummy"]
+        },
+        {
+            "name":"mapreader-plant",
+            "description":"automated detection of plant patches in images of individual plants for the extraction of data on phenotypic traits",
+            "tasks":["classification", "object-detection"],
+            "url":"https://github.com/alan-turing-institute/mapreader-plant-scivision",
+            "pkg_url":"git+https://github.com/alan-turing-institute/mapreader-plant-scivision@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags":["2D", "plant", "phenotype", "rgb", "biology", "agriculture"]
+        },
+        {
+            "name":"resnet50-plantkton",
+            "description":"automated classification of plankton images collected by RV Cefas Endeavour Plankton Imager in three clases: copepod, non-copepod and detritus",
+            "tasks":["classification"],
+            "url":"https://github.com/alan-turing-institute/plankton-cefas-scivision",
+            "pkg_url":"git+https://github.com/alan-turing-institute/plankton-cefas-scivision@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute", "cefas", "plankton-analytics-ltd"],
+            "tags": ["2D", "plankton", "ecology", "environmental-science"]
+        },
+        {
+            "name":"vedge-detector",
+            "description":"automated detection of coastal vegetation edges in remote sensing imagery",
+            "tasks":["segmentation"],
+            "url":"https://github.com/MartinSJRogers/VEdge_Detector_scivision",
+            "pkg_url":"git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@master",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["cambridge-university", "birkbeck-university"],
+            "tags": ["2D", "satellite", "remote-sensing", "ecology", "environmental-science"]
+        },
+        {
+            "name":"scivision_classifier",
+            "tasks":["classification"],
+            "url":"https://github.com/alan-turing-institute/scivision_classifier",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags": ["classification", "2D", "image"]
+        },
+        {
+            "name":"scivision_huggingface",
+            "tasks":["classification"],
+            "url":"https://github.com/alan-turing-institute/scivision_huggingface",
+            "pkg_url":"git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
+            "format":"image",
+            "pretrained":true,
+            "labels_required":false,
+            "institution":["alan-turing-institute"],
+            "tags": ["classification", "2D", "image"]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+name: Build frontend
+on:
+  push:
+    branches:
+      - frontend
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:    
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.15.1'
+
+    - name: Install node packages
+      working-directory: frontend
+      run: npm ci
+
+    - name: Build
+      working-directory: frontend
+      env:
+        CI: ""
+      run: |
+        npm run build
+        pwd
+        ls
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: frontend/build
+        clean: true
+

@@ -6,8 +6,8 @@ import pandas as pd
 import os
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Union
-from pydantic import BaseModel, AnyUrl, FileUrl, validator
+from typing import Any, Dict, FrozenSet, Optional, Tuple, Union
+from pydantic import AnyUrl, BaseModel, Field, validator
 from enum import Enum
 from collections import Counter
 
@@ -20,7 +20,11 @@ class TaskEnum(str, Enum):
     other = "other"
 
 
-class CatalogModelEntry(BaseModel, extra="forbid"):
+class FlexibleUrl(AnyUrl):
+    host_required = False
+
+
+class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"):
     # tasks, institution and tags are Tuples (rather than Lists) so
     # that they are immutable - Tuple is being used as an immutable
     # sequence here. This means that these fields are hashable, which
@@ -28,15 +32,54 @@ class CatalogModelEntry(BaseModel, extra="forbid"):
     # (e.g. unique()). Could consider using a Frozenset for these
     # fields instead, since duplicates and ordering should not be
     # significant.
-    name: str
-    description: Optional[str]
-    tasks: Tuple[TaskEnum, ...]
-    url: Union[AnyUrl, FileUrl]
-    pkg_url: str  # may be a PyPI package name (not an AnyUrl)
-    format: str
-    pretrained: bool
-    labels_required: bool
-    institution: Tuple[str, ...] = ()
+    name: str = Field(
+        ...,
+        title="Name",
+        description="Short, unique name for the model (one or two words, "
+        "under 20 characters recommended)",
+    )
+    description: Optional[str] = Field(
+        None,
+        title="Description",
+        description="Detailed description of the model",
+    )
+    tasks: Tuple[TaskEnum, ...] = Field(
+        (),
+        title="Tasks",
+        description="Which task (or tasks) does the model perform?",
+    )
+    url: FlexibleUrl = Field(
+        ...,
+        title="URL",
+        description="The URL of the model. This should point to scivision "
+        "model yaml file.",
+    )
+    pkg_url: str = Field(
+        ...,
+        title="Python package",
+        description="A pip requirement specifier for PyPI, or a URL of the "
+        "archive or package (on GitHub, for exampe)",
+    )
+    format: str = Field(
+        ...,
+        title="Model input format",
+        description="The type of data consumed by the model",
+    )
+    pretrained: bool = Field(
+        True,
+        title="Pretrained model?",
+    )
+    labels_required: bool = Field(
+        True,
+        title="Labels required?",
+        description="Does the model require labeled data for training?",
+    )
+    institution: Tuple[str, ...] = Field(
+        (),
+        title="Institution(s)",
+        description="A list of institutions that produced or are associated with "
+        "the model (one per item)",
+    )
     tags: Tuple[str, ...]
 
     def __getitem__(self, item):
@@ -60,17 +103,61 @@ class CatalogModels(BaseModel, extra="forbid"):
         return entries
 
 
-class CatalogDatasourceEntry(BaseModel, extra="forbid"):
-    name: str
-    description: Optional[str]
-    # Tuple: see comment on CatalogModelEntry
-    tasks: Tuple[TaskEnum, ...]
-    domains: Tuple[str, ...]
-    url: Union[AnyUrl, FileUrl]
-    format: str
-    labels_provided: bool
-    institution: Tuple[str, ...] = ()
-    tags: Tuple[str, ...]
+class CatalogDatasourceEntry(
+    BaseModel, extra="forbid", title="Datasource catalog entry"
+):
+    name: str = Field(
+        ...,
+        title="Name",
+        description="Short name for the datasource, that must be unique among "
+        "all catalog entries (one or two words, under 20 characters recommended)",
+    )
+    description: Optional[str] = Field(
+        None,
+        title="Description",
+        description="Detailed description of the dataset (no length limit)",
+    )
+    tasks: FrozenSet[TaskEnum] = Field(
+        None,
+        title="Suitable tasks",
+        description="For which task or tasks is this datasource likely to be "
+        "suitable? (Select any number of the following items)",
+    )
+    labels_provided: bool = Field(
+        False,
+        title="Labels provided",
+        description="Is this a labelled dataset? This can make it suitable for training or validation",
+    )
+    domains: Tuple[str, ...] = Field(
+        None,
+        title="Domain areas",
+        description="Which domain area or areas is this datasource from? (One per item, no duplicates)",
+        # Note: using uniqueItems (used for the json schema) rather
+        # than unique_items (which is not possible to enforce on a
+        # Tuple).  Could use a set/frozenset instead, or a tuple
+        # variant with a constraint.
+        uniqueItems=True,
+    )
+    url: FlexibleUrl = Field(
+        None,
+        title="URL",
+        description="The URL of the scivision datasource yml file",
+    )
+    format: str = Field(
+        None,
+        title="Format",
+    )
+    institution: Tuple[str, ...] = Field(
+        (),
+        title="Institution(s)",
+        description="A list of institutions that produced or are associated with "
+        "the dataset (one per item)",
+    )
+    tags: Tuple[str, ...] = Field(
+        (),
+        title="Tags",
+        description="A list of free-form data to associate with the dataset",
+    )
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -185,7 +272,11 @@ class PandasCatalog:
         models_compatible_tasks = (
             self._models[["name", "tasks"]]
             .explode("tasks")
-            .merge(datasource_tasks, on="tasks", suffixes=("_model", "_datasource"),)
+            .merge(
+                datasource_tasks,
+                on="tasks",
+                suffixes=("_model", "_datasource"),
+            )
             .name.drop_duplicates()
         )
         result_df = models_compatible_format_labels[
@@ -214,7 +305,11 @@ class PandasCatalog:
         datasources_compatible_tasks = (
             self._datasources[["name", "tasks"]]
             .explode("tasks")
-            .merge(model_tasks, on="tasks", suffixes=("_model", "_datasource"),)
+            .merge(
+                model_tasks,
+                on="tasks",
+                suffixes=("_model", "_datasource"),
+            )
             .name.drop_duplicates()
         )
         result_df = datasources_compatible_format_labels[
