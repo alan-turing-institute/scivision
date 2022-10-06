@@ -121,7 +121,7 @@ def load_pretrained_model(
     path: os.PathLike,
     branch: str = "main",
     allow_install: bool = False,
-    model: str = "default",
+    model_selection: str = "default",
     load_multiple: bool = False,
     *args,
     **kwargs,
@@ -136,8 +136,8 @@ def load_pretrained_model(
         Specify the name of a github branch if loading from github.
     allow_install : bool, default = False
         Allow installation of remote package via pip.
-    model : str, default = default
-        Specify the name of the model if there is > 1.
+    model_selection : str, default = default
+        Specify the name of the model if there is > 1 in the model repo package.
     load_multiple : bool, default = False
         Modifies the return to be a list of scivision.PretrainedModel's.
 
@@ -164,7 +164,7 @@ def load_pretrained_model(
     with file as config_file:
         stream = config_file.read()
         config = yaml.safe_load(stream)
-    config_list = _get_model_configs(config, load_multiple, model)
+    config_list = _get_model_configs(config, load_multiple, model_selection)
     loaded_models = []
     for config in config_list:
         # make sure a model at least has an input to the function
