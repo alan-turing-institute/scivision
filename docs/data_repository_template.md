@@ -6,7 +6,7 @@ In order for `scivision` to be able to load a dataset and run a computer vision 
 
 This guide explains how to set up a GitHub repository for your datasets compatible with scivision.
 
-This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your data repo as per this guide.
+This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-extending-the-scivision-catalog) after setting up your data repo as per this guide.
 
 📚 **Contents:**
 
