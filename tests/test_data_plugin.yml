@@ -1,0 +1,8 @@
+name: scivision_sentinel2_stac
+url: https://github.com/alan-turing-institute/scivision_sentinel2_stac.git
+import: scivision_sentinel2_stac
+class: scivision_sentinel2_stac
+args: None
+func:
+    call: get_images
+    args: None
