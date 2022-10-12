@@ -9,7 +9,7 @@ import intake
 import yaml
 
 from ..koala import koala
-from .installer import check_package
+from .checker import check_package
 from .wrapper import PretrainedModel, Datasource
 
 import warnings
