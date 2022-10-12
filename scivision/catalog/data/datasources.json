@@ -165,6 +165,32 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "name": "scivision_sentinel2_stac",
+      "description": "Data plugin for accessing Sentinel-2 Cloud-Optimized GeoTIFFs via scivision. The Sentinel-2 mission is a land monitoring constellation of two satellites that provide high resolution optical imagery and provide continuity for the current SPOT and Landsat missions. The mission provides a global coverage of the Earth's land surface every 5 days, making the data of great use in ongoing studies. This dataset is the same as the Sentinel-2 dataset, except the JP2K files were converted into Cloud-Optimized GeoTIFFs (COGs). Additionally, SpatioTemporal Asset Catalog metadata has were in a JSON file alongside the data, and a STAC API called Earth-search is freely available to search the archive. This dataset contains all of the scenes in the original Sentinel-2 Public Dataset and will grow as that does. L2A data are available from April 2017 over wider Europe region and globally since December 2018.",
+      "tasks": [
+        "classification",
+        "segmentation"
+      ],
+      "domains": [
+        "computer-vision",
+        "earth-observation",
+        "ecology"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision_sentinel2_stac",
+      "format": "image",
+      "labels_provided": false,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "satellite",
+        "aerial",
+        "remote-sensing",
+        "ecology",
+        "environmental-science"
+      ]
     }
   ]
 }
