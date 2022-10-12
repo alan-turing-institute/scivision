@@ -1,6 +1,8 @@
-from scivision.io import install_package
+from scivision.io import package_from_config
 from scivision.io import PretrainedModel
 
+import subprocess
+import sys
 import fsspec
 import yaml
 import pytest
@@ -31,4 +33,4 @@ def KOALA(request):
 
 
 # Install the model package so it can be used in tests
-install_package(imagenet_model_config, allow_install=True)
+subprocess.check_call([sys.executable, "-m", "pip", "install", package_from_config(imagenet_model_config)])

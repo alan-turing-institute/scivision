@@ -16,7 +16,7 @@ def _package_exists(config: dict) -> bool:
     return True
 
 
-def _package_from_config(config: dict, branch: str = "main") -> str:
+def package_from_config(config: dict, branch: str = "main") -> str:
     """Given a config return the pip install string."""
     install_str = config["url"]
     if install_str.endswith(".git"):
@@ -30,7 +30,7 @@ def check_package(
     branch: str = "main",
 ):
     """Check if the python package exists."""
-    package = _package_from_config(config, branch)
+    package = package_from_config(config, branch)
     exists = _package_exists(config)
 
     if not exists:
