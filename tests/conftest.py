@@ -41,7 +41,7 @@ file = fsspec.open('tests/test_data_plugin.yml')
 with file as config_file:
     stream = config_file.read()
     data_plugin_config = yaml.safe_load(stream)
-    
-    
+
+
 # Install the data plugin package so it can be used in tests
 subprocess.check_call([sys.executable, "-m", "pip", "install", package_from_config(data_plugin_config)])

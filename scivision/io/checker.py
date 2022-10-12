@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import importlib
-import subprocess
-import sys
 
 
 def _package_exists(config: dict) -> bool:
