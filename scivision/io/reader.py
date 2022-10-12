@@ -9,7 +9,7 @@ import intake
 import yaml
 
 from ..koala import koala
-from .installer import install_package
+from .installer import check_package
 from .wrapper import PretrainedModel, Datasource
 
 import warnings
@@ -120,7 +120,6 @@ def _get_model_configs(
 def load_pretrained_model(
     path: os.PathLike,
     branch: str = "main",
-    allow_install: bool = False,
     model_selection: str = "default",
     load_multiple: bool = False,
     *args,
@@ -134,8 +133,6 @@ def load_pretrained_model(
         The filename, path or URL of a pretrained model description.
     branch : str, default = main
         Specify the name of a github branch if loading from github.
-    allow_install : bool, default = False
-        Allow installation of remote package via pip.
     model_selection : str, default = default
         Specify the name of the model if there is > 1 in the model repo package.
     load_multiple : bool, default = False
@@ -170,8 +167,8 @@ def load_pretrained_model(
         # make sure a model at least has an input to the function
         assert "X" in config["prediction_fn"]["args"].keys()
 
-        # try to install the package if necessary
-        install_package(config, allow_install=allow_install, branch=branch)
+        # Raise exception if package not installed and suggest how
+        check_package(config, branch=branch)
 
         loaded_models.append(PretrainedModel(config))
     if load_multiple:
@@ -245,7 +242,7 @@ def load_data_from_plugin(
         The dataset to be visualised, loaded via xarray.
     """
 
-    # install the package
-    install_package(config, allow_install=True, branch=branch)
+    # Raise exception if package not installed and suggest how
+    check_package(config, branch=branch)
 
     return Datasource(config)
