@@ -13,6 +13,7 @@
     "octokit": "^2.0.4",
     "octokit-plugin-create-pull-request": "^3.12.2",
     "react": "^18.2.0",
+    "react-bootstrap": "^1.0.0",
     "react-bootstrap-sidebar-menu": "^2.0.1",
     "react-data-table-component": "^7.5.2",
     "react-dom": "^18.2.0",
