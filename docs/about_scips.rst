@@ -36,11 +36,12 @@ In summary, the steps to follow, from proposal to adoption, are listed below. Fe
 
  #. Fork/clone this repository
  #. Copy the template from ``docs/scip/0000-template.md`` to a new file in ``docs/scip``.  Use the next available number for the filename, for example ``0123-short-name.md``
- #. Add your GitHub username to the ``editor`` field (or the username of whoever has agreed to be the editor)
+ #. Add your GitHub username to the ``editor`` field
  #. Give it a short, descriptive title, and optionally add any draft text to the relevant sections of the document
  #. Add it to the list in ``docs/scip/scip_index.rst``
- #. Open a pull request into this repository
- #. While the status of the SCIP is ``raw`` or ``draft``, the text can be modified in any way -- at this stage, it is up to the 'editor' (usually the original author) to seek feedback and accept (or reject) any changes on their proposal
+ #. Include the text of your proposal in the file you just created. Apart from the metadata, the structure of the document is completely free form -- the template or other SCIPs can act as a guide.
+ #. Open a pull request into the main scivision repository
+ #. While the status of the SCIP is ``raw`` or ``draft``, the text can be modified in any way -- at this stage, it is up to the 'editor' (usually the original author) to seek feedback and accept (or reject) any changes on their proposal, but please feel free to ask a maintainer for help with this
  #. Consider `discussing <https://github.com/alan-turing-institute/scivision/discussions>`_ the proposal with the community, and requesting feedback or edits from others
  #. When it is ready for work to begin on an implementation, change (via pull request) the status to ``draft``
  #. Once there is broad agreement that it should be adopted (and, where code changes are necessary, that there is a working implementation), change the status to ``stable``.
