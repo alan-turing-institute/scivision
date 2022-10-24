@@ -77,3 +77,41 @@ class AutoPlumber:
         # optionally, we can also pass on other keyword arguments to the model
         model_kwargs.update(kwargs)
         return self._fn(*model_args, **model_kwargs)
+
+
+class DataPlumber:
+    """Automagically plumb a data plugin using the scivision config file.
+
+    This class will inspect the module and try to work out how to
+    map the inputs of the Callable to the scivision function
+    signature.
+
+    Attributes
+    ----------
+    config : dict
+        The scivision config as a dictionary.
+
+    """
+
+    def __init__(self, config: dict):
+
+        # import the module and get the data function
+        self._module = importlib.import_module(config["import"])
+        data_class = getattr(self._module, config['class'])
+        self._fn = getattr(data_class, config['func']['call'])
+
+        self._data_func_signature = inspect.signature(self._fn)
+
+    @property
+    def module(self):
+        return self._module
+
+    def __call__(self, **kwargs):
+        """Redirect the input X to the correct input of the data function."""
+
+        data_func_args = []
+        data_func_kwargs = {}
+
+        # optionally, we can also pass on other keyword arguments to the data_func
+        data_func_kwargs.update(kwargs)
+        return self._fn(*data_func_args, **data_func_kwargs)

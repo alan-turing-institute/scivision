@@ -10,9 +10,10 @@ import yaml
 
 from ..koala import koala
 from .installer import install_package
-from .wrapper import PretrainedModel
+from .wrapper import PretrainedModel, Datasource
 
 import warnings
+import xarray
 
 
 def _is_url(path: os.PathLike) -> bool:
@@ -120,7 +121,7 @@ def load_pretrained_model(
     path: os.PathLike,
     branch: str = "main",
     allow_install: bool = False,
-    model: str = "default",
+    model_selection: str = "default",
     load_multiple: bool = False,
     *args,
     **kwargs,
@@ -135,8 +136,8 @@ def load_pretrained_model(
         Specify the name of a github branch if loading from github.
     allow_install : bool, default = False
         Allow installation of remote package via pip.
-    model : str, default = default
-        Specify the name of the model if there is > 1.
+    model_selection : str, default = default
+        Specify the name of the model if there is > 1 in the model repo package.
     load_multiple : bool, default = False
         Modifies the return to be a list of scivision.PretrainedModel's.
 
@@ -163,7 +164,7 @@ def load_pretrained_model(
     with file as config_file:
         stream = config_file.read()
         config = yaml.safe_load(stream)
-    config_list = _get_model_configs(config, load_multiple, model)
+    config_list = _get_model_configs(config, load_multiple, model_selection)
     loaded_models = []
     for config in config_list:
         # make sure a model at least has an input to the function
@@ -199,6 +200,7 @@ def load_dataset(
 
     if _is_url(path):
         path = _parse_url(path, branch)
+
     # check that this is a path to a yaml file
     # if not, assume it is a repo containing ".scivision/data.yml"
     if not path.endswith(
@@ -208,9 +210,42 @@ def load_dataset(
         )
     ):
         path = path + ".scivision/data.yml"
-    # fsspec will throw an error if the path does not exist
-    fsspec.open(path)
 
+    # fsspec will throw an error if the path does not exist
+    file = fsspec.open(path)
+
+    # parse the config file to see if it's a data plugin:
+    with file as config_file:
+        stream = config_file.read()
+        config = yaml.safe_load(stream)
+    if "import" in config:
+        return load_data_from_plugin(config, branch)
+
+    # if not a data plugin, assume an intake config
     intake_cat = intake.open_catalog(path)
 
     return intake_cat
+
+
+def load_data_from_plugin(
+    config: dict, branch: str = "main"
+) -> xarray.Dataset:
+    """Load a dataset from a data plugin (python package).
+
+    Parameters
+    ----------
+    config : dict
+        The loaded data.yml config.
+    branch : str, default = main
+        Specify the name of a github branch if loading from github.
+
+    Returns
+    -------
+    xarray.Dataset
+        The dataset to be visualised, loaded via xarray.
+    """
+
+    # install the package
+    install_package(config, allow_install=True, branch=branch)
+
+    return Datasource(config)

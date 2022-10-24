@@ -6,7 +6,7 @@ In order for the `scivision` Python API to be able to load and run a computer vi
 
 This guide explains how to set up a GitHub repository for your CV model(s) compatible with scivision.
 
-This is also a pre-requisite for adding the model to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](../contributing.md#gift-extending-the-scivision-catalog) after setting up your model as per this guide.
+This is also a pre-requisite for adding the model to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-extending-the-scivision-catalog) after setting up your model as per this guide.
 
 📚 **Contents:**
 
@@ -79,7 +79,7 @@ You should include a `LICENSE` file in the repository, so that scivision users w
 
 ## ✨ Requirements for the scivision API
 
-It's common in Python packages to house the core package  code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#-model-repo-structure) diagram above (i.e. `comp_vis/comp_vis`). 
+It's common in Python packages to house the core package  code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#model-repo-structure) diagram above (i.e. `comp_vis/comp_vis`).
 
 For your model(s) to be loadable by the scivision API, we additionally insist that you include a `model.py` in this child directory and set up a `model.yml` config file in a directory called `.scivision`.
 
@@ -91,7 +91,7 @@ The script called `model.py` must either contain the model itself (i.e. code tha
 
 If you wish the model to be compatible with the scivision API, include a class within this script, which contains a prediction function that can be used to run the model on data. You can include multiple classes for different models.
 
-For examples, check out the [example model repos](#%EF%B8%8F-example-model-repos) section.
+For examples, check out the [example model repos](#example-repos) section.
 
 .. _config:
 

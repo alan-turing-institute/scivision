@@ -55,6 +55,12 @@ def test_load_dataset_local_zip():
     assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
 
 
+def test_load_dataset_from_stac_plugin():
+    """Test that an xarray.Dataset can be loaded via the data plugins code and scivision_sentinel2_stac catalog entry"""
+    ds = load_dataset('https://github.com/alan-turing-institute/scivision_sentinel2_stac').load_data()
+    assert type(ds) == xarray.Dataset
+
+
 def test_get_model_configs():
     """Test that a config with multiple models is split into separate configs."""
     path = 'tests/test_multiple_models_scivision.yml'
@@ -81,20 +87,20 @@ def test_load_pretrained_model_local():
 
 def test_load_named_pretrained_model_local():
     """Test that scivision can load a specific model from the given scivision.yml."""
-    assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='ImageNetModel')) == wrapper.PretrainedModel
-    assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model='ImageNetModel')) == wrapper.PretrainedModel
+    assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model_selection='ImageNetModel')) == wrapper.PretrainedModel
+    assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model_selection='ImageNetModel')) == wrapper.PretrainedModel
 
 
 def test_load_wrong_model_name_raises_value_error():
     """Test that a value error is raised when a model name is specified that doesn't match the model in the config."""
     with pytest.raises(ValueError):
-        load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model='FakeModel')
+        load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model_selection='FakeModel')
 
 
 def test_load_wrong_model_name_raises_value_error_config_has_multiple_models():
     """Test that a value error is raised when a model name is specified that doesn't match one of the models in the config."""
     with pytest.raises(ValueError):
-        load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model='FakeModel')
+        load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model_selection='FakeModel')
 
 
 def test_load_multiple_models():

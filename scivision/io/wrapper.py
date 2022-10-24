@@ -3,7 +3,7 @@
 
 import numpy as np
 
-from .autoplumber import AutoPlumber
+from .autoplumber import AutoPlumber, DataPlumber
 
 
 class PretrainedModel:
@@ -27,3 +27,16 @@ class PretrainedModel:
             f"  source='{self._config['url']}' \n"
             f"  pipe='{self._plumbing.pipe}' \n)"
         )
+
+
+class Datasource:
+    """A datasource, built using scivision configuration file."""
+
+    def __init__(self, config: dict):
+        self._config = config
+        self._plumbing = DataPlumber(config)
+
+    def load_data(self, *args, **kwargs):
+        """Load function that gets image dataset."""
+        # note, we may need to pass other kwargs to the function here
+        return self._plumbing(**kwargs)
