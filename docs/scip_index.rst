@@ -22,7 +22,7 @@ Status: Raw/draft
 .. toctree::
    :maxdepth: 1
 
-   scip/0001-catalog
+(none so far)
 
 
 Status: Stable/deprecated
