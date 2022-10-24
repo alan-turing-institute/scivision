@@ -1,3 +1,4 @@
+
 .. oplab_pipeline documentation master file, created by
    sphinx-quickstart on Thu May  7 19:32:18 2020.
 
@@ -40,6 +41,7 @@ This Scivision documentation is hosted on `Read the Docs <https://scivision.read
    contributing
    model_repository_template
    data_repository_template
+   scip_index
    maintainers
 
 📷 Background
