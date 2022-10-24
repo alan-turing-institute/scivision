@@ -1,4 +1,4 @@
-# 0/Template
+# Template for new SCIPs
 
 ## Metadata
 
