@@ -191,6 +191,25 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "tasks": [
+        "segmentation"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "optical-microscopy"
+      ],
+      "institution": [
+        "Aarhus University"
+      ],
+      "tags": [
+        "satellite"
+      ],
+      "url": "https://www.test.com",
+      "name": "cool data",
+      "description": "some very cool data",
+      "format": "image"
     }
   ]
 }
