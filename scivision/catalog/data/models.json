@@ -274,8 +274,8 @@
       "tasks": [
         "classification"
       ],
-      "url": "https://github.com/nbarlowATI/flower_classification_model",
-      "pkg_url": "git+https://github.com/nbarlowATI/flower_classification_model.git@working_version",
+      "url": "https://github.com/alan-turing-institute/flower_classification_model",
+      "pkg_url": "git+https://github.com/alan-turing-institute/flower_classification_model.git@main",
       "format": "image",
       "pretrained": true,
       "labels_required": true,
