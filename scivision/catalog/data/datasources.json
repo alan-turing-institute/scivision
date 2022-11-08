@@ -204,7 +204,7 @@
       ],
       "url": "https://github.com/nbarlowATI/flowers_data_repo",
       "format": "image",
-      "labels_provided": false,
+      "labels_provided": true,
       "institution": [
         "The Alan Turing Institute"
       ],
