@@ -191,6 +191,27 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "name": "flowers",
+      "description": "Sample dataset of 8000 images of flowers, plus labels indicating their species",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision",
+        "ecology"
+      ],
+      "url": "https://github.com/nbarlowATI/flowers_data_repo",
+      "format": "image",
+      "labels_provided": false,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "ecology",
+        "environmental-science"
+      ]
     }
   ]
 }
