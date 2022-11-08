@@ -7,7 +7,7 @@ pyyaml
 requests
 aiohttp
 intake
-git+https://github.com/ots22/intake-xarray@feature/exif
+intake-xarray==0.6.1
 pydantic
 exifread
 distinctipy
