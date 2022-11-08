@@ -50,6 +50,13 @@ Browse through a gallery of notebooks (runnable interactively with Binder) from 
 
 Scivision development happens in the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision).
 
+## 📋 Support table
+
+| Date | Python | Scivision |
+| ---  | ---    |  ---      |
+| Nov 08, 2022 | 3.8+ | 0.4.0+ |
+| Jan 10, 2022 | 3.7+ | 0.1.2+ |
+
 ## 🐨 Installation
 
 1. **Install scivision via [PyPi](https://pypi.org/project/scivision/)**: which tends to be the most user-friendly option:
