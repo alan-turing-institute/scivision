@@ -7,7 +7,7 @@ pyyaml
 requests
 aiohttp
 intake
-intake-xarray
+intake-xarray==0.6.1
 pydantic
 exifread
 distinctipy
