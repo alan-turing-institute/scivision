@@ -58,7 +58,8 @@ Scivision development happens in the [Scivision GitHub repo](https://github.com/
 | ^3.7 | <0.4 |
 | ^3.8 | * (any) |
 | ^3.9 | * (any) |
-| >=3.10 | >=0.3, untested, but intending to support (bug reports welcome) |
+| ^3.10 | * (any) |
+| >=3.11 | >=0.3, untested, but intending to support (bug reports welcome) |
 
 Scivision is currently working towards supporting Python >=3.10.
 
