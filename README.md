@@ -53,7 +53,7 @@ Scivision development happens in the [Scivision GitHub repo](https://github.com/
 ## 📋 Support table
 
 | Python version | Scivision version | Support level |
-| ---  | ---    | 
+| ---  | ---    | --- |
 | <3.7 |   | unsupported |
 | ^3.7 | <0.4 | stable |
 | ^3.8 | * (any) | stable |
