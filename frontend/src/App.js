@@ -93,7 +93,7 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
                     <b>Error opening pull request on GitHub</b>
                 </Modal.Header>
                 <Modal.Body>
-                    The error was:<div class="text-monospace mt-2 col">{pr_message}</div>
+                    The error was:<div className="text-monospace mt-2 col">{pr_message}</div>
                 </Modal.Body>
             </Modal>
             <Form onSubmit={
