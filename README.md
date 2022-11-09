@@ -52,13 +52,15 @@ Scivision development happens in the [Scivision GitHub repo](https://github.com/
 
 ## 📋 Support table
 
-| Python version | Scivision version | Support level |
-| ---  | ---    | --- |
-| <3.7 |   | unsupported |
-| ^3.7 | <0.4 | stable |
-| ^3.8 | * (any) | stable |
-| ^3.9 | * (any) | stable |
-| >=3.10 | * (any) | untested |
+| Python version | Scivision version |
+| ---  | ---    |
+| <3.7 | no compatible version |
+| ^3.7 | <0.4 |
+| ^3.8 | * (any) |
+| ^3.9 | * (any) |
+| >=3.10 | >=0.3, untested, but intending to support (bug reports welcome) |
+
+Scivision is currently working towards supporting Python >=3.10.
 
 ## 🐨 Installation
 
