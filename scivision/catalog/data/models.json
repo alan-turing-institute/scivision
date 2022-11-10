@@ -286,6 +286,26 @@
         "flowers",
         "ecology"
       ]
+    },
+    {
+      "name": "butterfly-classification-model",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/butterfly_classification_model",
+      "pkg_url": "git+https://github.com/alan-turing-institute/butterfly_classification_model.git@main",
+      "format": "image",
+      "pretrained": true,
+      "labels_required": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "butterflies",
+        "insects",
+        "animals",
+        "ecology"
+      ]
     }
   ]
 }
