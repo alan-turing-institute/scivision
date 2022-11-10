@@ -212,6 +212,29 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "name": "butterflies",
+      "description": "The Butterfly Image Classification Kaggle challenge, created by Gerald Piosenka.",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision",
+        "ecology"
+      ],
+      "url": "https://github.com/nbarlowATI/butterfly_data_repo",
+      "format": "image",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "butterflies",
+        "insects",
+        "animals",
+        "ecology"
+      ]
     }
   ]
 }
