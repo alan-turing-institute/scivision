@@ -121,6 +121,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center"><a href="https://github.com/pwochner"><img src="https://avatars.githubusercontent.com/u/78024695?v=4?s=100" width="100px;" alt="pwochner"/><br /><sub><b>pwochner</b></sub></a><br /><a href="#ideas-pwochner" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-pwochner" title="Event Organizing">📋</a> <a href="#example-pwochner" title="Examples">💡</a></td>
+      <td align="center"><a href="https://github.com/nbarlowATI"><img src="https://avatars.githubusercontent.com/u/33832774?v=4?s=100" width="100px;" alt="nbarlowATI"/><br /><sub><b>nbarlowATI</b></sub></a><br /><a href="#ideas-nbarlowATI" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-nbarlowATI" title="Event Organizing">📋</a> <a href="#example-nbarlowATI" title="Examples">💡</a></td>
     </tr>
   </tbody>
 </table>
