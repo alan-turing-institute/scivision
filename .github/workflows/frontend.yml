@@ -2,7 +2,7 @@ name: Build frontend
 on:
   push:
     branches:
-      - frontend
+      - main
 
 jobs:
   build-and-deploy:
@@ -19,6 +19,11 @@ jobs:
     - name: Install node packages
       working-directory: frontend
       run: npm ci
+      
+    - name: Copy catalogs to frontend
+      run: |
+        cp scivision/catalog/data/models.json frontend/src/
+        cp scivision/catalog/data/datasources.json frontend/src/
 
     - name: Build
       working-directory: frontend
