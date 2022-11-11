@@ -27,8 +27,8 @@ import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-import datasources from './datasources.json';
-import models from './models.json';
+import datasources from './data/datasources.json';
+import models from './data/models.json';
 import DataTable from 'react-data-table-component';
 
 import { Octokit } from "octokit";
