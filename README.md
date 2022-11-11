@@ -132,3 +132,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+# 🕸️ [WIP] Scivision web
+
+We're currently working on a web tool for both using and contributing to scivision. It's a work in progress and there will be more documentation soon. In the meantime feel free to open any bug or feature request issues on this repo.
+
+Currently Scivision web is available at: https://alan-turing-institute.github.io/scivision/
