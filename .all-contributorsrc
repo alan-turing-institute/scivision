@@ -163,6 +163,17 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "nbarlowATI",
+      "name": "nbarlowATI",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33832774?v=4",
+      "profile": "https://github.com/nbarlowATI",
+      "contributions": [
+        "ideas",
+        "eventOrganizing",
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -171,5 +182,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": false,
-  "contributorsSortAlphabetically": true
+  "contributorsSortAlphabetically": true,
+  "commitConvention": "angular"
 }
