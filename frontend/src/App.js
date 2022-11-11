@@ -53,6 +53,27 @@ const OctokitPRPlugin = Octokit.plugin(createPullRequest);
 const GH_TOKEN_KEY = "gh_token";
 const RANDOM_UUID_KEY = "random_uuid";
 
+
+// Load the thumbnail images
+//
+// require.context returns a webpack object, which is callable.
+// Calling it with the name of a resource returns the path to that
+// resource.  It also has a '.keys()' method, which returns all the
+// included resources
+const model_thumbnails_ctxt = require.context(
+    './data/thumbnails/models', false, /\.jpg$/
+);
+
+// From the webpack object, make a dictionary from resource name to
+//
+// Could strip the leading './' and trailing extension (and then handle
+// several file types)
+const model_thumbnails = model_thumbnails_ctxt.keys().reduce((dict, mod) => {
+    dict[mod] = model_thumbnails_ctxt(mod);
+    return dict;
+}, {});
+
+
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -322,6 +343,16 @@ function Datasources() {
 
 function Models() {
     const columns = [
+        {
+            name: 'Thumbnail',
+            width: "150px",
+            selector: row => model_thumbnails[`./${row.name}.jpg`] == undefined,
+            sortable: true,
+            cell: (row, index, column, id) =>
+            (
+                <img src={model_thumbnails[`./${row.name}.jpg`]} width="128" height="128" />
+            )
+        },
         {
             name: "Name",
             selector: row => row.name,
