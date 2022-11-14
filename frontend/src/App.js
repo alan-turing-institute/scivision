@@ -260,10 +260,7 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
 
 
 function github_auth({ referrer, gh_logged_in }) {
-    if (gh_logged_in) {
-        console.log("Already logged in to GitHub");
-        return <Navigate to={referrer} />;
-    } else {
+    if (!gh_logged_in) {
         var github_auth_url = new URL('https://github.com/login/oauth/authorize');
 
         const random_uuid = crypto.randomUUID();
@@ -278,9 +275,13 @@ function github_auth({ referrer, gh_logged_in }) {
             state: random_uuid,
         }).toString();
 
+        // Redirect to GitHub
         window.location = github_auth_url;
 
-        return (<div>Redirecting to GitHub...</div>);
+    } else {
+        // Should not get here via the web interface (the login link
+        // should not be visible when already logged in)
+        console.log("Already logged in to GitHub");
     }
 }
 
