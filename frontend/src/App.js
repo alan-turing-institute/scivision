@@ -9,6 +9,7 @@ import {
     Route,
     Navigate,
     Link,
+    NavLink,
     useSearchParams,
     useParams,
     useLocation
@@ -26,6 +27,10 @@ import { Nav, Navbar } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
@@ -336,46 +341,197 @@ function Datasources() {
     return <DataTable columns={columns} data={datasources.entries} title="Datasources" width="500px" />;
 }
 
+// Component: Fragment containing definition items for the expanded
+// view of the model table, and the model page
+//
+// * data - one model
+function ModelDefinitionListFragment({data}) {
+    return (<>
+                <dt className="col-sm-3">Description</dt>
+                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
 
-function Models() {
+                <dt className="col-sm-3">Homepage</dt>
+                <dd className="col-sm-9"><a href={data.url}>{data.url}</a></dd>
+
+                <dt className="col-sm-3">Install with pip</dt>
+                <dd className="col-sm-9">
+                    <div><code>pip install {data.pkg_url}</code></div>
+                </dd>
+            </>);
+}
+
+// Component: List of models (choice of grid or table view)
+// route: /models, /models-grid
+//
+// * route - the current route, either "/model-grid" or "/models",
+//   used to select the view to render
+function Models({ route }) {
+    return (
+        <>
+            <Nav variant="pills" defaultActiveKey={route}>
+                <Nav.Item>
+                    <Nav.Link to="/model-grid" as={NavLink}><i class="bi bi-grid" />{/* Thumbnails*/}</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link to="/models" as={NavLink}><i class="bi bi-list-ul" />{/* Table*/}</Nav.Link>
+                </Nav.Item>
+            </Nav>
+
+            {
+                (route == "/model-grid") ?
+                    (<ModelGrid />) :
+                    (<ModelTable />)
+            }
+        </>
+    );
+}
+
+// Component: Models, table view
+// route: /models
+function ModelTable() {
     const columns = [
         {
             name: 'Thumbnail',
             width: "150px",
-            selector: row => model_thumbnails[`./${row.name}.jpg`] == undefined,
+            selector: row => model_thumbnails[`./${row.name}.jpg`] === undefined,
             sortable: true,
-            cell: (row, index, column, id) =>
-            (
-                <img src={model_thumbnails[`./${row.name}.jpg`]} width="128" height="128" />
-            )
+            cell: (row, index, column, id) => {
+                const thumb = model_thumbnails[`./${row.name}.jpg`];
+                if (thumb != undefined) {
+                    return (
+                        <img src={thumb}
+                             width="128"
+                             height="128"
+                             className="img-thumbnail"
+                        />
+                    );
+                } else {
+                    return (<></>);
+                }
+            }
         },
         {
             name: "Name",
+            sortable: true,
+            grow: 0.5,
             selector: row => row.name,
-        },
-        {
-            name: "Description",
-            selector: row => row.description,
         },
         {
             name: "Tasks",
             selector: row => row.tasks,
+            cell: (row, index, column, id) => {
+                return row.tasks.map(tsk => (
+                    <>
+                        <span class="badge badge-primary">{tsk}</span>
+                        &nbsp;
+                    </>
+                ));
+            }
         },
-        {
-            name: "URL",
-            selector: row => row.url,
-        },
-        {
-            name: "Package URL (pip)",
-            selector: row => row.pkg_url,
-        }
-
     ];
 
-    return <DataTable columns={columns} data={models.entries} title="Models" />;
+    return (
+        <>
+            <DataTable columns={columns} data={models.entries} title=''
+                       expandableRows
+                       expandableRowsComponent={(props) => {
+                           return (
+                               <div className="border-bottom">
+                                   <div className="card mt-1 mb-3 bg-light">
+                                       <div className="card-body">
+                                           <dl className="row">
+                                               <ModelDefinitionListFragment {...props}/>
+                                           </dl>
+                                       </div>
+                                   </div>
+                               </div>
+                           );
+                       }}
+                       expandableRowsHideExpander
+                       expandOnRowClicked />
+        </>
+    );
 }
 
+// Component: Models, thumbnail grid view
+// route: /model-grid
+function ModelGrid() {
+    const showPopover = (model) => (props) => (
+        <Popover id="popover-basic" {...props}>
+            <Popover.Content>
+                <strong>{model.name}</strong> {model.description} &nbsp;
+                {model.tasks.map(tsk => (
+                    <><span class="badge badge-primary">{tsk}</span>&nbsp;</>
+                ))}
+            </Popover.Content>
+        </Popover>
+    );
 
+    const one_model_thumbnail = (model) => {
+
+        let thumbnail;
+        if (model_thumbnails[`./${model.name}.jpg`] === undefined) {
+            thumbnail = (
+                <svg width="100%" height="auto" role="img" style={{ aspectRatio: 1 }}>
+                    <rect width="100%" height="100%" fill="#cccccc"></rect>
+                    <text x="50%" y="50%" fill="white"
+                          text-anchor="middle" dominant-baseline="middle"
+                          font-size="10pt">
+                        {model.name}
+                    </text>
+                </svg>
+            );
+        } else {
+            thumbnail = (
+                <img src={model_thumbnails[`./${model.name}.jpg`]}
+                     width="100%"
+                     height="100%"
+                />
+            );
+        }
+
+
+        return (
+            <div className="card">
+                <OverlayTrigger overlay={showPopover(model)} placement="auto">
+                    <div className="card-body">
+                        <Link to={"/model/" + encodeURIComponent(model.name)}>
+                            {thumbnail}
+                        </Link>
+                    </div>
+                </OverlayTrigger>
+            </div>
+        );
+    }
+
+    const image_cards = models.entries.map(one_model_thumbnail);
+
+    return (
+        <div className="card-columns mt-2">
+            {image_cards}
+        </div>
+    );
+}
+
+// Component: Details about a model
+// route: /model/:model-name
+function Model() {
+    const { model_name_encoded } = useParams();
+    const model_name = decodeURIComponent(model_name_encoded);
+    const model = models.entries.find(model => model.name == model_name);
+
+    return (<>
+                <h3>{model.name}</h3>
+                <img src={model_thumbnails[`./${model.name}.jpg`]} />
+                <dl className="row">
+                    <ModelDefinitionListFragment data={model} />
+                </dl>
+            </>);
+}
+
+// Component: Username/logout link (shown when logged in)
+//
+// * set_gh_logged_in - setter for State variable
 function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     const octokit = new Octokit({ auth: sessionStorage[GH_TOKEN_KEY] });
     const [ gh_username, set_gh_username ] = useState("...");
@@ -458,18 +614,19 @@ function App() {
                             <Link to="datasources">Datasources</Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="datasource">New datasource entry</Link>
+                            <Link to="new-datasource">New datasource entry</Link>
                         </Nav.Item>
                         <p />
 
                         <Nav.Item>
-                            <Link to="models">Models</Link>
+                            <Link to="model-grid">Models</Link>
                         </Nav.Item>
-
                         <Nav.Item>
-                            <Link to="model">New model entry</Link>
+                            <Link to="new-model">New model entry</Link>
                         </Nav.Item>
                     </Nav>
+
+                    {/* Routing table */}
                     <Routes>
                         <Route exact path="/" element={
                                    <div className="col-md-auto">
@@ -486,12 +643,19 @@ function App() {
                                    </div>
                                } />
 
+                        <Route path="/model-grid" element={
+                                   <div className="col">
+                                       <Models route="/model-grid" />
+                                   </div>
+                               } />
+
                         <Route path="/datasources" element={
                                    <div className="col" style={{width: 500}}>
                                        <Datasources />
                                    </div>
                                } />
-                        <Route path="/datasource" element={
+
+                        <Route path="/new-datasource" element={
                                    <div className="col-auto">
                                        <CatalogEntryForm
                                            gh_logged_in={gh_logged_in}
@@ -502,12 +666,20 @@ function App() {
                                        />
                                    </div>
                                }/>
+
                         <Route path="/models" element={
-                                   <div className="col" style={{width: 500}}>
-                                       <Models />
+                                   <div className="col">
+                                       <Models route="/models" />
                                    </div>
                                } />
-                        <Route path="/model" element={
+
+                        <Route path="/model/:model_name_encoded" element={
+                                   <div className="col">
+                                       <Model />
+                                   </div>
+                               } />
+
+                        <Route path="/new-model" element={
                                    <div className="col-auto">
                                        <CatalogEntryForm
                                            gh_logged_in={gh_logged_in}
