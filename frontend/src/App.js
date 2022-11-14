@@ -69,7 +69,8 @@ const model_thumbnails_ctxt = require.context(
     './data/thumbnails/models', false, /\.jpg$/
 );
 
-// From the webpack object, make a dictionary from resource name to
+// From the webpack object, make a dictionary from the resource name
+// to its path
 //
 // Could strip the leading './' and trailing extension (and then handle
 // several file types)
@@ -79,6 +80,7 @@ const model_thumbnails = model_thumbnails_ctxt.keys().reduce((dict, mod) => {
 }, {});
 
 
+// Utility function to download a text file, with the given filename and contents 'text'
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -92,11 +94,23 @@ function download(filename, text) {
   document.body.removeChild(element);
 }
 
+// Component: Form to create new catalog entry (for download or PR)
+// routes: /new-model, /new-datasource
+//
+// The two submit options either download the form data as json, or
+// create a pull request with the new entry on behalf of the user.
+//
+// This Component can be used for both the model and datasource
+// catalogs, through the props.
+//
+// * gh_logged_in - login status (grey out the PR button if not logged in)
+// * schema - json schema object, used to generate the form
+// * catalog_kind - "datasource" or "model",
 function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, download_filename }) {
 
     // The modal dialogue shows when 'pr_failed' is true.  Separate
-    // state variable for the message, since closing the modal
-    // clears the failure flag, but the message is still visible
+    // state variable (pr_message) for the message, since closing the
+    // modal clears the failure flag, but the message is still visible
     // briefly
     const [ pr_message, set_pr_message ] = useState("");
     const [ pr_failed, set_pr_failed ] = useState(false);
@@ -189,7 +203,9 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
         </div>);
 }
 
-
+// Obtain the GitHub OAuth token from Scivision backend
+//
+// * gh-code - the code obtained from the GitHub OAuth API
 async function get_github_token(gh_code) {
     const response = await fetch(server_config_selected.uri + gh_code);
     const json = await response.json();
@@ -203,12 +219,20 @@ async function get_github_token(gh_code) {
     return json.token;
 }
 
-
+// Component: Landing page
+// route: /
 function AboutText() {
     return (<p>Welcome to Scivision</p>);
 }
 
-
+// Component: Login progress/redirection page
+// route /login/:referrer
+//
+// This is used as the redirect URL for GitHub OAuth login - GitHub
+// redirects back to this page after a login attempt.  This component
+// then redirects again to the requested page given as the 'referrer'
+// parameter, expected to be the page the user was viewing when they
+// initiated the login.
 function Login({ gh_logged_in, set_gh_logged_in }) {
     const login_attempted = useRef(false);
     const { referrer_encoded } = useParams();
@@ -263,7 +287,12 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
     );
 }
 
-
+// GitHub OAuth login
+//
+// * referrer - redirect back to this page
+// * gh_logged_in - current login state
+//
+// This function is called to initiate a login attempt
 function github_auth({ referrer, gh_logged_in }) {
     if (!gh_logged_in) {
         var github_auth_url = new URL('https://github.com/login/oauth/authorize');
@@ -290,7 +319,8 @@ function github_auth({ referrer, gh_logged_in }) {
     }
 }
 
-
+// Component: Datasources, table view
+// route: /datasources
 function Datasources() {
     const columns = [
         {
@@ -558,7 +588,10 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     );
 }
 
-
+// Component: Login link (shown when not logged in)
+//
+// * gh_logged_in - State variable
+// * set_gh_logged_in - setter for State variable
 function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
     const loc = useLocation();
 
@@ -579,7 +612,9 @@ function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
     }
 }
 
-
+// Component: The app
+//
+// Display the header and sidebar, and handle routing with React Router
 function App() {
     const gh_token = sessionStorage[GH_TOKEN_KEY];
     const random_uuid = sessionStorage[RANDOM_UUID_KEY];
@@ -597,7 +632,9 @@ function App() {
                         <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision Catalog Utility</p>
                     </Navbar.Brand>
                 </Navbar>
+
                 <div className="row px-4 mt-2">
+                    {/* Navigation sidebar */}
                     <Nav className="col-auto d-block sidebar">
                         <Nav.Item>
                             <Link to="">About</Link>
