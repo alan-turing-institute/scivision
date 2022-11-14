@@ -86,6 +86,12 @@ Scivision is currently working towards supporting Python >=3.11.
     pip install -v -e .
     ```
 
+## 🕸️ [WIP] Scivision Web
+
+We're currently working on a web tool for both using and contributing to scivision. It's a work in progress and there will be more documentation soon. In the meantime feel free to open any bug or feature request issues on this repo.
+
+Visit [Scivision Web](https://alan-turing-institute.github.io/scivision/).
+
 ## 🤔 Contributing
 
 See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html), which contains information on how to set up and contribute computer vision models and scientific image datasets to the scivision catalog, and make them available via the scivision python API, as well as modify the source code.
@@ -133,8 +139,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-# 🕸️ [WIP] Scivision web
-
-We're currently working on a web tool for both using and contributing to scivision. It's a work in progress and there will be more documentation soon. In the meantime feel free to open any bug or feature request issues on this repo.
-
-Currently Scivision web is available at: https://alan-turing-institute.github.io/scivision/
