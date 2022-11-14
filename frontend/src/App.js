@@ -173,7 +173,7 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
                         disabled={!gh_logged_in || pr_loading}>
                     Open Pull Request on GitHub
                     { pr_loading ? <>&nbsp;<Spinner animation="border" role="status" size="sm"/></> : <></> }
-                    { gh_logged_in ? <></> : <>(login to enable)</> }
+                    { gh_logged_in ? <></> : <> (login to enable)</> }
                 </button>
                 <button type="submit"
                         onClick={ () => pr_flag = false }
