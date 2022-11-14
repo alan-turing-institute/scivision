@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/scivision/static/css/main.1e5dbc0a.css",
-    "main.js": "/scivision/static/js/main.6da16234.js",
+    "main.js": "/scivision/static/js/main.d3ee8e9b.js",
     "static/js/787.cda612ba.chunk.js": "/scivision/static/js/787.cda612ba.chunk.js",
     "index.html": "/scivision/index.html",
     "main.1e5dbc0a.css.map": "/scivision/static/css/main.1e5dbc0a.css.map",
-    "main.6da16234.js.map": "/scivision/static/js/main.6da16234.js.map",
+    "main.d3ee8e9b.js.map": "/scivision/static/js/main.d3ee8e9b.js.map",
     "787.cda612ba.chunk.js.map": "/scivision/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1e5dbc0a.css",
-    "static/js/main.6da16234.js"
+    "static/js/main.d3ee8e9b.js"
   ]
 }
