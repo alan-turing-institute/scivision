@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/scivision/static/css/main.1e5dbc0a.css",
-    "main.js": "/scivision/static/js/main.d3ee8e9b.js",
+    "main.css": "/scivision/static/css/main.1492ae1a.css",
+    "main.js": "/scivision/static/js/main.277e1cdd.js",
     "static/js/787.cda612ba.chunk.js": "/scivision/static/js/787.cda612ba.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/scivision/static/media/bootstrap-icons.4133309eaf232a933735.woff",
+    "static/media/bootstrap-icons.woff2?": "/scivision/static/media/bootstrap-icons.cfde41d697b6dcd56fa6.woff2",
+    "static/media/detectreeRGB-forest.jpg": "/scivision/static/media/detectreeRGB-forest.6320de8dea937a52ce79.jpg",
     "index.html": "/scivision/index.html",
-    "main.1e5dbc0a.css.map": "/scivision/static/css/main.1e5dbc0a.css.map",
-    "main.d3ee8e9b.js.map": "/scivision/static/js/main.d3ee8e9b.js.map",
+    "main.1492ae1a.css.map": "/scivision/static/css/main.1492ae1a.css.map",
+    "main.277e1cdd.js.map": "/scivision/static/js/main.277e1cdd.js.map",
     "787.cda612ba.chunk.js.map": "/scivision/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e5dbc0a.css",
-    "static/js/main.d3ee8e9b.js"
+    "static/css/main.1492ae1a.css",
+    "static/js/main.277e1cdd.js"
   ]
 }
