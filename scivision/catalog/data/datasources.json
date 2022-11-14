@@ -235,6 +235,18 @@
         "animals",
         "ecology"
       ]
+    },
+    {
+      "tasks": [
+        "classification",
+        "segmentation"
+      ],
+      "labels_provided": true,
+      "institution": [],
+      "tags": [],
+      "name": "Test entry",
+      "description": "Test description",
+      "url": "https://example.com"
     }
   ]
 }
