@@ -587,7 +587,11 @@ function App() {
 
     return (
         <div className="app">
-            <div className="container-fluid">
+            <div className="container">
+
+                {/* Main header (Navbar used as a convenient 'banner'
+                  * element, but does not actually contain navigation
+                  * links) */}
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
                         <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision Catalog Utility</p>
