@@ -9,6 +9,7 @@ import {
     Route,
     Navigate,
     Link,
+    NavLink,
     useSearchParams,
     useParams,
     useLocation
@@ -26,6 +27,10 @@ import { Nav, Navbar } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
@@ -53,6 +58,29 @@ const OctokitPRPlugin = Octokit.plugin(createPullRequest);
 const GH_TOKEN_KEY = "gh_token";
 const RANDOM_UUID_KEY = "random_uuid";
 
+
+// Load the thumbnail images
+//
+// require.context returns a webpack object, which is callable.
+// Calling it with the name of a resource returns the path to that
+// resource.  It also has a '.keys()' method, which returns all the
+// included resources
+const model_thumbnails_ctxt = require.context(
+    './data/thumbnails/models', false, /\.jpg$/
+);
+
+// From the webpack object, make a dictionary from the resource name
+// to its path
+//
+// Could strip the leading './' and trailing extension (and then handle
+// several file types)
+const model_thumbnails = model_thumbnails_ctxt.keys().reduce((dict, mod) => {
+    dict[mod] = model_thumbnails_ctxt(mod);
+    return dict;
+}, {});
+
+
+// Utility function to download a text file, with the given filename and contents 'text'
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -66,16 +94,23 @@ function download(filename, text) {
   document.body.removeChild(element);
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
+// Component: Form to create new catalog entry (for download or PR)
+// routes: /new-model, /new-datasource
+//
+// The two submit options either download the form data as json, or
+// create a pull request with the new entry on behalf of the user.
+//
+// This Component can be used for both the model and datasource
+// catalogs, through the props.
+//
+// * gh_logged_in - login status (grey out the PR button if not logged in)
+// * schema - json schema object, used to generate the form
+// * catalog_kind - "datasource" or "model",
 function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, download_filename }) {
 
     // The modal dialogue shows when 'pr_failed' is true.  Separate
-    // state variable for the message, since closing the modal
-    // clears the failure flag, but the message is still visible
+    // state variable (pr_message) for the message, since closing the
+    // modal clears the failure flag, but the message is still visible
     // briefly
     const [ pr_message, set_pr_message ] = useState("");
     const [ pr_failed, set_pr_failed ] = useState(false);
@@ -157,7 +192,7 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
                         disabled={!gh_logged_in || pr_loading}>
                     Open Pull Request on GitHub
                     { pr_loading ? <>&nbsp;<Spinner animation="border" role="status" size="sm"/></> : <></> }
-                    { gh_logged_in ? <></> : <>(login to enable)</> }
+                    { gh_logged_in ? <></> : <> (login to enable)</> }
                 </button>
                 <button type="submit"
                         onClick={ () => pr_flag = false }
@@ -168,7 +203,9 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
         </div>);
 }
 
-
+// Obtain the GitHub OAuth token from Scivision backend
+//
+// * gh-code - the code obtained from the GitHub OAuth API
 async function get_github_token(gh_code) {
     const response = await fetch(server_config_selected.uri + gh_code);
     const json = await response.json();
@@ -182,12 +219,20 @@ async function get_github_token(gh_code) {
     return json.token;
 }
 
-
+// Component: Landing page
+// route: /
 function AboutText() {
     return (<p>Welcome to Scivision</p>);
 }
 
-
+// Component: Login progress/redirection page
+// route /login/:referrer
+//
+// This is used as the redirect URL for GitHub OAuth login - GitHub
+// redirects back to this page after a login attempt.  This component
+// then redirects again to the requested page given as the 'referrer'
+// parameter, expected to be the page the user was viewing when they
+// initiated the login.
 function Login({ gh_logged_in, set_gh_logged_in }) {
     const login_attempted = useRef(false);
     const { referrer_encoded } = useParams();
@@ -242,12 +287,14 @@ function Login({ gh_logged_in, set_gh_logged_in }) {
     );
 }
 
-
+// GitHub OAuth login
+//
+// * referrer - redirect back to this page
+// * gh_logged_in - current login state
+//
+// This function is called to initiate a login attempt
 function github_auth({ referrer, gh_logged_in }) {
-    if (gh_logged_in) {
-        console.log("Already logged in to GitHub");
-        return <Navigate to={referrer} />;
-    } else {
+    if (!gh_logged_in) {
         var github_auth_url = new URL('https://github.com/login/oauth/authorize');
 
         const random_uuid = crypto.randomUUID();
@@ -262,13 +309,18 @@ function github_auth({ referrer, gh_logged_in }) {
             state: random_uuid,
         }).toString();
 
+        // Redirect to GitHub
         window.location = github_auth_url;
 
-        return (<div>Redirecting to GitHub...</div>);
+    } else {
+        // Should not get here via the web interface (the login link
+        // should not be visible when already logged in)
+        console.log("Already logged in to GitHub");
     }
 }
 
-
+// Component: Datasources, table view
+// route: /datasources
 function Datasources() {
     const columns = [
         {
@@ -319,36 +371,197 @@ function Datasources() {
     return <DataTable columns={columns} data={datasources.entries} title="Datasources" width="500px" />;
 }
 
+// Component: Fragment containing definition items for the expanded
+// view of the model table, and the model page
+//
+// * data - one model
+function ModelDefinitionListFragment({data}) {
+    return (<>
+                <dt className="col-sm-3">Description</dt>
+                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
 
-function Models() {
+                <dt className="col-sm-3">Homepage</dt>
+                <dd className="col-sm-9"><a href={data.url}>{data.url}</a></dd>
+
+                <dt className="col-sm-3">Install with pip</dt>
+                <dd className="col-sm-9">
+                    <div><code>pip install {data.pkg_url}</code></div>
+                </dd>
+            </>);
+}
+
+// Component: List of models (choice of grid or table view)
+// route: /models, /models-grid
+//
+// * route - the current route, either "/model-grid" or "/models",
+//   used to select the view to render
+function Models({ route }) {
+    return (
+        <>
+            <Nav variant="pills" defaultActiveKey={route}>
+                <Nav.Item>
+                    <Nav.Link to="/model-grid" as={NavLink}><i class="bi bi-grid" />{/* Thumbnails*/}</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link to="/models" as={NavLink}><i class="bi bi-list-ul" />{/* Table*/}</Nav.Link>
+                </Nav.Item>
+            </Nav>
+
+            {
+                (route == "/model-grid") ?
+                    (<ModelGrid />) :
+                    (<ModelTable />)
+            }
+        </>
+    );
+}
+
+// Component: Models, table view
+// route: /models
+function ModelTable() {
     const columns = [
         {
-            name: "Name",
-            selector: row => row.name,
+            name: 'Thumbnail',
+            width: "150px",
+            selector: row => model_thumbnails[`./${row.name}.jpg`] === undefined,
+            sortable: true,
+            cell: (row, index, column, id) => {
+                const thumb = model_thumbnails[`./${row.name}.jpg`];
+                if (thumb != undefined) {
+                    return (
+                        <img src={thumb}
+                             width="128"
+                             height="128"
+                             className="img-thumbnail"
+                        />
+                    );
+                } else {
+                    return (<></>);
+                }
+            }
         },
         {
-            name: "Description",
-            selector: row => row.description,
+            name: "Name",
+            sortable: true,
+            grow: 0.5,
+            selector: row => row.name,
         },
         {
             name: "Tasks",
             selector: row => row.tasks,
+            cell: (row, index, column, id) => {
+                return row.tasks.map(tsk => (
+                    <>
+                        <span class="badge badge-primary">{tsk}</span>
+                        &nbsp;
+                    </>
+                ));
+            }
         },
-        {
-            name: "URL",
-            selector: row => row.url,
-        },
-        {
-            name: "Package URL (pip)",
-            selector: row => row.pkg_url,
-        }
-
     ];
 
-    return <DataTable columns={columns} data={models.entries} title="Models" />;
+    return (
+        <>
+            <DataTable columns={columns} data={models.entries} title=''
+                       expandableRows
+                       expandableRowsComponent={(props) => {
+                           return (
+                               <div className="border-bottom">
+                                   <div className="card mt-1 mb-3 bg-light">
+                                       <div className="card-body">
+                                           <dl className="row">
+                                               <ModelDefinitionListFragment {...props}/>
+                                           </dl>
+                                       </div>
+                                   </div>
+                               </div>
+                           );
+                       }}
+                       expandableRowsHideExpander
+                       expandOnRowClicked />
+        </>
+    );
 }
 
+// Component: Models, thumbnail grid view
+// route: /model-grid
+function ModelGrid() {
+    const showPopover = (model) => (props) => (
+        <Popover id="popover-basic" {...props}>
+            <Popover.Content>
+                <strong>{model.name}</strong> {model.description} &nbsp;
+                {model.tasks.map(tsk => (
+                    <><span class="badge badge-primary">{tsk}</span>&nbsp;</>
+                ))}
+            </Popover.Content>
+        </Popover>
+    );
 
+    const one_model_thumbnail = (model) => {
+
+        let thumbnail;
+        if (model_thumbnails[`./${model.name}.jpg`] === undefined) {
+            thumbnail = (
+                <svg width="100%" height="auto" role="img" style={{ aspectRatio: 1 }}>
+                    <rect width="100%" height="100%" fill="#cccccc"></rect>
+                    <text x="50%" y="50%" fill="white"
+                          text-anchor="middle" dominant-baseline="middle"
+                          font-size="10pt">
+                        {model.name}
+                    </text>
+                </svg>
+            );
+        } else {
+            thumbnail = (
+                <img src={model_thumbnails[`./${model.name}.jpg`]}
+                     width="100%"
+                     height="100%"
+                />
+            );
+        }
+
+
+        return (
+            <div className="card">
+                <OverlayTrigger overlay={showPopover(model)} placement="auto">
+                    <div className="card-body">
+                        <Link to={"/model/" + encodeURIComponent(model.name)}>
+                            {thumbnail}
+                        </Link>
+                    </div>
+                </OverlayTrigger>
+            </div>
+        );
+    }
+
+    const image_cards = models.entries.map(one_model_thumbnail);
+
+    return (
+        <div className="card-columns mt-2">
+            {image_cards}
+        </div>
+    );
+}
+
+// Component: Details about a model
+// route: /model/:model-name
+function Model() {
+    const { model_name_encoded } = useParams();
+    const model_name = decodeURIComponent(model_name_encoded);
+    const model = models.entries.find(model => model.name == model_name);
+
+    return (<>
+                <h3>{model.name}</h3>
+                <img src={model_thumbnails[`./${model.name}.jpg`]} />
+                <dl className="row">
+                    <ModelDefinitionListFragment data={model} />
+                </dl>
+            </>);
+}
+
+// Component: Username/logout link (shown when logged in)
+//
+// * set_gh_logged_in - setter for State variable
 function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     const octokit = new Octokit({ auth: sessionStorage[GH_TOKEN_KEY] });
     const [ gh_username, set_gh_username ] = useState("...");
@@ -375,7 +588,10 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     );
 }
 
-
+// Component: Login link (shown when not logged in)
+//
+// * gh_logged_in - State variable
+// * set_gh_logged_in - setter for State variable
 function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
     const loc = useLocation();
 
@@ -396,7 +612,9 @@ function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
     }
 }
 
-
+// Component: The app
+//
+// Display the header and sidebar, and handle routing with React Router
 function App() {
     const gh_token = sessionStorage[GH_TOKEN_KEY];
     const random_uuid = sessionStorage[RANDOM_UUID_KEY];
@@ -404,13 +622,19 @@ function App() {
 
     return (
         <div className="app">
-            <div className="container-fluid">
+            <div className="container">
+
+                {/* Main header (Navbar used as a convenient 'banner'
+                  * element, but does not actually contain navigation
+                  * links) */}
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
                         <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision Catalog Utility</p>
                     </Navbar.Brand>
                 </Navbar>
+
                 <div className="row px-4 mt-2">
+                    {/* Navigation sidebar */}
                     <Nav className="col-auto d-block sidebar">
                         <Nav.Item>
                             <Link to="">About</Link>
@@ -431,18 +655,19 @@ function App() {
                             <Link to="datasources">Datasources</Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="datasource">New datasource entry</Link>
+                            <Link to="new-datasource">New datasource entry</Link>
                         </Nav.Item>
                         <p />
 
                         <Nav.Item>
-                            <Link to="models">Models</Link>
+                            <Link to="model-grid">Models</Link>
                         </Nav.Item>
-
                         <Nav.Item>
-                            <Link to="model">New model entry</Link>
+                            <Link to="new-model">New model entry</Link>
                         </Nav.Item>
                     </Nav>
+
+                    {/* Routing table */}
                     <Routes>
                         <Route exact path="/" element={
                                    <div className="col-md-auto">
@@ -459,12 +684,19 @@ function App() {
                                    </div>
                                } />
 
+                        <Route path="/model-grid" element={
+                                   <div className="col">
+                                       <Models route="/model-grid" />
+                                   </div>
+                               } />
+
                         <Route path="/datasources" element={
                                    <div className="col" style={{width: 500}}>
                                        <Datasources />
                                    </div>
                                } />
-                        <Route path="/datasource" element={
+
+                        <Route path="/new-datasource" element={
                                    <div className="col-auto">
                                        <CatalogEntryForm
                                            gh_logged_in={gh_logged_in}
@@ -475,12 +707,20 @@ function App() {
                                        />
                                    </div>
                                }/>
+
                         <Route path="/models" element={
-                                   <div className="col" style={{width: 500}}>
-                                       <Models />
+                                   <div className="col">
+                                       <Models route="/models" />
                                    </div>
                                } />
-                        <Route path="/model" element={
+
+                        <Route path="/model/:model_name_encoded" element={
+                                   <div className="col">
+                                       <Model />
+                                   </div>
+                               } />
+
+                        <Route path="/new-model" element={
                                    <div className="col-auto">
                                        <CatalogEntryForm
                                            gh_logged_in={gh_logged_in}
