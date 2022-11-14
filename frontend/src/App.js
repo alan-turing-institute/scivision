@@ -87,11 +87,6 @@ function download(filename, text) {
   document.body.removeChild(element);
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
 function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, download_filename }) {
 
     // The modal dialogue shows when 'pr_failed' is true.  Separate
