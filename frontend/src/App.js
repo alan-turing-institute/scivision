@@ -667,6 +667,11 @@ function App() {
                         <Nav.Item>
                             <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
                         </Nav.Item>
+                        <p />
+                        
+                        <Nav.Item>
+                            <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
+                        </Nav.Item>
                     </Nav>
 
                     {/* Routing table */}
