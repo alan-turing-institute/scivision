@@ -647,7 +647,7 @@ function App() {
                             <Link to="datasources">Datasources</Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="new-datasource">New datasource entry</Link>
+                            <Link to="new-datasource">➕ New datasource entry</Link>
                         </Nav.Item>
                         <p />
 
@@ -655,7 +655,7 @@ function App() {
                             <Link to="model-grid">Models</Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="new-model">New model entry</Link>
+                            <Link to="new-model">➕ New model entry</Link>
                         </Nav.Item>
                         <p />
                         
