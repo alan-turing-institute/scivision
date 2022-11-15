@@ -640,10 +640,6 @@ function App() {
                         <Nav.Item>
                             <Link to="">About</Link>
                         </Nav.Item>
-
-                        <Nav.Item>
-                            <a href="https://scivision.readthedocs.io/en/latest/">Documentation</a>
-                        </Nav.Item>
                         <p />
 
                         <Nav.Item>
@@ -665,6 +661,11 @@ function App() {
                         </Nav.Item>
                         <Nav.Item>
                             <Link to="new-model">New model entry</Link>
+                        </Nav.Item>
+                        <p />
+                        
+                        <Nav.Item>
+                            <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
                         </Nav.Item>
                     </Nav>
 
