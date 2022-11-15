@@ -1,5 +1,6 @@
 import logo from './logo.png';
 import './App.css';
+import { AboutText } from './about.js'
 
 import { Buffer } from 'buffer';
 
@@ -217,12 +218,6 @@ async function get_github_token(gh_code) {
         }
     }
     return json.token;
-}
-
-// Component: Landing page
-// route: /
-function AboutText() {
-    return (<p>Welcome to Scivision</p>);
 }
 
 // Component: Login progress/redirection page
