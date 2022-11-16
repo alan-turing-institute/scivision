@@ -30,6 +30,18 @@
         "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/ButterflyClassification.ipynb",
         "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/FlowerClassification.ipynb"
       ],
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "author": [
+        "Ed Chalstrey"
+      ],
+      "contributor": [
+        "Nick Barlow",
+        "Pam Wochner",
+        "Alan Lowe",
+        "Oliver Strickson"
+      ],
       "tags": [
         "tutorial",
         "butterflies",
