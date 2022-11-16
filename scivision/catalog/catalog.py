@@ -241,6 +241,23 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         return getattr(self, item)
 
 
+class CatalogProjects(BaseModel, extra="forbid"):
+    catalog_type: str = "scivision project catalog"
+    name: str
+    # Tuple: see comment on CatalogProjectEntry
+    entries: Tuple[CatalogProjectEntry, ...]
+
+    @validator("entries")
+    def name_unique_key(cls, entries):
+        name_counts = Counter([entry['name'] for entry in entries])
+        dups = [item for item, count in name_counts.items() if count > 1]
+
+        if dups:
+            raise ValueError(f"The 'name' field in the project catalog should be unique (duplicates: {dups})")
+
+        return entries
+
+
 def _coerce_datasources_catalog(
     datasources: Union[CatalogDatasources, os.PathLike, None]
 ) -> CatalogDatasources:
