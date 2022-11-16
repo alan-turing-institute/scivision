@@ -1,7 +1,6 @@
-*Scivision*: A toolkit for scientific image analysis
-======================================================
-
 ![IMAGE](https://i.imgur.com/kc7aE7z.png)
+
+# A toolkit for scientific image analysis
  
 <p align="center">
     <a href="https://pypi.org/project/scivision/">

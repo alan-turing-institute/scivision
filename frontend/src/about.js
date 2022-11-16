@@ -5,10 +5,8 @@ import MarkdownView from 'react-showdown';
 // route: /
 export function AboutText() {
     const markdown = `
-*Scivision*: A toolkit for scientific image analysis
-======================================================
 
-![IMAGE](https://i.imgur.com/kc7aE7z.png)
+# *Scivision*: A toolkit for scientific image analysis
 
 Scivision is both a **webapp** and a **Python package** for discovering, and using pre-trained computer vision models and image datasets from science and the humanities. These models and datasets are available in a catalog, which researchers working in diverse fields have contributed to.
 
@@ -23,6 +21,7 @@ Scivision is both a **webapp** and a **Python package** for discovering, and usi
 -  The [Scivision webapp](https://alan-turing-institute.github.io/scivision/) is a tool for both using and contributing to scivision.
   > Note: The webapp is a work in progress and there will be more documentation soon. In the meantime feel free to open any bug or feature request issues on the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision).
 
+<img src="https://i.imgur.com/kc7aE7z.png" alt="scivision" width="750"/>
   `;
 
     return (

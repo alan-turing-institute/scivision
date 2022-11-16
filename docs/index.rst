@@ -2,12 +2,12 @@
 .. oplab_pipeline documentation master file, created by
    sphinx-quickstart on Thu May  7 19:32:18 2020.
 
-*Scivision*: A toolkit for scientific image analysis
-======================================================
-
 .. image:: https://i.imgur.com/kc7aE7z.png
     :alt: oplab_pipeline logo
     :align: center
+    
+A toolkit for scientific image analysis
+=======================================
 
 Scivision is both a **webapp** and a **Python package** for discovering, and using pre-trained computer vision models and image datasets from science and the humanities. These models and datasets are available in a catalog, which researchers working in diverse fields have contributed to.
 
