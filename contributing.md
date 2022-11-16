@@ -1,6 +1,6 @@
 # 🎉 Contributing
 
-Thank you for taking the time to contribute to the scivision project. 🎉
+Thank you for taking the time to contribute to the Scivision project. 🎉
 
 📚 **Contents:**
 

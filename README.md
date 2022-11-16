@@ -35,7 +35,7 @@ Visit https://alan-turing-institute.github.io/scivision/ to learn more about the
 
 ## ⬇️ Installation
 
-Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivison versions.
+Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivision versions.
 
 ## 🤔 Contributing
 
