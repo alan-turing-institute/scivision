@@ -1,11 +1,7 @@
-<div align="center">
-    <br>
-    <p align="center">
-    <img src="https://i.imgur.com/kc7aE7z.png" 
-         alt="scivision logo" width="60%" align="center">
-    </p>
-    <h2>A Toolkit for Scientific Image Analysis</h2>
-</div>
+*Scivision*: A toolkit for scientific image analysis
+======================================================
+
+![IMAGE](https://i.imgur.com/kc7aE7z.png)
  
 <p align="center">
     <a href="https://pypi.org/project/scivision/">
@@ -33,9 +29,6 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-
-## 🧪 Summary: The Scivision project
 
 Scivision is both a **webapp** and a **Python package** for discovering, and using pre-trained computer vision models and image datasets from science and the humanities. These models and datasets are available in a catalog, which researchers working in diverse fields have contributed to.
 
