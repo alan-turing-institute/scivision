@@ -44,7 +44,7 @@ Scivision is both a **webapp** and a **Python package** for discovering, and usi
 
 ## ⬇️ Installation
 
-Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivison versions.
+Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivision versions.
 
 ## 🤔 Contributing
 
