@@ -180,6 +180,67 @@ class CatalogDatasources(BaseModel, extra="forbid"):
         return entries
 
 
+class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
+    # tasks, institution and tags are Tuples (rather than Lists) so
+    # that they are immutable - Tuple is being used as an immutable
+    # sequence here. This means that these fields are hashable, which
+    # can be more convenient when included in a dataframe
+    # (e.g. unique()). Could consider using a Frozenset for these
+    # fields instead, since duplicates and ordering should not be
+    # significant.
+    name: str = Field(
+        ...,
+        title="Name",
+        description="Short, unique name for the project (one or two words, "
+        "under 20 characters recommended)",
+    )
+    header: str = Field(
+        ...,
+        title="Header",
+        description="The title header for the project page",
+    )
+    tasks: Tuple[TaskEnum, ...] = Field(
+        (),
+        title="Tasks",
+        description="Which task (or tasks) does the model perform?",
+    )
+    models: Tuple[TaskEnum, ...] = Field(
+        (),
+        title="Models",
+        description="Which models from the scivision catalog are used in the project?",
+    )
+    datasources: Tuple[TaskEnum, ...] = Field(
+        (),
+        title="Datasources",
+        description="Which datasources from the scivision catalog are used in the project?",
+    )
+    notebooks: Tuple[FlexibleUrl, ...] = Field(
+        (),
+        title="Notebooks",
+        description="Links to notebooks associated with the project",
+    )
+    institution: Tuple[str, ...] = Field(
+        (),
+        title="Institution(s)",
+        description="A list of institutions that produced or are associated with "
+        "the project (one per item)",
+    )
+    authors: Tuple[str, ...] = Field(
+        (),
+        title="Authors",
+        description="The project partcipants, key authors of the project page and any associated material",
+    )
+    contributors: Optional[Tuple[str, ...]] = Field(
+        (),
+        title="Contributors",
+        description="Any contributors to the project not in the authors list",
+    )
+    tags: Tuple[str, ...]
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+
 def _coerce_datasources_catalog(
     datasources: Union[CatalogDatasources, os.PathLike, None]
 ) -> CatalogDatasources:
