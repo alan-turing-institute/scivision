@@ -677,7 +677,7 @@ function App() {
                     {/* Routing table */}
                     <Routes>
                         <Route exact path="/" element={
-                                   <div className="col-md-auto">
+                                   <div className="col" style={{width: 500}}>
                                        <AboutText gh_logged_in={gh_logged_in} />
                                    </div>
                                } />
