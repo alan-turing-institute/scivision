@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/scivision/static/css/main.1492ae1a.css",
-    "main.js": "/scivision/static/js/main.f6812e8a.js",
+    "main.js": "/scivision/static/js/main.19eb76b0.js",
     "static/js/787.cda612ba.chunk.js": "/scivision/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/scivision/static/media/bootstrap-icons.4133309eaf232a933735.woff",
     "static/media/bootstrap-icons.woff2?": "/scivision/static/media/bootstrap-icons.cfde41d697b6dcd56fa6.woff2",
@@ -9,11 +9,11 @@
     "static/media/butterfly-classification-model.jpg": "/scivision/static/media/butterfly-classification-model.633494af6f728f4e9220.jpg",
     "index.html": "/scivision/index.html",
     "main.1492ae1a.css.map": "/scivision/static/css/main.1492ae1a.css.map",
-    "main.f6812e8a.js.map": "/scivision/static/js/main.f6812e8a.js.map",
+    "main.19eb76b0.js.map": "/scivision/static/js/main.19eb76b0.js.map",
     "787.cda612ba.chunk.js.map": "/scivision/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1492ae1a.css",
-    "static/js/main.f6812e8a.js"
+    "static/js/main.19eb76b0.js"
   ]
 }
