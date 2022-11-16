@@ -13,7 +13,7 @@ Scivision is both a **webapp** and a **Python package** for discovering, and usi
 
 - Scivision is *open source* and development happens in the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision). 
 
-- The documentation for the Python package is hosted on [Read the Docs](https://scivision.readthedocs.io/en/latest/) (including maintainer documentation). Start with the User Guide for an introduction to using Scivision.
+- The documentation for the Python package is hosted here on this [Read the Docs](https://scivision.readthedocs.io/en/latest/) (including maintainer documentation) site. Start with the User Guide for an introduction to using Scivision.
 
 - You can also see an interactive demonstration of the Scivision Python package in your browser via Binder, with no installation required:
 
