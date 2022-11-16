@@ -1,0 +1,39 @@
+{
+  "catalog_type": "scivision project catalog",
+  "name": "default",
+  "entries": [
+    {
+      "name": "Tutorials",
+      "tasks": [
+        "classification",
+        "object-detection",
+        "segmentation"
+      ],
+      "models": [
+        "image-classifiers",
+        "huggingface-classifiers",
+        "huggingface-object-detection",
+        "huggingface-segmentation",
+        "butterfly-classification-model",
+        "flower-classification-model"
+      ],
+      "datasources": [
+        "data-003",
+        "data-005"
+        "flowers",
+        "butterflies"
+      ],
+      "notebooks": [
+        "https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/how-to-use-scivision.ipynb",
+        "https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/object-detection.ipynb",
+        "https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/segmentation.ipynb",
+        "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/ButterflyClassification.ipynb",
+        "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/FlowerClassification.ipynb"
+      ],
+      "tags": [
+        "tutorial",
+        "butterflies",
+        "flowers"
+      ]
+    }
+}
