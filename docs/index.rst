@@ -11,7 +11,7 @@ A toolkit for scientific image analysis
 
 This website hosts the documentation for the `scivision` Python package.
 
-To learn more about Scivision, visit `our main project website <https://alan-turing-institute.github.io/scivision/>`_.
+If you are new to Scivision, visit `our main project website <https://alan-turing-institute.github.io/scivision/>`_.
 
 📚 Contents
 -----------
