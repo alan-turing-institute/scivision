@@ -4,6 +4,7 @@
   "entries": [
     {
       "name": "Tutorials",
+      "header": "Scivision tutorials project page",
       "tasks": [
         "classification",
         "object-detection",
