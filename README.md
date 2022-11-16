@@ -42,41 +42,9 @@ Scivision is both a **webapp** and a **Python package** for discovering, and usi
 -  The [Scivision webapp](https://alan-turing-institute.github.io/scivision/) is a tool for both using and contributing to scivision.
   > Note: The webapp is a work in progress and there will be more documentation soon. In the meantime feel free to open any bug or feature request issues on the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision).
 
-## 🐨 Installation
+## ⬇️ Installation
 
-1. **Install scivision via [PyPi](https://pypi.org/project/scivision/)**: which tends to be the most user-friendly option:
-
-    ```bash
-    pip install scivision
-    ```
-
-2. **Install scivision from the source code**:
-
-    * Clone scivision source code:
-
-    ```bash
-    git clone https://github.com/alan-turing-institute/scivision.git 
-    ```
-
-    * Install scivision and its dependencies:
-
-    ```bash
-    cd /path/to/my/scivision
-    pip install -v -e .
-    ```
-
-## 📋 Support table
-
-| Python version | Scivision version |
-| ---  | ---    |
-| <3.7 | no compatible version |
-| ^3.7 | <0.4 |
-| ^3.8 | * (any) |
-| ^3.9 | * (any) |
-| ^3.10 | >=0.3 |
-| >=3.11 | >=0.3, untested, but intending to support (bug reports welcome) |
-
-Scivision is currently working towards supporting Python >=3.11.
+Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivison versions.
 
 ## 🤔 Contributing
 
