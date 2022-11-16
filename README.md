@@ -29,9 +29,11 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-## 🕸️ Scivision website
+This repository is where the development is hosted for the [Scivision Webapp](https://alan-turing-institute.github.io/scivision/) (our main project website) and [Scivision Python package](https://pypi.org/project/scivision/).
 
-Visit https://alan-turing-institute.github.io/scivision/ to learn more about the project.
+Here you can open an [issue to report bugs or request features](https://github.com/alan-turing-institute/scivision/issues), ask questions or [start a discussion about the project](https://github.com/alan-turing-institute/scivision/discussions) or contribute to the codebase.
+
+If you are new to Scivision, start by visiting our main [project website](https://alan-turing-institute.github.io/scivision/).
 
 ## ⬇️ Installation
 
