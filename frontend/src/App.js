@@ -1028,11 +1028,12 @@ function App() {
                                    </div>
                                } />
                                
-                        <Route path="/model-grid" element={
-                                  <div className="col">
-                                      <Models route="/model-grid" />
-                                  </div>
-                              } />
+                         <Route path="/model-grid" element={
+                                    <div className="col">
+                                        <ModelNav activeRoute="/model-grid" />
+                                        <ModelGrid />
+                                    </div>
+                                } />
 
                         <Route path="/model/:model_name_encoded" element={
                                    <div className="col">
