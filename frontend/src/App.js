@@ -1076,12 +1076,6 @@ function App() {
                                         />
                                     </div>
                                 } />
-                                
-                        <Route path="/datasources" element={
-                                   <div className="col" style={{width: 500}}>
-                                       <Datasources />
-                                   </div>
-                               } />
 
                         <Route path="/datasource-grid" element={
                                    <div className="col">
