@@ -292,6 +292,24 @@ def _coerce_models_catalog(
         return CatalogModels.parse_raw(models_raw)
     else:
         raise TypeError("Cannot load datasource from unsupported type")
+        
+        
+def _coerce_projects_catalog(
+    models: Union[CatalogProjects, os.PathLike, None]
+) -> CatalogProjects:
+    """Returns a CatalogProjects determined from the argument: either the
+    one passed, or one loaded from a file
+    """
+    if isinstance(models, CatalogProjects):
+        return projects
+    elif isinstance(projects, (bytes, str, os.PathLike)):
+        projects_raw = Path(projects).read_text()
+        return CatalogProjects.parse_raw(projects_raw)
+    elif projects is None:
+        projects_raw = pkgutil.get_data(__name__, "data/projects.json")
+        return CatalogProjects.parse_raw(projects_raw)
+    else:
+        raise TypeError("Cannot load project from unsupported type")
 
 
 class QueryResult(ABC):
