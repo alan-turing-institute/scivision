@@ -291,7 +291,7 @@ def _coerce_models_catalog(
         models_raw = pkgutil.get_data(__name__, "data/models.json")
         return CatalogModels.parse_raw(models_raw)
     else:
-        raise TypeError("Cannot load datasource from unsupported type")
+        raise TypeError("Cannot load model from unsupported type")
         
         
 def _coerce_projects_catalog(
