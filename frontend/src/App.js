@@ -734,7 +734,7 @@ function ProjectGrid() {
         );
     }
 
-    const image_cards = project.entries.map(one_project_thumbnail);
+    const image_cards = projects.entries.map(one_project_thumbnail);
 
     return (
         <div className="card-columns mt-2">
