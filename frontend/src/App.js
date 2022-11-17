@@ -40,6 +40,7 @@ import DataTable from 'react-data-table-component';
 import { Octokit } from "octokit";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
 
+
 const server_configs = {
     development: {
         uri: 'https://scivision-dev-gh-gatekeeper.azurewebsites.net/authenticate/',
@@ -61,24 +62,32 @@ const RANDOM_UUID_KEY = "random_uuid";
 
 
 // Load the thumbnail images
-//
-// require.context returns a webpack object, which is callable.
-// Calling it with the name of a resource returns the path to that
-// resource.  It also has a '.keys()' method, which returns all the
-// included resources
-const model_thumbnails_ctxt = require.context(
-    './data/thumbnails/models', false, /\.jpg$/
-);
 
-// From the webpack object, make a dictionary from the resource name
-// to its path
+// From a webpack object returned by require.context (ctxt), make a
+// dictionary from the resource name to its path
+//
+// ctxt is callable, and calling it with the name of a resource
+// returns the path to that resource.  It also has a '.keys()' method,
+// which returns all the included resources.
 //
 // Could strip the leading './' and trailing extension (and then handle
 // several file types)
-const model_thumbnails = model_thumbnails_ctxt.keys().reduce((dict, mod) => {
-    dict[mod] = model_thumbnails_ctxt(mod);
-    return dict;
-}, {});
+function context_to_paths(ctxt) {
+    return ctxt.keys().reduce((dict, name) => {
+        dict[name] = ctxt(name);
+        return dict;
+    }, {});
+}
+
+const model_thumbnails_ctxt = require.context(
+    './data/thumbnails/models', false, /\.jpg$/
+);
+const model_thumbnails = context_to_paths(model_thumbnails_ctxt);
+
+const datasource_thumbnails_ctxt = require.context(
+    './data/thumbnails/datasources', false, /\.jpg$/
+);
+const datasource_thumbnails = context_to_paths(datasource_thumbnails_ctxt);
 
 
 // Utility function to download a text file, with the given filename and contents 'text'
@@ -314,58 +323,6 @@ function github_auth({ referrer, gh_logged_in }) {
     }
 }
 
-// Component: Datasources, table view
-// route: /datasources
-function Datasources() {
-    const columns = [
-        {
-            selector: row => row.name,
-            name: 'Name',
-            sortable: true,
-            grow: 0.3
-        },
-        {
-            selector: row => row.description,
-            name: 'Description',
-            grow: 2
-        },
-        {
-            selector: row => row.tasks,
-            name: 'Tasks',
-        },
-        {
-            selector: row => row.url,
-            name: 'URL',
-        },
-        {
-            selector: row => row.format,
-            name: 'Format',
-            sortable: true,
-            minWidth: "10px",
-            maxWidth: "100px"
-
-        },
-        {
-            selector: row => row.labels_provided,
-            name: 'Labels provided',
-            sortable: true,
-            minWidth: "10px",
-            maxWidth: "200px"
-        },
-        {
-            selector: row => row.institution,
-            name: 'Institution',
-            sortable: true
-        },
-        {
-            selector: row => row.tags,
-            name: 'Tags',
-        },
-    ];
-
-    return <DataTable columns={columns} data={datasources.entries} title="Datasources" width="500px" />;
-}
-
 // Component: Fragment containing definition items for the expanded
 // view of the model table, and the model page
 //
@@ -385,29 +342,96 @@ function ModelDefinitionListFragment({data}) {
             </>);
 }
 
-// Component: List of models (choice of grid or table view)
-// route: /models, /models-grid
+// Component: Fragment containing definition items for the expanded
+// view of the datasource table and the page for one datasource
 //
-// * route - the current route, either "/model-grid" or "/models",
-//   used to select the view to render
-function Models({ route }) {
+// * data - one datasource
+function DatasourceDefinitionListFragment({data}) {
+    return (<>
+                <dt className="col-sm-3">Description</dt>
+                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
+
+                <dt className="col-sm-3">Location</dt>
+                <dd className="col-sm-9"><a href={data.url}>{data.url}</a></dd>
+            </>);
+}
+
+
+
+// Component: List of models or datasources (depending on prop), with
+// choice of grid or table view.  One of these views will be rendered,
+// depending on the route
+//
+// route: /model-table, /model-grid, /datasource-table, /datasource-grid
+//
+// * props - { activeRoute, gridRoute, tableRoute }
+//   where
+//     activeRoute - the currently active route (used to select the view)
+//     gridRoute, tableRoute - the route for the grid and table views
+function TableGridViewNav(props) {
     return (
         <>
-            <Nav variant="pills" defaultActiveKey={route}>
+            <Nav variant="tabs" defaultActiveKey={props.activeRoute}>
                 <Nav.Item>
-                    <Nav.Link to="/model-grid" as={NavLink}><i class="bi bi-grid" />{/* Thumbnails*/}</Nav.Link>
+                    <Nav.Link to={props.gridRoute} as={NavLink}>
+                        <i className="bi bi-grid" />{/* Thumbnails*/}
+                    </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link to="/models" as={NavLink}><i class="bi bi-list-ul" />{/* Table*/}</Nav.Link>
+                    <Nav.Link to={props.tableRoute} as={NavLink}>
+                        <i className="bi bi-list-ul" />{/* Table*/}
+                    </Nav.Link>
+                </Nav.Item>
+                <Nav.Item className="ml-auto">
+                    <Nav.Link to={props.createNewRoute} as={NavLink}>
+                        <i className="bi bi-file-earmark-plus" /> Create new entry
+                    </Nav.Link>
                 </Nav.Item>
             </Nav>
-
-            {
-                (route == "/model-grid") ?
-                    (<ModelGrid />) :
-                    (<ModelTable />)
-            }
         </>
+    );
+}
+
+// Component: A badge indicating a task with the given name
+// TODO: distinct colours for each task
+function TaskBadge({taskName}) {
+    return (
+        <>
+            <span className="badge badge-primary">{taskName}</span>
+            &nbsp;
+        </>
+    );
+}
+
+// Helper function (used in ModelTable and DatasourceTable -- not the
+// corresponding Gridviews) returning a thumbnail element
+function renderThumbnailForTable(thumb) {
+    if (thumb != undefined) {
+        return (
+            <img src={thumb}
+                 width="128"
+                 height="128"
+                 className="img-thumbnail"
+            />
+        );
+    } else {
+        return (<></>);
+    }
+}
+
+// Component: Format the element in an 'info box'.
+// Used for expanded rows in ModelTable/DatasourceTable
+function TableCardDropdown({element}) {
+    return (
+        <div className="border-bottom">
+            <div className="card mt-1 mb-3 bg-light">
+                <div className="card-body">
+                    <dl className="row">
+                        {element}
+                    </dl>
+                </div>
+            </div>
+        </div>
     );
 }
 
@@ -422,17 +446,7 @@ function ModelTable() {
             sortable: true,
             cell: (row, index, column, id) => {
                 const thumb = model_thumbnails[`./${row.name}.jpg`];
-                if (thumb != undefined) {
-                    return (
-                        <img src={thumb}
-                             width="128"
-                             height="128"
-                             className="img-thumbnail"
-                        />
-                    );
-                } else {
-                    return (<></>);
-                }
+                return renderThumbnailForTable(thumb);
             }
         },
         {
@@ -444,83 +458,119 @@ function ModelTable() {
         {
             name: "Tasks",
             selector: row => row.tasks,
-            cell: (row, index, column, id) => {
-                return row.tasks.map(tsk => (
-                    <>
-                        <span class="badge badge-primary">{tsk}</span>
-                        &nbsp;
-                    </>
-                ));
-            }
+            cell: (row, index, column, id) => row.tasks.map(
+                (t) => <TaskBadge taskName={t} />
+            ),
         },
     ];
 
     return (
-        <>
-            <DataTable columns={columns} data={models.entries} title=''
-                       expandableRows
-                       expandableRowsComponent={(props) => {
-                           return (
-                               <div className="border-bottom">
-                                   <div className="card mt-1 mb-3 bg-light">
-                                       <div className="card-body">
-                                           <dl className="row">
-                                               <ModelDefinitionListFragment {...props}/>
-                                           </dl>
-                                       </div>
-                                   </div>
-                               </div>
-                           );
-                       }}
-                       expandableRowsHideExpander
-                       expandOnRowClicked />
-        </>
+        <DataTable columns={columns} data={models.entries} title=""
+                   expandableRowsComponent={(props) => (
+                       <TableCardDropdown
+                           element={
+                               <ModelDefinitionListFragment {...props}/>
+                           } />
+                   )}
+                   expandableRows
+                   expandableRowsHideExpander
+                   expandOnRowClicked
+        />
     );
 }
 
-// Component: Models, thumbnail grid view
-// route: /model-grid
-function ModelGrid() {
-    const showPopover = (model) => (props) => (
+// Component: Datasources, table view
+// route: /datasources
+function DatasourceTable() {
+    const columns = [
+        {
+            name: 'Thumbnail',
+            width: "150px",
+            selector: row => datasource_thumbnails[`./${row.name}.jpg`] === undefined,
+            sortable: true,
+            cell: (row, index, column, id) => {
+                const thumb = datasource_thumbnails[`./${row.name}.jpg`];
+                return renderThumbnailForTable(thumb);
+            }
+        },
+        {
+            selector: row => row.name,
+            name: 'Name',
+            sortable: true,
+            grow: 0.3
+        },
+        {
+            selector: row => row.tasks,
+            name: 'Tasks',
+            cell: (row, index, column, id) => row.tasks.map(
+                (t) => <TaskBadge taskName={t} />
+            )
+        },
+    ];
+
+    return (
+        <DataTable columns={columns} data={datasources.entries} title=""
+                   expandableRowsComponent={(props) => (
+                       <TableCardDropdown
+                           element={
+                               <DatasourceDefinitionListFragment {...props}/>
+                           } />
+                   )}
+                   expandableRows
+                   expandableRowsHideExpander
+                   expandOnRowClicked
+        />
+    );
+}
+
+// returns a function component, for a Popover describing the current
+// resource (model or datasource).  Assumes it has name, description,
+// and tasks properties.
+//
+// * data - the model or datasource
+function makePopover(data) {
+    return (props) => (
         <Popover id="popover-basic" {...props}>
             <Popover.Content>
-                <strong>{model.name}</strong> {model.description} &nbsp;
-                {model.tasks.map(tsk => (
-                    <><span class="badge badge-primary">{tsk}</span>&nbsp;</>
-                ))}
+                <strong>{data.name}</strong> {data.description} &nbsp;
+                {data.tasks.map((t) => <TaskBadge taskName={t} />)}
             </Popover.Content>
         </Popover>
     );
+}
 
-    const one_model_thumbnail = (model) => {
-
+// Curried function for making thumbnail
+// * getThumbnail - a function from data to the (path to the)
+//   corresponding thumbnail image
+// * getLink - a function from data to a link to information about the
+//   resource represented by data (that is, if data is a model,
+//   getLink(data) is the model card page for that model)
+// * data - the model or datasource
+function makeThumbnail(getThumbnail, getLink) {
+    return function (data) {
+        const thumbnail_src = getThumbnail(data);
+        const thumbnail_resource_link = getLink(data);
         let thumbnail;
-        if (model_thumbnails[`./${model.name}.jpg`] === undefined) {
+        if (thumbnail_src === undefined) {
             thumbnail = (
                 <svg width="100%" height="auto" role="img" style={{ aspectRatio: 1 }}>
                     <rect width="100%" height="100%" fill="#cccccc"></rect>
                     <text x="50%" y="50%" fill="white"
-                          text-anchor="middle" dominant-baseline="middle"
-                          font-size="10pt">
-                        {model.name}
+                          textAnchor="middle" dominantBaseline="middle"
+                          fontSize="10pt">
+                        {data.name}
                     </text>
                 </svg>
             );
         } else {
-            thumbnail = (
-                <img src={model_thumbnails[`./${model.name}.jpg`]}
-                     width="100%"
-                     height="100%"
-                />
-            );
+            thumbnail = <img src={thumbnail_src} width="100%" height="100%" />
         }
-
-
         return (
             <div className="card">
-                <OverlayTrigger overlay={showPopover(model)} placement="auto">
+                <OverlayTrigger overlay={makePopover(data)}
+                                placement="auto">
                     <div className="card-body">
-                        <Link to={"/model/" + encodeURIComponent(model.name)}>
+                        <Link to={thumbnail_resource_link}>
                             {thumbnail}
                         </Link>
                     </div>
@@ -528,8 +578,31 @@ function ModelGrid() {
             </div>
         );
     }
+}
 
-    const image_cards = models.entries.map(one_model_thumbnail);
+// Component: Models, thumbnail grid view
+// route: /model-grid
+function ModelGrid() {
+    const image_cards = models.entries.map(
+        makeThumbnail((model) => model_thumbnails[`./${model.name}.jpg`],
+                      (model) => "/model/" + encodeURIComponent(model.name))
+    );
+
+    return (
+        <div className="card-columns mt-2">
+            {image_cards}
+        </div>
+    );
+}
+
+
+// Component: Datasources, thumbnail grid view
+// route: /datasource-grid
+function DatasourceGrid() {
+    const image_cards = datasources.entries.map(
+        makeThumbnail((datasource) => datasource_thumbnails[`./${datasource.name}.jpg`],
+                      (datasource) => "/datasource/" + encodeURIComponent(datasource.name))
+    );
 
     return (
         <div className="card-columns mt-2">
@@ -550,6 +623,22 @@ function Model() {
                 <img src={model_thumbnails[`./${model.name}.jpg`]} />
                 <dl className="row">
                     <ModelDefinitionListFragment data={model} />
+                </dl>
+            </>);
+}
+
+// Component: Details about a datasource
+// route: /datasource/:datasource-name
+function Datasource() {
+    const { datasource_name_encoded } = useParams();
+    const datasource_name = decodeURIComponent(datasource_name_encoded);
+    const datasource = datasources.entries.find(ds => ds.name == datasource_name);
+
+    return (<>
+                <h3>{datasource.name}</h3>
+                <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} />
+                <dl className="row">
+                    <DatasourceDefinitionListFragment data={datasource} />
                 </dl>
             </>);
 }
@@ -607,6 +696,32 @@ function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
     }
 }
 
+
+// Component: Tab-bar for models (grid, table, create etc)
+function ModelNav({activeRoute}) {
+    return (
+        <TableGridViewNav
+            activeRoute={activeRoute}
+            gridRoute="/model-grid"
+            tableRoute="/model-table"
+            createNewRoute="/new-model"
+        />
+    );
+}
+
+// Component: Tab-bar for datasources (grid, table, create etc)
+function DatasourceNav({activeRoute}) {
+    return (
+        <TableGridViewNav
+            activeRoute={activeRoute}
+            gridRoute="/datasource-grid"
+            tableRoute="/datasource-table"
+            createNewRoute="/new-datasource"
+        />
+    );
+}
+
+
 // Component: The app
 //
 // Display the header and sidebar, and handle routing with React Router
@@ -643,25 +758,17 @@ function App() {
                         <p />
 
                         <Nav.Item>
-                            <Link to="datasources">Datasources</Link>
+                            <Link to="datasource-grid">Datasources</Link>
                         </Nav.Item>
-                        <Nav.Item>
-                            <Link to="new-datasource">➕ New datasource entry</Link>
-                        </Nav.Item>
-                        <p />
 
                         <Nav.Item>
                             <Link to="model-grid">Models</Link>
                         </Nav.Item>
-                        <Nav.Item>
-                            <Link to="new-model">➕ New model entry</Link>
-                        </Nav.Item>
+
                         <p />
-                        
                         <Nav.Item>
                             <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
                         </Nav.Item>
-                        <p />
                         
                         <Nav.Item>
                             <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
@@ -676,8 +783,8 @@ function App() {
                     {/* Routing table */}
                     <Routes>
                         <Route exact path="/" element={
-                                   <div className="col" style={{width: 500}}>
-                                       <AboutText gh_logged_in={gh_logged_in} />
+                                   <div className="col">
+                                       <AboutText />
                                    </div>
                                } />
 
@@ -692,18 +799,63 @@ function App() {
 
                         <Route path="/model-grid" element={
                                    <div className="col">
-                                       <Models route="/model-grid" />
+                                       <ModelNav activeRoute="/model-grid" />
+                                       <ModelGrid />
                                    </div>
                                } />
 
-                        <Route path="/datasources" element={
-                                   <div className="col" style={{width: 500}}>
-                                       <Datasources />
+
+                        <Route path="/model-table" element={
+                                   <div className="col">
+                                       <ModelNav activeRoute="/model-table" />
+                                       <ModelTable />
+                                   </div>
+                               } />
+
+                        <Route path="/model/:model_name_encoded" element={
+                                   <div className="col">
+                                       <ModelNav activeRoute="" />
+                                       <Model />
+                                   </div>
+                               } />
+
+                        <Route path="/new-model" element={
+                                   <div className="col">
+                                       <ModelNav activeRoute="/new-model" />
+                                       <CatalogEntryForm
+                                           gh_logged_in={gh_logged_in}
+                                           schema={model_schema}
+                                           catalog_kind="model"
+                                           catalog_path="scivision/catalog/data/models.json"
+                                           download_filename="one-model.json"
+                                       />
+                                   </div>
+                               } />
+
+                        <Route path="/datasource-grid" element={
+                                   <div className="col">
+                                       <DatasourceNav activeRoute="/datasource-grid" />
+                                       <DatasourceGrid />
+                                   </div>
+                               } />
+
+                        <Route path="/datasource-table" element={
+                                   <div className="col">
+                                       <DatasourceNav activeRoute="/datasource-table" />
+                                       <DatasourceTable />
+                                   </div>
+                               } />
+
+                        <Route path="/datasource/:datasource_name_encoded" element={
+                                   <div className="col">
+                                       <DatasourceNav activeRoute="" />
+                                       <Datasource />
                                    </div>
                                } />
 
                         <Route path="/new-datasource" element={
-                                   <div className="col-auto">
+                                   <div className="col">
+                                       <DatasourceNav activeRoute="/new-datasource" />
                                        <CatalogEntryForm
                                            gh_logged_in={gh_logged_in}
                                            schema={datasource_schema}
@@ -714,29 +866,6 @@ function App() {
                                    </div>
                                }/>
 
-                        <Route path="/models" element={
-                                   <div className="col">
-                                       <Models route="/models" />
-                                   </div>
-                               } />
-
-                        <Route path="/model/:model_name_encoded" element={
-                                   <div className="col">
-                                       <Model />
-                                   </div>
-                               } />
-
-                        <Route path="/new-model" element={
-                                   <div className="col-auto">
-                                       <CatalogEntryForm
-                                           gh_logged_in={gh_logged_in}
-                                           schema={model_schema}
-                                           catalog_kind="model"
-                                           catalog_path="scivision/catalog/data/models.json"
-                                           download_filename="one-model.json"
-                                       />
-                                   </div>
-                               } />
                     </Routes>
                 </div>
             </div>
