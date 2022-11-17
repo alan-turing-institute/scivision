@@ -69,6 +69,9 @@ const RANDOM_UUID_KEY = "random_uuid";
 const model_thumbnails_ctxt = require.context(
     './data/thumbnails/models', false, /\.jpg$/
 );
+const project_thumbnails_ctxt = require.context(
+    './data/thumbnails/projects', false, /\.jpg$/
+);
 
 // From the webpack object, make a dictionary from the resource name
 // to its path
@@ -77,6 +80,10 @@ const model_thumbnails_ctxt = require.context(
 // several file types)
 const model_thumbnails = model_thumbnails_ctxt.keys().reduce((dict, mod) => {
     dict[mod] = model_thumbnails_ctxt(mod);
+    return dict;
+}, {});
+const project_thumbnails = project_thumbnails_ctxt.keys().reduce((dict, mod) => {
+    dict[mod] = project_thumbnails_ctxt(mod);
     return dict;
 }, {});
 
@@ -579,13 +586,6 @@ function ProjectDefinitionListFragment({data}) {
                 <dt className="col-sm-3">Datasources used</dt>
                 <dd className="col-sm-9">{data.datasources?data.datasources:"(none provided)"}</dd>
                 
-                <dt className="col-sm-3">Notebooks</dt>
-                <dd className="col-sm-9">{data.notebooks?data.notebooks:"(none provided)"}</dd>
-                // Should iterate list:
-                //<dd className="col-sm-9"><a href={notebooks.url}>{notebooks.url}</a></dd>
-                
-                <dt className="col-sm-3">Contributors</dt>
-                <dd className="col-sm-9">{contributors.authors?contributors.authors:"(none provided)"}</dd>
             </>);
 }
 
