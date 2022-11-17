@@ -625,7 +625,6 @@ function App() {
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
                         <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision</p>
-                        <p>Browse our catalog of scientific image datasets and pre-trained computer vision models</p>
                     </Navbar.Brand>
                 </Navbar>
 
