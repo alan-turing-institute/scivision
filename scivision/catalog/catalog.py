@@ -204,12 +204,14 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Tasks",
         description="Which task (or tasks) does the model perform?",
     )
-    models: Tuple[TaskEnum, ...] = Field(
+    # TODO: update so this must be a model from the model catalog
+    models: Tuple[str, ...] = Field(
         (),
         title="Models",
         description="Which models from the scivision catalog are used in the project?",
     )
-    datasources: Tuple[TaskEnum, ...] = Field(
+    # TODO: update so this must be a datasource from the datasource catalog
+    datasources: Tuple[str, ...] = Field(
         (),
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
