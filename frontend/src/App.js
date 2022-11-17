@@ -35,6 +35,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
+import projects from './data/projects.json';
 import DataTable from 'react-data-table-component';
 
 import { Octokit } from "octokit";
