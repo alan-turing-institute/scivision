@@ -28,7 +28,7 @@ jobs:
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.2
-      if: github.ref == 'refs/heads/main' && github.event_name == ‘push’
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
