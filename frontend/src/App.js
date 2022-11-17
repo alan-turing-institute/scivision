@@ -1,5 +1,6 @@
 import logo from './logo.png';
 import './App.css';
+import { AboutText } from './about.js'
 
 import { Buffer } from 'buffer';
 
@@ -226,12 +227,6 @@ async function get_github_token(gh_code) {
         }
     }
     return json.token;
-}
-
-// Component: Landing page
-// route: /
-function AboutText() {
-    return (<p>Welcome to Scivision</p>);
 }
 
 // Component: Login progress/redirection page
@@ -744,7 +739,7 @@ function App() {
                   * links) */}
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
-                        <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision Catalog Utility</p>
+                        <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision</p>
                     </Navbar.Brand>
                 </Navbar>
 
@@ -753,10 +748,6 @@ function App() {
                     <Nav className="col-auto d-block sidebar">
                         <Nav.Item>
                             <Link to="">About</Link>
-                        </Nav.Item>
-
-                        <Nav.Item>
-                            <a href="https://scivision.readthedocs.io/en/latest/">Documentation</a>
                         </Nav.Item>
                         <p />
 
@@ -773,12 +764,26 @@ function App() {
                         <Nav.Item>
                             <Link to="model-grid">Models</Link>
                         </Nav.Item>
+
+                        <p />
+                        <Nav.Item>
+                            <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
+                        </Nav.Item>
+                        
+                        <Nav.Item>
+                            <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
+                        </Nav.Item>
+                        <p />
+                        
+                        <Nav.Item>
+                            <a href="https://github.com/alan-turing-institute/scivision">GitHub repo</a>
+                        </Nav.Item>
                     </Nav>
 
                     {/* Routing table */}
                     <Routes>
                         <Route exact path="/" element={
-                                   <div className="col-md-auto">
+                                   <div className="col">
                                        <AboutText />
                                    </div>
                                } />

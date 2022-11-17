@@ -6,6 +6,7 @@
 📚 **Contents:**
 
 - :ref:`install`
+- :ref:`support`
 - :ref:`getting_started`
 - :ref:`catalog-section`
 
@@ -14,11 +15,42 @@
 ⬇️ Installation
 --------------
 
-Scivision is a Python package. You can install the latest version from [PyPi](https://pypi.org/project/scivision/) with pip:
+1. Install scivision via [PyPi](https://pypi.org/project/scivision/): which tends to be the most user-friendly option:
 
-````bash
+    ```bash
     pip install scivision
-````
+    ```
+
+2. Install scivision from the source code:
+
+    * Clone scivision source code:
+
+    ```bash
+    git clone https://github.com/alan-turing-institute/scivision.git 
+    ```
+
+    * Install scivision and its dependencies:
+
+    ```bash
+    cd /path/to/my/scivision
+    pip install -v -e .
+    ```
+
+.. _support:
+
+📋 Support table
+--------------
+
+| Python version | Scivision version |
+| ---  | ---    |
+| <3.7 | no compatible version |
+| ^3.7 | <0.4 |
+| ^3.8 | * (any) |
+| ^3.9 | * (any) |
+| ^3.10 | >=0.3 |
+| >=3.11 | >=0.3, untested, but intending to support (bug reports welcome) |
+
+Scivision is currently working towards supporting Python >=3.11.
 
 .. _getting_started:
 
