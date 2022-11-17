@@ -633,7 +633,7 @@ function Model() {
 }
 
 // Component: Details about a datasource
-// route: /datasource/:model-name
+// route: /datasource/:datasource-name
 function Datasource() {
     const { datasource_name_encoded } = useParams();
     const datasource_name = decodeURIComponent(datasource_name_encoded);
