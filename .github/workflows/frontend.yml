@@ -18,7 +18,6 @@ jobs:
 
     - name: Install node packages
       working-directory: frontend
-      run: npm install
       run: npm ci
 
     - name: Build
