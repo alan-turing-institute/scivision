@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -e
-
-# postBuild script for Binder: run after building the image
-#
-# See https://mybinder.readthedocs.io/en/latest/using/config_files.html#postbuild-run-code-after-installing-the-environment
-
-pip install -e .
