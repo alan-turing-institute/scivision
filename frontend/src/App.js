@@ -948,6 +948,12 @@ function App() {
                                         <Projects route="/projects" />
                                     </div>
                                 } />
+                                
+                          <Route path="/project-grid" element={
+                                    <div className="col">
+                                        <Projects route="/project-grid" />
+                                    </div>
+                                } />
 
                          <Route path="/project/:project_name_encoded" element={
                                     <div className="col">
