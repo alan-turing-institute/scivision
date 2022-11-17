@@ -292,15 +292,15 @@ def _coerce_models_catalog(
         return CatalogModels.parse_raw(models_raw)
     else:
         raise TypeError("Cannot load model from unsupported type")
-        
-        
+
+
 def _coerce_projects_catalog(
-    models: Union[CatalogProjects, os.PathLike, None]
+    projects: Union[CatalogProjects, os.PathLike, None]
 ) -> CatalogProjects:
     """Returns a CatalogProjects determined from the argument: either the
     one passed, or one loaded from a file
     """
-    if isinstance(models, CatalogProjects):
+    if isinstance(projects, CatalogProjects):
         return projects
     elif isinstance(projects, (bytes, str, os.PathLike)):
         projects_raw = Path(projects).read_text()
@@ -346,7 +346,7 @@ class PandasCatalog:
         else:
             models_cat = _coerce_models_catalog(models)
             self._models = pd.DataFrame([ent.dict() for ent in models_cat.entries])
-            
+
         if isinstance(projects, pd.DataFrame):
             self._projects = projects
         else:
@@ -360,7 +360,7 @@ class PandasCatalog:
     @property
     def datasources(self) -> PandasQueryResult:
         return PandasQueryResult(self._datasources)
-        
+
     @property
     def projects(self) -> PandasQueryResult:
         return PandasQueryResult(self._projects)
