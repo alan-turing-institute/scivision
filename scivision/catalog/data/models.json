@@ -73,23 +73,6 @@
       ]
     },
     {
-      "name": "model-003",
-      "tasks": [
-        "segmentation"
-      ],
-      "url": "https://github.com/alan-turing-institute/cv-algortithm",
-      "pkg_url": "git+https://github.com/alan-turing-institute/cv-algortithm@master",
-      "format": "image",
-      "pretrained": true,
-      "labels_required": true,
-      "institution": [
-        "alan-turing-institute"
-      ],
-      "tags": [
-        "dummy"
-      ]
-    },
-    {
       "name": "scivision-test-plugin",
       "tasks": [
         "object-detection"
