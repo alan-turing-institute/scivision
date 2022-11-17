@@ -330,7 +330,7 @@ class PandasQueryResult(QueryResult):
 
 
 class PandasCatalog:
-    def __init__(self, datasources=None, models=None):
+    def __init__(self, datasources=None, models=None, projects=None):
         super().__init__()
 
         if isinstance(datasources, pd.DataFrame):
@@ -346,6 +346,12 @@ class PandasCatalog:
         else:
             models_cat = _coerce_models_catalog(models)
             self._models = pd.DataFrame([ent.dict() for ent in models_cat.entries])
+            
+        if isinstance(projects, pd.DataFrame):
+            self._projects = projects
+        else:
+            projects_cat = _coerce_projects_catalog(projects)
+            self._projects = pd.DataFrame([ent.dict() for ent in projects_cat.entries])
 
     @property
     def models(self) -> PandasQueryResult:
@@ -354,6 +360,10 @@ class PandasCatalog:
     @property
     def datasources(self) -> PandasQueryResult:
         return PandasQueryResult(self._datasources)
+        
+    @property
+    def projects(self) -> PandasQueryResult:
+        return PandasQueryResult(self._projects)
 
     def _compatible_models(self, datasource) -> PandasQueryResult:
         models_compatible_format = self._models[
