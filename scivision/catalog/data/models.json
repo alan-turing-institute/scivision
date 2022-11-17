@@ -114,7 +114,7 @@
       ]
     },
     {
-      "name": "resnet50-plantkton",
+      "name": "resnet50-plankton",
       "description": "automated classification of plankton images collected by RV Cefas Endeavour Plankton Imager in three clases: copepod, non-copepod and detritus",
       "tasks": [
         "classification"
