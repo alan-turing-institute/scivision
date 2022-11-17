@@ -23,6 +23,7 @@ import { React, useState, useEffect, useRef } from 'react';
 import Form from '@rjsf/bootstrap-4';
 import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
+import project_schema from './project_schema.js'
 
 import { Nav, Navbar } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
@@ -942,6 +943,29 @@ function App() {
                                        />
                                    </div>
                                } />
+                         <Route path="/projects" element={
+                                    <div className="col">
+                                        <Projects route="/projects" />
+                                    </div>
+                                } />
+
+                         <Route path="/project/:project_name_encoded" element={
+                                    <div className="col">
+                                        <Project />
+                                    </div>
+                                } />
+
+                         <Route path="/new-project" element={
+                                    <div className="col-auto">
+                                        <CatalogEntryForm
+                                            gh_logged_in={gh_logged_in}
+                                            schema={project_schema}
+                                            catalog_kind="project"
+                                            catalog_path="scivision/catalog/data/projects.json"
+                                            download_filename="one-project.json"
+                                        />
+                                    </div>
+                                } />
                     </Routes>
                 </div>
             </div>
