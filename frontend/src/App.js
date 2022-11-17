@@ -554,6 +554,210 @@ function Model() {
             </>);
 }
 
+// Component: Fragment containing definition items for the expanded
+// view of the project table, and the project page
+//
+// * data - one project
+function ProjectDefinitionListFragment({data}) {
+    // TODO: change to a different format from the description list (dl) used by models
+    return (<>
+                <dt className="col-sm-3">Project Name</dt>
+                <dd className="col-sm-9">{data.name?data.name:"(none provided)"}</dd>
+                
+                <dt className="col-sm-3">Institution</dt>
+                <dd className="col-sm-9">{data.institution?data.institution:"(none provided)"}</dd>
+                
+                <dt className="col-sm-3">Authors</dt>
+                <dd className="col-sm-9">{data.authors?data.authors:"(none provided)"}</dd>
+
+                <dt className="col-sm-3">Info</dt>
+                <dd className="col-sm-9">{data.header?data.header:"(none provided)"}</dd>
+
+                <dt className="col-sm-3">Models used</dt>
+                <dd className="col-sm-9">{data.models?data.models:"(none provided)"}</dd>
+                
+                <dt className="col-sm-3">Datasources used</dt>
+                <dd className="col-sm-9">{data.datasources?data.datasources:"(none provided)"}</dd>
+                
+                <dt className="col-sm-3">Notebooks</dt>
+                <dd className="col-sm-9">{data.notebooks?data.notebooks:"(none provided)"}</dd>
+                // Should iterate list:
+                //<dd className="col-sm-9"><a href={notebooks.url}>{notebooks.url}</a></dd>
+                
+                <dt className="col-sm-3">Contributors</dt>
+                <dd className="col-sm-9">{contributors.authors?contributors.authors:"(none provided)"}</dd>
+            </>);
+}
+
+// Component: List of projects (choice of grid or table view)
+// route: /projects, /project-grid
+//
+// * route - the current route, either "/project-grid" or "/projects",
+//   used to select the view to render
+function Projects({ route }) {
+    return (
+        <>
+            <Nav variant="pills" defaultActiveKey={route}>
+                <Nav.Item>
+                    <Nav.Link to="/model-grid" as={NavLink}><i class="bi bi-grid" />{/* Thumbnails*/}</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link to="/models" as={NavLink}><i class="bi bi-list-ul" />{/* Table*/}</Nav.Link>
+                </Nav.Item>
+            </Nav>
+
+            {
+                (route == "/project-grid") ?
+                    (<ProjectGrid />) :
+                    (<ProjectTable />)
+            }
+        </>
+    );
+}
+
+// Component: Projects, table view
+// route: /projects
+function ProjectTable() {
+    const columns = [
+        {
+            name: 'Thumbnail',
+            width: "150px",
+            selector: row => project_thumbnails[`./${row.name}.jpg`] === undefined,
+            sortable: true,
+            cell: (row, index, column, id) => {
+                const thumb = project_thumbnails[`./${row.name}.jpg`];
+                if (thumb != undefined) {
+                    return (
+                        <img src={thumb}
+                             width="128"
+                             height="128"
+                             className="img-thumbnail"
+                        />
+                    );
+                } else {
+                    return (<></>);
+                }
+            }
+        },
+        {
+            name: "Name",
+            sortable: true,
+            grow: 0.5,
+            selector: row => row.name,
+        },
+        {
+            name: "Tasks",
+            selector: row => row.tasks,
+            cell: (row, index, column, id) => {
+                return row.tasks.map(tsk => (
+                    <>
+                        <span class="badge badge-primary">{tsk}</span>
+                        &nbsp;
+                    </>
+                ));
+            }
+        },
+    ];
+
+    return (
+        <>
+            <DataTable columns={columns} data={projects.entries} title=''
+                       expandableRows
+                       expandableRowsComponent={(props) => {
+                           return (
+                               <div className="border-bottom">
+                                   <div className="card mt-1 mb-3 bg-light">
+                                       <div className="card-body">
+                                           <dl className="row">
+                                               <ProjectDefinitionListFragment {...props}/>
+                                           </dl>
+                                       </div>
+                                   </div>
+                               </div>
+                           );
+                       }}
+                       expandableRowsHideExpander
+                       expandOnRowClicked />
+        </>
+    );
+}
+
+// Component: Projects, thumbnail grid view
+// route: /project-grid
+function ProjectGrid() {
+    const showPopover = (project) => (props) => (
+        <Popover id="popover-basic" {...props}>
+            <Popover.Content>
+                <strong>{project.name}</strong> {project.description} &nbsp;
+                {project.tasks.map(tsk => (
+                    <><span class="badge badge-primary">{tsk}</span>&nbsp;</>
+                ))}
+            </Popover.Content>
+        </Popover>
+    );
+
+    const one_project_thumbnail = (project) => {
+
+        let thumbnail;
+        if (project_thumbnails[`./${project.name}.jpg`] === undefined) {
+            thumbnail = (
+                <svg width="100%" height="auto" role="img" style={{ aspectRatio: 1 }}>
+                    <rect width="100%" height="100%" fill="#cccccc"></rect>
+                    <text x="50%" y="50%" fill="white"
+                          text-anchor="middle" dominant-baseline="middle"
+                          font-size="10pt">
+                        {project.name}
+                    </text>
+                </svg>
+            );
+        } else {
+            thumbnail = (
+                <img src={project_thumbnails[`./${project.name}.jpg`]}
+                     width="100%"
+                     height="100%"
+                />
+            );
+        }
+
+
+        return (
+            <div className="card">
+                <OverlayTrigger overlay={showPopover(project)} placement="auto">
+                    <div className="card-body">
+                        <Link to={"/project/" + encodeURIComponent(project.name)}>
+                            {thumbnail}
+                        </Link>
+                    </div>
+                </OverlayTrigger>
+            </div>
+        );
+    }
+
+    const image_cards = project.entries.map(one_project_thumbnail);
+
+    return (
+        <div className="card-columns mt-2">
+            {image_cards}
+        </div>
+    );
+}
+
+// Component: Details about a project
+// route: /project/:project-name
+function Project() {
+    const { project_name_encoded } = useParams();
+    const project_name = decodeURIComponent(project_name_encoded);
+    const project = projects.entries.find(project => project.name == project_name);
+
+    return (<>
+                <h3>{project.name}</h3>
+                <img src={project_thumbnails[`./${project.name}.jpg`]} />
+                <dl className="row">
+                    <ProjectDefinitionListFragment data={project} />
+                </dl>
+            </>);
+}
+
 // Component: Username/logout link (shown when logged in)
 //
 // * set_gh_logged_in - setter for State variable
