@@ -865,6 +865,14 @@ function App() {
                         <p />
                         
                         <Nav.Item>
+                            <Link to="project-grid">Project</Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Link to="new-project">➕ New project entry</Link>
+                        </Nav.Item>
+                        <p />
+                        
+                        <Nav.Item>
                             <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
                         </Nav.Item>
                         <p />
