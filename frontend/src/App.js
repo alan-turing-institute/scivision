@@ -896,12 +896,6 @@ function App() {
                                    </div>
                                } />
 
-                        <Route path="/model-grid" element={
-                                   <div className="col">
-                                       <Models route="/model-grid" />
-                                   </div>
-                               } />
-
                         <Route path="/datasources" element={
                                    <div className="col" style={{width: 500}}>
                                        <Datasources />
@@ -925,6 +919,12 @@ function App() {
                                        <Models route="/models" />
                                    </div>
                                } />
+                               
+                        <Route path="/model-grid" element={
+                                  <div className="col">
+                                      <Models route="/model-grid" />
+                                  </div>
+                              } />
 
                         <Route path="/model/:model_name_encoded" element={
                                    <div className="col">
