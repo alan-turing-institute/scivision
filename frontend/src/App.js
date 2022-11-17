@@ -632,7 +632,7 @@ function Model() {
             </>);
 }
 
-// Component: Details about a model
+// Component: Details about a datasource
 // route: /datasource/:model-name
 function Datasource() {
     const { datasource_name_encoded } = useParams();
