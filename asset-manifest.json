@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/scivision/static/css/main.1492ae1a.css",
-    "main.js": "/scivision/static/js/main.300b5dd9.js",
+    "main.js": "/scivision/static/js/main.3840d3de.js",
     "static/js/787.cda612ba.chunk.js": "/scivision/static/js/787.cda612ba.chunk.js",
+    "static/media/huggingface-object-detection.jpg": "/scivision/static/media/huggingface-object-detection.2f90cba3fc77e918c827.jpg",
     "static/media/bootstrap-icons.woff?": "/scivision/static/media/bootstrap-icons.4133309eaf232a933735.woff",
     "static/media/bootstrap-icons.woff2?": "/scivision/static/media/bootstrap-icons.cfde41d697b6dcd56fa6.woff2",
     "static/media/detectreeRGB-forest.jpg": "/scivision/static/media/detectreeRGB-forest.6320de8dea937a52ce79.jpg",
@@ -10,11 +11,11 @@
     "static/media/resnet50-plankton.jpg": "/scivision/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/scivision/index.html",
     "main.1492ae1a.css.map": "/scivision/static/css/main.1492ae1a.css.map",
-    "main.300b5dd9.js.map": "/scivision/static/js/main.300b5dd9.js.map",
+    "main.3840d3de.js.map": "/scivision/static/js/main.3840d3de.js.map",
     "787.cda612ba.chunk.js.map": "/scivision/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1492ae1a.css",
-    "static/js/main.300b5dd9.js"
+    "static/js/main.3840d3de.js"
   ]
 }
