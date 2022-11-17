@@ -20,7 +20,7 @@
       ],
       "datasources": [
         "data-003",
-        "data-005"
+        "data-005",
         "flowers",
         "butterflies"
       ],
