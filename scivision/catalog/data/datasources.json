@@ -3,7 +3,7 @@
   "name": "default",
   "entries": [
     {
-      "name": "data-000",
+      "name": "stardist",
       "tasks": [
         "object-detection",
         "segmentation"
