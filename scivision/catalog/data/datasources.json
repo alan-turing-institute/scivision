@@ -4,6 +4,7 @@
   "entries": [
     {
       "name": "data-000",
+      "description": "PLACEHOLDER",
       "tasks": [
         "object-detection",
         "segmentation"
