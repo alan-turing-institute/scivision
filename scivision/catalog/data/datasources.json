@@ -4,6 +4,7 @@
   "entries": [
     {
       "name": "stardist",
+      "description": "Cell and nuclei image test dataset for object detection",
       "tasks": [
         "object-detection",
         "segmentation"
