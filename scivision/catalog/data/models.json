@@ -28,7 +28,7 @@
       ]
     },
     {
-      "name": "model-001",
+      "name": "PlantCV",
       "tasks": [
         "segmentation",
         "thresholding",
