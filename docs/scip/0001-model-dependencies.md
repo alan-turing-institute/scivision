@@ -30,7 +30,8 @@ Possible failure modes experienced by the user when a dependency problem arises:
 
 A runtime error caused by an installation problem can be particularly confusing.
 
-An additional challenge comes if scivision users wish to load scivision catalog models that have conflicting package (or Python version) dependencies in the same Python environment or notebook. A feature that it's not totally clear whether we can (or should) try to support as the catalog grows (see "Evaluation" below).
+An additional challenge comes if scivision users wish to load scivision catalog models that have conflicting package (or Python version) dependencies in the same Python environment or notebook.
+
 ## Evaluation
 
 When evaluating proposed architectures, here are some questions to consider.
