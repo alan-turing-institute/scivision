@@ -235,6 +235,25 @@
         "animals",
         "ecology"
       ]
+    },
+    {
+      "tasks": [
+        "classification",
+        "object-detection",
+        "segmentation",
+        "thresholding"
+      ],
+      "labels_provided": false,
+      "institution": [
+        "Rosalind Franklin Institute"
+      ],
+      "tags": [
+        "CryoEM"
+      ],
+      "name": "Parakeet",
+      "description": "Synthetic cryoEM data from Parakeet",
+      "url": "https://github.com/rosalindfranklininstitute/scivision-parakeet-datasource/",
+      "format": "image"
     }
   ]
 }

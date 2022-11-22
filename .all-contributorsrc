@@ -185,6 +185,17 @@
         "eventOrganizing",
         "example"
       ]
+    },
+    {
+      "login": "jmp1985",
+      "name": "James Parkhurst",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2241889?v=4",
+      "profile": "https://github.com/jmp1985",
+      "contributions": [
+        "ideas",
+        "data",
+        "plugin"
+      ]
     }
   ],
   "contributorsPerLine": 7,
