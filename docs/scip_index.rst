@@ -22,7 +22,8 @@ Status: Raw/draft
 .. toctree::
    :maxdepth: 1
 
-(none so far)
+   scip/0001-model-dependencies
+   scip/0002-tasks
 
 
 Status: Stable/deprecated
