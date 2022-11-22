@@ -1,11 +1,8 @@
 name: Build frontend
-on:
-  push:
-    branches:
-      - frontend
+on: [push, pull_request]
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-if-main:
     runs-on: ubuntu-latest
     steps:    
     - name: Checkout
@@ -31,6 +28,7 @@ jobs:
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.2
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages

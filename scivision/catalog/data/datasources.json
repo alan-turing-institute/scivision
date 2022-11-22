@@ -191,6 +191,69 @@
         "ecology",
         "environmental-science"
       ]
+    },
+    {
+      "name": "flowers",
+      "description": "The 102 flowers dataset, created by Visual Geometry Group, by Maria-Elena Nilsback and Andrew Zisserman. 8000 images of flowers, plus labels indicating their species",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision",
+        "ecology"
+      ],
+      "url": "https://github.com/nbarlowATI/flowers_data_repo",
+      "format": "image",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "butterflies",
+      "description": "The Butterfly Image Classification Kaggle challenge, created by Gerald Piosenka.",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision",
+        "ecology"
+      ],
+      "url": "https://github.com/nbarlowATI/butterfly_data_repo",
+      "format": "image",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "butterflies",
+        "insects",
+        "animals",
+        "ecology"
+      ]
+    },
+    {
+      "tasks": [
+        "classification",
+        "object-detection",
+        "segmentation",
+        "thresholding"
+      ],
+      "labels_provided": false,
+      "institution": [
+        "Rosalind Franklin Institute"
+      ],
+      "tags": [
+        "CryoEM"
+      ],
+      "name": "Parakeet",
+      "description": "Synthetic cryoEM data from Parakeet",
+      "url": "https://github.com/rosalindfranklininstitute/scivision-parakeet-datasource/",
+      "format": "image"
     }
   ]
 }

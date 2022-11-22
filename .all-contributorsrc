@@ -163,6 +163,39 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "pwochner",
+      "name": "pwochner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78024695?v=4",
+      "profile": "https://github.com/pwochner",
+      "contributions": [
+        "ideas",
+        "eventOrganizing",
+        "example"
+      ]
+    },
+    {
+      "login": "nbarlowATI",
+      "name": "nbarlowATI",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33832774?v=4",
+      "profile": "https://github.com/nbarlowATI",
+      "contributions": [
+        "ideas",
+        "eventOrganizing",
+        "example"
+      ]
+    },
+    {
+      "login": "jmp1985",
+      "name": "James Parkhurst",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2241889?v=4",
+      "profile": "https://github.com/jmp1985",
+      "contributions": [
+        "ideas",
+        "data",
+        "plugin"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -171,5 +204,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": false,
-  "contributorsSortAlphabetically": true
+  "contributorsSortAlphabetically": true,
+  "commitConvention": "angular"
 }

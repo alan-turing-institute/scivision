@@ -73,23 +73,6 @@
       ]
     },
     {
-      "name": "model-003",
-      "tasks": [
-        "segmentation"
-      ],
-      "url": "https://github.com/alan-turing-institute/cv-algortithm",
-      "pkg_url": "git+https://github.com/alan-turing-institute/cv-algortithm@master",
-      "format": "image",
-      "pretrained": true,
-      "labels_required": true,
-      "institution": [
-        "alan-turing-institute"
-      ],
-      "tags": [
-        "dummy"
-      ]
-    },
-    {
       "name": "scivision-test-plugin",
       "tasks": [
         "object-detection"
@@ -131,7 +114,7 @@
       ]
     },
     {
-      "name": "resnet50-plantkton",
+      "name": "resnet50-plankton",
       "description": "automated classification of plankton images collected by RV Cefas Endeavour Plankton Imager in three clases: copepod, non-copepod and detritus",
       "tasks": [
         "classification"
@@ -267,6 +250,44 @@
         "remote-sensing",
         "ecology",
         "environmental-science"
+      ]
+    },
+    {
+      "name": "flower-classification-model",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/flower_classification_model",
+      "pkg_url": "git+https://github.com/alan-turing-institute/flower_classification_model.git@main",
+      "format": "image",
+      "pretrained": true,
+      "labels_required": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "flowers",
+        "ecology"
+      ]
+    },
+    {
+      "name": "butterfly-classification-model",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/butterfly_classification_model",
+      "pkg_url": "git+https://github.com/alan-turing-institute/butterfly_classification_model.git@main",
+      "format": "image",
+      "pretrained": true,
+      "labels_required": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "butterflies",
+        "insects",
+        "animals",
+        "ecology"
       ]
     }
   ]
