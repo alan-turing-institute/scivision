@@ -800,6 +800,12 @@ function App() {
                             Scivision.Py
                         </Nav.Link>
 
+                        {/* We want to have the Datasource and Model menu items
+                          * highlighted (as if visited) for any of the routes
+                          * associated with these things.  This is the meaning of the
+                          * expression given for 'active' below. There is probably a
+                          * better way of doing this...*/}
+                        
                         <Nav.Link to="datasource-grid" as={NavLink}
                                   active={
                                       location_root == "datasource-table"
