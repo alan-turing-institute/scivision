@@ -1,4 +1,4 @@
-import logo from './logo.png';
+import biglogo from './logo-full.png';
 import './App.css';
 import { AboutText } from './about.js'
 
@@ -775,7 +775,9 @@ function App() {
                   * links) */}
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
-                        <p className="h1"> <img src={logo} alt="Scivision logo" /> Scivision</p>
+                        <Nav.Link to="home" as={NavLink}>
+                            <img src={biglogo} width="38%" height="auto" alt="Scivision" />
+                        </Nav.Link>
                     </Navbar.Brand>
                 </Navbar>
 
