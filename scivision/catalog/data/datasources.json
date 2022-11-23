@@ -254,6 +254,12 @@
       "description": "Synthetic cryoEM data from Parakeet",
       "url": "https://github.com/rosalindfranklininstitute/scivision-parakeet-datasource/",
       "format": "image"
+    },
+    {
+      "labels_provided": false,
+      "institution": [],
+      "tags": [],
+      "name": "Test entry"
     }
   ]
 }
