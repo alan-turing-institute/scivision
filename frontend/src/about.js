@@ -5,12 +5,9 @@ import MarkdownView from 'react-showdown';
 // route: /
 export function AboutText() {
     const markdown = `
-
-## A toolkit for scientific image analysis
-
 Scivision is both a **webapp** and a **Python package** for discovering, and using pre-trained computer vision models and image datasets from science and the humanities. These models and datasets are available in a catalog, which researchers working in diverse fields have contributed to.
 
-- Scivision is *open source* and development happens in the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision). 
+- Scivision is freely available under an open source licence (BSD). Development happens in the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision).
 
 - The documentation for the Python package is hosted on [Read the Docs](https://scivision.readthedocs.io/en/latest/) (including maintainer documentation). Start with the User Guide for an introduction to using Scivision.
 
