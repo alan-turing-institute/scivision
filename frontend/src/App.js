@@ -1,6 +1,10 @@
-import biglogo from './logo-full.png';
 import './App.css';
 import { AboutText } from './about.js'
+
+import biglogo from './logo-full.png';
+import nbScreenshot1 from './nb-1.jpg'
+import nbScreenshot2 from './nb-2.jpg'
+
 
 import { Buffer } from 'buffer';
 
@@ -579,7 +583,10 @@ function makePopover(data) {
 //   resource represented by data (that is, if data is a model,
 //   getLink(data) is the model card page for that model)
 // * data - the model or datasource
-function makeThumbnail(getThumbnail, getLink) {
+// * doPopover - boolean, add an overlay trigger with some pop up text?
+//   In this case, data must have a 'tasks' member
+// * asCard - wrap the thumbnail in 'card' and 'card-body' divs?
+function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
     return function (data) {
         const thumbnail_src = getThumbnail(data);
         const thumbnail_resource_link = getLink(data);
@@ -596,19 +603,39 @@ function makeThumbnail(getThumbnail, getLink) {
                 </svg>
             );
         } else {
-            thumbnail = <img src={thumbnail_src} width="100%" height="100%" />
+            thumbnail = <img className="card-img-top"
+                             src={thumbnail_src}
+                             width="100%"
+                             height="100%" />
         }
-        return (
-            <div className="card">
-                <OverlayTrigger overlay={makePopover(data)}
-                                placement="auto">
-                    <div className="card-body">
-                        <Link to={thumbnail_resource_link}>
-                            {thumbnail}
-                        </Link>
-                    </div>
+
+        // Add popover
+        if (doPopover && doPopover !== undefined) {
+            thumbnail = (
+                <OverlayTrigger
+                    overlay={makePopover(data)}
+                    placement="auto">
+                    {thumbnail}
                 </OverlayTrigger>
-            </div>
+            )
+        }
+
+        // Add card formatting
+        if (asCard && asCard !== undefined) {
+            thumbnail = (
+                <div className="card">
+                    <div className="card-body">
+                        {thumbnail}
+                    </div>
+                </div>
+            )
+        }
+
+
+        return (
+            <Link to={thumbnail_resource_link}>
+                {thumbnail}
+            </Link>
         );
     }
 }
@@ -617,8 +644,12 @@ function makeThumbnail(getThumbnail, getLink) {
 // route: /model-grid
 function ModelGrid() {
     const image_cards = models.entries.map(
-        makeThumbnail((model) => model_thumbnails[`./${model.name}.jpg`],
-                      (model) => "/model/" + encodeURIComponent(model.name))
+                makeThumbnail({
+                    getThumbnail: (model) => model_thumbnails[`./${model.name}.jpg`],
+                    getLink: (model) => "/model/" + encodeURIComponent(model.name),
+                    doPopover: true,
+                    asCard: true
+                })
     );
 
     return (
@@ -633,8 +664,12 @@ function ModelGrid() {
 // route: /datasource-grid
 function DatasourceGrid() {
     const image_cards = datasources.entries.map(
-        makeThumbnail((datasource) => datasource_thumbnails[`./${datasource.name}.jpg`],
-                      (datasource) => "/datasource/" + encodeURIComponent(datasource.name))
+        makeThumbnail({
+            getThumbnail: (datasource) => datasource_thumbnails[`./${datasource.name}.jpg`],
+            getLink: (datasource) => "/datasource/" + encodeURIComponent(datasource.name),
+            doPopover: true,
+            asCard: true
+        })
     );
 
     return (
@@ -754,9 +789,104 @@ function DatasourceNav() {
     );
 }
 
-
+// Component: The home page
+// route: /
 function Home() {
-    return <></>;
+
+    // pick three random models and datasources (with thumbnails)
+    //
+    const models_sample = models.entries.slice(11,14);
+    const datasources_sample = datasources.entries.slice(4,7);
+
+    return (
+        <>
+            <div className="mb-5">
+                <h4>Models</h4>
+
+                <div className="w-75 mx-auto m-3">
+
+                    <p className="small">Pre-trained computer vision models that can be loaded and run with the <Link to="scivisionpy">Scivision Python library.</Link></p>
+
+                    <div className="card-deck">
+                        {
+                            models_sample.map((model) => (
+                                <div className="card">
+                                    {
+                                        makeThumbnail({
+                                            getThumbnail: (data) => model_thumbnails[`./${data.name}.jpg`],
+                                            getLink: (data) => "/model/" + encodeURIComponent(data.name),
+                                            doPopover: true,
+                                        })(model)
+                                    }
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <p className="p-1 pl-2 small bg-highlight">
+                        Discover more models in the complete <Link to="model-grid"><strong>model catalog</strong></Link>
+                    </p>
+                </div>
+            </div>
+
+
+            <div className="mb-5">
+                <h4>Data</h4>
+
+                <div className="w-75 mx-auto m-3">
+                    <p className="small">Curated image datasets from diverse scientific domains, suitable for a variety of computer vision tasks and loadable as array data via the numerical Python stack.</p>
+                    <div className="card-deck">
+                        {
+                            datasources_sample.map((ds) => (
+                                <div className="card">
+                                    {
+                                        makeThumbnail({
+                                            getThumbnail: (data) => datasource_thumbnails[`./${data.name}.jpg`],
+                                            getLink: (data) => "/datasource/" + encodeURIComponent(data.name),
+                                            doPopover: true,
+                                        })(ds)
+                                    }
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <div className="bg-highlight">
+                        <p className="p-1 pl-2 small">
+                            Explore the full <Link to="datasource-grid"><strong>datasource catalog</strong></Link>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Examples</h4>
+            <div className="w-75 mx-auto m-3 mb-5">
+                <p className="small">Jupyter Notebook-based examples of using the Scivision Python library and showcasing models and datasets from the catalog.</p>
+
+                    <div className="card-deck">
+                        <div className="card">
+                            <a href="https://github.com/scivision-gallery/plankton-classification">
+                                <img className="img-card-top" width="100%" src={nbScreenshot1} />
+                                <div className="card-footer small text-center">Plankton classification</div>
+                            </a>
+                        </div>
+
+                        <div className="card">
+                            <a href="https://github.com/scivision-gallery/coastalveg-edge-detection">
+                                <img className="img-card-top" width="100%" src={nbScreenshot2} />
+                                <div className="card-footer small text-center">Coastal vegetation edge detection</div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div className="bg-highlight">
+                        <p className="p-1 pl-2 small">
+                            Visit the <a href="https://github.com/scivision-gallery"><strong>Scivision Example Gallery</strong></a> on GitHub for more
+                        </p>
+                    </div>
+
+            </div>
+
+        </>
+    );
 }
 
 
@@ -777,12 +907,18 @@ function App() {
                 {/* Main header (Navbar used as a convenient 'banner'
                   * element, but does not actually contain navigation
                   * links) */}
-                <Navbar bg="light" expand="lg">
+
+                  <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
                         <Nav.Link to="home" as={NavLink}>
                             <img src={biglogo} width="38%" height="auto" alt="Scivision" />
                         </Nav.Link>
                     </Navbar.Brand>
+                    <span className="pull-right pb-5">
+                      <a style={{color: "Black"}} href="https://github.com/alan-turing-institute/scivision">
+                        <i className="bi bi-github" aria-label="GitHub" style={{ fontSize: "2rem" }}></i>
+                      </a>
+                    </span>
                 </Navbar>
 
                 {/* Navigation bar */}
@@ -805,15 +941,6 @@ function App() {
                           * associated with these things.  This is the meaning of the
                           * expression given for 'active' below. There is probably a
                           * better way of doing this...*/}
-                        
-                        <Nav.Link to="datasource-grid" as={NavLink}
-                                  active={
-                                      location_root == "datasource-table"
-                                          || location_root == "new-datasource"
-                                          || location_root == "datasource"
-                                  }>
-                            Datasources
-                        </Nav.Link>
 
                         <Nav.Link to="model-grid" as={NavLink}
                                   active={
@@ -824,12 +951,21 @@ function App() {
                             Models
                         </Nav.Link>
 
+                        <Nav.Link to="datasource-grid" as={NavLink}
+                                  active={
+                                      location_root == "datasource-table"
+                                          || location_root == "new-datasource"
+                                          || location_root == "datasource"
+                                  }>
+                            Data
+                        </Nav.Link>
+
                         <Nav.Link to="examples" as={NavLink}>
                             Examples
                         </Nav.Link>
 
                         <Nav.Link to="projects" as={NavLink}>
-                            Projects&nbsp;using&nbsp;Scivision
+                            Projects
                         </Nav.Link>
 
                         <Nav.Link to="community" as={NavLink}>
@@ -868,10 +1004,22 @@ function App() {
                                } />
 
                         <Route path="/about" element={
-                                   <div className="text-readable-width mt-4">
-                                       <AboutText />
-                                   </div>
+                                   <>
+                                       <h3>A toolkit for scientific image analysis</h3>
+                                       <div className="text-readable-width mt-4">
+                                           <AboutText />
+                                       </div>
+                                   </>
                                } />
+
+                        <Route path="/scivisionpy" element={
+                                   <>
+                                       <h3>The Scivision.Py Python Library</h3>
+                                       <div className="text-readable-width mt-4">
+                                           See the <a href="https://scivision.readthedocs.io/en/latest/">documentation</a>.
+                                       </div>
+                                   </>
+                        } />
 
                         <Route path="/login/:referrer_encoded" element={
                                    <Login
@@ -887,7 +1035,6 @@ function App() {
                                    </>
                                } />
 
-
                         <Route path="/model-table" element={
                                    <>
                                        <ModelNav />
@@ -898,7 +1045,9 @@ function App() {
                         <Route path="/model/:model_name_encoded" element={
                                    <>
                                        <ModelNav />
-                                       <Model />
+                                       <div className="text-readable-width mt-4">
+                                           <Model />
+                                       </div>
                                    </>
                                } />
 
@@ -951,6 +1100,40 @@ function App() {
                                                catalog_path="scivision/catalog/data/datasources.json"
                                                download_filename="one-datasource.json"
                                            />
+                                       </div>
+                                   </>
+                               }/>
+
+                        <Route path="/examples" element={
+
+                                   <p> More to come here soon. For now, see the <a href="https://github.com/scivision-gallery">Scivision Example Gallery</a> on GitHub. </p>
+                               }/>
+
+                        <Route path="/projects" element={
+                                   <>
+                                        Details of projects using Scivision to follow...
+                                   </>
+                               }/>
+
+                        <Route path="/community" element={
+                                   <>
+                                       <h3>Community Resources</h3>
+                                       <div className="text-readable-width mt-3">
+                                           <ul>
+
+                                               <li>
+                                                   Our <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+                                               </li>
+                                               <li>
+                                                   <a href="https://github.com/alan-turing-institute/scivision/discussions">
+                                                      GitHub Discussions
+                                                   </a>
+                                               </li>
+                                               <li>
+                                                   <a href="https://scivision.readthedocs.io/en/latest/scip_index.html">SCIPI</a>, the Scivision Improvement Proposal Index: Community driven design documents, specs and proposals
+                                               </li>
+                                               <li>Email the Scivision core maintainers at <a href="mailto:scivision@turing.ac.uk">scivision@turing.ac.uk</a></li>
+                                           </ul>
                                        </div>
                                    </>
                                }/>
