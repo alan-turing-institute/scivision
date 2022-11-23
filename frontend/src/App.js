@@ -400,31 +400,28 @@ function DatasourceDefinitionListFragment({data}) {
 //
 // route: /model-table, /model-grid, /datasource-table, /datasource-grid
 //
-// * props - { activeRoute, gridRoute, tableRoute }
+// * props - { gridRoute, tableRoute }
 //   where
-//     activeRoute - the currently active route (used to select the view)
 //     gridRoute, tableRoute - the route for the grid and table views
 function TableGridViewNav(props) {
     return (
-        <>
-            <Nav variant="tabs" defaultActiveKey={props.activeRoute}>
-                <Nav.Item>
-                    <Nav.Link to={props.gridRoute} as={NavLink}>
-                        <i className="bi bi-grid" />{/* Thumbnails*/}
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link to={props.tableRoute} as={NavLink}>
-                        <i className="bi bi-list-ul" />{/* Table*/}
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item className="ml-auto">
-                    <Nav.Link to={props.createNewRoute} as={NavLink}>
-                        <i className="bi bi-file-earmark-plus" /> Create new entry
-                    </Nav.Link>
-                </Nav.Item>
-            </Nav>
-        </>
+        <Nav className="mb-2" variant="tabs">
+            <Nav.Item>
+                <Nav.Link to={props.gridRoute} as={NavLink}>
+                    <i className="bi bi-grid" />{/* Thumbnails*/}
+                </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link to={props.tableRoute} as={NavLink}>
+                    <i className="bi bi-list-ul" />{/* Table*/}
+                </Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="ml-auto">
+                <Nav.Link to={props.createNewRoute} as={NavLink}>
+                    <i className="bi bi-file-earmark-plus" /> Create new entry
+                </Nav.Link>
+            </Nav.Item>
+        </Nav>
     );
 }
 
@@ -696,7 +693,7 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
 
     return (
         <>
-            <div>Logged in as {gh_username}</div>
+            Logged in as {gh_username}&nbsp;
             <a href="javascript:;"
                onClick={() => {
                    set_gh_logged_in(false);
@@ -734,27 +731,32 @@ function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
 
 
 // Component: Tab-bar for models (grid, table, create etc)
-function ModelNav({activeRoute}) {
+function ModelNav() {
     return (
-        <TableGridViewNav
-            activeRoute={activeRoute}
-            gridRoute="/model-grid"
-            tableRoute="/model-table"
-            createNewRoute="/new-model"
-        />
+        <>
+            <TableGridViewNav
+                gridRoute="/model-grid"
+                tableRoute="/model-table"
+                createNewRoute="/new-model"
+            />
+        </>
     );
 }
 
 // Component: Tab-bar for datasources (grid, table, create etc)
-function DatasourceNav({activeRoute}) {
+function DatasourceNav() {
     return (
         <TableGridViewNav
-            activeRoute={activeRoute}
             gridRoute="/datasource-grid"
             tableRoute="/datasource-table"
             createNewRoute="/new-datasource"
         />
     );
+}
+
+
+function Home() {
+    return <></>;
 }
 
 
@@ -765,6 +767,8 @@ function App() {
     const gh_token = sessionStorage[GH_TOKEN_KEY];
     const random_uuid = sessionStorage[RANDOM_UUID_KEY];
     const [ gh_logged_in, set_gh_logged_in ] = useState(!!gh_token);
+    const location = useLocation();
+    const location_root = location.pathname.split("/")[1]; // path starts with a '/'
 
     return (
         <div className="app">
@@ -781,134 +785,174 @@ function App() {
                     </Navbar.Brand>
                 </Navbar>
 
-                <div className="row px-4 mt-2">
-                    {/* Navigation sidebar */}
-                    <Nav className="col-auto d-block sidebar">
-                        <Nav.Item>
-                            <Link to="">About</Link>
-                        </Nav.Item>
-                        <p />
+                {/* Navigation bar */}
+                <Navbar bg="light" expand="lg">
+                    <Nav className="me-auto">
+                        <Nav.Link to="" as={NavLink}>
+                            Home
+                        </Nav.Link>
 
-                        <Nav.Item>
-                            <LoginStatusLink gh_logged_in={gh_logged_in}
-                                             set_gh_logged_in={set_gh_logged_in} />
-                        </Nav.Item>
-                        <p />
+                        <Nav.Link to="about" as={NavLink}>
+                            About
+                        </Nav.Link>
 
-                        <Nav.Item>
-                            <Link to="datasource-grid">Datasources</Link>
-                        </Nav.Item>
+                        <Nav.Link to="scivisionpy" as={NavLink}>
+                            Scivision.Py
+                        </Nav.Link>
 
-                        <Nav.Item>
-                            <Link to="model-grid">Models</Link>
-                        </Nav.Item>
+                        <Nav.Link to="datasource-grid" as={NavLink}
+                                  active={
+                                      location_root == "datasource-table"
+                                          || location_root == "new-datasource"
+                                          || location_root == "datasource"
+                                  }>
+                            Datasources
+                        </Nav.Link>
 
-                        <p />
+                        <Nav.Link to="model-grid" as={NavLink}
+                                  active={
+                                      location_root == "model-table"
+                                          || location_root == "new-model"
+                                          || location_root == "model"
+                                  }>
+                            Models
+                        </Nav.Link>
+
+                        <Nav.Link to="examples" as={NavLink}>
+                            Examples
+                        </Nav.Link>
+
+                        <Nav.Link to="projects" as={NavLink}>
+                            Projects&nbsp;using&nbsp;Scivision
+                        </Nav.Link>
+
+                        <Nav.Link to="community" as={NavLink}>
+                            Community
+                        </Nav.Link>
+
+                        {/***
                         <Nav.Item>
                             <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
                         </Nav.Item>
-                        
+
                         <Nav.Item>
                             <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
                         </Nav.Item>
-                        <p />
-                        
+
                         <Nav.Item>
                             <a href="https://github.com/alan-turing-institute/scivision">GitHub repo</a>
                         </Nav.Item>
+                         ***/}
                     </Nav>
+                </Navbar>
 
-                    {/* Routing table */}
+                <div className="login-bar px-3 mb-3 text-right">
+                    <Navbar.Text>
+                        <LoginStatusLink gh_logged_in={gh_logged_in}
+                                         set_gh_logged_in={set_gh_logged_in} />
+                    </Navbar.Text>
+                </div>
+
+
+                {/* Routing table */}
+                <div className="mx-3">
                     <Routes>
-                        <Route exact path="/" element={
-                                   <div className="col">
+                        <Route exact path="" element={
+                                   <Home />
+                               } />
+
+                        <Route path="/about" element={
+                                   <div className="text-readable-width mt-4">
                                        <AboutText />
                                    </div>
                                } />
 
                         <Route path="/login/:referrer_encoded" element={
-                                   <div className="col-md-auto">
-                                       <Login
-                                           gh_logged_in={gh_logged_in}
-                                           set_gh_logged_in={set_gh_logged_in}
-                                       />
-                                   </div>
+                                   <Login
+                                       gh_logged_in={gh_logged_in}
+                                       set_gh_logged_in={set_gh_logged_in}
+                                   />
                                } />
 
                         <Route path="/model-grid" element={
-                                   <div className="col">
-                                       <ModelNav activeRoute="/model-grid" />
+                                   <>
+                                       <ModelNav />
                                        <ModelGrid />
-                                   </div>
+                                   </>
                                } />
 
 
                         <Route path="/model-table" element={
-                                   <div className="col">
-                                       <ModelNav activeRoute="/model-table" />
+                                   <>
+                                       <ModelNav />
                                        <ModelTable />
-                                   </div>
+                                   </>
                                } />
 
                         <Route path="/model/:model_name_encoded" element={
-                                   <div className="col">
-                                       <ModelNav activeRoute="" />
+                                   <>
+                                       <ModelNav />
                                        <Model />
-                                   </div>
+                                   </>
                                } />
 
                         <Route path="/new-model" element={
-                                   <div className="col">
-                                       <ModelNav activeRoute="/new-model" />
-                                       <CatalogEntryForm
-                                           gh_logged_in={gh_logged_in}
-                                           schema={model_schema}
-                                           catalog_kind="model"
-                                           catalog_path="scivision/catalog/data/models.json"
-                                           download_filename="one-model.json"
-                                       />
-                                   </div>
+                                   <>
+                                       <ModelNav />
+                                       <div className="text-readable-width mt-4">
+                                           <CatalogEntryForm
+                                               gh_logged_in={gh_logged_in}
+                                               schema={model_schema}
+                                               catalog_kind="model"
+                                               catalog_path="scivision/catalog/data/models.json"
+                                               download_filename="one-model.json"
+                                           />
+                                       </div>
+                                   </>
                                } />
 
                         <Route path="/datasource-grid" element={
-                                   <div className="col">
-                                       <DatasourceNav activeRoute="/datasource-grid" />
+                                   <>
+                                       <DatasourceNav />
                                        <DatasourceGrid />
-                                   </div>
+                                   </>
                                } />
 
                         <Route path="/datasource-table" element={
-                                   <div className="col">
-                                       <DatasourceNav activeRoute="/datasource-table" />
+                                   <>
+                                       <DatasourceNav />
                                        <DatasourceTable />
-                                   </div>
+                                   </>
                                } />
 
                         <Route path="/datasource/:datasource_name_encoded" element={
-                                   <div className="col">
-                                       <DatasourceNav activeRoute="" />
-                                       <Datasource />
-                                   </div>
+                                   <>
+                                       <DatasourceNav />
+                                       <div className="text-readable-width mt-4">
+                                           <Datasource />
+                                       </div>
+                                   </>
                                } />
 
                         <Route path="/new-datasource" element={
-                                   <div className="col">
-                                       <DatasourceNav activeRoute="/new-datasource" />
-                                       <CatalogEntryForm
-                                           gh_logged_in={gh_logged_in}
-                                           schema={datasource_schema}
-                                           catalog_kind="datasource"
-                                           catalog_path="scivision/catalog/data/datasources.json"
-                                           download_filename="one-datasource.json"
-                                       />
-                                   </div>
+                                   <>
+                                       <DatasourceNav />
+                                       <div className="text-readable-width mt-4">
+                                           <CatalogEntryForm
+                                               gh_logged_in={gh_logged_in}
+                                               schema={datasource_schema}
+                                               catalog_kind="datasource"
+                                               catalog_path="scivision/catalog/data/datasources.json"
+                                               download_filename="one-datasource.json"
+                                           />
+                                       </div>
+                                   </>
                                }/>
-
                     </Routes>
                 </div>
             </div>
         </div>
-    );
+);
 }
 
 export default App;
