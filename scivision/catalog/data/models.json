@@ -289,6 +289,22 @@
         "animals",
         "ecology"
       ]
+    },
+    {
+      "tasks": [],
+      "pretrained": true,
+      "labels_required": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "segmentation"
+      ],
+      "name": "test001",
+      "description": "detecting blobs",
+      "url": "https://www.test.com",
+      "pkg_url": "https://www.mypypackage.com",
+      "format": "image"
     }
   ]
 }
