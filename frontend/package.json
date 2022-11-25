@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "scivision/",
+  "homepage": "/",
   "dependencies": {
     "@rjsf/bootstrap-4": "^4.2.0",
     "@rjsf/core": "^4.2.0",
