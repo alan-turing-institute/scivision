@@ -196,6 +196,16 @@
         "data",
         "plugin"
       ]
+    },
+    {
+      "login": "shmh40",
+      "name": "Seb Hickman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56727418?v=4",
+      "profile": "http://shmh40.github.io",
+      "contributions": [
+        "example",
+        "talk"
+      ]
     }
   ],
   "contributorsPerLine": 7,
