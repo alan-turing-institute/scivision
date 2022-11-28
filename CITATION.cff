@@ -5,6 +5,15 @@ message: >-
   metadata from this file.
 type: software
 authors:
-  - given-names: Alan
+  - given-names: Alan, Robert
     family-names: Lowe
     orcid: https://orcid.org/0000-0002-0558-3597
+  - given-names: Alejandro
+    family-names: Coca-Castro
+    orcid: https://orcid.org/0000-0002-9264-1539
+  - given-names: Edward, Jonathan
+    family-names: Chalstrey
+    orcid: https://orcid.org/0000-0003-2560-1294
+  - given-names: J. Scott
+    family-names: Hosking
+    orcid: https://orcid.org/0000-0002-3646-3504
