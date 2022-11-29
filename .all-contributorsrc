@@ -205,6 +205,16 @@
       "contributions": [
         "example",
         "talk"
+        ]
+    },
+    {
+      "login": "Erioldoesdesign",
+      "name": "Eriol Fox",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11681324?v=4",
+      "profile": "https://erioldoesdesign.github.io/",
+      "contributions": [
+        "ideas",
+        "design"
       ]
     }
   ],
