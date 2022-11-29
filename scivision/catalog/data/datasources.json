@@ -254,6 +254,24 @@
       "description": "Synthetic cryoEM data from Parakeet",
       "url": "https://github.com/rosalindfranklininstitute/scivision-parakeet-datasource/",
       "format": "image"
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "optical microscopy",
+        "cell biology"
+      ],
+      "institution": [
+        "UCL"
+      ],
+      "tags": [],
+      "url": "https://github.com/lowe-lab-ucl/cell-cycle-scivision",
+      "format": "image",
+      "name": "cell-cycle-scivision",
+      "description": "Crops of H2B-FP stained nuclei in MDCK cells. "
     }
   ]
 }
