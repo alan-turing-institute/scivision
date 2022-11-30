@@ -1,19 +1,62 @@
-cff-version: 1.2.0
-title: scivision
-message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
-type: software
 authors:
-  - given-names: Alan, Robert
-    family-names: Lowe
-    orcid: https://orcid.org/0000-0002-0558-3597
-  - given-names: Alejandro
-    family-names: Coca-Castro
-    orcid: https://orcid.org/0000-0002-9264-1539
-  - given-names: Edward, Jonathan
-    family-names: Chalstrey
-    orcid: https://orcid.org/0000-0003-2560-1294
-  - given-names: J. Scott
-    family-names: Hosking
-    orcid: https://orcid.org/0000-0002-3646-3504
+- family-names: Lowe
+  given-names: Alan R
+  orcid: https://orcid.org/0000-0002-0558-3597
+- family-names: Chalstrey
+  given-names: Ed
+  orcid: https://orcid.org/0000-0003-2560-1294
+- family-names: Hosking
+  given-names: Scott
+  orcid: https://orcid.org/0000-0002-3646-3504
+- family-names: ''
+  given-names: ots22
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Corcoran
+  given-names: Evangeline
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Massot
+  given-names: Miquel
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Costa Gomes
+  given-names: Beatriz
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: ''
+  given-names: "Alejandro \xA9"
+  orcid: https://orcid.org/0000-0002-9264-1539
+- family-names: Mehonic
+  given-names: Aida
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Evans
+  given-names: Ben
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: ''
+  given-names: JamesAliScott
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Blackwell
+  given-names: Robert
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Rogers
+  given-names: Martin
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Hosseini
+  given-names: Kasra
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: ''
+  given-names: pwochner
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: ''
+  given-names: nbarlowATI
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Parkhurst
+  given-names: James
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Hickman
+  given-names: Seb
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Fox
+  given-names: Eriol
+  orcid: https://orcid.org/0000-0000-0000-0000
+cff-version: 1.2.0
+message: If you use this software, please cite it using the metadata from this file.
+title: scivision
+type: software
