@@ -1,9 +1,10 @@
 # import dataclasses
 import json
+import yaml
+
 # from dataclasses import dataclass
 from pathlib import Path
 
-import yaml
 
 _CITATION_HEADER = {
     "cff-version": "1.2.0",
@@ -56,6 +57,7 @@ def update_citation_file(filepath: Path) -> None:
         }
         cff_data["authors"].append(author)
 
+    # currently this writes over the file, fix this to append
     with open(filepath, "w") as cff_file:
         dump = yaml.safe_dump(cff_data, default_flow_style=False)
         cff_file.write(dump)
