@@ -196,6 +196,26 @@
         "data",
         "plugin"
       ]
+    },
+    {
+      "login": "shmh40",
+      "name": "Seb Hickman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56727418?v=4",
+      "profile": "http://shmh40.github.io",
+      "contributions": [
+        "example",
+        "talk"
+        ]
+    },
+    {
+      "login": "Erioldoesdesign",
+      "name": "Eriol Fox",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11681324?v=4",
+      "profile": "https://erioldoesdesign.github.io/",
+      "contributions": [
+        "ideas",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
