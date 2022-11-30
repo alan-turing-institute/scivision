@@ -14,7 +14,10 @@ _CITATION_HEADER = {
     "authors": [],
 }
 _DEFAULT_ORCID = "https://orcid.org/0000-0000-0000-0000"
-_MATCH_KEYS = ("given_names", "family_names",)
+_MATCH_KEYS = (
+    "given_names",
+    "family_names",
+)
 
 
 @dataclasses.dataclass
@@ -26,6 +29,7 @@ class Author:
 
     Equivalence is tested by names only.
     """
+
     given_names: str = ""
     family_names: str = ""
     orcid: str = _DEFAULT_ORCID
@@ -38,25 +42,19 @@ class Author:
         family_names = [name for name in names[1:] if name not in initials]
 
         author = Author(
-            given_names = " ".join(given_names + initials),
-            family_names = " ".join(family_names),
+            given_names=" ".join(given_names + initials),
+            family_names=" ".join(family_names),
         )
         return author
 
     @staticmethod
     def from_yaml(author: dict[str, str]) -> Author:
-        author_dict = {
-            key.replace("-", "_"): value
-            for key, value in author.items()
-        }
+        author_dict = {key.replace("-", "_"): value for key, value in author.items()}
         return Author(**author_dict)
 
     def as_yaml(self) -> dict[str, str]:
         fields = [f.name for f in dataclasses.fields(self)]
-        yaml_dict = {
-            field.replace("_", "-"): getattr(self, field)
-            for field in fields
-        }
+        yaml_dict = {field.replace("_", "-"): getattr(self, field) for field in fields}
         return yaml_dict
 
     def __eq__(self, cmp: Author) -> bool:
@@ -93,11 +91,12 @@ def update_citation_file(filepath: Path) -> None:
     # however, if it does exist, read the contents and append any new entries
     with open(filepath, "r") as cff_file:
         existing_data = yaml.safe_load(cff_file)
-        existing_authors = [Author.from_yaml(author) for author in existing_data["authors"]]
+        existing_authors = [
+            Author.from_yaml(author) for author in existing_data["authors"]
+        ]
 
     authors_to_add = [
-        author.as_yaml() for author in authors
-        if author not in existing_authors
+        author.as_yaml() for author in authors if author not in existing_authors
     ]
 
     if authors_to_add:
