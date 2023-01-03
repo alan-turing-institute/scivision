@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.42d1f0cc.css",
-    "main.js": "/static/js/main.29fabe8e.js",
+    "main.js": "/static/js/main.d866f04a.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/nb-2.jpg": "/static/media/nb-2.1342b7109f17a5eed789.jpg",
@@ -12,7 +12,7 @@
     "static/media/vedge-detector.jpg": "/static/media/vedge-detector.f7bf015174128e766a6b.jpg",
     "static/media/logo-full.png": "/static/media/logo-full.56512facec9ee0d42bb5.png",
     "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.d43490443ea20251ed01.jpg",
-    "static/media/data-001.jpg": "/static/media/data-001.6777dab0849f2cee5f66.jpg",
+    "static/media/oppd-seedlings.jpg": "/static/media/oppd-seedlings.6777dab0849f2cee5f66.jpg",
     "static/media/detectreeRGB-forest.jpg": "/static/media/detectreeRGB-forest.6320de8dea937a52ce79.jpg",
     "static/media/image-classifiers.jpg": "/static/media/image-classifiers.e447edb1b6a36c9f6cac.jpg",
     "static/media/butterfly-classification-model.jpg": "/static/media/butterfly-classification-model.633494af6f728f4e9220.jpg",
@@ -21,11 +21,11 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/index.html",
     "main.42d1f0cc.css.map": "/static/css/main.42d1f0cc.css.map",
-    "main.29fabe8e.js.map": "/static/js/main.29fabe8e.js.map",
+    "main.d866f04a.js.map": "/static/js/main.d866f04a.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42d1f0cc.css",
-    "static/js/main.29fabe8e.js"
+    "static/js/main.d866f04a.js"
   ]
 }
