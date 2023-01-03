@@ -1,3 +1,61 @@
-.h1 {
-    color: #712ca1;
+h3 {
+    font-family: monospace;
+}
+
+h4 {
+    color: #6c757d;
+    font-weight: 200;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    margin-top: 2.5ex;
+    margin-bottom: 1.5ex;
+}
+
+.login-bar {
+    font-size: x-small;
+    background-color: Lavender;
+    font-weight: bold;
+    line-height: 1.0;
+}
+
+.text-readable-width {
+    max-width: 76ex;
+
+    /* centre horizontally */
+    margin: 0 auto;
+}
+
+.bg-highlight {
+    background-color: #fff8e6;
+}
+
+.card-columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+
+    column-count: 1;
+}
+@media (min-width: 768px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+
+        column-count: 2;
+    }
+}
+@media (min-width: 992px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+
+        column-count: 3;
+    }
+}
+@media (min-width: 1200px) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+
+        column-count: 4;
+    }
 }
