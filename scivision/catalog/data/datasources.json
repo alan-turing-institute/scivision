@@ -38,7 +38,7 @@
         "multispectral",
         "hyperspectral"
       ],
-      "url": "https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+      "url": "https://github.com/alan-turing-institute/oppd-seedlings",
       "format": "image",
       "labels_provided": true,
       "institution": [
