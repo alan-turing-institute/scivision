@@ -1054,6 +1054,25 @@ function App() {
                         <Route path="/new-model" element={
                                    <>
                                        <ModelNav />
+                                       <h3>Add a model to the catalog</h3>
+                                       <h4>Prerequistes</h4>
+
+                                       <p  className="text-readable-width">
+                                       <ul>
+                                       <li> The source code of your model is shared in a public repository (GitHub or elsewhere). The Scivision catalog does not host your model source code directly, just some metadata about it, so this must be accessible elsewhere.</li>
+                                       <li> Your model is in the <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-repo-structure">correct format for Scivision</a></li>
+                                       <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-config-file">model config file</a> in your repository, to use below</li>
+                                       </ul>
+                                       </p>
+
+                                       <h4> Add your model</h4>
+
+                                       <p className="text-readable-width">
+                                          Add some details about your model below.  Submitting the form will open a pull request (from your GitHub user account) that adds details of your model to the catalog.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+
+                                          <p className="text-readable-width mt-4">
+                                          Make sure to <strong>log in with the link above</strong> before completing the form
+                                          </p>
                                        <div className="text-readable-width mt-4">
                                            <CatalogEntryForm
                                                gh_logged_in={gh_logged_in}
@@ -1092,6 +1111,30 @@ function App() {
                         <Route path="/new-datasource" element={
                                    <>
                                        <DatasourceNav />
+
+                                       <h3>Add a datasource to the catalog</h3>
+                                       <h4>Prerequistes</h4>
+
+                                       <p  className="text-readable-width">
+                                       <ul>
+                                       <li> Your data is in a publicly accessible location (for example, on <a href="https://zenodo.org/">Zenodo</a>). The Scivision catalog does not host your data directly, just some metadata about it, so this must be accessible elsewhere.</li>
+                                       <li> Your data repository is in the <a href="">format expected by Scivision</a> </li>
+                                       <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">data config file</a> in your repository, to use below</li>
+
+
+                                       </ul>
+                                       </p>
+
+                                       <h4> Add your datasource</h4>
+
+                                       <p className="text-readable-width">
+                                          Add some details about your data below.  Submitting the form will open a pull request (from your GitHub user account) that adds details of your datasource to the catalog.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+
+                                          <p className="text-readable-width mt-4">
+                                          Make sure to <strong>log in with the link above</strong> before completing the form
+                                          </p>
+
+
                                        <div className="text-readable-width mt-4">
                                            <CatalogEntryForm
                                                gh_logged_in={gh_logged_in}
