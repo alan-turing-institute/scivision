@@ -28,7 +28,8 @@
       ]
     },
     {
-      "name": "data-001",
+      "name": "oppd-seedlings",
+      "description": "The Open Plant Phenotyping Database [OPPD] is a public dataset for visual recognition tasks on images of plant seedlings. The dataset consists of 7,590 images with 315,038 plant objects, representing 64,292 individual plants from 47 different species. Each plant species has been cultivated using three growth conditions (ideal, drought and natural) and tracked temporally to achieve high intra-species variability.",
       "tasks": [
         "segmentation",
         "thresholding",
@@ -38,7 +39,7 @@
         "multispectral",
         "hyperspectral"
       ],
-      "url": "https://gitlab.au.dk/AUENG-Vision/OPPD/-/archive/master/OPPD-master.zip?path=DATA/images_plants/1COMF",
+      "url": "https://github.com/alan-turing-institute/oppd-seedlings",
       "format": "image",
       "labels_provided": true,
       "institution": [
@@ -255,6 +256,24 @@
       "description": "Synthetic cryoEM data from Parakeet",
       "url": "https://github.com/rosalindfranklininstitute/scivision-parakeet-datasource/",
       "format": "image"
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "optical microscopy",
+        "cell biology"
+      ],
+      "institution": [
+        "UCL"
+      ],
+      "tags": [],
+      "url": "https://github.com/lowe-lab-ucl/cell-cycle-scivision",
+      "format": "image",
+      "name": "cell-cycle-scivision",
+      "description": "Crops of H2B-FP stained nuclei in MDCK cells. "
     }
   ]
 }
