@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.42d1f0cc.css",
-    "main.js": "/static/js/main.d866f04a.js",
+    "main.js": "/static/js/main.d92a75ea.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/nb-2.jpg": "/static/media/nb-2.1342b7109f17a5eed789.jpg",
@@ -10,6 +10,7 @@
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
     "static/media/flower-classification-model.jpg": "/static/media/flower-classification-model.e7631bb6950118a863cb.jpg",
     "static/media/vedge-detector.jpg": "/static/media/vedge-detector.f7bf015174128e766a6b.jpg",
+    "static/media/PlantCV.jpg": "/static/media/PlantCV.0e679f4f5f730f23a411.jpg",
     "static/media/logo-full.png": "/static/media/logo-full.56512facec9ee0d42bb5.png",
     "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.d43490443ea20251ed01.jpg",
     "static/media/oppd-seedlings.jpg": "/static/media/oppd-seedlings.6777dab0849f2cee5f66.jpg",
@@ -21,11 +22,11 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/index.html",
     "main.42d1f0cc.css.map": "/static/css/main.42d1f0cc.css.map",
-    "main.d866f04a.js.map": "/static/js/main.d866f04a.js.map",
+    "main.d92a75ea.js.map": "/static/js/main.d92a75ea.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42d1f0cc.css",
-    "static/js/main.d866f04a.js"
+    "static/js/main.d92a75ea.js"
   ]
 }
