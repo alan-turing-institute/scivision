@@ -4,7 +4,7 @@
   "entries": [
     {
       "name": "stardist",
-      "description": "Object Detection with Star-convex Shapes",
+      "description": "Single class object detection and segementation of star-convex polygons",
       "tasks": [
         "object-detection",
         "segmentation"
