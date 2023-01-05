@@ -3,8 +3,8 @@
   "name": "default",
   "entries": [
     {
-      "name": "stardist",
-      "description": "Cell and nuclei image test dataset for object detection",
+      "name": "stardist-cell-nuclei-2D",
+      "description": "Cell microscopy test dataset for detection and segmentation of individual nuclei",
       "tasks": [
         "object-detection",
         "segmentation"
