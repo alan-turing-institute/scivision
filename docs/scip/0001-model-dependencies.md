@@ -129,3 +129,7 @@ Challenges
 ### Other ideas
 - [Briefcase](https://pypi.org/project/briefcase/)?
 
+## References
+
+- https://pypackaging-native.github.io/
+
