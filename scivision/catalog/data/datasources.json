@@ -96,7 +96,7 @@
       ]
     },
     {
-      "name": "data-005",
+      "name": "coastal-edges",
       "description": "Sample dataset of satellite imagery required to demonstrate the VEdge detector authored by Rogers et al. (2021)",
       "tasks": [
         "classification",
