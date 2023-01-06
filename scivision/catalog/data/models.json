@@ -181,6 +181,7 @@
     },
     {
       "name": "huggingface-classifiers",
+      "description": "Selection of image classifiers taken from https://huggingface.co/"
       "tasks": [
         "classification"
       ],
@@ -201,6 +202,7 @@
     },
     {
       "name": "huggingface-segmentation",
+      "description": "Selection of segmentation algorithms taken from https://huggingface.co/"
       "tasks": [
         "segmentation"
       ],
@@ -217,6 +219,7 @@
     },
     {
       "name": "huggingface-object-detection",
+      "description": "Selection of object detection algorithms taken from https://huggingface.co/"
       "tasks": [
         "object-detection"
       ],
