@@ -55,6 +55,7 @@
     },
     {
       "name": "greenotyper",
+      "description": "Greenotyper is an image analysis tool for large scale plant phenotyping experiments.",
       "tasks": [
         "segmentation"
       ],
@@ -145,6 +146,7 @@
     },
     {
       "name": "image-classifiers",
+      "description": "Scivision plugin for the image-classifiers package available at https://pypi.org/project/image-classifiers/",
       "tasks": [
         "classification"
       ],
@@ -219,6 +221,7 @@
     },
     {
       "name": "detectreeRGB-forest",
+      "description": "Detect changes in tall tree height with machine learning, LiDAR, and RGB imagery",
       "tasks": [
         "object-detection",
         "segmentation"
@@ -241,6 +244,7 @@
     },
     {
       "name": "flower-classification-model",
+      "description": "Identify flower species",
       "tasks": [
         "classification"
       ],
@@ -259,6 +263,7 @@
     },
     {
       "name": "butterfly-classification-model",
+      "description": "Identify butterfly species",
       "tasks": [
         "classification"
       ],
