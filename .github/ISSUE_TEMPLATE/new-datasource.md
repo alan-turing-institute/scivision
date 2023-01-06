@@ -16,7 +16,9 @@ Name, description, link etc.
 
 <!-- These tasks to be addressed after opening the issue - when they are all done, the issue can be closed -->
 
+([Full documentation on creating a datasource](https://scivision.readthedocs.io/en/latest/data_repository_template.html))
+
 - [ ] Publicly accessible sith a stable link (and suitably licenced)
-- [ ] Data has an associated scivision data yml file (or data loader/plugin)
+- [ ] The data has an associated scivision data yml file (or data loader/plugin)
 - [ ] Catalog metadata added (can open a pull request with https://scivision.org/#/new-datasource)
 - [ ] Thumbnail image uploaded
