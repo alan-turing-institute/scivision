@@ -53,25 +53,6 @@
       ]
     },
     {
-      "name": "data-002",
-      "tasks": [
-        "classification"
-      ],
-      "domains": [
-        "oceanography"
-      ],
-      "url": "https://github.com/scotthosking/intake-plankton/blob/main/plktn.yaml",
-      "format": "image",
-      "labels_provided": true,
-      "institution": [
-        "CEFAS"
-      ],
-      "tags": [
-        "help-needed",
-        "2D"
-      ]
-    },
-    {
       "name": "scivision-test-data",
       "description": "Test data comprised of individual images including a Koala (suitable for classification), a busy airport (suitable for object detection), and an image containing a Dog and a Cat (suitable for segmentation).",
       "tasks": [
