@@ -72,8 +72,8 @@
       ]
     },
     {
-      "name": "data-003",
-      "description": "Koala",
+      "name": "scivision-test-data",
+      "description": "Test data comprised of individual images including a Koala (suitable for classification), a busy airport (suitable for object detection), and an image containing a Dog and a Cat (suitable for segmentation).",
       "tasks": [
         "object-detection",
         "classification"
