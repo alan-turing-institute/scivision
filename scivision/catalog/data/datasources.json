@@ -122,7 +122,7 @@
       ]
     },
     {
-      "name": "data-006",
+      "name": "treecrowns",
       "description": "Sample dataset of drone RGB imagery required to demonstrate the detectreeRGB authored by Hickman et al. (2021)",
       "tasks": [
         "object-detection",
