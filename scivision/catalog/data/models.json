@@ -74,23 +74,6 @@
       ]
     },
     {
-      "name": "scivision-test-plugin",
-      "tasks": [
-        "object-detection"
-      ],
-      "url": "https://github.com/alan-turing-institute/scivision-test-plugin",
-      "pkg_url": "git+https://github.com/alan-turing-institute/scivision-test-plugin.git@master",
-      "format": "image",
-      "pretrained": true,
-      "labels_required": false,
-      "institution": [
-        "alan-turing-institute"
-      ],
-      "tags": [
-        "dummy"
-      ]
-    },
-    {
       "name": "mapreader-plant",
       "description": "automated detection of plant patches in images of individual plants for the extraction of data on phenotypic traits",
       "tasks": [
