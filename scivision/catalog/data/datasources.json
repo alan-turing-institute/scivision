@@ -74,7 +74,7 @@
       ]
     },
     {
-      "name": "data-004",
+      "name": "cefas-plankton",
       "description": "Sample dataset of Plankton required to demonstrate the Rapid Identification of Plankton using Machine Learning Project undertaken by CEFAS, The Alan Turing Institute and Plankton Analytics Ltd",
       "tasks": [
         "classification"
