@@ -199,6 +199,11 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Header",
         description="The title header for the project page",
     )
+    description: Optional[str] = Field(
+        None,
+        title="Description",
+        description="Detailed description of the project",
+    )
     tasks: Tuple[TaskEnum, ...] = Field(
         (),
         title="Tasks",
