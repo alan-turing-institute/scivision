@@ -3,7 +3,8 @@
   "name": "default",
   "entries": [
     {
-      "name": "model-000",
+      "name": "stardist",
+      "description": "Single class object detection and segementation of star-convex polygons",
       "tasks": [
         "object-detection",
         "segmentation"
