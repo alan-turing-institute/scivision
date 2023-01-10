@@ -28,7 +28,8 @@
       ]
     },
     {
-      "name": "model-001",
+      "name": "PlantCV",
+      "description": "Open-source image analysis software package targeted for plant phenotyping",
       "tasks": [
         "segmentation",
         "thresholding",
