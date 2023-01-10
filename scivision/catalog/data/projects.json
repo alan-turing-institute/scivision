@@ -3,31 +3,21 @@
   "name": "default",
   "entries": [
     {
-      "name": "Tutorials",
-      "header": "Scivision tutorials project page",
+      "name": "sept22-connections-workshop",
+      "description": "PhD candidates attended a workshop at The Alan Turing Institute to get some hands-on experience working on scivision as a piece of research software. The task involved adding pre-trained models and datasources to the scivision catalog. Succesful submissions include two classification models, for flowers and butterflies, and related datasets.",
+      "header": "September 2022 Scivision Connections Workshop: Flower and Butterfly Classification",
       "tasks": [
-        "classification",
-        "object-detection",
-        "segmentation"
+        "classification"
       ],
       "models": [
-        "image-classifiers",
-        "huggingface-classifiers",
-        "huggingface-object-detection",
-        "huggingface-segmentation",
         "butterfly-classification-model",
         "flower-classification-model"
       ],
       "datasources": [
-        "data-003",
-        "data-005",
         "flowers",
         "butterflies"
       ],
       "notebooks": [
-        "https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/how-to-use-scivision.ipynb",
-        "https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/object-detection.ipynb",
-        "https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/segmentation.ipynb",
         "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/ButterflyClassification.ipynb",
         "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/FlowerClassification.ipynb"
       ],
@@ -35,12 +25,11 @@
         "alan-turing-institute"
       ],
       "authors": [
-        "Ed Chalstrey"
+        "Nick Barlow",
+        "Pam Wochner"
       ],
       "contributors": [
-        "Nick Barlow",
-        "Pam Wochner",
-        "Alan Lowe",
+        "Ed Chalstrey",
         "Oliver Strickson"
       ],
       "tags": [
