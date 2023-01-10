@@ -4,8 +4,8 @@
   "entries": [
     {
       "name": "sept22-connections-workshop",
-      "description": "PhD candidates attended a workshop at The Alan Turing Institute to get some hands-on experience working on scivision as a piece of research software. The task involved adding pre-trained models and datasources to the scivision catalog. Succesful submissions include two classification models, for flowers and butterflies, and related datasets.",
       "header": "September 2022 Scivision Connections Workshop: Flower and Butterfly Classification",
+      "description": "PhD candidates attended a workshop at The Alan Turing Institute to get some hands-on experience working on scivision as a piece of research software. The task involved adding pre-trained models and datasources to the scivision catalog. Succesful submissions include two classification models, for flowers and butterflies, and related datasets.",
       "tasks": [
         "classification"
       ],
