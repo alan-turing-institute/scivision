@@ -409,7 +409,7 @@ function DatasourceDefinitionListFragment({data}) {
 function ProjectDefinitionListFragment({data}) {
     return (<>
   
-                <dt className="col-sm-3">[INSERT HEADER]</dt>
+                <dt className="col-sm-3">{data.header?data.header:"(none provided)"}</dt>
                 <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
 
             </>);
