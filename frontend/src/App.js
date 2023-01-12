@@ -886,6 +886,17 @@ function DatasourceNav() {
     );
 }
 
+// Component: Tab-bar for projects (grid, table, create etc)
+function ProjectNav() {
+    return (
+        <TableGridViewNav
+            gridRoute="/project-grid"
+            tableRoute="/project-table"
+            createNewRoute="/new-project"
+        />
+    );
+}
+
 // Component: The home page
 // route: /
 function Home() {
@@ -1248,16 +1259,33 @@ function App() {
                                        </div>
                                    </>
                                }/>
+                               
+                         <Route path="/project-grid" element={
+                                    <>
+                                        <ProjectNav />
+                                        <ProjectGrid />
+                                    </>
+                                } />
+
+                         <Route path="/project-table" element={
+                                    <>
+                                        <ProjectNav />
+                                        <ProjectGrid />
+                                    </>
+                                } />
+
+                         <Route path="/project/:project_name_encoded" element={
+                                    <>
+                                        <ProjectNav />
+                                        <div className="text-readable-width mt-4">
+                                            <Project />
+                                        </div>
+                                    </>
+                                } />
 
                         <Route path="/examples" element={
 
                                    <p> More to come here soon. For now, see the <a href="https://github.com/scivision-gallery">Scivision Example Gallery</a> on GitHub. </p>
-                               }/>
-
-                        <Route path="/projects" element={
-                                   <>
-                                        Details of projects using Scivision to follow...
-                                   </>
                                }/>
 
                         <Route path="/community" element={
