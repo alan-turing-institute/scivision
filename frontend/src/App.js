@@ -800,20 +800,13 @@ function Project() {
   const { project_name_encoded } = useParams();
   const project_name = decodeURIComponent(project_name_encoded);
   const project = projects.entries.find(ds => ds.name == project_name);
-    const markdown = `
-# Markdown
-
-wergwergwerg
-
-## h2
-  `;
 
     return (
       <>
           <h3>{project.header}</h3>
           <img src={project_thumbnails[`./${project.name}.jpg`]} />
           <MarkdownView
-            markdown={markdown}
+            markdown={project.page}
             options={{ tables: true, emoji: true }}
           />
           <dl className="row">
