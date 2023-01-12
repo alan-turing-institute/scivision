@@ -1260,28 +1260,28 @@ function App() {
                                    </>
                                }/>
                                
-                         <Route path="/project-grid" element={
-                                    <>
-                                        <ProjectNav />
-                                        <ProjectGrid />
-                                    </>
-                                } />
+                        <Route path="/project-grid" element={
+                                  <>
+                                      <ProjectNav />
+                                      <ProjectGrid />
+                                  </>
+                              } />
 
-                         <Route path="/project-table" element={
-                                    <>
-                                        <ProjectNav />
-                                        <ProjectTable />
-                                    </>
-                                } />
+                        <Route path="/project-table" element={
+                                   <>
+                                       <ProjectNav />
+                                       <ProjectTable />
+                                   </>
+                               } />
 
-                         <Route path="/project/:project_name_encoded" element={
-                                    <>
-                                        <ProjectNav />
-                                        <div className="text-readable-width mt-4">
-                                            <Project />
-                                        </div>
-                                    </>
-                                } />
+                        <Route path="/project/:project_name_encoded" element={
+                                  <>
+                                      <ProjectNav />
+                                      <div className="text-readable-width mt-4">
+                                          <Project />
+                                      </div>
+                                  </>
+                              } />
 
                         <Route path="/examples" element={
 
