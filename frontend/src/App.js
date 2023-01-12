@@ -39,6 +39,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
+import projects from './data/projects.json';
 import DataTable from 'react-data-table-component';
 
 import { Octokit } from "octokit";
@@ -92,6 +93,11 @@ const datasource_thumbnails_ctxt = require.context(
     './data/thumbnails/datasources', false, /\.jpg$/
 );
 const datasource_thumbnails = context_to_paths(datasource_thumbnails_ctxt);
+
+const project_thumbnails_ctxt = require.context(
+    './data/thumbnails/projects', false, /\.jpg$/
+);
+const project_thumbnails = context_to_paths(project_thumbnails_ctxt);
 
 
 // Utility function to download a text file, with the given filename and contents 'text'
@@ -396,7 +402,18 @@ function DatasourceDefinitionListFragment({data}) {
             </>);
 }
 
+// Component: Fragment containing definition items for the expanded
+// view of the project table and the page for one project
+//
+// * data - one project
+function ProjectDefinitionListFragment({data}) {
+    return (<>
+  
+                <dt className="col-sm-3"><a href={data.header}>{data.header}</a></dt>
+                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
 
+            </>);
+}
 
 // Component: List of models or datasources (depending on prop), with
 // choice of grid or table view.  One of these views will be rendered,
@@ -560,6 +577,50 @@ function DatasourceTable() {
     );
 }
 
+// Component: Projects, table view
+// route: /projects
+function ProjectTable() {
+    const columns = [
+        {
+            name: 'Thumbnail',
+            width: "150px",
+            selector: row => project_thumbnails[`./${row.name}.jpg`] === undefined,
+            sortable: true,
+            cell: (row, index, column, id) => {
+                const thumb = project_thumbnails[`./${row.name}.jpg`];
+                return renderThumbnailForTable(thumb);
+            }
+        },
+        {
+            selector: row => row.name,
+            name: 'Name',
+            sortable: true,
+            grow: 0.3
+        },
+        {
+            selector: row => row.tasks,
+            name: 'Tasks',
+            cell: (row, index, column, id) => row.tasks.map(
+                (t) => <TaskBadge taskName={t} />
+            )
+        },
+    ];
+
+    return (
+        <ProjectTable columns={columns} data={projects.entries} title=""
+                   expandableRowsComponent={(props) => (
+                       <TableCardDropdown
+                           element={
+                               <ProjectDefinitionListFragment {...props}/>
+                           } />
+                   )}
+                   expandableRows
+                   expandableRowsHideExpander
+                   expandOnRowClicked
+        />
+    );
+}
+
 // returns a function component, for a Popover describing the current
 // resource (model or datasource).  Assumes it has name, description,
 // and tasks properties.
@@ -679,6 +740,26 @@ function DatasourceGrid() {
     );
 }
 
+
+// Component: Projects, thumbnail grid view
+// route: /project-grid
+function ProjectGrid() {
+    const image_cards = projects.entries.map(
+        makeThumbnail({
+            getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
+            getLink: (project) => "/project/" + encodeURIComponent(project.name),
+            doPopover: true,
+            asCard: true
+        })
+    );
+
+    return (
+        <div className="card-columns mt-2">
+            {image_cards}
+        </div>
+    );
+}
+
 // Component: Details about a model
 // route: /model/:model-name
 function Model() {
@@ -707,6 +788,22 @@ function Datasource() {
                 <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} />
                 <dl className="row">
                     <DatasourceDefinitionListFragment data={datasource} />
+                </dl>
+            </>);
+}
+
+// Component: Details about a project
+// route: /project/:project-name
+function Project() {
+    const { project_name_encoded } = useParams();
+    const project_name = decodeURIComponent(project_name_encoded);
+    const project = projects.entries.find(ds => ds.name == project_name);
+
+    return (<>
+                <h3>{project.name}</h3>
+                <img src={project_thumbnails[`./${project.name}.jpg`]} />
+                <dl className="row">
+                    <ProjectDefinitionListFragment data={project} />
                 </dl>
             </>);
 }
@@ -964,7 +1061,12 @@ function App() {
                             Examples
                         </Nav.Link>
 
-                        <Nav.Link to="projects" as={NavLink}>
+                        <Nav.Link to="project-grid" as={NavLink}
+                                  active={
+                                      location_root == "project-table"
+                                          || location_root == "new-project"
+                                          || location_root == "project"
+                                  }>
                             Projects
                         </Nav.Link>
 
