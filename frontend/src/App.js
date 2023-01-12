@@ -811,9 +811,9 @@ function Project() {
           />
           <dl className="row">
             <dt className="col-sm-3">Models</dt>
-            <dd className="col-sm-9">{project.models?project.models:"(none provided)"}</dd>
+            <dd className="col-sm-9">{project.models}</dd>
             <dt className="col-sm-3">Data</dt>
-            <dd className="col-sm-9">{project.datasources?project.datasources:"(none provided)"}</dd>
+            <dd className="col-sm-9">{project.datasources}</dd>
           </dl>
     </>
     );
