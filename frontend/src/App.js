@@ -1270,7 +1270,7 @@ function App() {
                          <Route path="/project-table" element={
                                     <>
                                         <ProjectNav />
-                                        <ProjectGrid />
+                                        <ProjectTable />
                                     </>
                                 } />
 
