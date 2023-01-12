@@ -45,6 +45,8 @@ import DataTable from 'react-data-table-component';
 import { Octokit } from "octokit";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
 
+import MarkdownView from 'react-showdown';
+
 
 const server_configs = {
     development: {
@@ -795,17 +797,31 @@ function Datasource() {
 // Component: Details about a project
 // route: /project/:project-name
 function Project() {
-    const { project_name_encoded } = useParams();
-    const project_name = decodeURIComponent(project_name_encoded);
-    const project = projects.entries.find(ds => ds.name == project_name);
+  const { project_name_encoded } = useParams();
+  const project_name = decodeURIComponent(project_name_encoded);
+  const project = projects.entries.find(ds => ds.name == project_name);
+    const markdown = `
+# Markdown
 
-    return (<>
-                <h3>{project.name}</h3>
-                <img src={project_thumbnails[`./${project.name}.jpg`]} />
-                <dl className="row">
-                    <ProjectDefinitionListFragment data={project} />
-                </dl>
-            </>);
+wergwergwerg
+
+## h2
+  `;
+
+    return (
+      <>
+          <h3>{project.name}</h3>
+          <img src={project_thumbnails[`./${project.name}.jpg`]} />
+          <dl className="row">
+              <ProjectDefinitionListFragment data={project} />
+          </dl>
+      
+      <MarkdownView
+        markdown={markdown}
+        options={{ tables: true, emoji: true }}
+      />
+    </>
+    );
 }
 
 // Component: Username/logout link (shown when logged in)
