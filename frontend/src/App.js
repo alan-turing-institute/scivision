@@ -810,16 +810,18 @@ wergwergwerg
 
     return (
       <>
-          <h3>{project.name}</h3>
+          <h3>{project.header}</h3>
           <img src={project_thumbnails[`./${project.name}.jpg`]} />
+          <MarkdownView
+            markdown={markdown}
+            options={{ tables: true, emoji: true }}
+          />
           <dl className="row">
-              <ProjectDefinitionListFragment data={project} />
+            <dt className="col-sm-3">Models</dt>
+            <dd className="col-sm-9">{project.models?project.models:"(none provided)"}</dd>
+            <dt className="col-sm-3">Data</dt>
+            <dd className="col-sm-9">{project.datasources?project.datasources:"(none provided)"}</dd>
           </dl>
-      
-      <MarkdownView
-        markdown={markdown}
-        options={{ tables: true, emoji: true }}
-      />
     </>
     );
 }
