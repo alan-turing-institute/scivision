@@ -27,6 +27,7 @@ import { React, useState, useEffect, useRef } from 'react';
 import Form from '@rjsf/bootstrap-4';
 import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
+import project_schema from './project_schema.js'
 
 import { Nav, Navbar } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
@@ -1347,10 +1348,10 @@ function App() {
                                        <div className="text-readable-width mt-4">
                                            <CatalogEntryForm
                                                gh_logged_in={gh_logged_in}
-                                               schema={model_schema}
-                                               catalog_kind="model"
-                                               catalog_path="scivision/catalog/data/models.json"
-                                               download_filename="one-model.json"
+                                               schema={project_schema}
+                                               catalog_kind="project"
+                                               catalog_path="scivision/catalog/data/projects.json"
+                                               download_filename="one-project.json"
                                            />
                                        </div>
                                    </>
