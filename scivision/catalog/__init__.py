@@ -4,6 +4,8 @@ from .catalog import (
     CatalogModels,
     CatalogDatasourceEntry,
     CatalogDatasources,
+    CatalogProjectEntry,
+    CatalogProjects,
     PandasCatalog,
     default_catalog,
 )
