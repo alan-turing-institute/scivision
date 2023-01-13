@@ -802,15 +802,15 @@ function Project() {
   const project = projects.entries.find(ds => ds.name == project_name);
   let model_path = "../model/"
   let data_path = "../datasource/"
-  const datasource_rows = [];
-  const model_rows = [];
+  const datasource_links = [];
+  const model_links = [];
   for (const model of project.models) {
     let full_path = model_path.concat(model)
-    model_rows.push(<dd className="col-sm-9"><Link to={full_path}>"{model}</Link></dd>);
+    model_links.push(<Link to={full_path}>"{model}</Link>);
   }
   for (const datasource of project.datasources) {
     let full_path = data_path.concat(datasource)
-    datasource_rows.push(<dd className="col-sm-9"><Link to={full_path}>"{datasource}</Link></dd>);
+    datasource_links.push(<Link to={full_path}>"{datasource}</Link>);
   }
     return (
       <>
@@ -822,9 +822,9 @@ function Project() {
           />
           <dl className="row">
             <dt className="col-sm-3">Models</dt>
-            {model_rows}
+            <dd className="col-sm-9">{model_links}</dd>
             <dt className="col-sm-3">Data</dt>
-            {datasource_rows}
+            <dd className="col-sm-9">{datasource_links}</dd>
           </dl>
     </>
     );
