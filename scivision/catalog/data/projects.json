@@ -18,20 +18,8 @@
         "flowers",
         "butterflies"
       ],
-      "notebooks": [
-        "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/ButterflyClassification.ipynb",
-        "https://github.com/scivision-gallery/connections-workshop-examples/blob/main/FlowerClassification.ipynb"
-      ],
       "institution": [
         "alan-turing-institute"
-      ],
-      "authors": [
-        "Nick Barlow",
-        "Pam Wochner"
-      ],
-      "contributors": [
-        "Ed Chalstrey",
-        "Oliver Strickson"
       ],
       "tags": [
         "tutorial",

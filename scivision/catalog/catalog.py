@@ -202,17 +202,12 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     description: Optional[str] = Field(
         None,
         title="Description",
-        description="Detailed description of the project",
+        description="Short description of the project (that will appear when hovering on the project thumbnail)",
     )
     page: str = Field(
         None,
         title="Page",
         description="Markdown formatted content for the project page",
-    )
-    tasks: Tuple[TaskEnum, ...] = Field(
-        (),
-        title="Tasks",
-        description="Which task (or tasks) does the model perform?",
     )
     # TODO: update so this must be a model from the model catalog
     models: Tuple[str, ...] = Field(
@@ -226,26 +221,16 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
     )
-    notebooks: Tuple[FlexibleUrl, ...] = Field(
+    tasks: Tuple[TaskEnum, ...] = Field(
         (),
-        title="Notebooks",
-        description="Links to notebooks associated with the project",
+        title="Tasks",
+        description="Which task (or tasks) do the CV models used in the project perform?",
     )
     institution: Tuple[str, ...] = Field(
         (),
         title="Institution(s)",
         description="A list of institutions that produced or are associated with "
         "the project (one per item)",
-    )
-    authors: Tuple[str, ...] = Field(
-        (),
-        title="Authors",
-        description="The project partcipants, key authors of the project page and any associated material",
-    )
-    contributors: Optional[Tuple[str, ...]] = Field(
-        (),
-        title="Contributors",
-        description="Any contributors to the project not in the authors list",
     )
     tags: Tuple[str, ...]
 
