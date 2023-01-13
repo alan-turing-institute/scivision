@@ -190,7 +190,8 @@ def get_models():
     return names
 
 
-ModelEnum = Enum('ModelEnum', get_models())
+modelEnumStrings = ((x,x) for x in get_models())
+ModelEnum = Enum('ModelEnum', modelEnumStrings)
             
 
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
