@@ -800,7 +800,8 @@ function Project() {
   const { project_name_encoded } = useParams();
   const project_name = decodeURIComponent(project_name_encoded);
   const project = projects.entries.find(ds => ds.name == project_name);
-
+  let model_path = "../model/"
+  let butter = model_path.concat("butterfly-classification-model")
     return (
       <>
           <h3>{project.header}</h3>
@@ -811,7 +812,7 @@ function Project() {
           />
           <dl className="row">
             <dt className="col-sm-3">Models</dt>
-            <dd className="col-sm-9">{project.models}</dd>
+            <dd className="col-sm-9"><Link to={butter}>ButterflyClassification</Link></dd>
             <dt className="col-sm-3">Data</dt>
             <dd className="col-sm-9">{project.datasources}</dd>
           </dl>
