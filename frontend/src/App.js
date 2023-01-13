@@ -801,10 +801,12 @@ function Project() {
   const project_name = decodeURIComponent(project_name_encoded);
   const project = projects.entries.find(ds => ds.name == project_name);
   let model_path = "../model/"
+  let data_path = "../datasource/"
   let butter = model_path.concat("butterfly-classification-model")
   const datasource_rows = [];
   for (const x of project.datasources) {
-    datasource_rows.push(<dd className="col-sm-9">{x}</dd>);
+    let full_path = data_path.concat(x)
+    datasource_rows.push(<dd className="col-sm-9"><Link to={full_path}>"{x}</Link></dd>);
   }
     return (
       <>
