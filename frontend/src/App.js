@@ -816,12 +816,13 @@ function Project() {
   }
     return (
       <>
-          <h3>{project.header}</h3>
+          <h1>{project.header}</h1>
           <img src={project_thumbnails[`./${project.name}.jpg`]} />
           <MarkdownView
             markdown={project.page}
             options={{ tables: true, emoji: true }}
           />
+          <h2>Associated CV models and data:</h2>
           <dl className="row">
             <dt className="col-sm-3">Models</dt>
             <dd className="col-sm-9">{model_links}</dd>
