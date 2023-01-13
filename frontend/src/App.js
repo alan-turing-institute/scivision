@@ -1333,10 +1333,13 @@ function App() {
                                        </ul>
                                        </p>
 
-                                       <h4> Add your model</h4>
-
+                                       <h4> Add your project</h4>
+                                       
                                        <p className="text-readable-width">
-                                          Add some details about your model below.  Submitting the form will open a pull request (from your GitHub user account) that adds details of your model to the catalog.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+                                          Add the details that will form the basis of your project's Scivision page below. You can format the text with <a href="https://daringfireball.net/projects/markdown/basics">Markdown</a>, which will allow you to include any headers, lists and links you feel are appropriate. You can then select the models and data you added.</p>
+                                       <p></p>
+                                       <p className="text-readable-width">
+                                          Submitting the form will open a pull request (from your GitHub user account) that adds details of your project page to Scivision.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
 
                                           <p className="text-readable-width mt-4">
                                           Make sure to <strong>log in with the link above</strong> before completing the form
