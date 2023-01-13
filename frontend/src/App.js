@@ -804,12 +804,10 @@ function Project() {
   let data_path = "../datasource/"
   const datasource_links = [];
   const model_links = [];
-  const model_imgs = [];
   for (const model_name of project.models) {
     let full_path = model_path.concat(model_name)
-    model_links.push(<Link to={full_path}>"{model_name}</Link>);
     const model = models.entries.find(model => model.name == model_name);
-    model_imgs.push(<img src={model_thumbnails[`./${model.name}.jpg`]} />)
+    model_links.push(<Link to={full_path}>"<img src={model_thumbnails[`./${model.name}.jpg`]} /></Link>);
   }
   for (const datasource_name of project.datasources) {
     let full_path = data_path.concat(datasource_name)
@@ -825,7 +823,7 @@ function Project() {
           />
           <dl className="row">
             <dt className="col-sm-3">Models</dt>
-            <dd className="col-sm-9">{model_links}{model_imgs}</dd>
+            <dd className="col-sm-9">{model_links}</dd>
             <dt className="col-sm-3">Data</dt>
             <dd className="col-sm-9">{datasource_links}</dd>
           </dl>
