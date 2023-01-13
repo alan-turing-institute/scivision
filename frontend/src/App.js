@@ -1324,7 +1324,7 @@ function App() {
                         <Route path="/new-project" element={
                                    <>
                                        <ModelNav />
-                                       <h3>Add your research project to Scivision</h3>
+                                       <h3>Create a Scivision project page for your research</h3>
                                        <h4>Prerequistes</h4>
 
                                        <p  className="text-readable-width">
