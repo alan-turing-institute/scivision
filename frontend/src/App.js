@@ -802,11 +802,15 @@ function Project() {
   const project = projects.entries.find(ds => ds.name == project_name);
   let model_path = "../model/"
   let data_path = "../datasource/"
-  let butter = model_path.concat("butterfly-classification-model")
   const datasource_rows = [];
-  for (const x of project.datasources) {
-    let full_path = data_path.concat(x)
-    datasource_rows.push(<dd className="col-sm-9"><Link to={full_path}>"{x}</Link></dd>);
+  const model_rows = [];
+  for (const model of project.models) {
+    let full_path = model_path.concat(model)
+    model_rows.push(<dd className="col-sm-9"><Link to={full_path}>"{model}</Link></dd>);
+  }
+  for (const datasource of project.datasources) {
+    let full_path = data_path.concat(datasource)
+    datasource_rows.push(<dd className="col-sm-9"><Link to={full_path}>"{datasource}</Link></dd>);
   }
     return (
       <>
@@ -818,7 +822,7 @@ function Project() {
           />
           <dl className="row">
             <dt className="col-sm-3">Models</dt>
-            <dd className="col-sm-9"><Link to={butter}>ButterflyClassification</Link></dd>
+            {model_rows}
             <dt className="col-sm-3">Data</dt>
             {datasource_rows}
           </dl>
