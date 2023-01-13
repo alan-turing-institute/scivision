@@ -807,7 +807,7 @@ function Project() {
   for (const model_name of project.models) {
     let full_path = model_path.concat(model_name)
     const model = models.entries.find(model => model.name == model_name);
-    let thumbnail = <Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="project_thumbnails"/></Link>;
+    let thumbnail = <Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="halfsize_thumbnails"/></Link>;
     model_links.push(<OverlayTrigger
                         overlay={makePopover(model)}
                         placement="auto">
@@ -818,7 +818,7 @@ function Project() {
   for (const datasource_name of project.datasources) {
     let full_path = data_path.concat(datasource_name)
     const datasource = datasources.entries.find(datasource => datasource.name == datasource_name);
-    let thumbnail = <Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="project_thumbnails"/></Link>;
+    let thumbnail = <Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="halfsize_thumbnails"/></Link>;
     datasource_links.push(<OverlayTrigger
                             overlay={makePopover(datasource)}
                             placement="auto">
