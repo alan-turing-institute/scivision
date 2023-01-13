@@ -807,7 +807,16 @@ function Project() {
   for (const model_name of project.models) {
     let full_path = model_path.concat(model_name)
     const model = models.entries.find(model => model.name == model_name);
-    model_links.push(<Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="project_thumbnails"/></Link>);
+    // model_links.push(<Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="project_thumbnails"/></Link>);
+    model_links.push(<div className="card">
+        {
+            makeThumbnail({
+                getThumbnail: (model) => model_thumbnails[`./${model.name}.jpg`],
+                getLink: (model) => "/model/" + encodeURIComponent(model.name),
+                doPopover: true,
+            })(model)
+        }
+    </div>)
   }
   for (const datasource_name of project.datasources) {
     let full_path = data_path.concat(datasource_name)
