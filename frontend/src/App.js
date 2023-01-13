@@ -804,13 +804,15 @@ function Project() {
   let data_path = "../datasource/"
   const datasource_links = [];
   const model_links = [];
-  for (const model of project.models) {
-    let full_path = model_path.concat(model)
-    model_links.push(<Link to={full_path}>"{model}</Link>);
+  // const model_thumbnails = [];
+  for (const model_name of project.models) {
+    let full_path = model_path.concat(model_name)
+    model_links.push(<Link to={full_path}>"{model_name}</Link>);
+    // const model = models.entries.find(model => model.name == model_name);
   }
-  for (const datasource of project.datasources) {
-    let full_path = data_path.concat(datasource)
-    datasource_links.push(<Link to={full_path}>"{datasource}</Link>);
+  for (const datasource_name of project.datasources) {
+    let full_path = data_path.concat(datasource_name)
+    datasource_links.push(<Link to={full_path}>"{datasource_name}</Link>);
   }
     return (
       <>
