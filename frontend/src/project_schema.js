@@ -1,73 +1,25 @@
 const schema = {
-    "title": "A model catalog entry",
+    "title": "CatalogProjects",
     "type": "object",
     "properties": {
+        "catalog_type": {
+            "title": "Catalog Type",
+            "default": "scivision project catalog",
+            "type": "string"
+        },
         "name": {
             "title": "Name",
-            "description": "Short, unique name for the model (one or two words, under 20 characters recommended)",
             "type": "string"
         },
-        "description": {
-            "title": "Description",
-            "description": "Detailed description of the model",
-            "type": "string"
-        },
-        "tasks": {
-            "title": "Tasks",
-            "description": "Which task (or tasks) does the model perform?",
-            "default": [],
+        "entries": {
+            "title": "Entries",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/TaskEnum"
-            }
-        },
-        "url": {
-            "title": "URL",
-            "description": "The URL of the model. This should point to scivision model yaml file.",
-            "minLength": 1,
-            "maxLength": 65536,
-            "format": "uri",
-            "type": "string"
-        },
-        "pkg_url": {
-            "title": "Python package",
-            "description": "A pip requirement specifier for PyPI, or a URL of the archive or package (on GitHub, for exampe)",
-            "type": "string"
-        },
-        "format": {
-            "title": "Model input format",
-            "description": "The type of data consumed by the model",
-            "type": "string"
-        },
-        "pretrained": {
-            "title": "Pretrained model?",
-            "default": true,
-            "type": "boolean"
-        },
-        "labels_required": {
-            "title": "Labels required?",
-            "description": "Does the model require labeled data for training?",
-            "default": true,
-            "type": "boolean"
-        },
-        "institution": {
-            "title": "Institution(s)",
-            "description": "A list of institutions that produced or are associated with the model (one per item)",
-            "default": [],
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "tags": {
-            "title": "Tags",
-            "type": "array",
-            "items": {
-                "type": "string"
+                "$ref": "#/definitions/CatalogProjectEntry"
             }
         }
     },
-    "required": ["name", "url", "pkg_url", "format", "tags"],
+    "required": ["name", "entries"],
     "additionalProperties": false,
     "definitions": {
         "TaskEnum": {
@@ -75,6 +27,77 @@ const schema = {
             "description": "An enumeration.",
             "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
             "type": "string"
+        },
+        "CatalogProjectEntry": {
+            "title": "A project catalog entry",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "description": "Short, unique name for the project (one or two words, under 20 characters recommended)",
+                    "type": "string"
+                },
+                "header": {
+                    "title": "Header",
+                    "description": "Header that will display at the top of the project page",
+                    "type": "string"
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "Short description of the project (that will appear when hovering on the project thumbnail)",
+                    "type": "string"
+                },
+                "page": {
+                    "title": "Page",
+                    "description": "Markdown formatted content for the project page",
+                    "type": "string"
+                },
+                "models": {
+                    "title": "Models",
+                    "description": "Which models from the scivision catalog are used in the project?",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "datasources": {
+                    "title": "Datasources",
+                    "description": "Which datasources from the scivision catalog are used in the project?",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tasks": {
+                    "title": "Tasks",
+                    "description": "Which task (or tasks) do the CV models used in the project perform?",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TaskEnum"
+                    }
+                },
+                "institution": {
+                    "title": "Institution(s)",
+                    "description": "A list of institutions that produced or are associated with the project (one per item)",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tags": {
+                    "title": "Tags",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["name", "header", "tags"],
+            "additionalProperties": false
         }
     }
 }
