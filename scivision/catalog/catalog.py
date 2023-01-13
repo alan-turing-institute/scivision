@@ -192,6 +192,19 @@ def get_models():
 
 modelEnumStrings = ((x,x) for x in get_models())
 ModelEnum = Enum('ModelEnum', modelEnumStrings)
+
+
+def get_datasources():
+    datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
+    datasources = CatalogDatasources.parse_raw(datasources_raw)
+    names = []
+    for datasources_entry in datasources.entries:
+        names.append(datasources_entry["name"])
+    return names
+
+
+datasourceEnumStrings = ((x,x) for x in get_datasources())
+DataEnum = Enum('DataEnum', datasourceEnumStrings)
             
 
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
@@ -228,8 +241,7 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Models",
         description="Which models from the scivision catalog are used in the project?",
     )
-    # TODO: update so this must be a datasource from the datasource catalog
-    datasources: Tuple[str, ...] = Field(
+    datasources: Tuple[DataEnum, ...] = Field(
         (),
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
