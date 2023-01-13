@@ -10,6 +10,7 @@ from typing import Any, Dict, FrozenSet, Optional, Tuple, Union
 from pydantic import AnyUrl, BaseModel, Field, validator
 from enum import Enum
 from collections import Counter
+import json
 
 
 class TaskEnum(str, Enum):
@@ -178,7 +179,19 @@ class CatalogDatasources(BaseModel, extra="forbid"):
             raise ValueError(f"The 'name' field in the datasource catalog should be unique (duplicates: {dups})")
 
         return entries
+        
 
+def get_models():
+    models_raw = pkgutil.get_data(__name__, "data/models.json")
+    models = CatalogModels.parse_raw(models_raw)
+    names = []
+    for model_entry in models.entries:
+        names.append(model_entry["name"])
+    return names
+
+
+ModelEnum = Enum('ModelEnum', get_models())
+            
 
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
     # tasks, institution and tags are Tuples (rather than Lists) so
@@ -209,8 +222,7 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Page",
         description="Markdown formatted content for the project page",
     )
-    # TODO: update so this must be a model from the model catalog
-    models: Tuple[str, ...] = Field(
+    models: Tuple[ModelEnum, ...] = Field(
         (),
         title="Models",
         description="Which models from the scivision catalog are used in the project?",
