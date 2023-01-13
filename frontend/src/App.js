@@ -807,11 +807,12 @@ function Project() {
   for (const model_name of project.models) {
     let full_path = model_path.concat(model_name)
     const model = models.entries.find(model => model.name == model_name);
-    model_links.push(<Link to={full_path}>"<img src={model_thumbnails[`./${model.name}.jpg`]} /></Link>);
+    model_links.push(<Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} /></Link>);
   }
   for (const datasource_name of project.datasources) {
     let full_path = data_path.concat(datasource_name)
-    datasource_links.push(<Link to={full_path}>"{datasource_name}</Link>);
+    const datasource = datasources.entries.find(datasource => datasource.name == datasource_name);
+    datasource_links.push(<Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} /></Link>);
   }
     return (
       <>
