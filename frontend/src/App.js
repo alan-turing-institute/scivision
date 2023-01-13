@@ -818,7 +818,13 @@ function Project() {
   for (const datasource_name of project.datasources) {
     let full_path = data_path.concat(datasource_name)
     const datasource = datasources.entries.find(datasource => datasource.name == datasource_name);
-    datasource_links.push(<Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="project_thumbnails"/></Link>);
+    let thumbnail = <Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="project_thumbnails"/></Link>;
+    datasource_links.push(<OverlayTrigger
+                            overlay={makePopover(datasource)}
+                            placement="auto">
+                            {thumbnail}
+                            </OverlayTrigger>
+                          );
   }
     return (
       <>
