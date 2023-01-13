@@ -197,12 +197,17 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     header: str = Field(
         ...,
         title="Header",
-        description="The title header for the project page",
+        description="Header that will display at the top of the project page",
     )
     description: Optional[str] = Field(
         None,
         title="Description",
         description="Detailed description of the project",
+    )
+    page: str = Field(
+        None,
+        title="Page",
+        description="Markdown formatted content for the project page",
     )
     tasks: Tuple[TaskEnum, ...] = Field(
         (),
