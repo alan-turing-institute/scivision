@@ -28,7 +28,7 @@ const schema = {
             "default": [],
             "type": "array",
             "items": {
-                "type": "string"
+                "$ref": "#/definitions/ModelEnum"
             }
         },
         "datasources": {
@@ -37,7 +37,7 @@ const schema = {
             "default": [],
             "type": "array",
             "items": {
-                "type": "string"
+                "$ref": "#/definitions/DataEnum"
             }
         },
         "tasks": {
@@ -71,6 +71,18 @@ const schema = {
     "definitions": {
         "TaskEnum": {
             "title": "TaskEnum",
+            "description": "An enumeration.",
+            "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
+            "type": "string"
+        },
+        "ModelEnum": {
+            "title": "ModelEnum",
+            "description": "An enumeration.",
+            "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
+            "type": "string"
+        },
+        "DataEnum": {
+            "title": "DataEnum",
             "description": "An enumeration.",
             "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
             "type": "string"
