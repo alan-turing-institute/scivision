@@ -98,7 +98,7 @@
     },
     {
       "name": "coastal-edges",
-      "description": "Sample dataset of satellite RGB imagery over two locations bribie_island (RapidEye) and winterton (Planet) used to test the VEdge_Detector model described in Rogers et al (2021)",
+      "description": "Sample dataset of satellite RGB imagery over two coastal locations bribie_island (RapidEye) and winterton (Planet) used to test the VEdge_Detector model described in Rogers et al (2021)",
       "tasks": [
         "classification",
         "segmentation"
