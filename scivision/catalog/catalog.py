@@ -178,7 +178,7 @@ class CatalogDatasources(BaseModel, extra="forbid"):
             raise ValueError(f"The 'name' field in the datasource catalog should be unique (duplicates: {dups})")
 
         return entries
-        
+
 
 def get_models():
     models_raw = pkgutil.get_data(__name__, "data/models.json")
@@ -189,7 +189,7 @@ def get_models():
     return names
 
 
-modelEnumStrings = ((x,x) for x in get_models())
+modelEnumStrings = ((x, x) for x in get_models())
 ModelEnum = Enum('ModelEnum', modelEnumStrings)
 
 
@@ -202,9 +202,9 @@ def get_datasources():
     return names
 
 
-datasourceEnumStrings = ((x,x) for x in get_datasources())
+datasourceEnumStrings = ((x, x) for x in get_datasources())
 DataEnum = Enum('DataEnum', datasourceEnumStrings)
-            
+
 
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
     # tasks, institution and tags are Tuples (rather than Lists) so
