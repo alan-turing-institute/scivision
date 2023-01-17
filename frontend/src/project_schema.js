@@ -1,4 +1,4 @@
-const schema = {
+{
     "title": "A project catalog entry",
     "type": "object",
     "properties": {
@@ -69,25 +69,21 @@ const schema = {
     "required": ["name", "header", "tags"],
     "additionalProperties": false,
     "definitions": {
-        "TaskEnum": {
-            "title": "TaskEnum",
-            "description": "An enumeration.",
-            "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
-            "type": "string"
-        },
         "ModelEnum": {
             "title": "ModelEnum",
             "description": "An enumeration.",
-            "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
-            "type": "string"
+            "enum": ["stardist", "PlantCV", "greenotyper", "mapreader-plant", "resnet50-plankton", "vedge-detector", "image-classifiers", "huggingface-classifiers", "huggingface-segmentation", "huggingface-object-detection", "detectreeRGB-forest", "flower-classification-model", "butterfly-classification-model"]
         },
         "DataEnum": {
             "title": "DataEnum",
+            "description": "An enumeration.",
+            "enum": ["stardist-cell-nuclei-2D", "oppd-seedlings", "scivision-test-data", "cefas-plankton", "coastal-edges", "treecrowns", "sentinel2_stac", "flowers", "butterflies", "Parakeet", "cell-cycle-scivision"]
+        },
+        "TaskEnum": {
+            "title": "TaskEnum",
             "description": "An enumeration.",
             "enum": ["classification", "object-detection", "segmentation", "thresholding", "other"],
             "type": "string"
         }
     }
 }
-
-export default schema;
