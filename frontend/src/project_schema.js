@@ -1,4 +1,4 @@
-{
+const schema = {
     "title": "A project catalog entry",
     "type": "object",
     "properties": {
@@ -87,3 +87,5 @@
         }
     }
 }
+
+export default schema;
