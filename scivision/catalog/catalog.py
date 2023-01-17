@@ -10,6 +10,7 @@ from typing import Any, Dict, FrozenSet, Optional, Tuple, Union
 from pydantic import AnyUrl, BaseModel, Field, validator
 from enum import Enum
 from collections import Counter
+import json
 
 
 class TaskEnum(str, Enum):
@@ -178,7 +179,33 @@ class CatalogDatasources(BaseModel, extra="forbid"):
             raise ValueError(f"The 'name' field in the datasource catalog should be unique (duplicates: {dups})")
 
         return entries
+        
 
+def get_models():
+    models_raw = pkgutil.get_data(__name__, "data/models.json")
+    models = CatalogModels.parse_raw(models_raw)
+    names = []
+    for model_entry in models.entries:
+        names.append(model_entry["name"])
+    return names
+
+
+modelEnumStrings = ((x,x) for x in get_models())
+ModelEnum = Enum('ModelEnum', modelEnumStrings)
+
+
+def get_datasources():
+    datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
+    datasources = CatalogDatasources.parse_raw(datasources_raw)
+    names = []
+    for datasources_entry in datasources.entries:
+        names.append(datasources_entry["name"])
+    return names
+
+
+datasourceEnumStrings = ((x,x) for x in get_datasources())
+DataEnum = Enum('DataEnum', datasourceEnumStrings)
+            
 
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
     # tasks, institution and tags are Tuples (rather than Lists) so
@@ -197,50 +224,38 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     header: str = Field(
         ...,
         title="Header",
-        description="The title header for the project page",
+        description="Header that will display at the top of the project page",
     )
     description: Optional[str] = Field(
         None,
         title="Description",
-        description="Detailed description of the project",
+        description="Short description of the project (that will appear when hovering on the project thumbnail)",
     )
-    tasks: Tuple[TaskEnum, ...] = Field(
-        (),
-        title="Tasks",
-        description="Which task (or tasks) does the model perform?",
+    page: str = Field(
+        None,
+        title="Page",
+        description="Markdown formatted content for the project page",
     )
-    # TODO: update so this must be a model from the model catalog
-    models: Tuple[str, ...] = Field(
+    models: Tuple[ModelEnum, ...] = Field(
         (),
         title="Models",
         description="Which models from the scivision catalog are used in the project?",
     )
-    # TODO: update so this must be a datasource from the datasource catalog
-    datasources: Tuple[str, ...] = Field(
+    datasources: Tuple[DataEnum, ...] = Field(
         (),
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
     )
-    notebooks: Tuple[FlexibleUrl, ...] = Field(
+    tasks: Tuple[TaskEnum, ...] = Field(
         (),
-        title="Notebooks",
-        description="Links to notebooks associated with the project",
+        title="Tasks",
+        description="Which task (or tasks) do the CV models used in the project perform?",
     )
     institution: Tuple[str, ...] = Field(
         (),
         title="Institution(s)",
         description="A list of institutions that produced or are associated with "
         "the project (one per item)",
-    )
-    authors: Tuple[str, ...] = Field(
-        (),
-        title="Authors",
-        description="The project partcipants, key authors of the project page and any associated material",
-    )
-    contributors: Optional[Tuple[str, ...]] = Field(
-        (),
-        title="Contributors",
-        description="Any contributors to the project not in the authors list",
     )
     tags: Tuple[str, ...]
 
