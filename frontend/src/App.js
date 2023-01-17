@@ -129,7 +129,7 @@ function download(filename, text) {
 // * gh_logged_in - login status (grey out the PR button if not logged in)
 // * schema - json schema object, used to generate the form
 // * catalog_kind - "datasource" or "model",
-function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, download_filename }) {
+function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind, catalog_path, download_filename }) {
 
     // The modal dialogue shows when 'pr_failed' is true.  Separate
     // state variable (pr_message) for the message, since closing the
@@ -243,7 +243,7 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
                           }
                       }
                   }
-                  schema={schema}>
+                  schema={schema} uiSchema={uiSchema}>
 
                 <button type="submit"
                         onClick={ () => pr_flag = true }
@@ -1349,6 +1349,7 @@ function App() {
                                            <CatalogEntryForm
                                                gh_logged_in={gh_logged_in}
                                                schema={project_schema}
+                                               uiSchema={{page: {"ui:widget": "textarea"}}}
                                                catalog_kind="project"
                                                catalog_path="scivision/catalog/data/projects.json"
                                                download_filename="one-project.json"
