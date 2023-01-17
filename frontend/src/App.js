@@ -610,7 +610,7 @@ function ProjectTable() {
     ];
 
     return (
-        <ProjectTable columns={columns} data={projects.entries} title=""
+        <DataTable columns={columns} data={projects.entries} title=""
                    expandableRowsComponent={(props) => (
                        <TableCardDropdown
                            element={
