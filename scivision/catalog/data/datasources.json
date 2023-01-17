@@ -124,7 +124,7 @@
     },
     {
       "name": "treecrowns",
-      "description": "Sample dataset of drone RGB imagery required to demonstrate the detectreeRGB authored by Hickman et al. (2021)",
+      "description": "Sample dataset of drone RGB imagery over Sepilok Forest Reserve, in Sabah, Malaysia, collected and processed by NERC and NEODAAS as part of Sebastian Hickman’s (2021) AI4ER MRes Project, Cambridge University",
       "tasks": [
         "object-detection",
         "segmentation"
