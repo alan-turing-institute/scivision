@@ -27,6 +27,7 @@ import { React, useState, useEffect, useRef } from 'react';
 import Form from '@rjsf/bootstrap-4';
 import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
+import project_schema from './project_schema.js'
 
 import { Nav, Navbar } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
@@ -39,10 +40,13 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
+import projects from './data/projects.json';
 import DataTable from 'react-data-table-component';
 
 import { Octokit } from "octokit";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
+
+import MarkdownView from 'react-showdown';
 
 
 const server_configs = {
@@ -93,6 +97,11 @@ const datasource_thumbnails_ctxt = require.context(
 );
 const datasource_thumbnails = context_to_paths(datasource_thumbnails_ctxt);
 
+const project_thumbnails_ctxt = require.context(
+    './data/thumbnails/projects', false, /\.jpg$/
+);
+const project_thumbnails = context_to_paths(project_thumbnails_ctxt);
+
 
 // Utility function to download a text file, with the given filename and contents 'text'
 function download(filename, text) {
@@ -120,7 +129,7 @@ function download(filename, text) {
 // * gh_logged_in - login status (grey out the PR button if not logged in)
 // * schema - json schema object, used to generate the form
 // * catalog_kind - "datasource" or "model",
-function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, download_filename }) {
+function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind, catalog_path, download_filename }) {
 
     // The modal dialogue shows when 'pr_failed' is true.  Separate
     // state variable (pr_message) for the message, since closing the
@@ -234,7 +243,7 @@ function CatalogEntryForm({ gh_logged_in, schema, catalog_kind, catalog_path, do
                           }
                       }
                   }
-                  schema={schema}>
+                  schema={schema} uiSchema={uiSchema}>
 
                 <button type="submit"
                         onClick={ () => pr_flag = true }
@@ -396,7 +405,18 @@ function DatasourceDefinitionListFragment({data}) {
             </>);
 }
 
+// Component: Fragment containing definition items for the expanded
+// view of the project table and the page for one project
+//
+// * data - one project
+function ProjectDefinitionListFragment({data}) {
+    return (<>
+  
+                <dt className="col-sm-3">{data.header?data.header:"(none provided)"}</dt>
+                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
 
+            </>);
+}
 
 // Component: List of models or datasources (depending on prop), with
 // choice of grid or table view.  One of these views will be rendered,
@@ -560,6 +580,50 @@ function DatasourceTable() {
     );
 }
 
+// Component: Projects, table view
+// route: /projects
+function ProjectTable() {
+    const columns = [
+        {
+            name: 'Thumbnail',
+            width: "150px",
+            selector: row => project_thumbnails[`./${row.name}.jpg`] === undefined,
+            sortable: true,
+            cell: (row, index, column, id) => {
+                const thumb = project_thumbnails[`./${row.name}.jpg`];
+                return renderThumbnailForTable(thumb);
+            }
+        },
+        {
+            selector: row => row.name,
+            name: 'Name',
+            sortable: true,
+            grow: 0.3
+        },
+        {
+            selector: row => row.tasks,
+            name: 'Tasks',
+            cell: (row, index, column, id) => row.tasks.map(
+                (t) => <TaskBadge taskName={t} />
+            )
+        },
+    ];
+
+    return (
+        <ProjectTable columns={columns} data={projects.entries} title=""
+                   expandableRowsComponent={(props) => (
+                       <TableCardDropdown
+                           element={
+                               <ProjectDefinitionListFragment {...props}/>
+                           } />
+                   )}
+                   expandableRows
+                   expandableRowsHideExpander
+                   expandOnRowClicked
+        />
+    );
+}
+
 // returns a function component, for a Popover describing the current
 // resource (model or datasource).  Assumes it has name, description,
 // and tasks properties.
@@ -679,6 +743,26 @@ function DatasourceGrid() {
     );
 }
 
+
+// Component: Projects, thumbnail grid view
+// route: /project-grid
+function ProjectGrid() {
+    const image_cards = projects.entries.map(
+        makeThumbnail({
+            getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
+            getLink: (project) => "/project/" + encodeURIComponent(project.name),
+            doPopover: true,
+            asCard: true
+        })
+    );
+
+    return (
+        <div className="card-columns mt-2">
+            {image_cards}
+        </div>
+    );
+}
+
 // Component: Details about a model
 // route: /model/:model-name
 function Model() {
@@ -709,6 +793,57 @@ function Datasource() {
                     <DatasourceDefinitionListFragment data={datasource} />
                 </dl>
             </>);
+}
+
+// Component: Details about a project
+// route: /project/:project-name
+function Project() {
+  const { project_name_encoded } = useParams();
+  const project_name = decodeURIComponent(project_name_encoded);
+  const project = projects.entries.find(ds => ds.name == project_name);
+  let model_path = "../model/"
+  let data_path = "../datasource/"
+  const datasource_links = [];
+  const model_links = [];
+  for (const model_name of project.models) {
+    let full_path = model_path.concat(model_name)
+    const model = models.entries.find(model => model.name == model_name);
+    let thumbnail = <Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="halfsize_thumbnails"/></Link>;
+    model_links.push(<OverlayTrigger
+                        overlay={makePopover(model)}
+                        placement="auto">
+                        {thumbnail}
+                     </OverlayTrigger>
+                    );
+  }
+  for (const datasource_name of project.datasources) {
+    let full_path = data_path.concat(datasource_name)
+    const datasource = datasources.entries.find(datasource => datasource.name == datasource_name);
+    let thumbnail = <Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="halfsize_thumbnails"/></Link>;
+    datasource_links.push(<OverlayTrigger
+                            overlay={makePopover(datasource)}
+                            placement="auto">
+                            {thumbnail}
+                            </OverlayTrigger>
+                          );
+  }
+    return (
+      <>
+          <h1>{project.header}</h1>
+          <img src={project_thumbnails[`./${project.name}.jpg`]} />
+          <MarkdownView
+            markdown={project.page}
+            options={{ tables: true, emoji: true }}
+          />
+          <h2>Associated CV models and data:</h2>
+          <dl className="row">
+            <dt className="col-sm-3">Models</dt>
+            <dd className="col-sm-9">{model_links}</dd>
+            <dt className="col-sm-3">Data</dt>
+            <dd className="col-sm-9">{datasource_links}</dd>
+          </dl>
+    </>
+    );
 }
 
 // Component: Username/logout link (shown when logged in)
@@ -785,6 +920,17 @@ function DatasourceNav() {
             gridRoute="/datasource-grid"
             tableRoute="/datasource-table"
             createNewRoute="/new-datasource"
+        />
+    );
+}
+
+// Component: Tab-bar for projects (grid, table, create etc)
+function ProjectNav() {
+    return (
+        <TableGridViewNav
+            gridRoute="/project-grid"
+            tableRoute="/project-table"
+            createNewRoute="/new-project"
         />
     );
 }
@@ -964,7 +1110,12 @@ function App() {
                             Examples
                         </Nav.Link>
 
-                        <Nav.Link to="projects" as={NavLink}>
+                        <Nav.Link to="project-grid" as={NavLink}
+                                  active={
+                                      location_root == "project-table"
+                                          || location_root == "new-project"
+                                          || location_root == "project"
+                                  }>
                             Projects
                         </Nav.Link>
 
@@ -1146,16 +1297,70 @@ function App() {
                                        </div>
                                    </>
                                }/>
+                               
+                        <Route path="/project-grid" element={
+                                  <>
+                                      <ProjectNav />
+                                      <ProjectGrid />
+                                  </>
+                              } />
+
+                        <Route path="/project-table" element={
+                                   <>
+                                       <ProjectNav />
+                                       <ProjectTable />
+                                   </>
+                               } />
+
+                        <Route path="/project/:project_name_encoded" element={
+                                  <>
+                                      <ProjectNav />
+                                      <div className="text-readable-width mt-4">
+                                          <Project />
+                                      </div>
+                                  </>
+                              } />
+                              
+                        <Route path="/new-project" element={
+                                   <>
+                                       <ModelNav />
+                                       <h3>Create a Scivision project page for your research</h3>
+                                       <h4>Prerequistes</h4>
+
+                                       <p  className="text-readable-width">
+                                       <ul>
+                                       <li>You have already added the datasources used in your project to the <Link to="../datasource-grid">Scivision Data catalog</Link>. Click here to add a <Link to="../new-datasource">new datasource</Link>.</li>
+                                       <li>You have already added the computer vision models used in your project to the <Link to="../model-grid">Scivision Model catalog</Link>. Click here to add a <Link to="../new-model">new model</Link>.</li>
+                                       </ul>
+                                       </p>
+
+                                       <h4> Add your project</h4>
+                                       
+                                       <p className="text-readable-width">
+                                          Add the details that will form the basis of your project's Scivision page below. You can format the text with <a href="https://daringfireball.net/projects/markdown/basics">Markdown</a>, which will allow you to include any headers, lists and links you feel are appropriate. You can then select the models and data you added.</p>
+                                       <p></p>
+                                       <p className="text-readable-width">
+                                          Submitting the form will open a pull request (from your GitHub user account) that adds details of your project page to Scivision.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+
+                                          <p className="text-readable-width mt-4">
+                                          Make sure to <strong>log in with the link above</strong> before completing the form
+                                          </p>
+                                       <div className="text-readable-width mt-4">
+                                           <CatalogEntryForm
+                                               gh_logged_in={gh_logged_in}
+                                               schema={project_schema}
+                                               uiSchema={{page: {"ui:widget": "textarea"}}}
+                                               catalog_kind="project"
+                                               catalog_path="scivision/catalog/data/projects.json"
+                                               download_filename="one-project.json"
+                                           />
+                                       </div>
+                                   </>
+                               } />
 
                         <Route path="/examples" element={
 
                                    <p> More to come here soon. For now, see the <a href="https://github.com/scivision-gallery">Scivision Example Gallery</a> on GitHub. </p>
-                               }/>
-
-                        <Route path="/projects" element={
-                                   <>
-                                        Details of projects using Scivision to follow...
-                                   </>
                                }/>
 
                         <Route path="/community" element={
