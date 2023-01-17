@@ -280,6 +280,105 @@ class CatalogProjects(BaseModel, extra="forbid"):
         return entries
 
 
+def get_models():
+    models_raw = pkgutil.get_data(__name__, "data/models.json")
+    models = CatalogModels.parse_raw(models_raw)
+    names = []
+    for model_entry in models.entries:
+        names.append(model_entry["name"])
+    return names
+
+
+modelEnumStrings = ((x, x) for x in get_models())
+ModelEnum = Enum('ModelEnum', modelEnumStrings)
+
+
+def get_datasources():
+    datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
+    datasources = CatalogDatasources.parse_raw(datasources_raw)
+    names = []
+    for datasources_entry in datasources.entries:
+        names.append(datasources_entry["name"])
+    return names
+
+
+datasourceEnumStrings = ((x, x) for x in get_datasources())
+DataEnum = Enum('DataEnum', datasourceEnumStrings)
+
+
+class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
+    # tasks, institution and tags are Tuples (rather than Lists) so
+    # that they are immutable - Tuple is being used as an immutable
+    # sequence here. This means that these fields are hashable, which
+    # can be more convenient when included in a dataframe
+    # (e.g. unique()). Could consider using a Frozenset for these
+    # fields instead, since duplicates and ordering should not be
+    # significant.
+    name: str = Field(
+        ...,
+        title="Name",
+        description="Short, unique name for the project (one or two words, "
+        "under 20 characters recommended)",
+    )
+    header: str = Field(
+        ...,
+        title="Header",
+        description="Header that will display at the top of the project page",
+    )
+    description: Optional[str] = Field(
+        None,
+        title="Description",
+        description="Short description of the project (that will appear when hovering on the project thumbnail)",
+    )
+    page: str = Field(
+        None,
+        title="Page",
+        description="Markdown formatted content for the project page",
+    )
+    models: Tuple[ModelEnum, ...] = Field(
+        (),
+        title="Models",
+        description="Which models from the scivision catalog are used in the project?",
+    )
+    datasources: Tuple[DataEnum, ...] = Field(
+        (),
+        title="Datasources",
+        description="Which datasources from the scivision catalog are used in the project?",
+    )
+    tasks: Tuple[TaskEnum, ...] = Field(
+        (),
+        title="Tasks",
+        description="Which task (or tasks) do the CV models used in the project perform?",
+    )
+    institution: Tuple[str, ...] = Field(
+        (),
+        title="Institution(s)",
+        description="A list of institutions that produced or are associated with "
+        "the project (one per item)",
+    )
+    tags: Tuple[str, ...]
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+
+class CatalogProjects(BaseModel, extra="forbid"):
+    catalog_type: str = "scivision project catalog"
+    name: str
+    # Tuple: see comment on CatalogProjectEntry
+    entries: Tuple[CatalogProjectEntry, ...]
+
+    @validator("entries")
+    def name_unique_key(cls, entries):
+        name_counts = Counter([entry['name'] for entry in entries])
+        dups = [item for item, count in name_counts.items() if count > 1]
+
+        if dups:
+            raise ValueError(f"The 'name' field in the project catalog should be unique (duplicates: {dups})")
+
+        return entries
+
+
 def _coerce_datasources_catalog(
     datasources: Union[CatalogDatasources, os.PathLike, None]
 ) -> CatalogDatasources:
