@@ -1,0 +1,31 @@
+{
+  "catalog_type": "scivision project catalog",
+  "name": "default",
+  "entries": [
+    {
+      "name": "sept22-connections-workshop",
+      "header": "Turing Connections Workshop",
+      "description": "Classification challenge for datasets of Flower and Butterfly images from Kaggle",
+      "page": "PhD candidates attended a workshop hosted by The Alan Turing Institute's Research Engineering Group (REG) to get some hands-on experience working on scivision as a piece of research software. The task involved adding pre-trained models and datasources to the scivision catalog. Succesful submissions include two classification models, for flowers and butterflies, and related datasets.\n#### Notebooks:\n- [Butterflies](https://github.com/scivision-gallery/connections-workshop-examples/blob/main/ButterflyClassification.ipynb)\n- [Flowers](https://github.com/scivision-gallery/connections-workshop-examples/blob/main/FlowerClassification.ipynb)\n\nTo learn more about the REG at Turing, click [here](https://www.turing.ac.uk/research/research-engineering)",
+      "tasks": [
+        "classification"
+      ],
+      "models": [
+        "butterfly-classification-model",
+        "flower-classification-model"
+      ],
+      "datasources": [
+        "flowers",
+        "butterflies"
+      ],
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "tutorial",
+        "butterflies",
+        "flowers"
+      ]
+    }
+  ]
+}
