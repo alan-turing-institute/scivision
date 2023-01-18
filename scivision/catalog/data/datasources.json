@@ -54,30 +54,12 @@
       ]
     },
     {
-      "name": "data-002",
-      "tasks": [
-        "classification"
-      ],
-      "domains": [
-        "oceanography"
-      ],
-      "url": "https://github.com/scotthosking/intake-plankton/blob/main/plktn.yaml",
-      "format": "image",
-      "labels_provided": true,
-      "institution": [
-        "CEFAS"
-      ],
-      "tags": [
-        "help-needed",
-        "2D"
-      ]
-    },
-    {
-      "name": "data-003",
-      "description": "Koala",
+      "name": "scivision-test-data",
+      "description": "Test data comprised of individual images including a Koala (suitable for classification), a busy airport (suitable for object detection), and an image containing a Dog and a Cat (suitable for segmentation).",
       "tasks": [
         "object-detection",
-        "classification"
+        "classification",
+        "segmentation"
       ],
       "domains": [
         "computer-vision"
@@ -93,7 +75,7 @@
       ]
     },
     {
-      "name": "data-004",
+      "name": "cefas-plankton",
       "description": "Sample dataset of Plankton required to demonstrate the Rapid Identification of Plankton using Machine Learning Project undertaken by CEFAS, The Alan Turing Institute and Plankton Analytics Ltd",
       "tasks": [
         "classification"
@@ -115,8 +97,8 @@
       ]
     },
     {
-      "name": "data-005",
-      "description": "Sample dataset of satellite imagery required to demonstrate the VEdge detector authored by Rogers et al. (2021)",
+      "name": "coastal-edges",
+      "description": "Sample dataset of satellite RGB imagery over two coastal locations bribie_island (RapidEye) and winterton (Planet) used to test the VEdge_Detector model described in Rogers et al (2021)",
       "tasks": [
         "classification",
         "segmentation"
@@ -141,8 +123,8 @@
       ]
     },
     {
-      "name": "data-006",
-      "description": "Sample dataset of drone RGB imagery required to demonstrate the detectreeRGB authored by Hickman et al. (2021)",
+      "name": "treecrowns",
+      "description": "Sample dataset of drone RGB imagery over Sepilok Forest Reserve, in Sabah, Malaysia, collected and processed by NERC and NEODAAS as part of Sebastian Hickman’s (2021) AI4ER MRes Project, Cambridge University",
       "tasks": [
         "object-detection",
         "segmentation"
@@ -169,7 +151,7 @@
       ]
     },
     {
-      "name": "scivision_sentinel2_stac",
+      "name": "sentinel2_stac",
       "description": "Data plugin for accessing Sentinel-2 Cloud-Optimized GeoTIFFs via scivision. The Sentinel-2 mission is a land monitoring constellation of two satellites that provide high resolution optical imagery and provide continuity for the current SPOT and Landsat missions. The mission provides a global coverage of the Earth's land surface every 5 days, making the data of great use in ongoing studies. This dataset is the same as the Sentinel-2 dataset, except the JP2K files were converted into Cloud-Optimized GeoTIFFs (COGs). Additionally, SpatioTemporal Asset Catalog metadata has were in a JSON file alongside the data, and a STAC API called Earth-search is freely available to search the archive. This dataset contains all of the scenes in the original Sentinel-2 Public Dataset and will grow as that does. L2A data are available from April 2017 over wider Europe region and globally since December 2018.",
       "tasks": [
         "classification",

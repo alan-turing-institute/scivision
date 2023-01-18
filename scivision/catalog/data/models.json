@@ -55,7 +55,8 @@
       ]
     },
     {
-      "name": "model-002",
+      "name": "greenotyper",
+      "description": "Greenotyper is an image analysis tool for large scale plant phenotyping experiments.",
       "tasks": [
         "segmentation"
       ],
@@ -72,23 +73,6 @@
         "multispectral",
         "plant-phenotyping",
         "climate-change-and-agriculture"
-      ]
-    },
-    {
-      "name": "scivision-test-plugin",
-      "tasks": [
-        "object-detection"
-      ],
-      "url": "https://github.com/alan-turing-institute/scivision-test-plugin",
-      "pkg_url": "git+https://github.com/alan-turing-institute/scivision-test-plugin.git@master",
-      "format": "image",
-      "pretrained": true,
-      "labels_required": false,
-      "institution": [
-        "alan-turing-institute"
-      ],
-      "tags": [
-        "dummy"
       ]
     },
     {
@@ -163,6 +147,7 @@
     },
     {
       "name": "image-classifiers",
+      "description": "Scivision plugin for the image-classifiers package available at https://pypi.org/project/image-classifiers/",
       "tasks": [
         "classification"
       ],
@@ -182,6 +167,7 @@
     },
     {
       "name": "huggingface-classifiers",
+      "description": "Selection of image classifiers taken from https://huggingface.co/",
       "tasks": [
         "classification"
       ],
@@ -202,6 +188,7 @@
     },
     {
       "name": "huggingface-segmentation",
+      "description": "Selection of segmentation algorithms taken from https://huggingface.co/",
       "tasks": [
         "segmentation"
       ],
@@ -218,6 +205,7 @@
     },
     {
       "name": "huggingface-object-detection",
+      "description": "Selection of object detection algorithms taken from https://huggingface.co/",
       "tasks": [
         "object-detection"
       ],
@@ -234,6 +222,7 @@
     },
     {
       "name": "detectreeRGB-forest",
+      "description": "Detect changes in tall tree height with machine learning, LiDAR, and RGB imagery",
       "tasks": [
         "object-detection",
         "segmentation"
@@ -256,6 +245,7 @@
     },
     {
       "name": "flower-classification-model",
+      "description": "Identify flower species",
       "tasks": [
         "classification"
       ],
@@ -274,6 +264,7 @@
     },
     {
       "name": "butterfly-classification-model",
+      "description": "Identify butterfly species",
       "tasks": [
         "classification"
       ],
