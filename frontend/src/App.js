@@ -935,14 +935,33 @@ function ProjectNav() {
     );
 }
 
+// helper: select a random sample of size 'n_sample' from the array 'arr'
+function sample_without_replacement(arr, n_sample) {
+    var samples = []
+    for (var i = 0; i < arr.length; i++) {
+        if (samples.length == n_sample) break;
+
+        var u = Math.random();
+
+        if ((arr.length - i) * u < n_sample - samples.length) {
+            samples.push(arr[i]);
+        }
+    }
+    return samples
+}
+
 // Component: The home page
 // route: /
 function Home() {
 
     // pick three random models and datasources (with thumbnails)
     //
-    const models_sample = models.entries.slice(11,14);
-    const datasources_sample = datasources.entries.slice(4,7);
+    const models_sample = sample_without_replacement(
+        models.entries, 3
+    );
+    const datasources_sample = sample_without_replacement(
+        datasources.entries, 3
+    );
 
     return (
         <>
