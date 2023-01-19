@@ -50,6 +50,30 @@
       "name": "cefas-plankton-dsg",
       "header": "Rapid Plankton Identification Data Study Group",
       "description": "Plankton classification challenge hosted at The Alan Turing Institute"
+    },
+    {
+      "models": [
+        "detectreeRGB-forest"
+      ],
+      "datasources": [
+        "treecrowns"
+      ],
+      "tasks": [
+        "segmentation",
+        "object-detection"
+      ],
+      "institution": [
+        "Cambridge University"
+      ],
+      "tags": [
+        "treecrown",
+        "semantic segmentation",
+        "tropics"
+      ],
+      "description": "Delineation of tree crown trees using a semantic segmentation deep learning model",
+      "header": "Tree Crown Detection using detectreeRGB",
+      "name": "treecrown-detectreeRGB",
+      "page": "The delineation of individual trees in remote sensing images is an key task in forest analysis. As part of Sebastian Hickman's AI4ER MRes project, titled 'Detecting changes in tall tree height with machine learning, LiDAR, and RGB imagery', the authors propose the detectreeRGB model, an implementation of Mask R-CNN from [Detectron2](https://github.com/facebookresearch/detectron2) to perform tree crown delineation from RGB imagery.\n\nFurther details of the detectreeRGB model can be found in the [original source code repository](https://github.com/shmh40/detectreeRGB/).\n\n## Example notebook\nThere is a worked example of the detectreeRGB model in action available at the [Scivision Gallery](https://github.com/scivision-gallery/tree-crown-detection).\n\nIn this notebook, we demonstrate how scivision can assist in discovering a pretrained detectreeRGB model provided by Hickman et al (2021), and then use it to delineate crowns from a sample drone RGB image dataset."
     }
   ]
 }
