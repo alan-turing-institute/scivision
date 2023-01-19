@@ -26,6 +26,29 @@
         "butterflies",
         "flowers"
       ]
+    },
+    {
+      "models": [
+        "resnet50-plankton"
+      ],
+      "datasources": [
+        "cefas-plankton"
+      ],
+      "tasks": [
+        "classification"
+      ],
+      "institution": [
+        "The Alan Turing Institute",
+        "CEFAS",
+        "Plankton Analytics Ltd"
+      ],
+      "tags": [
+        "plankton",
+        "DSG"
+      ],
+      "name": "Rapid Plankton IdentificatioData Study ",
+      "header": "Rapid Plankton Identification Data Study Group",
+      "description": "Plankton classification challenge hosted at The Alan Turing Institute"
     }
   ]
 }
