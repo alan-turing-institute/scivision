@@ -81,6 +81,30 @@
       "header": "Patch Classification of Whole Plant Images with MapReader",
       "description": "Patch classification of different plant structures (i.e. flowers, leaves) in 2D images of whole plants",
       "page": "Automated plant phenotyping is a Turing-led work package under the [Impact of Climate Change on UK Agriculture and Food Security Project](https://www.turing.ac.uk/research/research-projects/impact-climate-change-agriculture)\n\n## Example Notebook\nLink: [Plant Phenotyping Classfication on Scivision Gallery](https://github.com/scivision-gallery/plant-phenotyping-classification)\nDescription: Notebook demonstrating inference with 3 class (flower, green plant structures, background) model for patch classification of 2D images of whole *Brassica napus* (oilseed rape) plants\n"
+    },
+    {
+      "models": [
+        "detectreeRGB-forest"
+      ],
+      "datasources": [
+        "treecrowns"
+      ],
+      "tasks": [
+        "segmentation",
+        "object-detection"
+      ],
+      "institution": [
+        "Cambridge University"
+      ],
+      "tags": [
+        "treecrown",
+        "semantic segmentation",
+        "tropics"
+      ],
+      "description": "Delineation of tree crown trees using a semantic segmentation deep learning model",
+      "header": "Tree Crown Detection using detectreeRGB",
+      "name": "treecrown-detectreeRGB",
+      "page": "The delineation of individual trees in remote sensing images is an key task in forest analysis. As part of Sebastian Hickman's AI4ER MRes project, titled 'Detecting changes in tall tree height with machine learning, LiDAR, and RGB imagery', the authors propose the detectreeRGB model, an implementation of Mask R-CNN from [Detectron2](https://github.com/facebookresearch/detectron2) to perform tree crown delineation from RGB imagery.\n\nFurther details of the detectreeRGB model can be found in the [original source code repository](https://github.com/shmh40/detectreeRGB/).\n\n## Example notebook\nThere is a worked example of the detectreeRGB model in action available at the [Scivision Gallery](https://github.com/scivision-gallery/tree-crown-detection).\n\nIn this notebook, we demonstrate how scivision can assist in discovering a pretrained detectreeRGB model provided by Hickman et al (2021), and then use it to delineate crowns from a sample drone RGB image dataset."
     }
   ]
 }
