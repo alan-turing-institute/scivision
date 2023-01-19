@@ -50,6 +50,37 @@
       "name": "cefas-plankton-dsg",
       "header": "Rapid Plankton Identification Data Study Group",
       "description": "Plankton classification challenge hosted at The Alan Turing Institute"
+    },
+    {
+      "models": [
+        "mapreader-plant"
+      ],
+      "datasources": [
+        "oppd-seedlings"
+      ],
+      "tasks": [
+        "classification",
+        "object-detection",
+        "segmentation"
+      ],
+      "institution": [
+        "The Alan Turing Institute",
+        "John Innes Centre",
+        "Rothamsted Research",
+        "University of Exeter",
+        "National Plant Phenomics Centre "
+      ],
+      "tags": [
+        "plant biology",
+        "2D data",
+        "3D data",
+        "phenotyping",
+        "unsupervised "
+      ],
+      "name": "mapreader-plant-phenotyping",
+      "header": "Patch Classification of Whole Plant Images with MapReader",
+      "description": "Patch classification of different plant structures (i.e. flowers, leaves) in 2D images of whole plants",
+      "page": "Automated plant phenotyping is a Turing-led work package under the [Impact of Climate Change on UK Agriculture and Food Security Project](https://www.turing.ac.uk/research/research-projects/impact-climate-change-agriculture)\n\n## Example Notebook\nLink: [Plant Phenotyping Classfication on Scivision Gallery](https://github.com/scivision-gallery/plant-phenotyping-classification)\nDescription: Notebook demonstrating inference with 3 class (flower, green plant structures, background) model for patch classification of 2D images of whole *Brassica napus* (oilseed rape) plants\n"
     }
   ]
 }
