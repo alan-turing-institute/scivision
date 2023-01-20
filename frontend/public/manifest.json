@@ -1,6 +1,6 @@
 {
   "short_name": "Scivision",
-  "name": "A toolkit for scientific image analysis.",
+  "name": "Scivision: A toolkit for scientific image analysis",
   "icons": [
     {
       "src": "favicon.ico",
