@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bfab1996.css",
-    "main.js": "/static/js/main.a7aee67b.js",
+    "main.js": "/static/js/main.55212132.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/nb-2.jpg": "/static/media/nb-2.1342b7109f17a5eed789.jpg",
@@ -12,8 +12,12 @@
     "static/media/flower-classification-model.jpg": "/static/media/flower-classification-model.e7631bb6950118a863cb.jpg",
     "static/media/vedge-detector.jpg": "/static/media/vedge-detector.f7bf015174128e766a6b.jpg",
     "static/media/stardist.jpg": "/static/media/stardist.8eb758eb7f93ce87d5bf.jpg",
+    "static/media/treecrown-detectreeRGB.jpg": "/static/media/treecrown-detectreeRGB.47a642831f554496d124.jpg",
+    "static/media/coastalveg-edge-detection.jpg": "/static/media/coastalveg-edge-detection.315f457ab968c9632c31.jpg",
+    "static/media/mapreader-plant-phenotyping.jpg": "/static/media/mapreader-plant-phenotyping.a8bb450c8abb295d7d0c.jpg",
     "static/media/PlantCV.jpg": "/static/media/PlantCV.0e679f4f5f730f23a411.jpg",
     "static/media/logo-full.png": "/static/media/logo-full.56512facec9ee0d42bb5.png",
+    "static/media/cefas-plankton-dsg.jpg": "/static/media/cefas-plankton-dsg.ee11fec1fd0aa6fe3825.jpg",
     "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.d43490443ea20251ed01.jpg",
     "static/media/huggingface-segmentation.jpg": "/static/media/huggingface-segmentation.d43490443ea20251ed01.jpg",
     "static/media/oppd-seedlings.jpg": "/static/media/oppd-seedlings.6777dab0849f2cee5f66.jpg",
@@ -34,11 +38,11 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/index.html",
     "main.bfab1996.css.map": "/static/css/main.bfab1996.css.map",
-    "main.a7aee67b.js.map": "/static/js/main.a7aee67b.js.map",
+    "main.55212132.js.map": "/static/js/main.55212132.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bfab1996.css",
-    "static/js/main.a7aee67b.js"
+    "static/js/main.55212132.js"
   ]
 }
