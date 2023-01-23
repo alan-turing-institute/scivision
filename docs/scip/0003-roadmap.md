@@ -65,7 +65,7 @@ perpetual 'draft').
   - 'Cookie cutters' for model repositories
   - Consistency/integrity checks, including
       - URLs in the catalogs
-      - notebooks in the gallery
+      - scivision gallery notebooks (from current scivision projects)
       - checked annotations (decorators)
 
 ### Supporting Scivision use-cases
