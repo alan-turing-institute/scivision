@@ -49,7 +49,7 @@ perpetual 'draft').
     CV models
   - Informational videos (overview, getting started, task-focussed
     tutorials)
-  - Direct support to researchers wishing to share their models and
+  - Informal support to researchers wishing to share their models and
     datasets
 
 ### Web interface
