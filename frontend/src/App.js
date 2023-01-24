@@ -685,7 +685,9 @@ function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
         } else {
             thumbnail = (
               <div>
+                <div className="gridtext">
                 <p>{data.description}</p>
+                </div>
                 {thumbnail}
               </div>
             )

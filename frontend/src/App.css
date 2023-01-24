@@ -15,6 +15,10 @@ img.halfsize_thumbnails{
     width: 128px;
 }
 
+div.gridtext {
+    height: 15ex;
+}
+
 .login-bar {
     font-size: x-small;
     background-color: Lavender;
