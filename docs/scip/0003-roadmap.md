@@ -57,6 +57,8 @@ perpetual 'draft').
   - Model/dataset matchmaking, graphical representation of models and
     dataset interoperability
   - Improved 'model cards'
+      - For example, show extra installation instructions when these 
+        are required, and give an example of using the model in Python
   - Improvements to the 'new model/new datasource' interface
   - A community calendar
 
