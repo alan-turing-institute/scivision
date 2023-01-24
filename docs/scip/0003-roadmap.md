@@ -64,7 +64,8 @@ perpetual 'draft').
 
 ### Automation
 
-  - 'Cookie cutters' for model repositories
+  - Template repositories for computer vision models or datasources
+    that are ready for inclusion in the catalog ('cookie cutters').
   - Consistency/integrity checks, including
       - URLs in the catalogs
       - scivision gallery notebooks (from current scivision projects)
