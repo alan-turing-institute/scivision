@@ -1124,11 +1124,6 @@ function App() {
                                   }>
                             Data
                         </Nav.Link>
-
-                        <Nav.Link to="examples" as={NavLink}>
-                            Examples
-                        </Nav.Link>
-
                         <Nav.Link to="project-grid" as={NavLink}
                                   active={
                                       location_root == "project-table"
@@ -1376,11 +1371,6 @@ function App() {
                                        </div>
                                    </>
                                } />
-
-                        <Route path="/examples" element={
-
-                                   <p> More to come here soon. For now, see the <a href="https://github.com/scivision-gallery">Scivision Example Gallery</a> on GitHub. </p>
-                               }/>
 
                         <Route path="/community" element={
                                    <>
