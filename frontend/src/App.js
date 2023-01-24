@@ -682,6 +682,13 @@ function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
                     {thumbnail}
                 </OverlayTrigger>
             )
+        } else {
+            thumbnail = (
+              <div>
+                <p>{data.description}</p>
+                {thumbnail}
+              </div>
+            )
         }
 
         // Add card formatting
@@ -751,7 +758,7 @@ function ProjectGrid() {
         makeThumbnail({
             getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
             getLink: (project) => "/project/" + encodeURIComponent(project.name),
-            doPopover: true,
+            doPopover: false,
             asCard: true
         })
     );
