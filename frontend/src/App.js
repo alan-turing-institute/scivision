@@ -683,12 +683,18 @@ function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
                 </OverlayTrigger>
             )
         } else {
+            if (data.description.slice(-1) != '.'){
+              var fstop = '.';
+            } else {
+              var fstop = '';
+            }
             thumbnail = (
               <div>
                 {thumbnail}
                 <div className="gridtext">
                 <p></p>
                 {data.description}
+                {fstop}
                 </div>
               </div>
             )
