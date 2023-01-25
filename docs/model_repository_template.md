@@ -159,6 +159,15 @@ setup(
 
 In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the :ref:`api-docs` docs for details.
 
+## 🎆 Model Thumbnail
+
+When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model thumbnail is required. The thumbnail can be an interesting image explaining the model and that catches the attention of the Scivision user (creativity encouraged!).
+
+- It must be a 256x256 PNG or JPEG file
+- The file name should be the name of the model as in the catalog
+
+Once you have identified a suitable thumbnail please upload it to the [thumbnail models folder](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data/thumbnails/models).
+
 .. _additional:
 
 ## 🗂️ Additional recommended components
