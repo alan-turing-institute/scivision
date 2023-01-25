@@ -682,7 +682,9 @@ function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
                     {thumbnail}
                 </OverlayTrigger>
             )
+        // Where no popover, thumnail includes description as text below
         } else {
+            // Add a full stop if the description doesn't have one
             if (data.description.slice(-1) != '.'){
               var fstop = '.';
             } else {
