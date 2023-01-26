@@ -62,7 +62,7 @@ Below is a list of additional image formats to consider for built-in support
 - The URL of some data-plugin metadata
 - Zenodo
 - GitHub
-- ...
+- Support layers which might be useful for labelling and inspection of model outputs e.g. Points, Shapes, Surface, Tracks and Vectors
 
 #### Pull requests accepted
 
