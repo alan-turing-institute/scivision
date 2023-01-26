@@ -1047,7 +1047,7 @@ function Home() {
                 <h4>Projects</h4>
 
                 <div className="w-75 mx-auto m-3">
-                    <p className="small">Research projects that have contributed scientic image data and computer vision models to the Scivision catalog.</p>
+                    <p className="small">Research projects that have contributed scientific image data and computer vision models to the Scivision catalog.</p>
                     <div className="card-deck">
                         {
                             projects_sample.map((proj) => (
