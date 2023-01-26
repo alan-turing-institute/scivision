@@ -29,7 +29,10 @@ Status (raw | draft | stable | deprecated | retired):
   - Whether to support a given format should be considered against the cost of the additional dependencies it requires, and the burden of these (e.g. something that makes core scivision less portable, or adds an extra installation step might be rejected, but a single python-only dependency considered acceptable)
 
 - A 'plugin' system for extending to additional formats
+### Loaded data formats
 
+- Lazy loading with `dask`/`xarray`
+- Simpler format such as `numpy` for smaller datasets when lazy load/ parallel computing not required
 #### Additional image formats
 
 Below is a list of additional image formats to consider for built-in support
