@@ -14,6 +14,8 @@ This is also a pre-requisite for adding the dataset to the scivision "catalog", 
 - :ref:`data-config-file`
 - :ref:`documentation`
 - :ref:`data-license`
+- :ref:`requirements-for-scivision-website`
+  - :ref:`data-thumbnail`
 <!-- - :ref:`example-data-repos` -->
 
 .. _data-repo-structure:
@@ -75,6 +77,21 @@ A `README`, which includes helpful information on the dataset and its origin sho
 ## 📜 Data license
 
 You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
+
+.. _requirements-for-scivision:
+
+## 💻 Requirements for scivision website
+
+.. _data-thumbnail:
+
+### 🎆 Data Thumbnail
+
+When viewing the dataset in [sci.vision](https://sci.vision/#/datasource-grid) a dataset thumbnail is required. The thumbnail can be an interesting image or slice of the dataset that catches the attention of the Scivision user (creativity encouraged!). 
+
+- It must be a 256x256 PNG or JPEG file
+- The file name should be the name of the dataset as in the catalog
+
+Once you have identified a suitable thumbnail please upload it to the [thumbnail datasources folder](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data/thumbnails/datasources). 
 
 <!-- .. _example-data-repos:
 
