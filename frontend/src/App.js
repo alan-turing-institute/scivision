@@ -85,6 +85,17 @@ import {
     ProjectNav
 } from "./catalog_navigation.js"
 
+import { TaskBadge } from './badges.js'
+
+import {
+    renderThumbnailForTable, 
+    TableCardDropdown, 
+    ModelTable, 
+    DatasourceTable, 
+    ProjectTable
+} from "./table.js"
+
+
 // const server_configs = {
 //     development: {
 //         uri: 'https://scivision-dev-gh-gatekeeper.azurewebsites.net/authenticate/',
@@ -485,180 +496,180 @@ function ProjectDefinitionListFragment({data}) {
 //     );
 // }
 
-// Component: A badge indicating a task with the given name
-// TODO: distinct colours for each task
-function TaskBadge({taskName}) {
-    return (
-        <>
-            <span className="badge badge-primary">{taskName}</span>
-            &nbsp;
-        </>
-    );
-}
+// // Component: A badge indicating a task with the given name
+// // TODO: distinct colours for each task
+// function TaskBadge({taskName}) {
+//     return (
+//         <>
+//             <span className="badge badge-primary">{taskName}</span>
+//             &nbsp;
+//         </>
+//     );
+// }
 
-// Helper function (used in ModelTable and DatasourceTable -- not the
-// corresponding Gridviews) returning a thumbnail element
-function renderThumbnailForTable(thumb) {
-    if (thumb != undefined) {
-        return (
-            <img src={thumb}
-                 width="128"
-                 height="128"
-                 className="img-thumbnail"
-            />
-        );
-    } else {
-        return (<></>);
-    }
-}
+// // Helper function (used in ModelTable and DatasourceTable -- not the
+// // corresponding Gridviews) returning a thumbnail element
+// function renderThumbnailForTable(thumb) {
+//     if (thumb != undefined) {
+//         return (
+//             <img src={thumb}
+//                  width="128"
+//                  height="128"
+//                  className="img-thumbnail"
+//             />
+//         );
+//     } else {
+//         return (<></>);
+//     }
+// }
 
-// Component: Format the element in an 'info box'.
-// Used for expanded rows in ModelTable/DatasourceTable
-function TableCardDropdown({element}) {
-    return (
-        <div className="border-bottom">
-            <div className="card mt-1 mb-3 bg-light">
-                <div className="card-body">
-                    <dl className="row">
-                        {element}
-                    </dl>
-                </div>
-            </div>
-        </div>
-    );
-}
+// // Component: Format the element in an 'info box'.
+// // Used for expanded rows in ModelTable/DatasourceTable
+// function TableCardDropdown({element}) {
+//     return (
+//         <div className="border-bottom">
+//             <div className="card mt-1 mb-3 bg-light">
+//                 <div className="card-body">
+//                     <dl className="row">
+//                         {element}
+//                     </dl>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
 
-// Component: Models, table view
-// route: /models
-function ModelTable() {
-    const columns = [
-        {
-            name: 'Thumbnail',
-            width: "150px",
-            selector: row => model_thumbnails[`./${row.name}.jpg`] === undefined,
-            sortable: true,
-            cell: (row, index, column, id) => {
-                const thumb = model_thumbnails[`./${row.name}.jpg`];
-                return renderThumbnailForTable(thumb);
-            }
-        },
-        {
-            name: "Name",
-            sortable: true,
-            grow: 0.5,
-            selector: row => row.name,
-        },
-        {
-            name: "Tasks",
-            selector: row => row.tasks,
-            cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
-            ),
-        },
-    ];
+// // Component: Models, table view
+// // route: /models
+// function ModelTable() {
+//     const columns = [
+//         {
+//             name: 'Thumbnail',
+//             width: "150px",
+//             selector: row => model_thumbnails[`./${row.name}.jpg`] === undefined,
+//             sortable: true,
+//             cell: (row, index, column, id) => {
+//                 const thumb = model_thumbnails[`./${row.name}.jpg`];
+//                 return renderThumbnailForTable(thumb);
+//             }
+//         },
+//         {
+//             name: "Name",
+//             sortable: true,
+//             grow: 0.5,
+//             selector: row => row.name,
+//         },
+//         {
+//             name: "Tasks",
+//             selector: row => row.tasks,
+//             cell: (row, index, column, id) => row.tasks.map(
+//                 (t) => <TaskBadge taskName={t} />
+//             ),
+//         },
+//     ];
 
-    return (
-        <DataTable columns={columns} data={models.entries} title=""
-                   expandableRowsComponent={(props) => (
-                       <TableCardDropdown
-                           element={
-                               <ModelDefinitionListFragment {...props}/>
-                           } />
-                   )}
-                   expandableRows
-                   expandableRowsHideExpander
-                   expandOnRowClicked
-        />
-    );
-}
+//     return (
+//         <DataTable columns={columns} data={models.entries} title=""
+//                    expandableRowsComponent={(props) => (
+//                        <TableCardDropdown
+//                            element={
+//                                <ModelDefinitionListFragment {...props}/>
+//                            } />
+//                    )}
+//                    expandableRows
+//                    expandableRowsHideExpander
+//                    expandOnRowClicked
+//         />
+//     );
+// }
 
-// Component: Datasources, table view
-// route: /datasources
-function DatasourceTable() {
-    const columns = [
-        {
-            name: 'Thumbnail',
-            width: "150px",
-            selector: row => datasource_thumbnails[`./${row.name}.jpg`] === undefined,
-            sortable: true,
-            cell: (row, index, column, id) => {
-                const thumb = datasource_thumbnails[`./${row.name}.jpg`];
-                return renderThumbnailForTable(thumb);
-            }
-        },
-        {
-            selector: row => row.name,
-            name: 'Name',
-            sortable: true,
-            grow: 0.3
-        },
-        {
-            selector: row => row.tasks,
-            name: 'Tasks',
-            cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
-            )
-        },
-    ];
+// // Component: Datasources, table view
+// // route: /datasources
+// function DatasourceTable() {
+//     const columns = [
+//         {
+//             name: 'Thumbnail',
+//             width: "150px",
+//             selector: row => datasource_thumbnails[`./${row.name}.jpg`] === undefined,
+//             sortable: true,
+//             cell: (row, index, column, id) => {
+//                 const thumb = datasource_thumbnails[`./${row.name}.jpg`];
+//                 return renderThumbnailForTable(thumb);
+//             }
+//         },
+//         {
+//             selector: row => row.name,
+//             name: 'Name',
+//             sortable: true,
+//             grow: 0.3
+//         },
+//         {
+//             selector: row => row.tasks,
+//             name: 'Tasks',
+//             cell: (row, index, column, id) => row.tasks.map(
+//                 (t) => <TaskBadge taskName={t} />
+//             )
+//         },
+//     ];
 
-    return (
-        <DataTable columns={columns} data={datasources.entries} title=""
-                   expandableRowsComponent={(props) => (
-                       <TableCardDropdown
-                           element={
-                               <DatasourceDefinitionListFragment {...props}/>
-                           } />
-                   )}
-                   expandableRows
-                   expandableRowsHideExpander
-                   expandOnRowClicked
-        />
-    );
-}
+//     return (
+//         <DataTable columns={columns} data={datasources.entries} title=""
+//                    expandableRowsComponent={(props) => (
+//                        <TableCardDropdown
+//                            element={
+//                                <DatasourceDefinitionListFragment {...props}/>
+//                            } />
+//                    )}
+//                    expandableRows
+//                    expandableRowsHideExpander
+//                    expandOnRowClicked
+//         />
+//     );
+// }
 
-// Component: Projects, table view
-// route: /projects
-function ProjectTable() {
-    const columns = [
-        {
-            name: 'Thumbnail',
-            width: "150px",
-            selector: row => project_thumbnails[`./${row.name}.jpg`] === undefined,
-            sortable: true,
-            cell: (row, index, column, id) => {
-                const thumb = project_thumbnails[`./${row.name}.jpg`];
-                return renderThumbnailForTable(thumb);
-            }
-        },
-        {
-            selector: row => row.name,
-            name: 'Name',
-            sortable: true,
-            grow: 0.3
-        },
-        {
-            selector: row => row.tasks,
-            name: 'Tasks',
-            cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
-            )
-        },
-    ];
+// // Component: Projects, table view
+// // route: /projects
+// function ProjectTable() {
+//     const columns = [
+//         {
+//             name: 'Thumbnail',
+//             width: "150px",
+//             selector: row => project_thumbnails[`./${row.name}.jpg`] === undefined,
+//             sortable: true,
+//             cell: (row, index, column, id) => {
+//                 const thumb = project_thumbnails[`./${row.name}.jpg`];
+//                 return renderThumbnailForTable(thumb);
+//             }
+//         },
+//         {
+//             selector: row => row.name,
+//             name: 'Name',
+//             sortable: true,
+//             grow: 0.3
+//         },
+//         {
+//             selector: row => row.tasks,
+//             name: 'Tasks',
+//             cell: (row, index, column, id) => row.tasks.map(
+//                 (t) => <TaskBadge taskName={t} />
+//             )
+//         },
+//     ];
 
-    return (
-        <DataTable columns={columns} data={projects.entries} title=""
-                   expandableRowsComponent={(props) => (
-                       <TableCardDropdown
-                           element={
-                               <ProjectDefinitionListFragment {...props}/>
-                           } />
-                   )}
-                   expandableRows
-                   expandableRowsHideExpander
-                   expandOnRowClicked
-        />
-    );
-}
+//     return (
+//         <DataTable columns={columns} data={projects.entries} title=""
+//                    expandableRowsComponent={(props) => (
+//                        <TableCardDropdown
+//                            element={
+//                                <ProjectDefinitionListFragment {...props}/>
+//                            } />
+//                    )}
+//                    expandableRows
+//                    expandableRowsHideExpander
+//                    expandOnRowClicked
+//         />
+//     );
+// }
 
 // returns a function component, for a Popover describing the current
 // resource (model or datasource).  Assumes it has name, description,
