@@ -473,6 +473,21 @@ function TaskBadge({taskName}) {
     );
 }
 
+// Component: A badge indicating whether a model is installable with scivision
+function InstallBadge({installBool}) {
+    if (installBool) {
+        var badge = <>
+            <span className="badge badge-primary">Installable</span>
+            &nbsp;
+        </>
+    } else {
+        var badge = <></>
+    }
+    return (
+        badge
+    );
+}
+
 // Helper function (used in ModelTable and DatasourceTable -- not the
 // corresponding Gridviews) returning a thumbnail element
 function renderThumbnailForTable(thumb) {
@@ -648,6 +663,7 @@ function makePopover(data) {
             <Popover.Content>
                 <strong>{data.name}</strong> {data.description} &nbsp;
                 {data.tasks.map((t) => <TaskBadge taskName={t} />)}
+                {<InstallBadge installBool={data.installable} />}
             </Popover.Content>
         </Popover>
     );
