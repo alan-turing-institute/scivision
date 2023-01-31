@@ -682,6 +682,24 @@ function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
                     {thumbnail}
                 </OverlayTrigger>
             )
+        // Where no popover, thumnail includes description as text below
+        } else {
+            // Add a full stop if the description doesn't have one
+            if (data.description.slice(-1) != '.'){
+              var fstop = '.';
+            } else {
+              var fstop = '';
+            }
+            thumbnail = (
+              <div>
+                {thumbnail}
+                <div className="gridtext">
+                <p></p>
+                {data.description}
+                {fstop}
+                </div>
+              </div>
+            )
         }
 
         // Add card formatting
@@ -751,7 +769,7 @@ function ProjectGrid() {
         makeThumbnail({
             getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
             getLink: (project) => "/project/" + encodeURIComponent(project.name),
-            doPopover: true,
+            doPopover: false,
             asCard: true
         })
     );
@@ -962,6 +980,9 @@ function Home() {
     const datasources_sample = sample_without_replacement(
         datasources.entries, 3
     );
+    const projects_sample = sample_without_replacement(
+        projects.entries, 3
+    );
 
     return (
         <>
@@ -1022,32 +1043,32 @@ function Home() {
                 </div>
             </div>
 
-            <h4>Examples</h4>
-            <div className="w-75 mx-auto m-3 mb-5">
-                <p className="small">Jupyter Notebook-based examples of using the Scivision Python library and showcasing models and datasets from the catalog.</p>
+            <div className="mb-5">
+                <h4>Projects</h4>
 
+                <div className="w-75 mx-auto m-3">
+                    <p className="small">Research projects that have contributed scientific image data and computer vision models to the Scivision catalog.</p>
                     <div className="card-deck">
-                        <div className="card">
-                            <a href="https://github.com/scivision-gallery/plankton-classification">
-                                <img className="img-card-top" width="100%" src={nbScreenshot1} />
-                                <div className="card-footer small text-center">Plankton classification</div>
-                            </a>
-                        </div>
-
-                        <div className="card">
-                            <a href="https://github.com/scivision-gallery/coastalveg-edge-detection">
-                                <img className="img-card-top" width="100%" src={nbScreenshot2} />
-                                <div className="card-footer small text-center">Coastal vegetation edge detection</div>
-                            </a>
-                        </div>
-
+                        {
+                            projects_sample.map((proj) => (
+                                <div className="card">
+                                    {
+                                        makeThumbnail({
+                                            getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
+                                            getLink: (project) => "/project/" + encodeURIComponent(project.name),
+                                            doPopover: true,
+                                        })(proj)
+                                    }
+                                </div>
+                            ))
+                        }
                     </div>
                     <div className="bg-highlight">
                         <p className="p-1 pl-2 small">
-                            Visit the <a href="https://github.com/scivision-gallery"><strong>Scivision Example Gallery</strong></a> on GitHub for more
+                            Explore the full <Link to="project-grid"><strong>project catalog</strong></Link>
                         </p>
                     </div>
-
+                </div>
             </div>
 
         </>
@@ -1124,11 +1145,6 @@ function App() {
                                   }>
                             Data
                         </Nav.Link>
-
-                        <Nav.Link to="examples" as={NavLink}>
-                            Examples
-                        </Nav.Link>
-
                         <Nav.Link to="project-grid" as={NavLink}
                                   active={
                                       location_root == "project-table"
@@ -1376,11 +1392,6 @@ function App() {
                                        </div>
                                    </>
                                } />
-
-                        <Route path="/examples" element={
-
-                                   <p> More to come here soon. For now, see the <a href="https://github.com/scivision-gallery">Scivision Example Gallery</a> on GitHub. </p>
-                               }/>
 
                         <Route path="/community" element={
                                    <>
