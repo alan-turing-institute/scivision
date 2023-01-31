@@ -379,7 +379,7 @@ function github_auth({ referrer, gh_logged_in }) {
 function ModelDefinitionListFragment({data}) {
     if (data.installable){
       var scivision_code = <>
-                            <dt className="col-sm-3"><a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision Python Code</a>:</dt>
+                            <dt className="col-sm-3"><a href="https://scivision.readthedocs.io/en/latest/api.html">Loadable with Scivision in Python</a>:</dt>
                             <dd className="col-sm-9">
                                 <p><code>from scivision import load_pretrained_model</code></p>
                                 <p><code>load_pretrained_model({data.url})</code></p>
