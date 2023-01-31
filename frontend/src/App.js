@@ -49,6 +49,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
 import MarkdownView from 'react-showdown';
 
 import { download, sample_without_replacement } from "./utils.js";
+
 import { 
     server_configs, 
     server_config_selected, 
@@ -56,6 +57,7 @@ import {
     GH_TOKEN_KEY, 
     RANDOM_UUID_KEY 
 } from "./config.js";
+
 import {
     context_to_paths, 
     model_thumbnails_ctxt, 
@@ -65,7 +67,9 @@ import {
     project_thumbnails_ctxt, 
     project_thumbnails
 } from "./thumbnails.js"
+
 import { CatalogEntryForm } from "./catalog_entry_form.js"
+
 import { 
     get_github_token, 
     Login, 
@@ -73,6 +77,13 @@ import {
     LoginStatusLinkLoggedIn, 
     LoginStatusLink
 } from "./github_helper_funcs.js"
+
+import {
+    TableGridViewNav, 
+    ModelNav, 
+    DatasourceNav,
+    ProjectNav
+} from "./catalog_navigation.js"
 
 // const server_configs = {
 //     development: {
@@ -443,36 +454,36 @@ function ProjectDefinitionListFragment({data}) {
             </>);
 }
 
-// Component: List of models or datasources (depending on prop), with
-// choice of grid or table view.  One of these views will be rendered,
-// depending on the route
-//
-// route: /model-table, /model-grid, /datasource-table, /datasource-grid
-//
-// * props - { gridRoute, tableRoute }
-//   where
-//     gridRoute, tableRoute - the route for the grid and table views
-function TableGridViewNav(props) {
-    return (
-        <Nav className="mb-2" variant="tabs">
-            <Nav.Item>
-                <Nav.Link to={props.gridRoute} as={NavLink}>
-                    <i className="bi bi-grid" />{/* Thumbnails*/}
-                </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link to={props.tableRoute} as={NavLink}>
-                    <i className="bi bi-list-ul" />{/* Table*/}
-                </Nav.Link>
-            </Nav.Item>
-            <Nav.Item className="ml-auto">
-                <Nav.Link to={props.createNewRoute} as={NavLink}>
-                    <i className="bi bi-file-earmark-plus" /> Create new entry
-                </Nav.Link>
-            </Nav.Item>
-        </Nav>
-    );
-}
+// // Component: List of models or datasources (depending on prop), with
+// // choice of grid or table view.  One of these views will be rendered,
+// // depending on the route
+// //
+// // route: /model-table, /model-grid, /datasource-table, /datasource-grid
+// //
+// // * props - { gridRoute, tableRoute }
+// //   where
+// //     gridRoute, tableRoute - the route for the grid and table views
+// function TableGridViewNav(props) {
+//     return (
+//         <Nav className="mb-2" variant="tabs">
+//             <Nav.Item>
+//                 <Nav.Link to={props.gridRoute} as={NavLink}>
+//                     <i className="bi bi-grid" />{/* Thumbnails*/}
+//                 </Nav.Link>
+//             </Nav.Item>
+//             <Nav.Item>
+//                 <Nav.Link to={props.tableRoute} as={NavLink}>
+//                     <i className="bi bi-list-ul" />{/* Table*/}
+//                 </Nav.Link>
+//             </Nav.Item>
+//             <Nav.Item className="ml-auto">
+//                 <Nav.Link to={props.createNewRoute} as={NavLink}>
+//                     <i className="bi bi-file-earmark-plus" /> Create new entry
+//                 </Nav.Link>
+//             </Nav.Item>
+//         </Nav>
+//     );
+// }
 
 // Component: A badge indicating a task with the given name
 // TODO: distinct colours for each task
@@ -943,40 +954,40 @@ function Project() {
 // }
 
 
-// Component: Tab-bar for models (grid, table, create etc)
-function ModelNav() {
-    return (
-        <>
-            <TableGridViewNav
-                gridRoute="/model-grid"
-                tableRoute="/model-table"
-                createNewRoute="/new-model"
-            />
-        </>
-    );
-}
+// // Component: Tab-bar for models (grid, table, create etc)
+// function ModelNav() {
+//     return (
+//         <>
+//             <TableGridViewNav
+//                 gridRoute="/model-grid"
+//                 tableRoute="/model-table"
+//                 createNewRoute="/new-model"
+//             />
+//         </>
+//     );
+// }
 
-// Component: Tab-bar for datasources (grid, table, create etc)
-function DatasourceNav() {
-    return (
-        <TableGridViewNav
-            gridRoute="/datasource-grid"
-            tableRoute="/datasource-table"
-            createNewRoute="/new-datasource"
-        />
-    );
-}
+// // Component: Tab-bar for datasources (grid, table, create etc)
+// function DatasourceNav() {
+//     return (
+//         <TableGridViewNav
+//             gridRoute="/datasource-grid"
+//             tableRoute="/datasource-table"
+//             createNewRoute="/new-datasource"
+//         />
+//     );
+// }
 
-// Component: Tab-bar for projects (grid, table, create etc)
-function ProjectNav() {
-    return (
-        <TableGridViewNav
-            gridRoute="/project-grid"
-            tableRoute="/project-table"
-            createNewRoute="/new-project"
-        />
-    );
-}
+// // Component: Tab-bar for projects (grid, table, create etc)
+// function ProjectNav() {
+//     return (
+//         <TableGridViewNav
+//             gridRoute="/project-grid"
+//             tableRoute="/project-table"
+//             createNewRoute="/new-project"
+//         />
+//     );
+// }
 
 // // helper: select a random sample of size 'n_sample' from the array 'arr'
 // function sample_without_replacement(arr, n_sample) {
