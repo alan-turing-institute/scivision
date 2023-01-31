@@ -48,6 +48,8 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
 
 import MarkdownView from 'react-showdown';
 
+import { download, sample_without_replacement } from "./utils.js";
+
 
 const server_configs = {
     development: {
@@ -103,19 +105,19 @@ const project_thumbnails_ctxt = require.context(
 const project_thumbnails = context_to_paths(project_thumbnails_ctxt);
 
 
-// Utility function to download a text file, with the given filename and contents 'text'
-function download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
+// // Utility function to download a text file, with the given filename and contents 'text'
+// function download(filename, text) {
+//   var element = document.createElement('a');
+//   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+//   element.setAttribute('download', filename);
 
-  element.style.display = 'none';
-  document.body.appendChild(element);
+//   element.style.display = 'none';
+//   document.body.appendChild(element);
 
-  element.click();
+//   element.click();
 
-  document.body.removeChild(element);
-}
+//   document.body.removeChild(element);
+// }
 
 // Component: Form to create new catalog entry (for download or PR)
 // routes: /new-model, /new-datasource
@@ -953,20 +955,20 @@ function ProjectNav() {
     );
 }
 
-// helper: select a random sample of size 'n_sample' from the array 'arr'
-function sample_without_replacement(arr, n_sample) {
-    var samples = []
-    for (var i = 0; i < arr.length; i++) {
-        if (samples.length == n_sample) break;
+// // helper: select a random sample of size 'n_sample' from the array 'arr'
+// function sample_without_replacement(arr, n_sample) {
+//     var samples = []
+//     for (var i = 0; i < arr.length; i++) {
+//         if (samples.length == n_sample) break;
 
-        var u = Math.random();
+//         var u = Math.random();
 
-        if ((arr.length - i) * u < n_sample - samples.length) {
-            samples.push(arr[i]);
-        }
-    }
-    return samples
-}
+//         if ((arr.length - i) * u < n_sample - samples.length) {
+//             samples.push(arr[i]);
+//         }
+//     }
+//     return samples
+// }
 
 // Component: The home page
 // route: /
