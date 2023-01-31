@@ -388,6 +388,12 @@ function ModelDefinitionListFragment({data}) {
                 <dd className="col-sm-9">
                     <div><code>pip install {data.pkg_url}</code></div>
                 </dd>
+
+                <dt className="col-sm-3"><a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision Python Code</a>:</dt>
+                <dd className="col-sm-9">
+                    <p><code>from scivision import load_pretrained_model</code></p>
+                    <p><code>load_pretrained_model({data.url})</code></p>
+                </dd>
             </>);
 }
 
