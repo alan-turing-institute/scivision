@@ -477,7 +477,7 @@ function TaskBadge({taskName}) {
 function InstallBadge({installBool}) {
     if (installBool) {
         var badge = <>
-            <span className="badge badge-primary">Installable</span>
+            <span className="badge badge-secondary">Installable</span>
             &nbsp;
         </>
     } else {
