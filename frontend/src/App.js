@@ -377,23 +377,30 @@ function github_auth({ referrer, gh_logged_in }) {
 //
 // * data - one model
 function ModelDefinitionListFragment({data}) {
+    if (data.installable){
+      var scivision_code = <>
+                            <dt className="col-sm-3"><a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision Python Code</a>:</dt>
+                            <dd className="col-sm-9">
+                                <p><code>from scivision import load_pretrained_model</code></p>
+                                <p><code>load_pretrained_model({data.url})</code></p>
+                            </dd>
+                            </>;
+    } else {
+      var scivision_code = <></>;
+    }
     return (<>
                 <dt className="col-sm-3">Description</dt>
                 <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
 
                 <dt className="col-sm-3">Homepage</dt>
                 <dd className="col-sm-9"><a href={data.url}>{data.url}</a></dd>
-
+                
                 <dt className="col-sm-3">Install with pip</dt>
                 <dd className="col-sm-9">
                     <div><code>pip install {data.pkg_url}</code></div>
                 </dd>
-
-                <dt className="col-sm-3"><a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision Python Code</a>:</dt>
-                <dd className="col-sm-9">
-                    <p><code>from scivision import load_pretrained_model</code></p>
-                    <p><code>load_pretrained_model({data.url})</code></p>
-                </dd>
+                
+                {scivision_code}  
             </>);
 }
 
