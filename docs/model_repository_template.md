@@ -161,7 +161,6 @@ setup(
 
 In scivision, once your model(s) have been included in the scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the :ref:`api-docs` docs for details.
 
-<<<<<<< HEAD
 
 
 .. _requirements-for-scivision-website:
