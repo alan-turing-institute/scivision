@@ -180,7 +180,6 @@ When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model 
 
 <<<<<<< HEAD
 Once you have identified a suitable thumbnail please upload it to the [thumbnail models folder](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data/thumbnails/models).
-=======
 Once you have identified a suitable thumbnail, follow the :ref:`how-to-contribute` guide to open a pull request to the Scivision GitHub repo which adds the thumbnail image in the `scivision/catalog/data/thumbnails/models` folder. 
 
 .. _additional:
