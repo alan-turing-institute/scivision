@@ -56,6 +56,15 @@ import {
     GH_TOKEN_KEY, 
     RANDOM_UUID_KEY 
 } from "./config.js";
+import {
+    context_to_paths, 
+    model_thumbnails_ctxt, 
+    model_thumbnails, 
+    datasource_thumbnails_ctxt, 
+    datasource_thumbnails, 
+    project_thumbnails_ctxt, 
+    project_thumbnails
+} from "./thumbnails.js"
 
 // const server_configs = {
 //     development: {
@@ -77,38 +86,38 @@ import {
 // const RANDOM_UUID_KEY = "random_uuid";
 
 
-// Load the thumbnail images
+// // Load the thumbnail images
 
-// From a webpack object returned by require.context (ctxt), make a
-// dictionary from the resource name to its path
-//
-// ctxt is callable, and calling it with the name of a resource
-// returns the path to that resource.  It also has a '.keys()' method,
-// which returns all the included resources.
-//
-// Could strip the leading './' and trailing extension (and then handle
-// several file types)
-function context_to_paths(ctxt) {
-    return ctxt.keys().reduce((dict, name) => {
-        dict[name] = ctxt(name);
-        return dict;
-    }, {});
-}
+// // From a webpack object returned by require.context (ctxt), make a
+// // dictionary from the resource name to its path
+// //
+// // ctxt is callable, and calling it with the name of a resource
+// // returns the path to that resource.  It also has a '.keys()' method,
+// // which returns all the included resources.
+// //
+// // Could strip the leading './' and trailing extension (and then handle
+// // several file types)
+// function context_to_paths(ctxt) {
+//     return ctxt.keys().reduce((dict, name) => {
+//         dict[name] = ctxt(name);
+//         return dict;
+//     }, {});
+// }
 
-const model_thumbnails_ctxt = require.context(
-    './data/thumbnails/models', false, /\.jpg$/
-);
-const model_thumbnails = context_to_paths(model_thumbnails_ctxt);
+// const model_thumbnails_ctxt = require.context(
+//     './data/thumbnails/models', false, /\.jpg$/
+// );
+// const model_thumbnails = context_to_paths(model_thumbnails_ctxt);
 
-const datasource_thumbnails_ctxt = require.context(
-    './data/thumbnails/datasources', false, /\.jpg$/
-);
-const datasource_thumbnails = context_to_paths(datasource_thumbnails_ctxt);
+// const datasource_thumbnails_ctxt = require.context(
+//     './data/thumbnails/datasources', false, /\.jpg$/
+// );
+// const datasource_thumbnails = context_to_paths(datasource_thumbnails_ctxt);
 
-const project_thumbnails_ctxt = require.context(
-    './data/thumbnails/projects', false, /\.jpg$/
-);
-const project_thumbnails = context_to_paths(project_thumbnails_ctxt);
+// const project_thumbnails_ctxt = require.context(
+//     './data/thumbnails/projects', false, /\.jpg$/
+// );
+// const project_thumbnails = context_to_paths(project_thumbnails_ctxt);
 
 
 // // Utility function to download a text file, with the given filename and contents 'text'
