@@ -84,7 +84,7 @@ You should include a `LICENSE` file in the repository, so that scivision users w
 
 .. _data-thumbnail:
 
-## 🎆 Data Thumbnail
+### 🎆 Data Thumbnail
 
 When viewing the dataset in [sci.vision](https://sci.vision/#/datasource-grid) a dataset thumbnail is required. The thumbnail can be an interesting image or slice of the dataset that catches the attention of the Scivision user (creativity encouraged!). 
 
