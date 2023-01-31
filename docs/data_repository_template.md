@@ -94,7 +94,6 @@ When viewing the dataset in [sci.vision](https://sci.vision/#/datasource-grid) a
 Once you have identified a suitable thumbnail please upload it to the [thumbnail datasources folder](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data/thumbnails/datasources). 
 =======
 Once you have identified a suitable thumbnail, follow the :ref:`how-to-contribute` guide to open a pull request to the Scivision GitHub repo which adds the thumbnail image in the `scivision/catalog/data/thumbnails/datasources` folder. 
->>>>>>> e9be9e1be72d6db9ec0f9b2505f36e08533d5a8c
 
 <!-- .. _example-data-repos:
 
