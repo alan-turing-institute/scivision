@@ -171,7 +171,6 @@ In scivision, once your model(s) have been included in the scivision catalog, pi
 
 ### 🎆 Model Thumbnail
 =======
-## 🎆 Model Thumbnail
 
 When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model thumbnail is required. The thumbnail can be an interesting image explaining the model and that catches the attention of the Scivision user (creativity encouraged!).
 
