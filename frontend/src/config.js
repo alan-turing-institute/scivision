@@ -1,7 +1,7 @@
 import { Octokit } from "octokit";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
 
-export const server_configs = {
+const server_configs = {
     development: {
         uri: 'https://scivision-dev-gh-gatekeeper.azurewebsites.net/authenticate/',
         client_id: 'b1f4db23eb46160d16b7',

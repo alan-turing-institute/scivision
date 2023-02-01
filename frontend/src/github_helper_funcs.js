@@ -1,10 +1,6 @@
-import {
-    HashRouter as Router,
-    useParams,
-    useLocation
-} from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
-import { withRouter, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { React, useState, useEffect, useRef } from 'react';
 import Spinner from "react-bootstrap/Spinner";
 import { Octokit } from "octokit";
@@ -18,7 +14,7 @@ import {
 // Obtain the GitHub OAuth token from Scivision backend
 //
 // * gh-code - the code obtained from the GitHub OAuth API
-export async function get_github_token(gh_code) {
+async function get_github_token(gh_code) {
     const response = await fetch(server_config_selected.uri + gh_code);
     const json = await response.json();
     if (!json.token) {
@@ -99,7 +95,7 @@ export function Login({ gh_logged_in, set_gh_logged_in }) {
 // * gh_logged_in - current login state
 //
 // This function is called to initiate a login attempt
-export function github_auth({ referrer, gh_logged_in }) {
+function github_auth({ referrer, gh_logged_in }) {
     if (!gh_logged_in) {
         var github_auth_url = new URL('https://github.com/login/oauth/authorize');
 
@@ -128,7 +124,7 @@ export function github_auth({ referrer, gh_logged_in }) {
 // Component: Username/logout link (shown when logged in)
 //
 // * set_gh_logged_in - setter for State variable
-export function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
+function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     const octokit = new Octokit({ auth: sessionStorage[GH_TOKEN_KEY] });
     const [ gh_username, set_gh_username ] = useState("...");
     useEffect(() => {

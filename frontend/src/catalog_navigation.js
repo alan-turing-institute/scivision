@@ -12,7 +12,7 @@ import { Nav } from "react-bootstrap";
 // * props - { gridRoute, tableRoute }
 //   where
 //     gridRoute, tableRoute - the route for the grid and table views
-export function TableGridViewNav(props) {
+function TableGridViewNav(props) {
     return (
         <Nav className="mb-2" variant="tabs">
             <Nav.Item>

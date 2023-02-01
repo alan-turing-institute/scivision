@@ -15,7 +15,7 @@ import { TaskBadge } from './badges.js'
 
 // Helper function (used in ModelTable and DatasourceTable -- not the
 // corresponding Gridviews) returning a thumbnail element
-export function renderThumbnailForTable(thumb) {
+function renderThumbnailForTable(thumb) {
     if (thumb != undefined) {
         return (
             <img src={thumb}
@@ -31,7 +31,7 @@ export function renderThumbnailForTable(thumb) {
 
 // Component: Format the element in an 'info box'.
 // Used for expanded rows in ModelTable/DatasourceTable
-export function TableCardDropdown({element}) {
+function TableCardDropdown({element}) {
     return (
         <div className="border-bottom">
             <div className="card mt-1 mb-3 bg-light">
