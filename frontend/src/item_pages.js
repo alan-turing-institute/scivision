@@ -19,6 +19,8 @@ import { makePopover } from "./grid.js"
 
 // Component: Details about a model
 // route: /model/:model-name
+//                    <ModelDefinitionListFragment data={model} />
+
 export function Model() {
     const { model_name_encoded } = useParams();
     const model_name = decodeURIComponent(model_name_encoded);
@@ -28,7 +30,18 @@ export function Model() {
                 <h3>{model.name}</h3>
                 <img src={model_thumbnails[`./${model.name}.jpg`]} />
                 <dl className="row">
-                    <ModelDefinitionListFragment data={model} />
+                  <>
+                    <dt className="col-sm-3">Description</dt>
+                    <dd className="col-sm-9">{model.description?model.description:"(none provided)"}</dd>
+
+                    <dt className="col-sm-3">Homepage</dt>
+                    <dd className="col-sm-9"><a href={model.url}>{model.url}</a></dd>
+
+                    <dt className="col-sm-3">Install with pip</dt>
+                    <dd className="col-sm-9">
+                        <div><code>pip install {model.pkg_url}</code></div>
+                    </dd>
+                  </>
                 </dl>
             </>);
 }
@@ -44,7 +57,13 @@ export function Datasource() {
                 <h3>{datasource.name}</h3>
                 <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} />
                 <dl className="row">
-                    <DatasourceDefinitionListFragment data={datasource} />
+                  <>
+                      <dt className="col-sm-3">Description</dt>
+                      <dd className="col-sm-9">{datasource.description?datasource.description:"(none provided)"}</dd>
+
+                      <dt className="col-sm-3">Location</dt>
+                      <dd className="col-sm-9"><a href={datasource.url}>{datasource.url}</a></dd>
+                  </>
                 </dl>
             </>);
 }
@@ -98,38 +117,5 @@ export function Project() {
           </dl>
     </>
     );
-}
-
-// Component: Fragment containing definition items for the expanded
-// view of the model table, and the model page
-//
-// * data - one model
-function ModelDefinitionListFragment({data}) {
-    return (<>
-                <dt className="col-sm-3">Description</dt>
-                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
-
-                <dt className="col-sm-3">Homepage</dt>
-                <dd className="col-sm-9"><a href={data.url}>{data.url}</a></dd>
-
-                <dt className="col-sm-3">Install with pip</dt>
-                <dd className="col-sm-9">
-                    <div><code>pip install {data.pkg_url}</code></div>
-                </dd>
-            </>);
-}
-
-// Component: Fragment containing definition items for the expanded
-// view of the datasource table and the page for one datasource
-//
-// * data - one datasource
-function DatasourceDefinitionListFragment({data}) {
-    return (<>
-                <dt className="col-sm-3">Description</dt>
-                <dd className="col-sm-9">{data.description?data.description:"(none provided)"}</dd>
-
-                <dt className="col-sm-3">Location</dt>
-                <dd className="col-sm-9"><a href={data.url}>{data.url}</a></dd>
-            </>);
 }
 
