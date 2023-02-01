@@ -1,7 +1,4 @@
-import './App.css';
 import { React } from 'react';
-
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';

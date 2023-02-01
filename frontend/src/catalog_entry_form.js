@@ -1,12 +1,9 @@
-import './App.css';
 import { Buffer } from 'buffer';
 import { React, useState } from 'react';
 
 import Form from '@rjsf/bootstrap-4';
 import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
-
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { download } from "./utils.js";
 import { 
