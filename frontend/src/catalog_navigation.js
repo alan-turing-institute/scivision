@@ -12,7 +12,7 @@ import { Nav } from "react-bootstrap";
 // * props - { gridRoute, tableRoute }
 //   where
 //     gridRoute, tableRoute - the route for the grid and table views
-function TableGridViewNav(props) {
+function CatalogNavBar(props) {
     return (
         <Nav className="mb-2" variant="tabs">
             <Nav.Item>
@@ -39,7 +39,7 @@ function TableGridViewNav(props) {
 export function ModelNav() {
     return (
         <>
-            <TableGridViewNav
+            <CatalogNavBar
                 gridRoute="/model-grid"
                 tableRoute="/model-table"
                 createNewRoute="/new-model"
@@ -51,7 +51,7 @@ export function ModelNav() {
 // Component: Tab-bar for datasources (grid, table, create etc)
 export function DatasourceNav() {
     return (
-        <TableGridViewNav
+        <CatalogNavBar
             gridRoute="/datasource-grid"
             tableRoute="/datasource-table"
             createNewRoute="/new-datasource"
@@ -62,7 +62,7 @@ export function DatasourceNav() {
 // Component: Tab-bar for projects (grid, table, create etc)
 export function ProjectNav() {
     return (
-        <TableGridViewNav
+        <CatalogNavBar
             gridRoute="/project-grid"
             tableRoute="/project-table"
             createNewRoute="/new-project"
