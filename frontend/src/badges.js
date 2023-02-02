@@ -10,3 +10,18 @@ export function TaskBadge({taskName}) {
         </>
     );
 }
+
+// Component: A badge indicating whether a model is installable with scivision
+export function InstallBadge({installBool}) {
+    if (installBool) {
+        var badge = <>
+            <span className="badge badge-secondary">Installable</span>
+            &nbsp;
+        </>
+    } else {
+        var badge = <></>
+    }
+    return (
+        badge
+    );
+}
