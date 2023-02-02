@@ -15,12 +15,12 @@ export function TaskBadge({taskName}) {
 export function InstallBadge({installBool}) {
     if (installBool) {
         var badge = <>
-            <span className="badge badge-success">Use me with Scivision.Py</span>
+            <span className="badge badge-success">Use with Scivision.Py</span>
             &nbsp;
         </>
     } else {
       var badge = <>
-          <span className="badge badge-secondary">Use me with my Homepage instructions</span>
+          <span className="badge badge-secondary">See my Homepage</span>
           &nbsp;
       </>
     }
