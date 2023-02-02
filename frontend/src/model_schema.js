@@ -45,7 +45,7 @@ const schema = {
             "type": "boolean"
         },
         "scivision_usable": {
-            "title": "Can the model be installed into Python with Scivision? e.g. scivision.load_pretrained_model(<model url>, allow_install=True)",
+            "title": "Can the model be installed and loaded with the scivision Python package? e.g. scivision.load_pretrained_model(<model url>, allow_install=True)",
             "default": false,
             "type": "boolean"
         },
