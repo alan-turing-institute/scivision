@@ -28,7 +28,7 @@ export function Model() {
     
     if (model.installable){
       var scivision_code = <>
-                            <dt className="col-sm-3"><a href="https://scivision.readthedocs.io/en/latest/api.html">Loadable with Scivision in Python</a>:</dt>
+                            <dt className="col-sm-3">Use me with <a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision.Py</a>:</dt>
                             <dd className="col-sm-9">
                                 <p><code>from scivision import load_pretrained_model</code></p>
                                 <p><code>load_pretrained_model({model.url})</code></p>
