@@ -39,7 +39,7 @@ const schema = {
         },
         "url": {
             "title": "URL",
-            "description": "The URL of the scivision datasource yml file",
+            "description": "The URL path to the scivision yml file in the datasource repo. If the exact path is not specified, Scivision will try to locate the file in the default location at .scivision/data.yml",
             "minLength": 1,
             "maxLength": 65536,
             "format": "uri",
