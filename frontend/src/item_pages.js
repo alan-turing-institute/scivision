@@ -26,7 +26,7 @@ export function Model() {
     const model_name = decodeURIComponent(model_name_encoded);
     const model = models.entries.find(model => model.name == model_name);
     
-    if (model.installable){
+    if (model.scivision_usable){
       var scivision_code = <>
                             <dt className="col-sm-3">Use me with <a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision.Py</a>:</dt>
                             <dd className="col-sm-9">

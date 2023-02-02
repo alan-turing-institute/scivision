@@ -13,7 +13,7 @@
       "pkg_url": "git+https://github.com/stardist/stardist.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": false,
+      "scivision_usable": false,
       "labels_required": true,
       "institution": [
         "epfl"
@@ -41,7 +41,7 @@
       "pkg_url": "git+https://github.com/danforthcenter/plantcv@master",
       "format": "image",
       "pretrained": true,
-      "installable": false,
+      "scivision_usable": false,
       "labels_required": true,
       "institution": [
         "danforthcenter"
@@ -66,7 +66,7 @@
       "pkg_url": "git+https://github.com/MarniTausen/Greenotyper@master",
       "format": "image",
       "pretrained": true,
-      "installable": false,
+      "scivision_usable": false,
       "labels_required": true,
       "institution": [
         "MarniTausen"
@@ -89,7 +89,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/mapreader-plant-scivision@master",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "alan-turing-institute"
@@ -113,7 +113,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/plankton-cefas-scivision@master",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "alan-turing-institute",
@@ -137,7 +137,7 @@
       "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@master",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "cambridge-university",
@@ -161,7 +161,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "alan-turing-institute"
@@ -182,7 +182,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "alan-turing-institute",
@@ -204,7 +204,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_segmentation.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "alan-turing-institute",
@@ -222,7 +222,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_objectdetection.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "alan-turing-institute",
@@ -241,7 +241,7 @@
       "pkg_url": "git+https://github.com/shmh40/detectreeRGB-treecrown-scivision.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": false,
       "institution": [
         "cambridge-university"
@@ -264,7 +264,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/flower_classification_model.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": true,
       "institution": [
         "alan-turing-institute"
@@ -284,7 +284,7 @@
       "pkg_url": "git+https://github.com/alan-turing-institute/butterfly_classification_model.git@main",
       "format": "image",
       "pretrained": true,
-      "installable": true,
+      "scivision_usable": true,
       "labels_required": true,
       "institution": [
         "alan-turing-institute"
