@@ -37,6 +37,7 @@ export function Model() {
     } else {
       var scivision_code = <></>;
     }
+    // TODO: make the install instructions model specific
     return (<>
                 <h3>{model.name}</h3>
                 <img src={model_thumbnails[`./${model.name}.jpg`]} />
