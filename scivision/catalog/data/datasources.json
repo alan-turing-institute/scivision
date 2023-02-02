@@ -295,7 +295,7 @@
       ],
       "name": "MapReader_Data_SIGSPATIAL_2022",
       "description": "Here we share gold standard annotations and outputs from early experiments using MapReader. MapReader creates datasets for humanities research using historical map scans and metadata as inputs.  Using maps provided by the National Library of Scotland, these annotations and outputs reflect labeling tasks relevant to historical research on the Living with Machines project.  Data shared here is derived from maps printed in nineteenth-century Britain by the Ordnance Survey, Britain's state mapping agency. These maps cover England, Wales, and Scotland from 1888 to 1913.",
-      "url": "https://github.com/alan-turing-institute/mapreader-plant-scivision",
+      "url": "https://github.com/alan-turing-institute/mapreader-scivision",
       "format": "image"
     }
   ]
