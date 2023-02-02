@@ -28,7 +28,7 @@ export function makePopover(data) {
             <Popover.Content>
                 <strong>{data.name}</strong> {data.description} &nbsp;
                 {data.tasks.map((t) => <TaskBadge taskName={t} />)}
-                {<UsageBadge installBool={data.installable} />}
+                {<UsageBadge usageBool={data.scivision_usable} />}
             </Popover.Content>
         </Popover>
     );
