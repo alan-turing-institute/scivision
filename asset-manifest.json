@@ -1,12 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.91e1128a.css",
-    "main.js": "/static/js/main.028f023a.js",
+    "main.js": "/static/js/main.e0b3aafa.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
-    "static/media/nb-2.jpg": "/static/media/nb-2.1342b7109f17a5eed789.jpg",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
-    "static/media/nb-1.jpg": "/static/media/nb-1.e68eb83f2aac11c9b18a.jpg",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
     "static/media/sentinel2_stac.jpg": "/static/media/sentinel2_stac.51737c69269f76ea86ed.jpg",
     "static/media/flower-classification-model.jpg": "/static/media/flower-classification-model.e7631bb6950118a863cb.jpg",
@@ -39,11 +37,11 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/index.html",
     "main.91e1128a.css.map": "/static/css/main.91e1128a.css.map",
-    "main.028f023a.js.map": "/static/js/main.028f023a.js.map",
+    "main.e0b3aafa.js.map": "/static/js/main.e0b3aafa.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91e1128a.css",
-    "static/js/main.028f023a.js"
+    "static/js/main.e0b3aafa.js"
   ]
 }
