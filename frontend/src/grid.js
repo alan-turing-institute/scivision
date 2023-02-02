@@ -15,7 +15,7 @@ import {
     project_thumbnails
 } from "./thumbnails.js"
 
-import { TaskBadge } from './badges.js'
+import { TaskBadge, InstallBadge } from './badges.js'
 
 // returns a function component, for a Popover describing the current
 // resource (model or datasource).  Assumes it has name, description,
@@ -28,6 +28,7 @@ export function makePopover(data) {
             <Popover.Content>
                 <strong>{data.name}</strong> {data.description} &nbsp;
                 {data.tasks.map((t) => <TaskBadge taskName={t} />)}
+                {<InstallBadge installBool={data.installable} />}
             </Popover.Content>
         </Popover>
     );
