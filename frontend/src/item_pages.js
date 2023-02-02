@@ -57,13 +57,11 @@ export function Datasource() {
                 <h3>{datasource.name}</h3>
                 <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} />
                 <dl className="row">
-                  <>
-                      <dt className="col-sm-3">Description</dt>
-                      <dd className="col-sm-9">{datasource.description?datasource.description:"(none provided)"}</dd>
+                  <dt className="col-sm-3">Description</dt>
+                  <dd className="col-sm-9">{datasource.description?datasource.description:"(none provided)"}</dd>
 
-                      <dt className="col-sm-3">Location</dt>
-                      <dd className="col-sm-9"><a href={datasource.url}>{datasource.url}</a></dd>
-                  </>
+                  <dt className="col-sm-3">Location</dt>
+                  <dd className="col-sm-9"><a href={datasource.url}>{datasource.url}</a></dd>
                 </dl>
             </>);
 }
