@@ -20,7 +20,7 @@ export function InstallBadge({installBool}) {
         </>
     } else {
       var badge = <>
-          <span className="badge badge-secondary">Follow model Homepage instructions to use me</span>
+          <span className="badge badge-secondary">Use me with my Homepage instructions</span>
           &nbsp;
       </>
     }
