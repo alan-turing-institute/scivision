@@ -12,8 +12,8 @@ export function TaskBadge({taskName}) {
 }
 
 // Component: A badge indicating whether a model is usable with scivision
-export function UsageBadge({installBool}) {
-    if (installBool) {
+export function UsageBadge({usageBool}) {
+    if (usageBool) {
         var badge = <>
             <span className="badge badge-success">Use with Scivision.Py</span>
             &nbsp;
