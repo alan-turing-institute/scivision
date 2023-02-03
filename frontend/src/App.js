@@ -20,7 +20,7 @@ import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
 import project_schema from './project_schema.js'
 
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -88,70 +88,75 @@ function App() {
                 </Navbar>
 
                 {/* Navigation bar */}
-                <Navbar bg="light" expand="lg">
-                    <Nav className="me-auto">
-                        <Nav.Link to="" as={NavLink}>
-                            Home
-                        </Nav.Link>
+                <Navbar collapseOnSelect expand = "md" bg="light">
+                    <Container>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                            <Navbar.Collapse id ="responsive-navbar-nav">
+                            <Nav className="me-auto">
+                            <Nav.Link to="" as={NavLink}>
+                                Home
+                            </Nav.Link>
 
-                        <Nav.Link to="about" as={NavLink}>
-                            About
-                        </Nav.Link>
+                            <Nav.Link to="about" as={NavLink}>
+                                About
+                            </Nav.Link>
 
-                        <Nav.Link to="scivisionpy" as={NavLink}>
-                            Scivision.Py
-                        </Nav.Link>
+                            <Nav.Link to="scivisionpy" as={NavLink}>
+                                Scivision.Py
+                            </Nav.Link>
 
-                        {/* We want to have the Datasource and Model menu items
-                          * highlighted (as if visited) for any of the routes
-                          * associated with these things.  This is the meaning of the
-                          * expression given for 'active' below. There is probably a
-                          * better way of doing this...*/}
+                            {/* We want to have the Datasource and Model menu items
+                              * highlighted (as if visited) for any of the routes
+                              * associated with these things.  This is the meaning of the
+                              * expression given for 'active' below. There is probably a
+                              * better way of doing this...*/}
 
-                        <Nav.Link to="model-grid" as={NavLink}
-                                  active={
-                                      location_root == "model-table"
-                                          || location_root == "new-model"
-                                          || location_root == "model"
-                                  }>
-                            Models
-                        </Nav.Link>
+                            <Nav.Link to="model-grid" as={NavLink}
+                                      active={
+                                          location_root == "model-table"
+                                              || location_root == "new-model"
+                                              || location_root == "model"
+                                      }>
+                                Models
+                            </Nav.Link>
 
-                        <Nav.Link to="datasource-grid" as={NavLink}
-                                  active={
-                                      location_root == "datasource-table"
-                                          || location_root == "new-datasource"
-                                          || location_root == "datasource"
-                                  }>
-                            Data
-                        </Nav.Link>
-                        <Nav.Link to="project-grid" as={NavLink}
-                                  active={
-                                      location_root == "project-table"
-                                          || location_root == "new-project"
-                                          || location_root == "project"
-                                  }>
-                            Projects
-                        </Nav.Link>
+                            <Nav.Link to="datasource-grid" as={NavLink}
+                                      active={
+                                          location_root == "datasource-table"
+                                              || location_root == "new-datasource"
+                                              || location_root == "datasource"
+                                      }>
+                                Data
+                            </Nav.Link>
+                            <Nav.Link to="project-grid" as={NavLink}
+                                      active={
+                                          location_root == "project-table"
+                                              || location_root == "new-project"
+                                              || location_root == "project"
+                                      }>
+                                Projects
+                            </Nav.Link>
 
-                        <Nav.Link to="community" as={NavLink}>
-                            Community
-                        </Nav.Link>
+                            <Nav.Link to="community" as={NavLink}>
+                                Community
+                            </Nav.Link>
 
-                        {/***
-                        <Nav.Item>
-                            <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
-                        </Nav.Item>
+                            {/***
+                            <Nav.Item>
+                                <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
+                            </Nav.Item>
 
-                        <Nav.Item>
-                            <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
-                        </Nav.Item>
+                            <Nav.Item>
+                                <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
+                            </Nav.Item>
 
-                        <Nav.Item>
-                            <a href="https://github.com/alan-turing-institute/scivision">GitHub repo</a>
-                        </Nav.Item>
-                         ***/}
-                    </Nav>
+                            <Nav.Item>
+                                <a href="https://github.com/alan-turing-institute/scivision">GitHub repo</a>
+                            </Nav.Item>
+                             ***/}
+                        </Nav>
+                        </Navbar.Collapse>
+                    </Container>
                 </Navbar>
 
                 <div className="login-bar px-3 mb-3 text-right">
