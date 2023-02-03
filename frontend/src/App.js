@@ -76,7 +76,7 @@ function App() {
 
                   <Navbar bg="light" expand="lg">
                     <Navbar.Brand>
-                        <Nav.Link to="home" as={NavLink}>
+                        <Nav.Link to="" as={NavLink}>
                             <img src={biglogo} width="38%" height="auto" alt="Scivision" />
                         </Nav.Link>
                     </Navbar.Brand>
