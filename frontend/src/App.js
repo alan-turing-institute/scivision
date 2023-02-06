@@ -184,12 +184,10 @@ function App() {
                     } />
 
                     <Route path="/scivisionpy" element={
-                        <>
+                        <Container>
                             <h3>The Scivision.Py Python Library</h3>
-                            <div className="text-readable-width mt-4">
                                 See the <a href="https://scivision.readthedocs.io/en/latest/">documentation</a>.
-                            </div>
-                        </>
+                        </Container>
                     } />
 
                     <Route path="/login/:referrer_encoded" element={
@@ -379,11 +377,9 @@ function App() {
                     } />
 
                     <Route path="/community" element={
-                        <>
+                        <Container>
                             <h3>Community Resources</h3>
-                            <div className="text-readable-width mt-3">
                                 <ul>
-
                                     <li>
                                         Our <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
                                     </li>
@@ -397,8 +393,7 @@ function App() {
                                     </li>
                                     <li>Email the Scivision core maintainers at <a href="mailto:scivision@turing.ac.uk">scivision@turing.ac.uk</a></li>
                                 </ul>
-                            </div>
-                        </>
+                        </Container>
                     } />
                 </Routes>
             </Container>
