@@ -17,7 +17,7 @@ Scivision is both a **webapp** and a **Python package** for discovering, and usi
 -  You are currently browsing the Scivision webapp, a tool for both using and contributing to scivision.
   > Note: The webapp is a work in progress and there will be more documentation soon. In the meantime feel free to open any bug or feature request issues on the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision).
 
-<img src="https://i.imgur.com/kc7aE7z.png" alt="scivision" width="750"/>
+<img src="https://i.imgur.com/kc7aE7z.png" alt="scivision" display="block" width="100%"/>
   `;
 
     return (

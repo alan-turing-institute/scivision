@@ -177,9 +177,9 @@ function App() {
                     <Route path="/about" element={
                         <>
                             <h3>A toolkit for scientific image analysis</h3>
-                            <div className="text-readable-width mt-4">
+                            <Container>
                                 <AboutText />
-                            </div>
+                            </Container>
                         </>
                     } />
 
