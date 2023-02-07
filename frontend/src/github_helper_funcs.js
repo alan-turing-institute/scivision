@@ -139,8 +139,9 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     return (
         <>
             Logged in as {gh_username}&nbsp;
-            <a href="javascript:;"
-               onClick={() => {
+            <a href="#"
+               onClick={(e) => {
+                   e.preventDefault()
                    set_gh_logged_in(false);
                    sessionStorage.removeItem(GH_TOKEN_KEY);
                }}>
@@ -159,8 +160,9 @@ export function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
 
     if (!gh_logged_in) {
         return (
-            <a href="javascript:;"
-                   onClick={() => {
+            <a href="#"
+                   onClick={(e) => {
+                   e.preventDefault()
                    github_auth({
                        referrer: loc.pathname,
                        gh_logged_in: gh_logged_in,
