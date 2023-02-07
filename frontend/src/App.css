@@ -11,6 +11,12 @@ h4 {
     margin-bottom: 1.5ex;
 }
 
+.brandLogo {
+    width: 100%;
+    max-width:40%;
+    min-width: 250px;
+}
+
 img.halfsize_thumbnails{
     width: 128px;
 }

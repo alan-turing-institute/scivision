@@ -73,15 +73,15 @@ function App() {
                   * links) */}
             <Container fluid className="bg-light p-0">
                 <Container>
-                    <Navbar expand="md">
+                    <Navbar expand="md flex-nowrap">
                         <Navbar.Brand>
-                            <Nav.Link to="" as={NavLink} className="p-0">
-                                <img src={biglogo} width="38%" height="auto" alt="Scivision" />
+                            <Nav.Link to="" as={NavLink} className="p-0 ">
+                                <img src={biglogo} className="brandLogo" alt="Scivision" />
                             </Nav.Link>
                         </Navbar.Brand>
-                        <span className="pull-right">
+                        <span>
                             <a style={{ color: "Black" }} href="https://github.com/alan-turing-institute/scivision">
-                                <i className="bi bi-github" aria-label="GitHub" style={{ fontSize: "2rem" }}></i>
+                                <i className="bi bi-github" aria-label="GitHub" style={{ fontSize: "2.5rem" }}></i>
                             </a>
                         </span>
                     </Navbar>
