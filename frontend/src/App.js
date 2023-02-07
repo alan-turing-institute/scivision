@@ -226,13 +226,13 @@ function App() {
                             <h3>Add a model to the catalog</h3>
                             <h4>Prerequistes</h4>
 
-                            <p className="text-readable-width">
+                            <div className="text-readable-width">
                                 <ul>
                                     <li> The source code of your model is shared in a public repository (GitHub or elsewhere). The Scivision catalog does not host your model source code directly, just some metadata about it, so this must be accessible elsewhere.</li>
                                     <li> Your model is in the <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-repo-structure">correct format for Scivision</a></li>
                                     <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-config-file">model config file</a> in your repository, to use below</li>
                                 </ul>
-                            </p>
+                            </div>
 
                             <h4> Add your model</h4>
 
@@ -284,7 +284,7 @@ function App() {
                             <h3>Add a datasource to the catalog</h3>
                             <h4>Prerequistes</h4>
 
-                            <p className="text-readable-width">
+                            <div className="text-readable-width">
                                 <ul>
                                     <li> Your data is in a publicly accessible location (for example, on <a href="https://zenodo.org/">Zenodo</a>). The Scivision catalog does not host your data directly, just some metadata about it, so this must be accessible elsewhere.</li>
                                     <li> Your data repository is in the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-repo-structure">format expected by Scivision</a> </li>
@@ -292,7 +292,7 @@ function App() {
 
 
                                 </ul>
-                            </p>
+                            </div>
 
                             <h4> Add your datasource</h4>
 
@@ -345,12 +345,12 @@ function App() {
                             <h3>Create a Scivision project page for your research</h3>
                             <h4>Prerequistes</h4>
 
-                            <p className="text-readable-width">
+                            <div className="text-readable-width">
                                 <ul>
                                     <li>You have already added the datasources used in your project to the <Link to="../datasource-grid">Scivision Data catalog</Link>. Click here to add a <Link to="../new-datasource">new datasource</Link>.</li>
                                     <li>You have already added the computer vision models used in your project to the <Link to="../model-grid">Scivision Model catalog</Link>. Click here to add a <Link to="../new-model">new model</Link>.</li>
                                 </ul>
-                            </p>
+                            </div>
 
                             <h4> Add your project</h4>
 
