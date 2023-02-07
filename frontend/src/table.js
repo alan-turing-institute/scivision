@@ -69,7 +69,7 @@ export function ModelTable() {
             name: "Tasks",
             selector: row => row.tasks,
             cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
+                (t) => <TaskBadge key={t} taskName={t} />
             ),
         },
     ];
@@ -113,7 +113,7 @@ export function DatasourceTable() {
             selector: row => row.tasks,
             name: 'Tasks',
             cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
+                (t) => <TaskBadge key={t} taskName={t} />
             )
         },
     ];
@@ -157,7 +157,7 @@ export function ProjectTable() {
             selector: row => row.tasks,
             name: 'Tasks',
             cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
+                (t) => <TaskBadge key={t} taskName={t} />
             )
         },
     ];

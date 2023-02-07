@@ -27,7 +27,7 @@ export function makePopover(data) {
         <Popover id="popover-basic" {...props}>
             <Popover.Content>
                 <strong>{data.name}</strong> {data.description} &nbsp;
-                {data.tasks.map((t) => <TaskBadge taskName={t} />)}
+                {data.tasks.map((t) => <TaskBadge key= {t} taskName={t} />)}
             </Popover.Content>
         </Popover>
     );
