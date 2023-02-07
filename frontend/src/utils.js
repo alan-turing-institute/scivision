@@ -17,7 +17,7 @@ export function download(filename, text) {
 export function sample_without_replacement(arr, n_sample) {
     var samples = []
     for (var i = 0; i < arr.length; i++) {
-        if (samples.length == n_sample) break;
+        if (samples.length === n_sample) break;
 
         var u = Math.random();
 

@@ -78,7 +78,7 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
         // Where no popover, thumnail includes description as text below
         } else {
             // Add a full stop if the description doesn't have one
-            if (data.description.slice(-1) != '.'){
+            if (data.description.slice(-1) !== '.'){
               var fstop = '.';
             } else {
               var fstop = '';

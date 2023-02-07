@@ -24,11 +24,11 @@ import { makePopover } from "./grid.js"
 export function Model() {
     const { model_name_encoded } = useParams();
     const model_name = decodeURIComponent(model_name_encoded);
-    const model = models.entries.find(model => model.name == model_name);
+    const model = models.entries.find(model => model.name === model_name);
 
     return (<>
                 <h3>{model.name}</h3>
-                <img src={model_thumbnails[`./${model.name}.jpg`]} />
+                <img src={model_thumbnails[`./${model.name}.jpg`]} alt={model.name}/>
                 <dl className="row">
                   <>
                     <dt className="col-sm-3">Description</dt>
@@ -51,11 +51,11 @@ export function Model() {
 export function Datasource() {
     const { datasource_name_encoded } = useParams();
     const datasource_name = decodeURIComponent(datasource_name_encoded);
-    const datasource = datasources.entries.find(ds => ds.name == datasource_name);
+    const datasource = datasources.entries.find(ds => ds.name === datasource_name);
 
     return (<>
                 <h3>{datasource.name}</h3>
-                <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} />
+                <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} alt = {datasource.name}/>
                 <dl className="row">
                   <dt className="col-sm-3">Description</dt>
                   <dd className="col-sm-9">{datasource.description?datasource.description:"(none provided)"}</dd>
@@ -71,15 +71,15 @@ export function Datasource() {
 export function Project() {
   const { project_name_encoded } = useParams();
   const project_name = decodeURIComponent(project_name_encoded);
-  const project = projects.entries.find(ds => ds.name == project_name);
+  const project = projects.entries.find(ds => ds.name === project_name);
   let model_path = "../model/"
   let data_path = "../datasource/"
   const datasource_links = [];
   const model_links = [];
   for (const model_name of project.models) {
     let full_path = model_path.concat(model_name)
-    const model = models.entries.find(model => model.name == model_name);
-    let thumbnail = <Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="halfsize_thumbnails"/></Link>;
+    const model = models.entries.find(model => model.name === model_name);
+    let thumbnail = <Link to={full_path}><img src={model_thumbnails[`./${model.name}.jpg`]} class="halfsize_thumbnails" alt={model.name}/></Link>;
     model_links.push(<OverlayTrigger
                         overlay={makePopover(model)}
                         placement="auto">
@@ -89,8 +89,8 @@ export function Project() {
   }
   for (const datasource_name of project.datasources) {
     let full_path = data_path.concat(datasource_name)
-    const datasource = datasources.entries.find(datasource => datasource.name == datasource_name);
-    let thumbnail = <Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="halfsize_thumbnails"/></Link>;
+    const datasource = datasources.entries.find(datasource => datasource.name === datasource_name);
+    let thumbnail = <Link to={full_path}><img src={datasource_thumbnails[`./${datasource.name}.jpg`]} class="halfsize_thumbnails" alt={datasource.name}/></Link>;
     datasource_links.push(<OverlayTrigger
                             overlay={makePopover(datasource)}
                             placement="auto">
@@ -101,7 +101,7 @@ export function Project() {
     return (
       <>
           <h1>{project.header}</h1>
-          <img src={project_thumbnails[`./${project.name}.jpg`]} />
+          <img src={project_thumbnails[`./${project.name}.jpg`]} alt={project.header} />
           <MarkdownView
             markdown={project.page}
             options={{ tables: true, emoji: true }}

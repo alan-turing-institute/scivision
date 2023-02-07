@@ -112,26 +112,26 @@ function App() {
 
                                     <Nav.Link to="model-grid" as={NavLink}
                                         active={
-                                            location_root == "model-table"
-                                            || location_root == "new-model"
-                                            || location_root == "model"
+                                            location_root === "model-table"
+                                            || location_root === "new-model"
+                                            || location_root === "model"
                                         }>
                                         Models
                                     </Nav.Link>
 
                                     <Nav.Link to="datasource-grid" as={NavLink}
                                         active={
-                                            location_root == "datasource-table"
-                                            || location_root == "new-datasource"
-                                            || location_root == "datasource"
+                                            location_root === "datasource-table"
+                                            || location_root === "new-datasource"
+                                            || location_root === "datasource"
                                         }>
                                         Data
                                     </Nav.Link>
                                     <Nav.Link to="project-grid" as={NavLink}
                                         active={
-                                            location_root == "project-table"
-                                            || location_root == "new-project"
-                                            || location_root == "project"
+                                            location_root === "project-table"
+                                            || location_root === "new-project"
+                                            || location_root === "project"
                                         }>
                                         Projects
                                     </Nav.Link>
@@ -287,7 +287,7 @@ function App() {
                             <p className="text-readable-width">
                                 <ul>
                                     <li> Your data is in a publicly accessible location (for example, on <a href="https://zenodo.org/">Zenodo</a>). The Scivision catalog does not host your data directly, just some metadata about it, so this must be accessible elsewhere.</li>
-                                    <li> Your data repository is in the <a href="">format expected by Scivision</a> </li>
+                                    <li> Your data repository is in the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-repo-structure">format expected by Scivision</a> </li>
                                     <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">data config file</a> in your repository, to use below</li>
 
 

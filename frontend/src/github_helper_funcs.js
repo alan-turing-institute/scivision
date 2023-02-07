@@ -56,7 +56,7 @@ export function Login({ gh_logged_in, set_gh_logged_in }) {
             if (gh_code) {
                 (async () => {
                     if (gh_logged_in) throw "Already logged in to GitHub";
-                    if (gh_state != random_uuid) throw "OAuth state mismatch";
+                    if (gh_state !== random_uuid) throw "OAuth state mismatch";
                     return get_github_token(gh_code);
                 })()
                     .then((tok) => {

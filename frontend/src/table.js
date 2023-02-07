@@ -16,7 +16,7 @@ import { TaskBadge } from './badges.js'
 // Helper function (used in ModelTable and DatasourceTable -- not the
 // corresponding Gridviews) returning a thumbnail element
 function renderThumbnailForTable(thumb) {
-    if (thumb != undefined) {
+    if (thumb !== undefined) {
         return (
             <img src={thumb}
                  width="128"
