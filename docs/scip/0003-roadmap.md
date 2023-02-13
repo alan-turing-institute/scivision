@@ -44,6 +44,7 @@ perpetual 'draft').
 
 ### Community engagement
 
+  - A community calendar
   - Running events, including a regular community call
   - Making Scivision a hub for best practices in sharing reproducible
     CV models
@@ -60,13 +61,12 @@ perpetual 'draft').
       - For example, show extra installation instructions when these 
         are required, and give an example of using the model in Python
   - Improvements to the 'new model/new datasource' interface
-  - A community calendar
 
 ### Automation
 
   - Template repositories for computer vision models or datasources
     that are ready for inclusion in the catalog ('cookie cutters').
-  - Consistency/integrity checks, including
+  - Additional consistency and integrity checks, including
       - URLs in the catalogs
       - scivision gallery notebooks (from current scivision projects)
       - checked annotations (decorators)
@@ -75,8 +75,9 @@ perpetual 'draft').
 
   - Support to researchers at the Turing and collaborators
   - Growing the catalog
-    - Helping users to share their models and data through the catalog
-    - Targetting models for the following tasks in particular (not exclusively):
-      - object tracking
-      - super-resolution
-      - shape analysis
+      - Helping users to share their models and data through the catalog
+      - Targetting models for the following tasks in particular (although
+      not exclusively):
+        - object tracking
+        - super-resolution
+        - shape analysis
