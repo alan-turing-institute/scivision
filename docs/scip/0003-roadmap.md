@@ -76,7 +76,7 @@ perpetual 'draft').
   - Support to researchers at the Turing and collaborators
   - Growing the catalog
     - Helping users to share their models and data through the catalog
-    - Targetting good coverage of:
+    - Targetting models for the following tasks in particular (not exclusively):
       - object tracking
       - super-resolution
       - shape analysis
