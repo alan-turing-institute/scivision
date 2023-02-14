@@ -66,6 +66,12 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
         title="Model input format",
         description="The type of data consumed by the model",
     )
+    scivision_usable: bool = Field(
+        False,
+        title="Can the model be installed and loaded with the scivision Python package, with "
+        "scivision.load_pretrained_model(<model url>, allow_install=True)?"
+        "Leave unchecked if not sure",
+    )
     pretrained: bool = Field(
         True,
         title="Pretrained model?",

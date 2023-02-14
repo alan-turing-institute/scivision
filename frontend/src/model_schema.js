@@ -44,6 +44,11 @@ const schema = {
             "default": true,
             "type": "boolean"
         },
+        "scivision_usable": {
+            "title": "Can the model be installed and loaded with the scivision Python package? e.g. scivision.load_pretrained_model(<model url>, allow_install=True)",
+            "default": false,
+            "type": "boolean"
+        },
         "labels_required": {
             "title": "Labels required?",
             "description": "Does the model require labeled data for training?",
