@@ -51,8 +51,9 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
     url: FlexibleUrl = Field(
         ...,
         title="URL",
-        description="The URL of the model. This should point to scivision "
-        "model yaml file.",
+        description="The URL path to the scivision yml file in the model repo. "
+        "If the exact path is not specified, Scivision will try to locate the file in"
+        " the default location at .scivision/model.yml",
     )
     pkg_url: str = Field(
         ...,
@@ -64,6 +65,12 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
         ...,
         title="Model input format",
         description="The type of data consumed by the model",
+    )
+    scivision_usable: bool = Field(
+        False,
+        title="Can the model be installed and loaded with the scivision Python package, with "
+        "scivision.load_pretrained_model(<model url>, allow_install=True)?"
+        "Leave unchecked if not sure",
     )
     pretrained: bool = Field(
         True,
@@ -141,7 +148,9 @@ class CatalogDatasourceEntry(
     url: FlexibleUrl = Field(
         None,
         title="URL",
-        description="The URL of the scivision datasource yml file",
+        description="The URL path to the scivision yml file in the datasource repo. "
+        "If the exact path is not specified, Scivision will try to locate the file in"
+        " the default location at .scivision/data.yml",
     )
     format: str = Field(
         None,
