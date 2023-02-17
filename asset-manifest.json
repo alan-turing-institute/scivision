@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.91e1128a.css",
-    "main.js": "/static/js/main.00f61801.js",
+    "main.css": "/static/css/main.8d3a3a52.css",
+    "main.js": "/static/js/main.008cecb4.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
@@ -36,12 +36,12 @@
     "static/media/stardist-cell-nuclei-2D.jpg": "/static/media/stardist-cell-nuclei-2D.2da18c7334c96e33cfde.jpg",
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/index.html",
-    "main.91e1128a.css.map": "/static/css/main.91e1128a.css.map",
-    "main.00f61801.js.map": "/static/js/main.00f61801.js.map",
+    "main.8d3a3a52.css.map": "/static/css/main.8d3a3a52.css.map",
+    "main.008cecb4.js.map": "/static/js/main.008cecb4.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91e1128a.css",
-    "static/js/main.00f61801.js"
+    "static/css/main.8d3a3a52.css",
+    "static/js/main.008cecb4.js"
   ]
 }
