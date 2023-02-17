@@ -16,7 +16,7 @@ import { TaskBadge } from './badges.js'
 // Helper function (used in ModelTable and DatasourceTable -- not the
 // corresponding Gridviews) returning a thumbnail element
 function renderThumbnailForTable(thumb) {
-    if (thumb != undefined) {
+    if (thumb !== undefined) {
         return (
             <img src={thumb}
                  width="128"
@@ -69,7 +69,7 @@ export function ModelTable() {
             name: "Tasks",
             selector: row => row.tasks,
             cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
+                (t) => <TaskBadge key={t} taskName={t} />
             ),
         },
     ];
@@ -113,7 +113,7 @@ export function DatasourceTable() {
             selector: row => row.tasks,
             name: 'Tasks',
             cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
+                (t) => <TaskBadge key={t} taskName={t} />
             )
         },
     ];
@@ -157,7 +157,7 @@ export function ProjectTable() {
             selector: row => row.tasks,
             name: 'Tasks',
             cell: (row, index, column, id) => row.tasks.map(
-                (t) => <TaskBadge taskName={t} />
+                (t) => <TaskBadge key={t} taskName={t} />
             )
         },
     ];

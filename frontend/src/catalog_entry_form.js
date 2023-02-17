@@ -82,7 +82,7 @@ export function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind,
                                   });
 
                                   const user_scivision_fork = scivision_forks.data.find(
-                                      (fork) => fork.owner && fork.owner.login == gh_username
+                                      (fork) => fork.owner && fork.owner.login === gh_username
                                   );
 
                                   // Array.find returns undefined if no matches -- in that case,

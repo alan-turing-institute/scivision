@@ -43,7 +43,7 @@ export function Home() {
                     <div className="card-deck">
                         {
                             models_sample.map((model) => (
-                                <div className="card">
+                                <div className="card" key = {model.name}>
                                     {
                                         makeThumbnail({
                                             getThumbnail: (data) => model_thumbnails[`./${data.name}.jpg`],
@@ -70,7 +70,7 @@ export function Home() {
                     <div className="card-deck">
                         {
                             datasources_sample.map((ds) => (
-                                <div className="card">
+                                <div className="card" key={ds.name}>
                                     {
                                         makeThumbnail({
                                             getThumbnail: (data) => datasource_thumbnails[`./${data.name}.jpg`],
@@ -98,7 +98,7 @@ export function Home() {
                     <div className="card-deck">
                         {
                             projects_sample.map((proj) => (
-                                <div className="card">
+                                <div className="card" key={proj.name}>
                                     {
                                         makeThumbnail({
                                             getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],

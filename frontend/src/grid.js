@@ -27,7 +27,7 @@ export function makePopover(data) {
         <Popover id="popover-basic" {...props}>
             <Popover.Content>
                 <strong>{data.name}</strong> {data.description} &nbsp;
-                {data.tasks.map((t) => <TaskBadge taskName={t} />)}
+                {data.tasks.map((t) => <TaskBadge key= {t} taskName={t} />)}
                 {<UsageBadge usageBool={data.scivision_usable} />}
             </Popover.Content>
         </Popover>
@@ -63,8 +63,8 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
         } else {
             thumbnail = <img className="card-img-top"
                              src={thumbnail_src}
-                             width="100%"
-                             height="100%" />
+                             alt={data.name}
+                />
         }
 
         // Add popover
@@ -79,10 +79,11 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
         // Where no popover, thumnail includes description as text below
         } else {
             // Add a full stop if the description doesn't have one
-            if (data.description.slice(-1) != '.'){
-              var fstop = '.';
+            let fstop;
+            if (data.description.slice(-1) !== '.'){
+              fstop = '.';
             } else {
-              var fstop = '';
+              fstop = '';
             }
             thumbnail = (
               <div>
@@ -109,7 +110,7 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
 
 
         return (
-            <Link to={thumbnail_resource_link}>
+            <Link to={thumbnail_resource_link} key = {data.name}>
                 {thumbnail}
             </Link>
         );
