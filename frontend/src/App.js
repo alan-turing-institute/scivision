@@ -87,20 +87,20 @@ function App() {
                     </Navbar>
 
                     {/* Navigation bar */}
-                    <Navbar collapseOnSelect expand="md" className="px-0" >
+                    <Navbar collapseOnSelect expand="md" className="px-0">
                         <Container fluid className="p-0">
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" className="ml-auto" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="me-auto">
-                                    <Nav.Link to="" as={NavLink}>
+                                    <Nav.Link to="" as={NavLink} eventKey="home">
                                         Home
                                     </Nav.Link>
 
-                                    <Nav.Link to="about" as={NavLink}>
+                                    <Nav.Link to="about" as={NavLink} eventKey="about">
                                         About
                                     </Nav.Link>
 
-                                    <Nav.Link to="scivisionpy" as={NavLink}>
+                                    <Nav.Link to="scivisionpy" as={NavLink} eventKey="scivisionpy">
                                         Scivision.Py
                                     </Nav.Link>
 
@@ -115,7 +115,7 @@ function App() {
                                             location_root === "model-table"
                                             || location_root === "new-model"
                                             || location_root === "model"
-                                        }>
+                                        } eventKey="model">
                                         Models
                                     </Nav.Link>
 
@@ -124,7 +124,7 @@ function App() {
                                             location_root === "datasource-table"
                                             || location_root === "new-datasource"
                                             || location_root === "datasource"
-                                        }>
+                                        } eventKey="datasource">
                                         Data
                                     </Nav.Link>
                                     <Nav.Link to="project-grid" as={NavLink}
@@ -132,11 +132,11 @@ function App() {
                                             location_root === "project-table"
                                             || location_root === "new-project"
                                             || location_root === "project"
-                                        }>
+                                        } eventKey="project">
                                         Projects
                                     </Nav.Link>
 
-                                    <Nav.Link to="community" as={NavLink}>
+                                    <Nav.Link to="community" as={NavLink} eventKey="community">
                                         Community
                                     </Nav.Link>
 
