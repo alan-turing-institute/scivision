@@ -205,7 +205,7 @@
       "contributions": [
         "example",
         "talk"
-        ]
+      ]
     },
     {
       "login": "Erioldoesdesign",
@@ -215,6 +215,18 @@
       "contributions": [
         "ideas",
         "design"
+      ]
+    },
+    {
+      "login": "vimode",
+      "name": "vimode",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39148877?v=4",
+      "profile": "https://github.com/vimode",
+      "contributions": [
+        "ideas",
+        "design",
+        "code",
+        "a11y"
       ]
     }
   ],
