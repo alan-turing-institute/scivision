@@ -228,6 +228,18 @@
         "code",
         "a11y"
       ]
+    },
+    {
+      "login": "IFenton",
+      "name": "Isabel Fenton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5773962?v=4",
+      "profile": "https://github.com/IFenton",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
