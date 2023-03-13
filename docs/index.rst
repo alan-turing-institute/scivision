@@ -2,7 +2,7 @@
 .. oplab_pipeline documentation master file, created by
    sphinx-quickstart on Thu May  7 19:32:18 2020.
 
-.. image:: https://i.imgur.com/kc7aE7z.png
+.. image:: ../imgs/logo_name.png
     :alt: oplab_pipeline logo
     :align: center
     
