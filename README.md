@@ -1,4 +1,6 @@
-![IMAGE](https://i.imgur.com/kc7aE7z.png)
+<p align="center">
+<img src="https://github.com/alan-turing-institute/scivision/blob/main/imgs/logo_name.png?raw=True" alt="thumbnail" width="500"/>
+</p>
 
 # A toolkit for scientific image analysis
  
