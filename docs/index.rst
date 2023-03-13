@@ -48,7 +48,7 @@ To contact the project team directly, email `the Scivison maintainers <mailto:sc
 
 The Scivision software is released under a `BSD Licence <https://github.com/alan-turing-institute/scivision/blob/main/LICENSE>`_ by The Alan Turing Institute.
 
-.. image:: ../imgs/ati_logo.png
+.. image:: _static/ati_logo.png
 
 📋 Indices and tables
 ---------------------
