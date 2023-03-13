@@ -1,7 +1,7 @@
 import './App.css';
 import { AboutText } from './about.js'
 
-import biglogo from './logo-full.png';
+import biglogo from './logo_name.png';
 
 import {
     Routes,
