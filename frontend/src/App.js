@@ -1,8 +1,6 @@
 import './App.css';
 import { AboutText } from './about.js'
 
-import biglogo from './logo-full.png';
-
 import {
     Routes,
     Route,
@@ -76,7 +74,7 @@ function App() {
                     <Navbar expand="md flex-nowrap">
                         <Navbar.Brand>
                             <Nav.Link to="" as={NavLink} className="p-0 ">
-                                <img src={biglogo} className="brandLogo" alt="Scivision" />
+                                <img src="https://github.com/alan-turing-institute/scivision/blob/main/imgs/logo_name.png?raw=true" className="brandLogo" alt="Scivision" />
                             </Nav.Link>
                         </Navbar.Brand>
                         <span>
