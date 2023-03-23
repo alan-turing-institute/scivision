@@ -28,7 +28,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository is where the development is hosted for the [Scivision Webapp](https://alan-turing-institute.github.io/scivision/) (our main project website) and [Scivision Python package](https://pypi.org/project/scivision/).
@@ -76,11 +76,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://www.robblackwell.com"><img src="https://avatars.githubusercontent.com/u/41913?v=4?s=100" width="100px;" alt="Robert Blackwell"/><br /><sub><b>Robert Blackwell</b></sub></a><br /><a href="#ideas-RobBlackwell" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Tonks684"><img src="https://avatars.githubusercontent.com/u/60216815?v=4?s=100" width="100px;" alt="Samuel Tonks"/><br /><sub><b>Samuel Tonks</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=Tonks684" title="Code">💻</a> <a href="#ideas-Tonks684" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=Tonks684" title="Documentation">📖</a> <a href="#infra-Tonks684" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://scotthosking.com"><img src="https://avatars.githubusercontent.com/u/10783052?v=4?s=100" width="100px;" alt="Scott Hosking"/><br /><sub><b>Scott Hosking</b></sub></a><br /><a href="#fundingFinding-scotthosking" title="Funding Finding">🔍</a> <a href="#ideas-scotthosking" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://shmh40.github.io"><img src="https://avatars.githubusercontent.com/u/56727418?v=4?s=100" width="100px;" alt="Seb Hickman"/><br /><sub><b>Seb Hickman</b></sub></a><br /><a href="#example-shmh40" title="Examples">💡</a> <a href="#talk-shmh40" title="Talks">📢</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nbarlowATI"><img src="https://avatars.githubusercontent.com/u/33832774?v=4?s=100" width="100px;" alt="nbarlowATI"/><br /><sub><b>nbarlowATI</b></sub></a><br /><a href="#ideas-nbarlowATI" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-nbarlowATI" title="Event Organizing">📋</a> <a href="#example-nbarlowATI" title="Examples">💡</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ots22"><img src="https://avatars.githubusercontent.com/u/5434836?v=4?s=100" width="100px;" alt="ots22"/><br /><sub><b>ots22</b></sub></a><br /><a href="https://github.com/alan-turing-institute/scivision/commits?author=ots22" title="Code">💻</a> <a href="#ideas-ots22" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=ots22" title="Documentation">📖</a> <a href="#infra-ots22" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/pwochner"><img src="https://avatars.githubusercontent.com/u/78024695?v=4?s=100" width="100px;" alt="pwochner"/><br /><sub><b>pwochner</b></sub></a><br /><a href="#ideas-pwochner" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-pwochner" title="Event Organizing">📋</a> <a href="#example-pwochner" title="Examples">💡</a></td>
+    </tr>
+    <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/vimode"><img src="https://avatars.githubusercontent.com/u/39148877?v=4?s=100" width="100px;" alt="vimode"/><br /><sub><b>vimode</b></sub></a><br /><a href="#ideas-vimode" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-vimode" title="Design">🎨</a> <a href="https://github.com/alan-turing-institute/scivision/commits?author=vimode" title="Code">💻</a> <a href="#a11y-vimode" title="Accessibility">️️️️♿️</a></td>
     </tr>
   </tbody>
