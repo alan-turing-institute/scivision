@@ -7,10 +7,6 @@ jobs:
     steps:    
     - name: Checkout
       uses: actions/checkout@v2
-      
-    - name: Copy images
-      run: |
-        cp imgs/logo_name.png frontend/src/
 
     - name: Install node
       uses: actions/setup-node@v1
