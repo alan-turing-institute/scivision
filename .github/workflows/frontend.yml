@@ -10,7 +10,7 @@ jobs:
       
     - name: Copy images
       run: |
-        cp -r imgs/logo_name.png frontend/src/
+        cp imgs/logo_name.png frontend/src/
 
     - name: Install node
       uses: actions/setup-node@v1
