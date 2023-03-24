@@ -49,7 +49,7 @@ def install_package(
         # if a package wants to be reinstalled completely, including dependencies
         _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
     elif (allow_install and not exists):
-        # if only the package and not the dependencies are to be installed
+        # if only the package and the necessary dependencies are to be installed
         _install(package)
     elif not exists:
         raise Exception(
