@@ -45,10 +45,12 @@ def install_package(
     package = package_from_config(config, branch)
     exists = _package_exists(config)
 
-    if allow_install == "force" or (allow_install and not exists):
-        # if a package is not already installed, there is little harm
-        # to passing the extra arguments, so these cases are combined
+    if allow_install == "force":
+        # if a package wants to be reinstalled completely, including dependencies
         _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
+    elif (allow_install and not exists):
+        # if only the package and not the dependencies are to be installed
+        _install(package)
     elif not exists:
         raise Exception(
             "Package does not exist. Try installing it with: \n"
