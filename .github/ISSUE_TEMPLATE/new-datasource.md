@@ -20,5 +20,5 @@ Name, description, link etc.
 
 - [ ] Publicly accessible with a stable link (and suitably licenced)
 - [ ] The data has an associated scivision data yml file (or data loader/plugin)
-- [ ] Catalog metadata added (can open a pull request with https://scivision.org/#/new-datasource)
+- [ ] Catalog metadata added (can open a pull request with https://sci.vision/#/new-datasource)
 - [ ] Thumbnail image uploaded
