@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import importlib
-import subprocess
-import sys
 
 
 def _package_exists(config: dict) -> bool:
@@ -25,31 +23,15 @@ def package_from_config(config: dict, branch: str = "main") -> str:
     return f"git+{install_str}@{install_branch}#egg={config['import']}"
 
 
-def _install(package, pip_install_args=None):
-    """Install a package using pip."""
-
-    if pip_install_args is None:
-        pip_install_args = []
-
-    subprocess.check_call(
-        [sys.executable, "-m", "pip", "install", *pip_install_args, package]
-    )
-
-
-def install_package(
+def check_package(
     config: dict,
-    allow_install=False,  # allowed values: True, False, or the string "force"
     branch: str = "main",
 ):
-    """Install the python package if it doesn't exist."""
+    """Check if the python package exists."""
     package = package_from_config(config, branch)
     exists = _package_exists(config)
 
-    if allow_install == "force" or (allow_install and not exists):
-        # if a package is not already installed, there is little harm
-        # to passing the extra arguments, so these cases are combined
-        _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
-    elif not exists:
+    if not exists:
         raise Exception(
             "Package does not exist. Try installing it with: \n"
             f"`!pip install -e {package}`"
