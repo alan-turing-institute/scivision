@@ -53,6 +53,7 @@ export function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind,
                       async (new_entry_submission) => {
                           const entry = new_entry_submission.formData;
                           entry.name = entry.name.trim();
+                          entry.description = entry.description.trim();
                           if (pr_flag) {
                               const octokit = new OctokitPRPlugin({
                                   auth: sessionStorage[GH_TOKEN_KEY]
