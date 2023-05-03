@@ -41,17 +41,52 @@ def install_package(
     allow_install=False,  # allowed values: True, False, or the string "force"
     branch: str = "main",
 ):
-    """Install the python package if it doesn't exist."""
+    """Install the python package if it doesn't exist.
+
+    Parameters
+    ----------
+    config: dict
+      Dictionary of installation parameters for the package
+
+    allow_install: one of True, False, or the string "force"
+      - `True` means the package is allowed to call out to the system
+        pip to install the package.
+      - `False` means the package is still required, but rather than
+        installing it, performs a check that it *already* exists
+      - `"force"` installs the package, even if it exists already.
+        This option is provided in case something gets stuck in an
+        interactive session, but should otherwise be avoided if a
+        reproducible environment is desired, since it will override
+        any versions specified in an environment elsewhere, *including*
+        any dependencies.
+
+    branch: str
+      If installing from a git repository, or a GitHub URL, use
+      this branch
+    """
     package = package_from_config(config, branch)
     exists = _package_exists(config)
 
     if allow_install == "force":
-        # if a package wants to be reinstalled completely, including dependencies
+        # Install the package, whether it exists or not.
+
+        # Note that the "--force-reinstall" argument to pip seems to
+        # be inherited when installing dependencies, meaning that
+        # these are force-upgraded even if a version satisfying the
+        # requirements is present.
+
+        # (--no-deps doesn't solve this, since the dependencies may
+        # have changed between a version present and the force-updated
+        # version)
         _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
     elif (allow_install and not exists):
-        # if only the package and the necessary dependencies are to be installed
+        # The package is requested but isn't already installed: this
+        # is the common case. The package and its dependencies will
+        # be installed
         _install(package)
     elif not exists:
+        # The package was requested, but allow install was false and
+        # it isn't already installed: raise a runtime error
         raise Exception(
             "Package does not exist. Try installing it with: \n"
             f"`!pip install -e {package}`"
