@@ -13,6 +13,12 @@ with open("requirements.txt") as f:
         if len(stripped) > 0:
             requirements.append(stripped)
 
+entry_points = {
+    "console_scripts" : [
+        'scivision-catalog-json-schema = scivision.catalog.gen_json_schema:entry_point',
+    ]
+}
+            
 setup(
     name="scivision",
     version="0.5.0",
