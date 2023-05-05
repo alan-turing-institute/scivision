@@ -18,7 +18,7 @@ entry_points = {
         'scivision-catalog-json-schema = scivision.catalog.gen_json_schema:entry_point',
     ]
 }
-            
+
 setup(
     name="scivision",
     version="0.5.0",
