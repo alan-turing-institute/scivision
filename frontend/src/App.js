@@ -18,7 +18,7 @@ import datasource_schema from './datasource_schema.js'
 import model_schema from './model_schema.js'
 import project_schema from './project_schema.js'
 
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, Col, Row } from "react-bootstrap";
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -212,9 +212,11 @@ function App() {
                     <Route path="/model/:model_name_encoded" element={
                         <>
                             <ModelNav />
-                            <div className="text-readable-width mt-4">
-                                <Model />
-                            </div>
+                            <Row className="justify-content-md-center">
+                                <Col md={{span:8, offset:2}}>
+                                    <Model />
+                                </Col>
+                            </Row>
                         </>
                     } />
 
@@ -224,23 +226,24 @@ function App() {
                             <h3>Add a model to the catalog</h3>
                             <h4>Prerequistes</h4>
 
-                            <div className="text-readable-width">
+                            <Row>
+                                <Col md={{ span:8, offset: 2}}>
                                 <ul>
                                     <li> The source code of your model is shared in a public repository (GitHub or elsewhere). The Scivision catalog does not host your model source code directly, just some metadata about it, so this must be accessible elsewhere.</li>
                                     <li> Your model is in the <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-repo-structure">correct format for Scivision</a></li>
                                     <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-config-file">model config file</a> in your repository, to use below</li>
                                 </ul>
-                            </div>
+                                </Col>
+                            </Row>
 
                             <h4> Add your model</h4>
 
-                            <p className="text-readable-width">
-                                Add some details about your model below.  Submitting the form will open a pull request (from your GitHub user account) that adds details of your model to the catalog.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
-
-                            <p className="text-readable-width mt-4">
-                                Make sure to <strong>log in with the link above</strong> before completing the form
-                            </p>
-                            <div className="text-readable-width mt-4">
+                            <Row>
+                              <Col md ={{ span:8, offset: 2}}>
+                                <p>Add some details about your model below. Submitting the form will open a pull request (from your GitHub user account) that adds details of your model to the catalog. Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+                                <p>Make sure to <strong>log in with the link above</strong> before completing the form</p>
+                              </Col>
+                              <Col md ={{ span:8, offset: 2}}>
                                 <CatalogEntryForm
                                     gh_logged_in={gh_logged_in}
                                     schema={model_schema}
@@ -248,7 +251,8 @@ function App() {
                                     catalog_path="scivision/catalog/data/models.json"
                                     download_filename="one-model.json"
                                 />
-                            </div>
+                              </Col>
+                            </Row>
                         </>
                     } />
 
@@ -269,9 +273,11 @@ function App() {
                     <Route path="/datasource/:datasource_name_encoded" element={
                         <>
                             <DatasourceNav />
-                            <div className="text-readable-width mt-4">
-                                <Datasource />
-                            </div>
+                            <Row className="justify-content-md-center">
+                                <Col md={{span:8, offset:2}}>
+                                  <Datasource />
+                                </Col>
+                            </Row>
                         </>
                     } />
 
@@ -282,35 +288,34 @@ function App() {
                             <h3>Add a datasource to the catalog</h3>
                             <h4>Prerequistes</h4>
 
-                            <div className="text-readable-width">
-                                <ul>
-                                    <li> Your data is in a publicly accessible location (for example, on <a href="https://zenodo.org/">Zenodo</a>). The Scivision catalog does not host your data directly, just some metadata about it, so this must be accessible elsewhere.</li>
-                                    <li> Your data repository is in the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-repo-structure">format expected by Scivision</a> </li>
-                                    <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">data config file</a> in your repository, to use below</li>
-
-
-                                </ul>
-                            </div>
+                            <Row>
+                                <Col md={{ span:8, offset: 2}}>
+                                  <ul>
+                                      <li> Your data is in a publicly accessible location (for example, on <a href="https://zenodo.org/">Zenodo</a>). The Scivision catalog does not host your data directly, just some metadata about it, so this must be accessible elsewhere.</li>
+                                      <li> Your data repository is in the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-repo-structure">format expected by Scivision</a> </li>
+                                      <li> Make a note of the direct link to the <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">data config file</a> in your repository, to use below</li>
+                                  </ul>
+                                </Col>
+                            </Row>
 
                             <h4> Add your datasource</h4>
 
-                            <p className="text-readable-width">
-                                Add some details about your data below.  Submitting the form will open a pull request (from your GitHub user account) that adds details of your datasource to the catalog.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+                            <Row>
+                                <Col md={{ span:8, offset: 2}}>
+                                  <p>Add some details about your data below. Submitting the form will open a pull request (from your GitHub user account) that adds details of your datasource to the catalog. Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
 
-                            <p className="text-readable-width mt-4">
-                                Make sure to <strong>log in with the link above</strong> before completing the form
-                            </p>
-
-
-                            <div className="text-readable-width mt-4">
-                                <CatalogEntryForm
-                                    gh_logged_in={gh_logged_in}
-                                    schema={datasource_schema}
-                                    catalog_kind="datasource"
-                                    catalog_path="scivision/catalog/data/datasources.json"
-                                    download_filename="one-datasource.json"
-                                />
-                            </div>
+                                  <p>Make sure to <strong>log in with the link above</strong> before completing the form</p>
+                                </Col>
+                                <Col md={{ span:8, offset: 2}}>
+                                  <CatalogEntryForm
+                                      gh_logged_in={gh_logged_in}
+                                      schema={datasource_schema}
+                                      catalog_kind="datasource"
+                                      catalog_path="scivision/catalog/data/datasources.json"
+                                      download_filename="one-datasource.json"
+                                  />
+                                </Col>
+                            </Row>
                         </>
                     } />
 
@@ -331,9 +336,11 @@ function App() {
                     <Route path="/project/:project_name_encoded" element={
                         <>
                             <ProjectNav />
-                            <div className="text-readable-width mt-4">
-                                <Project />
-                            </div>
+                            <Row className="justify-content-md-center">
+                                <Col md={{span:8, offset:2}}>
+                                  <Project />
+                                </Col>
+                            </Row>
                         </>
                     } />
 
@@ -343,34 +350,34 @@ function App() {
                             <h3>Create a Scivision project page for your research</h3>
                             <h4>Prerequistes</h4>
 
-                            <div className="text-readable-width">
-                                <ul>
-                                    <li>You have already added the datasources used in your project to the <Link to="../datasource-grid">Scivision Data catalog</Link>. Click here to add a <Link to="../new-datasource">new datasource</Link>.</li>
-                                    <li>You have already added the computer vision models used in your project to the <Link to="../model-grid">Scivision Model catalog</Link>. Click here to add a <Link to="../new-model">new model</Link>.</li>
-                                </ul>
-                            </div>
+                            <Row>
+                                <Col md={{ span:8, offset: 2}}>
+                                  <ul>
+                                      <li>You have already added the datasources used in your project to the <Link to="../datasource-grid">Scivision Data catalog</Link>. Click here to add a <Link to="../new-datasource">new datasource</Link>.</li>
+                                      <li>You have already added the computer vision models used in your project to the <Link to="../model-grid">Scivision Model catalog</Link>. Click here to add a <Link to="../new-model">new model</Link>.</li>
+                                  </ul>
+                              </Col>
+                            </Row>
 
                             <h4> Add your project</h4>
 
-                            <p className="text-readable-width">
-                                Add the details that will form the basis of your project's Scivision page below. You can format the text with <a href="https://daringfireball.net/projects/markdown/basics">Markdown</a>, which will allow you to include any headers, lists and links you feel are appropriate. You can then select the models and data you added.</p>
-                            <p></p>
-                            <p className="text-readable-width">
-                                Submitting the form will open a pull request (from your GitHub user account) that adds details of your project page to Scivision.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
-
-                            <p className="text-readable-width mt-4">
-                                Make sure to <strong>log in with the link above</strong> before completing the form
-                            </p>
-                            <div className="text-readable-width mt-4">
-                                <CatalogEntryForm
-                                    gh_logged_in={gh_logged_in}
-                                    schema={project_schema}
-                                    uiSchema={{ page: { "ui:widget": "textarea" } }}
-                                    catalog_kind="project"
-                                    catalog_path="scivision/catalog/data/projects.json"
-                                    download_filename="one-project.json"
-                                />
-                            </div>
+                            <Row>
+                                <Col md={{ span:8, offset: 2}}>
+                                    <p>Add the details that will form the basis of your project's Scivision page below. You can format the text with <a href="https://daringfireball.net/projects/markdown/basics">Markdown</a>, which will allow you to include any headers, lists and links you feel are appropriate. You can then select the models and data you added.</p>
+                                    <p>Submitting the form will open a pull request (from your GitHub user account) that adds details of your project page to Scivision.  Further discussion is possible at that point, so it doesn't need to be complete or perfect at this stage.</p>
+                                    <p>Make sure to <strong>log in with the link above</strong> before completing the form</p>
+                                </Col>
+                                <Col md ={{ span:8, offset: 2}}>
+                                    <CatalogEntryForm
+                                        gh_logged_in={gh_logged_in}
+                                        schema={project_schema}
+                                        uiSchema={{ page: { "ui:widget": "textarea" } }}
+                                        catalog_kind="project"
+                                        catalog_path="scivision/catalog/data/projects.json"
+                                        download_filename="one-project.json"
+                                    />
+                                </Col>
+                          </Row>
                         </>
                     } />
 
