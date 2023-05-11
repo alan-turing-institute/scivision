@@ -27,9 +27,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cp -r ../scivision/catalog/data src/ && react-scripts start",
-    "build": "cp -r ../scivision/catalog/data src/ && react-scripts build",
-    "test": "cp -r ../scivision/catalog/data src/ && react-scripts test",
+    "start": "pushd src && scivision-catalog-json-schema && popd && cp -r ../scivision/catalog/data src/ && react-scripts start",
+    "build": "pushd src && scivision-catalog-json-schema && popd && cp -r ../scivision/catalog/data src/ && react-scripts build",
+    "test": "pushd src/ && scivision-catalog-json-schema && popd && cp -r ../scivision/catalog/data src/ && react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
