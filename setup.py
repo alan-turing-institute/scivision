@@ -31,5 +31,6 @@ setup(
     python_requires=">=3.7",
     include_package_data=True,
     long_description=long_description,
+    entry_points=entry_points,
     long_description_content_type='text/markdown',
 )
