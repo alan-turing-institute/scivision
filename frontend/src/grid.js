@@ -4,6 +4,7 @@ import { React } from 'react';
 
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
+import { Row, Col, Card } from "react-bootstrap";
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
@@ -61,7 +62,7 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
                 </svg>
             );
         } else {
-            thumbnail = <img className="card-img-top"
+            thumbnail = <Card.Img variant="top"
                              src={thumbnail_src}
                              alt={data.name}
                 />
@@ -100,19 +101,21 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
         // Add card formatting
         if (asCard && asCard !== undefined) {
             thumbnail = (
-                <div className="card">
-                    <div className="card-body">
+                <Card>
+                    <Card.Body>
                         {thumbnail}
-                    </div>
-                </div>
+                    </Card.Body>
+                </Card>
             )
         }
 
 
         return (
-            <Link to={thumbnail_resource_link} key = {data.name}>
-                {thumbnail}
-            </Link>
+            <Col className="mb-3">
+                  <Link to={thumbnail_resource_link} key = {data.name}>
+                      {thumbnail}
+                  </Link>
+            </Col>
         );
     }
 }
@@ -130,9 +133,9 @@ export function ModelGrid() {
     );
 
     return (
-        <div className="card-columns mt-2">
+        <Row xs={1} md={2} lg={3} xl={4}>
             {image_cards}
-        </div>
+        </Row>
     );
 }
 
@@ -150,9 +153,9 @@ export function DatasourceGrid() {
     );
 
     return (
-        <div className="card-columns mt-2">
+        <Row xs={1} md={2} lg={3} xl={4}>
             {image_cards}
-        </div>
+        </Row>
     );
 }
 
@@ -170,8 +173,8 @@ export function ProjectGrid() {
     );
 
     return (
-        <div className="card-columns mt-2">
+        <Row xs={1} md={2} lg={3} xl={4}>
             {image_cards}
-        </div>
+        </Row>
     );
 }
