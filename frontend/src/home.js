@@ -43,8 +43,8 @@ export function Home() {
                     <Row xs={1} sm={3} className="justify-content-md-center">
                         {
                             models_sample.map((model) => (
-                                <Col>
-                                        <Card className="mb-3 mb-sm-0" key = {model.name}>
+                                <Col key ={model.name}>
+                                        <Card className="mb-3 mb-sm-0">
                                             {
                                                 makeThumbnail({
                                                     getThumbnail: (data) => model_thumbnails[`./${data.name}.jpg`],
@@ -71,8 +71,8 @@ export function Home() {
                     <Row xs={1} sm={3} className="justify-content-md-center">
                         {
                             datasources_sample.map((ds) => (
-                                  <Col>
-                                          <Card  className="mb-3 mb-sm-0" key={ds.name}>
+                                  <Col key={ds.name}>
+                                          <Card className="mb-3 mb-sm-0">
                                             {
                                                 makeThumbnail({
                                                     getThumbnail: (data) => datasource_thumbnails[`./${data.name}.jpg`],
@@ -99,8 +99,8 @@ export function Home() {
                     <Row xs={1} sm={3} className="justify-content-md-center">
                         {
                             projects_sample.map((proj) => (
-                                <Col>
-                                        <Card  className="mb-3 mb-sm-0" key={proj.name}>
+                                <Col key={proj.name}>
+                                        <Card className="mb-3 mb-sm-0">
                                             {
                                                 makeThumbnail({
                                                     getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
