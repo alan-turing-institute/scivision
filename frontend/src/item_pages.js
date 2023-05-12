@@ -70,7 +70,7 @@ export function Datasource() {
     const datasource = datasources.entries.find(ds => ds.name === datasource_name);
 
     return (<>
-                <h3>{datasource.name}</h3>
+                <h3>{datasource.name.charAt(0).toUpperCase() + datasource.name.slice(1)}</h3>
                 <img src={datasource_thumbnails[`./${datasource.name}.jpg`]} alt = {datasource.name}/>
                 <dl className="row">
                   <dt className="col-sm-3">Description</dt>
