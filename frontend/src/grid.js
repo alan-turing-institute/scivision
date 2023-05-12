@@ -52,7 +52,7 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
         if (thumbnail_src === undefined) {
             thumbnail = (
                 <svg width="100%" height="auto" role="img" style={{ aspectRatio: 1 }}>
-                    <rect width="100%" height="100%" fill="#cccccc"></rect>
+                    <rect width="100%" height="100%" fill="#6f6f6f"></rect>
                     <text x="50%" y="50%" fill="white"
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="10pt">
