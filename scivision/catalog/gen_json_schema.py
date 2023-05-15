@@ -32,9 +32,9 @@ def entry_point():
     datasource_schema = DatasourceWithExamples.schema_json()
     with open("datasource_schema.js", "w") as f:
         print(f"const schema = {datasource_schema};", file=f)
-        print(f"export default schema;", file=f)
+        print("export default schema;", file=f)
 
     model_schema = scivision.catalog.CatalogModelEntry.schema_json()
     with open("model_schema.js", "w") as f:
         print(f"const schema = {model_schema};", file=f)
-        print(f"export default schema;", file=f)
+        print("export default schema;", file=f)
