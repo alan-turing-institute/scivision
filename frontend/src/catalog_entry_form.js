@@ -52,6 +52,10 @@ export function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind,
             <Form onSubmit={
                       async (new_entry_submission) => {
                           const entry = new_entry_submission.formData;
+                          const trimElements = ['name', 'description'];
+                          trimElements.forEach(item => {
+                            !entry[item] ? entry[item] = "To be updated" : entry[item].trim().length < 1 ? entry[item] = "To be updated" : entry[item] = entry[item].trim();
+                          });
                           if (pr_flag) {
                               const octokit = new OctokitPRPlugin({
                                   auth: sessionStorage[GH_TOKEN_KEY]
