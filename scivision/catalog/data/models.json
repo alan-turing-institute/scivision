@@ -295,6 +295,21 @@
         "animals",
         "ecology"
       ]
+    },
+    {
+      "tasks": [],
+      "pretrained": true,
+      "scivision_usable": false,
+      "labels_required": true,
+      "institution": [],
+      "tags": [
+        "sdf"
+      ],
+      "name": "asdasd",
+      "description": "To be updated",
+      "url": "https://www.google.com",
+      "pkg_url": "qweqwe",
+      "format": "qweqwe"
     }
   ]
 }
