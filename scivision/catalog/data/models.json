@@ -295,6 +295,30 @@
         "animals",
         "ecology"
       ]
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "scivision_usable": false,
+      "pretrained": false,
+      "labels_required": false,
+      "institution": [
+        "The Alan Turing Institute",
+        "Rutherford Appleton Laboratory STFC",
+        "Rosalind Franklin Institute"
+      ],
+      "tags": [
+        "Protein",
+        "Tomography",
+        "Cryo-EM",
+        "Shape regularisation "
+      ],
+      "name": "Affinity-VAE",
+      "description": "A framework for automatic clustering and classification of objects in multidimensional image data based on their similarity.",
+      "format": ".MRC",
+      "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
+      "url": "https://github.com/alan-turing-institute/affinity-vae"
     }
   ]
 }
