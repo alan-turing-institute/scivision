@@ -297,6 +297,32 @@
       "description": "Here we share gold standard annotations and outputs from early experiments using MapReader. MapReader creates datasets for humanities research using historical map scans and metadata as inputs.  Using maps provided by the National Library of Scotland, these annotations and outputs reflect labeling tasks relevant to historical research on the Living with Machines project.  Data shared here is derived from maps printed in nineteenth-century Britain by the Ordnance Survey, Britain's state mapping agency. These maps cover England, Wales, and Scotland from 1888 to 1913.",
       "url": "https://github.com/alan-turing-institute/mapreader-scivision",
       "format": "image"
+    },
+    {
+      "tasks": [
+        "segmentation"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "plant-biology",
+        "biology",
+        "agriculture",
+        "multispectral"
+      ],
+      "institution": [
+        "Aberystwyth University",
+        "National Plant Phenomics Centre"
+      ],
+      "tags": [
+        "plant-phenotyping",
+        "2D",
+        "agriculture",
+        "climate-change-and-agriculture"
+      ],
+      "name": "Brassica napus RGB side and top view images",
+      "description": "Top and side view RGB png images as analysed for 'Integrated Phenomics and Genomics reveals genetic loci associated with inflorescence growth in Brassica napus'. Image collection details and examples of analysis are provided in the body and appendices of the paper. The images were collected over a six week period, usually on a daily basis. 71 genotypes, two treatments, three replicates; total 426 plants. 1×top view image, 3×side view images (000, 045 & 090° rotations).(Credit: Kevin Williams, Jo Hepworth & John Doonan. Aberystwyth University Research Archive. https://doi.org/10.20391/35c7b57c-09a4-43e5-a7d7-89fb4f420be0)",
+      "url": "https://raw.githubusercontent.com/alan-turing-institute/nppc-bnapus-data/main/.scivision/data.yml",
+      "format": "png"
     }
   ]
 }
