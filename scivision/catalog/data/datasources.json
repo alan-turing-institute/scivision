@@ -324,6 +324,30 @@
       "description": "Top and side view RGB png images as analysed for 'Integrated Phenomics and Genomics reveals genetic loci associated with inflorescence growth in Brassica napus'. Image collection details and examples of analysis are provided in the body and appendices of the paper. The images were collected over a six week period, usually on a daily basis. 71 genotypes, two treatments, three replicates; total 426 plants. 1×top view image, 3×side view images (000, 045 & 090° rotations).(Credit: Kevin Williams, Jo Hepworth & John Doonan. Aberystwyth University Research Archive. https://doi.org/10.20391/35c7b57c-09a4-43e5-a7d7-89fb4f420be0)",
       "url": "https://raw.githubusercontent.com/alan-turing-institute/nppc-bnapus-data/main/.scivision/data.yml",
       "format": "png"
+    },
+    {
+      "tasks": [
+        "segmentation",
+        "other"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "computer-vision",
+        "entomology"
+      ],
+      "institution": [
+        "Natural History Museum"
+      ],
+      "tags": [
+        "museum-collections",
+        "ocr",
+        "pinned-insects",
+        "2D"
+      ],
+      "name": "NHM-pinned-insects",
+      "description": "Sample of images of pinned insects and corresponding label masks from the Natural History Museum London's collection for the ALICE project: https://doi.org/10.31219/osf.io/s2p73",
+      "url": "https://github.com/LittleAri/Pinned_Insect_Labels/raw/main/.scivision/data.yml",
+      "format": "jpeg, json"
     }
   ]
 }
