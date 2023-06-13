@@ -346,7 +346,7 @@
       ],
       "name": "NHM-pinned-insects",
       "description": "Sample of images of pinned insects and corresponding label masks from the Natural History Museum London's collection for the ALICE project: https://doi.org/10.31219/osf.io/s2p73",
-      "url": "https://github.com/LittleAri/Pinned_Insect_Labels/raw/main/.scivision/data.yml",
+      "url": "https://raw.githubusercontent.com/LittleAri/Pinned_Insect_Labels/main/.scivision/data.yml",
       "format": "jpeg, json"
     }
   ]
