@@ -62,7 +62,7 @@ def display_objects(image: np.ndarray,
                                             outline=hex_colors[index],
                                             width=2, radius=7)
         if label_nums:
-            im_with_rectangle.text((box["xmin"] + 4, box["ymin"] + 3), 
+            im_with_rectangle.text((box["xmin"] + 4, box["ymin"] + 3),
                                    str(index), fill=hex_colors[index],
                                    font=font)
         index += 1
