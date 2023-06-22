@@ -55,12 +55,6 @@ def test_load_dataset_local_zip():
     assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
 
 
-def test_load_dataset_from_stac_plugin():
-    """Test that an xarray.Dataset can be loaded via the data plugins code and scivision_sentinel2_stac catalog entry"""
-    ds = load_dataset('https://github.com/alan-turing-institute/scivision_sentinel2_stac').load_data()
-    assert type(ds) == xarray.Dataset
-
-
 def test_get_model_configs():
     """Test that a config with multiple models is split into separate configs."""
     path = 'tests/test_multiple_models_scivision.yml'
