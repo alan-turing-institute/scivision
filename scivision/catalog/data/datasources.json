@@ -348,6 +348,27 @@
       "description": "Sample of images of pinned insects and corresponding label masks from the Natural History Museum London's collection for the ALICE project: https://doi.org/10.31219/osf.io/s2p73",
       "url": "https://github.com/LittleAri/Pinned_Insect_Labels/raw/main/.scivision/data.yml",
       "format": "jpeg, json"
+    },
+    {
+      "tasks": [
+        "other"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "ecology",
+        "computer-vision"
+      ],
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "debugging",
+        "demo"
+      ],
+      "name": "debug-zenodo",
+      "description": "dataset for debugging loading of non flat zip file data from zenodo",
+      "url": "https://raw.githubusercontent.com/evangeline-corcoran/scivision-zenodo-debug/main/.scivision/data.yml",
+      "format": "jpg"
     }
   ]
 }
