@@ -14,7 +14,7 @@ import logging
 logger = logging.getLogger(__name__)
 # Set log level
 logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler('logfile.log')
+file_handler = logging.FileHandler('check_datasets.log')
 formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
@@ -49,4 +49,4 @@ for index in tqdm(range(datasources_catalog.shape[0])):
     rows.append(new_row)
 
 automated_checks_report = pd.DataFrame.from_dict(rows, orient='columns')
-automated_checks_report.to_csv('automated_dataset_checks.csv', index=False)
+automated_checks_report.to_csv('check_datasets.csv', index=False)
