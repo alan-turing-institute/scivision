@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5affd73b.css",
-    "main.js": "/static/js/main.b92cb237.js",
+    "main.js": "/static/js/main.9f50fa42.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
@@ -16,6 +16,7 @@
     "static/media/PlantCV.jpg": "/static/media/PlantCV.0e679f4f5f730f23a411.jpg",
     "static/media/cefas-plankton-dsg.jpg": "/static/media/cefas-plankton-dsg.c7cb5b94576d98471bd8.jpg",
     "static/media/sept22-connections-workshop.jpg": "/static/media/sept22-connections-workshop.fd5fb75b156e6bfe3560.jpg",
+    "static/media/Affinity-VAE.jpg": "/static/media/Affinity-VAE.b088434eaae29c7025da.jpg",
     "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.d43490443ea20251ed01.jpg",
     "static/media/huggingface-segmentation.jpg": "/static/media/huggingface-segmentation.d43490443ea20251ed01.jpg",
     "static/media/oppd-seedlings.jpg": "/static/media/oppd-seedlings.6777dab0849f2cee5f66.jpg",
@@ -36,11 +37,11 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "index.html": "/index.html",
     "main.5affd73b.css.map": "/static/css/main.5affd73b.css.map",
-    "main.b92cb237.js.map": "/static/js/main.b92cb237.js.map",
+    "main.9f50fa42.js.map": "/static/js/main.9f50fa42.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5affd73b.css",
-    "static/js/main.b92cb237.js"
+    "static/js/main.9f50fa42.js"
   ]
 }
