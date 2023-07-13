@@ -8,7 +8,6 @@ from matplotlib.colors import rgb2hex
 import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
-import os.path
 
 
 def display_objects(image: np.ndarray,
@@ -40,8 +39,7 @@ def display_objects(image: np.ndarray,
     pillow_image = Image.fromarray(image.to_numpy(), 'RGB')
 
     # Load font needed for numbering of bounding boxes and set size
-    font_path = os.path.abspath(os.path.dirname(__file__)) + '/fonts/arial.ttf'
-    font = ImageFont.truetype(font_path, 15)
+    font = ImageFont.load_default()
 
     # Generate visually distinct colors for each object bounding box
     # We want a list of hexadecimal colors to use, and distinctipy can also
@@ -62,9 +60,9 @@ def display_objects(image: np.ndarray,
         im_with_rectangle.rounded_rectangle((box["xmin"], box["ymin"],
                                              box["xmax"], box["ymax"]),
                                             outline=hex_colors[index],
-                                            width=2, radius=10)
+                                            width=2, radius=7)
         if label_nums:
-            im_with_rectangle.text((box["xmin"] + 3, box["ymin"] + 1),
+            im_with_rectangle.text((box["xmin"] + 4, box["ymin"] + 3),
                                    str(index), fill=hex_colors[index],
                                    font=font)
         index += 1
