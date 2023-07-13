@@ -6,7 +6,7 @@ Iterate through data catalog via scivision.load_dataset function and log respons
 '''
 
 import pandas as pd
-from scivision import default_catalog, load_dataset, load_pretrained_model
+from scivision import default_catalog, load_dataset
 from tqdm import tqdm
 import logging
 
@@ -19,7 +19,7 @@ formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(messag
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-## Datasource Checks
+# Datasource Checks
 
 # Load dataset catalog
 datasources_catalog = default_catalog.datasources.to_dataframe()
@@ -37,21 +37,16 @@ for index in tqdm(range(datasources_catalog.shape[0])):
         print(e)
         logger.exception("Automated Dataset Check has failed!")
         check_result = "Fail"
-        response = logger.error(e,exc_info=True)        
-        pass
+        response = logger.error(e, exc_info=True)
 
     new_row = {
-        'dataset_name':datasources_catalog.loc[index]['name'],
+        'dataset_name': datasources_catalog.loc[index]['name'],
         'url': data_url,
         'check_result': check_result,
         'response': response,
+    }
 
-        }
-    
     rows.append(new_row)
+
 automated_checks_report = pd.DataFrame.from_dict(rows, orient='columns')
-automated_checks_report.to_csv('automated_dataset_checks.csv',index=False)
-
-
-
-
+automated_checks_report.to_csv('automated_dataset_checks.csv', index=False)
