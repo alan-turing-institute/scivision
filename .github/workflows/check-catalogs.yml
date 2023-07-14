@@ -1,5 +1,5 @@
 name: Check catalogs
-on: workflow_dispatch
+on: push
   
 jobs:
   check-catalogs:
