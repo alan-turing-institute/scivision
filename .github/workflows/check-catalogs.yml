@@ -31,4 +31,5 @@ jobs:
           name: Catalog checks report
           commit: ${{ github.ref }}
           allowUpdates: true
+          removeArtifacts: true
           artifacts: check_datasets.json
