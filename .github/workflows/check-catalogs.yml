@@ -4,6 +4,8 @@ on: push
 jobs:
   check-catalogs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,3 +24,10 @@ jobs:
         with:
           name: check-datasets-report
           path: check_datasets.csv
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: check-datasets-tag
+          commit: ${{ github.ref }}
+          draft: true
+          artifacts: check_datasets.csv
