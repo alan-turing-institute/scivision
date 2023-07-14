@@ -1,0 +1,5 @@
+name: Check catalogs
+on:
+  schedule:
+    - cron: ''
+  
