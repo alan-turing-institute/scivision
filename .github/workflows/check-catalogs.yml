@@ -30,4 +30,4 @@ jobs:
           tag: catalog-checks-report-latest-release
           name: Catalog checks report
           commit: ${{ github.ref }}
-          artifacts: check_datasets.csv
+          artifacts: check_datasets.json
