@@ -27,6 +27,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          tag: check-datasets-latest-release
+          tag: catalog-checks-report-latest-release
+          name: Catalog checks report
           commit: ${{ github.ref }}
           artifacts: check_datasets.csv
