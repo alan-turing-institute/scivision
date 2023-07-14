@@ -1,7 +1,7 @@
 name: Check catalogs
 on:
   schedule:
-    - cron: ''
+    - cron: '0 0 1 1 *'
   
 jobs:
   check-catalogs:
