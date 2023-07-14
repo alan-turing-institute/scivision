@@ -50,4 +50,6 @@ for index in tqdm(range(datasources_catalog.shape[0])):
 
 automated_checks_report = pd.DataFrame.from_dict(rows, orient='columns')
 automated_checks_report.to_csv('check_datasets.csv', index=False)
+
+automated_checks_report.set_index('dataset_name')
 automated_checks_report.to_json('check_datasets.json', orient="records")
