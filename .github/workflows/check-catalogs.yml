@@ -1,8 +1,5 @@
 name: Check catalogs
-on: 
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 1 1 *'
+on: workflow_dispatch
   
 jobs:
   check-catalogs:
@@ -25,7 +22,3 @@ jobs:
         with:
           name: check-datasets-report
           path: check_datasets.csv
-        
-        
-      
-      
