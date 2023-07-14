@@ -27,7 +27,6 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          tag: check-datasets-tag
+          tag: check-datasets-latest-release
           commit: ${{ github.ref }}
-          draft: true
           artifacts: check_datasets.csv
