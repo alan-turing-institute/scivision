@@ -99,6 +99,7 @@ export function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind,
                                           branch: user_scivision_fork.default_branch,
                                       });
                                   }
+                                  
                                   //
                                   ///////////
 
