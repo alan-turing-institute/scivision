@@ -4,7 +4,7 @@ from skimage.io import imread
 
 def test_pretrained_model(IMAGENET_MODEL):
     """Check that a pretrained model object can be created from config"""
-    assert type(IMAGENET_MODEL) == PretrainedModel
+    assert isinstance(IMAGENET_MODEL, PretrainedModel)
 
 
 def test_pretrained_model_predict(KOALA, IMAGENET_MODEL):
