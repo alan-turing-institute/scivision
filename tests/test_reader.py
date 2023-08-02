@@ -102,6 +102,7 @@ def test_load_named_pretrained_model_local():
         wrapper.PretrainedModel
     )
 
+
 def test_load_wrong_model_name_raises_value_error():
     """Test that a value error is raised when a model name is specified that doesn't match the model in the config."""
     with pytest.raises(ValueError):
