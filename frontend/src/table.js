@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
@@ -92,6 +92,22 @@ export function ModelTable() {
 // Component: Datasources, table view
 // route: /datasources
 export function DatasourceTable() {
+
+    const [datasourceChecksReport, setDatasourceChecksReport] =
+          useState(null);
+
+    const getDatasourceChecksReport = async () => {
+        return {}; // dataset_report;
+    };
+
+    useEffect(() => {
+        getDatasourceChecksReport().then(report => {
+            setDatasourceChecksReport(report)
+        });
+    }, []);
+
+    console.log(datasourceChecksReport);
+
     const columns = [
         {
             name: 'Thumbnail',
