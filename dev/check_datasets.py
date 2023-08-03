@@ -52,4 +52,11 @@ automated_checks_report = pd.DataFrame.from_dict(rows, orient='columns')
 automated_checks_report.to_csv('check_datasets.csv', index=False)
 
 automated_checks_report = automated_checks_report.set_index('dataset_name')
-automated_checks_report.to_json('check_datasets.json', orient="index")
+automated_checks_report_json = automated_checks_report.to_json(orient="index")
+
+with open('check_datasets.json', 'w') as f:
+    print(automated_checks_report_json, file=f)
+
+with open('check_datasets.js', 'w') as f:
+    print(f'const dataset_report = {automated_checks_report_json};', file=f)
+    print('export default dataset_report;', file=f)
