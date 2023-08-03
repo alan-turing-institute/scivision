@@ -30,4 +30,4 @@ jobs:
           commit: ${{ github.ref }}
           allowUpdates: true
           removeArtifacts: true
-          artifacts: check_datasets.json
+          artifacts: check_datasets.js
