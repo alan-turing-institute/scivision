@@ -59,4 +59,3 @@ with open('check_datasets.json', 'w') as f:
 
 with open('check_datasets.js', 'w') as f:
     print(f'const dataset_report = {automated_checks_report_json};', file=f)
-    print('export default dataset_report;', file=f)
