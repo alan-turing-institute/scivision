@@ -28,7 +28,7 @@ logger.addHandler(file_handler)
 # Load dataset catalog
 datasources_catalog = default_catalog.datasources.to_dataframe()
 # Load dataset using load_dataset and record response
-rows = []
+rows = {}
 for index in tqdm(range(datasources_catalog.shape[0])):
     name = datasources_catalog.loc[index]['name']
     print(f'\nValidating: {name}')
