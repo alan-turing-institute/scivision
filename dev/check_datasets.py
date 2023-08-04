@@ -5,10 +5,13 @@ Iterate through data catalog via scivision.load_dataset function and log respons
 
 '''
 
+import logging
 import pandas as pd
+
+from datetime import datetime
+
 from scivision import default_catalog, load_dataset
 from tqdm import tqdm
-import logging
 
 # Create Logger
 logger = logging.getLogger(__name__)
@@ -48,7 +51,11 @@ for index in tqdm(range(datasources_catalog.shape[0])):
 
     rows.append(new_row)
 
-automated_checks_report = pd.DataFrame.from_dict(rows, orient='columns')
+report_data = {
+    "time": datetime.now(),
+    "report": rows
+}
+automated_checks_report = pd.DataFrame.from_dict(report_data, orient='columns')
 automated_checks_report.to_csv('check_datasets.csv', index=False)
 
 automated_checks_report = automated_checks_report.set_index('dataset_name')
@@ -58,4 +65,5 @@ with open('check_datasets.json', 'w') as f:
     print(automated_checks_report_json, file=f)
 
 with open('check_datasets.js', 'w') as f:
-    print(f'const dataset_report = {automated_checks_report_json};', file=f)
+    print(f'// This file was generated automatically by check_datasets.py', file=f)
+    print(f'var global_CheckDatasetReport = {automated_checks_report_json};', file=f)
