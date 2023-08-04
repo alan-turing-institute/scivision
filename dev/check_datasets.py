@@ -52,7 +52,7 @@ for index in tqdm(range(datasources_catalog.shape[0])):
     rows.update({datasources_catalog.loc[index]['name']: row_data})
 
 automated_checks_report = {
-    "time": datetime.now(),
+    "time": datetime.now().isoformat(),
     "report": rows
 }
 automated_checks_report_json = json.dumps(automated_checks_report)
