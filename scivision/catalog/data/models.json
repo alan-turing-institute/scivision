@@ -10,7 +10,7 @@
         "segmentation"
       ],
       "url": "https://github.com/stardist/stardist",
-      "pkg_url": "git+https://github.com/stardist/stardist.git@main",
+      "pkg_url": "git+https://github.com/stardist/stardist.git@master",
       "format": "image",
       "pretrained": true,
       "scivision_usable": false,
@@ -38,7 +38,7 @@
         "object-detection"
       ],
       "url": "https://github.com/danforthcenter/plantcv",
-      "pkg_url": "git+https://github.com/danforthcenter/plantcv@master",
+      "pkg_url": "git+https://github.com/danforthcenter/plantcv@main",
       "format": "image",
       "pretrained": true,
       "scivision_usable": false,
@@ -86,7 +86,7 @@
         "object-detection"
       ],
       "url": "https://github.com/alan-turing-institute/mapreader-plant-scivision",
-      "pkg_url": "git+https://github.com/alan-turing-institute/mapreader-plant-scivision@master",
+      "pkg_url": "git+https://github.com/alan-turing-institute/mapreader-plant-scivision@main",
       "format": "image",
       "pretrained": true,
       "scivision_usable": true,
@@ -110,7 +110,7 @@
         "classification"
       ],
       "url": "https://github.com/alan-turing-institute/plankton-cefas-scivision",
-      "pkg_url": "git+https://github.com/alan-turing-institute/plankton-cefas-scivision@master",
+      "pkg_url": "git+https://github.com/alan-turing-institute/plankton-cefas-scivision@main",
       "format": "image",
       "pretrained": true,
       "scivision_usable": true,
@@ -134,7 +134,7 @@
         "segmentation"
       ],
       "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision",
-      "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@master",
+      "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@main",
       "format": "image",
       "pretrained": true,
       "scivision_usable": true,

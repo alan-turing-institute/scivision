@@ -32,7 +32,7 @@ export function Model() {
                             <dt className="col-sm-3">Use me with <a href="https://scivision.readthedocs.io/en/latest/api.html">Scivision.Py</a>:</dt>
                             <dd className="col-sm-9">
                                 <p><code>from scivision import load_pretrained_model</code></p>
-                                <p><code>load_pretrained_model({model.url})</code></p>
+                                <p><code>load_pretrained_model("{model.url}")</code></p>
                             </dd>
                             </>;
     } else {
