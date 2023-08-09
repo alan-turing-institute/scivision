@@ -369,6 +369,27 @@
       "description": "dataset for debugging loading of non flat zip file data from zenodo",
       "url": "https://raw.githubusercontent.com/evangeline-corcoran/scivision-zenodo-debug/main/.scivision/data.yml",
       "format": "jpg"
+    },
+    {
+      "name": "fathomnet23",
+      "description": "Species detection and classification for under water ",
+      "tasks": [
+        "object-detection",
+        "classification"
+      ],
+      "domains": [
+        "marine-biology"
+      ],
+      "url": "https://github.com/asthanameghna/FathomNet23/blob/main/scivision/data.yaml",
+      "format": "jpg",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "marine-biology",
+        "species-classification"
+      ]
     }
   ]
 }
