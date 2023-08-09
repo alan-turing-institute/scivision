@@ -1,4 +1,6 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
+
+import useScript from "react-use-scripts";
 
 import datasources from './data/datasources.json';
 import models from './data/models.json';
@@ -92,6 +94,36 @@ export function ModelTable() {
 // Component: Datasources, table view
 // route: /datasources
 export function DatasourceTable() {
+
+    const [datasourceChecksReport, setDatasourceChecksReport] =
+          useState(null);
+
+    function datasourceCheckResult(name) {
+        if (datasourceChecksReport !== null) {
+            const report = datasourceChecksReport.report[name]
+            if (report !== undefined) {
+                return report.check_result;
+            } else {
+                return "Unknown";
+            }
+        } else {
+            return "Unknown";
+        }
+    }
+
+    function datasourceCheckTime() {
+        if (datasourceChecksReport) {
+            var time = new Date(datasourceChecksReport.time);
+            return time.toUTCString();
+        } else {
+            return "(never)";
+        }
+    }
+
+    function datasourceValidationTimeString() {
+        return `last run ${datasourceCheckTime()}`;
+    }
+
     const columns = [
         {
             name: 'Thumbnail',
@@ -107,16 +139,52 @@ export function DatasourceTable() {
             selector: row => row.name,
             name: 'Name',
             sortable: true,
-            grow: 0.3
+            grow: 0.5
         },
         {
             selector: row => row.tasks,
             name: 'Tasks',
             cell: (row, index, column, id) => row.tasks.map(
                 (t) => <TaskBadge key={t} taskName={t} />
-            )
+            ),
+        },
+        {
+            selector: row => {
+                const result = datasourceCheckResult(row.name);
+
+                if (result == "Pass") {
+                    return (
+                        <img src="https://img.shields.io/badge/scivision_metadata-pass-green"
+                             title="The metadata for this datasource was successfully loaded by scivision, from the location in the catalog" />
+                    );
+                } else if (result == "Fail") {
+                    return (
+                        <img src="https://img.shields.io/badge/scivision_metadata-fail-red"
+                             title="Scivision metadata (yaml) file for this datasource failed to load or was missing at the indicated location" />
+                    );
+                } else {
+                    return (
+                        <img src="https://img.shields.io/badge/scivision_metadata-unknown-lightgray"
+                             title="Could not access the result for this validation check" />
+                    );
+                }
+            },
+            name: (<span className="tooltip-available"
+                         title={datasourceValidationTimeString()}>
+                       Validation checks
+                   </span>),
+            grow: 0.5
         },
     ];
+
+
+    const check_datasets_script_url = "https://github.com/alan-turing-institute/scivision/releases/download/catalog-checks-report-latest-release/check_datasets.js";
+
+    const { ready, error } = useScript({
+        src: check_datasets_script_url,
+        onReady: () => setDatasourceChecksReport(window.global_CheckDatasetReport),
+        onError: () => console.log(`Could not latest dataset checks from ${check_datasets_script_url}`)
+    });
 
     return (
         <DataTable columns={columns} data={datasources.entries} title=""
