@@ -1,5 +1,7 @@
 name: Check catalogs
-on: push
+on:
+  schedule:
+    - cron:  '18 3 * * *'
   
 jobs:
   check-catalogs:
