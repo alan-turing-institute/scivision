@@ -98,6 +98,32 @@ export function DatasourceTable() {
     const [datasourceChecksReport, setDatasourceChecksReport] =
           useState(null);
 
+    function datasourceCheckResult(name) {
+        if (datasourceChecksReport !== null) {
+            const report = datasourceChecksReport.report[name]
+            if (report !== undefined) {
+                return report.check_result;
+            } else {
+                return "Unknown";
+            }
+        } else {
+            return "Unknown";
+        }
+    }
+
+    function datasourceCheckTime() {
+        if (datasourceChecksReport) {
+            var time = new Date(datasourceChecksReport.time);
+            return time.toUTCString();
+        } else {
+            return "(never)";
+        }
+    }
+
+    function datasourceValidationTimeString() {
+        return `last run ${datasourceCheckTime()}`;
+    }
+
     const columns = [
         {
             name: 'Thumbnail',
@@ -124,11 +150,7 @@ export function DatasourceTable() {
         },
         {
             selector: row => {
-                var result = "Unknown"
-                if (datasourceChecksReport !== null) {
-                    const report = datasourceChecksReport.report[row.name]
-                    result = (report === undefined) ? "Unknown" : report.check_result;
-                }
+                const result = datasourceCheckResult(row.name);
 
                 if (result == "Pass") {
                     return (
@@ -147,8 +169,11 @@ export function DatasourceTable() {
                     );
                 }
             },
-            name: (<>Validation checks <br /> (last run {datasourceChecksReport?datasourceChecksReport.time:""})</>),
-            grow: 0.6
+            name: (<span className="tooltip-available"
+                         title={datasourceValidationTimeString()}>
+                       Validation checks
+                   </span>),
+            grow: 0.5
         },
     ];
 

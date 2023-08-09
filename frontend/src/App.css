@@ -36,3 +36,7 @@ div.gridtext {
     background-color: Lavender;
 }
 
+.tooltip-available {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
