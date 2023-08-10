@@ -5,10 +5,13 @@ Iterate through data catalog via scivision.load_dataset function and log respons
 
 '''
 
-import pandas as pd
+import logging
+import json
+
+from datetime import datetime
+
 from scivision import default_catalog, load_dataset
 from tqdm import tqdm
-import logging
 
 # Create Logger
 logger = logging.getLogger(__name__)
@@ -24,7 +27,7 @@ logger.addHandler(file_handler)
 # Load dataset catalog
 datasources_catalog = default_catalog.datasources.to_dataframe()
 # Load dataset using load_dataset and record response
-rows = []
+rows = {}
 for index in tqdm(range(datasources_catalog.shape[0])):
     name = datasources_catalog.loc[index]['name']
     print(f'\nValidating: {name}')
@@ -39,17 +42,20 @@ for index in tqdm(range(datasources_catalog.shape[0])):
         check_result = "Fail"
         response = logger.error(e, exc_info=True)
 
-    new_row = {
-        'dataset_name': datasources_catalog.loc[index]['name'],
+    row_data = {
         'url': data_url,
         'check_result': check_result,
         'response': response,
     }
 
-    rows.append(new_row)
+    rows.update({datasources_catalog.loc[index]['name']: row_data})
 
-automated_checks_report = pd.DataFrame.from_dict(rows, orient='columns')
-automated_checks_report.to_csv('check_datasets.csv', index=False)
+automated_checks_report = {
+    "time": datetime.now().isoformat(),
+    "report": rows
+}
+automated_checks_report_json = json.dumps(automated_checks_report)
 
-automated_checks_report = automated_checks_report.set_index('dataset_name')
-automated_checks_report.to_json('check_datasets.json', orient="index")
+with open('check_datasets.js', 'w') as f:
+    print('// This file was generated automatically by check_datasets.py', file=f)
+    print(f'var global_CheckDatasetReport = {automated_checks_report_json};', file=f)
