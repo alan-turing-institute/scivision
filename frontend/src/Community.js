@@ -19,20 +19,22 @@ export function Community() {
 
             <h5>Slack Workspace</h5>
 
-            <p>The Scivision Slack workspace is open to all, for</p>
+            <p>The Scivision Slack workspace is open to anyone interested in the topics below.  Submit your email address <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform?usp=sf_link">here</a> (Google Forms) and one of the team will invite you.</p>
 
             <ul>
-                <li>Discussion of computer vision in the sciences and humanities</li>
-                <li>Getting and sharing help with computer vision methods</li>
-                <li>Getting and sharing help with the Scivision catalogue and software tools</li>
-                <li>Sharing and finding out about interesting events</li>
+                <li>Discuss computer vision in the sciences and humanities</li>
+                <li>Help with computer vision methods</li>
+                <li>Support with using the Scivision catalogue and software</li>
+                <li>Share and find out about interesting events</li>
             </ul>
 
-            <p>Using (or intending to use) the Scivision software is not a prerequisite for joining the Slack workspace.  We aim for this to be a welcome and supportive place to discuss all aspects of computer vision in the sciences and humanities, share ideas and ask questions.</p>
+            <p>We aim for this to be a welcome and supportive place to discuss computer vision, share ideas and ask questions.  Using (or even intending to use) the Scivision software is not a prerequisite for joining!</p>
 
-            <p>If you would like to join the Slack workspace, please submit your email address through the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform?usp=sf_link">here</a> (link redirects to Google Forms) and one of the team will send an invitation.</p>
+            <h5>Community calls</h5>
 
-            <p>We will use email addresses submitted through this form only for the purpose of sending the Slack invitation.</p>
+            <p>Scivision runs an online call (over Zoom) from time to time, generally themed around computer vision or image analysis in a particular domain.  There will also be a chance for an introduction to the Scivision project and hear any recent news.</p>
+
+            <p>Future events will be advertised on the Slack channel and mailing list.</p>
             
             <h5>GitHub</h5>
             Development of Scivision is hosted on GitHub.
