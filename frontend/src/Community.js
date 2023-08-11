@@ -7,7 +7,7 @@ export function Community() {
         <Container>
             <h3>Community Resources</h3>
             <h5>Code of Conduct</h5>
-            The Scivision <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a> which sets out the expectations of people participating in the project or events.
+            The Scivision <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a> sets out the expectations of people participating in the project or events.
 
             <h5>Email Newsletter</h5>
 
