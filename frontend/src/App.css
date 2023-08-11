@@ -11,6 +11,13 @@ h4 {
     margin-bottom: 1.5ex;
 }
 
+h5 {
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 2.0ex;
+    martin-bottom: 1.0ex;
+}
+
 .brandLogo {
     width: 100%;
     max-width:40%;
