@@ -11,7 +11,7 @@ export function Community() {
 
             <h5>Email Newsletter</h5>
 
-            <p>Scivision has a low-volume email newsletter, for announcements about the project and forthcoming events (one email per month or so).</p>
+            <p>Scivision has a low-volume email newsletter for announcements about the project and forthcoming events (one email per month or so).</p>
 
             <p>Read previous newsletters or subscribe to the list on Substack <a href="https://scivision.substack.com">here</a>.</p>
 
@@ -19,16 +19,18 @@ export function Community() {
 
             <h5>Slack Workspace</h5>
 
-            <p>The Scivision Slack workspace is open to anyone interested in the topics below.  Submit your email address <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform?usp=sf_link">here</a> (Google Forms) and one of the team will invite you.</p>
-
-            <ul>
-                <li>Discuss computer vision in the sciences and humanities</li>
-                <li>Help with computer vision methods</li>
-                <li>Support with using the Scivision catalogue and software</li>
-                <li>Share and find out about interesting events</li>
-            </ul>
+            <p>The Scivision Slack workspace is open to anyone interested in:
+                <ul>
+                    <li>Discussing computer vision in the sciences and humanities</li>
+                    <li>Getting help with computer vision methods, and helping others</li>
+                    <li>Getting support using the Scivision catalogue and software</li>
+                    <li>Sharing and finding out about interesting events</li>
+                </ul>
+            </p>
 
             <p>We aim for this to be a welcome and supportive place to discuss computer vision, share ideas and ask questions.  Using (or even intending to use) the Scivision software is not a prerequisite for joining!</p>
+
+            <p>To join the Slack Workspace, submit your email address <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform?usp=sf_link">here</a> (via a Google Form) and one of the team will invite you.</p>
 
             <h5>Community calls</h5>
 
