@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c0b6be3.css",
-    "main.js": "/static/js/main.21e0d624.js",
+    "main.css": "/static/css/main.26737fb0.css",
+    "main.js": "/static/js/main.39eeccd5.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
@@ -37,12 +37,12 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "static/media/fathomnet23.jpg": "/static/media/fathomnet23.687914ce0e9e50e41627.jpg",
     "index.html": "/index.html",
-    "main.0c0b6be3.css.map": "/static/css/main.0c0b6be3.css.map",
-    "main.21e0d624.js.map": "/static/js/main.21e0d624.js.map",
+    "main.26737fb0.css.map": "/static/css/main.26737fb0.css.map",
+    "main.39eeccd5.js.map": "/static/js/main.39eeccd5.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c0b6be3.css",
-    "static/js/main.21e0d624.js"
+    "static/css/main.26737fb0.css",
+    "static/js/main.39eeccd5.js"
   ]
 }
