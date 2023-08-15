@@ -55,6 +55,8 @@ import {
 import { Home } from "./home.js"
 
 import { Community } from "./Community.js"
+import { ScivisionPy } from "./ScivisionPy.js"
+
 
 // Component: The app
 //
@@ -154,7 +156,7 @@ function App() {
                 </Container>
             </Container>
             {/* Routing table */}
-            <Container >
+            <Container>
                 <Routes>
                     <Route exact path="" element={
                         <Home />
@@ -165,10 +167,7 @@ function App() {
                     } />
 
                     <Route path="/scivisionpy" element={
-                        <Container>
-                            <h3>The Scivision.Py Python Library</h3>
-                                See the <a href="https://scivision.readthedocs.io/en/latest/">documentation</a>.
-                        </Container>
+                        <ScivisionPy />
                     } />
 
                     <Route path="/login/:referrer_encoded" element={
