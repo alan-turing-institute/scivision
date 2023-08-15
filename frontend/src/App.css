@@ -47,3 +47,11 @@ div.gridtext {
     text-decoration-line: underline;
     text-decoration-style: dotted;
 }
+
+.text-block {
+    max-width: 62ch;
+}
+
+.app {
+    margin-bottom: 4ex;
+}

@@ -55,6 +55,8 @@ import {
 import { Home } from "./home.js"
 
 import { Community } from "./Community.js"
+import { ScivisionPy } from "./ScivisionPy.js"
+
 
 // Component: The app
 //
@@ -105,10 +107,10 @@ function App() {
                                     </Nav.Link>
 
                                     {/* We want to have the Datasource and Model menu items
-                              * highlighted (as if visited) for any of the routes
-                              * associated with these things.  This is the meaning of the
-                              * expression given for 'active' below. There is probably a
-                              * better way of doing this...*/}
+                                      * highlighted (as if visited) for any of the routes
+                                      * associated with these things.  This is the meaning of the
+                                      * expression given for 'active' below. There is probably a
+                                      * better way of doing this...*/}
 
                                     <Nav.Link to="model-grid" as={NavLink}
                                         active={
@@ -139,20 +141,6 @@ function App() {
                                     <Nav.Link to="community" as={NavLink} eventKey="community">
                                         Community
                                     </Nav.Link>
-
-                                    {/***
-                            <Nav.Item>
-                                <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
-                            </Nav.Item>
-
-                            <Nav.Item>
-                                <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
-                            </Nav.Item>
-
-                            <Nav.Item>
-                                <a href="https://github.com/alan-turing-institute/scivision">GitHub repo</a>
-                            </Nav.Item>
-                             ***/}
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
@@ -168,27 +156,18 @@ function App() {
                 </Container>
             </Container>
             {/* Routing table */}
-            <Container >
+            <Container>
                 <Routes>
                     <Route exact path="" element={
                         <Home />
                     } />
 
                     <Route path="/about" element={
-                        <>
-                            <h3>A toolkit for scientific image analysis</h3>
-                            <Container>
-                                <AboutText />
-                                <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/B7fOBpXnO4g?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
-                            </Container>
-                        </>
+                        <AboutText />
                     } />
 
                     <Route path="/scivisionpy" element={
-                        <Container>
-                            <h3>The Scivision.Py Python Library</h3>
-                                See the <a href="https://scivision.readthedocs.io/en/latest/">documentation</a>.
-                        </Container>
+                        <ScivisionPy />
                     } />
 
                     <Route path="/login/:referrer_encoded" element={
@@ -394,3 +373,4 @@ function App() {
 }
 
 export default App;
+
