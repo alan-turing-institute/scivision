@@ -1,5 +1,5 @@
 <p align="center">
-<img src="imgs/logo_name.png" width="600"/>
+<img src="https://raw.githubusercontent.com/alan-turing-institute/scivision/main/imgs/logo_name.png" width="600"/>
 </p>
 
 # A toolkit for scientific image analysis

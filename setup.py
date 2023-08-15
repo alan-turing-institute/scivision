@@ -21,7 +21,7 @@ entry_points = {
 
 setup(
     name="scivision",
-    version="0.6.1",
+    version="0.6.2",
     description="scivision",
     author="The Alan Turing Institute",
     author_email="scivision@turing.ac.uk",
