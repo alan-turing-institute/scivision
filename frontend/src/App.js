@@ -105,10 +105,10 @@ function App() {
                                     </Nav.Link>
 
                                     {/* We want to have the Datasource and Model menu items
-                              * highlighted (as if visited) for any of the routes
-                              * associated with these things.  This is the meaning of the
-                              * expression given for 'active' below. There is probably a
-                              * better way of doing this...*/}
+                                      * highlighted (as if visited) for any of the routes
+                                      * associated with these things.  This is the meaning of the
+                                      * expression given for 'active' below. There is probably a
+                                      * better way of doing this...*/}
 
                                     <Nav.Link to="model-grid" as={NavLink}
                                         active={
@@ -139,20 +139,6 @@ function App() {
                                     <Nav.Link to="community" as={NavLink} eventKey="community">
                                         Community
                                     </Nav.Link>
-
-                                    {/***
-                            <Nav.Item>
-                                <a href="https://scivision.readthedocs.io/en/latest/">Python Package Docs</a>
-                            </Nav.Item>
-
-                            <Nav.Item>
-                                <a href="https://pypi.org/project/scivision/">Python Package PyPI</a>
-                            </Nav.Item>
-
-                            <Nav.Item>
-                                <a href="https://github.com/alan-turing-institute/scivision">GitHub repo</a>
-                            </Nav.Item>
-                             ***/}
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
