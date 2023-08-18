@@ -1,53 +1,45 @@
-<p align="center">
-<img src="https://raw.githubusercontent.com/alan-turing-institute/scivision/main/imgs/logo_name.png" width="600"/>
-</p>
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/alan-turing-institute/scivision/main/imgs/logo_name.png" width="500"/>
+</h1>
 
-# A toolkit for scientific image analysis
- 
-<p align="center">
-    <a href="https://pypi.org/project/scivision/">
-        <img alt="PyPI" src="https://img.shields.io/pypi/v/scivision">
-    </a>
-    <a href="https://github.com/scivision-gallery">
-        <img alt="Scivision Gallery" src="https://img.shields.io/badge/Scivision-Gallery-pink">
-    </a>
-    <a href="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml">
-        <img alt="Continuous integration badge" src="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg">
-    </a>
-    <a href="https://scivision.readthedocs.io/en/latest/?badge=latest">
-        <img alt="Documentation Status" src="https://readthedocs.org/projects/scivision/badge/?version=latest">
-    </a>
-    <a href="https://github.com/alan-turing-institute/scivision/discussions">
-       <img alt="Discuss on GitHub Discussions" src="https://img.shields.io/badge/GitHub-Discussions-yellow?logo=GitHub">
-    </a>
-    <a href="https://github.com/alan-turing-institute/scivision/blob/main/LICENSE">
-        <img alt="License" src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg">
-    </a>
-    <br/>
-</p>
+[![Continuous integration status badge](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg)](ttps://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml)
+[![Documentation status badge](https://readthedocs.org/projects/scivision/badge/?version=latest)](https://scivision.readthedocs.io/en/latest/?badge=latest)
+[![PyPI badge](https://img.shields.io/pypi/v/scivision)](https://pypi.org/project/scivision/)
+[![All Contributors](https://img.shields.io/github/all-contributors/alan-turing-institute/scivision?color=ee8449)](#contributors)
+[![Licence badge (BSD 3 Clause)](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
 
+The Scivision project is building:
+ - a **community** of computer vision practitioners in the sciences and humanities
+   ([mailing list](https://scivision.substack.com/), [get Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform))
+ - a **catalogue** of community-curated computer vision [models](https://sci.vision/models) and [datasets](https://sci.vision/datasources),
+ - This **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+If you are new to Scivision, start from the [website](https://sci.vision/).
 
-This repository is where the development is hosted for the [Scivision Webapp](https://alan-turing-institute.github.io/scivision/) (our main project website) and [Scivision Python package](https://pypi.org/project/scivision/).
+The Scivision project is funded by the Alan Turing Institute.
 
-Here you can open an [issue to report bugs or request features](https://github.com/alan-turing-institute/scivision/issues), ask questions or [start a discussion about the project](https://github.com/alan-turing-institute/scivision/discussions) or contribute to the codebase.
+## Resources
 
-If you are new to Scivision, start by visiting our main [project website](https://alan-turing-institute.github.io/scivision/).
+- The [documentation](https://scivision.readthedocs.io/en/latest/) for the Python package
+- The main [project GitHub repository](https://github.com/alan-turing-institute/scivision), hosting
+  - development of the Python package (in the root directory)
+  - development of the website (in `frontend`)
+  - the documentation sources (in `docs`)
+  - the issue tracker - **submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues)**
+- A [gallery of notebooks](https://github.com/scivision-gallery) using Scivision models and datasets via the Python library
 
-## ⬇️ Installation
+## Installation
 
-Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivision versions.
+To install the Scivision Python library, refer to the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation).
 
-## 🤔 Contributing
+## Contributing
 
-See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html), which contains information on how to set up and contribute computer vision models and scientific image datasets to the scivision catalog, and make them available via the scivision python API, as well as modify the source code.
+The [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) describes how to
+  - set up and contribute a computer vision model to the Scivision catalogue
+  - contribute a scientific image dataset to the catalogue
+  - make a code contribution (Pull Requests welcome).
 
-You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues) in this GitHub repo.
-
-## Contributors ✨
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
