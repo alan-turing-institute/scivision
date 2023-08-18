@@ -14,7 +14,7 @@ The Scivision project is building:
  - a **catalogue** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid),
  - This **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
 
-If you are new to Scivision, start from the [website](https://sci.vision/).
+If you are new to Scivision, start with the [website](https://sci.vision/).
 
 The Scivision project is funded by the Alan Turing Institute.
 
