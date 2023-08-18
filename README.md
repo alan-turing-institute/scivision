@@ -11,7 +11,7 @@
 The Scivision project is building:
  - a **community** of computer vision practitioners in the sciences and humanities
    ([mailing list](https://scivision.substack.com/), [get Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform))
- - a **catalogue** of community-curated computer vision [models](https://sci.vision/models) and [datasets](https://sci.vision/datasources),
+ - a **catalogue** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid),
  - This **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
 
 If you are new to Scivision, start from the [website](https://sci.vision/).
@@ -25,12 +25,12 @@ The Scivision project is funded by the Alan Turing Institute.
   - development of the Python package (in the root directory)
   - development of the website (in `frontend`)
   - the documentation sources (in `docs`)
-  - the issue tracker - **submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues)**
+  - the issue tracker &mdash; **submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues)**
 - A [gallery of notebooks](https://github.com/scivision-gallery) using Scivision models and datasets via the Python library
 
 ## Installation
 
-To install the Scivision Python library, refer to the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation).
+[Installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) for the Scivision Python package.
 
 ## Contributing
 
