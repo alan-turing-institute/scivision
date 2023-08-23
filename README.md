@@ -1,53 +1,133 @@
-<p align="center">
-<img src="https://raw.githubusercontent.com/alan-turing-institute/scivision/main/imgs/logo_name.png" width="600"/>
-</p>
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/alan-turing-institute/scivision/main/imgs/logo_name.png" width="500"/>
+</h1>
 
-# A toolkit for scientific image analysis
- 
-<p align="center">
-    <a href="https://pypi.org/project/scivision/">
-        <img alt="PyPI" src="https://img.shields.io/pypi/v/scivision">
-    </a>
-    <a href="https://github.com/scivision-gallery">
-        <img alt="Scivision Gallery" src="https://img.shields.io/badge/Scivision-Gallery-pink">
-    </a>
-    <a href="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml">
-        <img alt="Continuous integration badge" src="https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg">
-    </a>
-    <a href="https://scivision.readthedocs.io/en/latest/?badge=latest">
-        <img alt="Documentation Status" src="https://readthedocs.org/projects/scivision/badge/?version=latest">
-    </a>
-    <a href="https://github.com/alan-turing-institute/scivision/discussions">
-       <img alt="Discuss on GitHub Discussions" src="https://img.shields.io/badge/GitHub-Discussions-yellow?logo=GitHub">
-    </a>
-    <a href="https://github.com/alan-turing-institute/scivision/blob/main/LICENSE">
-        <img alt="License" src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg">
-    </a>
-    <br/>
-</p>
+[![Continuous integration status badge](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg)](ttps://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml)
+[![Documentation status badge](https://readthedocs.org/projects/scivision/badge/?version=latest)](https://scivision.readthedocs.io/en/latest/?badge=latest)
+[![PyPI badge](https://img.shields.io/pypi/v/scivision)](https://pypi.org/project/scivision/)
+[![All Contributors](https://img.shields.io/github/all-contributors/alan-turing-institute/scivision?color=ee8449)](#contributors)
+[![Licence badge (BSD 3 Clause)](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
+
+If you are new to Scivision, start with the [website](https://sci.vision/).
+
+The Scivision project is building:
+
+- Hosted in [this GitHub repository](https://github.com/alan-turing-institute/scivision):
+  - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid)
+  - A **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
+  - **Documentation** for the above ([documentation website](https://scivision.readthedocs.io/en/latest/))
+- A [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets
+- a **community** of computer vision practitioners in the sciences and humanities
+   ([mailing list](https://scivision.substack.com/), [get Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform))
+- A (nascent) **ecosystem of computer vision tools and utilities**
+
+Submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues).
+
+If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for how to set up and submit a new entry.  Pull requests for code changes are also welcome.
+
+The Scivision project is funded by the Alan Turing Institute.
+
+## Repository contents
+
+The main [project repository on GitHub](https://github.com/alan-turing-institute/scivision) hosts
+  - development of the Python package (in the root directory)
+  - development of the website (in `frontend`)
+  - the documentation sources (in `docs`)
+
+## Getting Started
+
+A quick overview of using the Scivision.Py python package.
+
+### Install Scivision.Py
+
+```sh
+$ pip install scivision
+```
+
+- [Full installation guide](https://scivision.readthedocs.io/en/latest/user_guide.html#installation)
+
+### Load a Scivision model
+
+```python
+from scivision import load_pretrained_model
+
+resnet18 = load_pretrained_model(
+    # The model URL
+    "https://github.com/alan-turing-institute/scivision_classifier",
+
+    # A Scivision model can contain several variants -- below we select the one to use
+    model_selection='resnet18',
+
+    # Allow the model and its dependencies to be installed if they are not already
+    # (including tensorflow in this example)
+    allow_install=True
+)
+```
+
+We can give an image as input to the model.  Any image data compatible with numpy (an 'Array_like') is accepted.
+We can obtain some image data by loading a Scivision datasource.
+
+- [More about Scivision models](https://scivision.readthedocs.io/en/latest/model_repository_template.html)
+
+### Load a Scivision datasource
+
+```python
+from scivision import load_pretrained_model
+
+dataset = load_dataset('https://github.com/alan-turing-institute/scivision-test-data')
+
+# 'dataset' provides several named arrays.  This datasource provides one named 'test_image':
+# the keys can be looked up with `list(dataset)` (or by consulting the datasource documentation)
+#
+test_image = dataset['test_image'].read()
+```
+
+Optionally, inspect the image (with matplotlib, for example):
+```python
+import matplotlib.pyplot as plt
+
+plt.imshow(test_image)
+```
+
+![Image showing test_image (a picture of a Koala)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cutest_Koala.jpg/262px-Cutest_Koala.jpg)
+
+- [More about datasources](https://scivision.readthedocs.io/en/latest/datasource_repository_template.html)
+
+### Run a Scivision model
+
+```python
+resnet.predict(test_image)
+```
+
+Output: `koala : 99.78%`
+
+### Query the model and datasource catalogs
+
+```python
+from scivision import default_catalog
+
+# The datasource catalog as a Pandas dataframe
+default_catalog.data.to_dataframe()
+
+# Similarly for the model catalog
+default_catalog.models.to_dataframe()
+```
+
+Output:
+
+|    | name     | description                                                                | tasks                                                                                                                               | url                                       | pkg_url                                             | format   | scivision_usable   | pretrained   | labels_required   | institution         | tags                                                                                                                                  |
+|---:|:---------|:---------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|:----------------------------------------------------|:---------|:-------------------|:-------------|:------------------|:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------|
+|  0 | stardist | Single class object detection and segementation of star-convex polygons    | (<TaskEnum.object_detection: 'object-detection'>, <TaskEnum.segmentation: 'segmentation'>)                                          | https://github.com/stardist/stardist      | git+https://github.com/stardist/stardist.git@master | image    | False              | True         | True              | ('epfl',)           | ('2D', '3D', 'optical-microscopy', 'xray', 'microtomography', 'cell-counting', 'plant-phenotyping', 'climate-change-and-agriculture') |
+|  1 | PlantCV  | Open-source image analysis software package targeted for plant phenotyping | (<TaskEnum.segmentation: 'segmentation'>, <TaskEnum.thresholding: 'thresholding'>, <TaskEnum.object_detection: 'object-detection'>) | https://github.com/danforthcenter/plantcv | git+https://github.com/danforthcenter/plantcv@main  | image    | False              | True         | True              | ('danforthcenter',) | ('2D', 'hyperspectral', 'multispectral', 'near-infrared', 'infrared', 'plant-phenotyping', 'climate-change-and-agriculture')          |
+|  ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ |
 
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+- [Contributing an entry to the catalog](https://scivision.readthedocs.io/en/latest/contributing.html#extending-the-scivision-catalog)
+- The catalogs are browsable online:
+  - [model catalog](https://sci.vision/#/model-grid)
+  - [datasource catalog](https://sci.vision/#/datasource-grid)
 
-This repository is where the development is hosted for the [Scivision Webapp](https://alan-turing-institute.github.io/scivision/) (our main project website) and [Scivision Python package](https://pypi.org/project/scivision/).
-
-Here you can open an [issue to report bugs or request features](https://github.com/alan-turing-institute/scivision/issues), ask questions or [start a discussion about the project](https://github.com/alan-turing-institute/scivision/discussions) or contribute to the codebase.
-
-If you are new to Scivision, start by visiting our main [project website](https://alan-turing-institute.github.io/scivision/).
-
-## ⬇️ Installation
-
-Check out the [installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) on our readthedocs site, which also includes a [support table](https://scivision.readthedocs.io/en/latest/user_guide.html#support-table) for matching Python and Scivision versions.
-
-## 🤔 Contributing
-
-See the [Contributing Guide on readthedocs](https://scivision.readthedocs.io/en/latest/contributing.html), which contains information on how to set up and contribute computer vision models and scientific image datasets to the scivision catalog, and make them available via the scivision python API, as well as modify the source code.
-
-You may consider starting or joining in with a [discussion](https://github.com/alan-turing-institute/scivision/discussions), or opening an [issue](https://github.com/alan-turing-institute/scivision/issues) in this GitHub repo.
-
-## Contributors ✨
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
