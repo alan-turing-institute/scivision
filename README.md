@@ -8,29 +8,76 @@
 [![All Contributors](https://img.shields.io/github/all-contributors/alan-turing-institute/scivision?color=ee8449)](#contributors)
 [![Licence badge (BSD 3 Clause)](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
 
-The Scivision project is building:
- - a **community** of computer vision practitioners in the sciences and humanities
-   ([mailing list](https://scivision.substack.com/), [get Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform))
- - a **catalogue** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid),
- - This **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
-
 If you are new to Scivision, start with the [website](https://sci.vision/).
+
+Submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues).
+
+The Scivision project is building:
+
+- Hosted in [this GitHub repository](https://github.com/alan-turing-institute/scivision):
+  - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid)
+  - A **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
+  - **Documentation** for the above ([documentation website](https://scivision.readthedocs.io/en/latest/))
+- A [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets
+- a **community** of computer vision practitioners in the sciences and humanities
+   ([mailing list](https://scivision.substack.com/), [get Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform))
+- A nascent **ecosystem of computer vision tools and utilities**
 
 The Scivision project is funded by the Alan Turing Institute.
 
-## Resources
+## Getting Started
 
-- The [documentation](https://scivision.readthedocs.io/en/latest/) for the Python package
-- The main [project GitHub repository](https://github.com/alan-turing-institute/scivision), hosting
+Using the Scivision python package.
+
+Installation
+
+```sh
+$ pip install scivision
+```
+
+Running a Scivision model
+
+```python
+from scivision import load_pretrained_model, 
+
+resnet18 = load_pretrained_model(
+    # The model URL
+    "https://github.com/alan-turing-institute/scivision_classifier",
+
+    # A Scivision model can contain several variants -- below we select the one to use
+    model_selection='resnet18',
+
+    # Allow the model and its dependencies to be installed if they are not already
+    # (including tensorflow in this example)
+    allow_install=True
+)
+```
+
+Can give any numpy-compatible array (Arraylike) as input to the model.  Some data
+```python
+
+```
+
+
+
+Query the model and datasource catalogs (which are also browsable online -- [models](https://sci.vision/#/model-grid),
+[data](https://sci.vision/#/datasource-grid))
+
+```python
+from scivision import default_catalog
+
+# The datasource catalog as a Pandas dataframe
+default_catalog.data.
+```
+
+
+
+## Repository contents
+
+The main [project repository on GitHub](https://github.com/alan-turing-institute/scivision) hosts
   - development of the Python package (in the root directory)
   - development of the website (in `frontend`)
   - the documentation sources (in `docs`)
-  - the issue tracker &mdash; **submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues)**
-- A [gallery of notebooks](https://github.com/scivision-gallery) using Scivision models and datasets via the Python library
-
-## Installation
-
-[Installation instructions](https://scivision.readthedocs.io/en/latest/user_guide.html#installation) for the Scivision Python package.
 
 ## Contributing
 
