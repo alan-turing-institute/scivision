@@ -319,6 +319,21 @@
       "format": ".MRC",
       "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
       "url": "https://github.com/alan-turing-institute/affinity-vae"
+    },
+    {
+      "tasks": [],
+      "scivision_usable": false,
+      "pretrained": true,
+      "labels_required": true,
+      "institution": [],
+      "tags": [
+        "best model"
+      ],
+      "name": "btrack",
+      "description": "test",
+      "url": "https://github.com/quantumjot/btrack",
+      "pkg_url": "test",
+      "format": "test"
     }
   ]
 }
