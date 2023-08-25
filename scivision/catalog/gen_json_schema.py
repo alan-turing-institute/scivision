@@ -13,9 +13,6 @@ class DatasourceWithExamples(scivision.catalog.CatalogDatasourceEntry):
             domains = list(cat.domains.explode().unique())
             schema['properties']['domains']['items']['examples'] = domains
 
-            formats = list(cat.format.explode().unique())
-            schema['properties']['format']['examples'] = formats
-
             institutions = list(cat.institution.explode().unique())
             schema['properties']['institution']['items']['examples'] = institutions
 

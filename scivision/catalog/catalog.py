@@ -63,25 +63,11 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
         description="A pip requirement specifier for PyPI, or a URL of the "
         "archive or package (on GitHub, for exampe)",
     )
-    format: str = Field(
-        ...,
-        title="Model input format",
-        description="The type of data consumed by the model",
-    )
     scivision_usable: bool = Field(
         False,
         title="Can the model be installed and loaded with the scivision Python package, with "
         "scivision.load_pretrained_model(<model url>, allow_install=True)?"
         "Leave unchecked if not sure",
-    )
-    pretrained: bool = Field(
-        True,
-        title="Pretrained model?",
-    )
-    labels_required: bool = Field(
-        True,
-        title="Labels required?",
-        description="Does the model require labeled data for training?",
     )
     institution: Tuple[str, ...] = Field(
         (),
@@ -158,10 +144,6 @@ class CatalogDatasourceEntry(
         description="The URL path to the scivision yml file in the datasource repo. "
         "If the exact path is not specified, Scivision will try to locate the file in"
         " the default location at .scivision/data.yml",
-    )
-    format: str = Field(
-        None,
-        title="Format",
     )
     institution: Tuple[str, ...] = Field(
         (),
@@ -403,14 +385,6 @@ class PandasCatalog:
         return PandasQueryResult(self._projects)
 
     def _compatible_models(self, datasource) -> PandasQueryResult:
-        models_compatible_format = self._models[
-            self._models.format == datasource["format"]
-        ]
-
-        models_compatible_format_labels = models_compatible_format[
-            datasource["labels_provided"] | ~models_compatible_format.labels_required
-        ]
-
         datasource_tasks = pd.DataFrame(datasource["tasks"], columns=["tasks"])
         models_compatible_tasks = (
             self._models[["name", "tasks"]]
@@ -422,28 +396,11 @@ class PandasCatalog:
             )
             .name.drop_duplicates()
         )
-        result_df = models_compatible_format_labels[
-            models_compatible_format_labels.name.isin(models_compatible_tasks)
-        ]
+        result_df = self._models.name.isin(models_compatible_tasks)
 
         return PandasQueryResult(result_df)
 
-    # Similar to _compatible_models, but for datasources.  Can't
-    # cleanly combine these two functions, due to the asymmetry
-    # between a model's 'labels_required', and datasource 'labels_provided'.
-    # In particular, a model that doesn't require labels can still use
-    # a datasource that provides them (if they are otherwise
-    # compatible), but not vice versa.  For this reason, the distinct
-    # names 'labels_provided' and 'labels_required' are used.
     def _compatible_datasources(self, model) -> PandasQueryResult:
-        datasources_compatible_format = self._datasources[
-            self._datasources.format == model["format"]
-        ]
-
-        datasources_compatible_format_labels = datasources_compatible_format[
-            datasources_compatible_format.labels_provided | ~model["labels_required"]
-        ]
-
         model_tasks = pd.DataFrame(model["tasks"], columns=["tasks"])
         datasources_compatible_tasks = (
             self._datasources[["name", "tasks"]]
@@ -455,9 +412,7 @@ class PandasCatalog:
             )
             .name.drop_duplicates()
         )
-        result_df = datasources_compatible_format_labels[
-            datasources_compatible_format_labels.name.isin(datasources_compatible_tasks)
-        ]
+        result_df = self._datasources.name.isin(datasources_compatible_tasks)
 
         return PandasQueryResult(result_df)
 

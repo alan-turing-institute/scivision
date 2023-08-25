@@ -11,10 +11,7 @@
       ],
       "url": "https://github.com/stardist/stardist",
       "pkg_url": "git+https://github.com/stardist/stardist.git@master",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": false,
-      "labels_required": true,
       "institution": [
         "epfl"
       ],
@@ -39,10 +36,7 @@
       ],
       "url": "https://github.com/danforthcenter/plantcv",
       "pkg_url": "git+https://github.com/danforthcenter/plantcv@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": false,
-      "labels_required": true,
       "institution": [
         "danforthcenter"
       ],
@@ -64,10 +58,7 @@
       ],
       "url": "https://github.com/MarniTausen/Greenotyper",
       "pkg_url": "git+https://github.com/MarniTausen/Greenotyper@master",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": false,
-      "labels_required": true,
       "institution": [
         "MarniTausen"
       ],
@@ -87,10 +78,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/mapreader-plant-scivision",
       "pkg_url": "git+https://github.com/alan-turing-institute/mapreader-plant-scivision@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "alan-turing-institute"
       ],
@@ -111,10 +99,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/plankton-cefas-scivision",
       "pkg_url": "git+https://github.com/alan-turing-institute/plankton-cefas-scivision@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "alan-turing-institute",
         "cefas",
@@ -135,10 +120,7 @@
       ],
       "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision",
       "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "cambridge-university",
         "birkbeck-university"
@@ -159,10 +141,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/scivision_classifier",
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "alan-turing-institute"
       ],
@@ -180,10 +159,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/scivision_huggingface",
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "alan-turing-institute",
         "huggingface"
@@ -202,10 +178,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/scivision_huggingface_segmentation",
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_segmentation.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "alan-turing-institute",
         "huggingface"
@@ -220,10 +193,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/scivision_huggingface_objectdetection",
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_objectdetection.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "alan-turing-institute",
         "huggingface"
@@ -239,10 +209,7 @@
       ],
       "url": "https://github.com/shmh40/detectreeRGB-treecrown-scivision",
       "pkg_url": "git+https://github.com/shmh40/detectreeRGB-treecrown-scivision.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": false,
       "institution": [
         "cambridge-university"
       ],
@@ -262,10 +229,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/flower_classification_model",
       "pkg_url": "git+https://github.com/alan-turing-institute/flower_classification_model.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": true,
       "institution": [
         "alan-turing-institute"
       ],
@@ -282,10 +246,7 @@
       ],
       "url": "https://github.com/alan-turing-institute/butterfly_classification_model",
       "pkg_url": "git+https://github.com/alan-turing-institute/butterfly_classification_model.git@main",
-      "format": "image",
-      "pretrained": true,
       "scivision_usable": true,
-      "labels_required": true,
       "institution": [
         "alan-turing-institute"
       ],
@@ -301,8 +262,6 @@
         "classification"
       ],
       "scivision_usable": false,
-      "pretrained": false,
-      "labels_required": false,
       "institution": [
         "The Alan Turing Institute",
         "Rutherford Appleton Laboratory STFC",
@@ -316,7 +275,6 @@
       ],
       "name": "Affinity-VAE",
       "description": "A framework for automatic clustering and classification of objects in multidimensional image data based on their similarity.",
-      "format": ".MRC",
       "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
       "url": "https://github.com/alan-turing-institute/affinity-vae"
     }
