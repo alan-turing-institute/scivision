@@ -107,7 +107,7 @@ function github_auth({ referrer, gh_logged_in }) {
         github_auth_url.search = new URLSearchParams({
             client_id: server_config_selected.client_id,
             redirect_uri: server_config_selected.redirect_uri + referrer_encoded,
-            scope: "public_repo",
+            scope: "public_repo workflow",
             state: random_uuid,
         }).toString();
 
