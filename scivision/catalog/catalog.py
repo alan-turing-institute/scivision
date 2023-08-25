@@ -89,7 +89,11 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
         description="A list of institutions that produced or are associated with "
         "the model (one per item)",
     )
-    tags: Tuple[str, ...]
+    tags: Tuple[str, ...] = Field(
+        (),
+        title="Tags",
+        description="A list of free-form labels to associate with a model",
+    )
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -130,7 +134,8 @@ class CatalogDatasourceEntry(
         None,
         title="Suitable tasks",
         description="For which task or tasks is this datasource likely to be "
-        "suitable? (Select any number of the following items)",
+        "suitable? (Select any number of these -- try holding Ctrl or Option "
+        "to select more than one)",
     )
     labels_provided: bool = Field(
         False,
@@ -167,7 +172,7 @@ class CatalogDatasourceEntry(
     tags: Tuple[str, ...] = Field(
         (),
         title="Tags",
-        description="A list of free-form data to associate with the dataset",
+        description="A list of free-form labels to associate with a datasource",
     )
 
     def __getitem__(self, item):
