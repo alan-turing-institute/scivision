@@ -17,6 +17,8 @@ class TaskEnum(str, Enum):
     object_detection = "object-detection"
     segmentation = "segmentation"
     thresholding = "thresholding"
+    shape_analysis = "shape-analysis"
+    object_tracking = "object-tracking"
     other = "other"
 
 
