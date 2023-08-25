@@ -319,6 +319,16 @@
       "format": ".MRC",
       "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
       "url": "https://github.com/alan-turing-institute/affinity-vae"
+    },
+    {
+      "tasks": [],
+      "scivision_usable": false,
+      "institution": [],
+      "tags": [],
+      "name": "test",
+      "description": "test",
+      "url": "http://example.com",
+      "pkg_url": "http://example.com"
     }
   ]
 }
