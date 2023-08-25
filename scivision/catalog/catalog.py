@@ -396,7 +396,9 @@ class PandasCatalog:
             )
             .name.drop_duplicates()
         )
-        result_df = self._models.name.isin(models_compatible_tasks)
+        result_df = self._models[
+            self._models.name.isin(models_compatible_tasks)
+        ]
 
         return PandasQueryResult(result_df)
 
@@ -412,7 +414,9 @@ class PandasCatalog:
             )
             .name.drop_duplicates()
         )
-        result_df = self._datasources.name.isin(datasources_compatible_tasks)
+        result_df = self._datasources[
+            self._datasources.name.isin(datasources_compatible_tasks)
+        ]
 
         return PandasQueryResult(result_df)
 
