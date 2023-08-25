@@ -24,7 +24,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { GH_TOKEN_KEY, RANDOM_UUID_KEY } from "./config.js";
 
-import { CatalogEntryForm } from "./catalog_entry_form.js"
+import { CatalogEntryForm } from "./CatalogEntryForm.js"
 
 import { Login, LoginStatusLink } from "./github_helper_funcs.js"
 
