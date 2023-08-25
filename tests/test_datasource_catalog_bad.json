@@ -1,7 +1,7 @@
 {
    "catalog_type":"scivision datasource catalog",
    "name":"default",
-   "description":"This catalog is not a valid datasource catalog. Included for testing purposes. It is missing 'labels' and has an extra key.",
+   "description":"This catalog is not a valid datasource catalog. Included for testing purposes. It is missing 'url' and has an extra key.",
    "entries":[
       {
          "name":"data-000",
@@ -12,8 +12,6 @@
          "domains":[
             "optical-microscopy"
          ],
-         "url":"https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
-         "format":"image",
          "INVALID":"",
          "institution":"epfl",
          "tags":[

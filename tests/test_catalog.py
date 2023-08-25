@@ -86,15 +86,15 @@ class TestCompatible:
 
     def test_compatible_models_dict(self, cat):
         compat = cat.compatible_models(
-            {"labels_provided": False, "tasks": ["object-detection"], "format": "image"}
+            {"tasks": ["segmentation"]}
         ).to_dataframe()
         assert len(compat) == 1 and compat["name"].item() == "example-model-2"
 
     def test_compatible_datasources_dict(self, cat):
         compat = cat.compatible_datasources(
-            {"labels_required": False, "tasks": ["object-detection"], "format": "image"}
+            {"tasks": ["segmentation"]}
         ).to_dataframe()
-        assert len(compat) == 1 and compat["name"].item() == "example-datasource-1"
+        assert len(compat) == 1 and compat["name"].item() == "example-datasource-2"
 
 
 def test_query_to_catalog_entry():
