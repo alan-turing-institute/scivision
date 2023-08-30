@@ -8,7 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { GH_TOKEN_KEY } from "./config.js";
 
-import { Login, LoginStatusLink } from "./github_helper_funcs.js"
+import { Login, LoginStatusLink } from "./login.js"
 
 import Home from "./Home.js"
 import About from './About.js'
