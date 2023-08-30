@@ -178,40 +178,7 @@ class CatalogDatasources(BaseModel, extra="forbid"):
         return entries
 
 
-def get_models():
-    models_raw = pkgutil.get_data(__name__, "data/models.json")
-    models = CatalogModels.parse_raw(models_raw)
-    names = []
-    for model_entry in models.entries:
-        names.append(model_entry["name"])
-    return names
-
-
-modelEnumStrings = ((x, x) for x in get_models())
-ModelEnum = Enum('ModelEnum', modelEnumStrings)
-
-
-def get_datasources():
-    datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
-    datasources = CatalogDatasources.parse_raw(datasources_raw)
-    names = []
-    for datasources_entry in datasources.entries:
-        names.append(datasources_entry["name"])
-    return names
-
-
-datasourceEnumStrings = ((x, x) for x in get_datasources())
-DataEnum = Enum('DataEnum', datasourceEnumStrings)
-
-
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
-    # tasks, institution and tags are Tuples (rather than Lists) so
-    # that they are immutable - Tuple is being used as an immutable
-    # sequence here. This means that these fields are hashable, which
-    # can be more convenient when included in a dataframe
-    # (e.g. unique()). Could consider using a Frozenset for these
-    # fields instead, since duplicates and ordering should not be
-    # significant.
     name: str = Field(
         ...,
         title="Name",
@@ -233,12 +200,12 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Page",
         description="Markdown formatted content for the project page",
     )
-    models: Tuple[ModelEnum, ...] = Field(
+    models: Tuple[str, ...] = Field(
         (),
         title="Models",
         description="Which models from the scivision catalog are used in the project?",
     )
-    datasources: Tuple[DataEnum, ...] = Field(
+    datasources: Tuple[str, ...] = Field(
         (),
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
@@ -263,7 +230,7 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
 class CatalogProjects(BaseModel, extra="forbid"):
     catalog_type: str = "scivision project catalog"
     name: str
-    # Tuple: see comment on CatalogProjectEntry
+    # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogProjectEntry, ...]
 
     @validator("entries")
@@ -371,6 +338,36 @@ class PandasCatalog:
         else:
             projects_cat = _coerce_projects_catalog(projects)
             self._projects = pd.DataFrame([ent.dict() for ent in projects_cat.entries])
+
+        self.validate()
+
+    def validate(self):
+        """Extra validation
+
+        Raise ValueError if projects refer to nonexistent models or datasources
+        """
+        for _, proj in self._projects.iterrows():
+            proj_models = pd.Series(proj.models)
+            unknown_models = proj_models[~proj_models.isin(self._models.name)]
+            if len(unknown_models) > 0:
+                unknown_models_str = ', '.join(unknown_models.tolist())
+                raise ValueError(
+                    "A project catalog entry refers to a model not in the "
+                    f"model catalog\n  Project: {proj['name']}\n  Unknown models: "
+                    f"{unknown_models_str}"
+                )
+
+            proj_datasources = pd.Series(proj.datasources)
+            unknown_datasources = proj_models[
+                ~proj_datasources.isin(self._datasources.name)
+            ]
+            if len(unknown_datasources) > 0:
+                unknown_datasources_str = ', '.join(unknown_datasources.tolist())
+                raise ValueError(
+                    "A project catalog entry refers to a datasource not in the "
+                    f"datasource catalog\n  Project: {proj['name']}\n  Unknown "
+                    f"datasources: {unknown_datasources_str}"
+                )
 
     @property
     def models(self) -> PandasQueryResult:

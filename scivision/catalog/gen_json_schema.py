@@ -35,3 +35,8 @@ def entry_point():
     with open("model_schema.js", "w") as f:
         print(f"const schema = {model_schema};", file=f)
         print("export default schema;", file=f)
+
+    project_schema = scivision.catalog.CatalogProjectEntry.schema_json()
+    with open("project_schema.js", "w") as f:
+        print(f"const schema = {project_schema};", file=f)
+        print("export default schema;", file=f)

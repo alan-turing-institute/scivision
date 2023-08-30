@@ -1,0 +1,20 @@
+{
+    "catalog_type": "scivision project catalog",
+    "name": "default",
+    "entries": [
+        {
+            "name": "example-project",
+            "header": "Example Project",
+            "page": "",
+            "models": [
+                "example-model-1"
+            ],
+            "datasources": [
+                "example-datasource-1"
+            ],
+            "tasks": [],
+            "institution": [],
+            "tags": []
+        }
+    ]
+}
