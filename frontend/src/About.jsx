@@ -12,33 +12,26 @@ export default function About() {
 
       <Container className="text-block">
         <p>
-          Scivision is both a <strong>webapp</strong> and a{" "}
-          <strong>Python package</strong> for discovering, and using pre-trained
-          computer vision models and image datasets from science and the
-          humanities. These models and datasets are available in a catalog,
-          which researchers working in diverse fields have contributed to.
-        </p>
-
-        <p>
-          Scivision is freely available under an open source licence (BSD).
-          Development happens in the{" "}
-          <a href="https://github.com/alan-turing-institute/scivision">
-            Scivision GitHub repo
-          </a>
-        </p>
-
-        <p>
-          You can also see an interactive demonstration of the Scivision Python
-          package in your browser via Binder, with no installation required:{" "}
-          <a href="https://mybinder.org/v2/gh/scivision-gallery/scivision_examples/HEAD?labpath=how-to-use-scivision.ipynb">
-            <img src={binder_image_url} alt="launch Binder" />
-          </a>
-        </p>
-
-        <p>
-          Browse through a gallery of interactive notebooks from research
-          projects using Scivision at the{" "}
-          <a href="https://github.com/scivision-gallery">Scivision Gallery.</a>
+          The Scivision project is building:
+          <ul className="list-spaced mt-2">
+            <li>
+              A{" "}
+              <strong>
+                <a href="#community">community</a>
+              </strong>{" "}
+              of computer vision practitioners in the sciences and humanities
+            </li>
+            <li>
+              A <strong>catalog</strong> of community-curated computer vision{" "}
+              <a href="#model-grid">models</a> and{" "}
+              <a href="#datasource-grid">datasets</a> from the sciences and
+              humanities
+            </li>
+            <li>
+              A <strong>software ecosystem</strong> of interoperable tools and
+              utilities for working with computer vision models and data
+            </li>
+          </ul>
         </p>
 
         <p align="center">
@@ -52,6 +45,8 @@ export default function About() {
             allowfullscreen
           ></iframe>
         </p>
+
+        <p>The Scivision Project is funded by the Alan Turing Institute.</p>
       </Container>
     </>
   );

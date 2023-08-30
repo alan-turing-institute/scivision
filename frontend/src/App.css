@@ -55,3 +55,7 @@ div.gridtext {
 .app {
   margin-bottom: 4ex;
 }
+
+ul.list-spaced li {
+  padding: 6px 0px;
+}
