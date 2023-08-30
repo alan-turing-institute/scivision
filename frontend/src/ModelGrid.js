@@ -1,4 +1,4 @@
-import GridContents from "./grid.js"
+import GridContents from "./GridContents.js"
 import ModelNav from "./ModelNav.js"
 
 import models from './catalog/data/models.json';

@@ -14,7 +14,7 @@ import {
     project_thumbnails
 } from "./thumbnails.js"
 
-import { makePopover } from "./grid.js"
+import { makePopover } from "./GridContents.js"
 
 
 // Component: Details about a model

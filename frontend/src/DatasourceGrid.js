@@ -1,4 +1,4 @@
-import GridContents from "./grid.js"
+import GridContents from "./GridContents.js"
 import DatasourceNav from "./DatasourceNav.js"
 
 import datasources from './catalog/data/datasources.json';

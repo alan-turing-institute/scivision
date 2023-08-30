@@ -53,7 +53,7 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
             thumbnail = <Card.Img variant="top"
                              src={thumbnail_src}
                              alt={data.name}
-                />
+                        />
         }
 
         // Add popover

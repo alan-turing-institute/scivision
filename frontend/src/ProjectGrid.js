@@ -1,4 +1,4 @@
-import GridContents from "./grid.js"
+import GridContents from "./GridContents.js"
 import ProjectNav from "./ProjectNav.js"
 
 import projects from './catalog/data/projects.json';

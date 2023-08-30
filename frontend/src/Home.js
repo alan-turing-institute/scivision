@@ -15,7 +15,7 @@ import {
     project_thumbnails
 } from "./thumbnails.js"
 
-import { makeThumbnail } from "./grid.js"
+import { makeThumbnail } from "./GridContents.js"
 
 // Component: The home page
 // route: /
