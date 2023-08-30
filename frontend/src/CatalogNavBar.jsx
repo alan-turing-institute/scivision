@@ -28,7 +28,7 @@ export default function CatalogNavBar(props) {
       </Nav.Item>
       <Nav.Item className="ml-auto">
         <Nav.Link to={props.createNewRoute} as={NavLink}>
-          <i className="bi bi-file-earmark-plus" /> Create new entry
+          <i className="bi bi-file-earmark-plus" /> Contribute an entry
         </Nav.Link>
       </Nav.Item>
     </Nav>
