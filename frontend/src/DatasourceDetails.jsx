@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-import DatasourceNav from "./DatasourceNav.js";
+import DatasourceNav from "./DatasourceNav.jsx";
 
 import { datasource_thumbnails } from "./thumbnails.js";
 

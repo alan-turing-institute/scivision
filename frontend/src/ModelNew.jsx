@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
-import CatalogEntryForm from "./CatalogEntryForm.js";
-import ModelNav from "./ModelNav.js";
+import CatalogEntryForm from "./CatalogEntryForm.jsx";
+import ModelNav from "./ModelNav.jsx";
 
 import model_schema from "./catalog/model_schema.js";
 

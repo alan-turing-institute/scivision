@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropzone from "react-dropzone";
 import AvatarEditor from "react-avatar-editor";
-import CatalogEntryForm from "./CatalogEntryForm.js";
-import DatasourceNav from "./DatasourceNav.js";
+import CatalogEntryForm from "./CatalogEntryForm.jsx";
+import DatasourceNav from "./DatasourceNav.jsx";
 
 import datasource_schema from "./catalog/datasource_schema.js";
 

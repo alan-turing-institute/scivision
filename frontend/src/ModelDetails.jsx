@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-import ModelNav from "./ModelNav.js";
+import ModelNav from "./ModelNav.jsx";
 import { model_thumbnails } from "./thumbnails.js";
 
 import models from './catalog/data/models.json';

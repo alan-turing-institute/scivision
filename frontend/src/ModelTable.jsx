@@ -1,9 +1,9 @@
 import DataTable from 'react-data-table-component';
 
-import ModelNav from "./ModelNav.js"
+import ModelNav from "./ModelNav.jsx"
 import { model_thumbnails } from "./thumbnails.js"
-import { renderThumbnailForTable, TableCardDropdown } from "./table_helpers.js"
-import { TaskBadge } from "./badges.js";
+import { renderThumbnailForTable, TableCardDropdown } from "./table_helpers.jsx"
+import { TaskBadge } from "./badges.jsx";
 
 import models from './catalog/data/models.json';
 

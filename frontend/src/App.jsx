@@ -8,28 +8,28 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { GH_TOKEN_KEY } from "./config.js";
 
-import { Login, LoginStatusLink } from "./login.js"
+import { Login, LoginStatusLink } from "./login.jsx"
 
-import Home from "./Home.js"
-import About from './About.js'
+import Home from "./Home.jsx"
+import About from './About.jsx'
 
-import ModelGrid from "./ModelGrid.js"
-import ModelTable from "./ModelTable.js"
-import ModelDetails from "./ModelDetails.js"
-import ModelNew from "./ModelNew.js"
+import ModelGrid from "./ModelGrid.jsx"
+import ModelTable from "./ModelTable.jsx"
+import ModelDetails from "./ModelDetails.jsx"
+import ModelNew from "./ModelNew.jsx"
 
-import DatasourceGrid from "./DatasourceGrid.js"
-import DatasourceTable from "./DatasourceTable.js"
-import DatasourceDetails from "./DatasourceDetails.js"
-import DatasourceNew from "./DatasourceNew.js"
+import DatasourceGrid from "./DatasourceGrid.jsx"
+import DatasourceTable from "./DatasourceTable.jsx"
+import DatasourceDetails from "./DatasourceDetails.jsx"
+import DatasourceNew from "./DatasourceNew.jsx"
 
-import ProjectGrid from "./ProjectGrid.js"
-import ProjectTable from "./ProjectTable.js"
-import ProjectDetails from "./ProjectDetails.js"
-import ProjectNew from "./ProjectNew.js"
+import ProjectGrid from "./ProjectGrid.jsx"
+import ProjectTable from "./ProjectTable.jsx"
+import ProjectDetails from "./ProjectDetails.jsx"
+import ProjectNew from "./ProjectNew.jsx"
 
-import ScivisionPy from "./ScivisionPy.js"
-import Community from "./Community.js"
+import ScivisionPy from "./ScivisionPy.jsx"
+import Community from "./Community.jsx"
 
 // Component: The app
 //

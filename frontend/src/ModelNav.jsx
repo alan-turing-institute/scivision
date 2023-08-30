@@ -1,4 +1,4 @@
-import CatalogNavBar from "./CatalogNavBar.js"
+import CatalogNavBar from "./CatalogNavBar.jsx"
 
 // Component: Tab-bar for models (grid, table, create etc)
 export default function ModelNav() {

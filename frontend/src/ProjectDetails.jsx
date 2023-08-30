@@ -3,8 +3,8 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { Link, useParams } from "react-router-dom";
 import MarkdownView from 'react-showdown';
 
-import ProjectNav from "./ProjectNav.js";
-import { makePopover } from "./GridContents.js"
+import ProjectNav from "./ProjectNav.jsx";
+import { makePopover } from "./GridContents.jsx"
 
 import {
     model_thumbnails,

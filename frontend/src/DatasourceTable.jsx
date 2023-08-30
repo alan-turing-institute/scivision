@@ -2,10 +2,10 @@ import { useState } from 'react';
 import useScript from "react-use-scripts";
 import DataTable from 'react-data-table-component';
 
-import DatasourceNav from "./DatasourceNav.js";
+import DatasourceNav from "./DatasourceNav.jsx";
 import { datasource_thumbnails } from "./thumbnails.js";
-import { renderThumbnailForTable, TableCardDropdown } from "./table_helpers.js";
-import { TaskBadge } from "./badges.js";
+import { renderThumbnailForTable, TableCardDropdown } from "./table_helpers.jsx";
+import { TaskBadge } from "./badges.jsx";
 
 import datasources from "./catalog/data/datasources.json";
 

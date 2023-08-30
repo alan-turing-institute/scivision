@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import CatalogEntryForm from "./CatalogEntryForm.js";
-import ProjectNav from "./ProjectNav.js";
+import CatalogEntryForm from "./CatalogEntryForm.jsx";
+import ProjectNav from "./ProjectNav.jsx";
 
 import project_schema from "./catalog/project_schema.js";
 

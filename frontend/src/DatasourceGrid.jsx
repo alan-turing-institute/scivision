@@ -1,5 +1,5 @@
-import GridContents from "./GridContents.js"
-import DatasourceNav from "./DatasourceNav.js"
+import GridContents from "./GridContents.jsx"
+import DatasourceNav from "./DatasourceNav.jsx"
 
 import datasources from './catalog/data/datasources.json';
 import { datasource_thumbnails } from "./thumbnails.js"

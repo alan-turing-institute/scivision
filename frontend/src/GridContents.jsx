@@ -4,7 +4,7 @@ import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { Link } from "react-router-dom";
 
-import { TaskBadge, UsageBadge } from './badges.js'
+import { TaskBadge, UsageBadge } from './badges.jsx'
 
 // returns a function component, for a Popover describing the current
 // resource (model or datasource).  Assumes it has name, description,

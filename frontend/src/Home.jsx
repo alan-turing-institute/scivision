@@ -1,11 +1,8 @@
-import { Link } from "react-router-dom";
-
 import { React } from 'react';
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import datasources from './catalog/data/datasources.json';
-import models from './catalog/data/models.json';
-import projects from './catalog/data/projects.json';
+import { makeThumbnail } from "./GridContents.jsx"
 
 import { sample_without_replacement } from "./utils.js";
 
@@ -15,7 +12,10 @@ import {
     project_thumbnails
 } from "./thumbnails.js"
 
-import { makeThumbnail } from "./GridContents.js"
+import datasources from './catalog/data/datasources.json';
+import models from './catalog/data/models.json';
+import projects from './catalog/data/projects.json';
+
 
 // Component: The home page
 // route: /
