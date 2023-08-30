@@ -2,7 +2,7 @@ import "./App.css";
 
 import { React, useState } from "react";
 import { Routes, Route, NavLink, useLocation } from "react-router-dom";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -39,6 +39,42 @@ function App() {
   const [gh_logged_in, set_gh_logged_in] = useState(!!gh_token);
   const location = useLocation();
   const location_root = location.pathname.split("/")[1]; // path starts with a '/'
+
+  // A few functions to help determine which navigation items to show
+  // as selected
+
+  function model_tab_active() {
+    return (
+      location_root === "model-grid" ||
+      location_root === "model-table" ||
+      location_root === "new-model" ||
+      location_root === "model"
+    );
+  }
+
+  function datasource_tab_active() {
+    return (
+      location_root === "datasource-grid" ||
+      location_root === "datasource-table" ||
+      location_root === "new-datasource" ||
+      location_root === "datasource"
+    );
+  }
+
+  function project_tab_active() {
+    return (
+      location_root === "project-grid" ||
+      location_root === "project-table" ||
+      location_root === "new-project" ||
+      location_root === "project"
+    );
+  }
+
+  function any_catalog_active() {
+    return (
+      model_tab_active() || datasource_tab_active() || project_tab_active()
+    );
+  }
 
   return (
     <div className="app">
@@ -85,56 +121,48 @@ function App() {
                     About
                   </Nav.Link>
 
-                  <Nav.Link
-                    to="scivisionpy"
-                    as={NavLink}
-                    eventKey="scivisionpy"
-                  >
-                    Scivision.Py
-                  </Nav.Link>
-
                   {/* We want to have the Datasource and Model menu items
                       highlighted (as if visited) for any of the routes
                       associated with these things.  This is the meaning of the
                       expression given for 'active' below. There is probably a
                       better way of doing this... */}
 
-                  <Nav.Link
-                    to="model-grid"
-                    as={NavLink}
-                    active={
-                      location_root === "model-table" ||
-                      location_root === "new-model" ||
-                      location_root === "model"
-                    }
-                    eventKey="model"
-                  >
-                    Models
-                  </Nav.Link>
+                  <NavDropdown title="Catalog" active={any_catalog_active()}>
+                    <NavDropdown.Item
+                      to="model-grid"
+                      as={NavLink}
+                      active={model_tab_active()}
+                      eventKey="model"
+                    >
+                      Models
+                    </NavDropdown.Item>
+
+                    <NavDropdown.Item
+                      to="datasource-grid"
+                      as={NavLink}
+                      active={datasource_tab_active()}
+                      eventKey="datasource"
+                    >
+                      Data
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      to="project-grid"
+                      as={NavLink}
+                      active={project_tab_active()}
+                      eventKey="project"
+                    >
+                      Projects
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item>Contribute</NavDropdown.Item>
+                  </NavDropdown>
 
                   <Nav.Link
-                    to="datasource-grid"
+                    to="scivisionpy"
                     as={NavLink}
-                    active={
-                      location_root === "datasource-table" ||
-                      location_root === "new-datasource" ||
-                      location_root === "datasource"
-                    }
-                    eventKey="datasource"
+                    eventKey="scivisionpy"
                   >
-                    Data
-                  </Nav.Link>
-                  <Nav.Link
-                    to="project-grid"
-                    as={NavLink}
-                    active={
-                      location_root === "project-table" ||
-                      location_root === "new-project" ||
-                      location_root === "project"
-                    }
-                    eventKey="project"
-                  >
-                    Projects
+                    Scivision.Py
                   </Nav.Link>
 
                   <Nav.Link to="community" as={NavLink} eventKey="community">
