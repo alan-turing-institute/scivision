@@ -2,7 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import CatalogEntryForm from "./CatalogEntryForm.js";
 import DatasourceNav from "./DatasourceNav.js";
 
-import datasource_schema from "./datasource_schema.js";
+import datasource_schema from "./catalog/datasource_schema.js";
 
 export default function DatasourceNew({ gh_logged_in }) {
     return (

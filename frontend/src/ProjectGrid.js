@@ -1,7 +1,7 @@
 import GridContents from "./grid.js"
 import ProjectNav from "./ProjectNav.js"
 
-import projects from './data/projects.json';
+import projects from './catalog/data/projects.json';
 import { project_thumbnails } from "./thumbnails.js"
 
 function ProjectGridContents() {

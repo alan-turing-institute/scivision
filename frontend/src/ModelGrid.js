@@ -1,7 +1,7 @@
 import GridContents from "./grid.js"
 import ModelNav from "./ModelNav.js"
 
-import models from './data/models.json';
+import models from './catalog/data/models.json';
 import { model_thumbnails } from "./thumbnails.js"
 
 function ModelGridContents() {

@@ -1,12 +1,12 @@
-import { Link, useParams } from "react-router-dom";
-
 import { React } from 'react';
 
+import { Link, useParams } from "react-router-dom";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import datasources from './data/datasources.json';
-import models from './data/models.json';
-import projects from './data/projects.json';
 import MarkdownView from 'react-showdown';
+
+import datasources from './catalog/data/datasources.json';
+import models from './catalog/data/models.json';
+import projects from './catalog/data/projects.json';
 
 import {
     model_thumbnails, 

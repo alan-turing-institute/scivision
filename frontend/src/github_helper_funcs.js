@@ -21,7 +21,7 @@ async function get_github_token(gh_code) {
         if (json.error) {
             throw json.error;
         } else {
-            throw "An unknown error occurred";
+            throw Error("An unknown error occurred");
         }
     }
     return json.token;
@@ -55,8 +55,8 @@ export function Login({ gh_logged_in, set_gh_logged_in }) {
             login_attempted.current = true;
             if (gh_code) {
                 (async () => {
-                    if (gh_logged_in) throw "Already logged in to GitHub";
-                    if (gh_state !== random_uuid) throw "OAuth state mismatch";
+                    if (gh_logged_in) throw Error("Already logged in to GitHub");
+                    if (gh_state !== random_uuid) throw Error("OAuth state mismatch");
                     return get_github_token(gh_code);
                 })()
                     .then((tok) => {
@@ -64,7 +64,7 @@ export function Login({ gh_logged_in, set_gh_logged_in }) {
                         set_gh_logged_in(true);
                     })
                     .catch((e) => {
-                        console.log(`Could not log in to GitHub.  The reason was: ${e}`);
+                        console.log(`Could not log in to GitHub.  The reason was: ${e.message}`);
                     })
                     .finally(() => {
                         // Clearing the search parameters triggers a

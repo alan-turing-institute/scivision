@@ -13,18 +13,14 @@ export function TaskBadge({taskName}) {
 
 // Component: A badge indicating whether a model is usable with scivision
 export function UsageBadge({usageBool}) {
-    if (usageBool) {
-        var badge = <>
-            <span className="badge badge-success">Use with Scivision.Py</span>
+    const badge = usageBool ?
+        <span className="badge badge-success">Use with Scivision.Py</span> :
+        <span className="badge badge-secondary">See my Homepage</span>
+
+    return (
+        <>
+            {badge}
             &nbsp;
         </>
-    } else {
-      var badge = <>
-          <span className="badge badge-secondary">See my Homepage</span>
-          &nbsp;
-      </>
-    }
-    return (
-        badge
     );
 }

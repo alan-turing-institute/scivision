@@ -2,7 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import CatalogEntryForm from "./CatalogEntryForm.js";
 import ModelNav from "./ModelNav.js";
 
-import model_schema from "./model_schema.js";
+import model_schema from "./catalog/model_schema.js";
 
 export default function ModelNew({ gh_logged_in }) {
     return (

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { React } from 'react';
 import { Container, Row, Col, Card } from "react-bootstrap";
 
-import datasources from './data/datasources.json';
-import models from './data/models.json';
-import projects from './data/projects.json';
+import datasources from './catalog/data/datasources.json';
+import models from './catalog/data/models.json';
+import projects from './catalog/data/projects.json';
 
 import { sample_without_replacement } from "./utils.js";
 

@@ -1,11 +1,10 @@
-import { React, useState, useEffect } from 'react';
-
+import { React, useState } from 'react';
+import DataTable from 'react-data-table-component';
 import useScript from "react-use-scripts";
 
-import datasources from './data/datasources.json';
-import models from './data/models.json';
-import projects from './data/projects.json';
-import DataTable from 'react-data-table-component';
+import datasources from './catalog/data/datasources.json';
+import models from './catalog/data/models.json';
+import projects from './catalog/data/projects.json';
 
 import {
     model_thumbnails,  
@@ -150,12 +149,12 @@ export function DatasourceTableContents() {
             selector: row => {
                 const result = datasourceCheckResult(row.name);
 
-                if (result == "Pass") {
+                if (result === "Pass") {
                     return (
                         <img src="https://img.shields.io/badge/scivision_metadata-pass-green"
                              title="The metadata for this datasource was successfully loaded by scivision, from the location in the catalog" />
                     );
-                } else if (result == "Fail") {
+                } else if (result === "Fail") {
                     return (
                         <img src="https://img.shields.io/badge/scivision_metadata-fail-red"
                              title="Scivision metadata (yaml) file for this datasource failed to load or was missing at the indicated location" />
@@ -178,7 +177,7 @@ export function DatasourceTableContents() {
 
     const check_datasets_script_url = "https://github.com/alan-turing-institute/scivision/releases/download/catalog-checks-report-latest-release/check_datasets.js";
 
-    const { ready, error } = useScript({
+    useScript({
         src: check_datasets_script_url,
         onReady: () => setDatasourceChecksReport(window.global_CheckDatasetReport),
         onError: () => console.log(`Could not latest dataset checks from ${check_datasets_script_url}`)

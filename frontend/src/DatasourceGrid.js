@@ -1,7 +1,7 @@
 import GridContents from "./grid.js"
 import DatasourceNav from "./DatasourceNav.js"
 
-import datasources from './data/datasources.json';
+import datasources from './catalog/data/datasources.json';
 import { datasource_thumbnails } from "./thumbnails.js"
 
 function DatasourceGridContents() {

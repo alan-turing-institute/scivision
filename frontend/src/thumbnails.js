@@ -17,16 +17,16 @@ function context_to_paths(ctxt) {
 }
 
 const model_thumbnails_ctxt = require.context(
-    './data/thumbnails/models', false, /\.jpg$/
+    './catalog/data/thumbnails/models', false, /\.jpg$/
 );
 export const model_thumbnails = context_to_paths(model_thumbnails_ctxt);
 
 const datasource_thumbnails_ctxt = require.context(
-    './data/thumbnails/datasources', false, /\.jpg$/
+    './catalog/data/thumbnails/datasources', false, /\.jpg$/
 );
 export const datasource_thumbnails = context_to_paths(datasource_thumbnails_ctxt);
 
 const project_thumbnails_ctxt = require.context(
-    './data/thumbnails/projects', false, /\.jpg$/
+    './catalog/data/thumbnails/projects', false, /\.jpg$/
 );
 export const project_thumbnails = context_to_paths(project_thumbnails_ctxt);
