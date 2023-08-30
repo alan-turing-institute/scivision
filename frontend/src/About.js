@@ -2,8 +2,7 @@ import { Container } from "react-bootstrap";
 
 // Component: Landing page
 // route: /about
-
-export function AboutText() {
+export default function About() {
     return (
         <>
             <h3>About Scivision</h3>
@@ -30,4 +29,3 @@ export function AboutText() {
         </>
     );
 }
-

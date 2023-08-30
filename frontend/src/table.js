@@ -47,9 +47,7 @@ function TableCardDropdown({element}) {
     );
 }
 
-// Component: Models, table view
-// route: /models
-export function ModelTable() {
+export function ModelTableContents() {
     const columns = [
         {
             name: 'Thumbnail',
@@ -93,7 +91,7 @@ export function ModelTable() {
 
 // Component: Datasources, table view
 // route: /datasources
-export function DatasourceTable() {
+export function DatasourceTableContents() {
 
     const [datasourceChecksReport, setDatasourceChecksReport] =
           useState(null);
@@ -203,7 +201,7 @@ export function DatasourceTable() {
 
 // Component: Projects, table view
 // route: /projects
-export function ProjectTable() {
+export function ProjectTableContents() {
     const columns = [
         {
             name: 'Thumbnail',

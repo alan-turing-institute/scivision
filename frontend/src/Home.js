@@ -19,7 +19,7 @@ import { makeThumbnail } from "./grid.js"
 
 // Component: The home page
 // route: /
-export function Home() {
+export default function Home() {
 
     // pick three random models and datasources (with thumbnails)
     //

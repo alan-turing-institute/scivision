@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 
 // Component: The Scivision.Py tab
 // route: /scivisionpy
-export function ScivisionPy() {
+export default function ScivisionPy() {
     return (
         <>
             <h3>The Scivision.Py Python Library</h3>

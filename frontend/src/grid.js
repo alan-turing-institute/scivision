@@ -1,20 +1,8 @@
-import { Link } from "react-router-dom";
-
 import { React } from 'react';
-
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Popover from "react-bootstrap/Popover";
 import { Row, Col, Card } from "react-bootstrap";
-
-import datasources from './data/datasources.json';
-import models from './data/models.json';
-import projects from './data/projects.json';
-
-import {
-    model_thumbnails, 
-    datasource_thumbnails, 
-    project_thumbnails
-} from "./thumbnails.js"
+import Popover from "react-bootstrap/Popover";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import { Link } from "react-router-dom";
 
 import { TaskBadge, UsageBadge } from './badges.js'
 
@@ -109,7 +97,6 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
             )
         }
 
-
         return (
             <Col className="mb-3">
                   <Link to={thumbnail_resource_link} key = {data.name}>
@@ -120,61 +107,19 @@ export function makeThumbnail({getThumbnail, getLink, doPopover, asCard}) {
     }
 }
 
-// Component: Models, thumbnail grid view
-// route: /model-grid
-export function ModelGrid() {
-    const image_cards = models.entries.map(
-                makeThumbnail({
-                    getThumbnail: (model) => model_thumbnails[`./${model.name}.jpg`],
-                    getLink: (model) => "/model/" + encodeURIComponent(model.name),
-                    doPopover: true,
-                    asCard: true
-                })
-    );
-
-    return (
-        <Row xs={1} md={2} lg={3} xl={4}>
-            {image_cards}
-        </Row>
-    );
-}
-
-
-// Component: Datasources, thumbnail grid view
-// route: /datasource-grid
-export function DatasourceGrid() {
-    const image_cards = datasources.entries.map(
+export default function GridContents({ catalog, thumbnails, baseRoute }) {
+    const image_cards = catalog.entries.map(
         makeThumbnail({
-            getThumbnail: (datasource) => datasource_thumbnails[`./${datasource.name}.jpg`],
-            getLink: (datasource) => "/datasource/" + encodeURIComponent(datasource.name),
+            getThumbnail: (entry) => thumbnails[`./${entry.name}.jpg`],
+            getLink: (entry) => baseRoute + "/" + encodeURIComponent(entry.name),
             doPopover: true,
             asCard: true
         })
     );
-
+    
     return (
         <Row xs={1} md={2} lg={3} xl={4}>
             {image_cards}
         </Row>
-    );
-}
-
-
-// Component: Projects, thumbnail grid view
-// route: /project-grid
-export function ProjectGrid() {
-    const image_cards = projects.entries.map(
-        makeThumbnail({
-            getThumbnail: (project) => project_thumbnails[`./${project.name}.jpg`],
-            getLink: (project) => "/project/" + encodeURIComponent(project.name),
-            doPopover: false,
-            asCard: true
-        })
-    );
-
-    return (
-        <Row xs={1} md={2} lg={3} xl={4}>
-            {image_cards}
-        </Row>
-    );
+    );    
 }

@@ -1,18 +1,17 @@
-import { NavLink } from "react-router-dom";
-
 import { React } from 'react';
 import { Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 // Component: List of models or datasources (depending on prop), with
 // choice of grid or table view.  One of these views will be rendered,
 // depending on the route
 //
-// route: /model-table, /model-grid, /datasource-table, /datasource-grid
+// route: /model-table, /model-grid, /datasource-table, /datasource-grid etc
 //
 // * props - { gridRoute, tableRoute }
 //   where
 //     gridRoute, tableRoute - the route for the grid and table views
-function CatalogNavBar(props) {
+export default function CatalogNavBar(props) {
     return (
         <Nav className="mb-2" variant="tabs">
             <Nav.Item>
@@ -31,41 +30,5 @@ function CatalogNavBar(props) {
                 </Nav.Link>
             </Nav.Item>
         </Nav>
-    );
-}
-
-
-// Component: Tab-bar for models (grid, table, create etc)
-export function ModelNav() {
-    return (
-        <>
-            <CatalogNavBar
-                gridRoute="/model-grid"
-                tableRoute="/model-table"
-                createNewRoute="/new-model"
-            />
-        </>
-    );
-}
-
-// Component: Tab-bar for datasources (grid, table, create etc)
-export function DatasourceNav() {
-    return (
-        <CatalogNavBar
-            gridRoute="/datasource-grid"
-            tableRoute="/datasource-table"
-            createNewRoute="/new-datasource"
-        />
-    );
-}
-
-// Component: Tab-bar for projects (grid, table, create etc)
-export function ProjectNav() {
-    return (
-        <CatalogNavBar
-            gridRoute="/project-grid"
-            tableRoute="/project-table"
-            createNewRoute="/new-project"
-        />
     );
 }

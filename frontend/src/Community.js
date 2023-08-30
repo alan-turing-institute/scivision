@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 
 // Component: The community tab
 // route: /community
-export function Community() {
+export default function Community() {
     return (
         <>
             <h3>Community Resources</h3>

@@ -24,8 +24,14 @@ import {
 // * gh_logged_in - login status (grey out the PR button if not logged in)
 // * schema - json schema object, used to generate the form
 // * catalog_kind - "datasource" or "model",
-export function CatalogEntryForm({ gh_logged_in, schema, uiSchema, catalog_kind, catalog_path, download_filename }) {
-
+export default function CatalogEntryForm({
+    gh_logged_in,
+    schema,
+    uiSchema,
+    catalog_kind,
+    catalog_path,
+    download_filename
+}) {
     // The modal dialogue shows when 'pr_failed' is true.  Separate
     // state variable (pr_message) for the message, since closing the
     // modal clears the failure flag, but the message is still visible
