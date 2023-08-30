@@ -28,6 +28,8 @@ import ProjectTable from "./ProjectTable.jsx";
 import ProjectDetails from "./ProjectDetails.jsx";
 import ProjectNew from "./ProjectNew.jsx";
 
+import Contribute from "./Contribute.jsx";
+
 import ScivisionPy from "./ScivisionPy.jsx";
 import Community from "./Community.jsx";
 
@@ -70,9 +72,16 @@ function App() {
     );
   }
 
+  function contribute_tab_active() {
+    return location_root === "contribute";
+  }
+
   function any_catalog_active() {
     return (
-      model_tab_active() || datasource_tab_active() || project_tab_active()
+      model_tab_active() ||
+      datasource_tab_active() ||
+      project_tab_active() ||
+      contribute_tab_active()
     );
   }
 
@@ -145,6 +154,7 @@ function App() {
                     >
                       Data
                     </NavDropdown.Item>
+
                     <NavDropdown.Item
                       to="project-grid"
                       as={NavLink}
@@ -153,8 +163,17 @@ function App() {
                     >
                       Projects
                     </NavDropdown.Item>
+
                     <NavDropdown.Divider />
-                    <NavDropdown.Item>Contribute</NavDropdown.Item>
+
+                    <NavDropdown.Item
+                      to="contribute"
+                      as={NavLink}
+                      active={contribute_tab_active()}
+                      eventKey="contribute"
+                    >
+                      Contribute
+                    </NavDropdown.Item>
                   </NavDropdown>
 
                   <Nav.Link
@@ -190,7 +209,6 @@ function App() {
         <Routes>
           <Route path="" exact element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/scivisionpy" element={<ScivisionPy />} />
           <Route path="/model-grid" element={<ModelGrid />} />
           <Route path="/model-table" element={<ModelTable />} />
           <Route path="/model/:model_name_encoded" element={<ModelDetails />} />
@@ -203,6 +221,8 @@ function App() {
           <Route path="/project-table" element={<ProjectTable />} />
           <Route path="/project/:project_name_encoded" element={<ProjectDetails />} />
           <Route path="/new-project" element={<ProjectNew />} />
+          <Route path="/contribute" element={<Contribute />} />
+          <Route path="/scivisionpy" element={<ScivisionPy />} />
           <Route path="/community" element={<Community />} />
           <Route path="/login/:referrer_encoded"
                  element={
