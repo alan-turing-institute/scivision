@@ -3,6 +3,8 @@ import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { React, useState, useEffect, useRef } from 'react';
 import Spinner from "react-bootstrap/Spinner";
+import Alert from "react-bootstrap/Alert";
+import Container from "react-bootstrap/Container";
 import { Octokit } from "octokit";
 
 import { 
@@ -80,12 +82,17 @@ export function Login({ gh_logged_in, set_gh_logged_in }) {
     }, []);
 
     return (
-        <div>
-            Logging in...&nbsp;&nbsp;
-            <p>Navigate away from this page to abort</p>
-            <p />
-            <Spinner animation="border" role="status" size="sm"/>
-        </div>
+        <Container fluid className="d-flex justify-content-center">
+            <Alert variant="info" className="col-7">
+                <Alert.Heading>Logging in...</Alert.Heading>
+                <p>
+                    <Spinner animation="border" role="status" size="sm"/>
+                    &nbsp;&nbsp;Redirecting to GitHub to confirm your login
+                </p>
+                <hr />
+                <p>Navigate away from this page to abort</p>
+            </Alert>
+        </Container>
     );
 }
 
