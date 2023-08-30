@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CatalogEntryForm from "./CatalogEntryForm.js";
 import ProjectNav from "./ProjectNav.js";
 
-import project_schema from "./project_schema.js";
+import project_schema from "./catalog/project_schema.js";
 
 export default function ProjectNew({ gh_logged_in }) {
     return (
