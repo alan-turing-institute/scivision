@@ -121,7 +121,7 @@ function github_auth({ referrer, gh_logged_in }) {
     }
 }
 
-// Component: Username/logout link (shown when logged in)
+// Component: Username/logout link
 //
 // * set_gh_logged_in - setter for State variable
 function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
@@ -151,7 +151,8 @@ function LoginStatusLinkLoggedIn({ set_gh_logged_in }) {
     );
 }
 
-// Component: Login link (shown when not logged in)
+// Component: Login link (shown when not logged in) or username/logout
+// link (when logged in)
 //
 // * gh_logged_in - State variable
 // * set_gh_logged_in - setter for State variable
