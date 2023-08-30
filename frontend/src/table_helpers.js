@@ -1,6 +1,5 @@
 // Various helper functions for making the model, datasource and
 // project table views
-import { TaskBadge } from './badges.js'
 
 // Helper function (used in ModelTable and DatasourceTable -- not the
 // corresponding Gridviews) returning a thumbnail element
