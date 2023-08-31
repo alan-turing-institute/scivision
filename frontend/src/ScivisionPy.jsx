@@ -54,7 +54,7 @@ resnet18 = load_pretrained_model(
         <h5>Load a datasource</h5>
         <pre>
           <code className="language-python">
-            {`from scivision import load_pretrained_model
+            {`from scivision import load_dataset
 
 dataset = load_dataset(
     "https://github.com/alan-turing-institute/scivision-test-data"
