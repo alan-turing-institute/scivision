@@ -96,7 +96,7 @@ function App() {
             <Navbar.Brand>
               <Nav.Link to="" as={NavLink} className="p-0 ">
                 <img
-                  src="https://github.com/alan-turing-institute/scivision/blob/main/imgs/logo_name.png?raw=true"
+                  src="/logo_name.webp"
                   className="brandLogo"
                   alt="Scivision"
                 />
