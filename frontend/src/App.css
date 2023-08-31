@@ -53,6 +53,10 @@ div.gridtext {
   max-width: 62ch;
 }
 
+.wide-block {
+  max-width: 72ch;
+}
+
 .app {
   margin-bottom: 4ex;
 }
