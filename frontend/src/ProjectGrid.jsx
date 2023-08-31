@@ -20,6 +20,7 @@ export default function ProjectGrid() {
   return (
     <>
       <ProjectNav />
+      <h3>Projects using Scivision</h3>
       <ProjectGridContents />
     </>
   );

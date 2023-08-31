@@ -159,6 +159,7 @@ export default function DatasourceTable() {
   return (
     <>
       <DatasourceNav />
+      <h3>Datasources</h3>
       <DatasourceTableContents />
     </>
   );

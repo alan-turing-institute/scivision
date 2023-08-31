@@ -84,6 +84,7 @@ export default function ModelTable() {
   return (
     <>
       <ModelNav />
+      <h3>Models</h3>
       <ModelTableContents />
     </>
   );

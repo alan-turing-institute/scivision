@@ -20,6 +20,7 @@ export default function ModelGrid() {
   return (
     <>
       <ModelNav />
+      <h3>Models</h3>
       <ModelGridContents />
     </>
   );

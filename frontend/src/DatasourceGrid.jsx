@@ -20,6 +20,7 @@ export default function DatasourceGrid() {
   return (
     <>
       <DatasourceNav />
+      <h3>Datasources</h3>
       <DatasourceGridContents />
     </>
   );

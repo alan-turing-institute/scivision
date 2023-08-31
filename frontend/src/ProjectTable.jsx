@@ -76,6 +76,7 @@ export default function ProjectTable() {
   return (
     <>
       <ProjectNav />
+      <h3>Projects using Scivision</h3>
       <ProjectTableContents />
     </>
   );
