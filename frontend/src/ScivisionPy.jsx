@@ -80,7 +80,7 @@ plt.imshow(test_image)`}
         </p>
         <samp>
           <img
-            src="koala-imview.webp"
+            src="/koala-imview.webp"
             alt="result of matplotlib imview: a koala"
           />
         </samp>
