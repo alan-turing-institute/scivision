@@ -1,13 +1,4 @@
-import { useState, useRef } from "react";
-import {
-  Row,
-  Col,
-  Container,
-  Form,
-  Button,
-  Alert,
-  Card,
-} from "react-bootstrap";
+import { Container, Alert } from "react-bootstrap";
 import CatalogEntryForm from "./CatalogEntryForm.jsx";
 import DatasourceNav from "./DatasourceNav.jsx";
 import { LoginButton } from "./login.jsx";
@@ -16,18 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 import datasource_schema from "./catalog/datasource_schema.js";
 
-
-function FormControlNote({ children }) {
-  return (
-    <Alert variant="info" style={{ "font-size": "small" }}>
-      {children}
-    </Alert>
-  );
-}
-
 export default function DatasourceNew({ gh_logged_in }) {
-  // const [formData, setFormData] = useState(null);
-
   return (
     <>
       <DatasourceNav />
