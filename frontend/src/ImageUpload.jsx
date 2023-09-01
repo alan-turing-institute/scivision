@@ -21,8 +21,10 @@ export default function ImageUpload({ onSave }) {
   return (
     <div
       style={{
+        margin: "30px",
         display: "flex",
-        "align-items": "stretch",
+        "flex-direction": "column",
+        "align-items": "center",
         "justify-content": "space-between",
       }}
     >
@@ -71,6 +73,7 @@ export default function ImageUpload({ onSave }) {
           {" "}
           Zoom: <Form.Control type="range" disabled={!haveImage} />
         </div>
+        <hr style={{ width: "100%" }} />
         <div style={{ display: "flex", "flex-direction": "column" }}>
           <Button
             variant="outline-secondary"

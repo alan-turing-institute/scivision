@@ -24,7 +24,9 @@ function DescriptionFieldTemplate({ description, id }) {
 function ImageUploadModal({ onChangeThumbnail, show, setShow }) {
   return (
     <Modal show={show} onHide={() => setShow(false)}>
-      <Modal.Header closeButton></Modal.Header>
+      <Modal.Header closeButton>
+        <h5>Thumbnail image upload</h5>
+      </Modal.Header>
       <ImageUpload
         onSave={(imgData) => {
           console.log(imgData);
