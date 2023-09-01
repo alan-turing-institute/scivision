@@ -1,13 +1,25 @@
 import { Buffer } from "buffer";
 import { React, useState } from "react";
-
-import Form from "@rjsf/bootstrap-4";
-import validator from "@rjsf/validator-ajv8";
 import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
+import MarkdownView from "react-showdown";
+import Form from "@rjsf/bootstrap-4";
+import validator from "@rjsf/validator-ajv8";
 
 import { download } from "./utils.js";
 import { OctokitPRPlugin, GH_TOKEN_KEY } from "./config.js";
+
+// Template (for rjsf) to allow Markdown formatting in form field
+// descriptions
+function DescriptionFieldTemplate({ description, id }) {
+  return (
+    <div id={id}>
+      {" "}
+      {/*style={{"white-space": "pre-wrap"}}>*/}
+      <MarkdownView markdown={description} options={{ emoji: true }} />
+    </div>
+  );
+}
 
 // Component: Form to create new catalog entry (for download or PR)
 // routes: /new-model, /new-datasource
@@ -25,6 +37,7 @@ export default function CatalogEntryForm({
   gh_logged_in,
   schema,
   uiSchema,
+  templates,
   formData,
   onChange,
   catalog_kind,
@@ -154,6 +167,7 @@ export default function CatalogEntryForm({
         onSubmit={submitEntryToGitHub}
         schema={schema}
         uiSchema={uiSchema}
+        templates={{ DescriptionFieldTemplate, ...templates }}
         formData={formData}
         onChange={onChange}
         validator={validator}
