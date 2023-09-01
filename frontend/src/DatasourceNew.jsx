@@ -110,9 +110,14 @@ export default function DatasourceNew({ gh_logged_in }) {
                 "ui:widget": "radio",
               },
             }}
-            formData={JSON.parse(sessionStorage.getItem("formData"))}
+            formData={JSON.parse(
+              sessionStorage.getItem("new-datasource-form-data"),
+            )}
             onChange={(e) =>
-              sessionStorage.setItem("formData", JSON.stringify(e.formData))
+              sessionStorage.setItem(
+                "new-datasource-form-data",
+                JSON.stringify(e.formData),
+              )
             }
             catalog_kind="datasource"
             catalog_path="scivision/catalog/data/datasources.json"

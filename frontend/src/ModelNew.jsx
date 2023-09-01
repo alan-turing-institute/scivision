@@ -136,6 +136,13 @@ export default function ModelNew({ gh_logged_in }) {
                 "ui:widget": "radio",
               },
             }}
+            formData={JSON.parse(sessionStorage.getItem("new-model-form-data"))}
+            onChange={(e) =>
+              sessionStorage.setItem(
+                "new-model-form-data",
+                JSON.stringify(e.formData),
+              )
+            }
             catalog_kind="model"
             catalog_path="scivision/catalog/data/models.json"
             download_filename="one-model.json"
