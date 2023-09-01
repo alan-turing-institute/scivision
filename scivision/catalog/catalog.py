@@ -45,35 +45,47 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
         title="Description",
         description="Detailed description of the model",
     )
-    tasks: Tuple[TaskEnum, ...] = Field(
+    tasks: FrozenSet[TaskEnum] = Field(
         (),
         title="Tasks",
         description="Which task (or tasks) does the model perform?",
     )
-    url: FlexibleUrl = Field(
-        ...,
-        title="URL",
-        description="The URL path to the scivision yml file in the model repo. "
-        "If the exact path is not specified, Scivision will try to locate the file in"
-        " the default location at .scivision/model.yml",
-    )
     pkg_url: str = Field(
         ...,
         title="Python package",
-        description="A pip requirement specifier for PyPI, or a URL of the "
-        "archive or package (on GitHub, for exampe)",
+        description="""A pip requirement specifier to install the model
+
+This might be just the name of your package if your model is a python package on PyPI, or a URL to the source repository on GitHub or another location (see examples below)
+
+- Good example :white_check_mark:: `sampleproject` (install sampleproject from PyPI)
+- Good example :white_check_mark:: `git+https://github.com/pypa/sampleproject@main` (install sampleproject directly from GitHub, main branch)
+- Bad example :x:: `pip install my-python-package` (don't include the actual pip command, just the package name)
+""",
     )
+    url: Optional[FlexibleUrl] = Field(
+        ...,
+        title="Scivision metadata URL",
+        description="""The URL to the Scivision metadata yaml file, if it has one (or leave blank)
+
+- Good example :white_check_mark:: `https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml`"""
+    )
+
     scivision_usable: bool = Field(
         False,
-        title="Can the model be installed and loaded with the scivision Python package, with "
-        "scivision.load_pretrained_model(<model url>, allow_install=True)?"
-        "Leave unchecked if not sure",
+        title="Model runs with Scivision?",
+        description="""Can the model be installed and loaded with the scivision Python package, using the command below?
+
+```
+scivision.load_pretrained_model(<model url>, allow_install=True)
+```
+
+Select 'no' if not sure""",
     )
     institution: Tuple[str, ...] = Field(
         (),
-        title="Institution(s)",
-        description="A list of institutions that produced or are associated with "
-        "the model (one per item)",
+        title="Institutions or organizations",
+        description="A list of institutions or organizations that produced or "
+        "are associated with the model (one per item)",
     )
     tags: Tuple[str, ...] = Field(
         (),
@@ -108,26 +120,40 @@ class CatalogDatasourceEntry(
     name: str = Field(
         ...,
         title="Name",
-        description="Short name for the datasource, that must be unique among "
-        "all catalog entries (one or two words, under 20 characters recommended)",
+        description="""Short, unique name for the datasource (one or two words, under 20 characters recommended)
+
+- Good example :white_check_mark:: **Foobar Penguins**
+- Okay example :heavy_check_mark:: **foobar-penguins**
+- Bad example :x:: **dataset-123** (prefer a descriptive name)
+- Bad example :x:: **Data from the Foobar penguin study** (too long; no need to include 'data' in the title)""",
     )
+
     description: Optional[str] = Field(
         None,
         title="Description",
         description="Detailed description of the dataset (no length limit)",
     )
+    url: FlexibleUrl = Field(
+        None,
+        title="URL",
+        description="""The URL to the datasource.  If your datasource has an associated scivision yaml file, this should point to it.  Otherwise, give a URL for downloading the data
+        
+- Good example :white_check_mark:: `https://example.com/path/to/datasource.yml` (location of the scivision yml file)
+- Okay example :heavy_check_mark:: `https://example.com/dataset/download/data.zip` (data download URL)
+""",
+    )
     tasks: FrozenSet[TaskEnum] = Field(
         None,
         title="Suitable tasks",
         description="For which computer vision task or tasks is this "
-        "datasource likely to be suitable? Select any number of them"
+        "datasource likely to be suitable? Select any number"
     )
     labels_provided: bool = Field(
         False,
-        title="Labels provided",
-        description="Is this a labelled dataset? This can make it suitable for training or validation",
+        title="Labels included?",
+        description="Does the datasource contain labelled examples, suitable for model training or validation?"
     )
-    domains: Tuple[str, ...] = Field(
+    domains: FrozenSet[str] = Field(
         None,
         title="Domain areas",
         description="Which domain area or areas is this datasource from? (One per item, no duplicates)",
@@ -137,18 +163,11 @@ class CatalogDatasourceEntry(
         # variant with a constraint.
         uniqueItems=True,
     )
-    url: FlexibleUrl = Field(
-        None,
-        title="URL",
-        description="The URL path to the scivision yml file in the datasource repo. "
-        "If the exact path is not specified, Scivision will try to locate the file in"
-        " the default location at .scivision/data.yml",
-    )
     institution: Tuple[str, ...] = Field(
         (),
-        title="Institution(s)",
-        description="A list of institutions that produced or are associated with "
-        "the dataset (one per item)",
+        title="Institutions or organizations",
+        description="A list of institutions or organisations that produced or are "
+        "associated with the dataset (one per item)",
     )
     tags: Tuple[str, ...] = Field(
         (),
@@ -181,8 +200,7 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     name: str = Field(
         ...,
         title="Name",
-        description="Short, unique name for the project (one or two words, "
-        "under 20 characters recommended)",
+        description="Short, unique name for the project (one or two words, under 20 characters recommended)",
     )
     header: str = Field(
         ...,
@@ -216,9 +234,9 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     )
     institution: Tuple[str, ...] = Field(
         (),
-        title="Institution(s)",
-        description="A list of institutions that produced or are associated with "
-        "the project (one per item)",
+        title="Institutions or organizations",
+        description="A list of institutions or organizations that produced or are "
+        "associated with the project (one per item)",
     )
     tags: Tuple[str, ...]
 
