@@ -216,11 +216,11 @@ function App() {
           <Route path="/datasource-grid" element={<DatasourceGrid />} />
           <Route path="/datasource-table" element={<DatasourceTable />} />
           <Route path="/datasource/:datasource_name_encoded" element={<DatasourceDetails />} />
-          <Route path="/new-datasource" element={<DatasourceNew />} />
+          <Route path="/new-datasource" element={<DatasourceNew gh_logged_in={gh_logged_in} />} />
           <Route path="/project-grid" element={<ProjectGrid />} />
           <Route path="/project-table" element={<ProjectTable />} />
           <Route path="/project/:project_name_encoded" element={<ProjectDetails />} />
-          <Route path="/new-project" element={<ProjectNew />} />
+          <Route path="/new-project" element={<ProjectNew gh_logged_in={gh_logged_in} />} />
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/scivisionpy" element={<ScivisionPy />} />
           <Route path="/community" element={<Community />} />

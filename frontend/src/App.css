@@ -64,3 +64,12 @@ div.gridtext {
 ul.list-spaced li {
   padding: 6px 0px;
 }
+
+ul ul li {
+  font-size: small;
+}
+
+.form-section {
+  margin-top: 30pt;
+  margin-bottom: 30pt;
+}

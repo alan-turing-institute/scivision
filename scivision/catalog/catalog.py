@@ -119,9 +119,8 @@ class CatalogDatasourceEntry(
     tasks: FrozenSet[TaskEnum] = Field(
         None,
         title="Suitable tasks",
-        description="For which task or tasks is this datasource likely to be "
-        "suitable? (Select any number of these -- try holding Ctrl or Option "
-        "to select more than one)",
+        description="For which computer vision task or tasks is this "
+        "datasource likely to be suitable? Select any number of them"
     )
     labels_provided: bool = Field(
         False,
@@ -210,7 +209,7 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
     )
-    tasks: Tuple[TaskEnum, ...] = Field(
+    tasks: FrozenSet[TaskEnum] = Field(
         (),
         title="Tasks",
         description="Which task (or tasks) do the CV models used in the project perform?",

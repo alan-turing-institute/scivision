@@ -2,6 +2,7 @@ import { Buffer } from "buffer";
 import { React, useState } from "react";
 
 import Form from "@rjsf/bootstrap-4";
+import validator from "@rjsf/validator-ajv8";
 import Spinner from "react-bootstrap/Spinner";
 import Modal from "react-bootstrap/Modal";
 
@@ -24,6 +25,8 @@ export default function CatalogEntryForm({
   gh_logged_in,
   schema,
   uiSchema,
+  formData,
+  onChange,
   catalog_kind,
   catalog_path,
   download_filename,
@@ -147,7 +150,14 @@ export default function CatalogEntryForm({
           <div className="text-monospace mt-2 col">{pr_message}</div>
         </Modal.Body>
       </Modal>
-      <Form onSubmit={submitEntryToGitHub} schema={schema} uiSchema={uiSchema}>
+      <Form
+        onSubmit={submitEntryToGitHub}
+        schema={schema}
+        uiSchema={uiSchema}
+        formData={formData}
+        onChange={onChange}
+        validator={validator}
+      >
         <button
           type="submit"
           onClick={() => (pr_flag = true)}

@@ -4,8 +4,9 @@
   "private": true,
   "homepage": "/",
   "dependencies": {
-    "@rjsf/bootstrap-4": "^4.2.0",
-    "@rjsf/core": "^4.2.0",
+    "@rjsf/bootstrap-4": "^5.12.1",
+    "@rjsf/core": "^5.12.1",
+    "@rjsf/validator-ajv8": "^5.12.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",

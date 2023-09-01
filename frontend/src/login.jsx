@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { React, useState, useEffect, useRef } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { Octokit } from "octokit";
 
@@ -187,4 +188,20 @@ export function LoginStatusLink({ gh_logged_in, set_gh_logged_in }) {
   } else {
     return <LoginStatusLinkLoggedIn set_gh_logged_in={set_gh_logged_in} />;
   }
+}
+
+export function LoginButton({ gh_logged_in, children }) {
+  const loc = useLocation();
+  return (
+    <Button
+      onClick={() =>
+        github_auth({
+          referrer: loc.pathname,
+          gh_logged_in: gh_logged_in,
+        })
+      }
+    >
+      {children}
+    </Button>
+  );
 }
