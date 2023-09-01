@@ -2,7 +2,13 @@ import { useState, useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import AvatarEditor from "react-avatar-editor";
 
-export default function ImageUpload() {
+// Component: image uploader
+//
+// Shows a browse file selector, zoom slider (and button to clear)
+//
+// The 'onSave' prop gets passed the image data as a jpeg-encoded
+// data URL when the 'save' button is clicked
+export default function ImageUpload({ onSave }) {
   const editor = useRef(null);
   const [haveImage, setHaveImage] = useState(false);
   const [image, setImage] = useState("");
@@ -65,16 +71,35 @@ export default function ImageUpload() {
           {" "}
           Zoom: <Form.Control type="range" disabled={!haveImage} />
         </div>
-        <Button
-          variant="outline-secondary"
-          size="sm"
-          onClick={() => {
-            setImage(null);
-            setHaveImage(false);
-          }}
-        >
-          Clear selected image
-        </Button>
+        <div style={{ display: "flex", "flex-direction": "column" }}>
+          <Button
+            variant="outline-secondary"
+            size="sm"
+            onClick={() => {
+              setImage(null);
+              setHaveImage(false);
+            }}
+          >
+            Clear selected image
+          </Button>
+
+          <Button
+            size="sm"
+            onClick={() => {
+              if (editor && haveImage) {
+                onSave(
+                  editor.current
+                    .getImageScaledToCanvas()
+                    .toDataURL("image/jpeg"),
+                );
+              } else {
+                onSave(null);
+              }
+            }}
+          >
+            Save image
+          </Button>
+        </div>
       </div>
       {/*
       <button

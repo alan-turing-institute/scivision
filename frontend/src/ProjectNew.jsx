@@ -60,8 +60,22 @@ export default function ProjectNew({ gh_logged_in }) {
             gh_logged_in={gh_logged_in}
             schema={project_schema}
             uiSchema={{ page: { "ui:widget": "textarea" } }}
+            formData={JSON.parse(
+              sessionStorage.getItem("new-project-form-data"),
+            )}
+            onChange={(e) =>
+              sessionStorage.setItem(
+                "new-project-form-data",
+                JSON.stringify(e.formData),
+              )
+            }
+            thumbnailData={sessionStorage.getItem("new-project-thumbnail/jpeg")}
+            onChangeThumbnail={(imgData) =>
+              sessionStorage.setItem("new-project-thumbnail/jpeg", imgData)
+            }
             catalog_kind="project"
             catalog_path="scivision/catalog/data/projects.json"
+            thumbnail_directory="scivision/catalog/data/thumbnails/projects/"
             download_filename="one-project.json"
           />
         </Col>

@@ -1,10 +1,11 @@
 import { Buffer } from "buffer";
 import { React, useState } from "react";
-import { Spinner, Modal, Alert } from "react-bootstrap";
+import { Spinner, Modal, Alert, Button, Col } from "react-bootstrap";
 import MarkdownView from "react-showdown";
 import Form from "@rjsf/bootstrap-4";
 import validator from "@rjsf/validator-ajv8";
 
+import ImageUpload from "./ImageUpload.jsx";
 import { download } from "./utils.js";
 import { OctokitPRPlugin, GH_TOKEN_KEY } from "./config.js";
 
@@ -17,6 +18,21 @@ function DescriptionFieldTemplate({ description, id }) {
       {/*style={{"white-space": "pre-wrap"}}>*/}
       <MarkdownView markdown={description} options={{ emoji: true }} />
     </div>
+  );
+}
+
+function ImageUploadModal({ onChangeThumbnail, show, setShow }) {
+  return (
+    <Modal show={show} onHide={() => setShow(false)}>
+      <Modal.Header closeButton></Modal.Header>
+      <ImageUpload
+        onSave={(imgData) => {
+          console.log(imgData);
+          onChangeThumbnail(imgData);
+          setShow(false);
+        }}
+      />
+    </Modal>
   );
 }
 
@@ -39,8 +55,11 @@ export default function CatalogEntryForm({
   templates,
   formData,
   onChange,
+  thumbnailData,
+  onChangeThumbnail,
   catalog_kind,
   catalog_path,
+  thumbnail_directory,
   download_filename,
 }) {
   // The modal dialogue shows when 'pr_failed' is true.  Separate
@@ -50,6 +69,10 @@ export default function CatalogEntryForm({
   const [pr_message, set_pr_message] = useState("");
   const [pr_failed, set_pr_failed] = useState(false);
   const [pr_loading, set_pr_loading] = useState(false);
+
+  const [currentThumbnailPreview, setCurrentThumbnailPreview] =
+    useState(thumbnailData);
+  const [showThumbnailModal, setShowThumbnailModal] = useState(false);
 
   // There is a single onSubmit event for both buttons, but can
   // use the onClick of the button to set this flag and decide
@@ -109,6 +132,17 @@ export default function CatalogEntryForm({
         //
         ///////////
 
+        const thumbnail_path = thumbnail_directory + "/" + entry.name + ".jpg";
+        const thumbnailChange =
+          thumbnailData === null
+            ? {}
+            : {
+                [thumbnail_path]: {
+                  content: thumbnailData.split(";base64,")[1],
+                  encoding: "base64",
+                },
+              };
+
         const response = await octokit.createPullRequest({
           owner: "alan-turing-institute",
           repo: "scivision",
@@ -131,6 +165,7 @@ export default function CatalogEntryForm({
                   cat.entries.push(entry);
                   return JSON.stringify(cat, null, 2);
                 },
+                ...thumbnailChange,
               },
               commit: `Create entry for "${entry.name}" in the ${catalog_kind} catalog`,
             },
@@ -180,30 +215,48 @@ export default function CatalogEntryForm({
         onChange={onChange}
         validator={validator}
       >
-        <button
-          type="submit"
-          onClick={() => (pr_flag = true)}
-          className="btn btn-primary"
-          disabled={!gh_logged_in || pr_loading}
-        >
-          Open Pull Request on GitHub
-          {pr_loading ? (
-            <>
-              &nbsp;
-              <Spinner animation="border" role="status" size="sm" />
-            </>
-          ) : (
-            <></>
-          )}
-          {gh_logged_in ? <></> : <> (login to enable)</>}
-        </button>
-        <button
-          type="submit"
-          onClick={() => (pr_flag = false)}
-          className="btn btn-link"
-        >
-          Download entry data as json
-        </button>
+        <h5>Thumbnail Image</h5>
+        <hr className="border-0 bg-secondary" style={{ height: "1px" }} />
+        <Col>
+          <img src={currentThumbnailPreview} width="256" height="256" />
+          <Button onClick={() => setShowThumbnailModal(true)}>
+            Upload thumbnail
+          </Button>
+          <ImageUploadModal
+            onChangeThumbnail={(imageData) => {
+              onChangeThumbnail(imageData);
+              setCurrentThumbnailPreview(imageData);
+            }}
+            show={showThumbnailModal}
+            setShow={setShowThumbnailModal}
+          />
+        </Col>
+        <hr className="border-0 bg-secondary" style={{ height: "1px" }} />
+        <Col className="my-3">
+          <Button
+            type="submit"
+            onClick={() => (pr_flag = true)}
+            disabled={!gh_logged_in || pr_loading}
+          >
+            Open Pull Request on GitHub
+            {pr_loading ? (
+              <>
+                &nbsp;
+                <Spinner animation="border" role="status" size="sm" />
+              </>
+            ) : (
+              <></>
+            )}
+            {gh_logged_in ? <></> : <> (login to enable)</>}
+          </Button>
+          <Button
+            type="submit"
+            variant="link"
+            onClick={() => (pr_flag = false)}
+          >
+            Download entry data as json
+          </Button>
+        </Col>
       </Form>
     </div>
   );
