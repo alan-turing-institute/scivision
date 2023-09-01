@@ -171,7 +171,7 @@ class CatalogDatasourceEntry(
     institution: Tuple[str, ...] = Field(
         (),
         title="Institutions or organizations",
-        description="A list of institutions or organisations that produced or are "
+        description="A list of institutions or organizations that produced or are "
         "associated with the dataset (one per item)",
     )
     tags: Tuple[str, ...] = Field(
