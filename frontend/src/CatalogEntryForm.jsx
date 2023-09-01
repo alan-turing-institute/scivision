@@ -151,6 +151,9 @@ export default function CatalogEntryForm({
     }
   }
 
+  // Modal has a 'open an issue' link, pre-filled with the error message
+  const issue_body_text = `https://github.com/alan-turing-institute/scivision/issues/new?title=sci.vision%20error%20opening%20pull%20request&labels=bug%2Cfrontend&body=The%20error%20message%20was:%0A%0A%3E%20${pr_message}`;
+
   return (
     <div className="mb-5">
       <Modal show={!!pr_failed} onHide={() => set_pr_failed(false)}>
@@ -159,7 +162,13 @@ export default function CatalogEntryForm({
         </Modal.Header>
         <Modal.Body>
           The error was:
-          <div className="text-monospace mt-2 col">{pr_message}</div>
+          <p>
+            <div className="text-monospace mt-2 col">{pr_message}</div>
+          </p>
+          <p>
+            This may be a bug. If the problem persists, please{" "}
+            <a href={issue_body_text}>open an issue</a>.
+          </p>
         </Modal.Body>
       </Modal>
       <Form
