@@ -1,4 +1,5 @@
 import { Row, Col } from "react-bootstrap";
+
 import CatalogEntryForm from "./CatalogEntryForm.jsx";
 import ModelNav from "./ModelNav.jsx";
 
@@ -60,6 +61,24 @@ export default function ModelNew({ gh_logged_in }) {
           <CatalogEntryForm
             gh_logged_in={gh_logged_in}
             schema={model_schema}
+            uiSchema={{
+              "ui:title": " ",
+              description: {
+                "ui:widget": "textarea",
+              },
+              tasks: {
+                "ui:widget": "checkboxes",
+                "ui:options": {
+                  inline: true,
+                },
+              },
+              labels_provided: {
+                "ui:widget": "radio",
+              },
+              scivision_usable: {
+                "ui:widget": "radio",
+              },
+            }}
             catalog_kind="model"
             catalog_path="scivision/catalog/data/models.json"
             download_filename="one-model.json"
