@@ -319,6 +319,17 @@
       "format": ".MRC",
       "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
       "url": "https://github.com/alan-turing-institute/affinity-vae"
+    },
+    {
+      "tasks": [
+        "object-detection"
+      ],
+      "scivision_usable": false,
+      "institution": [],
+      "tags": [],
+      "name": "Test",
+      "description": "test entry",
+      "pkg_url": "samplepackage"
     }
   ]
 }
