@@ -1,7 +1,6 @@
 import { Buffer } from "buffer";
 import { React, useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
-import Modal from "react-bootstrap/Modal";
+import { Spinner, Modal, Alert } from "react-bootstrap";
 import MarkdownView from "react-showdown";
 import Form from "@rjsf/bootstrap-4";
 import validator from "@rjsf/validator-ajv8";
@@ -198,5 +197,31 @@ export default function CatalogEntryForm({
         </button>
       </Form>
     </div>
+  );
+}
+
+export function CatalogFormHowItWorksBox() {
+  return (
+    <Alert variant="secondary">
+      <ul className="list-spaced">
+        <li>
+          The Scivision catalogs are stored as plain text (json) files in the
+          Scivision GitHub repository.
+        </li>
+        <li>
+          Rather than hand-editing a json file and making the change on GitHub
+          yourself, using this form will propose the change automatically (it
+          will submit a GitHub pull request on your behalf)
+        </li>
+        <li>
+          Further discussion and changes are possible on GitHub after submission
+          (incomplete entries or entries needing further discussion are fine)
+        </li>
+        <li>
+          After submitting your entry, a maintainer will review and merge it,
+          and then it will be included in the catalog
+        </li>
+      </ul>
+    </Alert>
   );
 }

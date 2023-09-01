@@ -1,5 +1,7 @@
 import { Container, Alert } from "react-bootstrap";
-import CatalogEntryForm from "./CatalogEntryForm.jsx";
+import CatalogEntryForm, {
+  CatalogFormHowItWorksBox,
+} from "./CatalogEntryForm.jsx";
 import DatasourceNav from "./DatasourceNav.jsx";
 import { LoginButton } from "./login.jsx";
 
@@ -18,34 +20,11 @@ export default function DatasourceNew({ gh_logged_in }) {
 
       <Container className="text-block">
         <p>
-          Use this form if you have some data you would like to be included in
+          Use this form if you have a dataset you would like to be included in
           the Datasource catalog.
         </p>
 
-        <Alert variant="secondary">
-          <ul>
-            <li>
-              The Scivision catalogs are stored as plain text (json) files in
-              the Scivision GitHub repository.
-            </li>
-            <li>
-              Rather than hand-editing a json file and making the change on
-              GitHub yourself, using this form will propose the change
-              automatically (it will submit a GitHub pull request on your behalf
-              &mdash; logging in will prompt for the permissions needed to do
-              this)
-            </li>
-            <li>
-              Further discussion and changes are possible on GitHub at that
-              point (incomplete entries or entries needing further discussion
-              are fine)
-            </li>
-            <li>
-              After submitting your entry, a maintainer will review and merge
-              it, and then it will be included in the catalog
-            </li>
-          </ul>
-        </Alert>
+        <CatalogFormHowItWorksBox />
       </Container>
 
       <h4>Prerequistes</h4>
@@ -53,26 +32,28 @@ export default function DatasourceNew({ gh_logged_in }) {
       <Container className="text-block">
         <Alert variant="secondary">
           <ul className="list-spaced">
-            <li>You have a GitHub account</li>
-            <ul>
-              <li>
-                You can sign up for a free account by clicking the Login button
-                below and choosing "Create an account" when prompted for your
-                credentials
-              </li>
-            </ul>
+            <li>
+              You have a GitHub account
+              <ul>
+                <li>
+                  You can sign up for a free account by clicking the Login
+                  button below and choosing "Create an account" when prompted
+                  for your credentials
+                </li>
+              </ul>
+            </li>
             <li>
               {" "}
               Your data is in a publicly accessible location (for example, on{" "}
               <a href="https://zenodo.org/">Zenodo</a>
               ).
+              <ul>
+                <li>
+                  The Scivision catalog does not host your data directly, just
+                  some metadata about it, so this must be accessible elsewhere.
+                </li>
+              </ul>
             </li>
-            <ul>
-              <li>
-                The Scivision catalog does not host your data directly, just
-                some metadata about it, so this must be accessible elsewhere.
-              </li>
-            </ul>
 
             <li>
               {" "}
@@ -80,22 +61,22 @@ export default function DatasourceNew({ gh_logged_in }) {
               <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-repo-structure">
                 format expected by Scivision
               </a>{" "}
+              <ul>
+                <li>
+                  This has the benefit of allowing programmatic access to the
+                  data using Scivision.Py
+                </li>
+                <li>
+                  {" "}
+                  If it is in the Scivision format, make a note of the direct
+                  link to the{" "}
+                  <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">
+                    data config file
+                  </a>{" "}
+                  in your repository
+                </li>
+              </ul>
             </li>
-            <ul>
-              <li>
-                This has the benefit of allowing programmatic access to the data
-                using Scivision.Py
-              </li>
-              <li>
-                {" "}
-                If it is in the Scivision format, make a note of the direct link
-                to the{" "}
-                <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">
-                  data config file
-                </a>{" "}
-                in your repository
-              </li>
-            </ul>
           </ul>
         </Alert>
       </Container>
