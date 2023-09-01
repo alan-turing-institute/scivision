@@ -63,7 +63,7 @@ This might be just the name of your package if your model is a python package on
 """,
     )
     url: Optional[FlexibleUrl] = Field(
-        ...,
+        None,
         title="Scivision metadata URL",
         description="""The URL to the Scivision metadata yaml file, if it has one (or leave blank)
 
