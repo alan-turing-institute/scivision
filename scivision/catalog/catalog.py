@@ -37,8 +37,12 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
     name: str = Field(
         ...,
         title="Name",
-        description="Short, unique name for the model (one or two words, "
-        "under 20 characters recommended)",
+        description="""Short, unique name for the model (one or two words, under 20 characters recommended)
+
+- Good example :white_check_mark:: **Quux Classifier**
+- Okay example :heavy_check_mark:: **quux-classifier**
+- Bad example :x:: **model-456** (prefer a descriptive name)
+- Bad example :x:: **The Quux classification model** (too long; no need to include 'model' in the name)""",
     )
     description: Optional[str] = Field(
         None,
