@@ -390,6 +390,15 @@
         "marine-biology",
         "species-classification"
       ]
+    },
+    {
+      "tasks": [],
+      "labels_provided": false,
+      "domains": [],
+      "institution": [],
+      "tags": [],
+      "name": "Test",
+      "description": ""
     }
   ]
 }
