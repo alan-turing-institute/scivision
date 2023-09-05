@@ -277,6 +277,28 @@
       "description": "A framework for automatic clustering and classification of objects in multidimensional image data based on their similarity.",
       "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
       "url": "https://github.com/alan-turing-institute/affinity-vae"
+    },
+    {
+      "tasks": [],
+      "scivision_usable": false,
+      "pretrained": true,
+      "labels_required": true,
+      "institution": [
+        "The Alan Turing Institute",
+        "University College London"
+      ],
+      "tags": [
+        "cell tracking",
+        "bio imaging ",
+        "optimisation",
+        "bayesian",
+        "kalman filter"
+      ],
+      "name": "btrack",
+      "description": "btrack is a Python library for multi object tracking, used to reconstruct trajectories in crowded fields. Here, we use a probabilistic network of information to perform the trajectory linking. This method uses spatial information as well as appearance information for track linking.",
+      "url": "https://github.com/quantumjot/btrack",
+      "pkg_url": "btrack",
+      "format": "images"
     }
   ]
 }
