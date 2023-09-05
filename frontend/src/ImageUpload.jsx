@@ -2,6 +2,25 @@ import { useState, useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import AvatarEditor from "react-avatar-editor";
 
+export function PlaceholderImage({ size }) {
+  return (
+    <div
+      style={{
+        width: size,
+        "aspect-ratio": "1 / 1",
+        "background-color": "#eeeeee",
+        display: "flex",
+        "align-items": "center",
+        "justify-content": "center",
+        padding: "20px",
+        "font-size": "small",
+      }}
+      className="m-1"
+    >
+      Select a thumbnail image to upload
+    </div>
+  );
+}
 // Component: image uploader
 //
 // Shows a browse file selector, zoom slider (and button to clear)
@@ -10,8 +29,10 @@ import AvatarEditor from "react-avatar-editor";
 // data URL when the 'save' button is clicked
 export default function ImageUpload({ onSave }) {
   const editor = useRef(null);
+  const thumbnailFileSelectorRef = useRef(null);
   const [haveImage, setHaveImage] = useState(false);
   const [image, setImage] = useState("");
+  const [zoomSliderValue, setZoomSliderValue] = useState("50");
 
   function handleUpdateImage(e) {
     setImage(URL.createObjectURL(e.target.files[0]));
@@ -35,25 +56,11 @@ export default function ImageUpload({ onSave }) {
             image={image}
             width={256}
             height={256}
-            scale={1.0}
             border={20.0}
+            scale={1.05 ** (zoomSliderValue - 50.0)}
           />
         ) : (
-          <div
-            style={{
-              width: "300px",
-              "aspect-ratio": "1 / 1",
-              "background-color": "#eeeeee",
-              display: "flex",
-              "align-items": "center",
-              "justify-content": "center",
-              padding: "20px",
-              "font-size": "small",
-            }}
-            className="m-1"
-          >
-            Select a thumbnail image to upload
-          </div>
+          <PlaceholderImage size="300px" />
         )}
       </div>
       <div
@@ -64,6 +71,7 @@ export default function ImageUpload({ onSave }) {
         }}
       >
         <Form.Control
+          ref={thumbnailFileSelectorRef}
           type="file"
           accept="image/*"
           onChange={handleUpdateImage}
@@ -71,7 +79,15 @@ export default function ImageUpload({ onSave }) {
         />
         <div>
           {" "}
-          Zoom: <Form.Control type="range" disabled={!haveImage} />
+          Zoom:{" "}
+          <Form.Control
+            type="range"
+            disabled={!haveImage}
+            min="0"
+            max="100"
+            value={zoomSliderValue}
+            onChange={(e) => setZoomSliderValue(e.target.value)}
+          />
         </div>
         <hr style={{ width: "100%" }} />
         <div style={{ display: "flex", "flex-direction": "column" }}>
@@ -79,8 +95,10 @@ export default function ImageUpload({ onSave }) {
             variant="outline-secondary"
             size="sm"
             onClick={() => {
+              thumbnailFileSelectorRef.current.value = null;
               setImage(null);
               setHaveImage(false);
+              setZoomSliderValue("50");
             }}
           >
             Clear selected image
@@ -104,24 +122,6 @@ export default function ImageUpload({ onSave }) {
           </Button>
         </div>
       </div>
-      {/*
-      <button
-        onClick={() => {
-          if (editor && haveImage) {
-            // This returns a HTMLCanvasElement, it can be made into a data URL or a blob,
-            // drawn on another canvas, or added to the DOM.
-            // window.canvas = editor.current.getImage();
-
-            // If you want the image resized to the canvas size (also a HTMLCanvasElement)
-            window.canvasScaled = editor.current
-              .getImageScaledToCanvas()
-              .toDataURL("image/jpeg");
-            window.haveImage = haveImage;
-          }
-        }}
-      >
-        Save
-        </button> */}
     </div>
   );
 }

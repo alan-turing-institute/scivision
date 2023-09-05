@@ -5,7 +5,7 @@ import MarkdownView from "react-showdown";
 import Form from "@rjsf/bootstrap-4";
 import validator from "@rjsf/validator-ajv8";
 
-import ImageUpload from "./ImageUpload.jsx";
+import ImageUpload, { PlaceholderImage } from "./ImageUpload.jsx";
 import { download } from "./utils.js";
 import { OctokitPRPlugin, GH_TOKEN_KEY } from "./config.js";
 
@@ -14,8 +14,6 @@ import { OctokitPRPlugin, GH_TOKEN_KEY } from "./config.js";
 function DescriptionFieldTemplate({ description, id }) {
   return (
     <div id={id}>
-      {" "}
-      {/*style={{"white-space": "pre-wrap"}}>*/}
       <MarkdownView markdown={description} options={{ emoji: true }} />
     </div>
   );
@@ -27,13 +25,15 @@ function ImageUploadModal({ onChangeThumbnail, show, setShow }) {
       <Modal.Header closeButton>
         <h5>Thumbnail image upload</h5>
       </Modal.Header>
-      <ImageUpload
-        onSave={(imgData) => {
-          console.log(imgData);
-          onChangeThumbnail(imgData);
-          setShow(false);
-        }}
-      />
+      <div className="mb-4 mt-2">
+        <ImageUpload
+          onSave={(imgData) => {
+            console.log(imgData);
+            onChangeThumbnail(imgData);
+            setShow(false);
+          }}
+        />
+      </div>
     </Modal>
   );
 }
@@ -219,11 +219,19 @@ export default function CatalogEntryForm({
       >
         <h5>Thumbnail Image</h5>
         <hr className="border-0 bg-secondary" style={{ height: "1px" }} />
-        <Col>
-          <img src={currentThumbnailPreview} width="256" height="256" />
-          <Button onClick={() => setShowThumbnailModal(true)}>
-            Upload thumbnail
-          </Button>
+        <div className="d-flex justify-content-end align-items-center flex-wrap">
+          <div class="flex-grow-1">
+            {currentThumbnailPreview ? (
+              <img src={currentThumbnailPreview} width="256" height="256" />
+            ) : (
+              <PlaceholderImage size="256px" />
+            )}
+          </div>
+          <div>
+            <Button onClick={() => setShowThumbnailModal(true)}>
+              Choose thumbnail image
+            </Button>
+          </div>
           <ImageUploadModal
             onChangeThumbnail={(imageData) => {
               onChangeThumbnail(imageData);
@@ -232,7 +240,7 @@ export default function CatalogEntryForm({
             show={showThumbnailModal}
             setShow={setShowThumbnailModal}
           />
-        </Col>
+        </div>
         <hr className="border-0 bg-secondary" style={{ height: "1px" }} />
         <Col className="my-3">
           <Button
@@ -240,16 +248,11 @@ export default function CatalogEntryForm({
             onClick={() => (pr_flag = true)}
             disabled={!gh_logged_in || pr_loading}
           >
-            Open Pull Request on GitHub
+            Open Pull Request on GitHub{" "}
             {pr_loading ? (
-              <>
-                &nbsp;
-                <Spinner animation="border" role="status" size="sm" />
-              </>
-            ) : (
-              <></>
-            )}
-            {gh_logged_in ? <></> : <> (login to enable)</>}
+              <Spinner animation="border" role="status" size="sm" />
+            ) : null}
+            {gh_logged_in ? null : <> (login to enable)</>}
           </Button>
           <Button
             type="submit"
