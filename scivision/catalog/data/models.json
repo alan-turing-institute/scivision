@@ -281,8 +281,6 @@
     {
       "tasks": [],
       "scivision_usable": false,
-      "pretrained": true,
-      "labels_required": true,
       "institution": [
         "The Alan Turing Institute",
         "University College London"
@@ -297,8 +295,7 @@
       "name": "btrack",
       "description": "btrack is a Python library for multi object tracking, used to reconstruct trajectories in crowded fields. Here, we use a probabilistic network of information to perform the trajectory linking. This method uses spatial information as well as appearance information for track linking.",
       "url": "https://github.com/quantumjot/btrack",
-      "pkg_url": "btrack",
-      "format": "images"
+      "pkg_url": "btrack"
     }
   ]
 }
