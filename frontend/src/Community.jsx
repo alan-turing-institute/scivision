@@ -10,13 +10,6 @@ export default function Community() {
     <>
       <h3>Community Resources</h3>
       <Container className="text-block">
-        <h5>Code of Conduct</h5>
-        The Scivision{" "}
-        <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">
-          Code of Conduct
-        </a>{" "}
-        sets out the expectations of people participating in the project or
-        events.
         <h5>Email Newsletter</h5>
         <p>
           Scivision has a low-volume email newsletter for announcements about
@@ -30,6 +23,14 @@ export default function Community() {
           It is possible to unsubscribe at any time by following the link at the
           bottom of any email from the list.
         </p>
+        <h5>Community calls</h5>
+        <p>
+          Scivision runs an online call (over Zoom) from time to time, generally
+          themed around computer vision or image analysis in a particular
+          domain. There will also be a chance for an introduction to the
+          Scivision project and hear any recent news.
+        </p>
+        <p>Future events will be advertised on Slack and the mailing list.</p>
         <h5>Slack Workspace</h5>
         <p>
           The Scivision Slack workspace is open to anyone interested in:
@@ -52,17 +53,6 @@ export default function Community() {
           To join the Slack Workspace, submit your email address{" "}
           <a href={slack_signup_form_url}>here</a> (via a Google Form) and one
           of the team will invite you.
-        </p>
-        <h5>Community calls</h5>
-        <p>
-          Scivision runs an online call (over Zoom) from time to time, generally
-          themed around computer vision or image analysis in a particular
-          domain. There will also be a chance for an introduction to the
-          Scivision project and hear any recent news.
-        </p>
-        <p>
-          Future events will be advertised on the Slack channel and mailing
-          list.
         </p>
         <h5>GitHub</h5>
         Development of Scivision is hosted on GitHub.
@@ -91,6 +81,13 @@ export default function Community() {
           SCIPI
         </a>{" "}
         &mdash; Community driven design documents, specs and proposals
+        <h5>Code of Conduct</h5>
+        The Scivision{" "}
+        <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">
+          Code of Conduct
+        </a>{" "}
+        sets out the expectations of people participating in the project or
+        events.
         <h5>Contact the Core Team</h5>
         The Scivision project is run by a team at the Alan Turing Institute. In
         addition to the channels above, you can email the team at{" "}
