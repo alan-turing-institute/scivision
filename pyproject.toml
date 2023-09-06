@@ -33,6 +33,12 @@ dev = [
 test = [
   "pytest"
 ]
+doc = [
+  "sphinx==4.2.0",
+  "pydata-sphinx-theme==0.11.0",
+  "readthedocs-sphinx-search==0.1.1",
+  "m2r2==0.3.2"
+]
 
 [project.urls]
 "Homepage" = "https://sci.vision"
