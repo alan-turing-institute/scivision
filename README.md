@@ -12,8 +12,8 @@ If you are new to Scivision, start with the [website](https://sci.vision/).
 
 The Scivision project is building:
 
-- Hosted in [this GitHub repository](https://github.com/alan-turing-institute/scivision):
-  - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid)
+- Some things hosted in [this GitHub repository](https://github.com/alan-turing-institute/scivision):
+  - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid) from the sciences and humanities
   - A **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
   - **Documentation** for the above ([documentation website](https://scivision.readthedocs.io/en/latest/))
 - A [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets
