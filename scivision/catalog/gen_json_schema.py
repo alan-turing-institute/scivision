@@ -13,9 +13,6 @@ class DatasourceWithExamples(scivision.catalog.CatalogDatasourceEntry):
             domains = list(cat.domains.explode().unique())
             schema['properties']['domains']['items']['examples'] = domains
 
-            formats = list(cat.format.explode().unique())
-            schema['properties']['format']['examples'] = formats
-
             institutions = list(cat.institution.explode().unique())
             schema['properties']['institution']['items']['examples'] = institutions
 
@@ -37,4 +34,9 @@ def entry_point():
     model_schema = scivision.catalog.CatalogModelEntry.schema_json()
     with open("model_schema.js", "w") as f:
         print(f"const schema = {model_schema};", file=f)
+        print("export default schema;", file=f)
+
+    project_schema = scivision.catalog.CatalogProjectEntry.schema_json()
+    with open("project_schema.js", "w") as f:
+        print(f"const schema = {project_schema};", file=f)
         print("export default schema;", file=f)

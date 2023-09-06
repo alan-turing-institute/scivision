@@ -17,6 +17,8 @@ class TaskEnum(str, Enum):
     object_detection = "object-detection"
     segmentation = "segmentation"
     thresholding = "thresholding"
+    shape_analysis = "shape-analysis"
+    object_tracking = "object-tracking"
     other = "other"
 
 
@@ -35,59 +37,65 @@ class CatalogModelEntry(BaseModel, extra="forbid", title="A model catalog entry"
     name: str = Field(
         ...,
         title="Name",
-        description="Short, unique name for the model (one or two words, "
-        "under 20 characters recommended)",
+        description="""Short, unique name for the model (one or two words, under 20 characters recommended)
+
+- Good example :white_check_mark:: **Quux Classifier**
+- Okay example :heavy_check_mark:: **quux-classifier**
+- Bad example :x:: **model-456** (prefer a descriptive name)
+- Bad example :x:: **The Quux classification model** (too long; no need to include 'model' in the name)""",
     )
     description: Optional[str] = Field(
         None,
         title="Description",
         description="Detailed description of the model",
     )
-    tasks: Tuple[TaskEnum, ...] = Field(
+    tasks: FrozenSet[TaskEnum] = Field(
         (),
         title="Tasks",
         description="Which task (or tasks) does the model perform?",
     )
-    url: FlexibleUrl = Field(
-        ...,
-        title="URL",
-        description="The URL path to the scivision yml file in the model repo. "
-        "If the exact path is not specified, Scivision will try to locate the file in"
-        " the default location at .scivision/model.yml",
-    )
     pkg_url: str = Field(
         ...,
         title="Python package",
-        description="A pip requirement specifier for PyPI, or a URL of the "
-        "archive or package (on GitHub, for exampe)",
+        description="""A pip requirement specifier to install the model
+
+This might be just the name of your package if your model is a python package on PyPI, or a URL to the source repository on GitHub or another location (see examples below)
+
+- Good example :white_check_mark:: `sampleproject` (install sampleproject from PyPI)
+- Good example :white_check_mark:: `git+https://github.com/pypa/sampleproject@main` (install sampleproject directly from GitHub, main branch)
+- Bad example :x:: `pip install my-python-package` (don't include the actual pip command, just the package name)
+""",
     )
-    format: str = Field(
-        ...,
-        title="Model input format",
-        description="The type of data consumed by the model",
+    url: Optional[FlexibleUrl] = Field(
+        None,
+        title="Scivision metadata URL",
+        description="""The URL to the Scivision metadata yaml file, if it has one (or leave blank)
+
+- Good example :white_check_mark:: `https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml`"""
     )
+
     scivision_usable: bool = Field(
         False,
-        title="Can the model be installed and loaded with the scivision Python package, with "
-        "scivision.load_pretrained_model(<model url>, allow_install=True)?"
-        "Leave unchecked if not sure",
-    )
-    pretrained: bool = Field(
-        True,
-        title="Pretrained model?",
-    )
-    labels_required: bool = Field(
-        True,
-        title="Labels required?",
-        description="Does the model require labeled data for training?",
+        title="Model runs with Scivision?",
+        description="""Can the model be installed and loaded with the scivision Python package, using the command below?
+
+```
+scivision.load_pretrained_model(<model url>, allow_install=True)
+```
+
+Select 'no' if not sure""",
     )
     institution: Tuple[str, ...] = Field(
         (),
-        title="Institution(s)",
-        description="A list of institutions that produced or are associated with "
-        "the model (one per item)",
+        title="Institutions or organizations",
+        description="A list of institutions or organizations that produced or "
+        "are associated with the model (one per item)",
     )
-    tags: Tuple[str, ...]
+    tags: Tuple[str, ...] = Field(
+        (),
+        title="Tags",
+        description="A list of free-form labels to associate with a model",
+    )
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -116,26 +124,41 @@ class CatalogDatasourceEntry(
     name: str = Field(
         ...,
         title="Name",
-        description="Short name for the datasource, that must be unique among "
-        "all catalog entries (one or two words, under 20 characters recommended)",
+        description="""Short, unique name for the datasource (one or two words, under 20 characters recommended)
+
+- Good example :white_check_mark:: **Foobar Penguins**
+- Okay example :heavy_check_mark:: **foobar-penguins**
+- Bad example :x:: **dataset-123** (prefer a descriptive name)
+- Bad example :x:: **Data from the Foobar penguin study** (too long; no need to include 'data' in the title)""",
     )
+
     description: Optional[str] = Field(
         None,
         title="Description",
         description="Detailed description of the dataset (no length limit)",
     )
+    url: FlexibleUrl = Field(
+        None,
+        title="URL",
+        description="""The URL to the datasource.  If your datasource has an associated scivision yaml file, this should point to it.  Otherwise, give a URL for downloading the data
+
+- Good example :white_check_mark:: `https://example.com/path/to/datasource.yml` (location of the scivision yml file)
+- Okay example :heavy_check_mark:: `https://example.com/dataset/download/data.zip` (data download URL)
+- Bad example :x:: `example.com/path/to/datasource.yml` (missing URL scheme, like 'https://')
+""",
+    )
     tasks: FrozenSet[TaskEnum] = Field(
         None,
         title="Suitable tasks",
-        description="For which task or tasks is this datasource likely to be "
-        "suitable? (Select any number of the following items)",
+        description="For which computer vision task or tasks is this "
+        "datasource likely to be suitable? Select any number"
     )
     labels_provided: bool = Field(
         False,
-        title="Labels provided",
-        description="Is this a labelled dataset? This can make it suitable for training or validation",
+        title="Labels included?",
+        description="Does the datasource contain labelled examples, suitable for model training or validation?"
     )
-    domains: Tuple[str, ...] = Field(
+    domains: FrozenSet[str] = Field(
         None,
         title="Domain areas",
         description="Which domain area or areas is this datasource from? (One per item, no duplicates)",
@@ -145,27 +168,16 @@ class CatalogDatasourceEntry(
         # variant with a constraint.
         uniqueItems=True,
     )
-    url: FlexibleUrl = Field(
-        None,
-        title="URL",
-        description="The URL path to the scivision yml file in the datasource repo. "
-        "If the exact path is not specified, Scivision will try to locate the file in"
-        " the default location at .scivision/data.yml",
-    )
-    format: str = Field(
-        None,
-        title="Format",
-    )
     institution: Tuple[str, ...] = Field(
         (),
-        title="Institution(s)",
-        description="A list of institutions that produced or are associated with "
-        "the dataset (one per item)",
+        title="Institutions or organizations",
+        description="A list of institutions or organizations that produced or are "
+        "associated with the dataset (one per item)",
     )
     tags: Tuple[str, ...] = Field(
         (),
         title="Tags",
-        description="A list of free-form data to associate with the dataset",
+        description="A list of free-form labels to associate with a datasource",
     )
 
     def __getitem__(self, item):
@@ -189,45 +201,11 @@ class CatalogDatasources(BaseModel, extra="forbid"):
         return entries
 
 
-def get_models():
-    models_raw = pkgutil.get_data(__name__, "data/models.json")
-    models = CatalogModels.parse_raw(models_raw)
-    names = []
-    for model_entry in models.entries:
-        names.append(model_entry["name"])
-    return names
-
-
-modelEnumStrings = ((x, x) for x in get_models())
-ModelEnum = Enum('ModelEnum', modelEnumStrings)
-
-
-def get_datasources():
-    datasources_raw = pkgutil.get_data(__name__, "data/datasources.json")
-    datasources = CatalogDatasources.parse_raw(datasources_raw)
-    names = []
-    for datasources_entry in datasources.entries:
-        names.append(datasources_entry["name"])
-    return names
-
-
-datasourceEnumStrings = ((x, x) for x in get_datasources())
-DataEnum = Enum('DataEnum', datasourceEnumStrings)
-
-
 class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog entry"):
-    # tasks, institution and tags are Tuples (rather than Lists) so
-    # that they are immutable - Tuple is being used as an immutable
-    # sequence here. This means that these fields are hashable, which
-    # can be more convenient when included in a dataframe
-    # (e.g. unique()). Could consider using a Frozenset for these
-    # fields instead, since duplicates and ordering should not be
-    # significant.
     name: str = Field(
         ...,
         title="Name",
-        description="Short, unique name for the project (one or two words, "
-        "under 20 characters recommended)",
+        description="Short, unique name for the project (one or two words, under 20 characters recommended)",
     )
     header: str = Field(
         ...,
@@ -244,26 +222,26 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
         title="Page",
         description="Markdown formatted content for the project page",
     )
-    models: Tuple[ModelEnum, ...] = Field(
+    models: Tuple[str, ...] = Field(
         (),
         title="Models",
         description="Which models from the scivision catalog are used in the project?",
     )
-    datasources: Tuple[DataEnum, ...] = Field(
+    datasources: Tuple[str, ...] = Field(
         (),
         title="Datasources",
         description="Which datasources from the scivision catalog are used in the project?",
     )
-    tasks: Tuple[TaskEnum, ...] = Field(
+    tasks: FrozenSet[TaskEnum] = Field(
         (),
         title="Tasks",
         description="Which task (or tasks) do the CV models used in the project perform?",
     )
     institution: Tuple[str, ...] = Field(
         (),
-        title="Institution(s)",
-        description="A list of institutions that produced or are associated with "
-        "the project (one per item)",
+        title="Institutions or organizations",
+        description="A list of institutions or organizations that produced or are "
+        "associated with the project (one per item)",
     )
     tags: Tuple[str, ...]
 
@@ -274,7 +252,7 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
 class CatalogProjects(BaseModel, extra="forbid"):
     catalog_type: str = "scivision project catalog"
     name: str
-    # Tuple: see comment on CatalogProjectEntry
+    # Tuple: see comment on CatalogModelEntry
     entries: Tuple[CatalogProjectEntry, ...]
 
     @validator("entries")
@@ -383,6 +361,36 @@ class PandasCatalog:
             projects_cat = _coerce_projects_catalog(projects)
             self._projects = pd.DataFrame([ent.dict() for ent in projects_cat.entries])
 
+        self.validate()
+
+    def validate(self):
+        """Extra validation
+
+        Raise ValueError if projects refer to nonexistent models or datasources
+        """
+        for _, proj in self._projects.iterrows():
+            proj_models = pd.Series(proj.models)
+            unknown_models = proj_models[~proj_models.isin(self._models.name)]
+            if len(unknown_models) > 0:
+                unknown_models_str = ', '.join(unknown_models.tolist())
+                raise ValueError(
+                    "A project catalog entry refers to a model not in the "
+                    f"model catalog\n  Project: {proj['name']}\n  Unknown models: "
+                    f"{unknown_models_str}"
+                )
+
+            proj_datasources = pd.Series(proj.datasources)
+            unknown_datasources = proj_models[
+                ~proj_datasources.isin(self._datasources.name)
+            ]
+            if len(unknown_datasources) > 0:
+                unknown_datasources_str = ', '.join(unknown_datasources.tolist())
+                raise ValueError(
+                    "A project catalog entry refers to a datasource not in the "
+                    f"datasource catalog\n  Project: {proj['name']}\n  Unknown "
+                    f"datasources: {unknown_datasources_str}"
+                )
+
     @property
     def models(self) -> PandasQueryResult:
         return PandasQueryResult(self._models)
@@ -396,14 +404,6 @@ class PandasCatalog:
         return PandasQueryResult(self._projects)
 
     def _compatible_models(self, datasource) -> PandasQueryResult:
-        models_compatible_format = self._models[
-            self._models.format == datasource["format"]
-        ]
-
-        models_compatible_format_labels = models_compatible_format[
-            datasource["labels_provided"] | ~models_compatible_format.labels_required
-        ]
-
         datasource_tasks = pd.DataFrame(datasource["tasks"], columns=["tasks"])
         models_compatible_tasks = (
             self._models[["name", "tasks"]]
@@ -415,28 +415,13 @@ class PandasCatalog:
             )
             .name.drop_duplicates()
         )
-        result_df = models_compatible_format_labels[
-            models_compatible_format_labels.name.isin(models_compatible_tasks)
+        result_df = self._models[
+            self._models.name.isin(models_compatible_tasks)
         ]
 
         return PandasQueryResult(result_df)
 
-    # Similar to _compatible_models, but for datasources.  Can't
-    # cleanly combine these two functions, due to the asymmetry
-    # between a model's 'labels_required', and datasource 'labels_provided'.
-    # In particular, a model that doesn't require labels can still use
-    # a datasource that provides them (if they are otherwise
-    # compatible), but not vice versa.  For this reason, the distinct
-    # names 'labels_provided' and 'labels_required' are used.
     def _compatible_datasources(self, model) -> PandasQueryResult:
-        datasources_compatible_format = self._datasources[
-            self._datasources.format == model["format"]
-        ]
-
-        datasources_compatible_format_labels = datasources_compatible_format[
-            datasources_compatible_format.labels_provided | ~model["labels_required"]
-        ]
-
         model_tasks = pd.DataFrame(model["tasks"], columns=["tasks"])
         datasources_compatible_tasks = (
             self._datasources[["name", "tasks"]]
@@ -448,8 +433,8 @@ class PandasCatalog:
             )
             .name.drop_duplicates()
         )
-        result_df = datasources_compatible_format_labels[
-            datasources_compatible_format_labels.name.isin(datasources_compatible_tasks)
+        result_df = self._datasources[
+            self._datasources.name.isin(datasources_compatible_tasks)
         ]
 
         return PandasQueryResult(result_df)
