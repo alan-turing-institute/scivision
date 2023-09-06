@@ -18,7 +18,7 @@ jobs:
       - name: Install Scivision
         run: pip install -e .
       - name: Check data catalog
-        run: python ./dev/check_datasets.py
+        run: scivision-check-datasets
       - name: Store artifact
         uses: actions/upload-artifact@v3
         with:
