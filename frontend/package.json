@@ -32,9 +32,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "mkdir -p src/catalog && cp -r ../scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts start",
-    "build": "mkdir -p src/catalog && cp -r ../scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts build",
-    "test": "mkdir -p src/catalog && cp -r ../scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts test",
+    "start": "mkdir -p src/catalog && cp -r ../src/scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts start",
+    "build": "mkdir -p src/catalog && cp -r ../src/scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts build",
+    "test": "mkdir -p src/catalog && cp -r ../src/scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
