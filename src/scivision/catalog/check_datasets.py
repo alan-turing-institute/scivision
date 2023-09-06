@@ -65,7 +65,7 @@ def check_datasets():
 
 
 def entry_point():
-    """This is the entry point for the 'scivision-check-datasets' 
+    """This is the entry point for the 'scivision-check-datasets'
     command.
     """
     automated_checks_report_json = check_datasets()
