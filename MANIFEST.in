@@ -1,4 +1,3 @@
-include scivision/catalog/data/*.json
-include README.md
-include LICENSE
-include requirements.txt
+graft src/scivision/catalog/data
+graft tests
+global-exclude *.py[cod] __pycache__
