@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.26737fb0.css",
-    "main.js": "/static/js/main.8febd730.js",
+    "main.css": "/static/css/main.364f6c60.css",
+    "main.js": "/static/js/main.143c847f.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
     "static/media/sentinel2_stac.jpg": "/static/media/sentinel2_stac.51737c69269f76ea86ed.jpg",
     "static/media/flower-classification-model.jpg": "/static/media/flower-classification-model.e7631bb6950118a863cb.jpg",
     "static/media/vedge-detector.jpg": "/static/media/vedge-detector.f7bf015174128e766a6b.jpg",
@@ -38,12 +38,12 @@
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "static/media/fathomnet23.jpg": "/static/media/fathomnet23.687914ce0e9e50e41627.jpg",
     "index.html": "/index.html",
-    "main.26737fb0.css.map": "/static/css/main.26737fb0.css.map",
-    "main.8febd730.js.map": "/static/js/main.8febd730.js.map",
+    "main.364f6c60.css.map": "/static/css/main.364f6c60.css.map",
+    "main.143c847f.js.map": "/static/js/main.143c847f.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26737fb0.css",
-    "static/js/main.8febd730.js"
+    "static/css/main.364f6c60.css",
+    "static/js/main.143c847f.js"
   ]
 }
