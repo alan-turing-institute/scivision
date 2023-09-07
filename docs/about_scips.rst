@@ -23,7 +23,7 @@ They are not necessary for every change: For smaller, or self-contained contribu
 Who can make a SCIP?
 --------------------
 
-**Any scivision contributor** can propose a SCIP by making a pull request to this repository that adds to the ``docs/scip`` directory, following the steps below. See also the `contributing guide <https://github.com/alan-turing-institute/scivision/blob/main/contributing.md>`_ for advice about contributing to the project generally.
+**Any scivision contributor** can propose a SCIP by making a pull request to this repository that adds to the ``docs/scip`` directory, following the steps below. See also the contributing guide for advice about contributing to the project generally.
 
 An SCIP has one or more *editors*, normally the proposor, and who is responsible for gathering feedback and revising the text before it is adopted (gathering comments on the pull request or any relevant issues and discussion, for example).
 

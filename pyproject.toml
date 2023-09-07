@@ -1,0 +1,50 @@
+[project]
+name = "scivision"
+version = "0.7.0"
+description = "Scivision"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+maintainers = [
+  { email = "scivision@turing.ac.uk" }
+]
+dependencies = [
+  "matplotlib~=3.6",
+  "numpy~=1.23",
+  "scipy~=1.9",
+  "pandas>=1.5,<3",
+  "fsspec>=2022.11",
+  "pyyaml~=6.0",
+  "requests~=2.28",
+  "aiohttp~=3.8",
+  "intake~=0.6",
+  "intake-xarray~=0.6",
+  "pydantic~=1.9",
+  "exifread~=3.0",
+  "distinctipy~=1.2",
+  "ipython~=8.3",
+  "tqdm~=4.65"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit"
+]
+test = [
+  "pytest"
+]
+doc = [
+  "sphinx~=4.2",
+  "pydata-sphinx-theme~=0.11",
+  "readthedocs-sphinx-search~=0.1",
+  "m2r2~=0.3"
+]
+
+[project.urls]
+"Homepage" = "https://sci.vision"
+"Source" = "https://github.com/alan-turing-institute/scivision"
+"Issue tracker" = "https://github.com/alan-turing-institute/scivision/issues"
+
+[project.scripts]
+scivision-catalog-json-schema = "scivision.catalog.gen_json_schema:entry_point"
+scivision-check-datasets = "scivision.catalog.check_datasets:entry_point"
