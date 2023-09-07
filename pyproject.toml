@@ -39,6 +39,13 @@ doc = [
   "readthedocs-sphinx-search~=0.1",
   "m2r2~=0.3"
 ]
+gcs = [
+  "gcsfs>=2022.02"
+]
+s3 = [
+  "s3fs"
+]
+cloud_extra = ["scivision[gcs,s3]"]
 
 [project.urls]
 "Homepage" = "https://sci.vision"
