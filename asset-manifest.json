@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.364f6c60.css",
-    "main.js": "/static/js/main.114073af.js",
+    "main.js": "/static/js/main.06046f6a.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
@@ -18,8 +18,6 @@
     "static/media/sept22-connections-workshop.jpg": "/static/media/sept22-connections-workshop.fd5fb75b156e6bfe3560.jpg",
     "static/media/btrack.jpg": "/static/media/btrack.86cefef802d3797309c3.jpg",
     "static/media/Affinity-VAE.jpg": "/static/media/Affinity-VAE.b088434eaae29c7025da.jpg",
-    "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.d43490443ea20251ed01.jpg",
-    "static/media/huggingface-segmentation.jpg": "/static/media/huggingface-segmentation.d43490443ea20251ed01.jpg",
     "static/media/oppd-seedlings.jpg": "/static/media/oppd-seedlings.6777dab0849f2cee5f66.jpg",
     "static/media/detectreeRGB-forest.jpg": "/static/media/detectreeRGB-forest.6320de8dea937a52ce79.jpg",
     "static/media/image-classifiers.jpg": "/static/media/image-classifiers.e447edb1b6a36c9f6cac.jpg",
@@ -37,13 +35,14 @@
     "static/media/stardist-cell-nuclei-2D.jpg": "/static/media/stardist-cell-nuclei-2D.2da18c7334c96e33cfde.jpg",
     "static/media/resnet50-plankton.jpg": "/static/media/resnet50-plankton.9ee110bf65ea28557c77.jpg",
     "static/media/fathomnet23.jpg": "/static/media/fathomnet23.687914ce0e9e50e41627.jpg",
+    "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.52a0e5378dc6224dd7d9.jpg",
     "index.html": "/index.html",
     "main.364f6c60.css.map": "/static/css/main.364f6c60.css.map",
-    "main.114073af.js.map": "/static/js/main.114073af.js.map",
+    "main.06046f6a.js.map": "/static/js/main.06046f6a.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.364f6c60.css",
-    "static/js/main.114073af.js"
+    "static/js/main.06046f6a.js"
   ]
 }
