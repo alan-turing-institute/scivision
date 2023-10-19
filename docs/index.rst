@@ -30,7 +30,7 @@ If you are new to Scivision, visit `our main project website <https://alan-turin
 📷 Background
 -------------
 
-The Scivision project was conceived at `The Alan Turing Institute <turing.ac.uk>`_, as an open software community that:
+The Scivision project was conceived at `The Alan Turing Institute <https://www.turing.ac.uk/>`_, as an open software community that:
 
 - Empowers scientific domain experts to easily access and integrate the latest computer vision tools
 - Provides a bridge between computer vision algorithms and datasets from different academic disciplines
