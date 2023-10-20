@@ -35,10 +35,10 @@ test = [
 ]
 doc = [
   "sphinx",
+  "sphinx_rtd_theme",
   "pydata-sphinx-theme",
   "readthedocs-sphinx-search",
-  "m2r2",
-  "sphinx_rtd_theme"
+  "m2r2"
 ]
 gcs = [
   "gcsfs>=2022.02"
