@@ -37,7 +37,7 @@ doc = [
   "sphinx",
   "pydata-sphinx-theme",
   "readthedocs-sphinx-search",
-  "m2r2"
+  "m2r2",
   "sphinx_rtd_theme"
 ]
 gcs = [
