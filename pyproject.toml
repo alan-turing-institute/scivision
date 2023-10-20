@@ -38,6 +38,7 @@ doc = [
   "pydata-sphinx-theme",
   "readthedocs-sphinx-search",
   "m2r2"
+  "sphinx_rtd_theme"
 ]
 gcs = [
   "gcsfs>=2022.02"
