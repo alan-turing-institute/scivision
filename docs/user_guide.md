@@ -47,10 +47,9 @@ Scivision supports optional dependencies, which are not installed by default. Th
 - `cloud_extra`: install dependencies for loading data or models from cloud storage (e.g. AWS S3 and Google Cloud Storage)
 
 To install the optional `cloud_extra` dependencies, run:
--  pip install scivision[cloud_extra]
 
 ```bash
-pip install scivision[cloud]
+pip pip install scivision[cloud_extra]
 ```
 
 .. _support:
