@@ -6,6 +6,7 @@
 📚 **Contents:**
 
 - :ref:`install`
+- :ref:`optional`
 - :ref:`support`
 - :ref:`getting_started`
 - :ref:`catalog-section`
@@ -35,6 +36,21 @@
     cd /path/to/my/scivision
     pip install -v -e .
     ```
+
+.. _optional:
+
+🔗 Optional dependencies
+--------------
+
+Scivision supports optional dependencies, which are not installed by default. These dependencies are required for certain functionality, such as loading models from certain sources, or loading certain types of data.
+
+- `cloud_extra`: install dependencies for loading data or models from cloud storage (e.g. AWS S3 and Google Cloud Storage)
+
+To install the optional `cloud_extra` dependencies, run:
+
+```bash
+pip install scivision[cloud_extra]
+```
 
 .. _support:
 
