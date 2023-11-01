@@ -49,7 +49,7 @@ Scivision supports optional dependencies, which are not installed by default. Th
 To install the optional `cloud_extra` dependencies, run:
 
 ```bash
-pip pip install scivision[cloud_extra]
+pip install scivision[cloud_extra]
 ```
 
 .. _support:
