@@ -373,6 +373,25 @@
         "marine-biology",
         "species-classification"
       ]
+    },
+    {
+      "tasks": [
+        "object-detection",
+        "object-tracking"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "hyperspectral"
+      ],
+      "institution": [
+        "Alan Turing Institute"
+      ],
+      "tags": [
+        "help-needed"
+      ],
+      "name": "Test data",
+      "url": "https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml",
+      "description": ""
     }
   ]
 }
