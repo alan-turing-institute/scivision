@@ -148,8 +148,8 @@ export default function ModelNew({ gh_logged_in }) {
               sessionStorage.setItem("new-model-thumbnail/jpeg", imgData)
             }
             catalog_kind="model"
-            catalog_path="scivision/catalog/data/models.json"
-            thumbnail_directory="scivision/catalog/data/thumbnails/models"
+            catalog_path="src/scivision/catalog/data/models.json"
+            thumbnail_directory="src/scivision/catalog/data/thumbnails/models"
             download_filename="one-model.json"
           />
         )}

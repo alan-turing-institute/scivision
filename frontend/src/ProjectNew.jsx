@@ -74,8 +74,8 @@ export default function ProjectNew({ gh_logged_in }) {
               sessionStorage.setItem("new-project-thumbnail/jpeg", imgData)
             }
             catalog_kind="project"
-            catalog_path="scivision/catalog/data/projects.json"
-            thumbnail_directory="scivision/catalog/data/thumbnails/projects/"
+            catalog_path="src/scivision/catalog/data/projects.json"
+            thumbnail_directory="src/scivision/catalog/data/thumbnails/projects/"
             download_filename="one-project.json"
           />
         </Col>
