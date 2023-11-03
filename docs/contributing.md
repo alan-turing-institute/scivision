@@ -96,7 +96,7 @@ Once your model submission is accepted, it will become available to other users 
 
 This section describes how to add a catalog entry by hand.  These steps are an alternative to using the form above.
 
-Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add metadata for your computer vision model to the end of `models.json` found in (`scivision/scivision/catalog/data/`), with the following format, under `"entries"`.
+Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add metadata for your computer vision model to the end of `models.json` found in (`scivision/src/scivision/catalog/data/`), with the following format, under `"entries"`.
 
 ```
   {
@@ -132,7 +132,7 @@ This section describes how to add a catalog entry by hand.  These steps are an a
 
 On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
 
-Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add your dataset to the end of `datasources.json` (found in `scivision/scivision/catalog/data/`), with the following format, under `"entries"`.
+Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add your dataset to the end of `datasources.json` (found in `scivision/src/scivision/catalog/data/`), with the following format, under `"entries"`.
 
 ```
   {

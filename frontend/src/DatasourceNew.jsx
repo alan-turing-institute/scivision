@@ -126,8 +126,8 @@ export default function DatasourceNew({ gh_logged_in }) {
               sessionStorage.setItem("new-datasource-thumbnail/jpeg", imgData)
             }
             catalog_kind="datasource"
-            catalog_path="scivision/catalog/data/datasources.json"
-            thumbnail_directory="scivision/catalog/data/thumbnails/datasources"
+            catalog_path="src/scivision/catalog/data/datasources.json"
+            thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
             download_filename="one-datasource.json"
           />
         )}
