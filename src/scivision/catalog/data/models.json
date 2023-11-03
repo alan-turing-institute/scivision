@@ -296,6 +296,20 @@
       "description": "btrack is a Python library for multi object tracking, used to reconstruct trajectories in crowded fields. Here, we use a probabilistic network of information to perform the trajectory linking. This method uses spatial information as well as appearance information for track linking.",
       "url": "https://github.com/quantumjot/btrack",
       "pkg_url": "btrack"
+    },
+    {
+      "tasks": [],
+      "scivision_usable": true,
+      "institution": [
+        "Alan Turing Institute"
+      ],
+      "tags": [
+        "penguins"
+      ],
+      "name": "Test",
+      "pkg_url": "sampleproject",
+      "url": "https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml",
+      "description": ""
     }
   ]
 }
