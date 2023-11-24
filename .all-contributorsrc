@@ -252,6 +252,17 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "louisavz",
+      "name": "louisavz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63079440?v=4",
+      "profile": "https://github.com/louisavz",
+      "contributions": [
+        "ideas",
+        "promotion",
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -261,5 +272,6 @@
   "repoHost": "https://github.com",
   "skipCi": false,
   "contributorsSortAlphabetically": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
