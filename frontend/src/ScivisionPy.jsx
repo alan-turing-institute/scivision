@@ -86,7 +86,7 @@ plt.imshow(test_image)`}
         </samp>
         <h5>Run the model</h5>
         <pre>
-          <code className="language-python">resnet.predict(test_image)</code>
+          <code className="language-python">resnet18.predict(test_image)</code>
         </pre>
         <p>
           Output: <samp>'koala : 99.80%' </samp>
@@ -98,7 +98,7 @@ plt.imshow(test_image)`}
             {`from scivision import default_catalog
 
 # The datasource catalog as a Pandas dataframe
-default_catalog.data.to_dataframe()
+default_catalog.datasources.to_dataframe()
 
 # Similarly for the model catalog
 default_catalog.models.to_dataframe()`}
