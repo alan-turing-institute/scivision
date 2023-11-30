@@ -96,7 +96,7 @@ plt.imshow(test_image)
 ### Run a Scivision model
 
 ```python
-resnet.predict(test_image)
+resnet18.predict(test_image)
 ```
 
 Output: `koala : 99.78%`
@@ -107,7 +107,7 @@ Output: `koala : 99.78%`
 from scivision import default_catalog
 
 # The datasource catalog as a Pandas dataframe
-default_catalog.data.to_dataframe()
+default_catalog.datasources.to_dataframe()
 
 # Similarly for the model catalog
 default_catalog.models.to_dataframe()
