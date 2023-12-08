@@ -19,7 +19,9 @@ export default function ScivisionPy() {
         </p>
         <p>
           The full documentation is{" "}
-          <a href="https://scivision.readthedocs.io/en/latest/">here</a>.
+          <a href="https://scivision.readthedocs.io/en/latest/">here</a>, 
+          and the github repo can be found{" "} 
+          <a href="https://github.com/alan-turing-institute/scivision">here</a>.
         </p>
       </Container>
       <h4>Quick Start</h4>

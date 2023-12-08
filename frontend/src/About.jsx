@@ -30,7 +30,9 @@ export default function About() {
             </li>
             <li>
               A <strong>software ecosystem</strong> of interoperable tools and
-              utilities for working with computer vision models and data
+              utilities for working with computer vision models and data including{" "} 
+              <a href="#scivisionpy">Scivision.Py</a> and{" "} 
+              <a href="https://github.com/alan-turing-institute/pixelflow">Pixelflow</a>
             </li>
           </ul>
         </p>
@@ -47,7 +49,8 @@ export default function About() {
           ></iframe>
         </p>
 
-        <p>The Scivision Project is funded by the Alan Turing Institute.</p>
+        <p>The Scivision Project is funded by{" "} 
+        <a href="https://www.turing.ac.uk/">The Alan Turing Institute</a>.</p>
       </Container>
     </>
   );
