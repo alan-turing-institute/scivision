@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/alan-turing-institute/scivision/main/imgs/logo_name.png" width="500"/>
 </h1>
 
-[![Continuous integration status badge](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg)](ttps://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml)
+[![Continuous integration status badge](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml/badge.svg)](https://github.com/alan-turing-institute/scivision/actions/workflows/scivision.yml)
 [![Documentation status badge](https://readthedocs.org/projects/scivision/badge/?version=latest)](https://scivision.readthedocs.io/en/latest/?badge=latest)
 [![PyPI badge](https://img.shields.io/pypi/v/scivision)](https://pypi.org/project/scivision/)
 [![All Contributors](https://img.shields.io/github/all-contributors/alan-turing-institute/scivision?color=ee8449)](#contributors)
