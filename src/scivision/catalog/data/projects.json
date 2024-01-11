@@ -1,0 +1,135 @@
+{
+  "catalog_type": "scivision project catalog",
+  "name": "default",
+  "entries": [
+    {
+      "name": "sept22-connections-workshop",
+      "header": "Turing Connections Workshop",
+      "description": "Classification challenge for datasets of Flower and Butterfly images from Kaggle",
+      "page": "PhD candidates attended a workshop hosted by The Alan Turing Institute's Research Engineering Group (REG) to get some hands-on experience working on scivision as a piece of research software. The task involved adding pre-trained models and datasources to the scivision catalog. Succesful submissions include two classification models, for flowers and butterflies, and related datasets.\n#### Notebooks:\n- [Butterflies](https://github.com/scivision-gallery/connections-workshop-examples/blob/main/ButterflyClassification.ipynb)\n- [Flowers](https://github.com/scivision-gallery/connections-workshop-examples/blob/main/FlowerClassification.ipynb)\n\nTo learn more about the REG at Turing, click [here](https://www.turing.ac.uk/research/research-engineering)",
+      "tasks": [
+        "classification"
+      ],
+      "models": [
+        "butterfly-classification-model",
+        "flower-classification-model"
+      ],
+      "datasources": [
+        "flowers",
+        "butterflies"
+      ],
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "tutorial",
+        "butterflies",
+        "flowers"
+      ]
+    },
+    {
+      "models": [
+        "resnet50-plankton"
+      ],
+      "datasources": [
+        "cefas-plankton"
+      ],
+      "tasks": [
+        "classification"
+      ],
+      "institution": [
+        "The Alan Turing Institute",
+        "CEFAS",
+        "Plankton Analytics Ltd"
+      ],
+      "tags": [
+        "plankton",
+        "DSG"
+      ],
+      "page": "Plankton plays an essential role in the global carbon cycle and carbon sequestration, regulating the exchange of carbon dioxide between the atmosphere, surface ocean and ultimately the seabed. Plankton is also used in global monitoring efforts providing reliable and sensitive indicators to climate change and ecosystem health.\n\nAs part of a Data Study Group (DSG) challenge organised between the Alan Turing Institute, the Centre for Environment, Fisheries and Aquaculture Science (CEFAS) and Plankton Analytics Ltd (see [here](https://www.turing.ac.uk/events/data-study-group-november-2021)), the participants contributed in the use of pretrained Convolutional Neural Networks (CNNs) with a ResNet-50 architecture to improve the accuracy of plankton classification at finer taxonomic levels compared to a baseline Random Forest (see the full report [here](https://www.turing.ac.uk/research/publications/data-study-group-final-report-centre-environment-fisheries-and-aquaculture)).\n\n## Example notebook\n\nThere is a worked example of the Plankton Classification model in action available at [the Scivision Gallery](https://github.com/scivision-gallery/plankton-classification).\n\nIn this notebook, we demonstrate how scivision facilitates the discovery of one of the trained ResNet-50 CEFAS DSG models for classifying plankton images into three classes: copepod, non-copepod and detritus. We pair the model with one of the matched data sources from the scivision data catalog, in this case a relatively small sample of images (n=26) extracted from the full test set (N=5863) used during the DSG challenge.",
+      "name": "cefas-plankton-dsg",
+      "header": "Rapid Plankton Identification Data Study Group",
+      "description": "Plankton classification challenge hosted at The Alan Turing Institute"
+    },
+    {
+      "models": [
+        "mapreader-plant"
+      ],
+      "datasources": [
+        "oppd-seedlings"
+      ],
+      "tasks": [
+        "classification",
+        "object-detection",
+        "segmentation"
+      ],
+      "institution": [
+        "The Alan Turing Institute",
+        "John Innes Centre",
+        "Rothamsted Research",
+        "University of Exeter",
+        "National Plant Phenomics Centre "
+      ],
+      "tags": [
+        "plant biology",
+        "2D data",
+        "3D data",
+        "phenotyping",
+        "unsupervised "
+      ],
+      "name": "mapreader-plant-phenotyping",
+      "header": "Patch Classification of Whole Plant Images with MapReader",
+      "description": "Patch classification of different plant structures (i.e. flowers, leaves) in 2D images of whole plants",
+      "page": "Automated plant phenotyping is a Turing-led work package under the [Impact of Climate Change on UK Agriculture and Food Security Project](https://www.turing.ac.uk/research/research-projects/impact-climate-change-agriculture)\n\n## Example Notebook\nLink: [Plant Phenotyping Classfication on Scivision Gallery](https://github.com/scivision-gallery/plant-phenotyping-classification)\nDescription: Notebook demonstrating inference with 3 class (flower, green plant structures, background) model for patch classification of 2D images of whole *Brassica napus* (oilseed rape) plants\n"
+    },
+    {
+      "models": [
+        "vedge-detector"
+      ],
+      "datasources": [
+        "coastal-edges"
+      ],
+      "tasks": [
+        "classification"
+      ],
+      "institution": [
+        "Cambridge University",
+        "Birkbeck, University of London"
+      ],
+      "tags": [
+        "satellite imagery",
+        "binary classification",
+        "ecology"
+      ],
+      "name": "coastalveg-edge-detection",
+      "header": "Coastal Vegetation Edge Detection",
+      "description": "Edge detection of coastal vegetation from RGB satellite imagery",
+      "page": "Recent advances in satellite imagery availability and spatial resolution are providing new opportunities for the rapid, cost-effective detection of a shoreline’s location and dynamics. [Rogers et al. (2021)](https://www.tandfonline.com/doi/abs/10.1080/01431161.2021.1897185?journalCode=tres20) advance in coastal vegetation monitoring by developing `VEdge_detector`, a tool to extract the coastal vegetation line from remote-sensing imagery, training a very deep convolutional neural network (holistically nested edge detection), to predict sequential vegetation line locations on annual to decadal timescales. The `VEdge_Detector` model was trained using Planet 3 – 5 m spatial resolution imagery. It has also detected vegetation edges in Landsat and Copernicus Sentinel imagery, although performance is not guaranteed. The tool cannot detect the vegetation edge in aerial imagery.\n\n# Example notebook\nThere is a worked example of the VEdge_Detector model in action available at the [Scivision Gallery](https://github.com/scivision-gallery/coastalveg-edge-detection).\n\nIn this notebook, we demonstrate how scivision facilitates the discovery of the VEdge_detector model for differentiating between the coastal vegetation edge and other boundaries in remote sensing images. We pair the model with one of the matched data sources from the scivision data catalog, in this case some sample of satellite images (n=3) from different geographical areas (Suffolk, United Kingdom; Wilk auf Föhr, Germany; Varela, Guinea Bissau) provided within the VEdge model repository."
+
+    },
+    {
+      "models": [
+        "detectreeRGB-forest"
+      ],
+      "datasources": [
+        "treecrowns"
+      ],
+      "tasks": [
+        "segmentation",
+        "object-detection"
+      ],
+      "institution": [
+        "Cambridge University"
+      ],
+      "tags": [
+        "treecrown",
+        "semantic segmentation",
+        "tropics"
+      ],
+      "description": "Delineation of tree crown trees using a semantic segmentation deep learning model",
+      "header": "Tree Crown Detection using detectreeRGB",
+      "name": "treecrown-detectreeRGB",
+      "page": "The delineation of individual trees in remote sensing images is an key task in forest analysis. As part of Sebastian Hickman's AI4ER MRes project, titled 'Detecting changes in tall tree height with machine learning, LiDAR, and RGB imagery', the authors propose the detectreeRGB model, an implementation of Mask R-CNN from [Detectron2](https://github.com/facebookresearch/detectron2) to perform tree crown delineation from RGB imagery.\n\nFurther details of the detectreeRGB model can be found in the [original source code repository](https://github.com/shmh40/detectreeRGB/).\n\n## Example notebook\nThere is a worked example of the detectreeRGB model in action available at the [Scivision Gallery](https://github.com/scivision-gallery/tree-crown-detection).\n\nIn this notebook, we demonstrate how scivision can assist in discovering a pretrained detectreeRGB model provided by Hickman et al (2021), and then use it to delineate crowns from a sample drone RGB image dataset."
+    }
+  ]
+}

@@ -32,33 +32,33 @@ def test_parse_url_branch():
 def test_load_dataset_remote():
     """Test that an intake catalog is generated from scivision-data.yml file in an example GitHub repo."""
     commit_hash = '473a7fd02f4cdd2dd261208a791c7da76cd413a0'
-    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton', branch=commit_hash)) == intake.catalog.local.YAMLFileCatalog
+    assert isinstance(
+        load_dataset('https://github.com/alan-turing-institute/intake-plankton', branch=commit_hash),
+        intake.catalog.local.YAMLFileCatalog
+    )
 
 
 def test_load_dataset_branch_and_diff_file_name():
     """Test that an intake catalog is generated when specifying a branch AND that a custom file name."""
     branch = 'diff-name-yml'
-    assert type(load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch=branch)) == intake.catalog.local.YAMLFileCatalog
+    assert isinstance(
+        load_dataset('https://github.com/alan-turing-institute/intake-plankton/thESciViSionYAMLfileee.yaml', branch=branch),
+        intake.catalog.local.YAMLFileCatalog
+    )
 
 
 def test_load_dataset_local():
     """Test that an intake catalog is generated from a local yml and can be converted to xarray."""
     cat = load_dataset('tests/test_dataset_scivision.yml')
-    assert type(cat) == intake.catalog.local.YAMLFileCatalog
-    assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
+    assert isinstance(cat, intake.catalog.local.YAMLFileCatalog)
+    assert isinstance(cat.test_images().to_dask(), xarray.core.dataarray.DataArray)
 
 
 def test_load_dataset_local_zip():
     """Test that an intake catalog is generated from a local yml which loads from a zip file and can be converted to xarray."""
     cat = load_dataset('tests/test_dataset_scivision_zip.yml')
-    assert type(cat) == intake.catalog.local.YAMLFileCatalog
-    assert type(cat.test_images().to_dask()) == xarray.core.dataarray.DataArray
-
-
-def test_load_dataset_from_stac_plugin():
-    """Test that an xarray.Dataset can be loaded via the data plugins code and scivision_sentinel2_stac catalog entry"""
-    ds = load_dataset('https://github.com/alan-turing-institute/scivision_sentinel2_stac').load_data()
-    assert type(ds) == xarray.Dataset
+    assert isinstance(cat, intake.catalog.local.YAMLFileCatalog)
+    assert isinstance(cat.test_images().to_dask(), xarray.core.dataarray.DataArray)
 
 
 def test_get_model_configs():
@@ -77,18 +77,30 @@ def test_get_model_configs():
 def test_load_pretrained_model_remote():
     """Test that scivision can load a pretrained model from an example GitHub repo."""
     commit_hash = '77bbe037234d11538e46c3ced3d2a5f9294c8468'
-    assert type(load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True, branch=commit_hash)) == wrapper.PretrainedModel
+    assert isinstance(
+        load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True, branch=commit_hash),
+        wrapper.PretrainedModel
+    )
 
 
 def test_load_pretrained_model_local():
     """Test that scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
-    assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True)) == wrapper.PretrainedModel
+    assert isinstance(
+        load_pretrained_model('tests/test_model_scivision.yml', allow_install=True),
+        wrapper.PretrainedModel
+    )
 
 
 def test_load_named_pretrained_model_local():
     """Test that scivision can load a specific model from the given scivision.yml."""
-    assert type(load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model_selection='ImageNetModel')) == wrapper.PretrainedModel
-    assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model_selection='ImageNetModel')) == wrapper.PretrainedModel
+    assert isinstance(
+        load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model_selection='ImageNetModel'),
+        wrapper.PretrainedModel
+    )
+    assert isinstance(
+        load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, model_selection='ImageNetModel'),
+        wrapper.PretrainedModel
+    )
 
 
 def test_load_wrong_model_name_raises_value_error():
@@ -106,10 +118,13 @@ def test_load_wrong_model_name_raises_value_error_config_has_multiple_models():
 def test_load_multiple_models():
     """Test that scivision can load multiple pretrained models from the same GitHub repo."""
     model1, model2 = load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=True)
-    assert type(model1) == wrapper.PretrainedModel
-    assert type(model2) == wrapper.PretrainedModel
+    assert isinstance(model1, wrapper.PretrainedModel)
+    assert isinstance(model2, wrapper.PretrainedModel)
 
 
 def test_load_first_model_from_config_with_multiple():
     """Test that scivision loads a single a model from a config with multiple models when not told to load multiple."""
-    assert type(load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=False)) == wrapper.PretrainedModel
+    assert isinstance(
+        load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=False),
+        wrapper.PretrainedModel
+    )

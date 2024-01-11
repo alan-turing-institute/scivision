@@ -1,0 +1,378 @@
+{
+  "catalog_type": "scivision datasource catalog",
+  "name": "default",
+  "entries": [
+    {
+      "name": "stardist-cell-nuclei-2D",
+      "description": "Cell microscopy test dataset for detection and segmentation of individual nuclei",
+      "tasks": [
+        "object-detection",
+        "segmentation"
+      ],
+      "domains": [
+        "optical-microscopy"
+      ],
+      "url": "https://github.com/stardist/stardist/releases/download/0.3.0/demo3D.zip",
+      "labels_provided": true,
+      "institution": [
+        "epfl"
+      ],
+      "tags": [
+        "help-needed",
+        "3D",
+        "cell",
+        "cell-counting",
+        "biology",
+        "biomedical-science"
+      ]
+    },
+    {
+      "name": "oppd-seedlings",
+      "description": "The Open Plant Phenotyping Database [OPPD] is a public dataset for visual recognition tasks on images of plant seedlings. The dataset consists of 7,590 images with 315,038 plant objects, representing 64,292 individual plants from 47 different species. Each plant species has been cultivated using three growth conditions (ideal, drought and natural) and tracked temporally to achieve high intra-species variability.",
+      "tasks": [
+        "segmentation",
+        "thresholding",
+        "object-detection"
+      ],
+      "domains": [
+        "multispectral",
+        "hyperspectral"
+      ],
+      "url": "https://github.com/alan-turing-institute/oppd-seedlings",
+      "labels_provided": true,
+      "institution": [
+        "Aarhus University"
+      ],
+      "tags": [
+        "help-needed",
+        "2D",
+        "plant-phenotyping",
+        "agriculture",
+        "climate-change-and-agriculture"
+      ]
+    },
+    {
+      "name": "scivision-test-data",
+      "description": "Test data comprised of individual images including a Koala (suitable for classification), a busy airport (suitable for object detection), and an image containing a Dog and a Cat (suitable for segmentation).",
+      "tasks": [
+        "object-detection",
+        "classification",
+        "segmentation"
+      ],
+      "domains": [
+        "computer-vision"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision-test-data",
+      "labels_provided": true,
+      "institution": [
+        "Wikipedia by Erik Veland"
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "name": "cefas-plankton",
+      "description": "Sample dataset of Plankton required to demonstrate the Rapid Identification of Plankton using Machine Learning Project undertaken by CEFAS, The Alan Turing Institute and Plankton Analytics Ltd",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision"
+      ],
+      "url": "https://raw.githubusercontent.com/alan-turing-institute/plankton-cefas-scivision/test_data_catalog/scivision.yml",
+      "labels_provided": true,
+      "institution": [
+        "Centre for Environment, Fisheries and Aquaculture Science (CEFAS)"
+      ],
+      "tags": [
+        "2D",
+        "plankton",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "coastal-edges",
+      "description": "Sample dataset of satellite RGB imagery over two coastal locations bribie_island (RapidEye) and winterton (Planet) used to test the VEdge_Detector model described in Rogers et al (2021)",
+      "tasks": [
+        "classification",
+        "segmentation"
+      ],
+      "domains": [
+        "computer-vision",
+        "earth-observation",
+        "ecology"
+      ],
+      "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision",
+      "labels_provided": false,
+      "institution": [
+        "Cambridge University"
+      ],
+      "tags": [
+        "2D",
+        "satellite",
+        "remote-sensing",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "treecrowns",
+      "description": "Sample dataset of drone RGB imagery over Sepilok Forest Reserve, in Sabah, Malaysia, collected and processed by NERC and NEODAAS as part of Sebastian Hickman’s (2021) AI4ER MRes Project, Cambridge University",
+      "tasks": [
+        "object-detection",
+        "segmentation"
+      ],
+      "domains": [
+        "computer-vision",
+        "earth-observation",
+        "ecology"
+      ],
+      "url": "https://github.com/shmh40/detectreeRGB-treecrown-scivision",
+      "labels_provided": false,
+      "institution": [
+        "Cambridge University"
+      ],
+      "tags": [
+        "2D",
+        "drone",
+        "satellite",
+        "aerial",
+        "remote-sensing",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "sentinel2_stac",
+      "description": "Data plugin for accessing Sentinel-2 Cloud-Optimized GeoTIFFs via scivision. The Sentinel-2 mission is a land monitoring constellation of two satellites that provide high resolution optical imagery and provide continuity for the current SPOT and Landsat missions. The mission provides a global coverage of the Earth's land surface every 5 days, making the data of great use in ongoing studies. This dataset is the same as the Sentinel-2 dataset, except the JP2K files were converted into Cloud-Optimized GeoTIFFs (COGs). Additionally, SpatioTemporal Asset Catalog metadata has were in a JSON file alongside the data, and a STAC API called Earth-search is freely available to search the archive. This dataset contains all of the scenes in the original Sentinel-2 Public Dataset and will grow as that does. L2A data are available from April 2017 over wider Europe region and globally since December 2018.",
+      "tasks": [
+        "classification",
+        "segmentation"
+      ],
+      "domains": [
+        "computer-vision",
+        "earth-observation",
+        "ecology"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision_sentinel2_stac",
+      "labels_provided": false,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "satellite",
+        "aerial",
+        "remote-sensing",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "flowers",
+      "description": "The 102 flowers dataset, created by Visual Geometry Group, by Maria-Elena Nilsback and Andrew Zisserman. 8000 images of flowers, plus labels indicating their species",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision",
+        "ecology"
+      ],
+      "url": "https://github.com/nbarlowATI/flowers_data_repo",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "butterflies",
+      "description": "The Butterfly Image Classification Kaggle challenge, created by Gerald Piosenka.",
+      "tasks": [
+        "classification"
+      ],
+      "domains": [
+        "computer-vision",
+        "ecology"
+      ],
+      "url": "https://github.com/nbarlowATI/butterfly_data_repo",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "butterflies",
+        "insects",
+        "animals",
+        "ecology"
+      ]
+    },
+    {
+      "tasks": [
+        "classification",
+        "object-detection",
+        "segmentation",
+        "thresholding"
+      ],
+      "labels_provided": false,
+      "institution": [
+        "Rosalind Franklin Institute"
+      ],
+      "tags": [
+        "CryoEM"
+      ],
+      "name": "Parakeet",
+      "description": "Synthetic cryoEM data from Parakeet",
+      "url": "https://github.com/rosalindfranklininstitute/scivision-parakeet-datasource/"
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "optical microscopy",
+        "cell biology"
+      ],
+      "institution": [
+        "UCL"
+      ],
+      "tags": [],
+      "url": "https://github.com/lowe-lab-ucl/cell-cycle-scivision",
+      "name": "cell-cycle-scivision",
+      "description": "Crops of H2B-FP stained nuclei in MDCK cells. "
+    },
+    {
+      "tasks": [
+        "segmentation"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "fluorescent microscopy"
+      ],
+      "institution": [
+        "Broad Institute"
+      ],
+      "tags": [
+        "fluorescence microscopy ",
+        "bioimaging"
+      ],
+      "name": "Phenotypic Profiling",
+      "description": "Plate 20585 - Phenotypic profiling attempts to summarize multiparametric, feature-based analysis of cellular phenotypes of each sample so that similarities between profiles reflect similarities between samples. This image set provides a basis for testing image-based profiling methods wrt. to their ability to distinguish the effects of small molecules. Images The images are of U2OS cells treated with each of 1600 known bioactive compounds and labeled with six labels that characterize seven organelles (the .cell-painting. assay). This pilot experiment consists of 20 plates 5 of which are available. Each plate has 384 wells and each well has 9 fields of view for a total of 17,280 fields of view. Each field was imaged in five channels (detection wavelengths), and each channel is stored as a separate, grayscale image file, so there are 86,400 image files in 16-bit TIFF format.",
+      "url": "https://github.com/Tonks684/phenotypic_profiling/blob/main/data.yml"
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "history",
+        "urban-planning"
+      ],
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "2D",
+        "humanities"
+      ],
+      "name": "MapReader_Data_SIGSPATIAL_2022",
+      "description": "Here we share gold standard annotations and outputs from early experiments using MapReader. MapReader creates datasets for humanities research using historical map scans and metadata as inputs.  Using maps provided by the National Library of Scotland, these annotations and outputs reflect labeling tasks relevant to historical research on the Living with Machines project.  Data shared here is derived from maps printed in nineteenth-century Britain by the Ordnance Survey, Britain's state mapping agency. These maps cover England, Wales, and Scotland from 1888 to 1913.",
+      "url": "https://github.com/alan-turing-institute/mapreader-scivision"
+    },
+    {
+      "tasks": [
+        "segmentation",
+        "object-detection"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "plant-biology",
+        "biology",
+        "agriculture",
+        "multispectral"
+      ],
+      "institution": [
+        "Aberystwyth University",
+        "National Plant Phenomics Centre"
+      ],
+      "tags": [
+        "plant-phenotyping",
+        "2D",
+        "agriculture",
+        "climate-change-and-agriculture"
+      ],
+      "name": "NPPC_B_napus",
+      "description": "Top and side view RGB png images as analysed for 'Integrated Phenomics and Genomics reveals genetic loci associated with inflorescence growth in Brassica napus'. Image collection details and examples of analysis are provided in the body and appendices of the paper. The images were collected over a six week period, usually on a daily basis. 71 genotypes, two treatments, three replicates; total 426 plants. 1×top view image, 3×side view images (000, 045 & 090° rotations).(Credit: Kevin Williams, Jo Hepworth & John Doonan. Aberystwyth University Research Archive. https://doi.org/10.20391/35c7b57c-09a4-43e5-a7d7-89fb4f420be0)",
+      "url": "https://raw.githubusercontent.com/alan-turing-institute/nppc-bnapus-data/main/.scivision/data.yml"
+    },
+    {
+      "tasks": [
+        "segmentation",
+        "other"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "computer-vision",
+        "entomology"
+      ],
+      "institution": [
+        "Natural History Museum"
+      ],
+      "tags": [
+        "museum-collections",
+        "ocr",
+        "pinned-insects",
+        "2D"
+      ],
+      "name": "NHM-pinned-insects",
+      "description": "Sample of images of pinned insects and corresponding label masks from the Natural History Museum London's collection for the ALICE project: https://doi.org/10.31219/osf.io/s2p73",
+      "url": "https://raw.githubusercontent.com/LittleAri/Pinned_Insect_Labels/main/.scivision/data.yml"
+    },
+    {
+      "tasks": [
+        "other"
+      ],
+      "labels_provided": false,
+      "domains": [
+        "ecology",
+        "computer-vision"
+      ],
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "debugging",
+        "demo"
+      ],
+      "name": "debug-zenodo",
+      "description": "dataset for debugging loading of non flat zip file data from zenodo",
+      "url": "https://raw.githubusercontent.com/evangeline-corcoran/scivision-zenodo-debug/main/.scivision/data.yml"
+    },
+    {
+      "name": "fathomnet23",
+      "description": "Species detection and classification for under water ",
+      "tasks": [
+        "object-detection",
+        "classification"
+      ],
+      "domains": [
+        "marine-biology"
+      ],
+      "url": "https://github.com/asthanameghna/FathomNet23/blob/main/scivision/data.yaml",
+      "labels_provided": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "marine-biology",
+        "species-classification"
+      ]
+    }
+  ]
+}

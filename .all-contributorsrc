@@ -205,7 +205,7 @@
       "contributions": [
         "example",
         "talk"
-        ]
+      ]
     },
     {
       "login": "Erioldoesdesign",
@@ -216,6 +216,53 @@
         "ideas",
         "design"
       ]
+    },
+    {
+      "login": "vimode",
+      "name": "vimode",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39148877?v=4",
+      "profile": "https://github.com/vimode",
+      "contributions": [
+        "ideas",
+        "design",
+        "code",
+        "a11y"
+      ]
+    },
+    {
+      "login": "IFenton",
+      "name": "Isabel Fenton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5773962?v=4",
+      "profile": "https://github.com/IFenton",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    },
+    {
+      "login": "Tonks684",
+      "name": "Samuel Tonks",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60216815?v=4",
+      "profile": "https://github.com/Tonks684",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "infra"
+      ]
+    },
+    {
+      "login": "louisavz",
+      "name": "louisavz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63079440?v=4",
+      "profile": "https://github.com/louisavz",
+      "contributions": [
+        "ideas",
+        "promotion",
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -225,5 +272,6 @@
   "repoHost": "https://github.com",
   "skipCi": false,
   "contributorsSortAlphabetically": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }

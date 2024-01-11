@@ -1,61 +1,75 @@
 h3 {
-    font-family: monospace;
+  font-family: monospace;
+  margin-bottom: 1.2ex;
 }
 
 h4 {
-    color: #6c757d;
-    font-weight: 200;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    margin-top: 2.5ex;
-    margin-bottom: 1.5ex;
+  color: #6c757d;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-top: 2.5ex;
+  margin-bottom: 1.5ex;
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 100%;
+  margin-top: 2ex;
+  martin-bottom: 1ex;
+}
+
+.brandLogo {
+  width: 100%;
+  max-width: 40%;
+  min-width: 250px;
+}
+
+img.halfsize_thumbnails {
+  width: 128px;
+}
+
+div.gridtext {
+  height: 15ex;
 }
 
 .login-bar {
-    font-size: x-small;
-    background-color: Lavender;
-    font-weight: bold;
-    line-height: 1.0;
-}
-
-.text-readable-width {
-    max-width: 76ex;
-
-    /* centre horizontally */
-    margin: 0 auto;
+  font-size: small;
+  background-color: Lavender;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .bg-highlight {
-    background-color: #fff8e6;
+  background-color: Lavender;
 }
 
-.card-columns {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-
-    column-count: 1;
+.tooltip-available {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
 }
-@media (min-width: 768px) {
-    .card-columns {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
 
-        column-count: 2;
-    }
+.text-block {
+  max-width: 62ch;
 }
-@media (min-width: 992px) {
-    .card-columns {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
 
-        column-count: 3;
-    }
+.wide-block {
+  max-width: 72ch;
 }
-@media (min-width: 1200px) {
-    .card-columns {
-        -webkit-column-count: 4;
-        -moz-column-count: 4;
 
-        column-count: 4;
-    }
+.app {
+  margin-bottom: 4ex;
+}
+
+ul.list-spaced li {
+  padding: 6px 0px;
+}
+
+ul ul li {
+  font-size: small;
+}
+
+.form-section {
+  margin-top: 30pt;
+  margin-bottom: 30pt;
 }

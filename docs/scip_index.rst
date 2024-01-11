@@ -24,7 +24,7 @@ Status: Raw/draft
 
    scip/0001-model-dependencies
    scip/0002-tasks
-
+   scip/0003-roadmap.md
 
 Status: Stable/deprecated
 -------------------------

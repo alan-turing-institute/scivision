@@ -21,7 +21,9 @@ class TestPandasCatalogInit:
         expected
         """
         cat = PandasCatalog(
-            "tests/test_datasource_catalog.json", "tests/test_model_catalog.json"
+            datasources="tests/test_datasource_catalog.json",
+            models="tests/test_model_catalog.json",
+            projects="tests/test_project_catalog.json",
         )
 
         models = cat.models.to_dataframe()
@@ -40,6 +42,7 @@ class TestPandasCatalogInit:
             PandasCatalog(
                 datasources="tests/test_datasource_catalog_bad.json",
                 models="tests/test_model_catalog.json",
+                projects="tests/test_project_catalog.json",
             )
 
     def test_init_entry(self):
@@ -53,8 +56,13 @@ class TestPandasCatalogInit:
         models = scivision.catalog.CatalogModels.parse_raw(
             Path("tests/test_model_catalog.json").read_text()
         )
+
+        projects = scivision.catalog.CatalogProjects.parse_raw(
+            Path("tests/test_project_catalog.json").read_text()
+        )
+
         # Then used to initialize the catalog
-        cat = PandasCatalog(datasources, models)
+        cat = PandasCatalog(datasources, models, projects)
 
         models = cat.models.to_dataframe()
         datasources = cat.datasources.to_dataframe()
@@ -74,6 +82,7 @@ class TestCompatible:
         return PandasCatalog(
             datasources="tests/test_datasource_catalog.json",
             models="tests/test_model_catalog.json",
+            projects="tests/test_project_catalog.json",
         )
 
     def test_compatible_models_named(self, cat):
@@ -86,30 +95,35 @@ class TestCompatible:
 
     def test_compatible_models_dict(self, cat):
         compat = cat.compatible_models(
-            {"labels_provided": False, "tasks": ["object-detection"], "format": "image"}
+            {"tasks": ["segmentation"]}
         ).to_dataframe()
         assert len(compat) == 1 and compat["name"].item() == "example-model-2"
 
     def test_compatible_datasources_dict(self, cat):
         compat = cat.compatible_datasources(
-            {"labels_required": False, "tasks": ["object-detection"], "format": "image"}
+            {"tasks": ["segmentation"]}
         ).to_dataframe()
-        assert len(compat) == 1 and compat["name"].item() == "example-datasource-1"
+        assert len(compat) == 1 and compat["name"].item() == "example-datasource-2"
 
 
 def test_query_to_catalog_entry():
     """Check that a pair of CatalogModels/CatalogDatasources can be
     converted to a PandasCatalog and back
     """
-
     datasources_cat_expected = scivision.catalog.CatalogDatasources.parse_raw(
         Path("tests/test_datasource_catalog.json").read_text()
     )
     models_cat_expected = scivision.catalog.CatalogModels.parse_raw(
         Path("tests/test_model_catalog.json").read_text()
     )
-    cat = PandasCatalog(datasources_cat_expected, models_cat_expected)
-
+    projects_cat_expected = scivision.catalog.CatalogProjects.parse_raw(
+        Path("tests/test_project_catalog.json").read_text()
+    )
+    cat = PandasCatalog(
+        datasources=datasources_cat_expected,
+        models=models_cat_expected,
+        projects=projects_cat_expected,
+    )
     models_cat_actual = CatalogModels(
         entries=cat.models.to_dict(),
         catalog_type=models_cat_expected.catalog_type,
