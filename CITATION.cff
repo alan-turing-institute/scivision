@@ -56,6 +56,9 @@ authors:
 - family-names: Fox
   given-names: Eriol
   orcid: https://orcid.org/0000-0000-0000-0000
+- given-names: Isabel S.
+  family-names: Fenton
+  orcid: https://orcid.org/0000-0001-7174-0725
 cff-version: 1.2.0
 message: If you use this software, please cite it using the metadata from this file.
 title: scivision
