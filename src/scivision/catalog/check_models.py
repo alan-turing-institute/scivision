@@ -38,7 +38,7 @@ def check_models():
     rows = {}
     for model in tqdm(model_catalog.itertuples()):
         name = model.name
-        yml_path = model.yml_path
+        yml_path = model.url
         print(f'\nValidating: {name}')
         try:
             model_loaded = load_pretrained_model(yml_path)
