@@ -56,3 +56,4 @@ cloud_extra = ["scivision[gcs,s3]"]
 [project.scripts]
 scivision-catalog-json-schema = "scivision.catalog.gen_json_schema:entry_point"
 scivision-check-datasets = "scivision.catalog.check_datasets:entry_point"
+scivision-check-models = "scivision.catalog.check_models:entry_point"
