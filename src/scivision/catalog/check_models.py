@@ -41,7 +41,7 @@ def check_models():
         yml_path = model.url
         print(f'\nValidating: {name}')
         try:
-            model_loaded = load_pretrained_model(yml_path)
+            model_loaded = load_pretrained_model(yml_path,allow_install=True)
             yml_result = "Pass"
             response = None
         except Exception as e:
