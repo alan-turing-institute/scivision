@@ -67,13 +67,13 @@ def check_models():
 
 
 
-    def entry_point():
-    """This is the entry point for the 'scivision-check-models'
-    command.
-    """
-    automated_checks_report_json = check_models()
+def entry_point():
+"""This is the entry point for the 'scivision-check-models'
+command.
+"""
+automated_checks_report_json = check_models()
 
-    with open('check_models.js', 'w') as f:
-        print('// This file was generated automatically by check_models.py', file=f)
-        # print(f'var global_CheckDatasetReport = {automated_checks_report_json};', file=f)
-        # ^^^ requires changes to ModelTable.jsx similar to DataTable.jsx
+with open('check_models.js', 'w') as f:
+    print('// This file was generated automatically by check_models.py', file=f)
+    # print(f'var global_CheckDatasetReport = {automated_checks_report_json};', file=f)
+    # ^^^ requires changes to ModelTable.jsx similar to DataTable.jsx
