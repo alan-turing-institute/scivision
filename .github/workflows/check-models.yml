@@ -1,7 +1,8 @@
 name: Check models
 on:
-  schedule:
-    - cron:  '18 3 * * *' #every day at 3.18am  * everyday * every month * every year
+  push
+  # schedule:
+  #   - cron:  '18 3 * * *' #every day at 3.18am  * everyday * every month * every year
   
 jobs:
   check-models:
@@ -9,7 +10,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
