@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.364f6c60.css",
-    "main.js": "/static/js/main.cf65b858.js",
+    "main.js": "/static/js/main.57072eaa.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
@@ -23,6 +23,7 @@
     "static/media/image-classifiers.jpg": "/static/media/image-classifiers.e447edb1b6a36c9f6cac.jpg",
     "static/media/cell-cycle-scivision.jpg": "/static/media/cell-cycle-scivision.788b5cb210888f4329be.jpg",
     "static/media/greenotyper.jpg": "/static/media/greenotyper.3c1b9bec6de1b1bff5e4.jpg",
+    "static/media/seapens-detection.jpg": "/static/media/seapens-detection.f32c85d7da1f136c7d34.jpg",
     "static/media/treecrowns.jpg": "/static/media/treecrowns.267018cff40ded02fb28.jpg",
     "static/media/butterflies.jpg": "/static/media/butterflies.18212b75ef90917cf631.jpg",
     "static/media/flowers.jpg": "/static/media/flowers.5c738b9c1cb0c46508a2.jpg",
@@ -38,11 +39,11 @@
     "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.52a0e5378dc6224dd7d9.jpg",
     "index.html": "/index.html",
     "main.364f6c60.css.map": "/static/css/main.364f6c60.css.map",
-    "main.cf65b858.js.map": "/static/js/main.cf65b858.js.map",
+    "main.57072eaa.js.map": "/static/js/main.57072eaa.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.364f6c60.css",
-    "static/js/main.cf65b858.js"
+    "static/js/main.57072eaa.js"
   ]
 }
