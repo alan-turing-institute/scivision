@@ -320,6 +320,15 @@
       "pkg_url": "stardist_seed_pod",
       "url": "https://raw.githubusercontent.com/alan-turing-institute/stardist-seed-pod/main/.scivision/model.yml",
       "description": "Pre-trained StarDist model for detection and segmentation of plant seeds in 2D or 3D images"
+    },
+    {
+      "tasks": [],
+      "scivision_usable": false,
+      "institution": [],
+      "tags": [],
+      "name": "Foobar Penguins",
+      "pkg_url": "sampleproject",
+      "description": ""
     }
   ]
 }
