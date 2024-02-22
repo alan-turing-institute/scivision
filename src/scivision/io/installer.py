@@ -35,7 +35,7 @@ def _install(package, pip_install_args=None):
             [sys.executable, "-m", "pip", "install", *pip_install_args, package],
             # shell=True
         )
-    except subprocess.CalledProcessorError as e:
+    except subprocess.CalledProcessError as e:
         raise RuntimeError(f'command {e.cmd} return with error code{e.returncode}: {e.output}')
 
 
