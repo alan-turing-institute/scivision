@@ -7,7 +7,7 @@ Iterate through model catalog via scivision.... function and log responses
 
 import logging
 import json
-
+import requests
 from datetime import datetime
 
 from scivision import default_catalog, load_pretrained_model
