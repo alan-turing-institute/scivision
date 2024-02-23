@@ -40,7 +40,7 @@ def check_models():
         name = model.name
         yml_path = model.url
         print(f'\nValidating: {name}')
-        if model.scivision_usable == 'False':
+        if model.scivision_usable == False:
             response = requests.get(model.url)
             row_data = {
             'url': model.url,
