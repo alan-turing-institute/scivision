@@ -33,7 +33,6 @@ def _install(package, pip_install_args=None):
     try:
         subprocess.check_call(
             [sys.executable, "-m", "pip", "install", *pip_install_args, package],
-            shell=True
         )
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f'command {e.cmd} return with error code {e.returncode}: {e.output}')

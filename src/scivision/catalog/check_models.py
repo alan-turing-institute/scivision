@@ -44,10 +44,10 @@ def check_models():
             response = requests.get(model.url)
             row_data = {
             'url': model.url,
-            'yml_result': 'Pass',
-            'yml_response': f'Scivision_usable = False but model url response: {response}',
+            'yml_result': 'Pass' if response.status_code == '200' else 'Fail'
+            'yml_response': f'Scivision_usable = False but model url response: {response.status_code}',
             }
-            print(f'Model is not scivision usable but model url response: {response}')
+            print(f'Model is not scivision usable but model url response: {response.status_code}')
         else:   
             try:
                 if not yml_path.endswith((".yml", ".yaml",)):
