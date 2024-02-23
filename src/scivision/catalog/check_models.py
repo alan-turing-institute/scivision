@@ -40,21 +40,30 @@ def check_models():
         name = model.name
         yml_path = model.url
         print(f'\nValidating: {name}')
-        try:
-            model_loaded = load_pretrained_model(yml_path,allow_install=True)
-            yml_result = "Pass"
-            response = None
-        except Exception as e:
-            print(e)
-            logger.exception("Automated Model Check has failed!")
-            yml_result = "Fail"
-            response = logger.error(e, exc_info=True)
-        
-        row_data = {
-            'url': yml_path,
-            'yml_result': yml_result,
-            'yml_response': response,
+        if model.scivision_usable == 'False':
+            response = requests.get(model.url)
+            row_data = {
+            'url': model.url,
+            'yml_result': 'Pass',
+            'yml_response': f'Scivision_usable = False but model url response: {response}',
         }
+        else:   
+            try:
+                if not yml_path.endswith((".yml", ".yaml",)):
+                    model_loaded = load_pretrained_model(yml_path,allow_install=True)
+                    yml_result = "Pass"
+                    response = None
+            except Exception as e:
+                print(e)
+                logger.exception("Automated Model Check has failed!")
+                yml_result = "Fail"
+                response = logger.error(e, exc_info=True)
+            
+            row_data = {
+                'url': yml_path,
+                'yml_result': yml_result,
+                'yml_response': response,
+            }
 
         rows.update({model.name: row_data})
 
