@@ -46,7 +46,8 @@ def check_models():
             'url': model.url,
             'yml_result': 'Pass',
             'yml_response': f'Scivision_usable = False but model url response: {response}',
-        }
+            }
+            print(f'Model is not scivision usable but model url response: {response}')
         else:   
             try:
                 if not yml_path.endswith((".yml", ".yaml",)):
