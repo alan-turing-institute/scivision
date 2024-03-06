@@ -1,12 +1,10 @@
 cff-version: 1.2.0
 title: scivision
-message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+message: "If you use this software, please cite it using the metadata from this file."
 type: software
 authors:
-  - family-names: Ahnert
-    given-names: Sebastian
+  - given-names: Sebastian
+    family-names: Ahnert
   - given-names: Meghna
     family-names: Asthana
     orcid: 'https://orcid.org/0000-0002-6101-8904'
@@ -31,8 +29,8 @@ authors:
   - given-names: J. Scott
     family-names: Hosking
     orcid: 'https://orcid.org/0000-0002-3646-3504'
-  - family-names: Lowe
-    given-names: Alan R
+  - given-names: Alan R
+    family-names: Lowe
     orcid: 'https://orcid.org/0000-0002-0558-3597'
   - given-names: Oliver
     family-names: Strickson
