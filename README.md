@@ -7,6 +7,7 @@
 [![PyPI badge](https://img.shields.io/pypi/v/scivision)](https://pypi.org/project/scivision/)
 [![All Contributors](https://img.shields.io/github/all-contributors/alan-turing-institute/scivision?color=ee8449)](#contributors)
 [![Licence badge (BSD 3 Clause)](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
+[![DOI](https://zenodo.org/badge/367023884.svg)](https://zenodo.org/doi/10.5281/zenodo.10792860)
 
 If you are new to Scivision, start with the [website](https://sci.vision/).
 
