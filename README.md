@@ -13,29 +13,33 @@ If you are new to Scivision, start with the [website](https://sci.vision/).
 
 The Scivision project is building:
 
-- Some things hosted in [this GitHub repository](https://github.com/alan-turing-institute/scivision):
-  - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid) from the sciences and humanities
-  - A **Python package**, for conveniently downloading and using these models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
-  - **Documentation** for the above ([documentation website](https://scivision.readthedocs.io/en/latest/))
-- A [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets
-- a **community** of computer vision practitioners in the sciences and humanities
-   ([mailing list](https://scivision.substack.com/), [get Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform))
-- A (nascent) **ecosystem of computer vision tools and utilities**
+- A **community** of computer vision practitioners in the sciences and humanities
+   ([get a Slack invitation](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform), [join the mailing list](https://scivision.substack.com/))
+- A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid) from the sciences and humanities
+- A software **ecosystem of interoperable tools** and utilities for working with computer vision models and data, including:
+  - **Scivision.Py**, a Python package for conveniently downloading and using the computer vision models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
+  - **[Pixelflow](https://github.com/alan-turing-institute/pixelflow)**, a tool for extracting information about the characteristics of objects in images
 
-Submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues).
+  Example use cases for these tools can be found in the [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets 
 
-If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for how to set up and submit a new entry.  Pull requests for code changes are also welcome.
-
-The Scivision project is funded by the Alan Turing Institute.
+The Scivision project is funded by [the Alan Turing Institute](https://www.turing.ac.uk/).
 
 ## Repository contents
 
-The main [project repository on GitHub](https://github.com/alan-turing-institute/scivision) hosts
+This main [project repository on GitHub](https://github.com/alan-turing-institute/scivision) hosts
   - development of the Python package (in the root directory)
   - development of the website (in `frontend`)
   - the documentation sources (in `docs`)
 
-## Getting Started
+## Get involved
+Submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues).
+
+If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. These can be submitted through the [scivision website](https://sci.vision/#/contribute). See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for more details on how to format your model / data.  
+
+Pull requests for code changes are also welcome.
+
+
+## Getting Started with Scivision.Py
 
 A quick overview of using the Scivision.Py python package.
 
@@ -92,7 +96,7 @@ plt.imshow(test_image)
 
 ![Image showing test_image (a picture of a Koala)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cutest_Koala.jpg/262px-Cutest_Koala.jpg)
 
-- [More about datasources](https://scivision.readthedocs.io/en/latest/datasource_repository_template.html)
+- [More about datasources](https://scivision.readthedocs.io/en/latest/data_repository_template.html)
 
 ### Run a Scivision model
 
@@ -123,8 +127,7 @@ Output:
 |  ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ |
 
 
-- [Contributing an entry to the catalog](https://scivision.readthedocs.io/en/latest/contributing.html#extending-the-scivision-catalog)
-- The catalogs are browsable online:
+The catalogs are browsable online:
   - [model catalog](https://sci.vision/#/model-grid)
   - [datasource catalog](https://sci.vision/#/datasource-grid)
 
