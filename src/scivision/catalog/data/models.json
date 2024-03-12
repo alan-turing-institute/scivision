@@ -118,7 +118,7 @@
       "tasks": [
         "segmentation"
       ],
-      "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision/tree/main",
+      "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision/blob/main/",
       "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@main",
       "scivision_usable": true,
       "institution": [
