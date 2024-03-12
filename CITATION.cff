@@ -40,6 +40,9 @@ authors:
     orcid: 'https://orcid.org/0009-0008-1408-1493'
 repository-code: 'https://github.com/alan-turing-institute/scivision'
 url: 'https://sci.vision/'
+identifiers:
+  - type: doi
+    value: '10.5281/zenodo.10792860'
 keywords:
   - computer vision
   - image analysis
