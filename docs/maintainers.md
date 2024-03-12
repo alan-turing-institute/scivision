@@ -19,7 +19,7 @@ A new release of the scivision package will be uploaded to PyPI each time a tagg
 
 2. Create a pull request and merge to the `main` branch.
 
-3. At the main repo page on GitHub, click the following `Releases -> Draft a new release`. Click `Choose a tag` and create a new tag named as the `version` number. Fill in the descriptive fields and publish the release. (You don't need to upload the binaries as these are automatically generated). After a few moments, the new version should show up at https://pypi.org/project/scivision/
+3. At the main repo page on GitHub, click the following `Releases -> Draft a new release`. Click `Choose a tag` and create a new tag named as the `version` number. Choose the commit you would like to target the release to (i.e. the one you have just merged). Fill in the descriptive fields and publish the release. (You don't need to upload the binaries as these are automatically generated). After a few moments, the new version should show up at https://pypi.org/project/scivision/
 
 Alternatively, developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can manually release a new version of the package with the following steps:
 
