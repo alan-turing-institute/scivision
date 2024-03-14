@@ -53,6 +53,7 @@ def check_models():
             try:
                 if not yml_path.endswith((".yml", ".yaml",)):
                     model_loaded = load_pretrained_model(yml_path,allow_install=True)
+                    print('Model Loaded Successfully')
                     yml_result = "Pass"
                     response = None
             except Exception as e:
