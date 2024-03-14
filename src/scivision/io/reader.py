@@ -157,7 +157,7 @@ def load_pretrained_model(
             ".yaml",
         )
     ):
-        path = path + ".scivision/model.yml"
+        path = os.path.join(path, ".scivision/model.yml")
     # fsspec will throw an error if the path does not exist
     file = fsspec.open(path)
     # parse the config file:
