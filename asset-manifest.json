@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.364f6c60.css",
-    "main.js": "/static/js/main.cccbc5d1.js",
+    "main.js": "/static/js/main.7973b2e2.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/huggingface-object-detection.jpg": "/static/media/huggingface-object-detection.5838a309aa147aba1cb0.jpg",
@@ -31,6 +31,7 @@
     "static/media/Parakeet.jpg": "/static/media/Parakeet.974ca8b7d5f9aac9503d.jpg",
     "static/media/butterfly-classification-model.jpg": "/static/media/butterfly-classification-model.633494af6f728f4e9220.jpg",
     "static/media/mapreader-plant.jpg": "/static/media/mapreader-plant.587b20dfc921fc2b04f7.jpg",
+    "static/media/canopy-quality.jpg": "/static/media/canopy-quality.f3702feba99012a0a97a.jpg",
     "static/media/scivision-test-data.jpg": "/static/media/scivision-test-data.b5bbb6488b7c31673b87.jpg",
     "static/media/cefas-plankton.jpg": "/static/media/cefas-plankton.923b1bec2fb5969e03c2.jpg",
     "static/media/stardist-cell-nuclei-2D.jpg": "/static/media/stardist-cell-nuclei-2D.2da18c7334c96e33cfde.jpg",
@@ -39,11 +40,11 @@
     "static/media/huggingface-classifiers.jpg": "/static/media/huggingface-classifiers.52a0e5378dc6224dd7d9.jpg",
     "index.html": "/index.html",
     "main.364f6c60.css.map": "/static/css/main.364f6c60.css.map",
-    "main.cccbc5d1.js.map": "/static/js/main.cccbc5d1.js.map",
+    "main.7973b2e2.js.map": "/static/js/main.7973b2e2.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.364f6c60.css",
-    "static/js/main.cccbc5d1.js"
+    "static/js/main.7973b2e2.js"
   ]
 }
