@@ -25,11 +25,9 @@ def package_from_config(config: dict, branch: str = "main") -> str:
     return f"git+{install_str}@{install_branch}#egg={config['import']}"
 
 
-def _install(package, pip_install_args=None):
+def _install(package, pip_install_args=[]):
     """Install a package using pip."""
 
-    if pip_install_args is None:
-        pip_install_args = []
     try:
         subprocess.check_call(
             [sys.executable, "-m", "pip", "install", *pip_install_args, package],
@@ -42,6 +40,7 @@ def install_package(
     config: dict,
     allow_install=False,  # allowed values: True, False, or the string "force"
     branch: str = "main",
+    pip_install_args = [],
 ):
     """Install the python package if it doesn't exist.
 
@@ -80,12 +79,13 @@ def install_package(
         # (--no-deps doesn't solve this, since the dependencies may
         # have changed between a version present and the force-updated
         # version)
-        _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
+        pip_install_args += ["--force-reinstall", "--no-cache-dir"]
+        _install(package, pip_install_args=pip_install_args)
     elif (allow_install and not exists):
         # The package is requested but isn't already installed: this
         # is the common case. The package and its dependencies will
         # be installed
-        _install(package)
+        _install(package,pip_install_args)
     elif not exists:
         # The package was requested, but allow install was false and
         # it isn't already installed: raise a runtime error
