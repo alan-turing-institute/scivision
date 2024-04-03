@@ -40,19 +40,18 @@ def check_models():
         name = model.name
         yml_path = model.url
         print(f'\nValidating: {name}')
-        if model.scivision_usable == False:
+        if not model.scivision_usable:
             response = requests.get(model.url)
             row_data = {
-            'url': model.url,
-            'yml_result': 'Pass' if response.status_code == '200' else 'Fail',
-            'yml_response': f'Scivision_usable = False but model url response: {response.status_code}',
+                'url': model.url,
+                'yml_result': 'Pass' if response.status_code == '200' else 'Fail',
+                'yml_response': f'Scivision_usable = False but model url response: {response.status_code}',
             }
-            
             print(f'Model is not scivision usable but model url response: {response.status_code}')
-        else:   
+        else:
             try:
                 if not yml_path.endswith((".yml", ".yaml",)):
-                    model_loaded = load_pretrained_model(yml_path,allow_install=True)
+                    load_pretrained_model(yml_path, allow_install=True)
                     print('Model Loaded Successfully')
                     yml_result = "Pass"
                     response = None
@@ -61,7 +60,6 @@ def check_models():
                 logger.exception("Automated Model Check has failed!")
                 yml_result = "Fail"
                 response = logger.error(e, exc_info=True)
-            
             row_data = {
                 'url': yml_path,
                 'yml_result': yml_result,
@@ -74,9 +72,7 @@ def check_models():
         "time": datetime.now().isoformat(),
         "report": rows
     }
-    automated_checks_report_json = json.dumps(automated_checks_report)
-
-
+    json.dumps(automated_checks_report)
 
 
 def entry_point():
@@ -87,5 +83,5 @@ def entry_point():
 
     with open('check_models.js', 'w') as f:
         print('// This file was generated automatically by check_models.py', file=f)
-        # print(f'var global_CheckDatasetReport = {automated_checks_report_json};', file=f)
+        print(f'var global_CheckModelReport = {automated_checks_report_json};', file=f)
         # ^^^ requires changes to ModelTable.jsx similar to DataTable.jsx
