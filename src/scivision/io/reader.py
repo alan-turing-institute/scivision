@@ -165,14 +165,13 @@ def load_pretrained_model(
         stream = config_file.read()
         config = yaml.safe_load(stream)
     config_list = _get_model_configs(config, load_multiple, model_selection)
-    print(config_list)
     loaded_models = []
     for config in config_list:
         # make sure a model at least has an input to the function
         assert "X" in config["prediction_fn"]["args"].keys()
 
         # try to install the package if necessary
-        install_package(config, allow_install=allow_install, branch=branch)
+        install_package(config, allow_install=allow_install, branch=branch, *args)
 
         loaded_models.append(PretrainedModel(config))
     if load_multiple:
