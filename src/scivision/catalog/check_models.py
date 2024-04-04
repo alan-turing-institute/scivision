@@ -2,7 +2,6 @@
 Automated Models Checks
 
 Iterate through model catalog via scivision.... function and log responses
-
 """
 
 import logging
@@ -27,9 +26,9 @@ def check_models():
     """
     Model information includes
     - name
-    - tasks # tasks model performs
-    - pkg_url #package
-    - url #yml
+    - tasks
+    - pkg_url
+    - url
     - scivision_usable
     """
     # Load model catalog
