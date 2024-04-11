@@ -1,7 +1,10 @@
 """
 Automated Models Checks
 
-Iterate through model catalog via scivision.... function and log responses
+Iterate through model catalog via scivision.load_pretrained_model
+to check if the model can be loaded and if the model scivision_usable = True.
+If not scivision_usable, check if the model url is accessible, if return 200 reponse log as passed.
+Otherwise, load the model using load_pretrained_model and log as passed if successful.
 """
 
 import logging
@@ -24,6 +27,11 @@ logger.addHandler(file_handler)
 
 def check_models():
     """
+    For each model in the catalog, check that the URL can be loaded
+    with `load_pretrained_model`.
+
+    Returns a json report
+
     Model information includes
     - name
     - tasks
@@ -71,8 +79,9 @@ def check_models():
         "time": datetime.now().isoformat(),
         "report": rows
     }
-    json.dumps(automated_checks_report)
+    automated_checks_report_json = json.dumps(automated_checks_report)
 
+    return automated_checks_report_json
 
 def entry_point():
     """This is the entry point for the 'scivision-check-models'
