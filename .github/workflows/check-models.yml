@@ -1,9 +1,7 @@
 name: Check models
 on:
-  push
-  # schedule:
-  #   - cron:  '18 3 * * *' #every day at 3.18am  * everyday * every month * every year
-  
+  schedule:
+    - cron:  '18 3 * * *'
 jobs:
   check-models:
     runs-on: ubuntu-latest
