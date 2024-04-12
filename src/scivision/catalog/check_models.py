@@ -83,6 +83,7 @@ def check_models():
 
     return automated_checks_report_json
 
+
 def entry_point():
     """This is the entry point for the 'scivision-check-models'
     command.
