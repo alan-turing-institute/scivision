@@ -6,7 +6,6 @@
     "scripts": {
         "dev": "sh ./setup.sh && vite",
         "build": "sh ./setup.sh && tsc && vite build",
-        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "sh ./setup.sh && vite preview"
     },
     "dependencies": {

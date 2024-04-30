@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss'
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
 
 import defaultTheme from 'tailwindcss/defaultTheme'
 
@@ -25,8 +27,5 @@ export default {
             },
         },
     },
-    plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
-    ],
-}
+    plugins: [forms, typography],
+} satisfies Config
