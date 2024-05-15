@@ -52,7 +52,7 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: "./frontend/dist"
-          destination-github-username: "tingeber"
-          destination-repository-name: "new-scivision-build-test"
-          user-email: me@tin.fyi
+          destination-github-username: "alan-turing-institute"
+          destination-repository-name: "scivision-website-beta"
+          user-email: ifenton@turing.ac.uk
           target-branch: main
