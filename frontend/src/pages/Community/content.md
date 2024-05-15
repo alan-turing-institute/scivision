@@ -45,4 +45,4 @@ The Scivision [Code of Conduct](https://github.com/alan-turing-institute/scivisi
 
 ## Contact the Core Team
 
-The Scivision project is run by a team at the Alan Turing Institute. In addition to the channels above, you can email the team at [scivision@turing.ac.uk](mailto:scivision@turing.ac.uk).
+The Scivision project is run by a team at [the Alan Turing Institute](https://www.turing.ac.uk/). In addition to the channels above, you can email the team at [scivision@turing.ac.uk](mailto:scivision@turing.ac.uk).
