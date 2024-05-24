@@ -60,19 +60,19 @@ def check_models():
                 if not yml_path.endswith((".yml", ".yaml",)):
                     load_pretrained_model(yml_path, allow_install=True)
                     print('Model Loaded Successfully')
-                    yml_result = "Pass"
+                    check_result = "Pass"
                     response = None
             except Exception as e:
                 print(e)
                 logger.exception("Automated Model Check has failed!")
-                yml_result = "Fail"
-                response = response.status_code
+                check_result = "Fail"
+                response = logger.error(e, exc_info=True)
             # Convert response to JSON serializable format
             if response is not None:
                 response = str(response)
             row_data = {
                 'url': yml_path,
-                'check_result': yml_result,
+                'check_result': check_result,
                 'response': response,
             }
 
