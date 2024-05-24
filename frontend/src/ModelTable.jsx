@@ -1,3 +1,5 @@
+import { useState } from "react";
+import useScript from "react-use-scripts";
 import DataTable from "react-data-table-component";
 
 import ModelNav from "./ModelNav.jsx";
@@ -9,6 +11,7 @@ import {
 import { TaskBadge } from "./badges.jsx";
 
 import models from "./catalog/data/models.json";
+
 
 // Component: Fragment containing definition items for the expanded
 // view of the model table, and the model page
@@ -125,6 +128,16 @@ function ModelTableContents() {
       grow: 0.5,
     },
   ];
+  const check_models_script_url =
+  "https://github.com/alan-turing-institute/scivision/releases/download/catalog-checks-report-latest-release/check_models.js";
+  useScript({
+    src: check_models_script_url,
+    onReady: () => setModelChecksReport(window.global_CheckDatasetReport),
+    onError: () =>
+      console.log(
+        `Could not latest model checks from ${check_models_script_url}`,
+      ),
+  });
 
   return (
     <DataTable
