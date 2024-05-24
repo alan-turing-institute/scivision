@@ -66,7 +66,10 @@ def check_models():
                 print(e)
                 logger.exception("Automated Model Check has failed!")
                 yml_result = "Fail"
-                response = str(e)
+                response = logger.error(e, exc_info=True)
+            # Convert response to JSON serializable format
+            if response is not None:
+                response = str(response)
             row_data = {
                 'url': yml_path,
                 'yml_result': yml_result,
