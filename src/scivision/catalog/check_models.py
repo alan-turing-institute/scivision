@@ -52,7 +52,7 @@ def check_models():
             row_data = {
                 'url': model.url,
                 'check_result': 'Pass' if response.status_code == 200 else 'Fail',
-                'yml_response': f'Scivision_usable = False but model url response: {response.status_code}',
+                'response': f'Scivision_usable = False but model url response: {response.status_code}',
             }
             print(f'Model is not scivision usable but model url response: {response.status_code}')
         else:
@@ -66,14 +66,14 @@ def check_models():
                 print(e)
                 logger.exception("Automated Model Check has failed!")
                 yml_result = "Fail"
-                response = logger.error(e, exc_info=True)
+                response = response.status_code
             # Convert response to JSON serializable format
             if response is not None:
                 response = str(response)
             row_data = {
                 'url': yml_path,
                 'check_result': yml_result,
-                'yml_response': response,
+                'response': response,
             }
 
         rows.update({model.name: row_data})
