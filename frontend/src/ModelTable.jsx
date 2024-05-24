@@ -129,7 +129,7 @@ function ModelTableContents() {
     },
   ];
   const check_models_script_url =
-  "https://github.com/alan-turing-institute/scivision/releases/download/catalog-checks-report-latest-release/check_models.js";
+  "https://github.com/Tonks684/scivision/releases/download/model-checks-report-latest-release/check_models.js";
   useScript({
     src: check_models_script_url,
     onReady: () => setModelChecksReport(window.global_CheckDatasetReport),

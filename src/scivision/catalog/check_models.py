@@ -51,7 +51,7 @@ def check_models():
             response = requests.get(model.url)
             row_data = {
                 'url': model.url,
-                'yml_result': 'Pass' if response.status_code == 200 else 'Fail',
+                'check_result': 'Pass' if response.status_code == 200 else 'Fail',
                 'yml_response': f'Scivision_usable = False but model url response: {response.status_code}',
             }
             print(f'Model is not scivision usable but model url response: {response.status_code}')
@@ -72,7 +72,7 @@ def check_models():
                 response = str(response)
             row_data = {
                 'url': yml_path,
-                'yml_result': yml_result,
+                'check_result': yml_result,
                 'yml_response': response,
             }
 
