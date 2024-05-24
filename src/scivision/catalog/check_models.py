@@ -97,4 +97,3 @@ def entry_point():
         print('// This file was generated automatically by check_models.py', file=f)
         print(f'var global_CheckModelReport = {automated_checks_report_json};', file=f)
         # ^^^ requires changes to ModelTable.jsx similar to DataTable.jsx
-
