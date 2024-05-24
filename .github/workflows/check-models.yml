@@ -1,12 +1,3 @@
-"""
-This YAML file is used for defining a GitHub Actions workflow named "check-models". It is located in the ".github/workflows" directory of the project.
-
-The purpose of this workflow is to perform checks on models used in the project, save the report as a csv and then upload result into validation checks on scivison website.
-
-Please refer to the contents of the file for more specific details on the steps and configurations used in this workflow.
-"""
-
-
 name: Check models
 on: push
   # schedule:
