@@ -132,7 +132,7 @@ function ModelTableContents() {
    "https://github.com/alan-turing-institute/scivision/releases/download/model-checks-report-latest-release/check_models.js";
   useScript({
     src: check_models_script_url,
-    onReady: () => setModelChecksReport(window.global_CheckReport),
+    onReady: () => setModelChecksReport(window.global_CheckModelsReport),
     onError: () =>
       console.log(
         `Could not latest model checks from ${check_models_script_url}`,
