@@ -45,7 +45,7 @@ jobs:
         run: npm ci
       - name: Build
         working-directory: frontend
-        run: npm run build && cp ./dist/index.html ./dist/404.html ./dist/CNAME
+        run: npm run build && cp ./dist/index.html ./dist/404.html && cp ./CNAME ./dist/CNAME
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
