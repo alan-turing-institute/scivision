@@ -263,6 +263,20 @@
         "promotion",
         "blog"
       ]
+    },
+    {
+      "login": "aldenc",
+      "name": "Alden Conner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20688591?v=4",
+      "profile": "https://github.com/aldenc",
+      "contributions": [
+        "ideas",
+        "doc",
+        "design",
+        "eventOrganizing",
+        "promotion",
+        "projectManagement"
+      ]
     }
   ],
   "contributorsPerLine": 7,
