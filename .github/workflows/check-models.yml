@@ -1,6 +1,7 @@
 name: Check models 
 on: push
-
+  # schedule:
+    # - cron:  '18 3 * * *'
 jobs:
   check-models:
     runs-on: ubuntu-latest
@@ -19,11 +20,11 @@ jobs:
         run: pip install chardet 
       - name: Check model catalog
         run: scivision-check-models
-      - name: Store artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: check-models-report
-          path: check_models.csv
+      # - name: Store artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: check-models-report
+      #     path: check_models.csv
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
