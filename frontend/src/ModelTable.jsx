@@ -12,12 +12,11 @@ import { TaskBadge } from "./badges.jsx";
 
 import models from "./catalog/data/models.json";
 
-
 // Component: Fragment containing definition items for the expanded
-// view of the model table, and the model page
+// view of the Model table and the page for one Model
 //
-// * data - one model
-function ModelDefinitionList({ data }) {
+// * data - one Model
+function modelDefinitionList({ data }) {
   return (
     <dl className="row">
       <dt className="col-sm-3">Description</dt>
@@ -25,23 +24,18 @@ function ModelDefinitionList({ data }) {
         {data.description ? data.description : "(none provided)"}
       </dd>
 
-      <dt className="col-sm-3">Homepage</dt>
+      <dt className="col-sm-3">Location</dt>
       <dd className="col-sm-9">
         <a href={data.url}>{data.url}</a>
-      </dd>
-
-      <dt className="col-sm-3">Install with pip</dt>
-      <dd className="col-sm-9">
-        <div>
-          <code>pip install {data.pkg_url}</code>
-        </div>
       </dd>
     </dl>
   );
 }
 
+// Component: Models, table view
+// route: /Models
 function ModelTableContents() {
-  const [modelChecksReport, setModelChecksReport] = useState(null);
+  const [modelChecksReport, setmodelChecksReport] = useState(null);
 
   function modelCheckResult(name) {
     if (modelChecksReport !== null) {
@@ -68,11 +62,13 @@ function ModelTableContents() {
   function modelValidationTimeString() {
     return `last run ${modelCheckTime()}`;
   }
+
   const columns = [
     {
       name: "Thumbnail",
       width: "150px",
-      selector: (row) => model_thumbnails[`./${row.name}.jpg`] === undefined,
+      selector: (row) =>
+        model_thumbnails[`./${row.name}.jpg`] === undefined,
       sortable: true,
       cell: (row, index, column, id) => {
         const thumb = model_thumbnails[`./${row.name}.jpg`];
@@ -80,20 +76,20 @@ function ModelTableContents() {
       },
     },
     {
+      selector: (row) => row.name,
       name: "Name",
       sortable: true,
       grow: 0.5,
-      selector: (row) => row.name,
     },
     {
-      name: "Tasks",
       selector: (row) => row.tasks,
+      name: "Tasks",
       cell: (row, index, column, id) =>
         row.tasks.map((t) => <TaskBadge key={t} taskName={t} />),
-    },{
+    },
+    {
       selector: (row) => {
         const result = modelCheckResult(row.name);
-
         if (result === "Pass") {
           return (
             <img
@@ -128,14 +124,16 @@ function ModelTableContents() {
       grow: 0.5,
     },
   ];
+
   const check_models_script_url =
-   "https://github.com/Tonks684/scivision/releases/download/model-checks-report-latest-release/check_models.js";
+  "https://github.com/alan-turing-institute/scivision/releases/download/model-checks-report-latest-release/check_models.js"
+
   useScript({
     src: check_models_script_url,
-    onReady: () => setModelChecksReport(window.global_CheckModelsReport),
+    onReady: () => setmodelChecksReport(window.global_CheckModelReport),
     onError: () =>
       console.log(
-        `Could not latest model checks from ${check_models_script_url}`,
+        `Could not load latest model checks from ${check_models_script_url}`,
       ),
   });
 
@@ -145,7 +143,7 @@ function ModelTableContents() {
       data={models.entries}
       title=""
       expandableRowsComponent={(props) => (
-        <TableCardDropdown element={<ModelDefinitionList {...props} />} />
+        <TableCardDropdown element={<modelDefinitionList {...props} />} />
       )}
       expandableRows
       expandableRowsHideExpander
@@ -153,8 +151,9 @@ function ModelTableContents() {
     />
   );
 }
+
 // Component: Models, table view
-// route: /models
+// route: /Models
 export default function ModelTable() {
   return (
     <>

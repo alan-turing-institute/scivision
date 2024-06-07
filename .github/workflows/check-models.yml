@@ -1,7 +1,7 @@
 name: Check models 
-on: push
-  # schedule:
-    # - cron:  '18 3 * * *'
+on:
+  schedule:
+    - cron:  '18 3 * * *'
 jobs:
   check-models:
     runs-on: ubuntu-latest
