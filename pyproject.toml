@@ -23,7 +23,8 @@ dependencies = [
   "exifread~=3.0",
   "distinctipy~=1.2",
   "ipython~=8.3",
-  "tqdm~=4.65"
+  "tqdm~=4.65",
+  "netcdf4<1.7"
 ]
 
 [project.optional-dependencies]
