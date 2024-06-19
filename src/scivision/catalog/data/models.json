@@ -320,6 +320,23 @@
       "pkg_url": "stardist_seed_pod",
       "url": "https://raw.githubusercontent.com/alan-turing-institute/stardist-seed-pod/main/.scivision/model.yml",
       "description": "Pre-trained StarDist model for detection and segmentation of plant seeds in 2D or 3D images"
+    },
+    {
+      "tasks": [
+        "classification",
+        "other"
+      ],
+      "scivision_usable": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "canopy"
+      ],
+      "name": "canopy-quality",
+      "pkg_url": "git+https://github.com/johnfrancis13/canopy_quality_scivision.git@main",
+      "url": "https://github.com/johnfrancis13/canopy_quality_scivision/blob/main/.scivision/model.yaml",
+      "description": ""
     }
   ]
 }

@@ -15,15 +15,15 @@ If you are new to the `scivision` project and wish to become a maintainer for ei
 
 A new release of the scivision package will be uploaded to PyPI each time a tagged commit is pushed to the main branch of the [scivision GitHub repo](https://github.com/alan-turing-institute/scivision). In order to trigger this automated process, do the following:
 
-1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `setup.py` and any other metadata that differs for the new release.
+1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `pyproject.toml` and any other metadata that differs for the new release.
 
 2. Create a pull request and merge to the `main` branch.
 
-3. At the main repo page on GitHub, click the following `Releases -> Draft a new release`. Click `Choose a tag` and create a new tag named as the `version` number. Fill in the descriptive fields and publish the release. After a few moments, the new version should show up at https://pypi.org/project/scivision/
+3. At the main repo page on GitHub, click the following `Releases -> Draft a new release`. Click `Choose a tag` and create a new tag named as the `version` number. Choose the commit you would like to target the release to (i.e. the one you have just merged). Fill in the descriptive fields and publish the release. (You don't need to upload the binaries as these are automatically generated). After a few moments, the new version should show up at https://pypi.org/project/scivision/
 
 Alternatively, developers of `scivision` with maintainer access to https://github.com/alan-turing-institute/scivision & https://pypi.org/project/scivision can manually release a new version of the package with the following steps:
 
-1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `setup.py` and any other metadata that differs for the new release.
+1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `pyproject.toml` and any other metadata that differs for the new release.
 
 2. Make sure you have a working python 3 installation. Check your version with:
     
@@ -46,7 +46,7 @@ Alternatively, developers of `scivision` with maintainer access to https://githu
    python -m twine upload dist/<version>*
    ```
     * Note: You'll need to provide your PyPI username and password
-6. Commit changes to `setup.py` and pull request to the `main` branch of https://github.com/alan-turing-institute/scivision
+6. Commit changes to `pyproject.toml` and pull request to the `main` branch of https://github.com/alan-turing-institute/scivision
 
 .. _building:
 
