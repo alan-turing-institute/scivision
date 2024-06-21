@@ -41,7 +41,7 @@ export function ModelSingleView({
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt className="text-sm font-medium leading-6 text-gray-900">
                     Use me with{' '}
-                    <Link to="https://scivision.readthedocs.io/en/latest/api.html">
+                    <Link to="../../scivisionpy">
                         Scivision.Py
                     </Link>
                     :
