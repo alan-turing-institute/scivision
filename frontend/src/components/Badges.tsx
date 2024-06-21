@@ -28,7 +28,7 @@ export const UsageBadge = (props: BadgeProps) => {
         <>
             {props.usageBool ? (
                 <span className="mb-1 mr-1 inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                    Scivision.Py ready
+                    Scivision loadable
                 </span>
             ) : (
                 // <span className="inline-flex mr-1 mb-1 items-center rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
