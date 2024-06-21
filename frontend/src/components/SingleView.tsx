@@ -49,12 +49,8 @@ export function ModelSingleView({
                 <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                     <pre>
                         <code className="language-python">
-                            from scivision import load_pretrained_model
-                        </code>
-                    </pre>
-                    <pre>
-                        <code className="language-python">
-                            load_pretrained_model("{url}")
+                            {`from scivision import load_pretrained_model
+load_pretrained_model("${url}")`}
                         </code>
                     </pre>
                 </dd>
