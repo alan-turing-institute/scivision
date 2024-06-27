@@ -69,10 +69,10 @@ export default function Community() {
           SCIPI
         </a>{" "}
         &mdash; Community driven design documents, specs and proposals
-        <h5>Code of Conduct</h5>
+        <h5>Code of conduct</h5>
         The Scivision{" "}
         <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">
-          Code of conduct
+          code of conduct
         </a>{" "}
         sets out the expectations of people participating in the project or
         events.
