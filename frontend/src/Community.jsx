@@ -39,7 +39,7 @@ export default function Community() {
             <li>
               Getting help with computer vision methods, and helping others
             </li>
-            <li>Getting support using the Scivision catalogue and software</li>
+            <li>Getting support using the Scivision catalog and software</li>
             <li>Sharing and finding out about interesting events</li>
           </ul>
         </p>
