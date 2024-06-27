@@ -17,17 +17,15 @@ Thank you for taking the time to contribute to the Scivision project. 🎉
 
 The scivision project is being developed openly and invites contributions from anyone interested in computer vision or scientific data, who agrees with the goal of making models and datasets more accessible and discoverable across disciplines!
 
-The following contributions are particularly welcome:
+.. _what-to-contribute:
+
+🤔 What to contribute
+---
 
 * **Computer vision models** for the model catalog, whether new or existing
 * **Data sources** for the data catalog, from the sciences or humanities
 * New features or other code improvements to the scivision package itself
 * Bug reports
-
-.. _what-to-contribute:
-
-🤔 What to contribute
----
 
 #### Catalog contributions
 
