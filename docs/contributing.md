@@ -76,7 +76,7 @@ For larger features, substantial changes, or anything where you would like early
 🎁 Contributing to the scivision catalog
 ---
 
-You can add models or datasets to the scivision catalog via the GitHub workflow described above.
+See :ref:`contributing-to-the-scivision-catalog`.
 
 #### Preparing a model for inclusion in the catalog
 
