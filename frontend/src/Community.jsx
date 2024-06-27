@@ -10,27 +10,6 @@ export default function Community() {
     <>
       <h3>Community resources</h3>
       <Container className="text-block">
-        <h5>Email Newsletter</h5>
-        <p>
-          Scivision has a low-volume email newsletter for announcements about
-          the project and forthcoming events (one email per month or so).
-        </p>
-        <p>
-          Read previous newsletters or subscribe to the list on Substack{" "}
-          <a href="https://scivision.substack.com">here</a>.
-        </p>
-        <p>
-          It is possible to unsubscribe at any time by following the link at the
-          bottom of any email from the list.
-        </p>
-        <h5>Community calls</h5>
-        <p>
-          Scivision runs an online call (over Zoom) from time to time, generally
-          themed around computer vision or image analysis in a particular
-          domain. There will also be a chance for an introduction to the
-          Scivision project and hear any recent news.
-        </p>
-        <p>Future events will be advertised on Slack and the mailing list.</p>
         <h5>Slack workspace</h5>
         <p>
           The Scivision Slack workspace is open to anyone interested in:
