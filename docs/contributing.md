@@ -7,7 +7,7 @@ Thank you for taking the time to contribute to the Scivision project. 🎉
 - :ref:`who-should-contribute`
 - :ref:`what-to-contribute`
 - :ref:`how-to-contribute`
-- :ref:`extending-the-scivision-catalog`
+- :ref:`contributing-to-the-scivision-catalog`
 - 🖊️ [License](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
 
 .. _who-should-contribute:
@@ -71,9 +71,9 @@ For larger features, substantial changes, or anything where you would like early
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 
-.. _extending-the-scivision-catalog:
+.. _contributing-to-the-scivision-catalog:
 
-🎁 Extending the scivision catalog
+🎁 Contributing to the scivision catalog
 ---
 
 You can add models or datasets to the scivision catalog via the GitHub workflow described above.
