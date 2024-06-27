@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 
-const slack_signup_form_url =
-  "https://forms.office.com/e/cW28TK4aui";
+const slack_signup_form_url = "https://forms.office.com/Pages/ResponsePage.aspx?id=p_SVQ1XklU-Knx-672OE-TF37BUQLiBEhQiSUHIXyABUM1Y4RE9TRkIxUk1PN0I4VENSVFVaVVpDUi4u";
+
 
 // Component: The community tab
 // route: /community
