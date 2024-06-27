@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 
 const slack_signup_form_url =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform?usp=sf_link";
+  "https://forms.office.com/e/cW28TK4aui";
 
 // Component: The community tab
 // route: /community
@@ -12,14 +12,28 @@ export default function Community() {
       <Container className="text-block">
         <h5>Slack workspace</h5>
         <p>
-          The Scivision Slack workspace is open to anyone interested in:
+          Please join our {" "}
+          <a href={https://forms.office.com/e/cW28TK4aui}>Slack workspace</a> to stay up to date with the Scivision community! 
           <ul>
-            <li>Discussing computer vision in the sciences and humanities</li>
             <li>
-              Getting help with computer vision methods, and helping others
+              You can use Slack to:
             </li>
-            <li>Getting support using the Scivision catalog and software</li>
-            <li>Sharing and finding out about interesting events</li>
+            <ul className="list-spaced mt-2">
+            <li>
+              Discuss computer vision in the sciences and humanities
+            </li>
+            <li>
+              Get help with computer vision methods, and helping others
+            </li>
+            <li>
+              Get support using the Scivision catalog and software
+            </li>
+            <li>
+              Share and discover interesting events
+            </li>
+            <li>
+              We aim for this to be a welcome and supportive place to discuss computer vision, share ideas and ask questions. Using (or even intending to use) the Scivision software is not a prerequisite for joining!
+            </li> 
           </ul>
         </p>
         <p>
@@ -27,11 +41,6 @@ export default function Community() {
           computer vision, share ideas and ask questions. Using (or even
           intending to use) the Scivision software is not a prerequisite for
           joining!
-        </p>
-        <p>
-          To join the Slack Workspace, submit your email address{" "}
-          <a href={slack_signup_form_url}>here</a> (via a Google Form) and one
-          of the team will invite you.
         </p>
         <h5>GitHub</h5>
         Development of Scivision is hosted on GitHub.
