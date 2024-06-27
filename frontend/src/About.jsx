@@ -49,7 +49,7 @@ export default function About() {
           ></iframe>
         </p>
 
-        <p>The Scivision Project is funded by{" "} 
+        <p>The Scivision project is funded by{" "} 
         <a href="https://www.turing.ac.uk/">The Alan Turing Institute</a>.
         {" "} 
         <a href="https://github.com/alan-turing-institute/scivision/blob/main/CITATION.cff">Cite Scivision</a>.
