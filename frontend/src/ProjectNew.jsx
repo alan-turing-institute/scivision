@@ -17,13 +17,13 @@ export default function ProjectNew({ gh_logged_in }) {
           <ul>
             <li>
               You have already added the datasources used in your project to the{" "}
-              <Link to="../datasource-grid">Scivision Data catalog</Link>. Click
+              <Link to="../datasource-grid">Scivision data catalog</Link>. Click
               here to add a <Link to="../new-datasource">new datasource</Link>.
             </li>
             <li>
               You have already added the computer vision models used in your
               project to the{" "}
-              <Link to="../model-grid">Scivision Model catalog</Link>. Click
+              <Link to="../model-grid">Scivision model catalog</Link>. Click
               here to add a <Link to="../new-model">new model</Link>.
             </li>
           </ul>
