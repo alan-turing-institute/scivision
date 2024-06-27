@@ -27,9 +27,9 @@ The scivision project is fully open-source and invites contributions from anyone
 * New features or other code improvements to the scivision package itself
 * Bug reports
 
-#### Catalog contributions
+#### Models and datasets
 
-Submit a model or dataset to the catalog so that they are discoverable by other scivision users when querying the catalog.
+Adding a model or dataset to the catalog makes it discoverable by other Scivision users.
 
 See :ref:`extending-the-scivision-catalog`.
 
