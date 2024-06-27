@@ -8,7 +8,7 @@ const slack_signup_form_url =
 export default function Community() {
   return (
     <>
-      <h3>Community Resources</h3>
+      <h3>Community resources</h3>
       <Container className="text-block">
         <h5>Email Newsletter</h5>
         <p>
@@ -31,7 +31,7 @@ export default function Community() {
           Scivision project and hear any recent news.
         </p>
         <p>Future events will be advertised on Slack and the mailing list.</p>
-        <h5>Slack Workspace</h5>
+        <h5>Slack workspace</h5>
         <p>
           The Scivision Slack workspace is open to anyone interested in:
           <ul>
@@ -84,11 +84,11 @@ export default function Community() {
         <h5>Code of Conduct</h5>
         The Scivision{" "}
         <a href="https://github.com/alan-turing-institute/scivision/blob/main/CODE_OF_CONDUCT.md">
-          Code of Conduct
+          Code of conduct
         </a>{" "}
         sets out the expectations of people participating in the project or
         events.
-        <h5>Contact the Core Team</h5>
+        <h5>Contact the core team</h5>
         The Scivision project is run by a team at the Alan Turing Institute. In
         addition to the channels above, you can email the team at{" "}
         <a href="mailto:scivision@turing.ac.uk">scivision@turing.ac.uk</a>.
