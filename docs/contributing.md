@@ -86,7 +86,7 @@ This will enable you load your model via the scivision API and run it on matchin
 
 #### Submitting your model to the catalog
 
-Once you have prepared a model for inclusion in the catalog, submit some details about it [here](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
+Once you have prepared a model for inclusion in the catalog, submit it [here](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
 
 Once your model submission is accepted, it will become available to other users of scivision.
 
