@@ -75,7 +75,7 @@ A `README`, which includes detailed instructions on how the model can be install
 
 ### 📜 Software license
 
-You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-software.html) in The Turing Way online handbook.
+You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license) in The Turing Way online handbook.
 
 .. _api:
 
