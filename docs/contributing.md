@@ -148,4 +148,4 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
   }
  ```
  
- After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
+After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
