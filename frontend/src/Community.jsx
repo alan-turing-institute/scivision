@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 
 const slack_signup_form_url =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform?usp=sf_link";
+  "https://forms.office.com/Pages/ResponsePage.aspx?id=p_SVQ1XklU-Knx-672OE-TF37BUQLiBEhQiSUHIXyABUM1Y4RE9TRkIxUk1PN0I4VENSVFVaVVpDUi4u";
 
 // Component: The community tab
 // route: /community
