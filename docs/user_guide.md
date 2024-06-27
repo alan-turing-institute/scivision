@@ -106,6 +106,6 @@ To understand how these external sources are configured for compatibility with s
 
 To understand how to contribute new models and data sources to the scivision catalog, check out:
 
-- :ref:`extending-the-scivision-catalog`
+- :ref:`contributing-to-the-scivision-catalog`
 
     
