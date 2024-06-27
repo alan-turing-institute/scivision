@@ -38,7 +38,7 @@ export default function ProjectNew({ gh_logged_in }) {
             Add the details that will form the basis of your project's Scivision
             page below. You can format the text with{" "}
             <a href="https://daringfireball.net/projects/markdown/basics">
-              Markdown
+              markdown
             </a>
             , which will allow you to include any headers, lists and links you
             feel are appropriate. You can then select the models and data you
