@@ -31,7 +31,7 @@ The scivision project is fully open-source and invites contributions from anyone
 
 Adding a model or dataset to the catalog makes it discoverable by other Scivision users.
 
-See :ref:`extending-the-scivision-catalog`.
+See :ref:`contributing-to-the-scivision-catalog`.
 
 #### Bug reports
 
