@@ -49,7 +49,7 @@ To get started:
 
 Pull requests are welcome: see :ref:`how-to-contribute` which describes our workflow.
 
-For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scips`.  Feel free to ask for advice about this in an issue/discussion.
+For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scips` .  Feel free to ask for advice about this in an issue/discussion.
 
 .. _how-to-contribute:
 
