@@ -14,7 +14,7 @@ If you are new to Scivision, start with the [website](https://sci.vision/).
 The Scivision project is building:
 
 - A **community** of computer vision practitioners in the sciences and humanities
-   ([join the community on Slack](https://docs.google.com/forms/d/e/1FAIpQLSfDPbsb_CWApnodHlNyOQMQdKhKA9meJi_SAuh8K8dVpbIiDA/viewform)
+   ([join the community on Slack](https://forms.office.com/Pages/ResponsePage.aspx?id=p_SVQ1XklU-Knx-672OE-TF37BUQLiBEhQiSUHIXyABUM1Y4RE9TRkIxUk1PN0I4VENSVFVaVVpDUi4u))
 - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid) from the sciences and humanities
 - A software **ecosystem of interoperable tools** and utilities for working with computer vision models and data, including:
   - **Scivision.Py**, a Python package for conveniently downloading and using the computer vision models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))

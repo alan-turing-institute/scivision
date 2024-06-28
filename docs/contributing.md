@@ -15,7 +15,7 @@ Thank you for taking the time to contribute to the Scivision project. 🎉
 😎 Who should contribute
 ---
 
-The scivision project is fully open-source and invites contributions from anyone interested in computer vision or scientific data, with goal of making models and datasets more accessible and discoverable across disciplines!
+The scivision project is fully open-source and invites contributions from anyone interested in computer vision or scientific data, with the goal of making models and datasets more accessible and discoverable across disciplines!
 
 .. _what-to-contribute:
 
