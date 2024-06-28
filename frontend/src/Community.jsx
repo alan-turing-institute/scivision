@@ -13,12 +13,9 @@ export default function Community() {
         <h5>Slack workspace</h5>
         <p>
           Please join our {" "}
-          <a href={https://forms.office.com/e/cW28TK4aui}>Slack workspace</a> to stay up to date with the Scivision community! 
-          <ul>
-            <li>
-              You can use Slack to:
-            </li>
-            <ul className="list-spaced mt-2">
+          <a href={"https://forms.office.com/e/cW28TK4aui"}>Slack workspace</a> to stay up to date with the Scivision community! 
+          You can use Slack to:
+          <ul className="list-spaced mt-2">
             <li>
               Discuss computer vision in the sciences and humanities
             </li>
