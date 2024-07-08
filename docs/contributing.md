@@ -49,7 +49,7 @@ To get started:
 
 Pull requests are welcome: see :ref:`how-to-contribute` which describes our workflow.
 
-For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scips` .  Feel free to ask for advice about this in an issue/discussion.
+For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scivision-improvement-proposals-scips` .  Feel free to ask for advice about this in an issue/discussion.
 
 .. _how-to-contribute:
 
@@ -76,8 +76,6 @@ For larger features, substantial changes, or anything where you would like early
 🎁 Contributing to the scivision catalog
 ---
 
-See :ref:`contributing-to-the-scivision-catalog`.
-
 #### Preparing a model for inclusion in the catalog
 
 In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per the :ref:`model-repo-template`.
@@ -86,7 +84,7 @@ This will enable you load your model via the scivision API and run it on matchin
 
 #### Submitting your model to the catalog
 
-Once you have prepared a model for inclusion in the catalog, submit it [here](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
+Once you have prepared a model for inclusion in the catalog, submit it [through the scivision website](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
 
 Once your model submission is accepted, it will become available to other users of scivision.
 
