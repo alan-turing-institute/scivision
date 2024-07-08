@@ -73,7 +73,7 @@ Scivision is currently working towards supporting Python >=3.11.
 🧪 Getting started
 ---------------
 
-Scivision enables users to quickly find computer vision models that can be run on matching a compatible scientific image dataset and provides access to a range of datasets for testing models. Sentence here 
+Scivision enables users to quickly find computer vision models that can be run on matching a compatible scientific image dataset and provides access to a range of datasets for testing models.
 
 The models and datasets you find when searching the “default” scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision). 
 
