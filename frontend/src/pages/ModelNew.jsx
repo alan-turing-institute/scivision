@@ -132,7 +132,7 @@ export default function ModelNew({ gh_logged_in }) {
             <h2>Add your model</h2>
 
             <div className="">
-                {!gh_logged_in ? (
+                {/* {!gh_logged_in ? (
                     <div
                         className="m-5"
                         style={{ display: 'flex', justifyContent: 'center' }}
@@ -141,9 +141,9 @@ export default function ModelNew({ gh_logged_in }) {
                             Log in with GitHub to continue
                         </LoginButton>
                     </div>
-                ) : (
+                ) : ( */}
                     <CatalogEntryForm
-                        gh_logged_in={gh_logged_in}
+                        // gh_logged_in={gh_logged_in}
                         schema={model_schema}
                         uiSchema={{
                             'ui:title': ' ',
@@ -186,7 +186,7 @@ export default function ModelNew({ gh_logged_in }) {
                         thumbnail_directory="src/scivision/catalog/data/thumbnails/models"
                         download_filename="one-model.json"
                     />
-                )}
+                {/* )} */}
                 <div className="p-3"></div>
             </div>
         </>

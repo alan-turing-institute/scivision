@@ -97,8 +97,8 @@ export default function DatasourceNew({ gh_logged_in }) {
             <h2>Add your datasource</h2>
 
             <div className="">
-                {!gh_logged_in ? (
-                    <div
+                {/* {!gh_logged_in ? ( */}
+                    {/* <div
                         className="m-5"
                         style={{ display: 'flex', 'justify-content': 'center' }}
                     >
@@ -106,9 +106,9 @@ export default function DatasourceNew({ gh_logged_in }) {
                             Log in with GitHub to continue
                         </LoginButton>
                     </div>
-                ) : (
+                ) : ( */}
                     <CatalogEntryForm
-                        gh_logged_in={gh_logged_in}
+                        // gh_logged_in={gh_logged_in}
                         schema={datasource_schema}
                         uiSchema={{
                             'ui:title': ' ',
@@ -148,7 +148,7 @@ export default function DatasourceNew({ gh_logged_in }) {
                         thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
                         download_filename="one-datasource.json"
                     />
-                )}
+                {/* )} */}
                 <div className="p-3"></div>
             </div>
         </>

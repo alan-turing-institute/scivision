@@ -66,18 +66,19 @@ export default function ProjectNew({ gh_logged_in }) {
                                     and data you added.
                                 </p>
                                 <p>
-                                    Submitting the form will open a pull request
-                                    (from your GitHub user account) that adds
-                                    details of your project page to Scivision.
+                                    Using this form will generate a json file in the right format
+                                    automatically for you to submit to GitHub. Open a pull request
+                                    in the scivision repository, attaching this json file, 
+                                    to add your entry to the catalog.
                                     Further discussion is possible at that
                                     point, so it doesn't need to be complete or
                                     perfect at this stage.
                                 </p>
-                                <p>
+                                {/* <p>
                                     Make sure to{' '}
                                     <strong>log in with the link above</strong>{' '}
                                     before completing the form
-                                </p>
+                                </p> */}
                             </div>
                         </dd>
                     </div>

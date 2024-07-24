@@ -1,7 +1,7 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { LoginStatusLink } from '../utils/login.jsx'
-import { GH_TOKEN_KEY } from '../config.js'
+// import { LoginStatusLink } from '../utils/login.jsx'
+// import { GH_TOKEN_KEY } from '../config.js'
 
 import { Fragment } from 'react'
 import { Menu, Popover, Transition } from '@headlessui/react'
@@ -26,8 +26,8 @@ const navigation = [
 // }
 
 const Header = () => {
-    const gh_token = sessionStorage[GH_TOKEN_KEY]
-    const [gh_logged_in, set_gh_logged_in] = useState(!!gh_token)
+    // const gh_token = sessionStorage[GH_TOKEN_KEY]
+    // const [gh_logged_in, set_gh_logged_in] = useState(!!gh_token)
 
     return (
         <>
@@ -58,12 +58,12 @@ const Header = () => {
                                         className="relative ml-4 flex-shrink-0"
                                     >
                                         <div>
-                                            <LoginStatusLink
+                                            {/* <LoginStatusLink
                                                 gh_logged_in={gh_logged_in}
                                                 set_gh_logged_in={
                                                     set_gh_logged_in
                                                 }
-                                            />
+                                            /> */}
                                         </div>
                                         <Transition
                                             as={Fragment}

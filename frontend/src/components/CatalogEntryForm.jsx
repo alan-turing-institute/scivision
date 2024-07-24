@@ -88,17 +88,17 @@ export default function CatalogEntryForm({
             const entryTrimmed = entry[item] ? entry[item].trim() : ''
             entry[item] = entryTrimmed
         })
-        if (pr_flag) {
-            const octokit = new OctokitPRPlugin({
-                auth: sessionStorage[GH_TOKEN_KEY],
-            })
+        // if (pr_flag) {
+            // const octokit = new OctokitPRPlugin({
+            //     auth: sessionStorage[GH_TOKEN_KEY],
+            // })
 
-            set_pr_loading(true)
+            // set_pr_loading(true)
 
-            try {
-                const {
-                    data: { login: gh_username },
-                } = await octokit.rest.users.getAuthenticated()
+            // try {
+                // const {
+                //     data: { login: gh_username },
+                // } = await octokit.rest.users.getAuthenticated()
 
                 ///////////
                 // Sync user fork
@@ -111,97 +111,97 @@ export default function CatalogEntryForm({
                 // is updated after the call to mergeUpstream but before createPullRequest, but
                 // this can really only be fixed upstream.
 
-                const scivision_forks = await octokit.rest.repos.listForks({
-                    owner: 'alan-turing-institute',
-                    repo: 'scivision',
-                })
+                // const scivision_forks = await octokit.rest.repos.listForks({
+                //     owner: 'alan-turing-institute',
+                //     repo: 'scivision',
+                // })
 
-                const user_scivision_fork = scivision_forks.data.find(
-                    (fork) => fork.owner && fork.owner.login === gh_username
-                )
+                // const user_scivision_fork = scivision_forks.data.find(
+                //     (fork) => fork.owner && fork.owner.login === gh_username
+                // )
 
                 // Array.find returns undefined if no matches -- in that case,
                 // no need to update anything (octokit.createPullRequest
                 // will create a fresh one)
-                if (user_scivision_fork !== undefined) {
-                    await octokit.rest.repos.mergeUpstream({
-                        owner: gh_username,
-                        repo: user_scivision_fork.name,
-                        branch: user_scivision_fork.default_branch,
-                    })
-                }
+                // if (user_scivision_fork !== undefined) {
+                //     await octokit.rest.repos.mergeUpstream({
+                //         owner: gh_username,
+                //         repo: user_scivision_fork.name,
+                //         branch: user_scivision_fork.default_branch,
+                //     })
+                // }
 
                 //
                 ///////////
 
-                const thumbnail_path =
-                    thumbnail_directory + '/' + entry.name + '.jpg'
-                const thumbnailChange =
-                    thumbnailData === null
-                        ? {}
-                        : {
-                              [thumbnail_path]: {
-                                  content: thumbnailData.split(';base64,')[1],
-                                  encoding: 'base64',
-                              },
-                          }
+//                 const thumbnail_path =
+//                     thumbnail_directory + '/' + entry.name + '.jpg'
+//                 const thumbnailChange =
+//                     thumbnailData === null
+//                         ? {}
+//                         : {
+//                               [thumbnail_path]: {
+//                                   content: thumbnailData.split(';base64,')[1],
+//                                   encoding: 'base64',
+//                               },
+//                           }
 
-                const response = await octokit.createPullRequest({
-                    owner: 'alan-turing-institute',
-                    repo: 'scivision',
-                    title: `Add "${entry.name}" to the ${catalog_kind} catalog`,
-                    body: `This is an automated message from the Scivision frontend (https://sci.vision):
+//                 const response = await octokit.createPullRequest({
+//                     owner: 'alan-turing-institute',
+//                     repo: 'scivision',
+//                     title: `Add "${entry.name}" to the ${catalog_kind} catalog`,
+//                     body: `This is an automated message from the Scivision frontend (https://sci.vision):
 
-> Your submission was successful and will be reviewed by the Scivision
-> maintainers before being added to the catalog, thank you.  If we have any
-> questions about your submission we will post them here.`,
-                    base: 'main',
-                    head: `add-${catalog_kind}-${crypto.randomUUID().toUpperCase()}`,
-                    update: false,
-                    forceFork: true,
-                    changes: [
-                        {
-                            files: {
-                                [catalog_path]: ({
-                                    exists,
-                                    encoding,
-                                    content,
-                                }) => {
-                                    const content_str = Buffer.from(
-                                        content,
-                                        encoding
-                                    )
-                                    let cat = JSON.parse(content_str)
-                                    cat.entries.push(entry)
-                                    return JSON.stringify(cat, null, 2)
-                                },
-                                ...thumbnailChange,
-                            },
-                            commit: `Create entry for "${entry.name}" in the ${catalog_kind} catalog`,
-                        },
-                    ],
-                })
-                if (response.status >= 200 && response.status < 300) {
-                    window.location = response.data.html_url
-                } else {
-                    throw new Error(response.data)
-                }
-            } catch (e) {
-                set_pr_message(e.message)
-                set_pr_failed(true)
-                set_pr_loading(false)
-            }
-        } else {
+// > Your submission was successful and will be reviewed by the Scivision
+// > maintainers before being added to the catalog, thank you.  If we have any
+// > questions about your submission we will post them here.`,
+//                     base: 'main',
+//                     head: `add-${catalog_kind}-${crypto.randomUUID().toUpperCase()}`,
+//                     update: false,
+//                     forceFork: true,
+//                     changes: [
+//                         {
+//                             files: {
+//                                 [catalog_path]: ({
+//                                     exists,
+//                                     encoding,
+//                                     content,
+//                                 }) => {
+//                                     const content_str = Buffer.from(
+//                                         content,
+//                                         encoding
+//                                     )
+//                                     let cat = JSON.parse(content_str)
+//                                     cat.entries.push(entry)
+//                                     return JSON.stringify(cat, null, 2)
+//                                 },
+//                                 ...thumbnailChange,
+//                             },
+//                             commit: `Create entry for "${entry.name}" in the ${catalog_kind} catalog`,
+//                         },
+//                     ],
+//                 })
+//                 if (response.status >= 200 && response.status < 300) {
+//                     window.location = response.data.html_url
+//                 } else {
+//                     throw new Error(response.data)
+//                 }
+//             } catch (e) {
+//                 set_pr_message(e.message)
+//                 set_pr_failed(true)
+//                 set_pr_loading(false)
+//             }
+        // } else {
             download(download_filename, JSON.stringify(entry, null, 2))
-        }
+        // }
     }
 
-    // Modal has a 'open an issue' link, pre-filled with the error message
-    const issue_body_text = `https://github.com/alan-turing-institute/scivision/issues/new?title=sci.vision%20error%20opening%20pull%20request&labels=bug%2Cfrontend&body=The%20error%20message%20was:%0A%0A%3E%20${pr_message}`
+    // // Modal has a 'open an issue' link, pre-filled with the error message
+    // const issue_body_text = `https://github.com/alan-turing-institute/scivision/issues/new?title=sci.vision%20error%20opening%20pull%20request&labels=bug%2Cfrontend&body=The%20error%20message%20was:%0A%0A%3E%20${pr_message}`
 
     return (
         <div className="mb-5">
-            <Modal show={!!pr_failed} onHide={() => set_pr_failed(false)}>
+            {/* <Modal show={!!pr_failed} onHide={() => set_pr_failed(false)}>
                 <Modal.Header closeButton>
                     <b>Error opening pull request on GitHub</b>
                 </Modal.Header>
@@ -217,7 +217,7 @@ export default function CatalogEntryForm({
                         <a href={issue_body_text}>open an issue</a>.
                     </p>
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
             <Form
                 onSubmit={submitEntryToGitHub}
                 schema={schema}
@@ -263,10 +263,10 @@ export default function CatalogEntryForm({
                     style={{ height: '1px' }}
                 />
                 <Col className="my-3">
-                    <Button
+                    {/* <Button
                         type="submit"
-                        onClick={() => (pr_flag = true)}
-                        disabled={!gh_logged_in || pr_loading}
+                        // onClick={() => (pr_flag = true)}
+                        // disabled={!gh_logged_in || pr_loading}
                     >
                         Open Pull Request on GitHub{' '}
                         {pr_loading ? (
@@ -277,7 +277,7 @@ export default function CatalogEntryForm({
                             />
                         ) : null}
                         {gh_logged_in ? null : <> (login to enable)</>}
-                    </Button>
+                    </Button> */}
                     <Button
                         type="submit"
                         variant="link"
@@ -300,10 +300,10 @@ export function CatalogFormHowItWorksBox() {
                     in the Scivision GitHub repository.
                 </li>
                 <li>
-                    Rather than hand-editing a json file and making the change
-                    on GitHub yourself, using this form will propose the change
-                    automatically (it will submit a GitHub pull request on your
-                    behalf)
+                    Using this form will generate a json file in the right format
+                    automatically for you to submit to GitHub. Open a pull request
+                    in the scivision repository, attaching this json file and an 
+                    appropriate thumbnail, to add your entry to the catalog.
                 </li>
                 <li>
                     Further discussion and changes are possible on GitHub after
