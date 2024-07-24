@@ -134,18 +134,18 @@ export default function DatasourceNew({ gh_logged_in }) {
                                 JSON.stringify(e.formData)
                             )
                         }
-                        thumbnailData={sessionStorage.getItem(
-                            'new-datasource-thumbnail/jpeg'
-                        )}
-                        onChangeThumbnail={(imgData) =>
-                            sessionStorage.setItem(
-                                'new-datasource-thumbnail/jpeg',
-                                imgData
-                            )
-                        }
+                        // thumbnailData={sessionStorage.getItem(
+                        //     'new-datasource-thumbnail/jpeg'
+                        // )}
+                        // onChangeThumbnail={(imgData) =>
+                        //     sessionStorage.setItem(
+                        //         'new-datasource-thumbnail/jpeg',
+                        //         imgData
+                        //     )
+                        // }
                         catalog_kind="datasource"
                         catalog_path="src/scivision/catalog/data/datasources.json"
-                        thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
+                        // thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
                         download_filename="one-datasource.json"
                     />
                 {/* )} */}

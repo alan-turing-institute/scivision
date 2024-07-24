@@ -98,18 +98,18 @@ export default function ProjectNew({ gh_logged_in }) {
                         JSON.stringify(e.formData)
                     )
                 }
-                thumbnailData={sessionStorage.getItem(
-                    'new-project-thumbnail/jpeg'
-                )}
-                onChangeThumbnail={(imgData) =>
-                    sessionStorage.setItem(
-                        'new-project-thumbnail/jpeg',
-                        imgData
-                    )
-                }
+                // thumbnailData={sessionStorage.getItem(
+                //     'new-project-thumbnail/jpeg'
+                // )}
+                // onChangeThumbnail={(imgData) =>
+                //     sessionStorage.setItem(
+                //         'new-project-thumbnail/jpeg',
+                //         imgData
+                //     )
+                // }
                 catalog_kind="project"
                 catalog_path="src/scivision/catalog/data/projects.json"
-                thumbnail_directory="src/scivision/catalog/data/thumbnails/projects/"
+                // thumbnail_directory="src/scivision/catalog/data/thumbnails/projects/"
                 download_filename="one-project.json"
             />
         </>

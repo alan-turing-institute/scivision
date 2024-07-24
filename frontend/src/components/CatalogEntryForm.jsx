@@ -19,24 +19,24 @@ function DescriptionFieldTemplate({ description, id }) {
     )
 }
 
-function ImageUploadModal({ onChangeThumbnail, show, setShow }) {
-    return (
-        <Modal show={show} onHide={() => setShow(false)}>
-            <Modal.Header closeButton>
-                <h5>Thumbnail image upload</h5>
-            </Modal.Header>
-            <div className="mb-4 mt-2">
-                <ImageUpload
-                    onSave={(imgData) => {
-                        console.log(imgData)
-                        onChangeThumbnail(imgData)
-                        setShow(false)
-                    }}
-                />
-            </div>
-        </Modal>
-    )
-}
+// function ImageUploadModal({ onChangeThumbnail, show, setShow }) {
+//     return (
+//         <Modal show={show} onHide={() => setShow(false)}>
+//             <Modal.Header closeButton>
+//                 <h5>Thumbnail image upload</h5>
+//             </Modal.Header>
+//             <div className="mb-4 mt-2">
+//                 <ImageUpload
+//                     onSave={(imgData) => {
+//                         console.log(imgData)
+//                         onChangeThumbnail(imgData)
+//                         setShow(false)
+//                     }}
+//                 />
+//             </div>
+//         </Modal>
+//     )
+// }
 
 // Component: Form to create new catalog entry (for download or PR)
 // routes: /new-model, /new-datasource
@@ -57,29 +57,29 @@ export default function CatalogEntryForm({
     templates,
     formData,
     onChange,
-    thumbnailData,
-    onChangeThumbnail,
+    // thumbnailData,
+    // onChangeThumbnail,
     catalog_kind,
     catalog_path,
-    thumbnail_directory,
+    // thumbnail_directory,
     download_filename,
 }) {
     // The modal dialogue shows when 'pr_failed' is true.  Separate
     // state variable (pr_message) for the message, since closing the
     // modal clears the failure flag, but the message is still visible
     // briefly
-    const [pr_message, set_pr_message] = useState('')
-    const [pr_failed, set_pr_failed] = useState(false)
-    const [pr_loading, set_pr_loading] = useState(false)
+    // const [pr_message, set_pr_message] = useState('')
+    // const [pr_failed, set_pr_failed] = useState(false)
+    // const [pr_loading, set_pr_loading] = useState(false)
 
-    const [currentThumbnailPreview, setCurrentThumbnailPreview] =
-        useState(thumbnailData)
-    const [showThumbnailModal, setShowThumbnailModal] = useState(false)
+    // const [currentThumbnailPreview, setCurrentThumbnailPreview] =
+    //     useState(thumbnailData)
+    // const [showThumbnailModal, setShowThumbnailModal] = useState(false)
 
     // There is a single onSubmit event for both buttons, but can
     // use the onClick of the button to set this flag and decide
     // which one
-    let pr_flag
+    // let pr_flag
 
     async function submitEntryToGitHub(entry_submitted) {
         const entry = entry_submitted.formData
@@ -227,7 +227,7 @@ export default function CatalogEntryForm({
                 onChange={onChange}
                 validator={validator}
             >
-                <h5>Thumbnail Image</h5>
+                {/* <h5>Thumbnail Image</h5>
                 <hr
                     className="bg-secondary border-0"
                     style={{ height: '1px' }}
@@ -261,7 +261,7 @@ export default function CatalogEntryForm({
                 <hr
                     className="bg-secondary border-0"
                     style={{ height: '1px' }}
-                />
+                /> */}
                 <Col className="my-3">
                     {/* <Button
                         type="submit"
