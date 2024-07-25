@@ -14,19 +14,19 @@ const actions = [
         title: 'Contribute a new model',
         href: '/new-model',
         icon: RectangleGroupIcon,
-        text: 'Add some text about contributing a new model',
+        text: 'Add a CV model to the Scivision catalog',
     },
     {
         title: 'Add a new data source',
         href: '/new-datasource',
         icon: TableCellsIcon,
-        text: 'Add some text about adding a new data source',
+        text: 'Add a data set of images to the Scivision catalog',
     },
     {
         title: 'Add a new project',
         href: '/new-project',
         icon: StarIcon,
-        text: 'Add some text about adding a new project',
+        text: 'Create a Scivision project page for your research',
     },
 ]
 

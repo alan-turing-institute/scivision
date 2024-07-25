@@ -13,4 +13,6 @@ The Scivision project is building:
     className="relative aspect-video"
 />
 
+If you use Scivision in you research, please [cite us](https://github.com/alan-turing-institute/scivision/blob/main/CITATION.cff). You can view and contribute to the Scivision community on [Zenodo](https://zenodo.org/communities/scivision/).
+
 The Scivision Project is funded by [The Alan Turing Institute](https://www.turing.ac.uk/).

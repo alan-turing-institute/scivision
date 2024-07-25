@@ -19,8 +19,8 @@ export default function ModelNew({ gh_logged_in }) {
                         </dt>
                         <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-3 sm:mt-0 md:text-base">
                             <p>
-                                Use this form to propose a pre-trained model for
-                                inclusion in the catalog.
+                                Use this form to propose a pre-trained model for 
+                                inclusion in the catalog.<br /><br />
                             </p>
 
                             <CatalogFormHowItWorksBox />

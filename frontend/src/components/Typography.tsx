@@ -45,8 +45,7 @@ export const DataHeader = () => {
                     <h2>Data</h2>
                     <p className="text-sm md:text-base">
                         Curated image datasets from diverse scientific domains,
-                        suitable for a variety of computer vision tasks and
-                        loadable as array data via the numerical Python stack.
+                        suitable for a variety of computer vision tasks.
                     </p>
                 </div>
                 <div className="mt-2 md:mt-0">
@@ -67,7 +66,7 @@ export const ProjectsHeader = () => {
                 <div className="w-full md:w-7/12">
                     <h2>Projects</h2>
                     <p className="text-sm md:text-base">
-                        Project using sci.vision: Research projects that have
+                        Research projects that have
                         contributed scientific image data and computer vision
                         models to the Scivision catalog.
                     </p>
