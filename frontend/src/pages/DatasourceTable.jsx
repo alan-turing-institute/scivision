@@ -132,11 +132,11 @@ function DatasourceTableContents() {
 
     useScript({
         src: check_datasets_script_url,
-        // onReady: () => setDatasourceChecksReport(window.global_CheckDatasetReport),
-        onReady: (res) => console.log(res),
+        onReady: () => setDatasourceChecksReport(window.global_CheckDatasetReport),
+        // onReady: (res) => console.log(res),
         onError: (error) =>
             console.log(
-                `Could not latest dataset checks from ${check_datasets_script_url}, here's the error ${error}`
+                `Could not access latest dataset checks from ${check_datasets_script_url}, here's the error ${error}`
             ),
     })
 
