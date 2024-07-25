@@ -298,21 +298,16 @@ export function CatalogFormHowItWorksBox() {
                 <li>
                     The Scivision catalogs are stored as plain text (json) files
                     in the Scivision GitHub repository.
-                </li>
-                <li>
                     Using this form will generate a json file in the right format
-                    automatically for you to submit to GitHub. Open a pull request
+                    automatically for you to submit to GitHub. Open an issue
                     in the scivision repository, attaching this json file and an 
-                    appropriate thumbnail, to add your entry to the catalog.
-                </li>
-                <li>
+                    appropriate thumbnail, to add your entry to the catalog. 
+                    <br /><br />
                     Further discussion and changes are possible on GitHub after
                     submission (incomplete entries or entries needing further
-                    discussion are fine)
-                </li>
-                <li>
-                    After submitting your entry, a maintainer will review and
-                    merge it, and then it will be included in the catalog
+                    discussion are fine). After submitting your entry, a maintainer 
+                    will review and merge it, and then it will be included in 
+                    the catalog.
                 </li>
             </ul>
         </Alert>

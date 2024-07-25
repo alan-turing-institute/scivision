@@ -66,14 +66,6 @@ This might be just the name of your package if your model is a python package on
 - Bad example :x:: `pip install my-python-package` (don't include the actual pip command, just the package name)
 """,
     )
-    url: Optional[FlexibleUrl] = Field(
-        None,
-        title="Scivision metadata URL",
-        description="""The URL to the Scivision metadata yaml file, if it has one (or leave blank)
-
-- Good example :white_check_mark:: `https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml`"""
-    )
-
     scivision_usable: bool = Field(
         False,
         title="Model runs with Scivision?",
@@ -85,6 +77,15 @@ scivision.load_pretrained_model(<model url>, allow_install=True)
 
 Select 'no' if not sure""",
     )
+    
+    url: Optional[FlexibleUrl] = Field(
+        None,
+        title="Scivision metadata URL",
+        description="""The URL to the Scivision metadata yaml file if the model runs with scivision (leave blank if not)
+
+- Good example :white_check_mark:: `https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml`"""
+    )
+    
     institution: Tuple[str, ...] = Field(
         (),
         title="Institutions or organizations",

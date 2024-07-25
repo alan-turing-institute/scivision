@@ -37,11 +37,8 @@ export default function ModelNew({ gh_logged_in }) {
                                         You have a GitHub account
                                         <ul>
                                             <li>
-                                                You can sign up for a free
-                                                account by clicking the Login
-                                                button below and choosing
-                                                "Create an account" when
-                                                prompted for your credentials
+                                                You can sign up for a free account by going to{' '}
+                                                <a href="https://github.com/">https://github.com/</a>
                                             </li>
                                         </ul>
                                     </li>
