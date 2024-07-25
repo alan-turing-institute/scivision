@@ -86,9 +86,19 @@ export default function ProjectNew({ gh_logged_in }) {
             </div>
 
             <CatalogEntryForm
-                gh_logged_in={gh_logged_in}
+                // gh_logged_in={gh_logged_in}
                 schema={project_schema}
-                uiSchema={{ page: { 'ui:widget': 'textarea' } }}
+                uiSchema={{ 
+                    page: { 
+                        'ui:widget': 'textarea' 
+                    },
+                    tasks: {
+                        'ui:widget': 'checkboxes',
+                        'ui:options': {
+                            inline: true,
+                        },
+                    },
+                }}
                 formData={JSON.parse(
                     sessionStorage.getItem('new-project-form-data')
                 )}

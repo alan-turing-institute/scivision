@@ -5,9 +5,9 @@ import MarkdownView from 'react-showdown'
 import Form from '@rjsf/core'
 import validator from '@rjsf/validator-ajv8'
 
-import ImageUpload, { PlaceholderImage } from '../ImageUpload.jsx'
+// import ImageUpload, { PlaceholderImage } from '../ImageUpload.jsx'
 import { download } from '@/utils/utils.js'
-import { OctokitPRPlugin, GH_TOKEN_KEY } from '@/config.js'
+// import { OctokitPRPlugin, GH_TOKEN_KEY } from '@/config.js'
 
 // Template (for rjsf) to allow Markdown formatting in form field
 // descriptions
@@ -51,7 +51,7 @@ function DescriptionFieldTemplate({ description, id }) {
 // * schema - json schema object, used to generate the form
 // * catalog_kind - "datasource" or "model",
 export default function CatalogEntryForm({
-    gh_logged_in,
+    // gh_logged_in,
     schema,
     uiSchema,
     templates,

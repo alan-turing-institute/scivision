@@ -1,7 +1,7 @@
 import CatalogEntryForm, {
     CatalogFormHowItWorksBox,
 } from '@/components/CatalogEntryForm.jsx'
-import { LoginButton } from '../utils/login.jsx'
+// import { LoginButton } from '../utils/login.jsx'
 import { PageTitle } from '@/components/Typography'
 
 import model_schema from '../catalog/model_schema.js'
