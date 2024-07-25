@@ -1,4 +1,4 @@
-import { FaCopyright, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaCopyright, FaGithub} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -12,15 +12,9 @@ const Footer = () => {
                     </span>
                 </div>
                 <div className="inline-flex items-center gap-3 text-gray-500">
-                    <Link to="#" className="text-gray-500 hover:text-scipurple">
-                        <FaYoutube />
-                    </Link>
-                    <Link to="#" className="text-gray-500 hover:text-scipurple">
+                    <Link to="https://github.com/alan-turing-institute/scivision" className="text-gray-500 hover:text-scipurple">
                         <FaGithub />
-                    </Link>
-                    <Link to="#" className="text-gray-500 hover:text-scipurple">
-                        <FaTwitter />
-                    </Link>
+                    </Link>                    
                 </div>
             </div>
         </footer>

@@ -1,7 +1,7 @@
 import CatalogEntryForm, {
     CatalogFormHowItWorksBox,
 } from '@/components/CatalogEntryForm.jsx'
-import { LoginButton } from '../utils/login.jsx'
+// import { LoginButton } from '../utils/login.jsx'
 
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
@@ -97,8 +97,8 @@ export default function DatasourceNew({ gh_logged_in }) {
             <h2>Add your datasource</h2>
 
             <div className="">
-                {!gh_logged_in ? (
-                    <div
+                {/* {!gh_logged_in ? ( */}
+                    {/* <div
                         className="m-5"
                         style={{ display: 'flex', 'justify-content': 'center' }}
                     >
@@ -106,9 +106,9 @@ export default function DatasourceNew({ gh_logged_in }) {
                             Log in with GitHub to continue
                         </LoginButton>
                     </div>
-                ) : (
+                ) : ( */}
                     <CatalogEntryForm
-                        gh_logged_in={gh_logged_in}
+                        // gh_logged_in={gh_logged_in}
                         schema={datasource_schema}
                         uiSchema={{
                             'ui:title': ' ',
@@ -134,21 +134,21 @@ export default function DatasourceNew({ gh_logged_in }) {
                                 JSON.stringify(e.formData)
                             )
                         }
-                        thumbnailData={sessionStorage.getItem(
-                            'new-datasource-thumbnail/jpeg'
-                        )}
-                        onChangeThumbnail={(imgData) =>
-                            sessionStorage.setItem(
-                                'new-datasource-thumbnail/jpeg',
-                                imgData
-                            )
-                        }
+                        // thumbnailData={sessionStorage.getItem(
+                        //     'new-datasource-thumbnail/jpeg'
+                        // )}
+                        // onChangeThumbnail={(imgData) =>
+                        //     sessionStorage.setItem(
+                        //         'new-datasource-thumbnail/jpeg',
+                        //         imgData
+                        //     )
+                        // }
                         catalog_kind="datasource"
                         catalog_path="src/scivision/catalog/data/datasources.json"
-                        thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
+                        // thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
                         download_filename="one-datasource.json"
                     />
-                )}
+                {/* )} */}
                 <div className="p-3"></div>
             </div>
         </>
