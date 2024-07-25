@@ -23,7 +23,7 @@ export default function DatasourceNew({ gh_logged_in }) {
                         <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-3 sm:mt-0 md:text-base">
                             <p>
                                 Use this form if you have a dataset you would
-                                like to be included in the Datasource catalog.
+                                like to be included in the Datasource catalog.<br /><br />
                             </p>
                             <CatalogFormHowItWorksBox />
                         </dd>
