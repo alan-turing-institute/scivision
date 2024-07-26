@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: check-datasets-report
-          path: ./frontend/src/consts/check_datasets.js
+          path: frontend/src/consts/check_datasets.js
       - name: Update check_datasets.js in frontend repository
         run: |
           git config user.name "github-actions[bot]"
