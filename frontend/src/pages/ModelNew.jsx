@@ -6,7 +6,7 @@ import { PageTitle } from '@/components/Typography'
 
 import model_schema from '../catalog/model_schema.js'
 
-export default function ModelNew({ gh_logged_in }) {
+export default function ModelNew() {
     return (
         <>
             <PageTitle>Add a model to the catalog</PageTitle>
@@ -19,8 +19,10 @@ export default function ModelNew({ gh_logged_in }) {
                         </dt>
                         <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-3 sm:mt-0 md:text-base">
                             <p>
-                                Use this form to propose a pre-trained model for 
-                                inclusion in the catalog.<br /><br />
+                                Use this form to propose a pre-trained model for
+                                inclusion in the catalog.
+                                <br />
+                                <br />
                             </p>
 
                             <CatalogFormHowItWorksBox />
@@ -37,8 +39,11 @@ export default function ModelNew({ gh_logged_in }) {
                                         You have a GitHub account
                                         <ul>
                                             <li>
-                                                You can sign up for a free account by going to{' '}
-                                                <a href="https://github.com/">https://github.com/</a>
+                                                You can sign up for a free
+                                                account by going to{' '}
+                                                <a href="https://github.com/">
+                                                    https://github.com/
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -105,16 +110,20 @@ export default function ModelNew({ gh_logged_in }) {
                                             <li>
                                                 This has the benefit of allowing
                                                 programmatic access to the model
-                                                through {' '} <a href="/scivisionpy">Scivision.Py</a>
+                                                through{' '}
+                                                <a href="/scivisionpy">
+                                                    Scivision.Py
+                                                </a>
                                             </li>
                                             <li>
                                                 {' '}
-                                                In this case, <em>Scivision metadata URL </em>
+                                                In this case,{' '}
+                                                <em>Scivision metadata URL </em>
                                                 should be a direct link to the{' '}
                                                 <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-config-file">
                                                     model config file
                                                 </a>{' '}
-                                                in your repository 
+                                                in your repository
                                             </li>
                                         </ul>
                                     </li>
@@ -138,50 +147,50 @@ export default function ModelNew({ gh_logged_in }) {
                         </LoginButton>
                     </div>
                 ) : ( */}
-                    <CatalogEntryForm
-                        // gh_logged_in={gh_logged_in}
-                        schema={model_schema}
-                        uiSchema={{
-                            'ui:title': ' ',
-                            description: {
-                                'ui:widget': 'textarea',
+                <CatalogEntryForm
+                    // gh_logged_in={gh_logged_in}
+                    schema={model_schema}
+                    uiSchema={{
+                        'ui:title': ' ',
+                        description: {
+                            'ui:widget': 'textarea',
+                        },
+                        tasks: {
+                            'ui:widget': 'checkboxes',
+                            'ui:options': {
+                                inline: true,
                             },
-                            tasks: {
-                                'ui:widget': 'checkboxes',
-                                'ui:options': {
-                                    inline: true,
-                                },
-                            },
-                            labels_provided: {
-                                'ui:widget': 'radio',
-                            },
-                            scivision_usable: {
-                                'ui:widget': 'radio',
-                            },
-                        }}
-                        formData={JSON.parse(
-                            sessionStorage.getItem('new-model-form-data')
-                        )}
-                        onChange={(e) =>
-                            sessionStorage.setItem(
-                                'new-model-form-data',
-                                JSON.stringify(e.formData)
-                            )
-                        }
-                        // thumbnailData={sessionStorage.getItem(
-                        //     'new-model-thumbnail/jpeg'
-                        // )}
-                        // onChangeThumbnail={(imgData) =>
-                        //     sessionStorage.setItem(
-                        //         'new-model-thumbnail/jpeg',
-                        //         imgData
-                        //     )
-                        // }
-                        catalog_kind="model"
-                        catalog_path="src/scivision/catalog/data/models.json"
-                        // thumbnail_directory="src/scivision/catalog/data/thumbnails/models"
-                        download_filename="one-model.json"
-                    />
+                        },
+                        labels_provided: {
+                            'ui:widget': 'radio',
+                        },
+                        scivision_usable: {
+                            'ui:widget': 'radio',
+                        },
+                    }}
+                    formData={JSON.parse(
+                        sessionStorage.getItem('new-model-form-data')
+                    )}
+                    onChange={(e) =>
+                        sessionStorage.setItem(
+                            'new-model-form-data',
+                            JSON.stringify(e.formData)
+                        )
+                    }
+                    // thumbnailData={sessionStorage.getItem(
+                    //     'new-model-thumbnail/jpeg'
+                    // )}
+                    // onChangeThumbnail={(imgData) =>
+                    //     sessionStorage.setItem(
+                    //         'new-model-thumbnail/jpeg',
+                    //         imgData
+                    //     )
+                    // }
+                    catalog_kind="model"
+                    catalog_path="src/scivision/catalog/data/models.json"
+                    // thumbnail_directory="src/scivision/catalog/data/thumbnails/models"
+                    download_filename="one-model.json"
+                />
                 {/* )} */}
                 <div className="p-3"></div>
             </div>

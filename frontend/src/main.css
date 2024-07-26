@@ -27,7 +27,7 @@
 @layer components {
     form.rjsf {
         fieldset#root {
-            @apply mt-10 grid grid-cols-1 gap-x-6 gap-y-8 divide-y divide-scipurple-light sm:grid-cols-6;
+            @apply my-10 grid grid-cols-1 gap-x-6 gap-y-8 divide-y divide-scipurple-light border-b-2 border-b-scipurple pb-10 sm:grid-cols-6;
             > .form-group {
                 @apply col-span-full flex flex-col;
                 > div[id*='description'] {
@@ -69,8 +69,45 @@
         textarea {
             @apply block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scipurple sm:text-sm sm:leading-6;
         }
+
         button[type='submit'] {
             @apply mr-2 rounded-md bg-scipurple px-2.5 py-1.5 text-sm text-white shadow-sm hover:bg-scipurple-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scipurple-dark;
+            &.btn-link {
+                @apply rounded-lg bg-white p-4 text-sm font-semibold text-scipurple shadow-sm ring-1 ring-inset ring-scipurple hover:bg-gray-50;
+            }
+        }
+        .field-array {
+            @apply mt-8;
+            .array-item {
+                @apply flex flex-row items-end gap-4;
+            }
+            .array-item-list {
+                @apply pt-8;
+                .array-item {
+                    @apply mb-4;
+                    input {
+                        @apply w-72;
+                    }
+                    .array-item-toolbox {
+                        .btn-group {
+                            @apply flex gap-2;
+                        }
+                        button[type='button'] {
+                            @apply h-9 w-9 rounded-md border-[1px] border-scipurple px-2.5 py-1.5 text-sm text-scipurple shadow-sm hover:bg-scipurple-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scipurple-dark;
+                            i {
+                                @apply mt-0;
+                            }
+                            &.btn-danger {
+                                @apply border-red-500 text-red-500 hover:bg-red-50;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        p.array-item-add button {
+            @apply mr-2 mt-8 rounded-md bg-scipurple px-12 py-1.5 text-sm text-white shadow-sm hover:bg-scipurple-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scipurple-dark;
             &.btn-link {
                 @apply rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-scipurple shadow-sm ring-1 ring-inset ring-scipurple hover:bg-gray-50;
             }
