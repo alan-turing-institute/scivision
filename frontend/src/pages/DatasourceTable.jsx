@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import useScript from 'react-use-scripts'
+import { global_CheckDatasetReport } from '@/consts/check_datasets.js'
 
 import DataTable from 'react-data-table-component'
 
@@ -36,7 +35,7 @@ function DatasourceDefinitionList({ data }) {
 // Component: Datasources, table view
 // route: /datasources
 function DatasourceTableContents() {
-    const [datasourceChecksReport, setDatasourceChecksReport] = useState(null)
+    const datasourceChecksReport = global_CheckDatasetReport
 
     function datasourceCheckResult(name) {
         if (datasourceChecksReport !== null) {
@@ -126,19 +125,6 @@ function DatasourceTableContents() {
             grow: 0.5,
         },
     ]
-
-    const check_datasets_script_url =
-        'https://github.com/alan-turing-institute/scivision/releases/download/catalog-checks-report-latest-release/check_datasets.js'
-
-    useScript({
-        src: check_datasets_script_url,
-        onReady: () => setDatasourceChecksReport(window.global_CheckDatasetReport),
-        // onReady: (res) => console.log(res),
-        onError: (error) =>
-            console.log(
-                `Could not access latest dataset checks from ${check_datasets_script_url}, here's the error ${error}`
-            ),
-    })
 
     return (
         <DataTable
