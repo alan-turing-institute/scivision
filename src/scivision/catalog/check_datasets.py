@@ -72,4 +72,5 @@ def entry_point():
 
     with open('check_datasets.js', 'w') as f:
         print('// This file was generated automatically by check_datasets.py', file=f)
+        print('// Last updated:' + datetime.now().strftime("%H:%M %Z, %d-%m-%Y") + '.', file=f)
         print(f'export const global_CheckDatasetReport = {automated_checks_report_json};', file=f)
