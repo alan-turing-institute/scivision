@@ -6,7 +6,7 @@ import { PageTitle } from '@/components/Typography'
 
 import model_schema from '../catalog/model_schema.js'
 
-export default function ModelNew() {
+export default function ModelNew(gh_logged_in) {
     return (
         <>
             <PageTitle>Add a model to the catalog</PageTitle>
