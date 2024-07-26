@@ -1,9 +1,8 @@
 name: Auto-update check_datasets.js
 on:
   workflow_dispatch:
-  
-  # schedule:
-  #   - cron:  '18 3 * * *'
+  schedule:
+  - cron:  '18 3 * * *'
   
 jobs:
   check-catalogs:
@@ -34,7 +33,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull
           git add .
-          git commit -m "generated"
+          git commit -m "auto-update via GH Action"
           git push
       
         
