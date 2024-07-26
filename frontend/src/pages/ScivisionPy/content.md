@@ -4,7 +4,7 @@ title: The Scivision.Py Python Library
 
 Scivision.Py is a Python library for exploring and accessing the Scivision catalog programmatically, and for loading Scivision-compatible models and datasources.
 
-The full documentation is [here](https://scivision.readthedocs.io/en/latest/), and the github repo can be found [here](https://github.com/alan-turing-institute/scivision).
+The full documentation is [here](https://scivision.readthedocs.io/en/latest/), and the GitHub repo can be found [here](https://github.com/alan-turing-institute/scivision).
 
 ## Quick Start
 

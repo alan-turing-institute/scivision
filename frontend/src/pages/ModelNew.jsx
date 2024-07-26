@@ -57,7 +57,7 @@ export default function ModelNew({ gh_logged_in }) {
                                                 For example, your model may be
                                                 published on PyPI or have its
                                                 source code available on GitHub,
-                                                Gitlab or elsewhere
+                                                GitLab or elsewhere
                                             </li>
                                         </ul>
                                     </li>
@@ -105,17 +105,16 @@ export default function ModelNew({ gh_logged_in }) {
                                             <li>
                                                 This has the benefit of allowing
                                                 programmatic access to the model
-                                                through Scivision.Py
+                                                through {' '} <a href="/scivisionpy">Scivision.Py</a>
                                             </li>
                                             <li>
                                                 {' '}
-                                                In this case, make a note of the
-                                                direct link to the{' '}
+                                                In this case, <em>Scivision metadata URL </em>
+                                                should be a direct link to the{' '}
                                                 <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-config-file">
                                                     model config file
                                                 </a>{' '}
-                                                in your repository to provide
-                                                below
+                                                in your repository 
                                             </li>
                                         </ul>
                                     </li>

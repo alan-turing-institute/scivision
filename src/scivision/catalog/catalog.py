@@ -144,7 +144,7 @@ class CatalogDatasourceEntry(
         description="""The URL to the datasource.  If your datasource has an associated scivision yaml file, this should point to it.  Otherwise, give a URL for downloading the data
 
 - Good example :white_check_mark:: `https://example.com/path/to/datasource.yml` (location of the scivision yml file)
-- Okay example :heavy_check_mark:: `https://example.com/dataset/download/data.zip` (data download URL)
+- Good example :white_check_mark:: `https://example.com/dataset/download/data.zip` (data download URL)
 - Bad example :x:: `example.com/path/to/datasource.yml` (missing URL scheme, like 'https://')
 """,
     )

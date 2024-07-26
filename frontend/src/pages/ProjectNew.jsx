@@ -67,7 +67,7 @@ export default function ProjectNew({ gh_logged_in }) {
                                 </p>
                                 <p>
                                     Using this form will generate a json file in the right format
-                                    automatically for you to submit to GitHub. Open a pull request
+                                    for you to submit to GitHub. Open a pull request
                                     in the scivision repository, attaching this json file, 
                                     to add your entry to the catalog.
                                     Further discussion is possible at that

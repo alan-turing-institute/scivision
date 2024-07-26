@@ -49,13 +49,13 @@ export default function DatasourceNew({ gh_logged_in }) {
                                         Your data is in a publicly accessible
                                         location (for example, on{' '}
                                         <a href="https://zenodo.org/">Zenodo</a>
-                                        ).
+                                        )
                                         <ul>
                                             <li>
                                                 The Scivision catalog does not
                                                 host your data directly, just
                                                 some metadata about it, so this
-                                                must be accessible elsewhere.
+                                                must be accessible elsewhere
                                             </li>
                                         </ul>
                                     </li>
@@ -70,13 +70,13 @@ export default function DatasourceNew({ gh_logged_in }) {
                                             <li>
                                                 This has the benefit of allowing
                                                 programmatic access to the data
-                                                using Scivision.Py
+                                                using{' '} <a href="/scivisionpy">Scivision.Py</a> 
                                             </li>
                                             <li>
                                                 {' '}
                                                 If it is in the Scivision
-                                                format, make a note of the
-                                                direct link to the{' '}
+                                                format, <em>URL </em>
+                                                should be a direct link to the{' '}
                                                 <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-config-file">
                                                     data config file
                                                 </a>{' '}

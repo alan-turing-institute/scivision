@@ -299,15 +299,18 @@ export function CatalogFormHowItWorksBox() {
                     The Scivision catalogs are stored as plain text (json) files
                     in the Scivision GitHub repository.
                     Using this form will generate a json file in the right format
-                    automatically for you to submit to GitHub. Open an issue
-                    in the scivision repository, attaching this json file and an 
+                    which you can then submit through GitHub. Open an issue
+                    in the{' '}<a href="https://github.com/alan-turing-institute/scivision">scivision repository</a>, 
+                    attaching this json file and an 
                     appropriate thumbnail, to add your entry to the catalog. 
                     <br /><br />
-                    Further discussion and changes are possible on GitHub after
-                    submission (incomplete entries or entries needing further
-                    discussion are fine). After submitting your entry, a maintainer 
+                    You may choose to submit an incomplete entry - it can be 
+                    discussed and updated on GitHub following submission. 
+                    After submitting your entry, a maintainer 
                     will review and merge it, and then it will be included in 
-                    the catalog.
+                    the catalog. It will appear on this website, and it will be
+                    installable through the GitHub repository. However, it won't be 
+                    available through PyPI until after the next release. 
                 </li>
             </ul>
         </Alert>
