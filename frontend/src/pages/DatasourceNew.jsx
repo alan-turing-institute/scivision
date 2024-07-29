@@ -1,7 +1,6 @@
 import CatalogEntryForm, {
     CatalogFormHowItWorksBox,
 } from '@/components/CatalogEntryForm.jsx'
-// import { LoginButton } from '../utils/login.jsx'
 
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
@@ -94,58 +93,36 @@ export default function DatasourceNew({ gh_logged_in }) {
             <h2>Add your datasource</h2>
 
             <div className="">
-                {/* {!gh_logged_in ? ( */}
-                    {/* <div
-                        className="m-5"
-                        style={{ display: 'flex', 'justify-content': 'center' }}
-                    >
-                        <LoginButton>
-                            Log in with GitHub to continue
-                        </LoginButton>
-                    </div>
-                ) : ( */}
-                    <CatalogEntryForm
-                        // gh_logged_in={gh_logged_in}
-                        schema={datasource_schema}
-                        uiSchema={{
-                            'ui:title': ' ',
-                            description: {
-                                'ui:widget': 'textarea',
+                <CatalogEntryForm
+                    schema={datasource_schema}
+                    uiSchema={{
+                        'ui:title': ' ',
+                        description: {
+                            'ui:widget': 'textarea',
+                        },
+                        tasks: {
+                            'ui:widget': 'checkboxes',
+                            'ui:options': {
+                                inline: true,
                             },
-                            tasks: {
-                                'ui:widget': 'checkboxes',
-                                'ui:options': {
-                                    inline: true,
-                                },
-                            },
-                            labels_provided: {
-                                'ui:widget': 'radio',
-                            },
-                        }}
-                        formData={JSON.parse(
-                            sessionStorage.getItem('new-datasource-form-data')
-                        )}
-                        onChange={(e) =>
-                            sessionStorage.setItem(
-                                'new-datasource-form-data',
-                                JSON.stringify(e.formData)
-                            )
-                        }
-                        // thumbnailData={sessionStorage.getItem(
-                        //     'new-datasource-thumbnail/jpeg'
-                        // )}
-                        // onChangeThumbnail={(imgData) =>
-                        //     sessionStorage.setItem(
-                        //         'new-datasource-thumbnail/jpeg',
-                        //         imgData
-                        //     )
-                        // }
-                        catalog_kind="datasource"
-                        catalog_path="src/scivision/catalog/data/datasources.json"
-                        // thumbnail_directory="src/scivision/catalog/data/thumbnails/datasources"
-                        download_filename="one-datasource.json"
-                    />
-                {/* )} */}
+                        },
+                        labels_provided: {
+                            'ui:widget': 'radio',
+                        },
+                    }}
+                    formData={JSON.parse(
+                        sessionStorage.getItem('new-datasource-form-data')
+                    )}
+                    onChange={(e) =>
+                        sessionStorage.setItem(
+                            'new-datasource-form-data',
+                            JSON.stringify(e.formData)
+                        )
+                    }
+                    catalog_kind="datasource"
+                    catalog_path="src/scivision/catalog/data/datasources.json"
+                    download_filename="one-datasource.json"
+                />
                 <div className="p-3"></div>
             </div>
         </>

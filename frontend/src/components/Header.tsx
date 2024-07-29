@@ -1,13 +1,9 @@
-// import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-// import { LoginStatusLink } from '../utils/login.jsx'
-// import { GH_TOKEN_KEY } from '../config.js'
 
 import { Fragment } from 'react'
 import { Menu, Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 // import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-// import { FaGithub } from "react-icons/fa";
 
 import logo from '@/assets/scivision-logo-white.svg'
 
@@ -26,9 +22,7 @@ const navigation = [
 // }
 
 const Header = () => {
-    // const gh_token = sessionStorage[GH_TOKEN_KEY]
-    // const [gh_logged_in, set_gh_logged_in] = useState(!!gh_token)
-
+    
     return (
         <>
             <Popover as="header" className="bg-scipurple pb-24">
@@ -57,14 +51,6 @@ const Header = () => {
                                         as="div"
                                         className="relative ml-4 flex-shrink-0"
                                     >
-                                        <div>
-                                            {/* <LoginStatusLink
-                                                gh_logged_in={gh_logged_in}
-                                                set_gh_logged_in={
-                                                    set_gh_logged_in
-                                                }
-                                            /> */}
-                                        </div>
                                         <Transition
                                             as={Fragment}
                                             leave="transition ease-in duration-75"

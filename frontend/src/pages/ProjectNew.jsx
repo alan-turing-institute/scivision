@@ -74,12 +74,7 @@ export default function ProjectNew({ gh_logged_in }) {
                                     Further discussion is possible at that
                                     point, so it doesn't need to be complete or
                                     perfect at this stage.
-                                </p>
-                                {/* <p>
-                                    Make sure to{' '}
-                                    <strong>log in with the link above</strong>{' '}
-                                    before completing the form
-                                </p> */}
+                                </p>                                
                             </div>
                         </dd>
                     </div>
@@ -90,7 +85,6 @@ export default function ProjectNew({ gh_logged_in }) {
 
             <div className="">
                     <CatalogEntryForm
-                        // gh_logged_in={gh_logged_in}
                         schema={project_schema}
                         uiSchema={{ 
                             'ui:title': ' ',
@@ -113,18 +107,8 @@ export default function ProjectNew({ gh_logged_in }) {
                                 JSON.stringify(e.formData)
                             )
                         }
-                        // thumbnailData={sessionStorage.getItem(
-                        //     'new-project-thumbnail/jpeg'
-                        // )}
-                        // onChangeThumbnail={(imgData) =>
-                        //     sessionStorage.setItem(
-                        //         'new-project-thumbnail/jpeg',
-                        //         imgData
-                        //     )
-                        // }
                         catalog_kind="project"
                         catalog_path="src/scivision/catalog/data/projects.json"
-                        // thumbnail_directory="src/scivision/catalog/data/thumbnails/projects/"
                         download_filename="one-project.json"
                     />
                 <div className="p-3"></div>

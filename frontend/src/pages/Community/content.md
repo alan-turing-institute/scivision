@@ -1,5 +1,5 @@
 ---
-title: Community resources
+title: Community Resources
 ---
 
 ## Slack workspace
