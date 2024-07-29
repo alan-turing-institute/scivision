@@ -21,7 +21,7 @@ export default function ProjectNew({ gh_logged_in }) {
                             <div className="prose mt-1 max-w-2xl text-sm leading-6 text-gray-500">
                                 <ul>
                                     <li>
-                                        You have already added the datasources
+                                        You have already added the datasource(s)
                                         used in your project to the{' '}
                                         <Link to="../datasource-grid">
                                             Scivision Data catalog
@@ -34,7 +34,7 @@ export default function ProjectNew({ gh_logged_in }) {
                                     </li>
                                     <li>
                                         You have already added the computer
-                                        vision models used in your project to
+                                        vision model(s) used in your project to
                                         the{' '}
                                         <Link to="../model-grid">
                                             Scivision Model catalog
@@ -62,14 +62,15 @@ export default function ProjectNew({ gh_logged_in }) {
                                     </a>
                                     , which will allow you to include any
                                     headers, lists and links you feel are
-                                    appropriate. You can then select the models
-                                    and data you added.
+                                    appropriate. You can then link to your 
+                                    model(s) / data.
                                 </p>
                                 <p>
                                     Using this form will generate a json file in the right format
-                                    for you to submit to GitHub. Open a pull request
-                                    in the scivision repository, attaching this json file, 
-                                    to add your entry to the catalog.
+                                    for you to submit to GitHub. Open an issue in the 
+                                    {' '}<a href="https://github.com/alan-turing-institute/scivision">scivision repository</a>,
+                                    attaching this json file, 
+                                    to add your project to the catalog.
                                     Further discussion is possible at that
                                     point, so it doesn't need to be complete or
                                     perfect at this stage.
@@ -85,43 +86,48 @@ export default function ProjectNew({ gh_logged_in }) {
                 </dl>
             </div>
 
-            <CatalogEntryForm
-                // gh_logged_in={gh_logged_in}
-                schema={project_schema}
-                uiSchema={{ 
-                    page: { 
-                        'ui:widget': 'textarea' 
-                    },
-                    tasks: {
-                        'ui:widget': 'checkboxes',
-                        'ui:options': {
-                            inline: true,
-                        },
-                    },
-                }}
-                formData={JSON.parse(
-                    sessionStorage.getItem('new-project-form-data')
-                )}
-                onChange={(e) =>
-                    sessionStorage.setItem(
-                        'new-project-form-data',
-                        JSON.stringify(e.formData)
-                    )
-                }
-                // thumbnailData={sessionStorage.getItem(
-                //     'new-project-thumbnail/jpeg'
-                // )}
-                // onChangeThumbnail={(imgData) =>
-                //     sessionStorage.setItem(
-                //         'new-project-thumbnail/jpeg',
-                //         imgData
-                //     )
-                // }
-                catalog_kind="project"
-                catalog_path="src/scivision/catalog/data/projects.json"
-                // thumbnail_directory="src/scivision/catalog/data/thumbnails/projects/"
-                download_filename="one-project.json"
-            />
+            <h2>Add your project</h2>
+
+            <div className="">
+                    <CatalogEntryForm
+                        // gh_logged_in={gh_logged_in}
+                        schema={project_schema}
+                        uiSchema={{ 
+                            page: { 
+                                'ui:widget': 'textarea' 
+                            },
+                            tasks: {
+                                'ui:widget': 'checkboxes',
+                                'ui:options': {
+                                    inline: true,
+                                },
+                            },
+                        }}
+                        formData={JSON.parse(
+                            sessionStorage.getItem('new-project-form-data')
+                        )}
+                        onChange={(e) =>
+                            sessionStorage.setItem(
+                                'new-project-form-data',
+                                JSON.stringify(e.formData)
+                            )
+                        }
+                        // thumbnailData={sessionStorage.getItem(
+                        //     'new-project-thumbnail/jpeg'
+                        // )}
+                        // onChangeThumbnail={(imgData) =>
+                        //     sessionStorage.setItem(
+                        //         'new-project-thumbnail/jpeg',
+                        //         imgData
+                        //     )
+                        // }
+                        catalog_kind="project"
+                        catalog_path="src/scivision/catalog/data/projects.json"
+                        // thumbnail_directory="src/scivision/catalog/data/thumbnails/projects/"
+                        download_filename="one-project.json"
+                    />
+                <div className="p-3"></div>
+            </div>
         </>
     )
 }
