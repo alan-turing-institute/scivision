@@ -93,6 +93,7 @@ export default function ProjectNew({ gh_logged_in }) {
                         // gh_logged_in={gh_logged_in}
                         schema={project_schema}
                         uiSchema={{ 
+                            'ui:title': ' ',
                             page: { 
                                 'ui:widget': 'textarea' 
                             },

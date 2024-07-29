@@ -226,12 +226,12 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     models: Tuple[str, ...] = Field(
         (),
         title="Models",
-        description="Which models from the scivision catalog are used in the project?",
+        description="Which model(s) from the scivision catalog are used in the project?",
     )
     datasources: Tuple[str, ...] = Field(
         (),
         title="Datasources",
-        description="Which datasources from the scivision catalog are used in the project?",
+        description="Which datasource(s) from the scivision catalog are used in the project?",
     )
     tasks: FrozenSet[TaskEnum] = Field(
         (),

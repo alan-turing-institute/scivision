@@ -18,6 +18,8 @@ $ pip install scivision
 
 ### Load a model
 
+Within python, run
+
 ```python
 from scivision import load_pretrained_model
 
@@ -39,7 +41,6 @@ resnet18 = load_pretrained_model(
 ### Load a datasource
 
 ```python
-
 from scivision import load_dataset
 
 dataset = load_dataset(
@@ -48,7 +49,7 @@ dataset = load_dataset(
 
 # 'dataset' provides several named arrays.  This datasource
 # provides one named 'test_image': The keys can be looked
-# up with # \`list(dataset)\` (or by consulting the datasource
+# up with `list(dataset)` (or by consulting the datasource
 # documentation)
 #
 test_image = dataset['test_image'].read()
