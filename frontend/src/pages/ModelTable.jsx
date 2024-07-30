@@ -1,4 +1,4 @@
-import { global_CheckModelReport } from '@/consts/check_models.js'
+// import { global_CheckModelReport } from '@/consts/check_models.js'
 
 import DataTable from 'react-data-table-component'
 
@@ -40,7 +40,8 @@ function ModelDefinitionList({ data }) {
 }
 
 function ModelTableContents() {
-    const modelChecksReport = global_CheckModelReport
+    // const modelChecksReport = global_CheckModelReport
+    const modelChecksReport = null
 
     function modelCheckResult(name) {
         if (modelChecksReport !== null) {
@@ -91,6 +92,43 @@ function ModelTableContents() {
             selector: (row) => row.tasks,
             cell: (row) =>
                 row.tasks.map((t) => <TaskBadge key={t} taskName={t} />),
+        },
+        {
+            selector: (row) => {
+                const result = modelCheckResult(row.name)
+
+                if (result === 'Pass') {
+                    return (
+                        <img
+                            src="https://img.shields.io/badge/scivision_metadata-pass-green"
+                            title="The metadata for this model was successfully loaded by scivision, from the location in the catalog"
+                        />
+                    )
+                } else if (result === 'Fail') {
+                    return (
+                        <img
+                            src="https://img.shields.io/badge/scivision_metadata-fail-red"
+                            title="Scivision metadata (yaml) file for this model failed to load or was missing at the indicated location"
+                        />
+                    )
+                } else {
+                    return (
+                        <img
+                            src="https://img.shields.io/badge/scivision_metadata-unknown-lightgray"
+                            title="Could not access the result for this validation check"
+                        />
+                    )
+                }
+            },
+            name: (
+                <span
+                    className="tooltip-available"
+                    title={modelValidationTimeString()}
+                >
+                    Validation checks
+                </span>
+            ),
+            grow: 0.5,
         },
     ]
 
