@@ -62,7 +62,7 @@ const router = createBrowserRouter(
                 />
                 <Route
                     path="/new-model"
-                    element={<ModelNew gh_logged_in={true} />}
+                    element={<ModelNew />}
                 />
 
                 <Route path="/datasource-grid" element={<DatasourceGrid />} />
@@ -73,7 +73,7 @@ const router = createBrowserRouter(
                 />
                 <Route
                     path="/new-datasource"
-                    element={<DatasourceNew gh_logged_in={true} />}
+                    element={<DatasourceNew />}
                 />
 
                 <Route path="/project-grid" element={<ProjectGrid />} />
@@ -84,7 +84,7 @@ const router = createBrowserRouter(
                 />
                 <Route
                     path="/new-project"
-                    element={<ProjectNew gh_logged_in={true} />}
+                    element={<ProjectNew />}
                 />
 
                 <Route path="/contribute" element={<Contribute />} />

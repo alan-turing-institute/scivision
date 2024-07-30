@@ -4,7 +4,7 @@ import { PageTitle } from '@/components/Typography'
 
 import project_schema from '../catalog/project_schema.js'
 
-export default function ProjectNew({ gh_logged_in }) {
+export default function ProjectNew() {
     return (
         <>
             <PageTitle>

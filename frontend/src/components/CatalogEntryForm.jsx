@@ -25,7 +25,6 @@ function DescriptionFieldTemplate({ description, id }) {
 // This Component can be used for both the model and datasource
 // catalogs, through the props.
 //
-// * gh_logged_in - login status (grey out the PR button if not logged in)
 // * schema - json schema object, used to generate the form
 // * catalog_kind - "datasource" or "model",
 export default function CatalogEntryForm({

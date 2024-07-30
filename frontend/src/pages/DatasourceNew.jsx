@@ -8,7 +8,7 @@ import datasource_schema from '../catalog/datasource_schema.js'
 
 import { PageTitle } from '@/components/Typography'
 
-export default function DatasourceNew({ gh_logged_in }) {
+export default function DatasourceNew() {
     return (
         <>
             <PageTitle>Add a datasource to the catalog</PageTitle>
