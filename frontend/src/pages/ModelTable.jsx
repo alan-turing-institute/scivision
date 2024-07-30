@@ -1,3 +1,5 @@
+import { global_CheckModelReport } from '@/consts/check_models.js'
+
 import DataTable from 'react-data-table-component'
 
 import { extractThumbnailFromName } from '@/utils/ExtractThumbnails'
@@ -38,6 +40,34 @@ function ModelDefinitionList({ data }) {
 }
 
 function ModelTableContents() {
+    const modelChecksReport = global_CheckModelReport
+
+    function modelCheckResult(name) {
+        if (modelChecksReport !== null) {
+            const report = modelChecksReport.report[name]
+            if (report !== undefined) {
+                return report.check_result
+            } else {
+                return 'Unknown'
+            }
+        } else {
+            return 'Unknown'
+        }
+    }
+
+    function modelCheckTime() {
+        if (modelChecksReport) {
+            var time = new Date(modelChecksReport.time)
+            return time.toUTCString()
+        } else {
+            return '(never)'
+        }
+    }
+
+    function modelValidationTimeString() {
+        return `last run ${modelCheckTime()}`
+    }
+
     const columns = [
         {
             name: 'Thumbnail',
