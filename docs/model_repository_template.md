@@ -6,7 +6,7 @@ In order for the `scivision` Python API to be able to load and run a computer vi
 
 This guide explains how to set up a GitHub repository for your CV model(s) compatible with scivision.
 
-This is also a pre-requisite for adding the model to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-extending-the-scivision-catalog) after setting up your model as per this guide.
+This is also a pre-requisite for adding the model to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-contributing-to-the-scivision-catalog) after setting up your model as per this guide.
 
 📚 **Contents:**
 
@@ -75,7 +75,7 @@ A `README`, which includes detailed instructions on how the model can be install
 
 ### 📜 Software license
 
-You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-software.html) in The Turing Way online handbook.
+You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license) in The Turing Way online handbook.
 
 .. _api:
 

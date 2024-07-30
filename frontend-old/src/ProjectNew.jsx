@@ -17,13 +17,13 @@ export default function ProjectNew({ gh_logged_in }) {
           <ul>
             <li>
               You have already added the datasources used in your project to the{" "}
-              <Link to="../datasource-grid">Scivision Data catalog</Link>. Click
+              <Link to="../datasource-grid">Scivision data catalog</Link>. Click
               here to add a <Link to="../new-datasource">new datasource</Link>.
             </li>
             <li>
               You have already added the computer vision models used in your
               project to the{" "}
-              <Link to="../model-grid">Scivision Model catalog</Link>. Click
+              <Link to="../model-grid">Scivision model catalog</Link>. Click
               here to add a <Link to="../new-model">new model</Link>.
             </li>
           </ul>
@@ -38,7 +38,7 @@ export default function ProjectNew({ gh_logged_in }) {
             Add the details that will form the basis of your project's Scivision
             page below. You can format the text with{" "}
             <a href="https://daringfireball.net/projects/markdown/basics">
-              Markdown
+              markdown
             </a>
             , which will allow you to include any headers, lists and links you
             feel are appropriate. You can then select the models and data you

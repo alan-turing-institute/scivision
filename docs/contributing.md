@@ -7,7 +7,7 @@ Thank you for taking the time to contribute to the Scivision project. 🎉
 - :ref:`who-should-contribute`
 - :ref:`what-to-contribute`
 - :ref:`how-to-contribute`
-- :ref:`extending-the-scivision-catalog`
+- :ref:`contributing-to-the-scivision-catalog`
 - 🖊️ [License](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
 
 .. _who-should-contribute:
@@ -15,25 +15,23 @@ Thank you for taking the time to contribute to the Scivision project. 🎉
 😎 Who should contribute
 ---
 
-The scivision project is being developed openly and invites contributions from anyone interested in computer vision or scientific data, who agrees with the goal of making models and datasets more accessible and discoverable across disciplines!
-
-The following contributions are particularly welcome:
-
-* **Computer vision models** for the model catalog, whether new or existing
-* **Data sources** for the data catalog, from the sciences or humanities
-* New features or other code improvements to the scivision package itself
-* Bug reports
+The scivision project is fully open-source and invites contributions from anyone interested in computer vision or scientific data, with the goal of making models and datasets more accessible and discoverable across disciplines!
 
 .. _what-to-contribute:
 
 🤔 What to contribute
 ---
 
-#### Catalog contributions
+* **Computer vision models** for the model catalog, whether new or existing
+* **Data sources** for the data catalog, from the sciences or humanities
+* New features or other code improvements to the scivision package itself
+* Bug reports
 
-Submit a model or dataset to the catalog so that they are discoverable by other scivision users when querying the catalog.
+#### Models and datasets
 
-See :ref:`extending-the-scivision-catalog`.
+Adding a model or dataset to the catalog makes it discoverable by other Scivision users.
+
+See :ref:`contributing-to-the-scivision-catalog`.
 
 #### Bug reports
 
@@ -51,7 +49,7 @@ To get started:
 
 Pull requests are welcome: see :ref:`how-to-contribute` which describes our workflow.
 
-For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scips`.  Feel free to ask for advice about this in an issue/discussion.
+For larger features, substantial changes, or anything where you would like early feedback from the community, consider starting a Scivision Improvement Proposal.  :ref:`about-scivision-improvement-proposals-scips` .  Feel free to ask for advice about this in an issue/discussion.
 
 .. _how-to-contribute:
 
@@ -73,12 +71,10 @@ For larger features, substantial changes, or anything where you would like early
 - More information:
   - Read details on [how to open a Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 
-.. _extending-the-scivision-catalog:
+.. _contributing-to-the-scivision-catalog:
 
-🎁 Extending the scivision catalog
+🎁 Contributing to the scivision catalog
 ---
-
-You can add models or datasets to the scivision catalog via the GitHub workflow described above.
 
 #### Preparing a model for inclusion in the catalog
 
@@ -88,7 +84,7 @@ This will enable you load your model via the scivision API and run it on matchin
 
 #### Submitting your model to the catalog
 
-Once you have prepared a model for inclusion in the catalog, submit some details about it [here](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
+Once you have prepared a model for inclusion in the catalog, submit it [through the scivision website](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
 
 Once your model submission is accepted, it will become available to other users of scivision.
 
@@ -150,4 +146,4 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
   }
  ```
  
- After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
+After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.

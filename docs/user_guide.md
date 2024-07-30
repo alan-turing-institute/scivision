@@ -73,7 +73,9 @@ Scivision is currently working towards supporting Python >=3.11.
 🧪 Getting started
 ---------------
 
-Scivision enables users to quickly find computer vision models that can be run on matching scientific image dataset(s), or find datasets that models can be run on. This can be achieved by running several lines of Python code.
+Scivision enables users to quickly find computer vision models that can be run on matching a compatible scientific image dataset and provides access to a range of datasets for testing models.
+
+The models and datasets you find when searching the “default” scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision). 
 
 The core functionality of the Python package API is documented in the :ref:`api-docs` documentation and a Jupyter notebook demonstrating it can be found [on GitHub](https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/how-to-use-scivision.ipynb) or can be interactively run via clicking the following link to Binder:
 
@@ -104,6 +106,6 @@ To understand how these external sources are configured for compatibility with s
 
 To understand how to contribute new models and data sources to the scivision catalog, check out:
 
-- :ref:`extending-the-scivision-catalog`
+- :ref:`contributing-to-the-scivision-catalog`
 
     

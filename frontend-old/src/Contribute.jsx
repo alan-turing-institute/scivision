@@ -19,6 +19,8 @@ export default function Contribute() {
               <Link to="/new-project">project</Link>
             </li>
           </ul>
+        {" "} 
+            <a href="https://scivision.readthedocs.io/en/latest/">View full documentation</a>
         </p>
       </Container>
     </>

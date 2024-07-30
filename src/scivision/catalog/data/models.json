@@ -97,7 +97,7 @@
       "tasks": [
         "classification"
       ],
-      "url": "https://github.com/alan-turing-institute/plankton-cefas-scivision",
+      "url": "https://github.com/alan-turing-institute/plankton-cefas-scivision/tree/main/",
       "pkg_url": "git+https://github.com/alan-turing-institute/plankton-cefas-scivision@main",
       "scivision_usable": true,
       "institution": [
@@ -118,7 +118,7 @@
       "tasks": [
         "segmentation"
       ],
-      "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision",
+      "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision/blob/main/",
       "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@main",
       "scivision_usable": true,
       "institution": [
@@ -176,7 +176,7 @@
       "tasks": [
         "segmentation"
       ],
-      "url": "https://github.com/alan-turing-institute/scivision_huggingface_segmentation",
+      "url": "https://github.com/alan-turing-institute/scivision_huggingface_segmentation/tree/main",
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_segmentation.git@main",
       "scivision_usable": true,
       "institution": [
@@ -191,7 +191,7 @@
       "tasks": [
         "object-detection"
       ],
-      "url": "https://github.com/alan-turing-institute/scivision_huggingface_objectdetection",
+      "url": "https://github.com/alan-turing-institute/scivision_huggingface_objectdetection/tree/main",
       "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_objectdetection.git@main",
       "scivision_usable": true,
       "institution": [
@@ -227,7 +227,7 @@
       "tasks": [
         "classification"
       ],
-      "url": "https://github.com/alan-turing-institute/flower_classification_model",
+      "url": "https://github.com/alan-turing-institute/flower_classification_model/tree/main",
       "pkg_url": "git+https://github.com/alan-turing-institute/flower_classification_model.git@main",
       "scivision_usable": true,
       "institution": [
@@ -244,7 +244,7 @@
       "tasks": [
         "classification"
       ],
-      "url": "https://github.com/alan-turing-institute/butterfly_classification_model",
+      "url": "https://github.com/alan-turing-institute/butterfly_classification_model/tree/main/",
       "pkg_url": "git+https://github.com/alan-turing-institute/butterfly_classification_model.git@main",
       "scivision_usable": true,
       "institution": [

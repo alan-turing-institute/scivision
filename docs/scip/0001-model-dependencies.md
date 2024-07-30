@@ -42,7 +42,7 @@ When evaluating proposed architectures, here are some questions to consider.
 
 3. What guarantees does Scivision give to model plugin authors about the systems on which they will be run?  In particular, are there precise system requirements that Scivision can check and enforce on a host system (including python version, operating system)?  For example, for numpy: https://numpy.org/neps/nep-0029-deprecation_policy.html
 
-4. What guarantees does Scivision give to users about the models in the catalogue, and whether a given model will run correctly on a given host system?
+4. What guarantees does Scivision give to users about the models in the catalog, and whether a given model will run correctly on a given host system?
 
 5. How are errors handled and reported, particularly those caused by dependency problems?
 
