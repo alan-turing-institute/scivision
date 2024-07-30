@@ -1,9 +1,11 @@
-name: Check models 
+name: Auto-update check_models.js
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '18 3 * * *'
 jobs:
   check-models:
+    name: Check models and create check_models.js file
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -20,17 +22,18 @@ jobs:
         run: pip install chardet 
       - name: Check model catalog
         run: scivision-check-models
-      # - name: Store artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: check-models-report
-      #     path: check_models.csv
-      - name: Create Release
-        uses: ncipollo/release-action@v1
+      - name: Store artifact
+        uses: actions/upload-artifact@v4
         with:
-          tag: model-checks-report-latest-release
-          name: Models checks report
-          commit: ${{ github.ref }}
-          allowUpdates: true
-          removeArtifacts: true
-          artifacts: check_models.js
+          name: check-models-report
+          path: check_models.js
+      - name: Update check_models.js in frontend repository
+        run: |
+          mv -f check_models.js frontend/src/consts/check_models.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull
+          git add .
+          git commit -m "auto-update via GH Action"
+          git push
+  
