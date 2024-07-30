@@ -40,7 +40,7 @@ This Code of Conduct applies to all spaces managed by the Scivision project incl
 
 - Dr Scott Hosking  - is responsible for enforcing the Code of Conduct.
 He can be contacted by emailing [Dr Scott Hosking](mailto:shosking@turing.ac.uk).
-You may also contact [Dr Sebastian Anhert](mailto:sanhert@turing.ac.uk), [Dr Alan Lowe](mailto:alowe@turing.ac.uk), [Dr Aida Mehonic](mailto:amehonic@turing.ac.uk) or [Dr Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk) if you would prefer not to contact Dr Hosking.
+You may also contact [Dr Sebastian Anhert](mailto:sanhert@turing.ac.uk), [Dr Aida Mehonic](mailto:amehonic@turing.ac.uk) or [Dr Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk) if you would prefer not to contact Dr Hosking.
 
 Reports may be reviewed by other members of the core development team, unless there is a conflict of interest, and will be kept confidential.
 
@@ -107,7 +107,7 @@ If you feel able to, please contact [Dr Scott Hosking ](mailto:@turing.ac.uk).
 
 ### 3.2 Alternate contact points
 
-If you do not feel comfortable contacting Dr Scott Hosking, please report an incident to [Dr Sebastian Anhert](mailto:sanhert@turing.ac.uk), [Dr Alan Lowe](mailto:alowe@turing.ac.uk) or to [Dr Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk).
+If you do not feel comfortable contacting Dr Scott Hosking, please report an incident to [Dr Sebastian Anhert](mailto:sanhert@turing.ac.uk), or to [Dr Bea Costa-Gomez](mailto:bcostagomes@turing.ac.uk).
 
 Alternatively, if you would like to contact someone outside of the core development team, please contact [Dr Aida Mehonic](mailto:amehonic@turing.ac.uk).
 
@@ -129,10 +129,11 @@ Enforcement of the Code of Conduct should be respectful and not include any hara
 The Code of Conduct committee is:
 
 - Dr Scott Hosking: shosking@turing.ac.uk
-- Dr Alan Lowe: alowe@turing.ac.uk
+- Dr Alan Lowe
 - Dr Sebastian Anhert: sanhert@turing.ac.uk
 - Dr Bea Costa Gomes: bcostagomes@turing.ac.uk
 - Dr Aida Mehonic: amehonic@turing.ac.uk
+- Dr Isabel Fenton: ifenton@turing.ac.uk
 
 As the community grows, we will seek to build a larger committee including members outside of the core team.
 
