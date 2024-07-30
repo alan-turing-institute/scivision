@@ -4,7 +4,7 @@
 
 Editors:
   quantumjot, scotthosking, sebastianahnert (project PIs), ots22 (who
-  created this draft)
+  created this draft), IFenton
 
 Status (raw | draft | stable | deprecated | retired):
   draft
@@ -13,19 +13,20 @@ Status (raw | draft | stable | deprecated | retired):
 
 This document summarises the main priorities of the Scivision team
 based at the Alan Turing Institute, for the current phase of the
-project supporting Scivision development, that started in January
-2023.
+project supporting Scivision development, that started in August 2024.
 
 Scivision originated at the Alan Turing Institute, and development is
-actively hosted there, but the project welcomes participation from
+hosted there, but the project welcomes participation from
 anyone in the wider community. Any contributions related to
 Scivision's mission are gladly received, whether or not they relate to
 the items noted below.
 
-This roadmap is to be understood as listing areas that are likely to
-receive attention from the Turing team, and is provided in order to
-help users and contributors understand the direction of the project,
-given the Turing team's stake in it.
+As of August 2024, Scivision is not currently being actively developed
+by a team at the Turing. However, this roadmap is to be understood as 
+listing areas that are would benefit from receiving attention, and 
+is provided in order to help users and contributors understand the 
+suggested direction of the project.
+
 
 Importantly, the roadmap doesn't commit anyone to any particular
 deliverables, there aren't specific dates associated with the items
@@ -44,8 +45,6 @@ perpetual 'draft').
 
 ### Community engagement
 
-  - A community calendar
-  - Running events, including a regular community call
   - Making Scivision a hub for best practices in sharing reproducible
     CV models
   - Informational videos (overview, getting started, task-focussed
@@ -57,10 +56,6 @@ perpetual 'draft').
 
   - Model/dataset matchmaking, graphical representation of models and
     dataset interoperability
-  - Improved 'model cards'
-      - For example, show extra installation instructions when these 
-        are required, and give an example of using the model in Python
-  - Improvements to the 'new model/new datasource' interface
 
 ### Automation
 
@@ -73,9 +68,8 @@ perpetual 'draft').
 
 ### Supporting Scivision use-cases
 
-  - Support to researchers at the Turing and collaborators
   - Growing the catalog
-      - Helping users to share their models and data through the catalog
+      - Encouraging users to share their models and data through the catalog
       - Targetting models for the following tasks in particular (although
       not exclusively):
         - object tracking
