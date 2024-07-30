@@ -135,6 +135,7 @@ function ModelTableContents() {
         <DataTable
             columns={columns}
             data={models.entries}
+            defaultSortFieldId={2} 
             title=""
             expandableRowsComponent={(props) => (
                 <TableCardDropdown

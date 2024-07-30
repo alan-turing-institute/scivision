@@ -60,6 +60,7 @@ function ProjectTableContents() {
         <DataTable
             columns={columns}
             data={projects.entries}
+            defaultSortFieldId={2} 
             title=""
             expandableRowsComponent={(props) => (
                 <TableCardDropdown

@@ -130,6 +130,7 @@ function DatasourceTableContents() {
         <DataTable
             columns={columns}
             data={datasources.entries}
+            defaultSortFieldId={2} 
             title=""
             expandableRowsComponent={(props) => (
                 <TableCardDropdown
