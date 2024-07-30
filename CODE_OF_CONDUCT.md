@@ -1,7 +1,7 @@
 # Code of Conduct
 
 We value the participation of every member of our community and want to ensure that every contributor has an enjoyable and fulfilling experience.
-Accordingly, everyone who participates in the scivision project is expected to show respect and courtesy to other community members at all times.
+Accordingly, everyone who participates in the Scivision project is expected to show respect and courtesy to other community members at all times.
 
 Scott Hosking, Alan Lowe and Sebastian Anhert, as Co-Is of this project, and all project members, are dedicated to a ***harassment-free experience for everyone***, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. **We do not tolerate harassment by and/or of members of our community in any form**.
 
@@ -35,8 +35,8 @@ We value the involvement of everyone in the community.
 We are committed to creating a friendly and respectful place for learning, teaching and contributing.
 All participants in our in-person events and online communications are expected to show respect and courtesy to others at all times.
 
-To make clear what is expected, everyone participating in activities associated with the scivision project is required to conform to this Code of Conduct.
-This Code of Conduct applies to all spaces managed by the scivision project including, but not limited to, in-person focus groups and workshops, and communications online via GitHub.
+To make clear what is expected, everyone participating in activities associated with the Scivision project is required to conform to this Code of Conduct.
+This Code of Conduct applies to all spaces managed by the Scivision project including, but not limited to, in-person focus groups and workshops, and communications online via GitHub.
 
 - Dr Scott Hosking  - is responsible for enforcing the Code of Conduct.
 He can be contacted by emailing [Dr Scott Hosking](mailto:shosking@turing.ac.uk).
@@ -46,13 +46,13 @@ Reports may be reviewed by other members of the core development team, unless th
 
 ## 2 Code of Conduct
 
-The scivision team are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity.
+The Scivision team are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity.
 As such, we do not tolerate behaviour that is disrespectful to our community members or that excludes, intimidates, or causes discomfort to others.
 We do not tolerate discrimination or harassment based on characteristics that include, but are not limited to: gender identity and expression, sexual orientation, disability, physical appearance, body size, citizenship, nationality, ethnic or social origin, pregnancy, familial status, veteran status, genetic information, religion or belief (or lack thereof), membership of a national minority, property, age, education, socio-economic status, technical choices, and experience level.
 
-Everyone who participates in the scivision project activities is required to conform to this Code of Conduct.
-This Code of Conduct applies to all spaces managed by the scivision project including, but not limited to, in person focus groups and workshops, and communications online via GitHub.
-By participating, contributors indicate their acceptance of the procedures by which the scivision project core development team resolves any Code of Conduct incidents, which may include storage and processing of their personal information.
+Everyone who participates in the Scivision project activities is required to conform to this Code of Conduct.
+This Code of Conduct applies to all spaces managed by the Scivision project including, but not limited to, in person focus groups and workshops, and communications online via GitHub.
+By participating, contributors indicate their acceptance of the procedures by which the Scivision project core development team resolves any Code of Conduct incidents, which may include storage and processing of their personal information.
 
 ### 2.1 Expected Behaviour
 
@@ -72,7 +72,7 @@ See [this explanation of the four social rules](https://www.recurse.com/manual#s
 
 ### 2.2 Unacceptable Behaviour
 
-Examples of unacceptable behaviour by scivision community members at any project event or platform include:
+Examples of unacceptable behaviour by Scivision community members at any project event or platform include:
 
 * written or verbal comments which have the effect of excluding people on the basis of membership of any specific group
 * causing someone to fear for their safety, such as through stalking, following, or intimidation
@@ -91,7 +91,7 @@ Examples of unacceptable behaviour by scivision community members at any project
 ### 2.3 Consequences of Unacceptable Behaviour
 
 Participants who are asked to stop any inappropriate behaviour are expected to comply immediately.
-This applies to all scivision community events and platforms, either online or in-person.
+This applies to all Scivision community events and platforms, either online or in-person.
 If a participant engages in behaviour that violates this Code of Conduct, any member of the core development team may warn the offender, ask them to leave the event or platform (without refund), or impose any other appropriate sanctions (see the [enforcement manual](#4-enforcement-manual) for details).
 
 ### 2.4 Feedback
@@ -121,7 +121,7 @@ A detailed enforcement policy is available in the Enforcement Manual below.
 
 ## 4 Enforcement Manual
 
-This is the enforcement manual followed by the scivision project research team.
+This is the enforcement manual followed by the Scivision project research team.
 It's used when we respond to an issue to make sure we're consistent and fair.
 Enforcement of the Code of Conduct should be respectful and not include any harassing behaviours.
 
@@ -138,7 +138,7 @@ As the community grows, we will seek to build a larger committee including membe
 
 ### 4.2 Urgent Situations: Acting Unilaterally
 
-If the incident involves physical danger, or involves a threat to anyone's safety (e.g. threats of violence), any member of the community may -- and should -- act unilaterally to protect the safety of any community member. This can include contacting law enforcement (or other local personnel) and speaking on behalf of the scivision team.
+If the incident involves physical danger, or involves a threat to anyone's safety (e.g. threats of violence), any member of the community may -- and should -- act unilaterally to protect the safety of any community member. This can include contacting law enforcement (or other local personnel) and speaking on behalf of the Scivision team.
 
 If the act is ongoing, any community member may act immediately, before reaching consensus, to diffuse the situation. In ongoing situations, any member may at their discretion employ any of the tools available in this enforcement manual, including bans and blocks online, or removal from a physical space.
 
@@ -172,7 +172,7 @@ Possible responses may include:
 - A private written reprimand from a member of the research team to the individual(s) involved. In this case, the research team member will deliver that reprimand to the individual(s) over email, cc'ing Dr Scott Hosking (or Dr Aida Mehonic) for record keeping.
 - A public announcement of an incident, ideally in the same venue that the violation occurred (i.e. on the listserv for a listserv violation; GitHub for a GitHub violation, etc.). The committee may choose to publish this message elsewhere for posterity.
 - An imposed "time out" from online spaces. Dr Scott Hosking will communicate this "time out" to the individual(s) involved.
-- A permanent or temporary ban from some or all scivision project spaces (GitHub, in-person events etc). The research team will maintain records of all such bans so that they may be reviewed in the future, extended to a Code of Conduct safety team as it is built, or otherwise maintained. If a member of the community is removed from an event they will not be reimbursed for any part of the event that they miss.
+- A permanent or temporary ban from some or all Scivision project spaces (GitHub, in-person events etc). The research team will maintain records of all such bans so that they may be reviewed in the future, extended to a Code of Conduct safety team as it is built, or otherwise maintained. If a member of the community is removed from an event they will not be reimbursed for any part of the event that they miss.
 - Once a resolution is agreed upon, but before it is enacted, a member of the CoC committee will contact the original reporter and any other affected parties and explain the proposed resolution. The CoC committee member will ask if this resolution is acceptable, and must note feedback for the record. However, the CoC committee is not required to act on this feedback.
 
 ### 4.5 Conflicts of Interest
@@ -181,7 +181,7 @@ In the event of any conflict of interest such that Dr Scott Hosking is not able 
 
 ## 5 Acknowledgements
 
-This code is created by the scivision project, by adapting the Turing Way project CoC which itself was built by reusing the material from the Carpentries Code of Conduct and The Alan Turing Institute Data Study Group. It is used under the creative commons attribution license. 
+This code is created by the Scivision project, by adapting the Turing Way project CoC which itself was built by reusing the material from the Carpentries Code of Conduct and The Alan Turing Institute Data Study Group. It is used under the creative commons attribution license. 
 
 The Carpentries Code of Conduct was adapted from guidelines written by the Django Project, which was itself based on the Ada Initiative template and the PyCon 2013 Procedure for Handling Harassment Incidents. Contributors to the the initial document are Adam Obeng, Aleksandra Pawlik, Bill Mills, Carol Willing, Erin Becker, Hilmar Lapp, Kara Woo, Karin Lagesen, Pauline Barmby, Sheila Miguez, Simon Waldman, and Tracy Teal. In 2018, the Code of Conduct was revised to add a summary, straightforward examples of both beneficial and unwanted behaviors, and evaluating intent. Reporting guidelines were also revised to include alternate contact points and a reporting form with the procedure was added. Contributors of these revised documents are Ethan White, Kari L. Jordan, Karin Lagesen, Malvika Sharan, Samantha Ahern, and Simon Waldman. Additional language was added by Otter Tech from the PyCon U.S. 2018 Code of Conduct (licensed CC BY 3.0).
 
@@ -189,4 +189,4 @@ The Turing Institute Data Study Group Code of Conduct was heavily adapted from t
 
 We really appreciate the work that all of the communities linked above have put into creating such a well considered process.
 
-This Code of Conduct is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0 CA) license which means you are free to share and adapt the work so long as the attribution to scivision is retained, along with the attribution to Kirstie Whitaker and The Turing Way community, the Carpentries, the Alan Turing Institute Data Study Group organising team, Citizen Lab and the other resources.
+This Code of Conduct is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0 CA) license which means you are free to share and adapt the work so long as the attribution to Scivision is retained, along with the attribution to Kirstie Whitaker and The Turing Way community, the Carpentries, the Alan Turing Institute Data Study Group organising team, Citizen Lab and the other resources.

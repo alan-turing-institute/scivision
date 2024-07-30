@@ -75,7 +75,7 @@ def test_get_model_configs():
 
 
 def test_load_pretrained_model_remote():
-    """Test that scivision can load a pretrained model from an example GitHub repo."""
+    """Test that Scivision can load a pretrained model from an example GitHub repo."""
     commit_hash = '77bbe037234d11538e46c3ced3d2a5f9294c8468'
     assert isinstance(
         load_pretrained_model('https://github.com/alan-turing-institute/scivision-test-plugin/.scivision-config_imagenet.yaml', allow_install=True, branch=commit_hash),
@@ -84,7 +84,7 @@ def test_load_pretrained_model_remote():
 
 
 def test_load_pretrained_model_local():
-    """Test that scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
+    """Test that Scivision can load a pretrained model from a local yaml that points to a GitHub repo."""
     assert isinstance(
         load_pretrained_model('tests/test_model_scivision.yml', allow_install=True),
         wrapper.PretrainedModel
@@ -92,7 +92,7 @@ def test_load_pretrained_model_local():
 
 
 def test_load_named_pretrained_model_local():
-    """Test that scivision can load a specific model from the given scivision.yml."""
+    """Test that Scivision can load a specific model from the given scivision.yml."""
     assert isinstance(
         load_pretrained_model('tests/test_model_scivision.yml', allow_install=True, model_selection='ImageNetModel'),
         wrapper.PretrainedModel
@@ -116,14 +116,14 @@ def test_load_wrong_model_name_raises_value_error_config_has_multiple_models():
 
 
 def test_load_multiple_models():
-    """Test that scivision can load multiple pretrained models from the same GitHub repo."""
+    """Test that Scivision can load multiple pretrained models from the same GitHub repo."""
     model1, model2 = load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=True)
     assert isinstance(model1, wrapper.PretrainedModel)
     assert isinstance(model2, wrapper.PretrainedModel)
 
 
 def test_load_first_model_from_config_with_multiple():
-    """Test that scivision loads a single a model from a config with multiple models when not told to load multiple."""
+    """Test that Scivision loads a single a model from a config with multiple models when not told to load multiple."""
     assert isinstance(
         load_pretrained_model('tests/test_multiple_models_scivision.yml', allow_install=True, load_multiple=False),
         wrapper.PretrainedModel

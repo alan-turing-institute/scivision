@@ -17,7 +17,7 @@ The Scivision project is building:
    ([join the community on Slack](https://forms.office.com/Pages/ResponsePage.aspx?id=p_SVQ1XklU-Knx-672OE-TF37BUQLiBEhQiSUHIXyABUM1Y4RE9TRkIxUk1PN0I4VENSVFVaVVpDUi4u))
 - A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid) from the sciences and humanities
 - A software **ecosystem of interoperable tools** and utilities for working with computer vision models and data, including:
-  - **Scivision.Py**, a Python package for conveniently downloading and using the computer vision models and datasets from Python ([scivision on PyPI](https://pypi.org/project/scivision/))
+  - **Scivision.Py**, a Python package for conveniently downloading and using the computer vision models and datasets from Python ([Scivision on PyPI](https://pypi.org/project/scivision/))
   - **[Pixelflow](https://github.com/alan-turing-institute/pixelflow)**, a tool for extracting information about the characteristics of objects in images
 
   Example use cases for these tools can be found in the [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets 
@@ -34,7 +34,7 @@ This main [project repository on GitHub](https://github.com/alan-turing-institut
 ## Get involved
 Submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues).
 
-If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. These can be submitted through the [scivision website](https://sci.vision/#/contribute). See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for more details on how to format your model / data.  
+If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. These can be submitted through the [Scivision website](https://sci.vision/#/contribute). See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for more details on how to format your model / data.  
 
 Pull requests for code changes are also welcome.
 

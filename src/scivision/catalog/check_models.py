@@ -54,7 +54,7 @@ def check_models():
                 'check_result': 'Pass' if response.status_code == 200 else 'Fail',
                 'response': f'Scivision_usable = False but model url response: {response.status_code}',
             }
-            print(f'Model is not scivision usable but model url response: {response.status_code}')
+            print(f'Model is not Scivision usable but model url response: {response.status_code}')
         else:
             try:
                 if not yml_path.endswith((".yml", ".yaml",)):

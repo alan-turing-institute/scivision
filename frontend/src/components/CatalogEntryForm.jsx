@@ -100,7 +100,7 @@ export function CatalogFormHowItWorksBox() {
                     generate a json file in the right format which you can then
                     submit through GitHub. Open an issue in the{' '}
                     <a href="https://github.com/alan-turing-institute/scivision">
-                        scivision repository
+                        Scivision repository
                     </a>
                     , attaching this json file and an appropriate thumbnail, to
                     add your entry to the catalog.

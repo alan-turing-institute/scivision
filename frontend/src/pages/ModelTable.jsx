@@ -100,7 +100,7 @@ function ModelTableContents() {
                     return (
                         <img
                             src="https://img.shields.io/badge/scivision_metadata-pass-green"
-                            title="The metadata for this model was successfully loaded by scivision, from the location in the catalog"
+                            title="The metadata for this model was successfully loaded by Scivision, from the location in the catalog"
                         />
                     )
                 } else if (result === 'Fail') {

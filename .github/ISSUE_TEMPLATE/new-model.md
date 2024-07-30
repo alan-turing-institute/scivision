@@ -19,6 +19,6 @@ Name, description, link etc.
 ([Full documentation on creating a model](https://scivision.readthedocs.io/en/latest/model_repository_template.html))
 
 - [ ] Publicly accessible model repository (e.g. on GitHub), with a suitable software licence
-- [ ] The model has an associated scivision model yml file
+- [ ] The model has an associated Scivision model yml file
 - [ ] Catalog metadata added (can open a pull request with https://sci.vision/#/new-model)
 - [ ] Thumbnail image uploaded

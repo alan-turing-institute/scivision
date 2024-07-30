@@ -4,9 +4,9 @@
 
 In order for `scivision` to be able to load a dataset and run a computer vision (CV) model on it, a GitHub repository containing configuration for one or more datasets must first be created.
 
-This guide explains how to set up a GitHub repository for your datasets compatible with scivision.
+This guide explains how to set up a GitHub repository for your datasets compatible with Scivision.
 
-This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-contributing-to-the-scivision-catalog) after setting up your data repo as per this guide.
+This is also a pre-requisite for adding the dataset to the Scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-contributing-to-the-scivision-catalog) after setting up your data repo as per this guide.
 
 📚 **Contents:**
 
@@ -22,7 +22,7 @@ This is also a pre-requisite for adding the dataset to the scivision "catalog", 
 
 ## 🧱 Data repo structure
 
-We recommend to set up a data repo for scivision with the following structure, with the default name for the config file that the scivision API will recognise being `.scivision/data.yml`:
+We recommend to set up a data repo for Scivision with the following structure, with the default name for the config file that the Scivision API will recognise being `.scivision/data.yml`:
 
 ```
 exampleuser/data_repo
@@ -37,7 +37,7 @@ exampleuser/data_repo
 
 ## 🖋️ Data config file
 
-The `scivision` python API relies upon another open source python tool called `intake` for loading datasets. We recommend creating a YAML format "intake catalog" (config file), to enable scivision users who discover your dataset to easily load it via the API.
+The `scivision` python API relies upon another open source python tool called `intake` for loading datasets. We recommend creating a YAML format "intake catalog" (config file), to enable Scivision users who discover your dataset to easily load it via the API.
 
 For a comprehensive guide to setting up this data config file (intake catalog), consult the [intake documentation](https://intake.readthedocs.io/en/latest/catalog.html#yaml-format).
 
@@ -64,23 +64,23 @@ In order to fully understand how this `data.yml` has been configured, you should
 - `urlpath`: a path to the data itself; in this example, we point to a Zenodo repository and load all the `.tif` files from the compressed zip file stored there
 
 
-The scivision API can accept a path to a locally stored data config file, or the GitHub repository containing it as specified in this guide. See the `load_dataset` function in the :ref:`api-docs` docs.
+The Scivision API can accept a path to a locally stored data config file, or the GitHub repository containing it as specified in this guide. See the `load_dataset` function in the :ref:`api-docs` docs.
 
 .. _documentation:
 
 ## 📄 Documentation
 
-A `README`, which includes helpful information on the dataset and its origin should be included. Without this, your dataset may not be accepted for inclusion in the scivision catalog.
+A `README`, which includes helpful information on the dataset and its origin should be included. Without this, your dataset may not be accepted for inclusion in the Scivision catalog.
 
 .. _data-license:
 
 ## 📜 Data license
 
-You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
+You should include a `LICENSE` file in the repository, so that Scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
 
 .. _requirements-for-scivision:
 
-## 💻 Requirements for scivision website
+## 💻 Requirements for Scivision website
 
 .. _data-thumbnail:
 

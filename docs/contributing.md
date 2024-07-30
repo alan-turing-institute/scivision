@@ -15,7 +15,7 @@ Thank you for taking the time to contribute to the Scivision project. 🎉
 😎 Who should contribute
 ---
 
-The scivision project is fully open-source and invites contributions from anyone interested in computer vision or scientific data, with the goal of making models and datasets more accessible and discoverable across disciplines!
+The Scivision project is fully open-source and invites contributions from anyone interested in computer vision or scientific data, with the goal of making models and datasets more accessible and discoverable across disciplines!
 
 .. _what-to-contribute:
 
@@ -24,7 +24,7 @@ The scivision project is fully open-source and invites contributions from anyone
 
 * **Computer vision models** for the model catalog, whether new or existing
 * **Data sources** for the data catalog, from the sciences or humanities
-* New features or other code improvements to the scivision package itself
+* New features or other code improvements to the Scivision package itself
 * Bug reports
 
 #### Models and datasets
@@ -73,26 +73,26 @@ For larger features, substantial changes, or anything where you would like early
 
 .. _contributing-to-the-scivision-catalog:
 
-🎁 Contributing to the scivision catalog
+🎁 Contributing to the Scivision catalog
 ---
 
 #### Preparing a model for inclusion in the catalog
 
-In order to submit a model to the scivision catalog, you must first set up the GitHub repository containing the model as per the :ref:`model-repo-template`.
+In order to submit a model to the Scivision catalog, you must first set up the GitHub repository containing the model as per the :ref:`model-repo-template`.
 
-This will enable you load your model via the scivision API and run it on matching datasets present in the catalog.
+This will enable you load your model via the Scivision API and run it on matching datasets present in the catalog.
 
 #### Submitting your model to the catalog
 
-Once you have prepared a model for inclusion in the catalog, submit it [through the scivision website](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
+Once you have prepared a model for inclusion in the catalog, submit it [through the Scivision website](https://sci.vision/#/new-model).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the model to the catalog.
 
-Once your model submission is accepted, it will become available to other users of scivision.
+Once your model submission is accepted, it will become available to other users of Scivision.
 
 ##### Manual steps
 
 This section describes how to add a catalog entry by hand.  These steps are an alternative to using the form above.
 
-Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add metadata for your computer vision model to the end of `models.json` found in (`scivision/src/scivision/catalog/data/`), with the following format, under `"entries"`.
+Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add metadata for your computer vision model to the end of `models.json` found in (`scivision/src/scivision/catalog/data/`), with the following format, under `"entries"`.
 
 ```
   {
@@ -108,27 +108,27 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
   }
 ```
 
-After you are done, create a pull request with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
+After you are done, create a pull request with the changes. A Scivision maintainer will approve the addition, making it available to all Scivision users.
 
 #### Preparing a dataset for inclusion in the catalog
 
-In order to submit a dataset to the scivision catalog, you must first set up a GitHub repository containing important metadata as per the :ref:`data-repo-template`.
+In order to submit a dataset to the Scivision catalog, you must first set up a GitHub repository containing important metadata as per the :ref:`data-repo-template`.
 
-This will enable you load your dataset via the scivision API and run matching models from catalog on it.
+This will enable you load your dataset via the Scivision API and run matching models from catalog on it.
 
 #### Adding a new dataset to the catalog
 
 Once you have prepared a datasource for inclusion in the catalog, submit some details about it [here](https://sci.vision/#/new-datasource).  You will need a GitHub account. Submitting this form will open a pull request on your behalf, that adds the datasource to the catalog.
 
-Once your submission is accepted, the dataset will become available to other users of scivision.
+Once your submission is accepted, the dataset will become available to other users of Scivision.
 
 ##### Manual steps
 
 This section describes how to add a catalog entry by hand.  These steps are an alternative to using the form above.
 
-On a new branch of the scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
+On a new branch of the Scivision repository, add your dataset to the end of `datasources.json`, with the following format, incrementing the data number by from the most recent entry. After you are done, create a pull request with the changes.
 
-Fork the [scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add your dataset to the end of `datasources.json` (found in `scivision/src/scivision/catalog/data/`), with the following format, under `"entries"`.
+Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision) and on your new branch, add your dataset to the end of `datasources.json` (found in `scivision/src/scivision/catalog/data/`), with the following format, under `"entries"`.
 
 ```
   {
@@ -146,4 +146,4 @@ Fork the [scivision repository](https://github.com/alan-turing-institute/scivisi
   }
  ```
  
-After you are done, create a pull request to the original repo with the changes. A scivision maintainer will approve the addition, making it available to all scivision users.
+After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, making it available to all Scivision users.

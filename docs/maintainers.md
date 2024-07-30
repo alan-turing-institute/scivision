@@ -2,7 +2,7 @@
 
 # 🤓 Maintainers
 
-This document is intended for maintainers of the scivision project and includes the following how-tos:
+This document is intended for maintainers of the Scivision project and includes the following how-tos:
 
 1. :ref:`releasing`
 2. :ref:`building`
@@ -13,7 +13,7 @@ If you are new to the `scivision` project and wish to become a maintainer for ei
 
 ## 🐍 Python package releases
 
-A new release of the scivision package will be uploaded to PyPI each time a tagged commit is pushed to the main branch of the [scivision GitHub repo](https://github.com/alan-turing-institute/scivision). In order to trigger this automated process, do the following:
+A new release of the Scivision package will be uploaded to PyPI each time a tagged commit is pushed to the main branch of the [Scivision GitHub repo](https://github.com/alan-turing-institute/scivision). In order to trigger this automated process, do the following:
 
 1. On a new branch of the `scivision` repo, containing your changes to be included in the release, increment the `version` in `pyproject.toml` and any other metadata that differs for the new release.
 
@@ -50,7 +50,7 @@ Alternatively, developers of `scivision` with maintainer access to https://githu
 
 .. _building:
 
-## 📓 Build scivision documentation
+## 📓 Build Scivision documentation
 
 Maintainers of this `readthedocs` site can build and view the docs by doing the following:
 

@@ -22,7 +22,7 @@ export const TagBadge = (props: BadgeProps) => {
     )
 }
 
-// Component: A badge indicating whether a model is usable with scivision
+// Component: A badge indicating whether a model is usable with Scivision
 export const UsageBadge = (props: BadgeProps) => {
     return (
         <>

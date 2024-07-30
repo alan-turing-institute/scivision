@@ -63,7 +63,7 @@ perpetual 'draft').
     that are ready for inclusion in the catalog ('cookie cutters').
   - Additional consistency and integrity checks, including
       - URLs in the catalogs
-      - scivision gallery notebooks (from current scivision projects)
+      - Scivision gallery notebooks (from current Scivision projects)
       - checked annotations (decorators)
 
 ### Supporting Scivision use-cases

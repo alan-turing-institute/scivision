@@ -69,7 +69,7 @@ This might be just the name of your package if your model is a python package on
     scivision_usable: bool = Field(
         False,
         title="Model runs with Scivision?",
-        description="""Can the model be installed and loaded with the scivision Python package, using the command below?
+        description="""Can the model be installed and loaded with the Scivision Python package, using the command below?
 
 ```
 scivision.load_pretrained_model(<model url>, allow_install=True)
@@ -81,7 +81,7 @@ Select 'no' if not sure""",
     url: Optional[FlexibleUrl] = Field(
         None,
         title="Scivision metadata URL",
-        description="""The URL to the Scivision metadata yaml file if the model runs with scivision (leave blank if not)
+        description="""The URL to the Scivision metadata yaml file if the model runs with Scivision (leave blank if not)
 
 - Good example :white_check_mark:: `https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml`"""
     )
@@ -141,9 +141,9 @@ class CatalogDatasourceEntry(
     url: FlexibleUrl = Field(
         None,
         title="URL",
-        description="""The URL to the datasource.  If your datasource has an associated scivision yaml file, this should point to it.  Otherwise, give a URL for downloading the data
+        description="""The URL to the datasource.  If your datasource has an associated Scivision yaml file, this should point to it.  Otherwise, give a URL for downloading the data
 
-- Good example :white_check_mark:: `https://example.com/path/to/datasource.yml` (location of the scivision yml file)
+- Good example :white_check_mark:: `https://example.com/path/to/datasource.yml` (location of the Scivision yml file)
 - Good example :white_check_mark:: `https://example.com/dataset/download/data.zip` (data download URL)
 - Bad example :x:: `example.com/path/to/datasource.yml` (missing URL scheme, like 'https://')
 """,
@@ -226,12 +226,12 @@ class CatalogProjectEntry(BaseModel, extra="forbid", title="A project catalog en
     models: Tuple[str, ...] = Field(
         (),
         title="Models",
-        description="Which model(s) from the scivision catalog are used in the project?",
+        description="Which model(s) from the Scivision catalog are used in the project?",
     )
     datasources: Tuple[str, ...] = Field(
         (),
         title="Datasources",
-        description="Which datasource(s) from the scivision catalog are used in the project?",
+        description="Which datasource(s) from the Scivision catalog are used in the project?",
     )
     tasks: FrozenSet[TaskEnum] = Field(
         (),

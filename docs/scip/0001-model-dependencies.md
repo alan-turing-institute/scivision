@@ -30,7 +30,7 @@ Possible failure modes experienced by the user when a dependency problem arises:
 
 A runtime error caused by an installation problem can be particularly confusing.
 
-An additional challenge comes if scivision users wish to load scivision catalog models that have conflicting package (or Python version) dependencies in the same Python environment or notebook.
+An additional challenge comes if Scivision users wish to load Scivision catalog models that have conflicting package (or Python version) dependencies in the same Python environment or notebook.
 
 ## Evaluation
 
@@ -90,7 +90,7 @@ Scivision would work largely as it does at the moment, but the primary way of in
 
 This doesn't solve all our problems, but does change their relative priority.  We could live with some installation difficulties (of core Scivision) for example, since installing it locally would be for 'advanced' users only. 
 
-More of the environmental set-up could be borne by the scivision developers (e.g. ensuring GPUs/drivers are working correctly, common system dependencies installed), but only a partial solution to this.
+More of the environmental set-up could be borne by the Scivision developers (e.g. ensuring GPUs/drivers are working correctly, common system dependencies installed), but only a partial solution to this.
 
 Would still need to handle version conflicts, python version and environment set-up. 
 

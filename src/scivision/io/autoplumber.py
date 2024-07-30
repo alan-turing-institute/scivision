@@ -14,16 +14,16 @@ class DataPipe(NamedTuple):
 
 
 class AutoPlumber:
-    """Automagically plumb a model using the scivision config file.
+    """Automagically plumb a model using the Scivision config file.
 
     This class will inspect the module and try to work out how to
-    map the inputs of the Callable to the scivision function
+    map the inputs of the Callable to the Scivision function
     signature.
 
     Attributes
     ----------
     config : dict
-        The scivision config as a dictionary.
+        The Scivision config as a dictionary.
 
     """
 
@@ -80,16 +80,16 @@ class AutoPlumber:
 
 
 class DataPlumber:
-    """Automagically plumb a data plugin using the scivision config file.
+    """Automagically plumb a data plugin using the Scivision config file.
 
     This class will inspect the module and try to work out how to
-    map the inputs of the Callable to the scivision function
+    map the inputs of the Callable to the Scivision function
     signature.
 
     Attributes
     ----------
     config : dict
-        The scivision config as a dictionary.
+        The Scivision config as a dictionary.
 
     """
 
