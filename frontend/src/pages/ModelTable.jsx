@@ -1,4 +1,4 @@
-// import { global_CheckModelReport } from '@/consts/check_models.js'
+import { global_CheckModelReport } from '@/consts/check_models.js'
 
 import DataTable from 'react-data-table-component'
 
@@ -40,9 +40,8 @@ function ModelDefinitionList({ data }) {
 }
 
 function ModelTableContents() {
-    // const modelChecksReport = global_CheckModelReport
-    const modelChecksReport = null
-
+    const modelChecksReport = global_CheckModelReport
+    
     function modelCheckResult(name) {
         if (modelChecksReport !== null) {
             const report = modelChecksReport.report[name]
