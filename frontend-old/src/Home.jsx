@@ -64,8 +64,7 @@ export default function Home() {
         <div className="w-75 mx-auto m-3">
           <p className="small">
             Curated image datasets from diverse scientific domains, suitable for
-            a variety of computer vision tasks and loadable as array data via
-            the numerical Python stack.
+            a variety of computer vision tasks.
           </p>
           <Row xs={1} sm={3} className="justify-content-md-center">
             {datasources_sample.map((ds) => (

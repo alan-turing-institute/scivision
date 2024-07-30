@@ -11,7 +11,6 @@ import yaml
 from ..koala import koala
 from .installer import install_package
 from .wrapper import PretrainedModel, Datasource
-
 import warnings
 import xarray
 
@@ -157,7 +156,7 @@ def load_pretrained_model(
             ".yaml",
         )
     ):
-        path = path + ".scivision/model.yml"
+        path = f"{path}/.scivision/model.yml"
     # fsspec will throw an error if the path does not exist
     file = fsspec.open(path)
     # parse the config file:
@@ -165,6 +164,7 @@ def load_pretrained_model(
         stream = config_file.read()
         config = yaml.safe_load(stream)
     config_list = _get_model_configs(config, load_multiple, model_selection)
+    print(config_list)
     loaded_models = []
     for config in config_list:
         # make sure a model at least has an input to the function

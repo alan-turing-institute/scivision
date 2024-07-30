@@ -49,8 +49,18 @@ export default function About() {
           ></iframe>
         </p>
 
-        <p>The Scivision Project is funded by{" "} 
-        <a href="https://www.turing.ac.uk/">The Alan Turing Institute</a>.</p>
+        <p>The Scivision project is funded by{" "} 
+          <a href="https://www.turing.ac.uk/">The Alan Turing Institute</a>.
+          {" "} 
+        </p>
+        <p>
+          <a href="https://github.com/alan-turing-institute/scivision/blob/main/CITATION.cff">Cite Scivision</a>.
+        </p>
+        <p>
+          View and contribute to the Scivision community on{" "} 
+          <a href="https://zenodo.org/communities/scivision">Zenodo</a>.
+        </p>
+        
       </Container>
     </>
   );
