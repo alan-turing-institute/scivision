@@ -15,4 +15,4 @@ The Scivision project is building:
 
 If you use Scivision in you research, please [cite us](https://github.com/alan-turing-institute/scivision/blob/main/CITATION.cff). You can also view and contribute to the Scivision community on [Zenodo](https://zenodo.org/communities/scivision/).
 
-The Scivision Project is funded by [The Alan Turing Institute](https://www.turing.ac.uk/).
+The Scivision Project was founded by [The Alan Turing Institute](https://www.turing.ac.uk/).

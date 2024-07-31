@@ -22,7 +22,7 @@ The Scivision project is building:
 
   Example use cases for these tools can be found in the [**gallery of notebooks**](https://github.com/scivision-gallery) using Scivision models and datasets 
 
-The Scivision project is funded by [the Alan Turing Institute](https://www.turing.ac.uk/).
+The Scivision project was founded by [the Alan Turing Institute](https://www.turing.ac.uk/).
 
 ## Repository contents
 

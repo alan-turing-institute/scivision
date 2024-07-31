@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="inline-flex items-center gap-2 text-sm text-gray-500 sm:text-left">
                     <FaCopyright />
                     <span className="font-mono">
-                        The Scivision Project is funded by The Alan Turing Institute.
+                        The Scivision Project was founded by The Alan Turing Institute.
                     </span>
                 </div>
                 <div className="inline-flex items-center gap-3 text-gray-500">
