@@ -39,7 +39,7 @@ The Scivision project was conceived at `The Alan Turing Institute <https://www.t
 📫 Contact
 ----------
 
-Join the `Slack workspace <https://forms.office.com/Pages/ResponsePage.aspx?id=p_SVQ1XklU-Knx-672OE-TF37BUQLiBEhQiSUHIXyABUM1Y4RE9TRkIxUk1PN0I4VENSVFVaVVpDUi4u>`_
+Join the `Slack workspace <https://forms.office.com/e/cW28TK4aui>`_
 
 Consider starting a `GitHub discussion <https://github.com/alan-turing-institute/scivision/discussions>`_ or opening an `issue <https://github.com/alan-turing-institute/scivision/issues/new/choose>`_.
 
