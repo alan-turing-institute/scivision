@@ -102,7 +102,7 @@ export default function ModelNew() {
                                         {' '}
                                         <strong>(Optionally)</strong> your model
                                         is in the{' '}
-                                        <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-repo-structure">
+                                        <a href="https://scivision.readthedocs.io/en/latest/model_repository_template.html#api">
                                             correct format for Scivision
                                         </a>
                                         <ul>

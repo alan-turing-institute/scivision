@@ -69,7 +69,7 @@ export default function ProjectNew() {
                                     Using this form will generate a json file in the right format
                                     for you to submit to GitHub. Open an issue in the 
                                     {' '}<a href="https://github.com/alan-turing-institute/scivision">scivision repository</a>,
-                                    attaching this json file, 
+                                    attaching this json file and an appropriate thumbnail, 
                                     to add your project to the catalog.
                                     Further discussion is possible at that
                                     point, so it doesn't need to be complete or

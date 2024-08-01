@@ -62,7 +62,7 @@ export default function DatasourceNew() {
                                         {' '}
                                         <strong>(Optionally)</strong> Your data
                                         repository is in the{' '}
-                                        <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-repo-structure">
+                                        <a href="https://scivision.readthedocs.io/en/latest/data_repository_template.html#requirements-for-the-scivision-api">
                                             format expected by Scivision
                                         </a>{' '}
                                         <ul>
