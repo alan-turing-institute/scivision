@@ -97,7 +97,7 @@ In brief, the notebook demonstrates the following:
 📖 Catalog of models and datasets
 ------------------------------
 
-The models and datasets you find when searching the "default" Scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data).
+The models and datasets you find when searching the "default" Scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data).
 
 To understand how these external sources are configured for compatibility with Scivision, consult the following sections of this documentation:
 

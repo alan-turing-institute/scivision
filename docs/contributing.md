@@ -86,9 +86,11 @@ For larger features, substantial changes, or anything where you would like early
 🎁 Contributing to the Scivision catalog
 ---
 
+There are three ways in which you can contribute to the Scivision catalog: models, data, projects. 
+
 .. _contributing-a-model:
 
-### Contributing a model
+## Contributing a model
 
 #### Preparing a model for inclusion in the catalog
 
@@ -114,7 +116,7 @@ After you are done, create a pull request with the changes. A Scivision maintain
 
 .. _contributing-a-datasource:
 
-### Contributing a datasource
+## Contributing a datasource
 
 #### Preparing a dataset for inclusion in the catalog
 
@@ -142,7 +144,7 @@ After you are done, create a pull request to the original repo with the changes.
 
 .. _contributing-a-project:
 
-### Contributing a project
+## Contributing a project
 
 Once you have submitted your model / datasource for inclusion in the catalog, you might want to also consider submitting a project to provide some more details about how they have been used in your research. 
 
