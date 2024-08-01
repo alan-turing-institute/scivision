@@ -2,11 +2,11 @@
 
 # 🐨 Model repo template
 
-In order for the `scivision` Python API to be able to load and run a computer vision (CV) model, a GitHub repository containing configuration for one or more models must first be created.
+In order to include a computer vision (CV) model in the Scivision catalog, a GitHub repository containing configuration for one or more models must first be created.
 
-This guide explains how to set up a GitHub repository for your CV model(s) compatible with Scivision.
+This guide explains how to set up a GitHub repository for your CV model(s) compatible with Scivision. The basic requirements for addition to the Scivision catalog are described first. There are then details on the additional requirements to enable a model to be loaded / run through the scivision API. Followed by some features that are optional, but good to have. 
 
-This is also a pre-requisite for adding the model to the Scivision "catalog", enabling other users of Scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-contributing-to-the-scivision-catalog) after setting up your model as per this guide.
+These instructions will enable you to get your model into the correct format for adding to the Scivision "catalog". Once you have set up your model as per this guide, consult the [contributor page](./contributing.html#gift-contributing-to-the-scivision-catalog) for details of how to submit it. 
 
 📚 **Contents:**
 
@@ -14,13 +14,12 @@ This is also a pre-requisite for adding the model to the Scivision "catalog", en
 - :ref:`catalog`
   - :ref:`installations`
   - :ref:`software-licence`
+  - :ref:`model-thumbnail`
 - :ref:`api`
   - :ref:`model-code`
   - :ref:`config`
   - :ref:`pip`
   <!-- - Model adapter code (TODO: for a later version of scivision)-->
-- :ref:`requirements-for-scivision-website`
-  - :ref:`model-thumbnail`
 - :ref:`additional`
   - :ref:`tests`
   - :ref:`example-data`
@@ -77,11 +76,20 @@ A `README`, which includes detailed instructions on how the model can be install
 
 You should include a `LICENSE` file in the repository, so that Scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license) in The Turing Way online handbook.
 
+.. _model-thumbnail:
+
+### 🎆 Model Thumbnail
+
+When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model thumbnail is required. The thumbnail can be an interesting image explaining the model and that catches the attention of the Scivision user (creativity encouraged!).
+
+- It must be a 256x256 PNG or JPEG file
+- The file name should be the name of the model as in the catalog
+
 .. _api:
 
 ## ✨ Requirements for the Scivision API
 
-It's common in Python packages to house the core package  code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#model-repo-structure) diagram above (i.e. `comp_vis/comp_vis`).
+It's common in Python packages to house the core package code within a child directory of the same name as the repo parent directory, as in the [model repo structure](#model-repo-structure) diagram above (i.e. `comp_vis/comp_vis`).
 
 For your model(s) to be loadable by the Scivision API, we additionally insist that you include a `model.py` in this child directory and set up a `model.yml` config file in a directory called `.scivision`.
 
@@ -161,22 +169,6 @@ setup(
 
 In Scivision, once your model(s) have been included in the Scivision catalog, pip installability gives users the option to use the `load_pretrained_model` function for easy use of your model code. See the :ref:`api-docs` docs for details.
 
-.. _requirements-for-scivision-website:
-
-## 💻 Requirements for Scivision website
-
-.. _model-thumbnail:
-
-### 🎆 Model Thumbnail
-
-When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model thumbnail is required. The thumbnail can be an interesting image explaining the model and that catches the attention of the Scivision user (creativity encouraged!).
-
-- It must be a 256x256 PNG or JPEG file
-- The file name should be the name of the model as in the catalog
-
-Once you have identified a suitable thumbnail please upload it to the [thumbnail models folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/models).
-
-Once you have identified a suitable thumbnail, follow the :ref:`how-to-contribute` guide to open a pull request to the Scivision GitHub repo which adds the thumbnail image in the `src/scivision/catalog/data/thumbnails/models` folder. 
 
 .. _additional:
 
