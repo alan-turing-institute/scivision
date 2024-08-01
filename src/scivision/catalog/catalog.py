@@ -77,7 +77,7 @@ scivision.load_pretrained_model(<model url>, allow_install=True)
 
 Select 'no' if not sure""",
     )
-    
+
     url: Optional[FlexibleUrl] = Field(
         None,
         title="Scivision metadata URL",
@@ -85,7 +85,7 @@ Select 'no' if not sure""",
 
 - Good example :white_check_mark:: `https://raw.githubusercontent.com/alan-turing-institute/scivision_classifier/main/.scivision/model.yml`"""
     )
-    
+
     institution: Tuple[str, ...] = Field(
         (),
         title="Institutions or organizations",
