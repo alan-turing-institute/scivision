@@ -103,7 +103,9 @@ export function CatalogFormHowItWorksBox() {
                         Scivision repository
                     </a>
                     , attaching this json file and an appropriate thumbnail, to
-                    add your entry to the catalog.
+                    add your entry to the catalog. More details can be found in the {' '}
+                    <a href="https://scivision.readthedocs.io/en/latest/contributing.html">
+                    full documentation</a>.
                     <br />
                     <br />
                     You may choose to submit an incomplete entry - it can be

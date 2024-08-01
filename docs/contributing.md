@@ -35,13 +35,13 @@ The Scivision project is fully open-source and invites contributions from anyone
 
 Adding a model or dataset to the catalog makes it discoverable by other Scivision users.
 
-See :ref:`contributing-to-the-scivision-catalog`.
+See :ref:`contributing-a-model` or :ref:`contributing-a-datasource`.
 
 #### Project pages
 
 Adding a project page allows you to describe in more detail how your models / data in the Scivision catalog have been used. This can contain details of the project and links to example notebooks or papers that use them. 
 
-See :ref:`contributing-to-the-scivision-catalog`.
+See :ref:`contributing-a-project`.
 
 #### Bug reports
 
@@ -86,15 +86,17 @@ For larger features, substantial changes, or anything where you would like early
 🎁 Contributing to the Scivision catalog
 ---
 
+There are three ways in which you can contribute to the Scivision catalog: models, data, projects. 
+
 .. _contributing-a-model:
 
-### Contributing a model
+## Contributing a model
 
 #### Preparing a model for inclusion in the catalog
 
-In order to submit a model to the Scivision catalog, it must be publically available from a source repository or on a package server, so that it can installed using pip. The model must include everything needed to run it, including any weights and parameters.
+In order to submit a model to the Scivision catalog, it must be publically available from a source repository or on a package server, so that it can installed using pip. The model must include everything needed to run it, including any weights and parameters. More details can be found in the :ref:`model-repo-template`. 
 
-Additionally, if you would like to be able to load your model using the Scivision API and run it on matching datasets present in the catalog, you must first set up the GitHub repository containing the model as per the :ref:`model-repo-template`.
+Additionally, if you would like to be able to load your model using the Scivision API and run it on matching datasets present in the catalog, you must first set up the GitHub repository containing the model as explained [here](https://scivision.readthedocs.io/en/latest/model_repository_template.html#requirements-for-the-scivision-api).
 
 #### Submitting your model to the catalog
 
@@ -114,13 +116,13 @@ After you are done, create a pull request with the changes. A Scivision maintain
 
 .. _contributing-a-datasource:
 
-### Contributing a datasource
+## Contributing a datasource
 
 #### Preparing a dataset for inclusion in the catalog
 
-In order to submit a dataset to the Scivision catalog, your data must be in a publicly accessible location (for example, on [Zenodo](https://zenodo.org/)).
+In order to submit a dataset to the Scivision catalog, your data must be in a publicly accessible location (for example, on [Zenodo](https://zenodo.org/)). More details can be found in the :ref:`data-repo-template`. 
 
-Additionally if you would like to be able to load your dataset via the Scivision API and run matching models from catalog on it, you must first set up a GitHub repository containing important metadata as per the :ref:`data-repo-template`.
+Additionally if you would like to be able to load your dataset via the Scivision API and run matching models from catalog on it, you must first set up a GitHub repository containing important metadata as as explained [here](https://scivision.readthedocs.io/en/latest/data_repository_template.html#requirements-for-the-scivision-api).
 
 
 #### Adding a new dataset to the catalog
@@ -142,12 +144,12 @@ After you are done, create a pull request to the original repo with the changes.
 
 .. _contributing-a-project:
 
-### Contributing a project
+## Contributing a project
 
 Once you have submitted your model / datasource for inclusion in the catalog, you might want to also consider submitting a project to provide some more details about how they have been used in your research. 
 
 #### Adding a new project to the catalog
-To submit a project, enter the relevant details about it [here](https://sci.vision/new-project). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cdata&projects=&template=new-datasource.md&title=%5BPROJECT%5D), attaching the .json file and an appropriate thumbnail (a 256x256 .png or .jpg file with the same name as the datasource). You will need a GitHub account. 
+To submit a project, enter the relevant details about it [here](https://sci.vision/new-project). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cproject&projects=&template=new-project.md&title=%5BPROJECT%5D), attaching the .json file and an appropriate thumbnail (a 256x256 .png or .jpg file with the same name as the datasource). You will need a GitHub account. 
 
 Once your submission is accepted, the project will become visible to other users of Scivision, and it will appear on the [website](https://sci.vision/project-grid).
 
@@ -158,6 +160,6 @@ This section describes how to add a catalog entry by hand.  These steps are an a
 
 Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://sci.vision/new-project) on the scivision website to get the details for your project in to the correct format.  On your new branch, add this information to the end of `projects.json` (found in `scivision/src/scivision/catalog/projects/`), under `"entries"`.
 
-Additionally, upload a suitable thumbnail to the [thumbnail datasources folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/datasources). This must be a 256x256 .png or .jpg file with the same name as the datasource.
+Additionally, upload a suitable thumbnail to the [thumbnail project folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/projects). This must be a 256x256 .png or .jpg file with the same name as the datasource.
 
 After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, and it will appear on the [website](https://sci.vision/project-grid).

@@ -6,7 +6,7 @@ In order to include a computer vision (CV) model in the Scivision catalog, a Git
 
 This guide explains how to set up a GitHub repository for your CV model(s) compatible with Scivision. The basic requirements for addition to the Scivision catalog are described first. There are then details on the additional requirements to enable a model to be loaded / run through the scivision API. Followed by some features that are optional, but good to have. 
 
-These instructions will enable you to get your model into the correct format for adding to the Scivision "catalog". Once you have set up your model as per this guide, consult the [contributor page](./contributing.html#gift-contributing-to-the-scivision-catalog) for details of how to submit it. 
+These instructions will enable you to get your model into the correct format for adding to the Scivision "catalog". Once you have set up your model as per this guide, consult the [contributor page](https://scivision.readthedocs.io/en/latest/contributing.html#contributing-a-model) for details of how to submit it. 
 
 📚 **Contents:**
 
@@ -66,19 +66,19 @@ The essential components of a Scivision model repo include everything required f
 
 .. _installations:
 
-### 📄 Installation documentation
+#### 📄 Installation documentation
 
 A `README`, which includes detailed instructions on how the model can be installed. Without this, your model(s) will not be accepted for inclusion in the Scivision catalog.
 
 .. _software-licence:
 
-### 📜 Software license
+#### 📜 Software license
 
 You should include a `LICENSE` file in the repository, so that Scivision users who come across it can understand the conditions of its usage. For help deciding which license to include, see www.choosealicense.com or check out the section on [software licenses](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license) in The Turing Way online handbook.
 
 .. _model-thumbnail:
 
-### 🎆 Model Thumbnail
+#### 🎆 Model Thumbnail
 
 When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model thumbnail is required. The thumbnail can be an interesting image explaining the model and that catches the attention of the Scivision user (creativity encouraged!).
 
@@ -95,7 +95,7 @@ For your model(s) to be loadable by the Scivision API, we additionally insist th
 
 .. _model-code:
 
-### 🏗️ Model code
+#### 🏗️ Model code
 
 The script called `model.py` must either contain the model itself (i.e. code that both trains and runs the model), or import a pre-trained model from elsewhere.
 
@@ -105,7 +105,7 @@ For examples, check out the [example model repos](#example-repos) section.
 
 .. _config:
 
-### 🖋️ Model config file
+#### 🖋️ Model config file
 
 The default name for the config file included in your repo should be `model.yml`, and should be kept in the `.scivision` directory. Take a look at this config from one of our example model repositories: [alan-turing-institute/plankton-cefas-scivision](https://github.com/alan-turing-institute/plankton-cefas-scivision):
 
@@ -140,7 +140,7 @@ It's also possible to specify multiple models from the same model repository. Fo
 
 .. _pip:
 
-### 🐍 Installability with pip
+#### 🐍 Installability with pip
 
 You can include a `setup.py` to enable the model(s) to be installed via pip, which is necessary for the Scivision API to be able to load the model(s). For an explanation of how this works, see this [packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata) for Python. By additionally including a `requirements.txt` with the required packages for your model, you can make it so these are installed along with the model code.
 
@@ -178,7 +178,7 @@ Some other components of a Scivision model repository that we recommend, but whi
 
 .. _tests:
 
-### 🧪 Tests
+#### 🧪 Tests
 
 Effective testing of code is vitally important to ensure the reliability of software, and in the context of scientific research code, the reproducibility of analyses and results.
 
@@ -186,7 +186,7 @@ We recommend that models repos submitted to the Scivision catalog are thoroughly
 
 .. _example-data:
 
-### 📊 Example data
+#### 📊 Example data
 
 We recommend including a directory with a small amount of test image data, in a format that can be used by the model(s) in the repo. This will be useful for Scivision users who wish to try running your model(s).
 
