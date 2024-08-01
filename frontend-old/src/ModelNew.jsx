@@ -44,7 +44,7 @@ export default function ModelNew({ gh_logged_in }) {
               </ul>
             </li>
             <li>
-              Your model is publically avaiable from a source repository or on a
+              Your model is publically available from a source repository or on a
               package server
               <ul>
                 <li>

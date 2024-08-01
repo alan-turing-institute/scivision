@@ -18,12 +18,12 @@ When should a SCIP be used?
 
 Consider making a SCIP if: you would like to propose changes that affect the overall design of the library, introduce or change an interface, and in any situation where **early feedback from the community** on an idea would be helpful.
 
-They are not necessary for every change: For smaller, or self-contained contributions, simply open a pull request to the relevant repository (e.g. `scivision <https://github.com/alan-turing-institute/scivision>`_. This type of change can be made and discussed on the pull request directly.
+They are not necessary for every change: For smaller, or self-contained contributions, simply open a pull request to the relevant repository (e.g. `Scivision <https://github.com/alan-turing-institute/scivision>`_. This type of change can be made and discussed on the pull request directly.
 
 Who can make a SCIP?
 --------------------
 
-**Any scivision contributor** can propose a SCIP by making a pull request to this repository that adds to the ``docs/scip`` directory, following the steps below. See also the contributing guide for advice about contributing to the project generally.
+**Any Scivision contributor** can propose a SCIP by making a pull request to this repository that adds to the ``docs/scip`` directory, following the steps below. See also the contributing guide for advice about contributing to the project generally.
 
 An SCIP has one or more *editors*, normally the proposor, and who is responsible for gathering feedback and revising the text before it is adopted (gathering comments on the pull request or any relevant issues and discussion, for example).
 
@@ -40,7 +40,7 @@ In summary, the steps to follow, from proposal to adoption, are listed below. Fe
  #. Give it a short, descriptive title, and optionally add any draft text to the relevant sections of the document
  #. Add it to the list in ``docs/scip/scip_index.rst``
  #. Include the text of your proposal in the file you just created. Apart from the metadata, the structure of the document is completely free form -- the template or other SCIPs can act as a guide.
- #. Open a pull request into the main scivision repository
+ #. Open a pull request into the main Scivision repository
  #. While the status of the SCIP is ``raw`` or ``draft``, the text can be modified in any way -- at this stage, it is up to the 'editor' (usually the original author) to seek feedback and accept (or reject) any changes on their proposal, but please feel free to ask a maintainer for help with this
  #. Consider `discussing <https://github.com/alan-turing-institute/scivision/discussions>`_ the proposal with the community, and requesting feedback or edits from others
  #. When it is ready for work to begin on an implementation, change (via pull request) the status to ``draft``

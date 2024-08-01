@@ -54,7 +54,7 @@ def check_models():
                 'check_result': 'Pass' if response.status_code == 200 else 'Fail',
                 'response': f'Scivision_usable = False but model url response: {response.status_code}',
             }
-            print(f'Model is not scivision usable but model url response: {response.status_code}')
+            print(f'Model is not Scivision usable but model url response: {response.status_code}')
         else:
             try:
                 if not yml_path.endswith((".yml", ".yaml",)):
@@ -95,5 +95,6 @@ def entry_point():
 
     with open('check_models.js', 'w') as f:
         print('// This file was generated automatically by check_models.py', file=f)
-        print(f'var global_CheckModelReport = {automated_checks_report_json};', file=f)
+        print('// Last updated: ' + datetime.now().strftime("%H:%M, %d-%m-%Y") + '.', file=f)
+        print(f'export const global_CheckModelReport = {automated_checks_report_json};', file=f)
         # ^^^ requires changes to ModelTable.jsx similar to DataTable.jsx
