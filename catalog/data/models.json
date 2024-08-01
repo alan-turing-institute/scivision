@@ -1,0 +1,342 @@
+{
+  "catalog_type": "scivision model catalog",
+  "name": "default",
+  "entries": [
+    {
+      "name": "stardist",
+      "description": "Single class object detection and segementation of star-convex polygons",
+      "tasks": [
+        "object-detection",
+        "segmentation"
+      ],
+      "url": "https://github.com/stardist/stardist",
+      "pkg_url": "git+https://github.com/stardist/stardist.git@master",
+      "scivision_usable": false,
+      "institution": [
+        "epfl"
+      ],
+      "tags": [
+        "2D",
+        "3D",
+        "optical-microscopy",
+        "xray",
+        "microtomography",
+        "cell-counting",
+        "plant-phenotyping",
+        "climate-change-and-agriculture"
+      ]
+    },
+    {
+      "name": "PlantCV",
+      "description": "Open-source image analysis software package targeted for plant phenotyping",
+      "tasks": [
+        "segmentation",
+        "thresholding",
+        "object-detection"
+      ],
+      "url": "https://github.com/danforthcenter/plantcv",
+      "pkg_url": "git+https://github.com/danforthcenter/plantcv@main",
+      "scivision_usable": false,
+      "institution": [
+        "danforthcenter"
+      ],
+      "tags": [
+        "2D",
+        "hyperspectral",
+        "multispectral",
+        "near-infrared",
+        "infrared",
+        "plant-phenotyping",
+        "climate-change-and-agriculture"
+      ]
+    },
+    {
+      "name": "greenotyper",
+      "description": "Greenotyper is an image analysis tool for large scale plant phenotyping experiments.",
+      "tasks": [
+        "segmentation"
+      ],
+      "url": "https://github.com/MarniTausen/Greenotyper",
+      "pkg_url": "git+https://github.com/MarniTausen/Greenotyper@master",
+      "scivision_usable": false,
+      "institution": [
+        "MarniTausen"
+      ],
+      "tags": [
+        "2D",
+        "multispectral",
+        "plant-phenotyping",
+        "climate-change-and-agriculture"
+      ]
+    },
+    {
+      "name": "mapreader-plant",
+      "description": "automated detection of plant patches in images of individual plants for the extraction of data on phenotypic traits",
+      "tasks": [
+        "classification",
+        "object-detection"
+      ],
+      "url": "https://github.com/alan-turing-institute/mapreader-plant-scivision",
+      "pkg_url": "git+https://github.com/alan-turing-institute/mapreader-plant-scivision@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "2D",
+        "plant",
+        "phenotype",
+        "rgb",
+        "biology",
+        "agriculture"
+      ]
+    },
+    {
+      "name": "resnet50-plankton",
+      "description": "automated classification of plankton images collected by RV Cefas Endeavour Plankton Imager in three clases: copepod, non-copepod and detritus",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/plankton-cefas-scivision/tree/main/",
+      "pkg_url": "git+https://github.com/alan-turing-institute/plankton-cefas-scivision@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute",
+        "cefas",
+        "plankton-analytics-ltd"
+      ],
+      "tags": [
+        "2D",
+        "plankton",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "vedge-detector",
+      "description": "automated detection of coastal vegetation edges in remote sensing imagery",
+      "tasks": [
+        "segmentation"
+      ],
+      "url": "https://github.com/MartinSJRogers/VEdge_Detector_scivision/blob/main/",
+      "pkg_url": "git+https://github.com/MartinSJRogers/VEdge_Detector_scivision@main",
+      "scivision_usable": true,
+      "institution": [
+        "cambridge-university",
+        "birkbeck-university"
+      ],
+      "tags": [
+        "2D",
+        "satellite",
+        "remote-sensing",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "image-classifiers",
+      "description": "Scivision plugin for the image-classifiers package available at https://pypi.org/project/image-classifiers/",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision_classifier",
+      "pkg_url": "git+https://github.com/alan-turing-institute/scivision_classifier.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "classification",
+        "2D",
+        "image"
+      ]
+    },
+    {
+      "name": "huggingface-classifiers",
+      "description": "Selection of image classifiers taken from https://huggingface.co/",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision_huggingface",
+      "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute",
+        "huggingface"
+      ],
+      "tags": [
+        "classification",
+        "2D",
+        "image"
+      ]
+    },
+    {
+      "name": "huggingface-segmentation",
+      "description": "Selection of segmentation algorithms taken from https://huggingface.co/",
+      "tasks": [
+        "segmentation"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision_huggingface_segmentation/tree/main",
+      "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_segmentation.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute",
+        "huggingface"
+      ],
+      "tags": []
+    },
+    {
+      "name": "huggingface-object-detection",
+      "description": "Selection of object detection algorithms taken from https://huggingface.co/",
+      "tasks": [
+        "object-detection"
+      ],
+      "url": "https://github.com/alan-turing-institute/scivision_huggingface_objectdetection/tree/main",
+      "pkg_url": "git+https://github.com/alan-turing-institute/scivision_huggingface_objectdetection.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute",
+        "huggingface"
+      ],
+      "tags": []
+    },
+    {
+      "name": "detectreeRGB-forest",
+      "description": "Detect changes in tall tree height with machine learning, LiDAR, and RGB imagery",
+      "tasks": [
+        "object-detection",
+        "segmentation"
+      ],
+      "url": "https://github.com/shmh40/detectreeRGB-treecrown-scivision",
+      "pkg_url": "git+https://github.com/shmh40/detectreeRGB-treecrown-scivision.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "cambridge-university"
+      ],
+      "tags": [
+        "2D",
+        "satellite",
+        "remote-sensing",
+        "ecology",
+        "environmental-science"
+      ]
+    },
+    {
+      "name": "flower-classification-model",
+      "description": "Identify flower species",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/flower_classification_model/tree/main",
+      "pkg_url": "git+https://github.com/alan-turing-institute/flower_classification_model.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "flowers",
+        "ecology"
+      ]
+    },
+    {
+      "name": "butterfly-classification-model",
+      "description": "Identify butterfly species",
+      "tasks": [
+        "classification"
+      ],
+      "url": "https://github.com/alan-turing-institute/butterfly_classification_model/tree/main/",
+      "pkg_url": "git+https://github.com/alan-turing-institute/butterfly_classification_model.git@main",
+      "scivision_usable": true,
+      "institution": [
+        "alan-turing-institute"
+      ],
+      "tags": [
+        "butterflies",
+        "insects",
+        "animals",
+        "ecology"
+      ]
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "scivision_usable": false,
+      "institution": [
+        "The Alan Turing Institute",
+        "Rutherford Appleton Laboratory STFC",
+        "Rosalind Franklin Institute"
+      ],
+      "tags": [
+        "Protein",
+        "Tomography",
+        "Cryo-EM",
+        "Shape regularisation "
+      ],
+      "name": "Affinity-VAE",
+      "description": "A framework for automatic clustering and classification of objects in multidimensional image data based on their similarity.",
+      "pkg_url": "https://github.com/alan-turing-institute/affinity-vae",
+      "url": "https://github.com/alan-turing-institute/affinity-vae"
+    },
+    {
+      "tasks": [],
+      "scivision_usable": false,
+      "institution": [
+        "The Alan Turing Institute",
+        "University College London"
+      ],
+      "tags": [
+        "cell tracking",
+        "bio imaging ",
+        "optimisation",
+        "bayesian",
+        "kalman filter"
+      ],
+      "name": "btrack",
+      "description": "btrack is a Python library for multi object tracking, used to reconstruct trajectories in crowded fields. Here, we use a probabilistic network of information to perform the trajectory linking. This method uses spatial information as well as appearance information for track linking.",
+      "url": "https://github.com/quantumjot/btrack",
+      "pkg_url": "btrack"
+    },
+    {
+      "tasks": [
+        "object-detection",
+        "segmentation"
+      ],
+      "scivision_usable": true,
+      "institution": [
+        "The Alan Turing Institute",
+        "Rothamsted Research"
+      ],
+      "tags": [
+        "2D",
+        "3D",
+        "plant-phenotyping",
+        "agriculture",
+        "rgb",
+        "phenotyping",
+        "x-ray"
+      ],
+      "name": "StarDist Seed",
+      "pkg_url": "stardist_seed_pod",
+      "url": "https://raw.githubusercontent.com/alan-turing-institute/stardist-seed-pod/main/.scivision/model.yml",
+      "description": "Pre-trained StarDist model for detection and segmentation of plant seeds in 2D or 3D images"
+    },
+    {
+      "tasks": [
+        "classification",
+        "other"
+      ],
+      "scivision_usable": true,
+      "institution": [
+        "The Alan Turing Institute"
+      ],
+      "tags": [
+        "canopy"
+      ],
+      "name": "canopy-quality",
+      "pkg_url": "git+https://github.com/johnfrancis13/canopy_quality_scivision.git@main",
+      "url": "https://github.com/johnfrancis13/canopy_quality_scivision/blob/main/.scivision/model.yaml",
+      "description": ""
+    }
+  ]
+}
