@@ -7,7 +7,12 @@ jobs:
     steps:    
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        ref: catalog-validation
 
+    - name: Pull changes from main
+      run: git pull origin main
+        
     - name: Install node
       uses: actions/setup-node@v4
       with:
