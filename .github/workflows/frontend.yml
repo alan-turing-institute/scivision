@@ -15,7 +15,7 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config pull.rebase true
-        git pull origin catalog-validation
+        git pull origin main
         git add .
         git commit -m "auto-update via GH Action"
         git push origin catalog-validation
