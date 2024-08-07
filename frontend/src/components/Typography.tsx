@@ -24,6 +24,7 @@ export const ModelsHeader = () => {
                         Pre-trained computer vision models that can be loaded
                         and run with the{' '}
                         <Link to="../scivisionpy">Scivision Python library</Link>
+                        .
                     </p>
                 </div>
                 <div className="mt-2 md:mt-0">
