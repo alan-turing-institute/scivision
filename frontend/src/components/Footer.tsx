@@ -10,7 +10,7 @@ const Footer = () => {
                     <span className="font-mono">
                         The Scivision Project was founded by <a href="https://www.turing.ac.uk/">
                         The Alan Turing Institute
-                    </a>.
+                    </a>
                     </span>
                 </div>
                 <div className="inline-flex items-center gap-3 text-gray-500">
