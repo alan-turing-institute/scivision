@@ -11,8 +11,14 @@ jobs:
         ref: catalog-validation
 
     - name: Pull changes from main
-      run: git config pull.rebase true
-        
+      run: 
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config pull.rebase true
+        git add .
+        git commit -m "auto-update via GH Action"
+        git push origin catalog-validation
+
     - name: Install node
       uses: actions/setup-node@v4
       with:
