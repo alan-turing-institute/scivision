@@ -4,20 +4,23 @@ on: [push, pull_request]
 jobs:
   build-and-deploy-if-main:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:    
     - name: Checkout
       uses: actions/checkout@v4
       with:
         ref: catalog-validation
 
-    - name: Pull changes from main
+    - name: Update branch
       run: 
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config pull.rebase true
-        git pull origin main
-        git add .
-        git commit -m "auto-update via GH Action"
+        git checkout main
+        git fetch origin
+        git checkout catalog-validation
+        git pull
+        git merge origin/main
         git push origin catalog-validation
 
     - name: Install node
