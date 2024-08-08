@@ -14,7 +14,7 @@ def display_objects(image: np.ndarray,
                     predictions: list,
                     label_nums: bool = False) -> AxesImage:
     """Display an image with colored bounding boxes for objects identified by a
-    scivision object detection model.
+    Scivision object detection model.
 
     Parameters
     ----------

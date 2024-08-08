@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+title: scivision
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+authors:
+  - given-names: Sebastian
+    family-names: Ahnert
+  - given-names: Meghna
+    family-names: Asthana
+    orcid: 'https://orcid.org/0000-0002-6101-8904'
+  - given-names: Edward Jonathan
+    family-names: Chalstrey
+    orcid: 'https://orcid.org/0000-0003-2560-1294'
+  - given-names: Alejandro
+    family-names: Coca-Castro
+    orcid: 'https://orcid.org/0000-0002-9264-1539'
+  - given-names: Alden
+    family-names: Conner
+    orcid: 'https://orcid.org/0000-0003-0927-2267'
+  - given-names: Evangeline Mae
+    family-names: Corcoran
+    orcid: 'https://orcid.org/0000-0003-0321-009X'
+  - given-names: Beatriz
+    family-names: Costa-Gomes
+    orcid: 'https://orcid.org/0000-0002-1073-8442'
+  - given-names: Isabel S.
+    family-names: Fenton
+    orcid: 'https://orcid.org/0000-0001-7174-0725'
+  - given-names: J. Scott
+    family-names: Hosking
+    orcid: 'https://orcid.org/0000-0002-3646-3504'
+  - given-names: Alan R
+    family-names: Lowe
+    orcid: 'https://orcid.org/0000-0002-0558-3597'
+  - given-names: Oliver
+    family-names: Strickson
+    orcid: 'https://orcid.org/0000-0002-8177-5582'
+  - given-names: Samuel
+    family-names: Tonks
+    orcid: 'https://orcid.org/0009-0008-1408-1493'
+repository-code: 'https://github.com/alan-turing-institute/scivision'
+url: 'https://sci.vision/'
+identifiers:
+  - type: doi
+    value: '10.5281/zenodo.10792860'
+keywords:
+  - computer vision
+  - image analysis
+license: BSD-3-Clause
+

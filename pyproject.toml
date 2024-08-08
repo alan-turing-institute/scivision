@@ -1,6 +1,6 @@
 [project]
 name = "scivision"
-version = "0.7.0"
+version = "0.7.3"
 description = "Scivision"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -23,7 +23,8 @@ dependencies = [
   "exifread~=3.0",
   "distinctipy~=1.2",
   "ipython~=8.3",
-  "tqdm~=4.65"
+  "tqdm~=4.65",
+  "netcdf4<1.7"
 ]
 
 [project.optional-dependencies]
@@ -56,3 +57,4 @@ cloud_extra = ["scivision[gcs,s3]"]
 [project.scripts]
 scivision-catalog-json-schema = "scivision.catalog.gen_json_schema:entry_point"
 scivision-check-datasets = "scivision.catalog.check_datasets:entry_point"
+scivision-check-models = "scivision.catalog.check_models:entry_point"

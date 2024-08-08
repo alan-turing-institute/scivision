@@ -1,62 +1,66 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "/",
-  "dependencies": {
-    "@rjsf/bootstrap-4": "^5.12.1",
-    "@rjsf/core": "^5.12.1",
-    "@rjsf/validator-ajv8": "^5.12.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^4.6.1",
-    "bootstrap-icons": "^1.10.1",
-    "buffer": "^6.0.3",
-    "octokit": "^2.0.4",
-    "octokit-plugin-create-pull-request": "^3.12.2",
-    "react": "^18.2.0",
-    "react-avatar-editor": "^13.0.0",
-    "react-bootstrap": "^1.0.0",
-    "react-bootstrap-sidebar-menu": "^2.0.1",
-    "react-data-table-component": "^7.5.2",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
-    "react-showdown": "^2.3.1",
-    "react-use-scripts": "^2.0.3",
-    "showdown": "^2.1.0",
-    "styled-components": "^5.3.10",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "mkdir -p src/catalog && cp -r ../src/scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts start",
-    "build": "mkdir -p src/catalog && cp -r ../src/scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts build",
-    "test": "mkdir -p src/catalog && cp -r ../src/scivision/catalog/data src/catalog && cd src/catalog && scivision-catalog-json-schema && cd ../.. && react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^9.0.0",
-    "prettier": "3.0.2"
-  }
+    "name": "scivision-frontend",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "sh ./setup.sh && vite",
+        "build": "sh ./setup.sh && tsc && vite build",
+        "preview": "sh ./setup.sh && vite preview"
+    },
+    "dependencies": {
+        "@fontsource-variable/source-code-pro": "^5.0.18",
+        "@fontsource-variable/source-sans-3": "^5.0.20",
+        "@headlessui/react": "^1.7.18",
+        "@heroicons/react": "^2.1.1",
+        "@rjsf/bootstrap-4": "^5.12.1",
+        "@rjsf/core": "^5.12.1",
+        "@rjsf/validator-ajv8": "^5.12.1",
+        "@tailwindcss/forms": "^0.5.7",
+        "@tanstack/react-table": "^8.15.3",
+        "bootstrap": "^4.6.1",
+        "bootstrap-icons": "^1.10.1",
+        "buffer": "^6.0.3",
+        "glyphicons-only-bootstrap": "^1.0.1",
+        "isomorphic-fetch": "^3.0.0",
+        "markdown-to-jsx": "^7.4.5",
+        "react": "^18.2.0",
+        "react-avatar-editor": "^13.0.0",
+        "react-bootstrap": "^1.0.0",
+        "react-data-table-component": "^7.5.2",
+        "react-dom": "^18.2.0",
+        "react-dropzone": "^14.2.3",
+        "react-icons": "^5.0.1",
+        "react-player": "^2.15.1",
+        "react-router": "^6.3.0",
+        "react-router-dom": "^6.3.0",
+        "react-showdown": "^2.3.1",
+        "showdown": "^2.1.0",
+        "styled-components": "^5.3.10"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.12",
+        "@types/node": "^20.11.30",
+        "@types/prismjs": "^1.26.3",
+        "@types/react": "^18.2.64",
+        "@types/react-dom": "^18.2.21",
+        "@typescript-eslint/eslint-plugin": "^7.1.1",
+        "@typescript-eslint/parser": "^7.1.1",
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.18",
+        "clsx": "^2.1.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "gray-matter": "^4.0.3",
+        "postcss": "^8.4.35",
+        "prettier": "^3.2.5",
+        "prettier-plugin-tailwindcss": "^0.5.13",
+        "react-markdown": "^9.0.1",
+        "tailwind-merge": "^2.2.2",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.2.2",
+        "vite": "^5.1.6",
+        "vite-plugin-node-polyfills": "^0.21.0"
+    }
 }

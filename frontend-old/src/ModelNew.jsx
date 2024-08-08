@@ -19,10 +19,13 @@ export default function ModelNew({ gh_logged_in }) {
       <Container className="text-block">
         <p>
           Use this form to propose a pre-trained model for inclusion in the
-          catalog.
+          catalog. This form will automatically create a GitHub pull request to update the catalog, 
+          and a maintainer will review and merge it. You may choose to submit an incomplete entry - 
+          it can be discussed and updated on GitHub following submission.
+
         </p>
 
-        <CatalogFormHowItWorksBox />
+      
       </Container>
 
       <h4>Prerequisites</h4>
@@ -41,7 +44,7 @@ export default function ModelNew({ gh_logged_in }) {
               </ul>
             </li>
             <li>
-              Your model is publically avaiable from a source repository or on a
+              Your model is publically available from a source repository or on a
               package server
               <ul>
                 <li>
