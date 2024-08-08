@@ -1,28 +1,62 @@
 .. _data-repo-template:
 
-# 🐙 Data repo template
+# 🐙 Data template
 
-In order for `scivision` to be able to load a dataset and run a computer vision (CV) model on it, a GitHub repository containing configuration for one or more datasets must first be created.
+In order to include a dataset in the Scivision catalog, it must be hosted in a publicly accessible location.
 
-This guide explains how to set up a GitHub repository for your datasets compatible with scivision.
+This guide explains how to ensure your datasets are compatible with Scivision. The basic requirements for addition to the Scivision catalog are described first. There are then details on the additional requirements to enable the dataset to be loaded / run through the scivision API.
 
-This is also a pre-requisite for adding the dataset to the scivision "catalog", enabling other users of scivision to use it. To learn how to do this, consult the [contributor page](./contributing.html#gift-extending-the-scivision-catalog) after setting up your data repo as per this guide.
+These instructions will enable you to get your dataset into the correct format for adding to the Scivision "catalog". Once you have set up your dataset as per this guide, consult the [contributor page](https://scivision.readthedocs.io/en/latest/contributing.html#contributing-a-datasource) for details of how to submit it.  
+
 
 📚 **Contents:**
 
-- :ref:`data-repo-structure`
-- :ref:`data-config-file`
-- :ref:`documentation`
-- :ref:`data-license`
-- :ref:`requirements-for-scivision-website`
+- :ref:`data-catalog`
+  - :ref:`documentation`
+  - :ref:`data-license`
   - :ref:`data-thumbnail`
+- :ref:`data-api`
+  - :ref:`data-repo-structure`
+  - :ref:`data-config-file`
+
 <!-- - :ref:`example-data-repos` -->
+
+.. _data-catalog:
+
+## 📁 Requirements for the Scivision catalog
+
+.. _documentation:
+
+#### 📄 Documentation
+
+Helpful information on the dataset and its origin should be included with the dataset, for example a `README` file. Without this, your dataset may not be accepted for inclusion in the Scivision catalog.
+
+.. _data-license:
+
+#### 📜 Data license
+
+You should include a `LICENSE` file, so that Scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
+
+.. _data-thumbnail:
+
+#### 🎆 Data Thumbnail
+
+When viewing the dataset in [sci.vision](https://sci.vision/#/datasource-grid) a dataset thumbnail is required. The thumbnail can be an interesting image or slice of the dataset that catches the attention of the Scivision user (creativity encouraged!). 
+
+- It must be a 256x256 PNG or JPEG file
+- The file name should be the name of the dataset as in the catalog
+
+.. _data-api:
+
+## ✨ Requirements for the Scivision API
+
+For your data(s) to be loadable by the Scivision API, it is necessary to create a GitHub repo structure in a particular structure, and include a data config file. 
 
 .. _data-repo-structure:
 
-## 🧱 Data repo structure
+#### 🧱 Data repo structure
 
-We recommend to set up a data repo for scivision with the following structure, with the default name for the config file that the scivision API will recognise being `.scivision/data.yml`:
+We recommend to set up a data repo for Scivision with the following structure, with the default name for the config file that the Scivision API will recognise being `.scivision/data.yml`:
 
 ```
 exampleuser/data_repo
@@ -35,9 +69,9 @@ exampleuser/data_repo
 
 .. _data-config-file:
 
-## 🖋️ Data config file
+#### 🖋️ Data config file
 
-The `scivision` python API relies upon another open source python tool called `intake` for loading datasets. We recommend creating a YAML format "intake catalog" (config file), to enable scivision users who discover your dataset to easily load it via the API.
+The `scivision` python API relies upon another open source python tool called `intake` for loading datasets. We recommend creating a YAML format "intake catalog" (config file), to enable Scivision users who discover your dataset to easily load it via the API.
 
 For a comprehensive guide to setting up this data config file (intake catalog), consult the [intake documentation](https://intake.readthedocs.io/en/latest/catalog.html#yaml-format).
 
@@ -64,36 +98,8 @@ In order to fully understand how this `data.yml` has been configured, you should
 - `urlpath`: a path to the data itself; in this example, we point to a Zenodo repository and load all the `.tif` files from the compressed zip file stored there
 
 
-The scivision API can accept a path to a locally stored data config file, or the GitHub repository containing it as specified in this guide. See the `load_dataset` function in the :ref:`api-docs` docs.
+The Scivision API can accept a path to a locally stored data config file, or the GitHub repository containing it as specified in this guide. See the `load_dataset` function in the :ref:`api-docs` docs.
 
-.. _documentation:
-
-## 📄 Documentation
-
-A `README`, which includes helpful information on the dataset and its origin should be included. Without this, your dataset may not be accepted for inclusion in the scivision catalog.
-
-.. _data-license:
-
-## 📜 Data license
-
-You should include a `LICENSE` file in the repository, so that scivision users who come across it can understand the conditions of the data's usage. For help deciding which license to include, check out the section on [data licenses](https://the-turing-way.netlify.app/reproducible-research/licensing/licensing-data.html) in The Turing Way online handbook.
-
-.. _requirements-for-scivision:
-
-## 💻 Requirements for scivision website
-
-.. _data-thumbnail:
-
-### 🎆 Data Thumbnail
-
-When viewing the dataset in [sci.vision](https://sci.vision/#/datasource-grid) a dataset thumbnail is required. The thumbnail can be an interesting image or slice of the dataset that catches the attention of the Scivision user (creativity encouraged!). 
-
-- It must be a 256x256 PNG or JPEG file
-- The file name should be the name of the dataset as in the catalog
-
-Once you have identified a suitable thumbnail please upload it to the [thumbnail datasources folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/datasources). 
-
-Once you have identified a suitable thumbnail, follow the :ref:`how-to-contribute` guide to open a pull request to the Scivision GitHub repo which adds the thumbnail image in the `scivision/catalog/data/thumbnails/datasources` folder. 
 
 <!-- .. _example-data-repos:
 

@@ -16,21 +16,21 @@
 ⬇️ Installation
 --------------
 
-1. Install scivision via [PyPi](https://pypi.org/project/scivision/): which tends to be the most user-friendly option:
+1. Install Scivision via [PyPI](https://pypi.org/project/scivision/): which tends to be the most user-friendly option:
 
     ```bash
     pip install scivision
     ```
 
-2. Install scivision from the source code:
+2. Install Scivision from the source code:
 
-    * Clone scivision source code:
+    * Clone Scivision source code:
 
     ```bash
     git clone https://github.com/alan-turing-institute/scivision.git 
     ```
 
-    * Install scivision and its dependencies:
+    * Install Scivision and its dependencies:
 
     ```bash
     cd /path/to/my/scivision
@@ -73,7 +73,9 @@ Scivision is currently working towards supporting Python >=3.11.
 🧪 Getting started
 ---------------
 
-Scivision enables users to quickly find computer vision models that can be run on matching scientific image dataset(s), or find datasets that models can be run on. This can be achieved by running several lines of Python code.
+Scivision enables users to quickly find computer vision models that can be run on a compatible scientific image dataset and provides access to a range of datasets for testing models.
+
+A set of [models](https://sci.vision/model-grid) and [datasets](https://sci.vision/datasource-grid) are available through the “default” Scivision catalog. 
 
 The core functionality of the Python package API is documented in the :ref:`api-docs` documentation and a Jupyter notebook demonstrating it can be found [on GitHub](https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/how-to-use-scivision.ipynb) or can be interactively run via clicking the following link to Binder:
 
@@ -81,9 +83,9 @@ The core functionality of the Python package API is documented in the :ref:`api-
    
 In brief, the notebook demonstrates the following:
 
-1. Loading a pretrained (ImageNet) model, which was previously added to the scivision catalog with the name "scivision-test-plugin"
+1. Loading a pretrained (ImageNet) model, which was previously added to the Scivision catalog with the name "image-classifiers"
     `model = load_pretrained_model('/path/to/model/repo')`
-2. Using the "default" scivision catalog to find a matching dataset, which the loaded model can be run on
+2. Using the "default" Scivision catalog to find a matching dataset, which the loaded model can be run on
     `default_catalog.compatible_datasources(<model name>)`
 3. Loading the dataset in a format the model can recognise
     `load_dataset('/path/to/data/repo')`
@@ -95,15 +97,15 @@ In brief, the notebook demonstrates the following:
 📖 Catalog of models and datasets
 ------------------------------
 
-The models and datasets you find when searching the "default" scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision/tree/main/scivision/catalog/data).
+The models and datasets you find when searching the "default" Scivision catalog (that which comes with the package) are loaded from external sources via metadata included in the [GitHub repository](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data).
 
-To understand how these external sources are configured for compatibility with scivision, consult the following sections of this documentation:
+To understand how these external sources are configured for compatibility with Scivision, consult the following sections of this documentation:
 
 - :ref:`model-repo-template`
 - :ref:`data-repo-template`
 
-To understand how to contribute new models and data sources to the scivision catalog, check out:
+To understand how to contribute new models and data sources to the Scivision catalog, check out:
 
-- :ref:`extending-the-scivision-catalog`
+- :ref:`contributing-to-the-scivision-catalog`
 
     

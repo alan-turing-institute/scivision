@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Source Sans 3 Variable', system-ui, sans-serif;
+    }
+    h1 {
+        @apply text-2xl font-bold;
+    }
+    h2 {
+        @apply text-2xl font-bold;
+    }
+    h3 {
+        @apply text-lg;
+    }
+    a {
+        @apply text-scipurple underline hover:text-scipurple-dark;
+    }
+
+    header a {
+        @apply text-white no-underline hover:text-white;
+    }
+}
+
+@layer components {
+    form.rjsf {
+        fieldset#root {
+            @apply my-10 grid grid-cols-1 gap-x-6 gap-y-8 divide-y divide-scipurple-light border-b-2 border-b-scipurple pb-10 sm:grid-cols-6;
+            > .form-group {
+                @apply col-span-full flex flex-col;
+                > div[id*='description'] {
+                    @apply order-last;
+                }
+
+                > label,
+                fieldset > legend {
+                    @apply mb-2 mt-5 text-xl;
+                }
+            }
+        }
+        p,
+        ul {
+            @apply mt-3 text-sm leading-6 text-gray-600;
+        }
+
+        span.required {
+            @apply inline pl-1 text-xl text-red-600;
+        }
+        /* .field-string {
+			@apply grid grid-cols-3;
+		} */
+        label {
+            @apply col-span-1 block text-sm font-medium leading-6 text-gray-900;
+        }
+        span {
+            @apply flex select-none items-center pl-3 text-gray-500 sm:text-sm;
+        }
+        input[type='text'] {
+            @apply block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scipurple sm:max-w-xs sm:text-sm sm:leading-6;
+        }
+        input[type='url'] {
+            @apply block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scipurple sm:max-w-xs sm:text-sm sm:leading-6;
+        }
+        input[type='checkbox'] {
+            @apply h-4 w-4 rounded border-gray-300 text-scipurple focus:ring-scipurple;
+        }
+        textarea {
+            @apply block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scipurple sm:text-sm sm:leading-6;
+        }
+
+        button[type='submit'] {
+            @apply mr-2 rounded-md bg-scipurple px-2.5 py-1.5 text-sm text-white shadow-sm hover:bg-scipurple-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scipurple-dark;
+            &.btn-link {
+                @apply rounded-lg bg-white p-4 text-sm font-semibold text-scipurple shadow-sm ring-1 ring-inset ring-scipurple hover:bg-gray-50;
+            }
+        }
+        .field-array {
+            @apply mt-8;
+            .array-item {
+                @apply flex flex-row items-end gap-4;
+            }
+            .array-item-list {
+                @apply pt-8;
+                .array-item {
+                    @apply mb-4;
+                    input {
+                        @apply w-72;
+                    }
+                    .array-item-toolbox {
+                        .btn-group {
+                            @apply flex gap-2;
+                        }
+                        button[type='button'] {
+                            @apply h-9 w-9 rounded-md border-[1px] border-scipurple px-2.5 py-1.5 text-sm text-scipurple shadow-sm hover:bg-scipurple-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scipurple-dark;
+                            i {
+                                @apply mt-0;
+                            }
+                            &.btn-danger {
+                                @apply border-red-500 text-red-500 hover:bg-red-50;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        p.array-item-add button {
+            @apply mr-2 mt-8 rounded-md bg-scipurple px-12 py-1.5 text-sm text-white shadow-sm hover:bg-scipurple-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scipurple-dark;
+            &.btn-link {
+                @apply rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-scipurple shadow-sm ring-1 ring-inset ring-scipurple hover:bg-gray-50;
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@ from .autoplumber import AutoPlumber, DataPlumber
 
 
 class PretrainedModel:
-    """A pretrained model, built using scivision configuration file."""
+    """A pretrained model, built using Scivision configuration file."""
 
     def __init__(self, config: dict):
         self._config = config
@@ -30,7 +30,7 @@ class PretrainedModel:
 
 
 class Datasource:
-    """A datasource, built using scivision configuration file."""
+    """A datasource, built using Scivision configuration file."""
 
     def __init__(self, config: dict):
         self._config = config

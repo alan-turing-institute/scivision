@@ -30,7 +30,7 @@ Possible failure modes experienced by the user when a dependency problem arises:
 
 A runtime error caused by an installation problem can be particularly confusing.
 
-An additional challenge comes if scivision users wish to load scivision catalog models that have conflicting package (or Python version) dependencies in the same Python environment or notebook.
+An additional challenge comes if Scivision users wish to load Scivision catalog models that have conflicting package (or Python version) dependencies in the same Python environment or notebook.
 
 ## Evaluation
 
@@ -42,7 +42,7 @@ When evaluating proposed architectures, here are some questions to consider.
 
 3. What guarantees does Scivision give to model plugin authors about the systems on which they will be run?  In particular, are there precise system requirements that Scivision can check and enforce on a host system (including python version, operating system)?  For example, for numpy: https://numpy.org/neps/nep-0029-deprecation_policy.html
 
-4. What guarantees does Scivision give to users about the models in the catalogue, and whether a given model will run correctly on a given host system?
+4. What guarantees does Scivision give to users about the models in the catalog, and whether a given model will run correctly on a given host system?
 
 5. How are errors handled and reported, particularly those caused by dependency problems?
 
@@ -90,7 +90,7 @@ Scivision would work largely as it does at the moment, but the primary way of in
 
 This doesn't solve all our problems, but does change their relative priority.  We could live with some installation difficulties (of core Scivision) for example, since installing it locally would be for 'advanced' users only. 
 
-More of the environmental set-up could be borne by the scivision developers (e.g. ensuring GPUs/drivers are working correctly, common system dependencies installed), but only a partial solution to this.
+More of the environmental set-up could be borne by the Scivision developers (e.g. ensuring GPUs/drivers are working correctly, common system dependencies installed), but only a partial solution to this.
 
 Would still need to handle version conflicts, python version and environment set-up. 
 

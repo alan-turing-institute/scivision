@@ -39,6 +39,8 @@ The Scivision project was conceived at `The Alan Turing Institute <https://www.t
 📫 Contact
 ----------
 
+Join the `Slack workspace <https://forms.office.com/e/cW28TK4aui>`_
+
 Consider starting a `GitHub discussion <https://github.com/alan-turing-institute/scivision/discussions>`_ or opening an `issue <https://github.com/alan-turing-institute/scivision/issues/new/choose>`_.
 
 To contact the project team directly, email `the Scivison maintainers <mailto:scivision@turing.ac.uk>`_.

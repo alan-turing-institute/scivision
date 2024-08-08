@@ -30,10 +30,12 @@ def _install(package, pip_install_args=None):
 
     if pip_install_args is None:
         pip_install_args = []
-
-    subprocess.check_call(
-        [sys.executable, "-m", "pip", "install", *pip_install_args, package]
-    )
+    try:
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", *pip_install_args, package],
+        )
+    except subprocess.CalledProcessError as e:
+        raise RuntimeError(f'command {e.cmd} return with error code {e.returncode}: {e.output}')
 
 
 def install_package(
