@@ -134,7 +134,9 @@
       "models": [
         "StarDist Seed"
       ],
-      "datasources": [],
+      "datasources": [
+        "Pixelflow Seed Demo Data"
+      ],
       "tasks": [
         "object-detection",
         "segmentation"
