@@ -149,7 +149,7 @@ After you are done, create a pull request to the original repo with the changes.
 Once you have submitted your model / datasource for inclusion in the catalog, you might want to also consider submitting a project to provide some more details about how they have been used in your research. 
 
 #### Adding a new project to the catalog
-To submit a project, enter the relevant details about it [here](https://sci.vision/new-project). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cproject&projects=&template=new-project.md&title=%5BPROJECT%5D), attaching the .json file and an appropriate thumbnail (a 256x256 .png or .jpg file with the same name as the datasource). You will need a GitHub account. 
+To submit a project, enter the relevant details about it [here](https://sci.vision/new-project). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cproject&projects=&template=new-project.md&title=%5BPROJECT%5D), attaching the .json file and an appropriate thumbnail (a 256x256 .jpg file with the same name as the datasource). You will need a GitHub account. 
 
 Once your submission is accepted, the project will become visible to other users of Scivision, and it will appear on the [website](https://sci.vision/project-grid).
 
@@ -160,6 +160,6 @@ This section describes how to add a catalog entry by hand.  These steps are an a
 
 Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://sci.vision/new-project) on the scivision website to get the details for your project in to the correct format.  On your new branch, add this information to the end of `projects.json` (found in `scivision/src/scivision/catalog/projects/`), under `"entries"`.
 
-Additionally, upload a suitable thumbnail to the [thumbnail project folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/projects). This must be a 256x256 .png or .jpg file with the same name as the datasource.
+Additionally, upload a suitable thumbnail to the [thumbnail project folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/projects). This must be a 256x256 .jpg file with the same name as the datasource.
 
 After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, and it will appear on the [website](https://sci.vision/project-grid).
