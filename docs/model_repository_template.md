@@ -82,7 +82,7 @@ You should include a `LICENSE` file in the repository, so that Scivision users w
 
 When viewing the model in [sci.vision](https://sci.vision/#/model-grid) a model thumbnail is required. The thumbnail can be an interesting image explaining the model and that catches the attention of the Scivision user (creativity encouraged!).
 
-- It must be a 256x256 PNG or JPEG file
+- It must be a 256x256 JPEG file
 - The file name should be the name of the model as in the catalog
 
 .. _api:
