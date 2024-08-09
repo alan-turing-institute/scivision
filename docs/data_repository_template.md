@@ -43,7 +43,7 @@ You should include a `LICENSE` file, so that Scivision users who come across it 
 
 When viewing the dataset in [sci.vision](https://sci.vision/#/datasource-grid) a dataset thumbnail is required. The thumbnail can be an interesting image or slice of the dataset that catches the attention of the Scivision user (creativity encouraged!). 
 
-- It must be a 256x256 PNG or JPEG file
+- It must be a 256x256 JPEG file
 - The file name should be the name of the dataset as in the catalog
 
 .. _data-api:
