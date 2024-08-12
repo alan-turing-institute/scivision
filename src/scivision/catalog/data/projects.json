@@ -105,7 +105,6 @@
       "header": "Coastal Vegetation Edge Detection",
       "description": "Edge detection of coastal vegetation from RGB satellite imagery",
       "page": "Recent advances in satellite imagery availability and spatial resolution are providing new opportunities for the rapid, cost-effective detection of a shoreline’s location and dynamics. [Rogers et al. (2021)](https://www.tandfonline.com/doi/abs/10.1080/01431161.2021.1897185?journalCode=tres20) advance in coastal vegetation monitoring by developing `VEdge_detector`, a tool to extract the coastal vegetation line from remote-sensing imagery, training a very deep convolutional neural network (holistically nested edge detection), to predict sequential vegetation line locations on annual to decadal timescales. The `VEdge_Detector` model was trained using Planet 3 – 5 m spatial resolution imagery. It has also detected vegetation edges in Landsat and Copernicus Sentinel imagery, although performance is not guaranteed. The tool cannot detect the vegetation edge in aerial imagery.\n\n# Example notebook\nThere is a worked example of the VEdge_Detector model in action available at the [Scivision Gallery](https://github.com/scivision-gallery/coastalveg-edge-detection).\n\nIn this notebook, we demonstrate how scivision facilitates the discovery of the VEdge_detector model for differentiating between the coastal vegetation edge and other boundaries in remote sensing images. We pair the model with one of the matched data sources from the scivision data catalog, in this case some sample of satellite images (n=3) from different geographical areas (Suffolk, United Kingdom; Wilk auf Föhr, Germany; Varela, Guinea Bissau) provided within the VEdge model repository."
-
     },
     {
       "models": [
@@ -130,6 +129,34 @@
       "header": "Tree Crown Detection using detectreeRGB",
       "name": "treecrown-detectreeRGB",
       "page": "The delineation of individual trees in remote sensing images is an key task in forest analysis. As part of Sebastian Hickman's AI4ER MRes project, titled 'Detecting changes in tall tree height with machine learning, LiDAR, and RGB imagery', the authors propose the detectreeRGB model, an implementation of Mask R-CNN from [Detectron2](https://github.com/facebookresearch/detectron2) to perform tree crown delineation from RGB imagery.\n\nFurther details of the detectreeRGB model can be found in the [original source code repository](https://github.com/shmh40/detectreeRGB/).\n\n## Example notebook\nThere is a worked example of the detectreeRGB model in action available at the [Scivision Gallery](https://github.com/scivision-gallery/tree-crown-detection).\n\nIn this notebook, we demonstrate how scivision can assist in discovering a pretrained detectreeRGB model provided by Hickman et al (2021), and then use it to delineate crowns from a sample drone RGB image dataset."
+    },
+    {
+      "models": [
+        "StarDist Seed"
+      ],
+      "datasources": [
+        "Pixelflow Seed Demo Data"
+      ],
+      "tasks": [
+        "object-detection",
+        "segmentation"
+      ],
+      "institution": [
+        "The Alan Turing Institute",
+        "Rothamsted Research",
+        "National Plant Phenomics Centre"
+      ],
+      "tags": [
+        "plant biology",
+        "plant-phenotyping",
+        "agriculture",
+        "2D",
+        "3D"
+      ],
+      "name": "Seed Phenotyping",
+      "header": "Automated Extraction of Seed Phenotype Data",
+      "description": "Automated Extraction of 2D and 3D Seed Phenotype Data using a fine-tuned StarDist model, Scivision, and Pixelflow",
+      "page": "A fine-tuned StarDist model was used to extract location, size and shape data for oilseed rape (*Brassica napus*) seeds detected and segmented in 2D light box and 3D X-ray computed tomography images as described in ['Automated extraction of pod phenotype data from micro-computed tomography' - Corcoran et al. 2023](https://www.frontiersin.org/articles/10.3389/fpls.2023.1120182/full).\n\nThe fine-tuned StarDist model for automated detection and segmentation of seeds is available from the **Scivision model catalogue** under the name `StarDist Seed`. \n\nThe [Pixelflow](https://github.com/alan-turing-institute/pixelflow) tool  was used to extract seed size and shape metrics from the outputs of the fine-tuned StarDist model. Jupyter notebooks demonstrating how to carry out this process for both 2D and 3D data are available from the [Scivision Gallery](https://github.com/scivision-gallery/pixelflow_seed_demo). \n\nExample 2D and 3D seed images and label masks used in these notebooks can be downloaded from [zenodo](https://zenodo.org/record/8355920)\n\nR code used to run valve sorting in this notebook is available from the Scivision Gallery github page please see the following file: **('seedpod_2D_valve_lowess_single.R')**\n"
     }
   ]
 }
