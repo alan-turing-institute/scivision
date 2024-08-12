@@ -373,6 +373,32 @@
         "marine-biology",
         "species-classification"
       ]
+    },
+    {
+      "tasks": [
+        "segmentation",
+        "object-detection"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "plant-biology",
+        "agriculture",
+        "computer-vision"
+      ],
+      "institution": [
+        "The Alan Turing Institute",
+        "Aberystwyth University",
+        "National Plant Phenomics Centre",
+        "Rothamsted Research"
+      ],
+      "tags": [
+        "2D",
+        "3D",
+        "plant-phenotyping"
+      ],
+      "name": "Pixelflow Seed Demo Data",
+      "url": "https://zenodo.org/api/records/8355920/files-archive",
+      "description": "2D and 3D images and labels of oilseed rape (Brassica napus) seed pods for use with Pixelflow Seed Demo notebooks (https://github.com/scivision-gallery/pixelflow_seed_demo)"
     }
   ]
 }
