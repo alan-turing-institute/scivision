@@ -1,5 +1,9 @@
 name: Build frontend
-on: [push, pull_request]
+on: 
+  push:
+  pull_request:
+  schedule:
+    - cron:  '18 4 * * *'
 
 jobs:
   build-and-deploy-if-main:
@@ -51,7 +55,7 @@ jobs:
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.2
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'schedule')
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
