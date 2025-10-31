@@ -75,7 +75,7 @@ Scivision is currently working towards supporting Python >=3.11.
 
 Scivision enables users to quickly find computer vision models that can be run on a compatible scientific image dataset and provides access to a range of datasets for testing models.
 
-A set of [models](https://sci.vision/model-grid) and [datasets](https://sci.vision/datasource-grid) are available through the “default” Scivision catalog. 
+A set of [models](https://alan-turing-institute.github.io/scivision/model-grid) and [datasets](https://alan-turing-institute.github.io/scivision/datasource-grid) are available through the “default” Scivision catalog. 
 
 The core functionality of the Python package API is documented in the :ref:`api-docs` documentation and a Jupyter notebook demonstrating it can be found [on GitHub](https://github.com/scivision-gallery/scivision-basic-usage-examples/blob/main/how-to-use-scivision.ipynb) or can be interactively run via clicking the following link to Binder:
 
