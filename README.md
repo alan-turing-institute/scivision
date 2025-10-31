@@ -9,13 +9,13 @@
 [![Licence badge (BSD 3 Clause)](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://github.com/alan-turing-institute/scivision/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/367023884.svg)](https://zenodo.org/doi/10.5281/zenodo.10792860)
 
-If you are new to Scivision, start with the [website](https://sci.vision/).
+If you are new to Scivision, start with the [website](https://alan-turing-institute.github.io/scivision/).
 
 The Scivision project is building:
 
 - A **community** of computer vision practitioners in the sciences and humanities
    ([join the community on Slack](https://forms.office.com/e/cW28TK4aui))
-- A **catalog** of community-curated computer vision [models](https://sci.vision/#/model-grid) and [datasets](https://sci.vision/#/datasource-grid) from the sciences and humanities
+- A **catalog** of community-curated computer vision [models](https://alan-turing-institute.github.io/scivision/#/model-grid) and [datasets](https://alan-turing-institute.github.io/scivision/#/datasource-grid) from the sciences and humanities
 - A software **ecosystem of interoperable tools** and utilities for working with computer vision models and data, including:
   - **Scivision.Py**, a Python package for conveniently downloading and using the computer vision models and datasets from Python ([Scivision on PyPI](https://pypi.org/project/scivision/))
   - **[Pixelflow](https://github.com/alan-turing-institute/pixelflow)**, a tool for extracting information about the characteristics of objects in images
@@ -34,7 +34,7 @@ This main [project repository on GitHub](https://github.com/alan-turing-institut
 ## Get involved
 Submit a bug or feature request [here](https://github.com/alan-turing-institute/scivision/issues).
 
-If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. These can be submitted through the [Scivision website](https://sci.vision/#/contribute). See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for more details on how to format your model / data.  
+If you would like a link to a model or datasource to be listed in the catalog, such a contribution would be gratefully received. These can be submitted through the [Scivision website](https://alan-turing-institute.github.io/scivision/#/contribute). See the [Contributing Guide](https://scivision.readthedocs.io/en/latest/contributing.html) for more details on how to format your model / data.  
 
 Pull requests for code changes are also welcome.
 
@@ -128,8 +128,8 @@ Output:
 
 
 The catalogs are browsable online:
-  - [model catalog](https://sci.vision/#/model-grid)
-  - [datasource catalog](https://sci.vision/#/datasource-grid)
+  - [model catalog](https://alan-turing-institute.github.io/scivision/#/model-grid)
+  - [datasource catalog](https://alan-turing-institute.github.io/scivision/#/datasource-grid)
 
 ## Contributors
 

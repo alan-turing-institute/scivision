@@ -20,7 +20,7 @@ It is recommended that you first read the information on how to [submit a model]
 
 - [ ] Publicly accessible model repository (e.g. on GitHub), with a suitable software licence
 - [ ] Optional: The model has an associated Scivision model yml file
-- [ ] Catalog metadata .json file created using https://sci.vision/new-model
+- [ ] Catalog metadata .json file created using https://alan-turing-institute.github.io/scivision/new-model
 - [ ] Thumbnail image created
 
 Then you have two choices (select the one you will follow):

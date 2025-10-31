@@ -100,19 +100,19 @@ Additionally, if you would like to be able to load your model using the Scivisio
 
 #### Submitting your model to the catalog
 
-Once you are ready to submit your model for inclusion in the catalog, fill in [this form](https://sci.vision/new-model) on the Scivision website. This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cmodel&projects=&template=new-model.md&title=%5BMODEL%5D), attaching the .json file and an appropriate thumbnail. You will need a GitHub account. 
+Once you are ready to submit your model for inclusion in the catalog, fill in [this form](https://alan-turing-institute.github.io/scivision/new-model) on the Scivision website. This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cmodel&projects=&template=new-model.md&title=%5BMODEL%5D), attaching the .json file and an appropriate thumbnail. You will need a GitHub account. 
 
-Once your model submission is accepted, it will become available to other users of Scivision. It will appear on the [website](https://sci.vision/model-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
+Once your model submission is accepted, it will become available to other users of Scivision. It will appear on the [website](https://alan-turing-institute.github.io/scivision/model-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
 
 ##### Manual steps for adding the model 
 
 This section describes how to add a catalog entry by hand, once you have prepared your model. These steps are an alternative to just opening an issue, as described above. 
 
-Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://sci.vision/new-model) on the scivision website to get the metadata for your computer vision model in to the correct format.  On your new branch, add this information to the end of `models.json` found in (`scivision/src/scivision/catalog/data/`), under `"entries"`.
+Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://alan-turing-institute.github.io/scivision/new-model) on the scivision website to get the metadata for your computer vision model in to the correct format.  On your new branch, add this information to the end of `models.json` found in (`scivision/src/scivision/catalog/data/`), under `"entries"`.
 
 Additionally, upload a suitable thumbnail to the [thumbnail models folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/models) (details can be found [here](https://scivision.readthedocs.io/en/latest/model_repository_template.html#model-thumbnail)).
 
-After you are done, create a pull request with the changes. A Scivision maintainer will approve the addition, making it available to all Scivision users. It will appear on the [website](https://sci.vision/model-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
+After you are done, create a pull request with the changes. A Scivision maintainer will approve the addition, making it available to all Scivision users. It will appear on the [website](https://alan-turing-institute.github.io/scivision/model-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
 
 .. _contributing-a-datasource:
 
@@ -127,20 +127,20 @@ Additionally if you would like to be able to load your dataset via the Scivision
 
 #### Adding a new dataset to the catalog
 
-Once you have prepared a datasource for inclusion in the catalog, submit some details about it [here](https://sci.vision/new-datasource). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cdata&projects=&template=new-datasource.md&title=%5BDATA%5D), attaching the .json file and an appropriate thumbnail. You will need a GitHub account. 
+Once you have prepared a datasource for inclusion in the catalog, submit some details about it [here](https://alan-turing-institute.github.io/scivision/new-datasource). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cdata&projects=&template=new-datasource.md&title=%5BDATA%5D), attaching the .json file and an appropriate thumbnail. You will need a GitHub account. 
 
-Once your submission is accepted, the dataset will become available to other users of Scivision. It will appear on the [website](https://sci.vision/datasource-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
+Once your submission is accepted, the dataset will become available to other users of Scivision. It will appear on the [website](https://alan-turing-institute.github.io/scivision/datasource-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
 
 
 ##### Manual steps for adding the dataset 
 
 This section describes how to add a catalog entry by hand, once you have prepared your dataset.  These steps are an alternative to just opening an issue, as described above. 
 
-Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://sci.vision/new-datasource) on the scivision website to get the metadata for your computer vision dataset in to the correct format.  On your new branch, add this information to the end of `datasources.json` (found in `scivision/src/scivision/catalog/data/`), under `"entries"`.
+Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://alan-turing-institute.github.io/scivision/new-datasource) on the scivision website to get the metadata for your computer vision dataset in to the correct format.  On your new branch, add this information to the end of `datasources.json` (found in `scivision/src/scivision/catalog/data/`), under `"entries"`.
  
 Additionally, upload a suitable thumbnail to the [thumbnail datasources folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/datasources) (details can be found [here](https://scivision.readthedocs.io/en/latest/data_repository_template.html#data-thumbnail)).
 
-After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, making it available to all Scivision users. It will appear on the [website](https://sci.vision/datasource-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
+After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, making it available to all Scivision users. It will appear on the [website](https://alan-turing-institute.github.io/scivision/datasource-grid), and it will be installable through the GitHub repository. However, it won't be available through PyPI until after the next release.
 
 .. _contributing-a-project:
 
@@ -149,17 +149,17 @@ After you are done, create a pull request to the original repo with the changes.
 Once you have submitted your model / datasource for inclusion in the catalog, you might want to also consider submitting a project to provide some more details about how they have been used in your research. 
 
 #### Adding a new project to the catalog
-To submit a project, enter the relevant details about it [here](https://sci.vision/new-project). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cproject&projects=&template=new-project.md&title=%5BPROJECT%5D), attaching the .json file and an appropriate thumbnail (a 256x256 .jpg file with the same name as the datasource). You will need a GitHub account. 
+To submit a project, enter the relevant details about it [here](https://alan-turing-institute.github.io/scivision/new-project). This will create a .json file in the correct format. Open a [new issue on GitHub](https://github.com/alan-turing-institute/scivision/issues/new?assignees=&labels=catalog%2Cproject&projects=&template=new-project.md&title=%5BPROJECT%5D), attaching the .json file and an appropriate thumbnail (a 256x256 .jpg file with the same name as the datasource). You will need a GitHub account. 
 
-Once your submission is accepted, the project will become visible to other users of Scivision, and it will appear on the [website](https://sci.vision/project-grid).
+Once your submission is accepted, the project will become visible to other users of Scivision, and it will appear on the [website](https://alan-turing-institute.github.io/scivision/project-grid).
 
 
 ##### Manual steps for adding the project 
 
 This section describes how to add a catalog entry by hand.  These steps are an alternative to just opening an issue, as described above. 
 
-Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://sci.vision/new-project) on the scivision website to get the details for your project in to the correct format.  On your new branch, add this information to the end of `projects.json` (found in `scivision/src/scivision/catalog/projects/`), under `"entries"`.
+Fork the [Scivision repository](https://github.com/alan-turing-institute/scivision). Fill in [the form](https://alan-turing-institute.github.io/scivision/new-project) on the scivision website to get the details for your project in to the correct format.  On your new branch, add this information to the end of `projects.json` (found in `scivision/src/scivision/catalog/projects/`), under `"entries"`.
 
 Additionally, upload a suitable thumbnail to the [thumbnail project folder](https://github.com/alan-turing-institute/scivision/tree/main/src/scivision/catalog/data/thumbnails/projects). This must be a 256x256 .jpg file with the same name as the datasource.
 
-After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, and it will appear on the [website](https://sci.vision/project-grid).
+After you are done, create a pull request to the original repo with the changes. A Scivision maintainer will approve the addition, and it will appear on the [website](https://alan-turing-institute.github.io/scivision/project-grid).

@@ -22,7 +22,7 @@ It is recommended that you first read the information on how to [submit a dataso
 
 - [ ] Data is publicly accessible with a stable link (and suitably licenced)
 - [ ] Optional: The data has an associated Scivision data yml file (or data loader/plugin)
-- [ ] Catalog metadata .json file created using https://sci.vision/new-datasource
+- [ ] Catalog metadata .json file created using https://alan-turing-institute.github.io/scivision/new-datasource
 - [ ] Thumbnail image created
 
 Then you have two choices (select the one you will follow):

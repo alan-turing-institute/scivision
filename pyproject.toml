@@ -50,7 +50,7 @@ s3 = [
 cloud_extra = ["scivision[gcs,s3]"]
 
 [project.urls]
-"Homepage" = "https://sci.vision"
+"Homepage" = "https://alan-turing-institute.github.io/scivision"
 "Source" = "https://github.com/alan-turing-institute/scivision"
 "Issue tracker" = "https://github.com/alan-turing-institute/scivision/issues"
 

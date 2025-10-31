@@ -149,7 +149,7 @@ export default function CatalogEntryForm({
           owner: "alan-turing-institute",
           repo: "scivision",
           title: `Add "${entry.name}" to the ${catalog_kind} catalog`,
-          body: `This is an automated message from the Scivision frontend (https://sci.vision):
+          body: `This is an automated message from the Scivision frontend (https://alan-turing-institute.github.io/scivision):
 
 > Your submission was successful and will be reviewed by the Scivision 
 > maintainers before being added to the catalog, thank you.  If we have any
@@ -189,7 +189,7 @@ export default function CatalogEntryForm({
   }
 
   // Modal has a 'open an issue' link, pre-filled with the error message
-  const issue_body_text = `https://github.com/alan-turing-institute/scivision/issues/new?title=sci.vision%20error%20opening%20pull%20request&labels=bug%2Cfrontend&body=The%20error%20message%20was:%0A%0A%3E%20${pr_message}`;
+  const issue_body_text = `https://github.com/alan-turing-institute/scivision/issues/new?title=alan-turing-institute.github.io/scivision%20error%20opening%20pull%20request&labels=bug%2Cfrontend&body=The%20error%20message%20was:%0A%0A%3E%20${pr_message}`;
 
   return (
     <div className="mb-5">
