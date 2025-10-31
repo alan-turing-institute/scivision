@@ -22,7 +22,7 @@
         "noFallthroughCasesInSwitch": true,
 
         /* Aliasing paths */
-        "baseUrl": "./scivision",
+        "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"]
         }
