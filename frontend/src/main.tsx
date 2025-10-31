@@ -92,7 +92,9 @@ const router = createBrowserRouter(
                 <Route path="/community" element={<Community />} />
             </Route>
         </>
-    )
+    ),
+
+    { basename: "/scivision" }
 )
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
