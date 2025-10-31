@@ -72,7 +72,7 @@ load_pretrained_model("${url}")`}
                     ) : (
                         <img
                             // src={new URL(thumbnailFromName, import.meta.url).href}
-                            src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                            src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                             alt={name}
                             className="h-full w-full object-cover object-center"
                         />
@@ -169,7 +169,7 @@ export function DatasourceSingleView({
                     ) : (
                         <img
                             // src={new URL(thumbnailFromName, import.meta.url).href}
-                            src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                            src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                             alt={name}
                             className="h-full w-full object-cover object-center"
                         />
@@ -288,7 +288,7 @@ export function ProjectSingleView({
                     ) : (
                         <img
                             // src={new URL(thumbnailFromName, import.meta.url).href}
-                            src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                            src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                             alt={name}
                             className="h-full w-full object-cover object-center"
                         />

@@ -39,7 +39,7 @@ const Card = ({
                     ) : (
                         <img
                             // src={new URL(thumbnailFromName, import.meta.url).href}
-                            src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                            src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                             alt={name}
                             className="h-full w-full object-cover object-center"
                         />
@@ -94,7 +94,7 @@ export const CardSidebar = ({
                     ) : (
                         <img
                             // src={new URL(thumbnailFromName, import.meta.url).href}
-                            src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                            src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                             alt={name}
                             className="h-full w-full object-cover object-center"
                         />
@@ -142,7 +142,7 @@ export const ProjectCard = ({
                         ) : (
                             <img
                                 // src={new URL(thumbnailFromName, import.meta.url).href}
-                                src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                                src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                                 alt={name}
                                 className="h-full w-full object-cover object-center"
                             />
@@ -191,7 +191,7 @@ export const MiniCard = ({ name, type }: CardProps) => {
                     ) : (
                         <img
                             // src={new URL(thumbnailFromName, import.meta.url).href}
-                            src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                            src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                             alt={name}
                             className="h-full w-full object-cover object-center"
                         />

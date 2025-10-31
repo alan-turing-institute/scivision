@@ -18,7 +18,7 @@ export function renderThumbnailForTable(thumb, name, type) {
     if (thumb !== undefined) {
         return (
             <img
-                src={`/catalog/data/thumbnails/${type}s/${name}.jpg`}
+                src={`/scivision/catalog/data/thumbnails/${type}s/${name}.jpg`}
                 width="128"
                 height="128"
                 className="img-thumbnail"
