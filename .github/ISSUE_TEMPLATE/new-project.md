@@ -19,7 +19,7 @@ It is recommended that you first read the information on how to [submit a projec
 (More details can be found in the link above)
 
 - [ ] Associated model(s) / dataset(s) in the Scivision catalog
-- [ ] Catalog metadata .json file created using https://sci.vision/new-project
+- [ ] Catalog metadata .json file created using https://alan-turing-institute.github.io/scivision/new-project
 - [ ] Thumbnail image created
 
 Then you have two choices (select the one you will follow):
