@@ -64,7 +64,7 @@ import matplotlib.pyplot as plt
 plt.imshow(test_image)
 ```
 
-![result of matplotlib imview: a koala](/koala-imview.webp)
+![result of matplotlib imview: a koala](./koala-imview.webp)
 
 ### Run the model
 
