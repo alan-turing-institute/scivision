@@ -9,6 +9,7 @@ import {
 } from '@/utils/ExtractThumbnails'
 import { PageTitle } from '@/components/Typography'
 import { MiniCard } from '@/components/Card'
+import  CopyToClipboard  from "@/components/CopyToClipboard"
 
 import ReactMarkdown from 'react-markdown'
 
@@ -46,14 +47,10 @@ export function ModelSingleView({
                     </Link>
                     :
                 </dt>
-                <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    <pre>
-                        <code className="language-python">
-                            {`from scivision import load_pretrained_model
+                <CopyToClipboard
+                  codeText={`from scivision import load_pretrained_model
 load_pretrained_model("${url}")`}
-                        </code>
-                    </pre>
-                </dd>
+                />
             </div>
         </>
     ) : (
@@ -115,13 +112,9 @@ load_pretrained_model("${url}")`}
                         <dt className="text-sm font-medium leading-6 text-gray-900">
                             Install with pip
                         </dt>
-                        <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                            <pre>
-                                <code className="language-python">
-                                    pip install {pkg_url}
-                                </code>
-                            </pre>
-                        </dd>
+                        <CopyToClipboard
+                          codeText={`pip install ${pkg_url}`}
+                        />
                     </div>
                     {scivision_code}
                 </dl>
