@@ -13,7 +13,7 @@ The full documentation is [here](https://scivision.readthedocs.io/en/latest/), a
 From a terminal, run
 
 ```bash
-$ pip install scivision
+pip install scivision
 ```
 
 ### Load a model
