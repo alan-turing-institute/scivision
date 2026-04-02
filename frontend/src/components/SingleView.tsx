@@ -114,6 +114,7 @@ load_pretrained_model("${url}")`}
                         </dt>
                         <CopyToClipboard
                           codeText={`pip install ${pkg_url}`}
+                          lang="language-bash"
                         />
                     </div>
                     {scivision_code}
