@@ -8,6 +8,29 @@ from typing import NamedTuple
 import numpy as np
 
 
+_ALLOWED_IMPORT_PREFIXES = ("scivision",)
+
+
+def _validate_import_path(import_path: str):
+    if not isinstance(import_path, str) or not import_path:
+        raise ValueError("`import` must be a non-empty string.")
+
+    parts = import_path.split(".")
+    if not all(part.isidentifier() for part in parts):
+        raise ValueError(f"Invalid import path `{import_path}` in configuration.")
+
+    if parts[0] not in _ALLOWED_IMPORT_PREFIXES:
+        raise ValueError(
+            f"Import path `{import_path}` is not allowed. "
+            f"Allowed top-level modules: {_ALLOWED_IMPORT_PREFIXES}."
+        )
+
+
+def _validate_attr_name(attr: str, field: str):
+    if not isinstance(attr, str) or not attr or not attr.isidentifier() or attr.startswith("_"):
+        raise ValueError(f"`{field}` must be a public identifier.")
+
+
 class DataPipe(NamedTuple):
     input: inspect.Parameter
     output: inspect.Parameter
@@ -30,7 +53,12 @@ class AutoPlumber:
     def __init__(self, config: dict):
 
         # import the module and get the model object
-        self._module = importlib.import_module(config["import"])
+        import_path = config["import"]
+        _validate_import_path(import_path)
+        _validate_attr_name(config["model"], "model")
+        _validate_attr_name(config["prediction_fn"]["call"], "prediction_fn.call")
+
+        self._module = importlib.import_module(import_path)
         model = getattr(self._module, config["model"])
 
         # we could instantiate the model using the args here
@@ -96,7 +124,12 @@ class DataPlumber:
     def __init__(self, config: dict):
 
         # import the module and get the data function
-        self._module = importlib.import_module(config["import"])
+        import_path = config["import"]
+        _validate_import_path(import_path)
+        _validate_attr_name(config["class"], "class")
+        _validate_attr_name(config["func"]["call"], "func.call")
+
+        self._module = importlib.import_module(import_path)
         data_class = getattr(self._module, config['class'])
         self._fn = getattr(data_class, config['func']['call'])
 
