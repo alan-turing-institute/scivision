@@ -399,6 +399,35 @@
       "name": "Pixelflow Seed Demo Data",
       "url": "https://zenodo.org/api/records/8355920/files-archive",
       "description": "2D and 3D images and labels of oilseed rape (Brassica napus) seed pods for use with Pixelflow Seed Demo notebooks (https://github.com/scivision-gallery/pixelflow_seed_demo)"
+    },
+    {
+      "tasks": [
+        "classification"
+      ],
+      "labels_provided": true,
+      "domains": [
+        "climate-change-and-agriculture"
+      ],
+      "institution": [
+        "University of Exeter",
+        "Rothamsted Research",
+        "Karlsruhe Institute of Technology",
+        " UK Centre for Ecology and Hydrology",
+        "University of Cambridge"
+      ],
+      "tags": [
+        "sentinel-1",
+        "SAR",
+        "crop-yield",
+        "agriculture",
+        "backscatter",
+        "UK",
+        "remote-sensing",
+        "time-series"
+      ],
+      "description": "This is the Sentinel-1 satellite portion of the CYCLeSS dataset, covering 2015 to 2017 (936 fields total across three years). Includes VV, VH, and Ratio backscatter values per field, along with yield and crop labels. Does not include the weather or soil data from the original CYCLeSS dataset. Data obtained from Figshare contains no raster imagery, only tabular per-field values. From Corcoran, Bebber, Curceac et al., \"A comprehensive UK crop yield dataset incorporating satellite, weather, and soil type information,\" Scientific Data 13, 491 (2026).",
+      "name": "CYCLeSS Sentinel-1",
+      "url": "https://raw.githubusercontent.com/Demethree/cycless-scivision/main/.scivision/data.yml"
     }
   ]
 }
