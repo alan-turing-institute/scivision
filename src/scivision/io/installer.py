@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import importlib
+import re
 import subprocess
 import sys
 
@@ -36,6 +37,28 @@ def _install(package, pip_install_args=None):
         )
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f'command {e.cmd} return with error code {e.returncode}: {e.output}')
+
+
+def _validate_package_source(config: dict, branch: str = "main") -> None:
+    """Validate package source before installation."""
+    install_str = config["url"]
+    if install_str.endswith(".git"):
+        install_str = install_str[:-4]
+    if install_str.startswith("git+"):
+        install_str = install_str[4:]
+
+    if install_str.startswith("http://"):
+        raise ValueError("Insecure package URL scheme is not allowed")
+
+    if not (
+        install_str.startswith("https://github.com/")
+        or install_str.startswith("github.com/")
+    ):
+        raise ValueError("Package URL is not in the approved source allowlist")
+
+    install_branch = config.get("github_branch", branch)
+    if re.fullmatch(r"[0-9a-f]{40}", install_branch) is None:
+        raise ValueError("github_branch must be pinned to a full 40-character commit SHA")
 
 
 def install_package(
@@ -80,11 +103,13 @@ def install_package(
         # (--no-deps doesn't solve this, since the dependencies may
         # have changed between a version present and the force-updated
         # version)
+        _validate_package_source(config, branch)
         _install(package, pip_install_args=["--force-reinstall", "--no-cache-dir"])
     elif (allow_install and not exists):
         # The package is requested but isn't already installed: this
         # is the common case. The package and its dependencies will
         # be installed
+        _validate_package_source(config, branch)
         _install(package)
     elif not exists:
         # The package was requested, but allow install was false and
